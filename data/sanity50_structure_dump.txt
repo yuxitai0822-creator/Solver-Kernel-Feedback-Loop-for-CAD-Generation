@@ -1,0 +1,1123 @@
+======================================================================
+SANITY SET (50) — MODELING SEQUENCE STRUCTURE DUMP
+======================================================================
+samples: 51
+
+GLOBAL DISTRIBUTIONS
+--- all timeline keys ---
+  index: 102
+  entity: 102
+
+--- all sketch keys ---
+  name: 52
+  type: 52
+  points: 52
+  curves: 52
+  profiles: 52
+  transform: 52
+  reference_plane: 52
+  dimensions: 48
+  constraints: 47
+
+--- all extrude keys ---
+  name: 50
+  type: 50
+  profiles: 50
+  operation: 50
+  start_extent: 50
+  extent_type: 50
+  extent_one: 50
+  faces: 50
+  bodies: 50
+  extrude_bodies: 50
+  extrude_faces: 50
+  extrude_side_faces: 50
+  extrude_end_faces: 50
+  extrude_start_faces: 50
+  extent_two: 1
+
+--- curve types ---
+  SketchLine: 155
+  SketchCircle: 35
+  SketchArc: 12
+
+--- constraint types ---
+  CoincidentConstraint: 60
+  HorizontalConstraint: 43
+  VerticalConstraint: 33
+  TangentConstraint: 22
+  PerpendicularConstraint: 19
+  ParallelConstraint: 16
+  ConcentricConstraint: 11
+  OffsetConstraint: 4
+  MidPointConstraint: 3
+  EqualConstraint: 1
+
+--- dimension types ---
+  SketchLinearDimension: 50
+  SketchDiameterDimension: 33
+  SketchOffsetDimension: 10
+  SketchOffsetCurvesDimension: 4
+  SketchRadialDimension: 3
+
+--- operations (extrude op) ---
+  NewBodyFeatureOperation: 50
+
+--- extent types ---
+  OneSideFeatureExtentType: 48
+  SymmetricFeatureExtentType: 1
+  TwoSidesFeatureExtentType: 1
+
+--- extent_one keys ---
+  distance: 50
+  taper_angle: 50
+  type: 50
+  is_full_length: 1
+
+--- start_extent keys ---
+  type: 50
+
+--- sketch plane keys ---
+  type: 52
+  plane: 52
+  name: 50
+  corrective_transform: 50
+  point_on_face: 2
+
+--- profile keys ---
+  loops: 75
+  properties: 75
+
+--- loop keys ---
+  is_outer: 95
+  profile_curves: 95
+
+--- point keys ---
+  type: 271
+  x: 271
+  y: 271
+  z: 271
+
+--- parameter keys (inside dimensions) ---
+  type: 100
+  value: 100
+  name: 100
+  role: 100
+
+--- n_sketches per sample ---
+  1: 48
+  2: 2
+  0: 1
+
+--- n_extrudes per sample ---
+  1: 50
+  0: 1
+
+--- n_curves per sketch ---
+  4: 17
+  1: 11
+  2: 8
+  6: 6
+  8: 5
+  7: 3
+  5: 2
+
+--- n_profiles per sketch ---
+  1: 35
+  2: 13
+  3: 3
+  5: 1
+
+--- n_loops per profile ---
+  1: 58
+  2: 14
+  3: 3
+
+======================================================================
+PER-SAMPLE DETAIL (first 5 shown fully)
+======================================================================
+{
+  "id": "100243_9fb796fe_0005",
+  "design": "100243_9fb796fe",
+  "n_sketch": 1,
+  "n_extrude": 1,
+  "sketches": [
+    {
+      "uuid": "3b2b7018-e353-11ea-9708-54bf646e7e1f",
+      "curve_types": {
+        "SketchLine": 4
+      },
+      "n_curves": 4,
+      "n_constraints": 4,
+      "n_dimensions": 2,
+      "n_points": 5,
+      "n_profiles": 1,
+      "plane": {
+        "type": "str",
+        "name": "str",
+        "plane": {
+          "type": "str",
+          "origin": {
+            "type": "...",
+            "x": "...",
+            "y": "...",
+            "z": "..."
+          },
+          "normal": {
+            "type": "...",
+            "x": "...",
+            "y": "...",
+            "z": "...",
+            "length": "..."
+          },
+          "u_direction": {
+            "type": "...",
+            "x": "...",
+            "y": "...",
+            "z": "...",
+            "length": "..."
+          },
+          "v_direction": {
+            "type": "...",
+            "x": "...",
+            "y": "...",
+            "z": "...",
+            "length": "..."
+          }
+        },
+        "corrective_transform": {
+          "origin": {
+            "type": "...",
+            "x": "...",
+            "y": "...",
+            "z": "..."
+          },
+          "x_axis": {
+            "type": "...",
+            "x": "...",
+            "y": "...",
+            "z": "...",
+            "length": "..."
+          },
+          "y_axis": {
+            "type": "...",
+            "x": "...",
+            "y": "...",
+            "z": "...",
+            "length": "..."
+          },
+          "z_axis": {
+            "type": "...",
+            "x": "...",
+            "y": "...",
+            "z": "...",
+            "length": "..."
+          }
+        }
+      },
+      "sample_curve": {
+        "type": "str",
+        "construction_geom": "bool",
+        "fixed": "bool",
+        "fully_constrained": "bool",
+        "reference": "bool",
+        "visible": "bool",
+        "start_point": "str",
+        "end_point": "str"
+      },
+      "sample_constraint": {
+        "line": "str",
+        "type": "str"
+      },
+      "sample_dimension": {
+        "parameter": {
+          "type": "str",
+          "value": "float",
+          "name": "str",
+          "role": "str"
+        },
+        "text_position": {
+          "type": "str",
+          "x": "float",
+          "y": "float",
+          "z": "float"
+        },
+        "is_driving": "bool",
+        "entity_one": "str",
+        "entity_two": "str",
+        "orientation": "str",
+        "type": "str"
+      },
+      "sample_point": {
+        "type": "str",
+        "x": "float",
+        "y": "float",
+        "z": "float"
+      },
+      "sample_profile": {
+        "loops": [
+          {
+            "is_outer": "bool",
+            "profile_curves": [
+              {
+                "type": "...",
+                "start_point": "...",
+                "end_point": "...",
+                "curve": "..."
+              },
+              "<len varies>"
+            ]
+          },
+          "<len varies>"
+        ],
+        "properties": {
+          "area": "float",
+          "centroid": {
+            "type": "str",
+            "x": "float",
+            "y": "float",
+            "z": "float"
+          },
+          "perimeter": "float"
+        }
+      }
+    }
+  ],
+  "extrudes": [
+    {
+      "uuid": "3b7963dc-e353-11ea-bd96-54bf646e7e1f",
+      "operation": "NewBodyFeatureOperation",
+      "extent_type": "OneSideFeatureExtentType",
+      "profile_refs": [
+        {
+          "profile": "2a39bc8c-ef2c-34c8-9913-339592387636",
+          "sketch": "3b2b7018-e353-11ea-9708-54bf646e7e1f"
+        }
+      ],
+      "extent_one": {
+        "distance": {
+          "type": "str",
+          "value": "float",
+          "name": "str",
+          "role": "str"
+        },
+        "taper_angle": {
+          "type": "str",
+          "value": "float",
+          "name": "str",
+          "role": "str"
+        },
+        "type": "str"
+      },
+      "start_extent": {
+        "type": "str"
+      },
+      "all_keys": [
+        "name",
+        "type",
+        "profiles",
+        "operation",
+        "start_extent",
+        "extent_type",
+        "extent_one",
+        "faces",
+        "bodies",
+        "extrude_bodies",
+        "extrude_faces",
+        "extrude_side_faces",
+        "extrude_end_faces",
+        "extrude_start_faces"
+      ]
+    }
+  ],
+  "timeline_len": 2
+}
+
+{
+  "id": "100243_9fb796fe_0006",
+  "design": "100243_9fb796fe",
+  "n_sketch": 1,
+  "n_extrude": 1,
+  "sketches": [
+    {
+      "uuid": "3d2c7500-e353-11ea-aa83-54bf646e7e1f",
+      "curve_types": {
+        "SketchLine": 4
+      },
+      "n_curves": 4,
+      "n_constraints": 4,
+      "n_dimensions": 2,
+      "n_points": 5,
+      "n_profiles": 1,
+      "plane": {
+        "type": "str",
+        "name": "str",
+        "plane": {
+          "type": "str",
+          "origin": {
+            "type": "...",
+            "x": "...",
+            "y": "...",
+            "z": "..."
+          },
+          "normal": {
+            "type": "...",
+            "x": "...",
+            "y": "...",
+            "z": "...",
+            "length": "..."
+          },
+          "u_direction": {
+            "type": "...",
+            "x": "...",
+            "y": "...",
+            "z": "...",
+            "length": "..."
+          },
+          "v_direction": {
+            "type": "...",
+            "x": "...",
+            "y": "...",
+            "z": "...",
+            "length": "..."
+          }
+        },
+        "corrective_transform": {
+          "origin": {
+            "type": "...",
+            "x": "...",
+            "y": "...",
+            "z": "..."
+          },
+          "x_axis": {
+            "type": "...",
+            "x": "...",
+            "y": "...",
+            "z": "...",
+            "length": "..."
+          },
+          "y_axis": {
+            "type": "...",
+            "x": "...",
+            "y": "...",
+            "z": "...",
+            "length": "..."
+          },
+          "z_axis": {
+            "type": "...",
+            "x": "...",
+            "y": "...",
+            "z": "...",
+            "length": "..."
+          }
+        }
+      },
+      "sample_curve": {
+        "type": "str",
+        "construction_geom": "bool",
+        "fixed": "bool",
+        "fully_constrained": "bool",
+        "reference": "bool",
+        "visible": "bool",
+        "start_point": "str",
+        "end_point": "str"
+      },
+      "sample_constraint": {
+        "line": "str",
+        "type": "str"
+      },
+      "sample_dimension": {
+        "parameter": {
+          "type": "str",
+          "value": "float",
+          "name": "str",
+          "role": "str"
+        },
+        "text_position": {
+          "type": "str",
+          "x": "float",
+          "y": "float",
+          "z": "float"
+        },
+        "is_driving": "bool",
+        "entity_one": "str",
+        "entity_two": "str",
+        "orientation": "str",
+        "type": "str"
+      },
+      "sample_point": {
+        "type": "str",
+        "x": "float",
+        "y": "float",
+        "z": "float"
+      },
+      "sample_profile": {
+        "loops": [
+          {
+            "is_outer": "bool",
+            "profile_curves": [
+              {
+                "type": "...",
+                "start_point": "...",
+                "end_point": "...",
+                "curve": "..."
+              },
+              "<len varies>"
+            ]
+          },
+          "<len varies>"
+        ],
+        "properties": {
+          "area": "float",
+          "centroid": {
+            "type": "str",
+            "x": "float",
+            "y": "float",
+            "z": "float"
+          },
+          "perimeter": "float"
+        }
+      }
+    }
+  ],
+  "extrudes": [
+    {
+      "uuid": "3d87fc64-e353-11ea-8773-54bf646e7e1f",
+      "operation": "NewBodyFeatureOperation",
+      "extent_type": "OneSideFeatureExtentType",
+      "profile_refs": [
+        {
+          "profile": "90cdaad2-893b-3a18-95ec-a9892c3a7d2d",
+          "sketch": "3d2c7500-e353-11ea-aa83-54bf646e7e1f"
+        }
+      ],
+      "extent_one": {
+        "distance": {
+          "type": "str",
+          "value": "float",
+          "name": "str",
+          "role": "str"
+        },
+        "taper_angle": {
+          "type": "str",
+          "value": "float",
+          "name": "str",
+          "role": "str"
+        },
+        "type": "str"
+      },
+      "start_extent": {
+        "type": "str"
+      },
+      "all_keys": [
+        "name",
+        "type",
+        "profiles",
+        "operation",
+        "start_extent",
+        "extent_type",
+        "extent_one",
+        "faces",
+        "bodies",
+        "extrude_bodies",
+        "extrude_faces",
+        "extrude_side_faces",
+        "extrude_end_faces",
+        "extrude_start_faces"
+      ]
+    }
+  ],
+  "timeline_len": 2
+}
+
+{
+  "id": "100877_ac1e5a17_0001",
+  "design": "100877_ac1e5a17",
+  "n_sketch": 1,
+  "n_extrude": 1,
+  "sketches": [
+    {
+      "uuid": "6f409a36-e353-11ea-90f3-54bf646e7e1f",
+      "curve_types": {
+        "SketchLine": 4
+      },
+      "n_curves": 4,
+      "n_constraints": 5,
+      "n_dimensions": 2,
+      "n_points": 5,
+      "n_profiles": 1,
+      "plane": {
+        "type": "str",
+        "name": "str",
+        "plane": {
+          "type": "str",
+          "origin": {
+            "type": "...",
+            "x": "...",
+            "y": "...",
+            "z": "..."
+          },
+          "normal": {
+            "type": "...",
+            "x": "...",
+            "y": "...",
+            "z": "...",
+            "length": "..."
+          },
+          "u_direction": {
+            "type": "...",
+            "x": "...",
+            "y": "...",
+            "z": "...",
+            "length": "..."
+          },
+          "v_direction": {
+            "type": "...",
+            "x": "...",
+            "y": "...",
+            "z": "...",
+            "length": "..."
+          }
+        },
+        "corrective_transform": {
+          "origin": {
+            "type": "...",
+            "x": "...",
+            "y": "...",
+            "z": "..."
+          },
+          "x_axis": {
+            "type": "...",
+            "x": "...",
+            "y": "...",
+            "z": "...",
+            "length": "..."
+          },
+          "y_axis": {
+            "type": "...",
+            "x": "...",
+            "y": "...",
+            "z": "...",
+            "length": "..."
+          },
+          "z_axis": {
+            "type": "...",
+            "x": "...",
+            "y": "...",
+            "z": "...",
+            "length": "..."
+          }
+        }
+      },
+      "sample_curve": {
+        "type": "str",
+        "construction_geom": "bool",
+        "fixed": "bool",
+        "fully_constrained": "bool",
+        "reference": "bool",
+        "visible": "bool",
+        "start_point": "str",
+        "end_point": "str"
+      },
+      "sample_constraint": {
+        "line": "str",
+        "type": "str"
+      },
+      "sample_dimension": {
+        "parameter": {
+          "type": "str",
+          "value": "float",
+          "name": "str",
+          "role": "str"
+        },
+        "text_position": {
+          "type": "str",
+          "x": "float",
+          "y": "float",
+          "z": "float"
+        },
+        "is_driving": "bool",
+        "entity_one": "str",
+        "entity_two": "str",
+        "orientation": "str",
+        "type": "str"
+      },
+      "sample_point": {
+        "type": "str",
+        "x": "float",
+        "y": "float",
+        "z": "float"
+      },
+      "sample_profile": {
+        "loops": [
+          {
+            "is_outer": "bool",
+            "profile_curves": [
+              {
+                "type": "...",
+                "start_point": "...",
+                "end_point": "...",
+                "curve": "..."
+              },
+              "<len varies>"
+            ]
+          },
+          "<len varies>"
+        ],
+        "properties": {
+          "area": "float",
+          "centroid": {
+            "type": "str",
+            "x": "float",
+            "y": "float",
+            "z": "float"
+          },
+          "perimeter": "float"
+        }
+      }
+    }
+  ],
+  "extrudes": [
+    {
+      "uuid": "6f45f0fe-e353-11ea-a87e-54bf646e7e1f",
+      "operation": "NewBodyFeatureOperation",
+      "extent_type": "OneSideFeatureExtentType",
+      "profile_refs": [
+        {
+          "profile": "dbe9b502-377a-3011-906e-a8074da8de02",
+          "sketch": "6f409a36-e353-11ea-90f3-54bf646e7e1f"
+        }
+      ],
+      "extent_one": {
+        "distance": {
+          "type": "str",
+          "value": "float",
+          "name": "str",
+          "role": "str"
+        },
+        "taper_angle": {
+          "type": "str",
+          "value": "float",
+          "name": "str",
+          "role": "str"
+        },
+        "type": "str"
+      },
+      "start_extent": {
+        "type": "str"
+      },
+      "all_keys": [
+        "name",
+        "type",
+        "profiles",
+        "operation",
+        "start_extent",
+        "extent_type",
+        "extent_one",
+        "faces",
+        "bodies",
+        "extrude_bodies",
+        "extrude_faces",
+        "extrude_side_faces",
+        "extrude_end_faces",
+        "extrude_start_faces"
+      ]
+    }
+  ],
+  "timeline_len": 2
+}
+
+{
+  "id": "100877_ac1e5a17_0017",
+  "design": "100877_ac1e5a17",
+  "n_sketch": 1,
+  "n_extrude": 1,
+  "sketches": [
+    {
+      "uuid": "84809f02-e353-11ea-8793-54bf646e7e1f",
+      "curve_types": {
+        "SketchLine": 4
+      },
+      "n_curves": 4,
+      "n_constraints": 5,
+      "n_dimensions": 2,
+      "n_points": 5,
+      "n_profiles": 1,
+      "plane": {
+        "type": "str",
+        "name": "str",
+        "plane": {
+          "type": "str",
+          "origin": {
+            "type": "...",
+            "x": "...",
+            "y": "...",
+            "z": "..."
+          },
+          "normal": {
+            "type": "...",
+            "x": "...",
+            "y": "...",
+            "z": "...",
+            "length": "..."
+          },
+          "u_direction": {
+            "type": "...",
+            "x": "...",
+            "y": "...",
+            "z": "...",
+            "length": "..."
+          },
+          "v_direction": {
+            "type": "...",
+            "x": "...",
+            "y": "...",
+            "z": "...",
+            "length": "..."
+          }
+        },
+        "corrective_transform": {
+          "origin": {
+            "type": "...",
+            "x": "...",
+            "y": "...",
+            "z": "..."
+          },
+          "x_axis": {
+            "type": "...",
+            "x": "...",
+            "y": "...",
+            "z": "...",
+            "length": "..."
+          },
+          "y_axis": {
+            "type": "...",
+            "x": "...",
+            "y": "...",
+            "z": "...",
+            "length": "..."
+          },
+          "z_axis": {
+            "type": "...",
+            "x": "...",
+            "y": "...",
+            "z": "...",
+            "length": "..."
+          }
+        }
+      },
+      "sample_curve": {
+        "type": "str",
+        "construction_geom": "bool",
+        "fixed": "bool",
+        "fully_constrained": "bool",
+        "reference": "bool",
+        "visible": "bool",
+        "start_point": "str",
+        "end_point": "str"
+      },
+      "sample_constraint": {
+        "line": "str",
+        "type": "str"
+      },
+      "sample_dimension": {
+        "parameter": {
+          "type": "str",
+          "value": "float",
+          "name": "str",
+          "role": "str"
+        },
+        "text_position": {
+          "type": "str",
+          "x": "float",
+          "y": "float",
+          "z": "float"
+        },
+        "is_driving": "bool",
+        "entity_one": "str",
+        "entity_two": "str",
+        "orientation": "str",
+        "type": "str"
+      },
+      "sample_point": {
+        "type": "str",
+        "x": "float",
+        "y": "float",
+        "z": "float"
+      },
+      "sample_profile": {
+        "loops": [
+          {
+            "is_outer": "bool",
+            "profile_curves": [
+              {
+                "type": "...",
+                "start_point": "...",
+                "end_point": "...",
+                "curve": "..."
+              },
+              "<len varies>"
+            ]
+          },
+          "<len varies>"
+        ],
+        "properties": {
+          "area": "float",
+          "centroid": {
+            "type": "str",
+            "x": "float",
+            "y": "float",
+            "z": "float"
+          },
+          "perimeter": "float"
+        }
+      }
+    }
+  ],
+  "extrudes": [
+    {
+      "uuid": "8489c646-e353-11ea-9689-54bf646e7e1f",
+      "operation": "NewBodyFeatureOperation",
+      "extent_type": "OneSideFeatureExtentType",
+      "profile_refs": [
+        {
+          "profile": "530802e6-cdae-3d2a-b2f9-f3700e222b23",
+          "sketch": "84809f02-e353-11ea-8793-54bf646e7e1f"
+        }
+      ],
+      "extent_one": {
+        "distance": {
+          "type": "str",
+          "value": "float",
+          "name": "str",
+          "role": "str"
+        },
+        "taper_angle": {
+          "type": "str",
+          "value": "float",
+          "name": "str",
+          "role": "str"
+        },
+        "type": "str"
+      },
+      "start_extent": {
+        "type": "str"
+      },
+      "all_keys": [
+        "name",
+        "type",
+        "profiles",
+        "operation",
+        "start_extent",
+        "extent_type",
+        "extent_one",
+        "faces",
+        "bodies",
+        "extrude_bodies",
+        "extrude_faces",
+        "extrude_side_faces",
+        "extrude_end_faces",
+        "extrude_start_faces"
+      ]
+    }
+  ],
+  "timeline_len": 2
+}
+
+{
+  "id": "101269_f084ba14_0023",
+  "design": "101269_f084ba14",
+  "n_sketch": 1,
+  "n_extrude": 1,
+  "sketches": [
+    {
+      "uuid": "a6b027ca-e353-11ea-87ba-54bf646e7e1f",
+      "curve_types": {
+        "SketchLine": 4
+      },
+      "n_curves": 4,
+      "n_constraints": 1,
+      "n_dimensions": 1,
+      "n_points": 5,
+      "n_profiles": 1,
+      "plane": {
+        "type": "str",
+        "name": "str",
+        "plane": {
+          "type": "str",
+          "origin": {
+            "type": "...",
+            "x": "...",
+            "y": "...",
+            "z": "..."
+          },
+          "normal": {
+            "type": "...",
+            "x": "...",
+            "y": "...",
+            "z": "...",
+            "length": "..."
+          },
+          "u_direction": {
+            "type": "...",
+            "x": "...",
+            "y": "...",
+            "z": "...",
+            "length": "..."
+          },
+          "v_direction": {
+            "type": "...",
+            "x": "...",
+            "y": "...",
+            "z": "...",
+            "length": "..."
+          }
+        },
+        "corrective_transform": {
+          "origin": {
+            "type": "...",
+            "x": "...",
+            "y": "...",
+            "z": "..."
+          },
+          "x_axis": {
+            "type": "...",
+            "x": "...",
+            "y": "...",
+            "z": "...",
+            "length": "..."
+          },
+          "y_axis": {
+            "type": "...",
+            "x": "...",
+            "y": "...",
+            "z": "...",
+            "length": "..."
+          },
+          "z_axis": {
+            "type": "...",
+            "x": "...",
+            "y": "...",
+            "z": "...",
+            "length": "..."
+          }
+        }
+      },
+      "sample_curve": {
+        "type": "str",
+        "construction_geom": "bool",
+        "fixed": "bool",
+        "fully_constrained": "bool",
+        "reference": "bool",
+        "visible": "bool",
+        "start_point": "str",
+        "end_point": "str"
+      },
+      "sample_constraint": {
+        "entity": "str",
+        "point": "str",
+        "type": "str"
+      },
+      "sample_dimension": {
+        "parameter": {
+          "type": "str",
+          "value": "float",
+          "name": "str",
+          "role": "str"
+        },
+        "text_position": {
+          "type": "str",
+          "x": "float",
+          "y": "float",
+          "z": "float"
+        },
+        "is_driving": "bool",
+        "entity_one": "str",
+        "entity_two": "str",
+        "orientation": "str",
+        "type": "str"
+      },
+      "sample_point": {
+        "type": "str",
+        "x": "float",
+        "y": "float",
+        "z": "float"
+      },
+      "sample_profile": {
+        "loops": [
+          {
+            "is_outer": "bool",
+            "profile_curves": [
+              {
+                "type": "...",
+                "start_point": "...",
+                "end_point": "...",
+                "curve": "..."
+              },
+              "<len varies>"
+            ]
+          },
+          "<len varies>"
+        ],
+        "properties": {
+          "area": "float",
+          "centroid": {
+            "type": "str",
+            "x": "float",
+            "y": "float",
+            "z": "float"
+          },
+          "perimeter": "float"
+        }
+      }
+    }
+  ],
+  "extrudes": [
+    {
+      "uuid": "a6cdbfee-e353-11ea-b230-54bf646e7e1f",
+      "operation": "NewBodyFeatureOperation",
+      "extent_type": "OneSideFeatureExtentType",
+      "profile_refs": [
+        {
+          "profile": "df04fada-5c64-3876-878e-ec3e2e68eee1",
+          "sketch": "a6b027ca-e353-11ea-87ba-54bf646e7e1f"
+        }
+      ],
+      "extent_one": {
+        "distance": {
+          "type": "str",
+          "value": "float",
+          "name": "str",
+          "role": "str"
+        },
+        "taper_angle": {
+          "type": "str",
+          "value": "float",
+          "name": "str",
+          "role": "str"
+        },
+        "type": "str"
+      },
+      "start_extent": {
+        "type": "str"
+      },
+      "all_keys": [
+        "name",
+        "type",
+        "profiles",
+        "operation",
+        "start_extent",
+        "extent_type",
+        "extent_one",
+        "faces",
+        "bodies",
+        "extrude_bodies",
+        "extrude_faces",
+        "extrude_side_faces",
+        "extrude_end_faces",
+        "extrude_start_faces"
+      ]
+    }
+  ],
+  "timeline_len": 2
+}
