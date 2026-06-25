@@ -1,0 +1,71 @@
+{
+  "sample": "100243_9fb796fe_0005",
+  "step_file": "100243_9fb796fe_0005.step",
+  "step_unit": "mm (converted to cm via *0.1 for GT comparison)",
+  "design_intent": {
+    "sketch_normal": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "rect_side": 1.9,
+    "extrude_distance": 20.0,
+    "extent_type": "OneSideFeatureExtentType"
+  },
+  "A_topology": {
+    "body_count": 1,
+    "shell_count": 1,
+    "face_count": 6,
+    "edge_count": 12,
+    "vertex_count": 8,
+    "wire_count": 6
+  },
+  "B_dimension": {
+    "bbox_min_cm": [
+      -58.278201,
+      -0.0,
+      12.040146
+    ],
+    "bbox_max_cm": [
+      -56.378201,
+      20.0,
+      13.940146
+    ],
+    "bbox_size_cm": [
+      1.9,
+      20.0,
+      1.9
+    ],
+    "height_along_extrude_normal_cm": 20.0,
+    "in_plane_sides_cm": [
+      1.9,
+      1.9
+    ],
+    "volume_cm3": 72.2,
+    "surface_area_cm2": 159.22,
+    "center_of_mass_cm": [
+      -57.328201,
+      10.0,
+      12.990146
+    ]
+  },
+  "C_feature": {
+    "surface_types": {
+      "Plane": 6
+    },
+    "all_faces_planar": true,
+    "planar_face_count": 6,
+    "total_face_count": 6,
+    "cylinder_face_count": 0
+  },
+  "D_health": {
+    "is_solid": true,
+    "euler_V_E_F": [
+      8,
+      12,
+      6
+    ],
+    "euler_characteristic": 2,
+    "expected_euler_for_closed_solid": 2
+  }
+}
