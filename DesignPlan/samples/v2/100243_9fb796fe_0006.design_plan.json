@@ -1,0 +1,100 @@
+{
+  "schema_version": "design_plan_v0.2",
+  "sample_id": "100243_9fb796fe_0006",
+  "source_component_name": "Drone Leg",
+  "unit": "mm",
+
+  "coordinate_system": {
+    "frame": "part_local",
+    "origin_convention": "bbox_min_corner",
+    "axes": {"x": [1, 0, 0], "y": [0, 1, 0], "z": [0, 0, 1]},
+    "unit": "mm"
+  },
+
+  "target": {
+    "object_type": "single_part",
+    "part_category": "square_strut",
+    "body_count": 1,
+    "engineering_description": "Shorter variant of the square-cross-section drone leg strut, extruded 13mm along Y. Same profile as sibling component index 5."
+  },
+
+  "solid_bodies": [
+    {
+      "id": "body_0",
+      "primitive_type": "rectangular_prism",
+
+      "frame": {
+        "u_dir": [0, 0, 1],
+        "v_dir": [1, 0, 0],
+        "w_dir": [0, 1, 0]
+      },
+
+      "profile": {
+        "type": "rectangle",
+        "closed": true,
+        "curve_count": 4,
+        "parameters": {
+          "side_u": {"value": 1.9, "tol": 0.01, "source": "explicit_dimension"},
+          "side_v": {"value": 1.9, "tol": 0.01, "source": "explicit_dimension"}
+        }
+      },
+
+      "extrude": {
+        "extent_type": "one_side",
+        "distance": {"value": 13.0, "tol": 0.01, "source": "explicit_dimension"},
+        "taper_angle_deg": {"value": 0.0, "tol": 0.01},
+        "operation": "new_body"
+      },
+
+      "dimensions": {
+        "along_u": {"value": 1.9, "tol": 0.01, "source": "explicit_dimension"},
+        "along_v": {"value": 1.9, "tol": 0.01, "source": "explicit_dimension"},
+        "along_w": {"value": 13.0, "tol": 0.01, "source": "extrude_distance"}
+      },
+
+      "modifications": []
+    }
+  ],
+
+  "constraints": [
+    {
+      "type": "orthogonal_adjacent_edges",
+      "subject": "body_0",
+      "expected": "all 12 edges fall into 3 mutually-orthogonal direction groups (4 edges per group)",
+      "verifiable_via": "edge_direction_dot_product"
+    }
+  ],
+
+  "validation_intents": [
+    {"id": "q_body_count", "intent": "body_count", "expected": 1},
+    {"id": "q_envelope_x", "intent": "bbox_size", "axis": "x", "expected": 1.9, "tolerance": 0.01},
+    {"id": "q_envelope_y", "intent": "bbox_size", "axis": "y", "expected": 13.0, "tolerance": 0.01},
+    {"id": "q_envelope_z", "intent": "bbox_size", "axis": "z", "expected": 1.9, "tolerance": 0.01},
+    {"id": "q_all_planar", "intent": "all_faces_planar", "expected": true},
+    {"id": "q_is_solid", "intent": "is_solid", "expected": true},
+    {"id": "q_occt_valid", "intent": "occt_is_valid", "expected": true},
+    {"id": "q_edge_ortho", "intent": "edge_orthogonality", "subject": "body_0",
+     "expected": "3 direction groups, 4 parallel edges each", "tolerance": 1e-6}
+  ],
+
+  "derived": {
+    "design_envelope": {
+      "along_x": 1.9,
+      "along_y": 13.0,
+      "along_z": 1.9
+    }
+  },
+
+  "non_verifiable": {
+    "world_pose": "Assembly-context world coordinates (sketch at approx (-58.278, *, 12.040)) are omitted by design (Non-Leakage)."
+  },
+
+  "compiler_notes": {
+    "source_sketch_count": 1,
+    "source_extrude_count": 1,
+    "explicit_dimension_count": 2,
+    "inferred_dimensions": [],
+    "source_constraints": ["HorizontalConstraint x2", "VerticalConstraint x2"],
+    "warnings": []
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "schema_version": "design_plan_v0.1",
+  "sample_id": "100877_ac1e5a17_0017",
+  "source_component_name": "Image 1 v1",
+  "unit": "mm",
+
+  "coordinate_system": {
+    "frame": "part_local",
+    "origin_convention": "bbox_min_corner",
+    "origin": [0.0, 0.0, 0.0],
+    "axes": {"x": [1, 0, 0], "y": [0, 1, 0], "z": [0, 0, 1]}
+  },
+
+  "target": {
+    "object_type": "single_part",
+    "part_category": "flat_plate_or_panel",
+    "body_count": 1,
+    "engineering_description": "Thin rectangular panel, dominant in XY plane, thickness along Z. Standard 1-inch (25.4mm) wide by 3/4-inch (19.05mm) tall with 0.3175mm thickness."
+  },
+
+  "global_envelope": {
+    "bbox": {
+      "x": {"value": 25.4,   "tolerance": 0.01},
+      "y": {"value": 19.05,  "tolerance": 0.01},
+      "z": {"value": 0.3175, "tolerance": 0.005}
+    }
+  },
+
+  "base_geometry": {
+    "id": "base_0",
+    "type": "rectangular_prism",
+    "dimensions": {
+      "width_x": 25.4,
+      "depth_y": 19.05,
+      "height_z": 0.3175
+    },
+    "long_axis": "xy_planar",
+    "thickness_axis": "z"
+  },
+
+  "features": [],
+
+  "spatial_relations": [],
+
+  "constraints": [
+    {
+      "type": "orthogonal_adjacent_edges",
+      "subject": "base_0",
+      "expected": "all 12 edges fall into 3 mutually-orthogonal direction groups",
+      "verifiable_via": "edge_direction_dot_product"
+    }
+  ],
+
+  "validation_intents": [
+    {"id": "q_body_count",   "intent": "body_count",        "expected": 1},
+    {"id": "q_bbox_x",       "intent": "bbox_size",         "axis": "x", "expected": 25.4,   "tolerance": 0.01},
+    {"id": "q_bbox_y",       "intent": "bbox_size",         "axis": "y", "expected": 19.05,  "tolerance": 0.01},
+    {"id": "q_bbox_z",       "intent": "bbox_size",         "axis": "z", "expected": 0.3175, "tolerance": 0.005},
+    {"id": "q_all_planar",   "intent": "all_faces_planar",  "expected": true},
+    {"id": "q_is_solid",     "intent": "is_solid",          "expected": true},
+    {"id": "q_occt_valid",   "intent": "occt_is_valid",     "expected": true}
+  ],
+
+  "non_verifiable": {
+    "absolute_position_in_assembly": "Original sketch plane origin (1.27,1.27,3.49) is assembly-context; world coords omitted (Non-Leakage).",
+    "panel_position_along_Z": "Panel floats at Z offset in source; the Design Plan only specifies the part's own bounding box, not its assembly pose."
+  }
+}

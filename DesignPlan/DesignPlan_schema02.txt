@@ -1,0 +1,136 @@
+{
+  "schema_version": "design_plan_v0.2",
+  "schema_doc": "See doc/03 section 4 for design rationale. v0.2 fixes: (1) envelope is DERIVED not duplicated, (2) frame.origin is body-local offset only, (3) extrude is a body property not a separate feature, (4) tolerances default to relative when value is large.",
+
+  "sample_id": "<required: matches source JSON filename stem, e.g. 100243_9fb796fe_0005>",
+  "source_component_name": "<from source metadata.component_name>",
+  "unit": "mm",
+
+  "coordinate_system": {
+    "frame": "part_local",
+    "origin_convention": "bbox_min_corner",
+    "axes": {"x": [1, 0, 0], "y": [0, 1, 0], "z": [0, 0, 1]},
+    "unit": "mm",
+    "_doc": "part_local: the Design Plan describes the part itself, NOT its assembly pose. bbox_min_corner: the part's own bounding box min corner is (0,0,0). World coordinates from Fusion360 are deliberately omitted (Non-Leakage)."
+  },
+
+  "target": {
+    "object_type": "single_part",
+    "part_category": "<one of: square_strut | rectangular_slat_or_strip | flat_plate_or_panel | block | disk | cylinder | uncategorized>",
+    "body_count": "<required: number of solid bodies, integer>",
+    "engineering_description": "<natural language, human-readable only; NOT verifiable by KQP>"
+  },
+
+  "solid_bodies": [
+    {
+      "id": "body_0",
+      "primitive_type": "<one of: rectangular_prism | cylinder | extruded_profile | unsupported>",
+      "_doc_primitive_type": "rectangular_prism = 4 orthogonal sketch lines extruded; cylinder = single sketch circle extruded; extruded_profile = arbitrary closed profile; unsupported = compiler could not classify.",
+
+      "frame": {
+        "u_dir": "<required: unit vector, sketch u_direction, length 1.0>",
+        "v_dir": "<required: unit vector, sketch v_direction, length 1.0, orthogonal to u_dir>",
+        "w_dir": "<required: unit vector, sketch normal = cross(u_dir, v_dir), length 1.0>",
+        "_doc": "u_dir/v_dir span the sketch plane; w_dir is the extrude axis. All body dimensions are expressed along these axes, NOT world X/Y/Z. This makes the schema robust to arbitrary sketch plane orientation."
+      },
+
+      "profile": {
+        "type": "<one of: rectangle | circle | polygon | arbitrary_closed>",
+        "_doc_profile_type": "rectangle = 4 orthogonal lines; circle = single SketchCircle; polygon = N>4 lines; arbitrary_closed = lines+arcs.",
+        "closed": true,
+        "curve_count": "<integer: number of sketch curves forming the closed loop>",
+        "parameters": "<shape-specific: see parameter_schemas below>"
+      },
+
+      "extrude": {
+        "extent_type": "<one of: one_side | two_side | symmetric>",
+        "_doc_extent_type": "one_side = ProfilePlaneStart + single distance (OneSideFeatureExtentType); two_side = asymmetric two distances (TwoSidesFeatureExtentType, different values); symmetric = two equal distances (TwoSidesFeatureExtentType, equal values).",
+        "distance": {"value": "<mm, float>", "tol": "<mm, float>", "source": "<explicit_dimension | inferred_from_point_span>"},
+        "taper_angle_deg": {"value": "<degrees, float>", "tol": 0.01},
+        "operation": "<one of: new_body | join | cut | intersect>",
+        "_doc_distance": "For one_side: total extrude length = distance.value. For two_side/symmetric: distance.value is the TOTAL length along w_dir (sum of both extents). source field records whether the value came from an explicit Fusion360 ModelParameter or was back-filled from point span (for under-constrained sketches)."
+      },
+
+      "dimensions": {
+        "along_u": {"value": "<mm, float>", "tol": "<mm, float>", "source": "<explicit_dimension | inferred_from_point_span>"},
+        "along_v": {"value": "<mm, float>", "tol": "<mm, float>", "source": "<explicit_dimension | inferred_from_point_span>"},
+        "along_w": {"value": "<mm, float>", "tol": "<mm, float>", "source": "extrude_distance"},
+        "_doc": "along_u/along_v are the in-plane spans of the profile (from explicit dimensions OR back-filled from point coordinates). along_w equals the extrude distance. The DESIGN-LEVEL size of the body; NOT a copy of GT bbox (which may differ if modifications exist)."
+      },
+
+      "modifications": [],
+      "_doc_modifications": "Local features applied to THIS body (holes, slots, chamfers, fillets). Empty for pure prisms. Order-independent: does NOT encode modeling sequence. Each modification references this body only (no cross-body refs)."
+    }
+  ],
+
+  "constraints": [
+    {
+      "type": "<one of: orthogonal_adjacent_edges | symmetry | tangent | concentric | parallel_edges>",
+      "subject": "<body id, e.g. body_0>",
+      "expected": "<human-readable expectation>",
+      "verifiable_via": "<KQP query type, e.g. edge_direction_dot_product>",
+      "_doc": "Geometric constraints the design REQUIRES. Derived from Fusion360 sketch constraints (Horizontal/Vertical -> orthogonal_adjacent_edges; Symmetry -> symmetry; etc.) but expressed as result-level geometric truths, not solver constraints."
+    }
+  ],
+
+  "validation_intents": [
+    {
+      "id": "<unique within plan, e.g. q_body_count>",
+      "intent": "<one of: body_count | bbox_size | all_faces_planar | is_solid | occt_is_valid | euler_characteristic | edge_orthogonality>",
+      "expected": "<value, type depends on intent>",
+      "tolerance": "<optional, for numeric intents>",
+      "axis": "<optional, only for bbox_size: one of x|y|z>",
+      "_doc": "Each intent maps 1:1 to a KQP query. KQP compiler consumes these directly. NO 'source' JSONPath field (that was v1 redundancy); compiler derives the expected value from solid_bodies itself."
+    }
+  ],
+
+  "derived": {
+    "_doc": "Values DERIVED from solid_bodies, included for convenience and KQP efficiency, but NOT design requirements. If they conflict with solid_bodies, solid_bodies wins.",
+    "design_envelope": {
+      "along_x": "<mm, derived: max over bodies of (bbox size along world X)>",
+      "along_y": "<mm>",
+      "along_z": "<mm>"
+    }
+  },
+
+  "non_verifiable": {
+    "world_pose": "Assembly-context world coordinates from Fusion360 are omitted by design (Non-Leakage).",
+    "engineering_description": "Natural language part_category and engineering_description are for human understanding only; KQP ignores them."
+  },
+
+  "compiler_notes": {
+    "_doc": "Metadata about HOW this plan was generated. Read by humans and the compiler itself for debugging; ignored by KQP.",
+    "source_sketch_count": "<integer>",
+    "source_extrude_count": "<integer>",
+    "explicit_dimension_count": "<integer: count of is_driving=true dimensions in source>",
+    "inferred_dimensions": "<list of dimension keys that were back-filled from point span, not explicit dimensions>",
+    "warnings": "<list of strings: any issues encountered during compilation>"
+  },
+
+  "parameter_schemas": {
+    "_doc": "Shape-specific parameters for solid_bodies[].profile.parameters, keyed by profile.type.",
+    "rectangle": {
+      "side_u": {"value": "<mm>", "tol": "<mm>", "source": "<explicit_dimension | inferred_from_point_span>"},
+      "side_v": {"value": "<mm>", "tol": "<mm>", "source": "<explicit_dimension | inferred_from_point_span>"}
+    },
+    "circle": {
+      "center_u": "<mm, in sketch plane>",
+      "center_v": "<mm, in sketch plane>",
+      "radius": {"value": "<mm>", "tol": "<mm>", "source": "<explicit_dimension | inferred_from_point_span>"}
+    },
+    "polygon": {
+      "vertex_count": "<integer>",
+      "vertices_uv": "<list of [u,v] coords in sketch plane>"
+    },
+    "arbitrary_closed": {
+      "vertices_uv": "<list of [u,v]>",
+      "curve_types": "<list of: line | arc | spline>"
+    }
+  },
+
+  "forbidden_fields": {
+    "_doc": "The following MUST NOT appear anywhere in a v0.2 Design Plan (Non-Procedurality + Non-Leakage):",
+    "procedural": ["timeline_index", "sketch_id (Fusion UUID)", "profile_id (Fusion UUID)", "face_id", "edge_id", "body_token", "api_call_order", "operation_sequence", "extrude_feature_name"],
+    "leakage": ["exact_face_count", "exact_edge_count", "exact_vertex_count", "exact_volume", "exact_surface_area", "exact_center_of_mass", "brep_topology", "world_coordinates"]
+  }
+}

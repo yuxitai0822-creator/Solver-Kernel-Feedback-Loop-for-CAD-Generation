@@ -1,0 +1,67 @@
+{
+  "schema_version": "design_plan_v0.1",
+  "sample_id": "100243_9fb796fe_0005",
+  "source_component_name": "Drone Leg Left",
+  "unit": "mm",
+
+  "coordinate_system": {
+    "frame": "part_local",
+    "origin_convention": "bbox_min_corner",
+    "origin": [0.0, 0.0, 0.0],
+    "axes": {"x": [1, 0, 0], "y": [0, 1, 0], "z": [0, 0, 1]}
+  },
+
+  "target": {
+    "object_type": "single_part",
+    "part_category": "square_strut",
+    "body_count": 1,
+    "engineering_description": "A short structural strut with square cross-section, long along Y. Sub-component of a drone leg assembly."
+  },
+
+  "global_envelope": {
+    "bbox": {
+      "x": {"value": 1.9,  "tolerance": 0.01},
+      "y": {"value": 20.0, "tolerance": 0.01},
+      "z": {"value": 1.9,  "tolerance": 0.01}
+    }
+  },
+
+  "base_geometry": {
+    "id": "base_0",
+    "type": "rectangular_prism",
+    "dimensions": {
+      "width_x": 1.9,
+      "depth_y": 20.0,
+      "height_z": 1.9
+    },
+    "long_axis": "y",
+    "cross_section": {"shape": "square", "side": 1.9}
+  },
+
+  "features": [],
+
+  "spatial_relations": [],
+
+  "constraints": [
+    {
+      "type": "orthogonal_adjacent_edges",
+      "subject": "base_0",
+      "expected": "all 12 edges fall into 3 mutually-orthogonal direction groups",
+      "verifiable_via": "edge_direction_dot_product"
+    }
+  ],
+
+  "validation_intents": [
+    {"id": "q_body_count",   "intent": "body_count",        "expected": 1},
+    {"id": "q_bbox_x",       "intent": "bbox_size",         "axis": "x", "expected": 1.9,  "tolerance": 0.01},
+    {"id": "q_bbox_y",       "intent": "bbox_size",         "axis": "y", "expected": 20.0, "tolerance": 0.01},
+    {"id": "q_bbox_z",       "intent": "bbox_size",         "axis": "z", "expected": 1.9,  "tolerance": 0.01},
+    {"id": "q_all_planar",   "intent": "all_faces_planar",  "expected": true},
+    {"id": "q_is_solid",     "intent": "is_solid",          "expected": true},
+    {"id": "q_occt_valid",   "intent": "occt_is_valid",     "expected": true}
+  ],
+
+  "non_verifiable": {
+    "absolute_position_in_assembly": "Fusion360 world coords (-58.278, 0, 12.040) are assembly-context dependent; omitted by design (Non-Leakage)."
+  }
+}

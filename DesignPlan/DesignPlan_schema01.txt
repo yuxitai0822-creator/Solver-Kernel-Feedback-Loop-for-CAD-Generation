@@ -1,0 +1,120 @@
+{
+  "schema_version": "design_plan_v0.1",
+  "sample_id": "fusion360_xxx",
+  "unit": "mm",
+#坐标系与单位
+  "coordinate_system": {
+    "origin": [0, 0, 0],
+    "up_axis": "z",
+    "front_axis": "y",
+    "right_axis": "x"
+  },
+
+  "target": {
+    "object_type": "single_part",
+    "part_category": "mechanical_bracket_or_plate",
+    "body_count": 1
+  },
+#全局包络
+  "global_envelope": {
+    "bbox": {
+      "x": {"value": 80.0, "tolerance": 0.1},
+      "y": {"value": 50.0, "tolerance": 0.1},
+      "z": {"value": 12.0, "tolerance": 0.1}
+    }
+  },
+#基础几何体（不如rectangular_prism，cylinder，disk，ring，L_bracket，stepped_block）
+  "base_geometry": {
+    "id": "base_0",
+    "type": "rectangular_prism",
+    "dimensions": {
+      "width_x": 80.0,
+      "depth_y": 50.0,
+      "height_z": 12.0
+    }
+  },
+#局部特征（比如through_hole，blind_hole，slot，pocket，boss，rib，cutout，chamfer，fillet）
+  "features": [
+    {
+      "id": "hole_pattern_0",
+      "feature_type": "through_hole_pattern",
+      "count": 4,
+      "hole_shape": "cylindrical",
+      "diameter": 8.0,
+      "axis": "z",
+      "layout": {
+        "type": "rectangular_grid",
+        "rows": 2,
+        "cols": 2,
+        "center_spacing_x": 60.0,
+        "center_spacing_y": 30.0,
+        "center": [0.0, 0.0, 0.0]
+      },
+      "boolean_operation": "cut",
+      "target_body": "base_0"
+    }
+  ],
+#空间关系
+  "spatial_relations": [
+    {
+      "type": "centered_on",
+      "subject": "hole_pattern_0",
+      "reference": "base_0",
+      "axes": ["x", "y"]
+    }，
+    {
+    “type”:"hole_count",
+    "hole_count": 4,
+    "layout": "rectangular_grid",
+    "centered_on": "base_0",
+    "spacing_x": 60,
+    "spacing_y": 30
+    }
+  ],
+
+  "constraints": [
+    {
+      "type": "symmetry",
+      "entities": ["hole_pattern_0"],
+      "about_axes": ["x", "y"]
+    }
+  ],
+#验证意图
+  "validation_intents": [
+    {
+      "id": "q_body_count",
+      "intent": "body_count",
+      "expected": 1,
+      "source": "$.target.body_count"
+    },
+    {
+      "id": "q_bbox_x",
+      "intent": "bbox_size",
+      "axis": "x",
+      "expected": 80.0,
+      "tolerance": 0.1,
+      "source": "$.global_envelope.bbox.x"
+    },
+    {
+      "id": "q_hole_count",
+      "intent": "feature_count",
+      "feature_type": "through_hole",
+      "expected": 4,
+      "source": "$.features[0].count"
+    }
+  ]
+}
+
+为了避免退化成建模历史 JSON，以下字段不要放入 Design Plan：
+
+timeline_index
+sketch_id from Fusion360
+profile_id from Fusion360
+face_id / edge_id / body token
+API call order
+exact operation sequence
+temporary construction geometry
+selection order
+extrude feature name
+Fusion-specific entity UUID
+solver internal entity id
