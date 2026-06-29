@@ -1,0 +1,131 @@
+{
+  "schema_version": "design_plan_v0.3",
+  "sample_id": "102525_06a3094b_0000",
+  "source_component_name": "SOIC-8",
+  "unit": "mm",
+
+  "coordinate_system": {
+    "frame": "part_local",
+    "origin_convention": "bbox_min_corner",
+    "axes": {"x": [1, 0, 0], "y": [0, 1, 0], "z": [0, 0, 1]},
+    "unit": "mm"
+  },
+
+  "target": {
+    "object_type": "single_part",
+    "part_category": "block",
+    "body_count": 1,
+    "engineering_description": "SOIC-8 IC package body: 3.9mm x 4.9mm x 1.55mm rectangular block. Represents an 8-pin small-outline integrated circuit package outline."
+  },
+
+  "solid_bodies": [
+    {
+      "id": "body_0",
+      "primitive_type": "extruded_rectangle",
+
+      "frame": {
+        "u_dir": [0, 0, -1],
+        "v_dir": [-1, 0, 0],
+        "w_dir": [0, 1, 0],
+        "span_computation": "vertex_projection",
+        "_doc_flipped": "u_dir and v_dir are NEGATED vs canonical (0,0,1)/(1,0,0). This is a flipped sketch orientation. vertex_projection is direction-sign-agnostic (span = max-min), so dimensions are unaffected by the sign flip."
+      },
+
+      "profile": {
+        "type": "rectangle",
+        "closed": true,
+        "rings": [
+          {
+            "role": "outer",
+            "loop_type": "polyline",
+            "curve_count": 4,
+            "curves": [
+              {"kind": "line", "ref": "0:0", "start_uv": [-1.95, 2.45], "end_uv": [1.95, 2.45]},
+              {"kind": "line", "ref": "0:1", "start_uv": [1.95, 2.45], "end_uv": [1.95, -2.45]},
+              {"kind": "line", "ref": "0:2", "start_uv": [1.95, -2.45], "end_uv": [-1.95, -2.45]},
+              {"kind": "line", "ref": "0:3", "start_uv": [-1.95, -2.45], "end_uv": [-1.95, 2.45]}
+            ],
+            "note": "rectangle centered at sketch origin (±1.95, ±2.45); u_span=3.9, v_span=4.9"
+          }
+        ]
+      },
+
+      "extrude": {
+        "extent_type": "one_side",
+        "operation": "new_body",
+        "taper_angle_deg": {"value": 0.0, "tol": 0.01, "tol_kind": "absolute"}
+      },
+
+      "dimensions": {
+        "extrude_distance": {"value": 1.55, "tol": 0.005, "tol_kind": "absolute", "source": "explicit_dimension"},
+        "length_u": {"value": 3.9, "tol": 0.01, "tol_kind": "absolute", "source": "explicit_dimension", "note": "d2_5 Horizontal=0.39cm"},
+        "width_v":  {"value": 4.9, "tol": 0.01, "tol_kind": "absolute", "source": "explicit_dimension", "note": "d1_5 Vertical=0.49cm"}
+      },
+
+      "modifications": []
+    }
+  ],
+
+  "auxiliary_geometry": {
+    "unused_sketches": 0,
+    "note": "None. (2 in-sketch construction diagonals 44ac3274/44ad1cd2 are profile-internal construction lines collapsed to origin via Coincident, not separate sketches.)"
+  },
+
+  "constraints": [
+    {
+      "type": "orthogonal_adjacent_edges",
+      "subject": "body_0",
+      "expected": "all 12 edges fall into 3 mutually-orthogonal direction groups (4 edges each)",
+      "tol": 1e-6
+    },
+    {"type": "perpendicular", "curve_a": "0:0", "curve_b": "0:1", "tol": 1e-6},
+    {"type": "parallel", "curve_a": "0:0", "curve_b": "0:2", "tol": 1e-6},
+    {"type": "parallel", "curve_a": "0:1", "curve_b": "0:3", "tol": 1e-6},
+    {
+      "type": "coincident_inert",
+      "note": "3 CoincidentConstraints collapse construction diagonals + origin point; geometrically inert.",
+      "tol": 1e-6
+    }
+  ],
+
+  "validation_intents": [
+    {"id": "q_body_count", "intent": "body_count", "expected": 1},
+    {"id": "q_span_u", "intent": "span_along_frame_axis", "frame_axis": "u", "expected": 3.9, "tolerance": 0.01},
+    {"id": "q_span_v", "intent": "span_along_frame_axis", "frame_axis": "v", "expected": 4.9, "tolerance": 0.01},
+    {"id": "q_span_w", "intent": "span_along_frame_axis", "frame_axis": "w", "expected": 1.55, "tolerance": 0.005},
+    {"id": "q_all_planar", "intent": "all_faces_planar", "expected": true},
+    {"id": "q_is_solid", "intent": "is_solid", "expected": true},
+    {"id": "q_occt_valid", "intent": "occt_is_valid", "expected": true},
+    {"id": "q_edge_ortho", "intent": "edge_orthogonality", "subject": "body_0",
+     "expected": "3 direction groups, 4 parallel edges each", "tolerance": 1e-6}
+  ],
+
+  "derived": {
+    "part_category": "block",
+    "world_bbox_estimate": {"along_x": 3.9, "along_y": 1.55, "along_z": 4.9}
+  },
+
+  "non_verifiable": {
+    "world_pose": "Sketch plane origin at (-1.173, 0.23, -2.205); assembly-context, omitted."
+  },
+
+  "compiler_notes": {
+    "source_sketch_count": 1,
+    "source_extrude_count": 1,
+    "explicit_dimension_count": 2,
+    "inferred_dimensions": [],
+    "source_constraints": [
+      {"type": "PerpendicularConstraint", "count": 1},
+      {"type": "ParallelConstraint", "count": 2},
+      {"type": "HorizontalConstraint", "count": 1},
+      {"type": "CoincidentConstraint", "count": 3, "note": "geometrically_inert (construction line collapses)"}
+    ],
+    "warnings": [
+      "Unit conversion cm->mm (x10): length 0.39cm->3.9mm, width 0.49cm->4.9mm, extrude 0.155cm->1.55mm.",
+      "FLIPPED FRAME: u_dir=(0,0,-1), v_dir=(-1,0,0) are negated vs canonical. Compiler must NOT assume u_dir=(0,0,1); must use the actual reference_plane vectors (after float cleanup). Span computation is sign-agnostic so dimensions unaffected.",
+      "Body named 'Package' (not 'Body1') in source; name is descriptive, not used in Design Plan (Non-Leakage).",
+      "Construction diagonals (2 extra SketchLines beyond the 4 rectangle edges) are collapsed to origin via 3 CoincidentConstraints — they do not form part of the profile loop. Compiler must identify the ACTUAL profile curves (the 4 forming the closed loop), not all sketch curves."
+    ],
+    "unit_conversion_applied": "cm_to_mm (x10)"
+  }
+}

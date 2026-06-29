@@ -1,0 +1,1870 @@
+==========================================================================================
+FILE: 100243_9fb796fe_0005.json
+metadata: project=100243_9fb796fe  component=Drone Leg Left  index=5
+
+timeline: 2 ops;  entities: 2
+
+  [SKETCH]  id=3b2b7018-e353-11ea-9708-54bf646e7e1f  name=Sketch1
+    plane: name=XZ  origin=(0.0,0.0,0.0)
+           normal=(0.0,1.0,0.0)  u=(0.0,0.0,1.0)  v=(1.0,0.0,0.0)
+    points (5):
+       3b46495e: (0.0,0.0,0.0)
+       3b49cb6e: (-58.27820137826746,-13.940145769681571,0.0)
+       3b4d4d92: (-56.37820137826746,-13.940145769681571,0.0)
+       3b514512: (-56.37820137826746,-12.04014576968157,0.0)
+       3b61be9e: (-58.27820137826746,-12.04014576968157,0.0)
+    curves (4):
+       3b38408a: SketchLine  3b49cb6e -> 3b4d4d92
+       3b3b9bb4: SketchLine  3b4d4d92 -> 3b514512
+       3b3f1dcc: SketchLine  3b514512 -> 3b61be9e
+       3b429ff0: SketchLine  3b61be9e -> 3b49cb6e
+    constraints (4):
+       HorizontalConstraint: {"line": "3b38408a-e353-11ea-82d5-54bf646e7e1f"}
+       VerticalConstraint: {"line": "3b3b9bb4-e353-11ea-aad1-54bf646e7e1f"}
+       HorizontalConstraint: {"line": "3b3f1dcc-e353-11ea-ab6c-54bf646e7e1f"}
+       VerticalConstraint: {"line": "3b429ff0-e353-11ea-9e17-54bf646e7e1f"}
+    dimensions (2):
+       d460_1: type=Linear Dimension-2  value=1.9000000000000001  driving=True  e1=3b49cb6e e2=3b4d4d92 orient=HorizontalDimensionOrientation
+       d461_1: type=Linear Dimension-3  value=1.9000000000000001  driving=True  e1=3b61be9e e2=3b49cb6e orient=VerticalDimensionOrientation
+    profiles (1):
+       2a39bc8c: loops=1  total_curves=4  outer_loops=1
+
+  [EXTRUDE]  id=3b7963dc-e353-11ea-bd96-54bf646e7e1f  name=Extrude1
+    operation: NewBodyFeatureOperation
+    extent_type: OneSideFeatureExtentType
+    start_extent: {'type': 'ProfilePlaneStartDefinition'}
+    extent_one: distance=20.0  taper=0.0  type=DistanceExtentDefinition
+    input profiles (1):
+       sketch=3b2b7018  profile=2a39bc8c
+    bodies produced (1):
+       Body1: faces=['3b92685a', '3ba0e65e', '3ba46898', '3ba7eab8', '3bab93ee', '3baf1642']
+
+[properties]  (final GT)
+{
+  "name": "Drone Leg Left",
+  "bounding_box": {
+    "type": "BoundingBox3D",
+    "max_point": {
+      "type": "Point3D",
+      "x": -56.37820137826746,
+      "y": 20.0,
+      "z": 13.940145769681571
+    },
+    "min_point": {
+      "type": "Point3D",
+      "x": -58.27820137826746,
+      "y": 0.0,
+      "z": 12.04014576968157
+    }
+  },
+  "vertex_count": 8,
+  "edge_count": 12,
+  "face_count": 6,
+  "loop_count": 6,
+  "shell_count": 1,
+  "body_count": 1,
+  "area": 159.2199999999999,
+  "volume": 72.19999999999996,
+  "density": 0.0026999999999999997,
+  "mass": 0.19493999999999986,
+  "center_of_mass": {
+    "type": "Point3D",
+    "x": -57.32820137826746,
+    "y": 10.0,
+    "z": 12.990145769681574
+  },
+  "principal_axes": {
+    "x_axis": {
+      "type": "Vector3D",
+      "x": 1.0,
+      "y": 0.0,
+      "z": 0.0,
+      "length": 1.0
+    },
+    "y_axis": {
+      "type": "Vector3D",
+      "x": 0.0,
+      "y": 1.0,
+      "z": 0.0,
+      "length": 1.0
+    },
+    "z_axis": {
+      "type": "Vector3D",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 1.0,
+      "length": 1.0
+    }
+  },
+  "xyz_moments_of_inertia": {
+    "xx": 58.945577804700235,
+    "yy": 673.6869521814053,
+    "zz": 666.7253743767051,
+    "xy": 111.7555957667945,
+    "yz": -25.322990163417234,
+    "xz": 145.17214795882697
+  },
+  "surface_types": [
+    {
+      "surface_type": "PlaneSurfaceType",
+      "face_count": 6
+    }
+  ],
+  "vertex_valence": [
+    {
+      "valence": 3,
+      "count": 8
+    }
+  ]
+}
+
+==========================================================================================
+FILE: 100243_9fb796fe_0006.json
+metadata: project=100243_9fb796fe  component=Drone Leg  index=6
+
+timeline: 2 ops;  entities: 2
+
+  [SKETCH]  id=3d2c7500-e353-11ea-aa83-54bf646e7e1f  name=Sketch1
+    plane: name=XZ  origin=(0.0,0.0,0.0)
+           normal=(0.0,1.0,0.0)  u=(0.0,0.0,1.0)  v=(1.0,0.0,0.0)
+    points (5):
+       3d55f348: (0.0,0.0,0.0)
+       3d592750: (-58.27820137826746,-13.940145769681571,0.0)
+       3d5c5b5c: (-56.37820137826746,-13.940145769681571,0.0)
+       3d6004c2: (-56.37820137826746,-12.04014576968157,0.0)
+       3d64e66e: (-58.27820137826746,-12.04014576968157,0.0)
+    curves (4):
+       3d3cc782: SketchLine  3d592750 -> 3d5c5b5c
+       3d4b1eac: SketchLine  3d5c5b5c -> 3d6004c2
+       3d4f15dc: SketchLine  3d6004c2 -> 3d64e66e
+       3d529810: SketchLine  3d64e66e -> 3d592750
+    constraints (4):
+       HorizontalConstraint: {"line": "3d3cc782-e353-11ea-ad6c-54bf646e7e1f"}
+       VerticalConstraint: {"line": "3d4b1eac-e353-11ea-9a38-54bf646e7e1f"}
+       HorizontalConstraint: {"line": "3d4f15dc-e353-11ea-8017-54bf646e7e1f"}
+       VerticalConstraint: {"line": "3d529810-e353-11ea-9b68-54bf646e7e1f"}
+    dimensions (2):
+       d460: type=Linear Dimension-2  value=1.9000000000000001  driving=True  e1=3d592750 e2=3d5c5b5c orient=HorizontalDimensionOrientation
+       d461: type=Linear Dimension-3  value=1.9000000000000001  driving=True  e1=3d64e66e e2=3d592750 orient=VerticalDimensionOrientation
+    profiles (1):
+       90cdaad2: loops=1  total_curves=4  outer_loops=1
+
+  [EXTRUDE]  id=3d87fc64-e353-11ea-8773-54bf646e7e1f  name=Extrude1
+    operation: NewBodyFeatureOperation
+    extent_type: OneSideFeatureExtentType
+    start_extent: {'type': 'ProfilePlaneStartDefinition'}
+    extent_one: distance=13.0  taper=0.0  type=DistanceExtentDefinition
+    input profiles (1):
+       sketch=3d2c7500  profile=90cdaad2
+    bodies produced (1):
+       Body1: faces=['3da26064', '3da609a8', '3da9d9f6', '3dad5c2c', '3db1efca', '3dc2905e']
+
+[properties]  (final GT)
+{
+  "name": "Drone Leg",
+  "bounding_box": {
+    "type": "BoundingBox3D",
+    "max_point": {
+      "type": "Point3D",
+      "x": -56.37820137826746,
+      "y": 13.0,
+      "z": 13.940145769681571
+    },
+    "min_point": {
+      "type": "Point3D",
+      "x": -58.27820137826746,
+      "y": 0.0,
+      "z": 12.04014576968157
+    }
+  },
+  "vertex_count": 8,
+  "edge_count": 12,
+  "face_count": 6,
+  "loop_count": 6,
+  "shell_count": 1,
+  "body_count": 1,
+  "area": 106.01999999999997,
+  "volume": 46.92999999999998,
+  "density": 0.0026999999999999997,
+  "mass": 0.12671099999999993,
+  "center_of_mass": {
+    "type": "Point3D",
+    "x": -57.32820137826747,
+    "y": 6.5,
+    "z": 12.99014576968157
+  },
+  "principal_axes": {
+    "x_axis": {
+      "type": "Vector3D",
+      "x": 0.9888829578676007,
+      "y": 0.0,
+      "z": -0.14869598393710892,
+      "length": 1.0
+    },
+    "y_axis": {
+      "type": "Vector3D",
+      "x": 0.0,
+      "y": 1.0,
+      "z": 0.0,
+      "length": 1.0
+    },
+    "z_axis": {
+      "type": "Vector3D",
+      "x": 0.14869598393710892,
+      "y": 0.0,
+      "z": 0.9888829578676007,
+      "length": 1.0
+    }
+  },
+  "xyz_moments_of_inertia": {
+    "xx": 28.557878573055163,
+    "yy": 437.8965189179136,
+    "zz": 423.6147463448584,
+    "xy": 47.21673921147068,
+    "yz": -10.698963344043785,
+    "xz": 94.36189617323753
+  },
+  "surface_types": [
+    {
+      "surface_type": "PlaneSurfaceType",
+      "face_count": 6
+    }
+  ],
+  "vertex_valence": [
+    {
+      "valence": 3,
+      "count": 8
+    }
+  ]
+}
+
+==========================================================================================
+FILE: 100877_ac1e5a17_0001.json
+metadata: project=100877_ac1e5a17  component=Backing v1  index=1
+
+timeline: 2 ops;  entities: 2
+
+  [SKETCH]  id=6f409a36-e353-11ea-90f3-54bf646e7e1f  name=Sketch1
+    plane: name=XY  origin=(0.0,0.0,0.0)
+           normal=(0.0,0.0,1.0)  u=(1.0,0.0,0.0)  v=(0.0,1.0,0.0)
+    points (5):
+       6f44436e: (0.0,0.0,0.0)
+       6f446a80: (0.0,0.0,0.0)
+       6f44b892: (27.94,0.0,0.0)
+       6f44dfa2: (27.94,21.59,0.0)
+       6f4506ba: (0.0,21.59,0.0)
+    curves (4):
+       6f430b1a: SketchLine  6f446a80 -> 6f44b892
+       6f438030: SketchLine  6f44b892 -> 6f44dfa2
+       6f43ce5a: SketchLine  6f44dfa2 -> 6f4506ba
+       6f441c64: SketchLine  6f4506ba -> 6f446a80
+    constraints (5):
+       HorizontalConstraint: {"line": "6f430b1a-e353-11ea-9c69-54bf646e7e1f"}
+       VerticalConstraint: {"line": "6f438030-e353-11ea-a49f-54bf646e7e1f"}
+       HorizontalConstraint: {"line": "6f43ce5a-e353-11ea-ae69-54bf646e7e1f"}
+       VerticalConstraint: {"line": "6f441c64-e353-11ea-9cc7-54bf646e7e1f"}
+       CoincidentConstraint: {"entity": "6f44436e-e353-11ea-912c-54bf646e7e1f", "point": "6f446a80-e353-11ea-a488-54bf646e7e1f"}
+    dimensions (2):
+       d2: type=Linear Dimension-2  value=27.94  driving=True  e1=6f446a80 e2=6f44b892 orient=HorizontalDimensionOrientation
+       d3: type=Linear Dimension-3  value=21.59  driving=True  e1=6f4506ba e2=6f446a80 orient=VerticalDimensionOrientation
+    profiles (1):
+       dbe9b502: loops=1  total_curves=4  outer_loops=1
+
+  [EXTRUDE]  id=6f45f0fe-e353-11ea-a87e-54bf646e7e1f  name=Extrude1
+    operation: NewBodyFeatureOperation
+    extent_type: OneSideFeatureExtentType
+    start_extent: {'type': 'ProfilePlaneStartDefinition'}
+    extent_one: distance=0.15875  taper=0.0  type=DistanceExtentDefinition
+    input profiles (1):
+       sketch=6f409a36  profile=dbe9b502
+    bodies produced (1):
+       Body1: faces=['6f4c321a', '6f4c5928', '6f4ca746', '6f4cce4c', '6f4d1c5a', '6f4d6a7e']
+
+[properties]  (final GT)
+{
+  "name": "Backing v1",
+  "bounding_box": {
+    "type": "BoundingBox3D",
+    "max_point": {
+      "type": "Point3D",
+      "x": 27.94,
+      "y": 21.59,
+      "z": 0.15875
+    },
+    "min_point": {
+      "type": "Point3D",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0
+    }
+  },
+  "vertex_count": 8,
+  "edge_count": 12,
+  "face_count": 6,
+  "loop_count": 6,
+  "shell_count": 1,
+  "body_count": 1,
+  "area": 1222.174975,
+  "volume": 95.76190525000001,
+  "density": 0.00785,
+  "mass": 0.7517309562125001,
+  "center_of_mass": {
+    "type": "Point3D",
+    "x": 13.969999999999997,
+    "y": 10.795,
+    "z": 0.079375
+  },
+  "principal_axes": {
+    "x_axis": {
+      "type": "Vector3D",
+      "x": 1.0,
+      "y": 0.0,
+      "z": 0.0,
+      "length": 1.0
+    },
+    "y_axis": {
+      "type": "Vector3D",
+      "x": 0.0,
+      "y": 1.0,
+      "z": 0.0,
+      "length": 1.0
+    },
+    "z_axis": {
+      "type": "Vector3D",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 1.0,
+      "length": 1.0
+    }
+  },
+  "xyz_moments_of_inertia": {
+    "xx": 116.80728904173066,
+    "yy": 195.61763489461487,
+    "zz": 312.41229407322805,
+    "xy": -113.36565134222572,
+    "yz": -0.6441230189899189,
+    "xz": -0.8335709657516597
+  },
+  "surface_types": [
+    {
+      "surface_type": "PlaneSurfaceType",
+      "face_count": 6
+    }
+  ],
+  "vertex_valence": [
+    {
+      "valence": 3,
+      "count": 8
+    }
+  ]
+}
+
+==========================================================================================
+FILE: 100877_ac1e5a17_0017.json
+metadata: project=100877_ac1e5a17  component=Image 1 v1  index=17
+
+timeline: 2 ops;  entities: 2
+
+  [SKETCH]  id=84809f02-e353-11ea-8793-54bf646e7e1f  name=Sketch1
+    plane: name=XY  origin=(1.2699999999999996,1.2699999999999996,3.4924999999999997)
+           normal=(0.0,0.0,1.0)  u=(1.0,0.0,0.0)  v=(0.0,1.0,0.0)
+    points (5):
+       84842130: (0.0,0.0,0.0)
+       8484966e: (0.0,0.0,0.0)
+       84850b80: (25.4,0.0,0.0)
+       848580ac: (25.4,19.05,0.0)
+       8485f5da: (0.0,19.05,0.0)
+    curves (4):
+       84822590: SketchLine  8484966e -> 84850b80
+       8482c1d4: SketchLine  84850b80 -> 848580ac
+       848336ee: SketchLine  848580ac -> 8485f5da
+       8483ac0c: SketchLine  8485f5da -> 8484966e
+    constraints (5):
+       HorizontalConstraint: {"line": "84822590-e353-11ea-b7b2-54bf646e7e1f"}
+       VerticalConstraint: {"line": "8482c1d4-e353-11ea-8569-54bf646e7e1f"}
+       HorizontalConstraint: {"line": "848336ee-e353-11ea-8c30-54bf646e7e1f"}
+       VerticalConstraint: {"line": "8483ac0c-e353-11ea-8081-54bf646e7e1f"}
+       CoincidentConstraint: {"entity": "84842130-e353-11ea-b279-54bf646e7e1f", "point": "8484966e-e353-11ea-835a-54bf646e7e1f"}
+    dimensions (2):
+       d1_14: type=Linear Dimension-2  value=25.4  driving=True  e1=8484966e e2=84850b80 orient=HorizontalDimensionOrientation
+       d2_15: type=Linear Dimension-3  value=19.05  driving=True  e1=8485f5da e2=8484966e orient=VerticalDimensionOrientation
+    profiles (1):
+       530802e6: loops=1  total_curves=4  outer_loops=1
+
+  [EXTRUDE]  id=8489c646-e353-11ea-9689-54bf646e7e1f  name=Extrude1
+    operation: NewBodyFeatureOperation
+    extent_type: OneSideFeatureExtentType
+    start_extent: {'type': 'ProfilePlaneStartDefinition'}
+    extent_one: distance=0.3175  taper=0.0  type=DistanceExtentDefinition
+    input profiles (1):
+       sketch=84809f02  profile=530802e6
+    bodies produced (1):
+       Body1: faces=['849118ac', '84920308', '8492c62e', '849389a2', '84944cd8', '8494e90c']
+
+[properties]  (final GT)
+{
+  "name": "Image 1 v1",
+  "bounding_box": {
+    "type": "BoundingBox3D",
+    "max_point": {
+      "type": "Point3D",
+      "x": 25.4,
+      "y": 19.05,
+      "z": 0.3175
+    },
+    "min_point": {
+      "type": "Point3D",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0
+    }
+  },
+  "vertex_count": 8,
+  "edge_count": 12,
+  "face_count": 6,
+  "loop_count": 6,
+  "shell_count": 1,
+  "body_count": 1,
+  "area": 995.96575,
+  "volume": 153.62872499999997,
+  "density": 0.00785,
+  "mass": 1.2059854912499997,
+  "center_of_mass": {
+    "type": "Point3D",
+    "x": 12.7,
+    "y": 9.525,
+    "z": 0.15875
+  },
+  "principal_axes": {
+    "x_axis": {
+      "type": "Vector3D",
+      "x": 1.0,
+      "y": 0.0,
+      "z": 0.0,
+      "length": 1.0
+    },
+    "y_axis": {
+      "type": "Vector3D",
+      "x": 0.0,
+      "y": 1.0,
+      "z": 0.0,
+      "length": 1.0
+    },
+    "z_axis": {
+      "type": "Vector3D",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 1.0,
+      "length": 1.0
+    }
+  },
+  "xyz_moments_of_inertia": {
+    "xx": 145.92557353776013,
+    "yy": 259.3917234699257,
+    "zz": 405.23624975773424,
+    "xy": -145.88504991278432,
+    "yz": -1.8235631239098042,
+    "xz": -2.431417498546405
+  },
+  "surface_types": [
+    {
+      "surface_type": "PlaneSurfaceType",
+      "face_count": 6
+    }
+  ],
+  "vertex_valence": [
+    {
+      "valence": 3,
+      "count": 8
+    }
+  ]
+}
+
+==========================================================================================
+FILE: 101269_f084ba14_0023.json
+metadata: project=101269_f084ba14  component=basic slat v1 (5)  index=23
+
+timeline: 2 ops;  entities: 2
+
+  [SKETCH]  id=a6b027ca-e353-11ea-87ba-54bf646e7e1f  name=Sketch1
+    plane: name=XZ  origin=(49.22098315247669,46.99000000000002,53.34)
+           normal=(9.590720814060841e-32,1.0,-3.257427793444825e-16)  u=(2.4029248119121214e-45,3.257427793444825e-16,1.0)  v=(1.0,-9.590720814060841e-32,-2.37168373137323e-45)
+    points (5):
+       a6bb719e: (0.0,0.0,0.0)
+       a6bcf81e: (0.0,0.0,0.0)
+       a6bea5ac: (1.4210854715202004e-14,57.15,0.0)
+       a6c0535a: (9.525000000000013,57.15,0.0)
+       a6c24ef4: (9.524999999999999,0.0,0.0)
+    curves (4):
+       a6b5096e: SketchLine  a6bcf81e -> a6bea5ac
+       a6b68ff8: SketchLine  a6bea5ac -> a6c0535a
+       a6b81688: SketchLine  a6c0535a -> a6c24ef4
+       a6b9c406: SketchLine  a6c24ef4 -> a6bcf81e
+    constraints (1):
+       CoincidentConstraint: {"entity": "a6bb719e-e353-11ea-9972-54bf646e7e1f", "point": "a6bcf81e-e353-11ea-815d-54bf646e7e1f"}
+    dimensions (1):
+       d1_18: type=Linear Dimension-2  value=9.525  driving=True  e1=a6c24ef4 e2=a6bcf81e orient=HorizontalDimensionOrientation
+    profiles (1):
+       df04fada: loops=1  total_curves=4  outer_loops=1
+
+  [EXTRUDE]  id=a6cdbfee-e353-11ea-b230-54bf646e7e1f  name=Extrude1
+    operation: NewBodyFeatureOperation
+    extent_type: OneSideFeatureExtentType
+    start_extent: {'type': 'ProfilePlaneStartDefinition'}
+    extent_one: distance=1.905  taper=0.0  type=DistanceExtentDefinition
+    input profiles (1):
+       sketch=a6b027ca  profile=df04fada
+    bodies produced (1):
+       Body1: faces=['a6d86d90', 'a6da1b34', 'a6dbc8c2', 'a6dd7640', 'a6df23f6', 'a6e0f88a']
+
+[properties]  (final GT)
+{
+  "name": "basic slat v1 (5)",
+  "bounding_box": {
+    "type": "BoundingBox3D",
+    "max_point": {
+      "type": "Point3D",
+      "x": 9.524999999999999,
+      "y": 1.905,
+      "z": 0.0
+    },
+    "min_point": {
+      "type": "Point3D",
+      "x": 0.0,
+      "y": 0.0,
+      "z": -57.15
+    }
+  },
+  "vertex_count": 8,
+  "edge_count": 12,
+  "face_count": 6,
+  "loop_count": 6,
+  "shell_count": 1,
+  "body_count": 1,
+  "area": 1342.7392499999996,
+  "volume": 1036.9938937499999,
+  "density": 0.0005590443586999999,
+  "mass": 0.5797255863072845,
+  "center_of_mass": {
+    "type": "Point3D",
+    "x": 4.762500000000006,
+    "y": 0.9524999999999999,
+    "z": -28.575
+  },
+  "principal_axes": {
+    "x_axis": {
+      "type": "Vector3D",
+      "x": 1.0,
+      "y": 0.0,
+      "z": 0.0,
+      "length": 1.0
+    },
+    "y_axis": {
+      "type": "Vector3D",
+      "x": 0.0,
+      "y": 1.0,
+      "z": 0.0,
+      "length": 1.0
+    },
+    "z_axis": {
+      "type": "Vector3D",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 1.0,
+      "length": 1.0
+    }
+  },
+  "xyz_moments_of_inertia": {
+    "xx": 631.8528733032545,
+    "yy": 648.6835824700449,
+    "zz": 18.233268264022914,
+    "xy": -2.6297983073109954,
+    "yz": 15.77878984386595,
+    "xz": 78.8939492193299
+  },
+  "surface_types": [
+    {
+      "surface_type": "PlaneSurfaceType",
+      "face_count": 6
+    }
+  ],
+  "vertex_valence": [
+    {
+      "valence": 3,
+      "count": 8
+    }
+  ]
+}
+
+==========================================================================================
+FILE: 101817_b02acd9f_0004.json
+metadata: project=101817_b02acd9f  component=surface  index=4
+
+timeline: 2 ops;  entities: 2
+
+  [SKETCH]  id=89a67a10-e2f9-11ea-9e7d-54bf646e7e1f  name=Sketch1
+    plane: name=XZ  origin=(0.0,0.0,0.0)
+           normal=(0.0,1.0,0.0)  u=(0.0,0.0,1.0)  v=(1.0,0.0,0.0)
+    points (5):
+       89a9604c: (0.0,0.0,0.0)
+       89a9acb0: (7.829761315356478,-6.344022949372942,0.0)
+       89a9d3ae: (127.82976131535646,-6.344022949372942,0.0)
+       89aa21ee: (127.82976131535646,-66.34402294937294,0.0)
+       89aa4aa6: (7.829761315356478,-66.34402294937294,0.0)
+    curves (4):
+       89a84eec: SketchLine  89a9acb0 -> 89a9d3ae
+       89a89d1e: SketchLine  89a9d3ae -> 89aa21ee
+       89a8e94c: SketchLine  89aa21ee -> 89aa4aa6
+       89a93926: SketchLine  89aa4aa6 -> 89a9acb0
+    constraints (4):
+       HorizontalConstraint: {"line": "89a84eec-e2f9-11ea-b7ba-54bf646e7e1f"}
+       VerticalConstraint: {"line": "89a89d1e-e2f9-11ea-b039-54bf646e7e1f"}
+       HorizontalConstraint: {"line": "89a8e94c-e2f9-11ea-9543-54bf646e7e1f"}
+       VerticalConstraint: {"line": "89a93926-e2f9-11ea-a233-54bf646e7e1f"}
+    dimensions (2):
+       d90: type=Linear Dimension-2  value=120.0  driving=True  e1=89a9acb0 e2=89a9d3ae orient=HorizontalDimensionOrientation
+       d91: type=Linear Dimension-3  value=60.0  driving=True  e1=89aa4aa6 e2=89a9acb0 orient=VerticalDimensionOrientation
+    profiles (1):
+       9b9f0eab: loops=1  total_curves=4  outer_loops=1
+
+  [EXTRUDE]  id=89ab5c06-e2f9-11ea-802d-54bf646e7e1f  name=Extrude1
+    operation: NewBodyFeatureOperation
+    extent_type: OneSideFeatureExtentType
+    start_extent: {'type': 'ProfilePlaneStartDefinition'}
+    extent_one: distance=2.0  taper=0.0  type=DistanceExtentDefinition
+    input profiles (1):
+       sketch=89a67a10  profile=9b9f0eab
+    bodies produced (1):
+       Body1: faces=['89b0ffb6', '89b126ee', '89b14dc8', '89b19bcc', '89b1c300', '89b21110']
+
+[properties]  (final GT)
+{
+  "name": "surface",
+  "bounding_box": {
+    "type": "BoundingBox3D",
+    "max_point": {
+      "type": "Point3D",
+      "x": 127.82976131535646,
+      "y": 2.0,
+      "z": 66.34402294937294
+    },
+    "min_point": {
+      "type": "Point3D",
+      "x": 7.829761315356478,
+      "y": 0.0,
+      "z": 6.344022949372942
+    }
+  },
+  "vertex_count": 8,
+  "edge_count": 12,
+  "face_count": 6,
+  "loop_count": 6,
+  "shell_count": 1,
+  "body_count": 1,
+  "area": 15119.999999999998,
+  "volume": 14399.999999999998,
+  "density": 0.00785,
+  "mass": 113.03999999999998,
+  "center_of_mass": {
+    "type": "Point3D",
+    "x": 67.82976131535646,
+    "y": 1.0,
+    "z": 36.34402294937294
+  },
+  "principal_axes": {
+    "x_axis": {
+      "type": "Vector3D",
+      "x": 1.0,
+      "y": 0.0,
+      "z": 0.0,
+      "length": 1.0
+    },
+    "y_axis": {
+      "type": "Vector3D",
+      "x": 0.0,
+      "y": 1.0,
+      "z": 0.0,
+      "length": 1.0
+    },
+    "z_axis": {
+      "type": "Vector3D",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 1.0,
+      "length": 1.0
+    }
+  },
+  "xyz_moments_of_inertia": {
+    "xx": 183375.89998849956,
+    "yy": 838956.2618204033,
+    "zz": 655881.8018319036,
+    "xy": -7667.476219087894,
+    "yz": -4108.328354197117,
+    "xz": -278666.93167030165
+  },
+  "surface_types": [
+    {
+      "surface_type": "PlaneSurfaceType",
+      "face_count": 6
+    }
+  ],
+  "vertex_valence": [
+    {
+      "valence": 3,
+      "count": 8
+    }
+  ]
+}
+
+==========================================================================================
+FILE: 102175_699d5e7c_0003.json
+metadata: project=102175_699d5e7c  component=FLIP (1)  index=3
+
+timeline: 2 ops;  entities: 2
+
+  [SKETCH]  id=851cad6e-e2fa-11ea-8244-54bf646e7e1f  name=Sketch1
+    plane: name=XY  origin=(0.0,0.0,0.0)
+           normal=(0.0,0.0,1.0)  u=(1.0,0.0,0.0)  v=(0.0,1.0,0.0)
+    points (5):
+       8521415e: (0.0,0.0,0.0)
+       8521b6a2: (0.0,0.0,0.0)
+       85222bb8: (-3.9000000000000004,0.0,0.0)
+       852279e2: (-3.9000000000000004,6.800000000000001,0.0)
+       8522ef22: (0.0,6.800000000000001,0.0)
+    curves (4):
+       851f93a2: SketchLine  8521b6a2 -> 85222bb8
+       852008da: SketchLine  85222bb8 -> 852279e2
+       85207dfe: SketchLine  852279e2 -> 8522ef22
+       8520f33a: SketchLine  8522ef22 -> 8521b6a2
+    constraints (5):
+       HorizontalConstraint: {"line": "851f93a2-e2fa-11ea-b78c-54bf646e7e1f"}
+       VerticalConstraint: {"line": "852008da-e2fa-11ea-9927-54bf646e7e1f"}
+       HorizontalConstraint: {"line": "85207dfe-e2fa-11ea-88e5-54bf646e7e1f"}
+       VerticalConstraint: {"line": "8520f33a-e2fa-11ea-8720-54bf646e7e1f"}
+       CoincidentConstraint: {"entity": "8521415e-e2fa-11ea-898e-54bf646e7e1f", "point": "8521b6a2-e2fa-11ea-979e-54bf646e7e1f"}
+    dimensions (2):
+       d407: type=Linear Dimension-2  value=6.800000000000001  driving=True  e1=85222bb8 e2=852279e2 orient=VerticalDimensionOrientation
+       d408: type=Linear Dimension-3  value=3.9000000000000004  driving=True  e1=8521b6a2 e2=85222bb8 orient=HorizontalDimensionOrientation
+    profiles (1):
+       bc407159: loops=1  total_curves=4  outer_loops=1
+
+  [EXTRUDE]  id=8526bfc0-e2fa-11ea-a1a4-54bf646e7e1f  name=Extrude1
+    operation: NewBodyFeatureOperation
+    extent_type: OneSideFeatureExtentType
+    start_extent: {'type': 'ProfilePlaneStartDefinition'}
+    extent_one: distance=1.0  taper=0.0  type=DistanceExtentDefinition
+    input profiles (1):
+       sketch=851cad6e  profile=bc407159
+    bodies produced (1):
+       Body1: faces=['852efd12', '852f7234', '852fe73e', '85305c80', '8530d18c', '853146e6']
+
+[properties]  (final GT)
+{
+  "name": "FLIP (1)",
+  "bounding_box": {
+    "type": "BoundingBox3D",
+    "max_point": {
+      "type": "Point3D",
+      "x": 0.0,
+      "y": 6.800000000000001,
+      "z": 1.0
+    },
+    "min_point": {
+      "type": "Point3D",
+      "x": -3.9000000000000004,
+      "y": 0.0,
+      "z": 0.0
+    }
+  },
+  "vertex_count": 8,
+  "edge_count": 12,
+  "face_count": 6,
+  "loop_count": 6,
+  "shell_count": 1,
+  "body_count": 1,
+  "area": 74.44000000000001,
+  "volume": 26.520000000000007,
+  "density": 0.00785,
+  "mass": 0.20818200000000003,
+  "center_of_mass": {
+    "type": "Point3D",
+    "x": -1.9500000000000002,
+    "y": 3.4000000000000004,
+    "z": 0.5
+  },
+  "principal_axes": {
+    "x_axis": {
+      "type": "Vector3D",
+      "x": 1.0,
+      "y": 0.0,
+      "z": 0.0,
+      "length": 1.0
+    },
+    "y_axis": {
+      "type": "Vector3D",
+      "x": 0.0,
+      "y": 1.0,
+      "z": 0.0,
+      "length": 1.0
+    },
+    "z_axis": {
+      "type": "Vector3D",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 1.0,
+      "length": 1.0
+    }
+  },
+  "xyz_moments_of_inertia": {
+    "xx": 3.2781725600000007,
+    "yy": 1.12487674,
+    "zz": 4.264261300000001,
+    "xy": 1.3802466600000005,
+    "yz": -0.3539094000000001,
+    "xz": 0.20297745000000006
+  },
+  "surface_types": [
+    {
+      "surface_type": "PlaneSurfaceType",
+      "face_count": 6
+    }
+  ],
+  "vertex_valence": [
+    {
+      "valence": 3,
+      "count": 8
+    }
+  ]
+}
+
+==========================================================================================
+FILE: 102295_86f842dd_0000.json
+metadata: project=102295_86f842dd  component=FBL  index=0
+
+timeline: 2 ops;  entities: 2
+
+  [SKETCH]  id=c582fafe-e2fa-11ea-bee4-54bf646e7e1f  name=Sketch1
+    plane: name=XZ  origin=(0.0,0.0,0.0)
+           normal=(0.0,1.0,0.0)  u=(0.0,0.0,1.0)  v=(1.0,0.0,0.0)
+    points (9):
+       c583e54d: (0.0,0.0,0.0)
+       c5840c66: (1.0,-1.0,0.0)
+       c5840c67: (3.8000000000000007,-1.0,0.0)
+       c5840c68: (3.8000000000000007,1.0,0.0)
+       c584337e: (1.0,1.0,0.0)
+       c584337f: (1.0,0.0,0.0)
+       c5845a7a: (3.8000000000000007,0.0,0.0)
+       c5848180: (0.0,0.0,0.0)
+       c5848181: (4.800000000000001,0.0,0.0)
+    curves (5):
+       c5839723: SketchArc  center=c5845a7a  radius=1.0  start=0.0  end=3.141592653589793
+       c583be43: SketchArc  center=c584337f  radius=1.0  start=0.0  end=3.141592653589793
+       c5839722: SketchLine  c5840c66 -> c5840c67
+       c583be42: SketchLine  c5840c68 -> c584337e
+       c583e54c: SketchLine  c5848180 -> c5848181
+    constraints (8):
+       TangentConstraint: {"curve_one": "c5839722-e2fa-11ea-be3c-54bf646e7e1f", "curve_two": "c5839723-e2fa-11ea-9de0-54bf646e7e1f"}
+       TangentConstraint: {"curve_one": "c5839723-e2fa-11ea-9de0-54bf646e7e1f", "curve_two": "c583be42-e2fa-11ea-8602-54bf646e7e1f"}
+       ParallelConstraint: {"line_one": "c5839722-e2fa-11ea-be3c-54bf646e7e1f", "line_two": "c583be42-e2fa-11ea-8602-54bf646e7e1f"}
+       TangentConstraint: {"curve_one": "c583be42-e2fa-11ea-8602-54bf646e7e1f", "curve_two": "c583be43-e2fa-11ea-8906-54bf646e7e1f"}
+       TangentConstraint: {"curve_one": "c583be43-e2fa-11ea-8906-54bf646e7e1f", "curve_two": "c5839722-e2fa-11ea-be3c-54bf646e7e1f"}
+       MidPointConstraint: {"point": "c5848180-e2fa-11ea-ba68-54bf646e7e1f", "mid_point_curve": "c583be43-e2fa-11ea-8906-54bf646e7e1f"}
+       MidPointConstraint: {"point": "c5848181-e2fa-11ea-9b49-54bf646e7e1f", "mid_point_curve": "c5839723-e2fa-11ea-9de0-54bf646e7e1f"}
+       CoincidentConstraint: {"entity": "c583e54d-e2fa-11ea-bfa3-54bf646e7e1f", "point": "c5848180-e2fa-11ea-ba68-54bf646e7e1f"}
+    dimensions (1):
+       d1: type=Diameter Dimension-2  value=2.0  driving=True  e1= e2= orient=None
+    profiles (1):
+       fff68f5f: loops=1  total_curves=4  outer_loops=1
+
+  [EXTRUDE]  id=c5851db6-e2fa-11ea-bded-54bf646e7e1f  name=Extrude1
+    operation: NewBodyFeatureOperation
+    extent_type: OneSideFeatureExtentType
+    start_extent: {'type': 'ProfilePlaneStartDefinition'}
+    extent_one: distance=0.4  taper=0.0  type=DistanceExtentDefinition
+    input profiles (1):
+       sketch=c582fafe  profile=fff68f5f
+    bodies produced (1):
+       Body1: faces=['c5893c6e', 'c5896376', 'c5898a88', 'c589b198', 'c589d8b4', 'c589ffc2']
+
+[properties]  (final GT)
+{
+  "name": "FBL",
+  "bounding_box": {
+    "type": "BoundingBox3D",
+    "max_point": {
+      "type": "Point3D",
+      "x": 4.800000000000001,
+      "y": 0.4,
+      "z": 1.0
+    },
+    "min_point": {
+      "type": "Point3D",
+      "x": 0.0,
+      "y": 0.0,
+      "z": -1.0
+    }
+  },
+  "vertex_count": 8,
+  "edge_count": 12,
+  "face_count": 6,
+  "loop_count": 6,
+  "shell_count": 1,
+  "body_count": 1,
+  "area": 22.236459430051426,
+  "volume": 3.496637061435918,
+  "density": 0.00785,
+  "mass": 0.027448600932271954,
+  "center_of_mass": {
+    "type": "Point3D",
+    "x": 2.400000000000001,
+    "y": 0.2,
+    "z": 1.2700466249353725e-16
+  },
+  "principal_axes": {
+    "x_axis": {
+      "type": "Vector3D",
+      "x": 1.0,
+      "y": 0.0,
+      "z": 0.0,
+      "length": 1.0
+    },
+    "y_axis": {
+      "type": "Vector3D",
+      "x": 0.0,
+      "y": 1.0,
+      "z": 0.0,
+      "length": 1.0
+    },
+    "z_axis": {
+      "type": "Vector3D",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 1.0,
+      "length": 1.0
+    }
+  },
+  "xyz_moments_of_inertia": {
+    "xx": 0.009791408949455712,
+    "yy": 0.21144307299660878,
+    "zz": 0.2045795148132621,
+    "xy": -0.013175328447490541,
+    "yz": 0.0,
+    "xz": 0.0
+  },
+  "surface_types": [
+    {
+      "surface_type": "PlaneSurfaceType",
+      "face_count": 4
+    },
+    {
+      "surface_type": "CylinderSurfaceType",
+      "face_count": 2
+    }
+  ],
+  "vertex_valence": [
+    {
+      "valence": 3,
+      "count": 8
+    }
+  ]
+}
+
+==========================================================================================
+FILE: 102314_91648bfc_0000.json
+metadata: project=102314_91648bfc  component=Component1  index=0
+
+timeline: 3 ops;  entities: 3
+
+  [SKETCH]  id=c71d47b8-e2fa-11ea-8f33-54bf646e7e1f  name=Sketch1
+    plane: name=XY  origin=(0.0,0.0,0.0)
+           normal=(0.0,0.0,1.0)  u=(1.0,0.0,0.0)  v=(0.0,1.0,0.0)
+    points (3):
+       c71e0b14: (0.0,0.0,0.0)
+       c71e0b15: (0.0,0.0,0.0)
+       c71e3214: (0.0,0.0,0.0)
+    curves (2):
+       c71de400: SketchCircle  center=c71e0b15  radius=0.7965946520909482  start=None  end=None
+       c71de401: SketchCircle  center=c71e3214  radius=1.27  start=None  end=None
+    constraints (2):
+       CoincidentConstraint: {"entity": "c71e0b14-e2fa-11ea-bec1-54bf646e7e1f", "point": "c71e0b15-e2fa-11ea-8c1f-54bf646e7e1f"}
+       ConcentricConstraint: {"curve_one": "c71de401-e2fa-11ea-a365-54bf646e7e1f", "curve_two": "c71de400-e2fa-11ea-abd6-54bf646e7e1f"}
+    dimensions (2):
+       d1: type=Diameter Dimension-2  value=1.5931896  driving=True  e1= e2= orient=None
+       d2: type=Diameter Dimension-3  value=2.54  driving=True  e1= e2= orient=None
+    profiles (2):
+       b3458e74: loops=1  total_curves=1  outer_loops=1
+       4932856b: loops=2  total_curves=2  outer_loops=1
+
+  [EXTRUDE]  id=c71e5929-e2fa-11ea-a964-54bf646e7e1f  name=Extrude1
+    operation: NewBodyFeatureOperation
+    extent_type: OneSideFeatureExtentType
+    start_extent: {'type': 'ProfilePlaneStartDefinition'}
+    extent_one: distance=10.16  taper=0.0  type=DistanceExtentDefinition
+    input profiles (1):
+       sketch=c71d47b8  profile=4932856b
+    bodies produced (1):
+       Body1: faces=['c723b04a', 'c723d75c', 'c723fe68', 'c724257a']
+
+  [SKETCH]  id=c71e592a-e2fa-11ea-bcdf-54bf646e7e1f  name=Sketch2
+    plane: name=XZ  origin=(0.0,0.0,0.0)
+           normal=(0.0,1.0,0.0)  u=(0.0,0.0,1.0)  v=(1.0,0.0,0.0)
+    points (3):
+       c71f1c7a: (0.0,0.0,0.0)
+       c71f1c7b: (-1.80188050633517,-7.60914599362017,0.0)
+       c71f4380: (-1.80188050633517,-7.60914599362017,0.0)
+    curves (1):
+       c71ef562: SketchCircle  center=c71f4380  radius=1.2128156121480993  start=None  end=None
+    constraints (1):
+       CoincidentConstraint: {"entity": "c71f1c7b-e2fa-11ea-a98e-54bf646e7e1f", "point": "c71f4380-e2fa-11ea-87d6-54bf646e7e1f"}
+    dimensions (0):
+    profiles (1):
+       78aa0a64: loops=1  total_curves=1  outer_loops=1
+
+[properties]  (final GT)
+{
+  "name": "Component1",
+  "bounding_box": {
+    "type": "BoundingBox3D",
+    "max_point": {
+      "type": "Point3D",
+      "x": 1.27,
+      "y": 1.27,
+      "z": 10.16
+    },
+    "min_point": {
+      "type": "Point3D",
+      "x": -1.27,
+      "y": -1.27,
+      "z": 0.0
+    }
+  },
+  "vertex_count": 4,
+  "edge_count": 4,
+  "face_count": 4,
+  "loop_count": 8,
+  "shell_count": 1,
+  "body_count": 1,
+  "area": 138.07261149794073,
+  "volume": 31.22712786401919,
+  "density": 0.00785,
+  "mass": 0.24513295373255065,
+  "center_of_mass": {
+    "type": "Point3D",
+    "x": 2.2754021402615393e-16,
+    "y": 2.2754021402615393e-16,
+    "z": 5.08
+  },
+  "principal_axes": {
+    "x_axis": {
+      "type": "Vector3D",
+      "x": 0.9998768384767838,
+      "y": 0.015694198854077645,
+      "z": 0.0,
+      "length": 0.9999999999999998
+    },
+    "y_axis": {
+      "type": "Vector3D",
+      "x": -0.015694198854077645,
+      "y": 0.9998768384767838,
+      "z": 0.0,
+      "length": 0.9999999999999998
+    },
+    "z_axis": {
+      "type": "Vector3D",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 1.0,
+      "length": 1.0
+    }
+  },
+  "xyz_moments_of_inertia": {
+    "xx": 8.572397222938973,
+    "yy": 8.572397222938966,
+    "zz": 0.27546362666808505,
+    "xy": 1.1155520951433572e-16,
+    "yz": -2.2311041902867144e-16,
+    "xz": -2.2311041902867144e-16
+  },
+  "surface_types": [
+    {
+      "surface_type": "CylinderSurfaceType",
+      "face_count": 2
+    },
+    {
+      "surface_type": "PlaneSurfaceType",
+      "face_count": 2
+    }
+  ],
+  "vertex_valence": [
+    {
+      "valence": 1,
+      "count": 4
+    }
+  ]
+}
+
+==========================================================================================
+FILE: 102369_65e5a7e6_0003.json
+metadata: project=102369_65e5a7e6  component=Lower Triangle  index=3
+
+timeline: 2 ops;  entities: 2
+
+  [SKETCH]  id=072b6418-e2fb-11ea-ab78-54bf646e7e1f  name=Sketch1
+    plane: name=XY  origin=(0.0,0.0,0.0)
+           normal=(0.0,0.0,1.0)  u=(1.0,0.0,0.0)  v=(0.0,1.0,0.0)
+    points (13):
+       072dfc40: (0.0,0.0,0.0)
+       072e234c: (-5.923151496141496,-2.805293023074773,0.0)
+       072e4a5e: (-5.923151496141496,-2.805293023074773,0.0)
+       072e717e: (-2.695210703157296,-4.551517017008117,0.0)
+       072e987e: (-2.695210703157296,-4.551517017008117,0.0)
+       072ebfa4: (-4.316011052410477,-9.175693292612323,0.0)
+       072f0dc6: (-4.316011052410477,-9.175693292612323,0.0)
+       072f34da: (-6.397247128300511,-2.964143051616613,0.0)
+       072f82e8: (-5.685246319856297,-2.3655190730769267,0.0)
+       072fa9fa: (-5.923151496141494,-2.805293023074775,0.0)
+       072ff81e: (-2.4573055268720996,-4.111743067010268,0.0)
+       07301f34: (-2.242695267566658,-4.764189959697626,0.0)
+       07306d8a: (-2.6952107031573003,-4.551517017008118,0.0)
+    curves (7):
+       072dae1c: SketchArc  center=072fa9fa  radius=0.5000000000000003  start=0.0  end=2.389984345374801
+       072dd530: SketchArc  center=07306d8a  radius=0.5000000000000034  start=0.0  end=1.5142552279623065
+       072cc3a4: SketchCircle  center=072e234c  radius=0.25000000000000006  start=None  end=None
+       072ceab4: SketchCircle  center=072e717e  radius=0.24999999999999978  start=None  end=None
+       072d11ca: SketchLine  072f82e8 -> 072ff81e
+       072d38e2: SketchLine  07301f34 -> 072f0dc6
+       072d8700: SketchLine  072f0dc6 -> 072f34da
+    constraints (7):
+       CoincidentConstraint: {"entity": "072e4a5e-e2fb-11ea-a465-54bf646e7e1f", "point": "072e234c-e2fb-11ea-af0c-54bf646e7e1f"}
+       CoincidentConstraint: {"entity": "072e987e-e2fb-11ea-b7ab-54bf646e7e1f", "point": "072e717e-e2fb-11ea-b6c9-54bf646e7e1f"}
+       CoincidentConstraint: {"entity": "072ebfa4-e2fb-11ea-a2a3-54bf646e7e1f", "point": "072f0dc6-e2fb-11ea-931a-54bf646e7e1f"}
+       TangentConstraint: {"curve_one": "072d8700-e2fb-11ea-bb19-54bf646e7e1f", "curve_two": "072dae1c-e2fb-11ea-bd48-54bf646e7e1f"}
+       TangentConstraint: {"curve_one": "072d11ca-e2fb-11ea-8db8-54bf646e7e1f", "curve_two": "072dae1c-e2fb-11ea-bd48-54bf646e7e1f"}
+       TangentConstraint: {"curve_one": "072d11ca-e2fb-11ea-8db8-54bf646e7e1f", "curve_two": "072dd530-e2fb-11ea-b253-54bf646e7e1f"}
+       TangentConstraint: {"curve_one": "072d38e2-e2fb-11ea-8441-54bf646e7e1f", "curve_two": "072dd530-e2fb-11ea-b253-54bf646e7e1f"}
+    dimensions (8):
+       d42: type=Diameter Dimension-2  value=0.5  driving=True  e1= e2= orient=None
+       d43: type=Diameter Dimension-3  value=0.5  driving=True  e1= e2= orient=None
+       d44: type=Linear Dimension-2  value=0.5  driving=True  e1= e2=072e717e orient=None
+       d45: type=Linear Dimension-3  value=0.5  driving=True  e1= e2=072e234c orient=None
+       d46: type=Linear Dimension-4  value=0.5  driving=True  e1= e2=072e234c orient=None
+       d47: type=Linear Dimension-5  value=0.5  driving=True  e1= e2=072e717e orient=None
+       d48: type=Radial Dimension-2  value=0.5  driving=True  e1= e2= orient=None
+       d49: type=Radial Dimension-3  value=0.5  driving=True  e1= e2= orient=None
+    profiles (3):
+       218d91ff: loops=1  total_curves=1  outer_loops=1
+       2e6adef2: loops=1  total_curves=1  outer_loops=1
+       c0ac867f: loops=3  total_curves=7  outer_loops=1
+
+  [EXTRUDE]  id=07332c8a-e2fb-11ea-9eca-54bf646e7e1f  name=Extrude1
+    operation: NewBodyFeatureOperation
+    extent_type: OneSideFeatureExtentType
+    start_extent: {'type': 'ProfilePlaneStartDefinition'}
+    extent_one: distance=0.30000000000000004  taper=0.0  type=DistanceExtentDefinition
+    input profiles (1):
+       sketch=072b6418  profile=c0ac867f
+    bodies produced (1):
+       Body1: faces=['07435936', '0743a74c', '0743f574', '07441c86', '07446a9c', '0744b8ba', '0745069a', '074554c8', '0745a31e']
+
+[properties]  (final GT)
+{
+  "name": "Lower Triangle",
+  "bounding_box": {
+    "type": "BoundingBox3D",
+    "max_point": {
+      "type": "Point3D",
+      "x": -2.1952107031572963,
+      "y": -2.305293023074775,
+      "z": 0.30000000000000004
+    },
+    "min_point": {
+      "type": "Point3D",
+      "x": -6.423151496141494,
+      "y": -9.175693292612323,
+      "z": 0.0
+    }
+  },
+  "vertex_count": 14,
+  "edge_count": 19,
+  "face_count": 9,
+  "loop_count": 15,
+  "shell_count": 1,
+  "body_count": 1,
+  "area": 33.386918786653254,
+  "volume": 4.099529128918706,
+  "density": 0.00785,
+  "mass": 0.03218130366201184,
+  "center_of_mass": {
+    "type": "Point3D",
+    "x": -4.34625411283553,
+    "y": -5.204628014593403,
+    "z": 0.15000000000000005
+  },
+  "principal_axes": {
+    "x_axis": {
+      "type": "Vector3D",
+      "x": 0.9664871865135013,
+      "y": 0.2567148579751796,
+      "z": 0.0,
+      "length": 1.0
+    },
+    "y_axis": {
+      "type": "Vector3D",
+      "x": -0.2567148579751796,
+      "y": 0.9664871865135013,
+      "z": 0.0,
+      "length": 1.0
+    },
+    "z_axis": {
+      "type": "Vector3D",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 1.0,
+      "length": 1.0
+    }
+  },
+  "xyz_moments_of_inertia": {
+    "xx": 0.943488476184399,
+    "yy": 0.6347139142149488,
+    "zz": 1.5762715121796271,
+    "xy": -0.7151172590611783,
+    "yz": 0.025123757187816634,
+    "xz": 0.02098021850961422
+  },
+  "surface_types": [
+    {
+      "surface_type": "CylinderSurfaceType",
+      "face_count": 4
+    },
+    {
+      "surface_type": "PlaneSurfaceType",
+      "face_count": 5
+    }
+  ],
+  "vertex_valence": [
+    {
+      "valence": 1,
+      "count": 4
+    },
+    {
+      "valence": 3,
+      "count": 10
+    }
+  ]
+}
+
+==========================================================================================
+FILE: 102410_f9877a7b_0000.json
+metadata: project=102410_f9877a7b  component=??????3 v1  index=0
+
+timeline: 2 ops;  entities: 2
+
+  [SKETCH]  id=dc38ed94-e353-11ea-a4d2-54bf646e7e1f  name=Sketch1
+    plane: name=XZ  origin=(0.0,0.0,7.0)
+           normal=(0.0,1.0,0.0)  u=(0.0,0.0,1.0)  v=(1.0,0.0,0.0)
+    points (3):
+       dc3f7cde: (0.0,0.0,0.0)
+       dc40193a: (0.0,0.0,0.0)
+       dc408e40: (0.0,0.0,0.0)
+    curves (2):
+       dc3df664: SketchCircle  center=dc40193a  radius=0.6000000000000001  start=None  end=None
+       dc3ee0c6: SketchCircle  center=dc408e40  radius=0.42500000000000004  start=None  end=None
+    constraints (2):
+       CoincidentConstraint: {"entity": "dc3f7cde-e353-11ea-a15c-54bf646e7e1f", "point": "dc40193a-e353-11ea-9bc2-54bf646e7e1f"}
+       CoincidentConstraint: {"entity": "dc3f7cde-e353-11ea-a15c-54bf646e7e1f", "point": "dc408e40-e353-11ea-9931-54bf646e7e1f"}
+    dimensions (2):
+       d1_15: type=Diameter Dimension-2  value=1.2000000000000002  driving=True  e1= e2= orient=None
+       d2_16: type=Diameter Dimension-3  value=0.8500000000000001  driving=True  e1= e2= orient=None
+    profiles (2):
+       cb180b2c: loops=2  total_curves=2  outer_loops=1
+       faa0529e: loops=1  total_curves=1  outer_loops=1
+
+  [EXTRUDE]  id=dc42b100-e353-11ea-80bc-54bf646e7e1f  name=Extrude1
+    operation: NewBodyFeatureOperation
+    extent_type: OneSideFeatureExtentType
+    start_extent: {'type': 'ProfilePlaneStartDefinition'}
+    extent_one: distance=1.1500000000000001  taper=0.0  type=DistanceExtentDefinition
+    input profiles (1):
+       sketch=dc38ed94  profile=cb180b2c
+    bodies produced (1):
+       Body1: faces=['dc4c9b62', 'dc4dfad8', 'dc4ee52c', 'dc4fcf7a']
+
+[properties]  (final GT)
+{
+  "name": "??????3 v1",
+  "bounding_box": {
+    "type": "BoundingBox3D",
+    "max_point": {
+      "type": "Point3D",
+      "x": 0.6000000000000001,
+      "y": 1.1500000000000001,
+      "z": 0.6000000000000001
+    },
+    "min_point": {
+      "type": "Point3D",
+      "x": -0.6000000000000001,
+      "y": 0.0,
+      "z": -0.6000000000000001
+    }
+  },
+  "vertex_count": 4,
+  "edge_count": 4,
+  "face_count": 4,
+  "loop_count": 8,
+  "shell_count": 1,
+  "body_count": 1,
+  "area": 8.533351045313278,
+  "volume": 0.6480516595733201,
+  "density": 0.00785,
+  "mass": 0.005087205527650562,
+  "center_of_mass": {
+    "type": "Point3D",
+    "x": -1.713170560131166e-16,
+    "y": 0.5749999999999997,
+    "z": 0.0
+  },
+  "principal_axes": {
+    "x_axis": {
+      "type": "Vector3D",
+      "x": 1.0,
+      "y": 0.0,
+      "z": 0.0,
+      "length": 1.0
+    },
+    "y_axis": {
+      "type": "Vector3D",
+      "x": 0.0,
+      "y": 1.0,
+      "z": 0.0,
+      "length": 1.0
+    },
+    "z_axis": {
+      "type": "Vector3D",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 1.0,
+      "length": 1.0
+    }
+  },
+  "xyz_moments_of_inertia": {
+    "xx": 0.002930177392202448,
+    "yy": 0.0013751352441930262,
+    "zz": 0.0029301773922024905,
+    "xy": -1.5251688800788088e-18,
+    "yz": -4.357625371653739e-19,
+    "xz": -6.536438057480609e-19
+  },
+  "surface_types": [
+    {
+      "surface_type": "CylinderSurfaceType",
+      "face_count": 2
+    },
+    {
+      "surface_type": "PlaneSurfaceType",
+      "face_count": 2
+    }
+  ],
+  "vertex_valence": [
+    {
+      "valence": 1,
+      "count": 4
+    }
+  ]
+}
+
+==========================================================================================
+FILE: 102410_f9877a7b_0012.json
+metadata: project=102410_f9877a7b  component=??????2 v1  index=12
+
+timeline: 2 ops;  entities: 2
+
+  [SKETCH]  id=16e99af6-e354-11ea-98de-54bf646e7e1f  name=Sketch1
+    plane: name=XZ  origin=(0.0,31.0,0.0)
+           normal=(0.0,1.0,0.0)  u=(0.0,0.0,1.0)  v=(1.0,0.0,0.0)
+    points (3):
+       16f532e2: (0.0,0.0,0.0)
+       16f72eae: (0.0,0.0,0.0)
+       16f92a3a: (0.0,0.0,0.0)
+    curves (2):
+       16f1147a: SketchCircle  center=16f72eae  radius=0.6000000000000002  start=None  end=None
+       16f33736: SketchCircle  center=16f92a3a  radius=0.4250000000000001  start=None  end=None
+    constraints (2):
+       CoincidentConstraint: {"entity": "16f532e2-e354-11ea-916f-54bf646e7e1f", "point": "16f72eae-e354-11ea-93f3-54bf646e7e1f"}
+       ConcentricConstraint: {"curve_one": "16f33736-e354-11ea-98b3-54bf646e7e1f", "curve_two": "16f1147a-e354-11ea-a2d6-54bf646e7e1f"}
+    dimensions (2):
+       d1_14: type=Diameter Dimension-2  value=1.2000000000000002  driving=True  e1= e2= orient=None
+       d2_15: type=Diameter Dimension-3  value=0.8500000000000001  driving=True  e1= e2= orient=None
+    profiles (2):
+       45807499: loops=2  total_curves=2  outer_loops=1
+       4d08ce45: loops=1  total_curves=1  outer_loops=1
+
+  [EXTRUDE]  id=170b2a7a-e354-11ea-a2bd-54bf646e7e1f  name=Extrude1
+    operation: NewBodyFeatureOperation
+    extent_type: OneSideFeatureExtentType
+    start_extent: {'type': 'ProfilePlaneStartDefinition'}
+    extent_one: distance=1.2000000000000002  taper=0.0  type=DistanceExtentDefinition
+    input profiles (1):
+       sketch=16e99af6  profile=45807499
+    bodies produced (1):
+       Body1: faces=['171a44ca', '171cb5b6', '171eff6e', '17217098']
+
+[properties]  (final GT)
+{
+  "name": "??????2 v1",
+  "bounding_box": {
+    "type": "BoundingBox3D",
+    "max_point": {
+      "type": "Point3D",
+      "x": 0.6000000000000002,
+      "y": 1.2000000000000002,
+      "z": 0.6000000000000002
+    },
+    "min_point": {
+      "type": "Point3D",
+      "x": -0.6000000000000002,
+      "y": 0.0,
+      "z": -0.6000000000000002
+    }
+  },
+  "vertex_count": 4,
+  "edge_count": 4,
+  "face_count": 4,
+  "loop_count": 8,
+  "shell_count": 1,
+  "body_count": 1,
+  "area": 8.855364292306234,
+  "volume": 0.6762278186852038,
+  "density": 0.00785,
+  "mass": 0.005308388376678849,
+  "center_of_mass": {
+    "type": "Point3D",
+    "x": -2.4626826801885504e-16,
+    "y": 0.5999999999999999,
+    "z": 0.0
+  },
+  "principal_axes": {
+    "x_axis": {
+      "type": "Vector3D",
+      "x": 1.0,
+      "y": 0.0,
+      "z": 0.0,
+      "length": 1.0
+    },
+    "y_axis": {
+      "type": "Vector3D",
+      "x": 0.0,
+      "y": 1.0,
+      "z": 0.0,
+      "length": 1.0
+    },
+    "z_axis": {
+      "type": "Vector3D",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 1.0,
+      "length": 1.0
+    }
+  },
+  "xyz_moments_of_inertia": {
+    "xx": 0.003265488287341317,
+    "yy": 0.0014349237330709827,
+    "zz": 0.003265488287341359,
+    "xy": -6.536438057480609e-19,
+    "yz": -8.715250743307478e-19,
+    "xz": -1.3072876114961217e-18
+  },
+  "surface_types": [
+    {
+      "surface_type": "CylinderSurfaceType",
+      "face_count": 2
+    },
+    {
+      "surface_type": "PlaneSurfaceType",
+      "face_count": 2
+    }
+  ],
+  "vertex_valence": [
+    {
+      "valence": 1,
+      "count": 4
+    }
+  ]
+}
+
+==========================================================================================
+FILE: 102525_06a3094b_0000.json
+metadata: project=102525_06a3094b  component=SOIC-8  index=0
+
+timeline: 2 ops;  entities: 2
+
+  [SKETCH]  id=44a24774-e2fb-11ea-b20c-54bf646e7e1f  name=Sketch1
+    plane: name=XZ  origin=(-1.1730608249334942,0.22999999999999926,-2.204962007427895)
+           normal=(-2.0816681711721636e-16,1.0,-8.010620913872242e-16)  u=(2.5515822147911056e-16,-8.01062091387224e-16,-1.0)  v=(-1.0,-2.0816681711721653e-16,-2.551582214791104e-16)
+    points (6):
+       44ae0730: (0.0,0.0,0.0)
+       44aeca80: (0.19499999999999995,0.245,0.0)
+       44af8dcc: (-0.19499999999999995,0.245,0.0)
+       44b0782c: (-0.19500000000000006,-0.24500000000000005,0.0)
+       44b13b78: (0.19499999999999995,-0.24500000000000005,0.0)
+       44b225d4: (0.0,0.0,0.0)
+    curves (6):
+       44a83ada: SketchLine  44aeca80 -> 44af8dcc
+       44a97354: SketchLine  44af8dcc -> 44b0782c
+       44aa5dc8: SketchLine  44b0782c -> 44b13b78
+       44ab4834: SketchLine  44b13b78 -> 44aeca80
+       44ac3274: SketchLine  44aeca80 -> 44b0782c
+       44ad1cd2: SketchLine  44af8dcc -> 44b13b78
+    constraints (7):
+       PerpendicularConstraint: {"line_one": "44a83ada-e2fb-11ea-9f0a-54bf646e7e1f", "line_two": "44a97354-e2fb-11ea-abd2-54bf646e7e1f"}
+       ParallelConstraint: {"line_one": "44a83ada-e2fb-11ea-9f0a-54bf646e7e1f", "line_two": "44aa5dc8-e2fb-11ea-96d8-54bf646e7e1f"}
+       ParallelConstraint: {"line_one": "44a97354-e2fb-11ea-abd2-54bf646e7e1f", "line_two": "44ab4834-e2fb-11ea-8526-54bf646e7e1f"}
+       HorizontalConstraint: {"line": "44a83ada-e2fb-11ea-9f0a-54bf646e7e1f"}
+       CoincidentConstraint: {"entity": "44ac3274-e2fb-11ea-b2d1-54bf646e7e1f", "point": "44b225d4-e2fb-11ea-8a66-54bf646e7e1f"}
+       CoincidentConstraint: {"entity": "44ad1cd2-e2fb-11ea-ade6-54bf646e7e1f", "point": "44b225d4-e2fb-11ea-8a66-54bf646e7e1f"}
+       CoincidentConstraint: {"entity": "44ae0730-e2fb-11ea-8beb-54bf646e7e1f", "point": "44b225d4-e2fb-11ea-8a66-54bf646e7e1f"}
+    dimensions (2):
+       d1_5: type=Linear Dimension-2  value=0.49000000000000005  driving=True  e1=44af8dcc e2=44b0782c orient=VerticalDimensionOrientation
+       d2_5: type=Linear Dimension-3  value=0.39  driving=True  e1=44b0782c e2=44b13b78 orient=HorizontalDimensionOrientation
+    profiles (1):
+       6ed9bcf4: loops=1  total_curves=4  outer_loops=1
+
+  [EXTRUDE]  id=44ba150a-e2fb-11ea-b46c-54bf646e7e1f  name=Extrude1
+    operation: NewBodyFeatureOperation
+    extent_type: OneSideFeatureExtentType
+    start_extent: {'type': 'ProfilePlaneStartDefinition'}
+    extent_one: distance=0.15500000000000003  taper=0.0  type=DistanceExtentDefinition
+    input profiles (1):
+       sketch=44a24774  profile=6ed9bcf4
+    bodies produced (1):
+       Package: faces=['44c5d4d8', '44c6e654', '44c7f7c0', '44c8e24a', '44c9ccb8', '44cab728']
+
+[properties]  (final GT)
+{
+  "name": "SOIC-8",
+  "bounding_box": {
+    "type": "BoundingBox3D",
+    "max_point": {
+      "type": "Point3D",
+      "x": 0.19499999999999995,
+      "y": 0.15500000000000003,
+      "z": 0.24500000000000005
+    },
+    "min_point": {
+      "type": "Point3D",
+      "x": -0.19500000000000006,
+      "y": 0.0,
+      "z": -0.245
+    }
+  },
+  "vertex_count": 8,
+  "edge_count": 12,
+  "face_count": 6,
+  "loop_count": 6,
+  "shell_count": 1,
+  "body_count": 1,
+  "area": 0.655,
+  "volume": 0.029620500000000004,
+  "density": 0.00785,
+  "mass": 0.00023252092500000002,
+  "center_of_mass": {
+    "type": "Point3D",
+    "x": -2.928248132166585e-17,
+    "y": 0.07750000000000001,
+    "z": 5.85649626433317e-17
+  },
+  "principal_axes": {
+    "x_axis": {
+      "type": "Vector3D",
+      "x": 1.0,
+      "y": 0.0,
+      "z": 0.0,
+      "length": 1.0
+    },
+    "y_axis": {
+      "type": "Vector3D",
+      "x": 0.0,
+      "y": 1.0,
+      "z": 0.0,
+      "length": 1.0
+    },
+    "z_axis": {
+      "type": "Vector3D",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 1.0,
+      "length": 1.0
+    }
+  },
+  "xyz_moments_of_inertia": {
+    "xx": 6.5144612487499995e-06,
+    "yy": 7.599558898749999e-06,
+    "zz": 4.8093077987500015e-06,
+    "xy": 8.51098705401121e-22,
+    "yz": 0.0,
+    "xz": 1.702197410802242e-21
+  },
+  "surface_types": [
+    {
+      "surface_type": "PlaneSurfaceType",
+      "face_count": 6
+    }
+  ],
+  "vertex_valence": [
+    {
+      "valence": 3,
+      "count": 8
+    }
+  ]
+}
+
+==========================================================================================
+FILE: 102525_06a3094b_0004.json
+metadata: project=102525_06a3094b  component=SOP-28 (1)  index=4
+
+timeline: 2 ops;  entities: 2
+
+  [SKETCH]  id=4b4cc8de-e2fb-11ea-af90-54bf646e7e1f  name=Sketch1
+    plane: name=XZ  origin=(-1.2315906067483389,0.22999999999999926,0.6540288054420055)
+           normal=(-7.494005416219794e-16,1.0,-1.805213752861063e-16)  u=(-1.9675494446069654e-16,-1.8052137528610644e-16,-1.0)  v=(-1.0,-7.494005416219794e-16,1.9675494446069666e-16)
+    points (6):
+       4b59c15a: (0.0,0.0,0.0)
+       4b5ad2c6: (0.42500000000000004,0.8999999999999999,0.0)
+       4b5c0b40: (-0.42499999999999993,0.8999999999999999,0.0)
+       4b5db8f0: (-0.42500000000000004,-0.9000000000000001,0.0)
+       4b5ef16e: (0.42500000000000004,-0.9000000000000001,0.0)
+       4b6050fa: (0.0,0.0,0.0)
+    curves (6):
+       4b52471c: SketchLine  4b5ad2c6 -> 4b5c0b40
+       4b53a6b0: SketchLine  4b5c0b40 -> 4b5db8f0
+       4b54df3a: SketchLine  4b5db8f0 -> 4b5ef16e
+       4b5617ae: SketchLine  4b5ef16e -> 4b5ad2c6
+       4b57501c: SketchLine  4b5ad2c6 -> 4b5db8f0
+       4b5861a8: SketchLine  4b5c0b40 -> 4b5ef16e
+    constraints (7):
+       PerpendicularConstraint: {"line_one": "4b52471c-e2fb-11ea-a349-54bf646e7e1f", "line_two": "4b53a6b0-e2fb-11ea-bf1c-54bf646e7e1f"}
+       ParallelConstraint: {"line_one": "4b52471c-e2fb-11ea-a349-54bf646e7e1f", "line_two": "4b54df3a-e2fb-11ea-ae18-54bf646e7e1f"}
+       ParallelConstraint: {"line_one": "4b53a6b0-e2fb-11ea-bf1c-54bf646e7e1f", "line_two": "4b5617ae-e2fb-11ea-a9ee-54bf646e7e1f"}
+       HorizontalConstraint: {"line": "4b52471c-e2fb-11ea-a349-54bf646e7e1f"}
+       CoincidentConstraint: {"entity": "4b57501c-e2fb-11ea-ba1c-54bf646e7e1f", "point": "4b6050fa-e2fb-11ea-aefa-54bf646e7e1f"}
+       CoincidentConstraint: {"entity": "4b5861a8-e2fb-11ea-97de-54bf646e7e1f", "point": "4b6050fa-e2fb-11ea-aefa-54bf646e7e1f"}
+       CoincidentConstraint: {"entity": "4b59c15a-e2fb-11ea-8b0a-54bf646e7e1f", "point": "4b6050fa-e2fb-11ea-aefa-54bf646e7e1f"}
+    dimensions (2):
+       d1_4: type=Linear Dimension-2  value=1.8  driving=True  e1=4b5c0b40 e2=4b5db8f0 orient=VerticalDimensionOrientation
+       d2_4: type=Linear Dimension-3  value=0.8500000000000001  driving=True  e1=4b5db8f0 e2=4b5ef16e orient=HorizontalDimensionOrientation
+    profiles (1):
+       2a39c2ae: loops=1  total_curves=4  outer_loops=1
+
+  [EXTRUDE]  id=4b6d48ee-e2fb-11ea-88cd-54bf646e7e1f  name=Extrude1
+    operation: NewBodyFeatureOperation
+    extent_type: OneSideFeatureExtentType
+    start_extent: {'type': 'ProfilePlaneStartDefinition'}
+    extent_one: distance=0.25  taper=0.0  type=DistanceExtentDefinition
+    input profiles (1):
+       sketch=4b4cc8de  profile=2a39c2ae
+    bodies produced (1):
+       Package: faces=['4b7a1a28', '4b7b52c8', '4b7c8b3e', '4b7dc3f4', '4b7efc78', '4b803500']
+
+[properties]  (final GT)
+{
+  "name": "SOP-28 (1)",
+  "bounding_box": {
+    "type": "BoundingBox3D",
+    "max_point": {
+      "type": "Point3D",
+      "x": 0.42500000000000004,
+      "y": 0.25,
+      "z": 0.9000000000000001
+    },
+    "min_point": {
+      "type": "Point3D",
+      "x": -0.42500000000000004,
+      "y": 0.0,
+      "z": -0.8999999999999999
+    }
+  },
+  "vertex_count": 8,
+  "edge_count": 12,
+  "face_count": 6,
+  "loop_count": 6,
+  "shell_count": 1,
+  "body_count": 1,
+  "area": 4.385000000000001,
+  "volume": 0.38250000000000006,
+  "density": 0.00785,
+  "mass": 0.003002625,
+  "center_of_mass": {
+    "type": "Point3D",
+    "x": 0.0,
+    "y": 0.125,
+    "z": 1.4512719276145835e-16
+  },
+  "principal_axes": {
+    "x_axis": {
+      "type": "Vector3D",
+      "x": 1.0,
+      "y": 0.0,
+      "z": 0.0,
+      "length": 1.0
+    },
+    "y_axis": {
+      "type": "Vector3D",
+      "x": 0.0,
+      "y": 1.0,
+      "z": 0.0,
+      "length": 1.0
+    },
+    "z_axis": {
+      "type": "Vector3D",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 1.0,
+      "length": 1.0
+    }
+  },
+  "xyz_moments_of_inertia": {
+    "xx": 0.0008732634375,
+    "yy": 0.0009914917968749997,
+    "zz": 0.00024333773437499982,
+    "xy": 0.0,
+    "yz": -5.447031714567174e-20,
+    "xz": -2.1788126858268695e-19
+  },
+  "surface_types": [
+    {
+      "surface_type": "PlaneSurfaceType",
+      "face_count": 6
+    }
+  ],
+  "vertex_valence": [
+    {
+      "valence": 3,
+      "count": 8
+    }
+  ]
+}
+
+==========================================================================================
+FILE: 102525_06a3094b_0006.json
+metadata: project=102525_06a3094b  component=SOP-28  index=6
+
+timeline: 2 ops;  entities: 2
+
+  [SKETCH]  id=62ff8be4-e2fb-11ea-bd2f-54bf646e7e1f  name=Sketch1
+    plane: name=XZ  origin=(1.252498251306309,0.2299999999999988,0.4672492936799411)
+           normal=(-3.883281156126478e-16,1.0,7.287471719485528e-17)  u=(-0.004886902454023929,7.097612537822706e-17,-0.999988059020909)  v=(-0.999988059020909,-3.886796102290347e-16,0.004886902454023929)
+    points (6):
+       631eac9c: (0.0,0.0,0.0)
+       6321b9dc: (0.5649999999999998,1.05,0.0)
+       6324ee28: (-0.5649999999999997,1.05,0.0)
+       6327d454: (-0.5650000000000002,-1.05,0.0)
+       632b089e: (0.5649999999999998,-1.05,0.0)
+       632f0022: (0.0,0.0,0.0)
+    curves (6):
+       63099dee: SketchLine  6321b9dc -> 6324ee28
+       630de39c: SketchLine  6324ee28 -> 6327d454
+       6311660c: SketchLine  6327d454 -> 632b089e
+       63150f54: SketchLine  632b089e -> 6321b9dc
+       631843ae: SketchLine  6321b9dc -> 6327d454
+       631b780a: SketchLine  6324ee28 -> 632b089e
+    constraints (7):
+       PerpendicularConstraint: {"line_one": "63099dee-e2fb-11ea-bec6-54bf646e7e1f", "line_two": "630de39c-e2fb-11ea-a645-54bf646e7e1f"}
+       ParallelConstraint: {"line_one": "63099dee-e2fb-11ea-bec6-54bf646e7e1f", "line_two": "6311660c-e2fb-11ea-a4bd-54bf646e7e1f"}
+       ParallelConstraint: {"line_one": "630de39c-e2fb-11ea-a645-54bf646e7e1f", "line_two": "63150f54-e2fb-11ea-b685-54bf646e7e1f"}
+       HorizontalConstraint: {"line": "63099dee-e2fb-11ea-bec6-54bf646e7e1f"}
+       CoincidentConstraint: {"entity": "631843ae-e2fb-11ea-85bd-54bf646e7e1f", "point": "632f0022-e2fb-11ea-b2ef-54bf646e7e1f"}
+       CoincidentConstraint: {"entity": "631b780a-e2fb-11ea-9eed-54bf646e7e1f", "point": "632f0022-e2fb-11ea-b2ef-54bf646e7e1f"}
+       CoincidentConstraint: {"entity": "631eac9c-e2fb-11ea-b50a-54bf646e7e1f", "point": "632f0022-e2fb-11ea-b2ef-54bf646e7e1f"}
+    dimensions (2):
+       d1_3: type=Linear Dimension-2  value=2.1  driving=True  e1=6324ee28 e2=6327d454 orient=VerticalDimensionOrientation
+       d2_3: type=Linear Dimension-3  value=1.1300000000000001  driving=True  e1=6327d454 e2=632b089e orient=HorizontalDimensionOrientation
+    profiles (1):
+       b3ac2c8d: loops=1  total_curves=4  outer_loops=1
+
+  [EXTRUDE]  id=634bafe2-e2fb-11ea-bc1b-54bf646e7e1f  name=Extrude1
+    operation: NewBodyFeatureOperation
+    extent_type: OneSideFeatureExtentType
+    start_extent: {'type': 'ProfilePlaneStartDefinition'}
+    extent_one: distance=0.30000000000000004  taper=0.0  type=DistanceExtentDefinition
+    input profiles (1):
+       sketch=62ff8be4  profile=b3ac2c8d
+    bodies produced (1):
+       Package: faces=['635c2a34', '635e4d14', '636021d4', '6361f688', '6363cb3a', '6365c718']
+
+[properties]  (final GT)
+{
+  "name": "SOP-28",
+  "bounding_box": {
+    "type": "BoundingBox3D",
+    "max_point": {
+      "type": "Point3D",
+      "x": 0.5649999999999997,
+      "y": 0.30000000000000004,
+      "z": 1.05
+    },
+    "min_point": {
+      "type": "Point3D",
+      "x": -0.5650000000000002,
+      "y": 0.0,
+      "z": -1.05
+    }
+  },
+  "vertex_count": 8,
+  "edge_count": 12,
+  "face_count": 6,
+  "loop_count": 6,
+  "shell_count": 1,
+  "body_count": 1,
+  "area": 6.683999999999999,
+  "volume": 0.7119,
+  "density": 0.00785,
+  "mass": 0.005588414999999999,
+  "center_of_mass": {
+    "type": "Point3D",
+    "x": -1.5595210347312214e-16,
+    "y": 0.15000000000000002,
+    "z": 1.5595210347312214e-16
+  },
+  "principal_axes": {
+    "x_axis": {
+      "type": "Vector3D",
+      "x": 1.0,
+      "y": 0.0,
+      "z": 0.0,
+      "length": 1.0
+    },
+    "y_axis": {
+      "type": "Vector3D",
+      "x": 0.0,
+      "y": 1.0,
+      "z": 0.0,
+      "length": 1.0
+    },
+    "z_axis": {
+      "type": "Vector3D",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 1.0,
+      "length": 1.0
+    }
+  },
+  "xyz_moments_of_inertia": {
+    "xx": 0.0022213949624999988,
+    "yy": 0.002648396438624998,
+    "zz": 0.0007623063761249991,
+    "xy": 5.447031714567174e-20,
+    "yz": -1.0894063429134348e-19,
+    "xz": 8.715250743307478e-19
+  },
+  "surface_types": [
+    {
+      "surface_type": "PlaneSurfaceType",
+      "face_count": 6
+    }
+  ],
+  "vertex_valence": [
+    {
+      "valence": 3,
+      "count": 8
+    }
+  ]
+}

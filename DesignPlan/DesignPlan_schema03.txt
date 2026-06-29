@@ -1,0 +1,180 @@
+{
+  "schema_version": "design_plan_v0.3",
+  "schema_doc": "v0.3 changes (see doc/DesignPlan_schema_v2评审与v3改进.md): (1) profile multi-ring for holes/annulus; (2) dimensions parametric per profile.type (radius etc.); (3) primitive_type derived from profile.type; (4) auxiliary_geometry for unconsumed sketches; (5) structured constraints with ring/curve refs; (6) surface_type_distribution intent; (7) frame.span_computation=vertex_projection; (8) fixes 6 legacy issues from doc/03 §7 (redundancy, world-axis bbox, etc.).",
+
+  "sample_id": "<required: source JSON filename stem>",
+  "source_component_name": "<from metadata.component_name>",
+  "unit": "mm",
+  "_doc_unit": "ALL numeric values in mm (or mm-derived: mm for length/radius, deg for angles). Source JSON values are in cm and MUST be multiplied by 10. See doc/04 §8.2 unit trap.",
+
+  "coordinate_system": {
+    "frame": "part_local",
+    "origin_convention": "bbox_min_corner",
+    "axes": {"x": [1, 0, 0], "y": [0, 1, 0], "z": [0, 0, 1]},
+    "unit": "mm"
+  },
+
+  "target": {
+    "object_type": "single_part",
+    "part_category": "<derived; see part_category_rules below. One of: square_strut | rectangular_slat_or_strip | flat_plate_or_panel | block | disk | tube_or_sleeve | stadium_extrusion | bracket_with_fillets | uncategorized>",
+    "body_count": "<required: integer>",
+    "engineering_description": "<natural language; NOT verifiable>"
+  },
+
+  "solid_bodies": [
+    {
+      "id": "body_0",
+      "primitive_type": "<DERIVED from profile.type: rectangle->extruded_rectangle, circle->extruded_circle, annulus->extruded_annulus, stadium->extruded_stadium, polygon_with_fillets->extruded_polygon_with_fillets, arbitrary_closed->extruded_profile>",
+      "_doc_primitive": "No longer an independent enum; derived from profile.type to eliminate redundancy.",
+
+      "frame": {
+        "u_dir": "<required: unit vector, sketch u_direction>",
+        "v_dir": "<required: unit vector, sketch v_direction, orthogonal to u_dir>",
+        "w_dir": "<required: unit vector, sketch normal = cross(u_dir,v_dir)>",
+        "span_computation": "vertex_projection",
+        "_doc_span": "MANDATORY value 'vertex_projection'. All spans computed by projecting unique vertices onto u/v/w axes (exp01 KQP method). Never use axis-aligned bbox (ambiguous for rotated frames)."
+      },
+
+      "profile": {
+        "type": "<rectangle | circle | annulus | stadium | polygon_with_fillets | arbitrary_closed>",
+        "closed": true,
+        "rings": [
+          {
+            "role": "outer",
+            "loop_type": "<polyline | circle | composite_line_arc>",
+            "curve_count": "<integer>",
+            "curves": [
+              {"kind": "line", "ref": "0:0", "start_uv": [0,0], "end_uv": [0,0]},
+              {"kind": "arc",  "ref": "0:1", "center_uv": [0,0], "radius": 0, "start_angle_deg": 0, "end_angle_deg": 0},
+              {"kind": "circle","ref": "0:2", "center_uv": [0,0], "radius": 0}
+            ]
+          },
+          {
+            "role": "inner",
+            "loop_type": "circle",
+            "curve_count": 1,
+            "curves": [
+              {"kind": "circle", "ref": "1:0", "center_uv": [0,0], "radius": 0}
+            ]
+          }
+        ],
+        "_doc_rings": "rings[0] is ALWAYS outer (solid boundary). Subsequent rings with role=inner are subtractive (holes). ref='ring_idx:curve_idx' is local to this profile, NOT Fusion UUID. curve coordinates in sketch UV plane."
+      },
+
+      "extrude": {
+        "extent_type": "<one_side | two_side | symmetric>",
+        "operation": "<new_body | join | cut | intersect>",
+        "taper_angle_deg": {"value": 0.0, "tol": 0.01, "tol_kind": "absolute"},
+        "_doc_extrude": "Distance REMOVED from here (was redundant with dimensions.extrude_distance in v0.2). Only non-distance extrude semantics remain."
+      },
+
+      "dimensions": {
+        "extrude_distance": {"value": "<mm>", "tol": "<mm>", "tol_kind": "absolute", "source": "<explicit_dimension | inferred_from_point_span>"},
+        "_doc_dimensions": "THE single source of truth for body size. Type-specific params below are present ONLY when profile.type matches.",
+        "_type_rectangle": {
+          "length_u": {"value": "<mm>", "tol": "<mm>", "tol_kind": "absolute", "source": "<...>"},
+          "width_v":  {"value": "<mm>", "tol": "<mm>", "tol_kind": "absolute", "source": "<...>"}
+        },
+        "_type_circle": {
+          "radius": {"value": "<mm>", "tol": "<mm>", "tol_kind": "absolute", "source": "<...>"}
+        },
+        "_type_annulus": {
+          "outer_radius": {"value": "<mm>", "tol": "<mm>", "source": "<...>"},
+          "inner_radius": {"value": "<mm>", "tol": "<mm>", "source": "<...>"}
+        },
+        "_type_stadium": {
+          "straight_length": {"value": "<mm>", "tol": "<mm>", "source": "<...>"},
+          "radius":          {"value": "<mm>", "tol": "<mm>", "source": "<...>"}
+        },
+        "_type_polygon_with_fillets": {
+          "side_lengths":  [{"value": "<mm>", "source": "<...>"}],
+          "fillet_radii":  [{"value": "<mm>", "source": "<...>"}],
+          "hole_radii":    [{"value": "<mm>", "source": "<...>"}]
+        }
+      },
+
+      "modifications": [],
+      "_doc_modifications": "Post-extrude local features (holes, slots, chamfers). Empty for pure extrusions. Profile-internal holes go in profile.rings[role=inner], NOT here."
+    }
+  ],
+
+  "auxiliary_geometry": {
+    "unused_sketches": "<integer count of sketches in source timeline not consumed by any extrude>",
+    "note": "<why they exist, e.g. 'positioning reference for later ops not in this sequence'>",
+    "_doc": "Records source-only auxiliary geometry for traceability. NOT verifiable, NOT a design requirement."
+  },
+
+  "constraints": [
+    {
+      "type": "<orthogonal_adjacent_edges | tangent | concentric | parallel | perpendicular | symmetry | coincident_inert>",
+      "_doc_structured": "Each type has its own fields. Generic subject/expected for orthogonal_adjacent_edges; structured refs (ring:curve) for the rest.",
+      "subject": "<body_id, for orthogonal_adjacent_edges>",
+      "expected": "<for orthogonal_adjacent_edges>",
+      "curve_a": "<ring:curve ref, for tangent/parallel/perpendicular>",
+      "curve_b": "<ring:curve ref, for tangent/parallel/perpendicular>",
+      "circle_a": "<ring:curve ref, for concentric>",
+      "circle_b": "<ring:curve ref, for concentric>",
+      "tol": 1e-6,
+      "note": "<optional, e.g. 'geometrically_inert' for coincident_inert>"
+    }
+  ],
+
+  "validation_intents": [
+    {
+      "id": "<unique>",
+      "intent": "<body_count | span_along_frame_axis | all_faces_planar | surface_type_distribution | cylinder_face_count | is_solid | occt_is_valid | euler_characteristic | edge_orthogonality | profile_closed>",
+      "expected": "<value>",
+      "tolerance": "<optional>",
+      "frame_axis": "<u|v|w, for span_along_frame_axis>",
+      "_doc": "span_along_frame_axis REPLACES v0.2 bbox_size (which used ambiguous world axes). surface_type_distribution expected like {PlaneSurfaceType:4, CylinderSurfaceType:2}."
+    }
+  ],
+
+  "derived": {
+    "_doc": "Values derived from dimensions; convenience only, NOT authoritative. Conflicts resolved in favor of dimensions.",
+    "part_category": "<auto-classified per rules below>",
+    "world_bbox_estimate": {
+      "along_x": "<mm, projected>",
+      "along_y": "<mm>",
+      "along_z": "<mm>",
+      "_doc": "ESTIMATE of world-axis bbox by projecting body spans onto world axes. KQP should use span_along_frame_axis instead; this is informational only."
+    }
+  },
+
+  "non_verifiable": {
+    "world_pose": "Assembly-context world coordinates omitted (Non-Leakage).",
+    "engineering_description": "Natural language; KQP ignores.",
+    "auxiliary_geometry": "Unused sketches recorded for traceability only."
+  },
+
+  "compiler_notes": {
+    "source_sketch_count": "<integer>",
+    "source_extrude_count": "<integer>",
+    "explicit_dimension_count": "<integer>",
+    "inferred_dimensions": "<list of dimension keys back-filled from point span>",
+    "source_constraints": [
+      {"type": "<Fusion constraint type>", "count": "<integer>", "note": "<optional>"}
+    ],
+    "warnings": "<list of strings>",
+    "unit_conversion_applied": "cm_to_mm (x10)",
+    "_doc": "Structured per doc/03 §7.5. source_constraints now [{type,count,note}] not free strings."
+  },
+
+  "part_category_rules": {
+    "_doc": "Quantified rules for derived.part_category (fixes doc/03 §7.4). All dimensions in mm.",
+    "compute": "sort [extrude_distance, max_in_plane_dim, min_in_plane_dim] -> [d_min, d_mid, d_max]; aspect = d_max/d_min",
+    "rules": [
+      "profile.type==circle && no inner rings -> disk (if extrude < 0.5*radius) | cylinder (else)",
+      "profile.type==annulus -> tube_or_sleeve",
+      "profile.type==stadium -> stadium_extrusion",
+      "profile.type==polygon_with_fillets -> bracket_with_fillets",
+      "profile.type==rectangle: d_min==d_mid && aspect>3 -> square_strut; d_min==d_mid -> block; aspect>10 && d_min<d_mid*0.3 -> flat_plate_or_panel; aspect>10 -> rectangular_slat_or_strip; aspect<1.5 -> block; else uncategorized"
+    ]
+  },
+
+  "forbidden_fields": {
+    "procedural": ["timeline_index", "sketch_id", "profile_id", "face_id", "edge_id", "body_token", "api_call_order", "operation_sequence", "extrude_feature_name", "fusion_uuid"],
+    "leakage": ["exact_face_count", "exact_edge_count", "exact_vertex_count", "exact_volume", "exact_surface_area", "exact_center_of_mass", "brep_topology", "world_coordinates", "density", "mass"],
+    "v0_2_removed": ["global_envelope.bbox (-> derived.world_bbox_estimate)", "base_geometry", "features", "profile.parameters (-> dimensions)", "extrude.distance (-> dimensions.extrude_distance)", "validation_intents[].source", "validation_intents bbox_size with world axis"]
+  }
+}

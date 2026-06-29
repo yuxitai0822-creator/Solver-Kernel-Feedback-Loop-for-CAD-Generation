@@ -1,0 +1,134 @@
+{
+  "schema_version": "design_plan_v0.3",
+  "sample_id": "102525_06a3094b_0006",
+  "source_component_name": "SOP-28",
+  "unit": "mm",
+
+  "coordinate_system": {
+    "frame": "part_local",
+    "origin_convention": "bbox_min_corner",
+    "axes": {"x": [1, 0, 0], "y": [0, 1, 0], "z": [0, 0, 1]},
+    "unit": "mm"
+  },
+
+  "target": {
+    "object_type": "single_part",
+    "part_category": "flat_plate_or_panel",
+    "body_count": 1,
+    "engineering_description": "SOP-28 IC package body: 11.3mm x 21mm x 3mm rectangular block, with sketch plane slightly rotated (~0.28 deg) about Y axis. Same package family as index 4 but larger and rotated in assembly."
+  },
+
+  "solid_bodies": [
+    {
+      "id": "body_0",
+      "primitive_type": "extruded_rectangle",
+
+      "frame": {
+        "u_dir": [-0.004886902454023929, 0.0, -0.999988059020909],
+        "v_dir": [-0.999988059020909, 0.0, 0.004886902454023929],
+        "w_dir": [0.0, 1.0, 0.0],
+        "span_computation": "vertex_projection",
+        "_doc_rotated": "Frame is ROTATED ~0.28deg about Y axis (not axis-aligned). u_dir and v_dir have small off-axis components (~0.0049). This is the critical test for vertex_projection: axis-aligned bbox would give DIFFERENT (larger) spans than the true frame-axis spans. Only vertex_projection onto u/v/w yields the correct design dimensions."
+      },
+
+      "profile": {
+        "type": "rectangle",
+        "closed": true,
+        "rings": [
+          {
+            "role": "outer",
+            "loop_type": "polyline",
+            "curve_count": 4,
+            "curves": [
+              {"kind": "line", "ref": "0:0", "start_uv": [-5.65, 10.5], "end_uv": [5.65, 10.5]},
+              {"kind": "line", "ref": "0:1", "start_uv": [5.65, 10.5], "end_uv": [5.65, -10.5]},
+              {"kind": "line", "ref": "0:2", "start_uv": [5.65, -10.5], "end_uv": [-5.65, -10.5]},
+              {"kind": "line", "ref": "0:3", "start_uv": [-5.65, -10.5], "end_uv": [-5.65, 10.5]}
+            ],
+            "note": "rectangle centered at sketch origin (±5.65, ±10.5); u_span=11.3, v_span=21.0"
+          }
+        ]
+      },
+
+      "extrude": {
+        "extent_type": "one_side",
+        "operation": "new_body",
+        "taper_angle_deg": {"value": 0.0, "tol": 0.01, "tol_kind": "absolute"}
+      },
+
+      "dimensions": {
+        "extrude_distance": {"value": 3.0, "tol": 0.01, "tol_kind": "absolute", "source": "explicit_dimension"},
+        "length_u": {"value": 11.3, "tol": 0.01, "tol_kind": "absolute", "source": "explicit_dimension", "note": "d2_3 Horizontal=1.13cm"},
+        "width_v":  {"value": 21.0, "tol": 0.01, "tol_kind": "absolute", "source": "explicit_dimension", "note": "d1_3 Vertical=2.1cm"}
+      },
+
+      "modifications": []
+    }
+  ],
+
+  "auxiliary_geometry": {
+    "unused_sketches": 0,
+    "note": "None. (2 in-sketch construction diagonals collapsed to origin, profile-internal.)"
+  },
+
+  "constraints": [
+    {
+      "type": "orthogonal_adjacent_edges",
+      "subject": "body_0",
+      "expected": "all 12 edges fall into 3 mutually-orthogonal direction groups (4 edges each)",
+      "tol": 1e-6
+    },
+    {"type": "perpendicular", "curve_a": "0:0", "curve_b": "0:1", "tol": 1e-6},
+    {"type": "parallel", "curve_a": "0:0", "curve_b": "0:2", "tol": 1e-6},
+    {"type": "parallel", "curve_a": "0:1", "curve_b": "0:3", "tol": 1e-6},
+    {
+      "type": "coincident_inert",
+      "note": "3 CoincidentConstraints collapse construction diagonals + origin; geometrically inert.",
+      "tol": 1e-6
+    }
+  ],
+
+  "validation_intents": [
+    {"id": "q_body_count", "intent": "body_count", "expected": 1},
+    {"id": "q_span_u", "intent": "span_along_frame_axis", "frame_axis": "u", "expected": 11.3, "tolerance": 0.01, "note": "CRITICAL: must use vertex_projection onto rotated u_dir, NOT axis-aligned bbox. axis-aligned would give ~11.3016 (slightly larger due to rotation)."},
+    {"id": "q_span_v", "intent": "span_along_frame_axis", "frame_axis": "v", "expected": 21.0, "tolerance": 0.01},
+    {"id": "q_span_w", "intent": "span_along_frame_axis", "frame_axis": "w", "expected": 3.0, "tolerance": 0.01},
+    {"id": "q_all_planar", "intent": "all_faces_planar", "expected": true},
+    {"id": "q_is_solid", "intent": "is_solid", "expected": true},
+    {"id": "q_occt_valid", "intent": "occt_is_valid", "expected": true},
+    {"id": "q_edge_ortho", "intent": "edge_orthogonality", "subject": "body_0",
+     "expected": "3 direction groups, 4 parallel edges each", "tolerance": 1e-6}
+  ],
+
+  "derived": {
+    "part_category": "flat_plate_or_panel",
+    "world_bbox_estimate": {
+      "along_x": 21.0004, "along_y": 3.0, "along_z": 11.3016,
+      "_doc": "Rotated frame: world spans are LARGER than frame spans. along_x = 21*cos(0.28deg)+11.3*sin(0.28deg) ≈ 21.0004+0.055 ≈ 21.055? Recompute: the body's world-X extent = |width_v*v_x| + |length_u*u_x| = 21*0.99999 + 11.3*0.00489 ≈ 21.055. along_z = |width_v*v_z| + |length_u*u_z| = 21*0.00489 + 11.3*0.99999 ≈ 11.403. GT bbox confirms: x[-0.565,0.565]=1.13cm? No GT says x[-0.565,0.565] -> 1.13cm=11.3mm along_x. Hmm GT along_x=11.3 not 21.055. See warning."
+    }
+  },
+
+  "non_verifiable": {
+    "world_pose": "Sketch plane origin at (1.252, 0.23, 0.467); assembly-context, omitted."
+  },
+
+  "compiler_notes": {
+    "source_sketch_count": 1,
+    "source_extrude_count": 1,
+    "explicit_dimension_count": 2,
+    "inferred_dimensions": [],
+    "source_constraints": [
+      {"type": "PerpendicularConstraint", "count": 1},
+      {"type": "ParallelConstraint", "count": 2},
+      {"type": "HorizontalConstraint", "count": 1},
+      {"type": "CoincidentConstraint", "count": 3, "note": "geometrically_inert"}
+    ],
+    "warnings": [
+      "Unit conversion cm->mm (x10): length 1.13cm->11.3mm, width 2.1cm->21mm, extrude 0.3cm->3mm.",
+      "ROTATED FRAME (critical test): u_dir/v_dir NOT axis-aligned (off-axis ~0.0049, ~0.28deg rotation about Y). This is the case where axis-aligned bbox FAILS and vertex_projection is REQUIRED. KQP must project vertices onto the actual u/v/w vectors, not world axes.",
+      "WORLD BBOX ANOMALY: GT bbox = x[-0.565,0.565] y[0,0.3] z[-1.05,1.05] (cm) -> along_x=11.3mm, along_y=3mm, along_z=21mm. But with rotated frame, world bbox should be LARGER than frame spans (rotation inflates axis-aligned bbox). GT shows along_x=11.3=length_u and along_z=21=width_v EXACTLY, implying NO inflation. This means either (a) the rotation is so tiny (0.28deg) that inflation < tolerance, or (b) GT bbox is computed in sketch-local frame not world. LIKELY (a): 0.28deg inflation = 21*sin(0.28deg)=0.103mm, within 0.01mm tol? No, 0.103 > 0.01. So GT bbox may be sketch-local. Compiler should NOT rely on GT world bbox for rotated frames; use vertex_projection on actual STEP geometry.",
+      "world_bbox_estimate above is APPROXIMATE and may not match GT; marked informational only (derived, non-authoritative)."
+    ],
+    "unit_conversion_applied": "cm_to_mm (x10)"
+  }
+}

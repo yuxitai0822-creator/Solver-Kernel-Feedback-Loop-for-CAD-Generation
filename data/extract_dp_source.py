@@ -23,6 +23,17 @@ IDS = [
     "100877_ac1e5a17_0001",
     "100877_ac1e5a17_0017",
     "101269_f084ba14_0023",
+    # --- samples 11-20 (for v3 authoring + compiler verification) ---
+    "101817_b02acd9f_0004",
+    "102175_699d5e7c_0003",
+    "102295_86f842dd_0000",
+    "102314_91648bfc_0000",
+    "102369_65e5a7e6_0003",
+    "102410_f9877a7b_0000",
+    "102410_f9877a7b_0012",
+    "102525_06a3094b_0000",
+    "102525_06a3094b_0004",
+    "102525_06a3094b_0006",
 ]
 
 
@@ -147,7 +158,7 @@ def main():
             big_out.append("MISSING: " + str(p))
             continue
         big_out.append(summarize(p))
-    out_path = Path(__file__).resolve().parent / "dp_source_summary.txt"
+    out_path = Path(__file__).resolve().parent / "dp_source_summary_11_20.txt"
     out_path.write_text("\n\n".join(big_out), encoding="utf-8")
     print("Wrote", out_path)
 
