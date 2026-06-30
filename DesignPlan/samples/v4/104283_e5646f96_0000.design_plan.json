@@ -1,0 +1,107 @@
+{
+  "schema_version": "design_plan_v0.4",
+  "sample_id": "104283_e5646f96_0000",
+  "source_component_name": "SHAFT[ v1",
+  "unit": "mm",
+
+  "coordinate_system": {
+    "frame": "part_local",
+    "origin_convention": "bbox_min_corner",
+    "axes": {"x": [1, 0, 0], "y": [0, 1, 0], "z": [0, 0, 1]},
+    "unit": "mm"
+  },
+
+  "target": {
+    "object_type": "single_part",
+    "part_category": "disk",
+    "body_count": 1,
+    "engineering_description": "Cylindrical shaft segment: diameter 25mm, length 75mm along X (YZ sketch plane). A simple shaft/axle sub-component."
+  },
+
+  "solid_bodies": [
+    {
+      "id": "body_0",
+      "primitive_type": "extruded_circle",
+
+      "frame": {
+        "u_dir": [0, 1, 0],
+        "v_dir": [0, 0, 1],
+        "w_dir": [1, 0, 0],
+        "span_computation": "vertex_projection",
+        "_doc_yz": "YZ plane: u=(0,1,0)=worldY, v=(0,0,1)=worldZ, w=normal=(1,0,0)=worldX. Extrude along world X."
+      },
+
+      "profiles": [
+        {
+          "type": "circle",
+          "closed": true,
+          "rings": [
+            {
+              "role": "outer",
+              "loop_type": "circle",
+              "curve_count": 1,
+              "curves": [
+                {"kind": "circle", "ref": "0:0", "center_uv": [-15.0, 10.0], "radius": 12.5}
+              ]
+            }
+          ]
+        }
+      ],
+
+      "extrude": {
+        "extent_type": "one_side",
+        "direction": "+w",
+        "distance_total": {"value": 75.0, "tol": 0.05, "tol_kind": "absolute", "source": "explicit_dimension"},
+        "operation": "new_body",
+        "taper_angle_deg": {"value": 0.0, "tol": 0.01, "tol_kind": "absolute"}
+      },
+
+      "dimensions": {
+        "extrude_distance": {"value": 75.0, "tol": 0.05, "tol_kind": "absolute", "source": "explicit_dimension"},
+        "profiles": [
+          {"radius": {"value": 12.5, "tol": 0.01, "tol_kind": "absolute", "source": "explicit_dimension", "note": "d1_1=2.5cm diameter -> r=1.25cm=12.5mm"}}
+        ]
+      },
+
+      "modifications": []
+    }
+  ],
+
+  "auxiliary_geometry": {"unused_sketches": 0, "note": "None."},
+
+  "constraints": [],
+
+  "validation_intents": [
+    {"id": "q_body_count", "intent": "body_count", "expected": 1},
+    {"id": "q_span_u", "intent": "span_along_frame_axis", "frame_axis": "u", "expected": 25.0, "tolerance": 0.01, "note": "2*radius"},
+    {"id": "q_span_v", "intent": "span_along_frame_axis", "frame_axis": "v", "expected": 25.0, "tolerance": 0.01},
+    {"id": "q_span_w", "intent": "span_along_frame_axis", "frame_axis": "w", "expected": 75.0, "tolerance": 0.05},
+    {"id": "q_surf_dist", "intent": "surface_type_distribution", "expected": {"PlaneSurfaceType": 2, "CylinderSurfaceType": 1}},
+    {"id": "q_cyl_count", "intent": "cylinder_face_count", "expected": 1},
+    {"id": "q_is_solid", "intent": "is_solid", "expected": true},
+    {"id": "q_occt_valid", "intent": "occt_is_valid", "expected": true}
+  ],
+
+  "derived": {
+    "part_category": "disk",
+    "world_bbox_estimate": {"along_x": 75.0, "along_y": 25.0, "along_z": 25.0}
+  },
+
+  "non_verifiable": {"world_pose": "Sketch plane origin at (-73.417, -6.161, 60.860); assembly-context, omitted."},
+
+  "compiler_notes": {
+    "source_sketch_count": 1,
+    "source_extrude_count": 1,
+    "explicit_dimension_count": 1,
+    "inferred_dimensions": [],
+    "source_constraints": [],
+    "warnings": [
+      "Unit conversion cm->mm (x10): d=2.5cm->25mm(r=12.5mm), extrude=7.5cm->75mm.",
+      "YZ PLANE (new orientation test): u=(0,1,0), v=(0,0,1), w=(1,0,0). Extrude along world X. Compiler must handle all 3 base planes (XY/XZ/YZ), not just XY/XZ.",
+      "Sketch plane origin heavily offset (-73.417,-6.161,60.860); discarded (Non-Leakage). Circle center at sketch-local (-1.5,1.0)cm -> (-15,10)mm part-local.",
+      "0 constraints in source.",
+      "frame u/v/w have float noise (~1e-16); cleaned to exact unit vectors."
+    ],
+    "unit_conversion_applied": "cm_to_mm (x10)"
+  }
+}

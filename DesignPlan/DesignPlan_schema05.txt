@@ -1,0 +1,152 @@
+{
+  "schema_version": "design_plan_v0.5",
+  "schema_doc": "v0.5 changes (see doc/DesignPlan_schema_v4评审与v5改进.md): (1) extent_type += symmetric/degenerate_two_side; direction += both_symmetric/both_asymmetric; (2) arbitrary_closed generic dimensions (arc_radii/line_lengths/circle_radii); (3) direction cross-validation vs GT bbox; (4) circle dimensions += center_uv; (5) part_category += bearing/washer. Targeted fixes, no major restructure. Backward compatible with v0.4 for one_side positive-extrusion cases.",
+
+  "sample_id": "<required: source JSON filename stem>",
+  "source_component_name": "<from metadata.component_name>",
+  "unit": "mm",
+
+  "coordinate_system": {
+    "frame": "part_local",
+    "origin_convention": "bbox_min_corner",
+    "axes": {"x": [1, 0, 0], "y": [0, 1, 0], "z": [0, 0, 1]},
+    "unit": "mm"
+  },
+
+  "target": {
+    "object_type": "single_part",
+    "part_category": "<derived. v0.5 adds: bearing | washer. Full set: square_strut | rectangular_slat_or_strip | flat_plate_or_panel | block | disk | tube_or_sleeve | stadium_extrusion | bracket_with_fillets | frame_or_hollow_box | negative_extrusion_part | bearing | washer | uncategorized>",
+    "body_count": "<required: integer>",
+    "engineering_description": "<natural language; NOT verifiable>"
+  },
+
+  "solid_bodies": [
+    {
+      "id": "body_0",
+      "primitive_type": "<DERIVED from profiles[0].type>",
+      "frame": {
+        "u_dir": "<unit vector>",
+        "v_dir": "<unit vector>",
+        "w_dir": "<unit vector, = cross(u,v)>",
+        "span_computation": "vertex_projection"
+      },
+
+      "profiles": [
+        {
+          "type": "<rectangle | circle | annulus | stadium | polygon_with_fillets | rectangular_frame | arbitrary_closed>",
+          "closed": true,
+          "rings": [
+            {
+              "role": "outer",
+              "loop_type": "<polyline | circle | composite_line_arc>",
+              "curve_count": "<integer>",
+              "curves": [
+                {"kind": "line", "ref": "0:0", "start_uv": [0,0], "end_uv": [0,0]},
+                {"kind": "arc", "ref": "0:1", "center_uv": [0,0], "radius": 0, "start_angle_deg": 0, "end_angle_deg": 0},
+                {"kind": "circle", "ref": "0:2", "center_uv": [0,0], "radius": 0}
+              ]
+            },
+            {
+              "role": "inner",
+              "loop_type": "<...>",
+              "curve_count": "<integer>",
+              "curves": []
+            }
+          ]
+        }
+      ],
+
+      "extrude": {
+        "extent_type": "<one_side | two_side | symmetric | degenerate_two_side>",
+        "_doc_extent_v05": "v0.5: symmetric = SymmetricFeatureExtentType (body straddles plane equally); degenerate_two_side = TwoSidesFeatureExtentType with extent_two=0 (effectively one_side); two_side = both extents nonzero and unequal.",
+        "direction": "<+w | -w | both_symmetric | both_asymmetric>",
+        "_doc_direction_v05": "v0.5: both_symmetric (body centered on plane); both_asymmetric (body straddles plane unequally). degenerate_two_side uses +w/-w (single effective side).",
+        "distance_total": {"value": "<mm, positive>", "tol": "<mm>", "tol_kind": "absolute", "source": "<explicit_dimension | inferred_from_point_span>"},
+        "operation": "<new_body | join | cut | intersect>",
+        "taper_angle_deg": {"value": 0.0, "tol": 0.01, "tol_kind": "absolute"},
+        "direction_verified": "<true | false | null>",
+        "_doc_dir_verified": "v0.5 NEW: cross-check direction against GT bbox w-axis span. true = consistent; false = contradiction (warning); null = no GT available."
+      },
+
+      "dimensions": {
+        "extrude_distance": {"value": "<mm>", "tol": "<mm>", "tol_kind": "absolute", "source": "<explicit_dimension | inferred_from_point_span | curve_field>"},
+        "profiles": [
+          {
+            "_type_rectangle": {"length_u": {"value":0,"source":"..."}, "width_v": {"value":0,"source":"..."}},
+            "_type_circle": {"radius": {"value":0,"source":"..."}, "center_uv": [0, 0]},
+            "_doc_center_uv": "v0.5 NEW: circle center relative to sketch origin in UV plane (part-local, NOT world). Enables multi-circle relative positioning. Non-Leakage compliant.",
+            "_type_annulus": {"outer_radius": {"value":0,"source":"..."}, "inner_radius": {"value":0,"source":"..."}, "center_uv": [0, 0]},
+            "_type_stadium": {"straight_length": {"value":0,"source":"..."}, "radius": {"value":0,"source":"..."}},
+            "_type_polygon_with_fillets": {"side_lengths": [], "fillet_radii": [], "hole_radii": []},
+            "_type_rectangular_frame": {"outer_length_u": {"value":0,"source":"..."}, "outer_width_v": {"value":0,"source":"..."}, "inner_length_u": {"value":0,"source":"..."}, "inner_width_v": {"value":0,"source":"..."}},
+            "_type_arbitrary_closed": {
+              "curve_count": 0,
+              "arc_radii": [{"value": 0, "source": "curve_field"}],
+              "line_lengths": [{"value": 0, "source": "inferred_from_point_span"}],
+              "circle_radii": [{"value": 0, "source": "curve_field"}],
+              "_doc_arb": "v0.5 NEW: generic dimension extraction for arbitrary_closed. Captures all arc radii, line lengths, circle radii without requiring type-specific recognition. Fallback for non-standard profiles (sample 37)."
+            }
+          }
+        ]
+      },
+
+      "modifications": []
+    }
+  ],
+
+  "auxiliary_geometry": {
+    "unused_sketches": "<integer>",
+    "note": "<why they exist>"
+  },
+
+  "constraints": [
+    {
+      "type": "<orthogonal_adjacent_edges | tangent | concentric | parallel | perpendicular | symmetry | coincident_inert | equal | midpoint>",
+      "subject": "<body_id, for orthogonal_adjacent_edges>",
+      "curve_a": "<ring:curve ref>",
+      "curve_b": "<ring:curve ref>",
+      "circle_a": "<ring:curve ref>",
+      "circle_b": "<ring:curve ref>",
+      "tol": 1e-6,
+      "note": "<optional>"
+    }
+  ],
+
+  "validation_intents": [
+    {
+      "id": "<unique>",
+      "intent": "<body_count | span_along_frame_axis | all_faces_planar | surface_type_distribution | cylinder_face_count | is_solid | occt_is_valid | euler_characteristic | edge_orthogonality | profile_closed | through_void_count | symmetric_about_plane>",
+      "expected": "<value>",
+      "tolerance": "<optional>",
+      "frame_axis": "<u|v|w, for span_along_frame_axis>",
+      "_doc_symmetric": "v0.5 NEW intent 'symmetric_about_plane': verifies body is symmetric about the sketch plane (centroid on plane). For extent_type=symmetric only."
+    }
+  ],
+
+  "derived": {
+    "part_category": "<auto-classified>",
+    "world_bbox_estimate": {"along_x": 0, "along_y": 0, "along_z": 0}
+  },
+
+  "non_verifiable": {
+    "world_pose": "Assembly-context world coordinates omitted.",
+    "engineering_description": "Natural language; KQP ignores.",
+    "auxiliary_geometry": "Unused sketches recorded for traceability only."
+  },
+
+  "compiler_notes": {
+    "source_sketch_count": "<integer>",
+    "source_extrude_count": "<integer>",
+    "explicit_dimension_count": "<integer>",
+    "inferred_dimensions": "<list>",
+    "source_constraints": [{"type": "...", "count": 0, "note": "..."}],
+    "warnings": "<list of strings>",
+    "unit_conversion_applied": "cm_to_mm (x10)"
+  },
+
+  "forbidden_fields": {
+    "procedural": ["timeline_index", "sketch_id", "profile_id", "face_id", "edge_id", "body_token", "api_call_order", "operation_sequence", "extrude_feature_name", "fusion_uuid"],
+    "leakage": ["exact_face_count", "exact_edge_count", "exact_vertex_count", "exact_volume", "exact_surface_area", "exact_center_of_mass", "brep_topology", "world_coordinates", "density", "mass"],
+    "v0_4_removed": []
+  }
+}

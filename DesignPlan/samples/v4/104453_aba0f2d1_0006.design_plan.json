@@ -1,0 +1,138 @@
+{
+  "schema_version": "design_plan_v0.4",
+  "sample_id": "104453_aba0f2d1_0006",
+  "source_component_name": "Untitled",
+  "unit": "mm",
+
+  "coordinate_system": {
+    "frame": "part_local",
+    "origin_convention": "bbox_min_corner",
+    "axes": {"x": [1, 0, 0], "y": [0, 1, 0], "z": [0, 0, 1]},
+    "unit": "mm"
+  },
+
+  "target": {
+    "object_type": "single_part",
+    "part_category": "frame_or_hollow_box",
+    "body_count": 1,
+    "engineering_description": "Rectangular hollow frame/box: outer 500x300mm, inner 400x200mm rectangular void (50mm wall thickness all around), extruded 500mm along Z. A hollow box/frame structure."
+  },
+
+  "solid_bodies": [
+    {
+      "id": "body_0",
+      "primitive_type": "extruded_rectangular_frame",
+
+      "frame": {
+        "u_dir": [1, 0, 0],
+        "v_dir": [0, 1, 0],
+        "w_dir": [0, 0, 1],
+        "span_computation": "vertex_projection"
+      },
+
+      "profiles": [
+        {
+          "type": "rectangular_frame",
+          "closed": true,
+          "rings": [
+            {
+              "role": "outer",
+              "loop_type": "polyline",
+              "curve_count": 4,
+              "curves": [
+                {"kind": "line", "ref": "0:0", "start_uv": [0, 0], "end_uv": [500, 0]},
+                {"kind": "line", "ref": "0:1", "start_uv": [500, 0], "end_uv": [500, 300]},
+                {"kind": "line", "ref": "0:2", "start_uv": [500, 300], "end_uv": [0, 300]},
+                {"kind": "line", "ref": "0:3", "start_uv": [0, 300], "end_uv": [0, 0]}
+              ],
+              "note": "outer rectangle 500x300"
+            },
+            {
+              "role": "inner",
+              "loop_type": "polyline",
+              "curve_count": 4,
+              "curves": [
+                {"kind": "line", "ref": "1:0", "start_uv": [50, 50], "end_uv": [450, 50]},
+                {"kind": "line", "ref": "1:1", "start_uv": [450, 50], "end_uv": [450, 250]},
+                {"kind": "line", "ref": "1:2", "start_uv": [450, 250], "end_uv": [50, 250]},
+                {"kind": "line", "ref": "1:3", "start_uv": [50, 250], "end_uv": [50, 50]}
+              ],
+              "note": "inner rectangle 400x200, centered (50mm wall all around)"
+            }
+          ]
+        }
+      ],
+
+      "extrude": {
+        "extent_type": "one_side",
+        "direction": "+w",
+        "distance_total": {"value": 500.0, "tol": 0.1, "tol_kind": "absolute", "source": "explicit_dimension"},
+        "operation": "new_body",
+        "taper_angle_deg": {"value": 0.0, "tol": 0.01, "tol_kind": "absolute"}
+      },
+
+      "dimensions": {
+        "extrude_distance": {"value": 500.0, "tol": 0.1, "tol_kind": "absolute", "source": "explicit_dimension"},
+        "profiles": [
+          {
+            "outer_length_u": {"value": 500.0, "tol": 0.1, "tol_kind": "absolute", "source": "inferred_from_point_span", "note": "no explicit Linear dim for outer; from point span 50-0=50cm=500mm. d4=50cm but maps to outer_length_u via entity refs"},
+            "outer_width_v":  {"value": 300.0, "tol": 0.1, "tol_kind": "absolute", "source": "inferred_from_point_span", "note": "30-0=30cm=300mm"},
+            "inner_length_u": {"value": 400.0, "tol": 0.1, "tol_kind": "absolute", "source": "inferred_from_point_span", "note": "45-5=40cm=400mm"},
+            "inner_width_v":  {"value": 200.0, "tol": 0.1, "tol_kind": "absolute", "source": "inferred_from_point_span", "note": "25-5=20cm=200mm"}
+          }
+        ]
+      },
+
+      "modifications": []
+    }
+  ],
+
+  "auxiliary_geometry": {"unused_sketches": 0, "note": "None."},
+
+  "constraints": [
+    {"type": "orthogonal_adjacent_edges", "subject": "body_0", "expected": "edges in 3 orthogonal groups", "tol": 1e-6},
+    {"type": "perpendicular", "curve_a": "0:0", "curve_b": "0:1", "tol": 1e-6},
+    {"type": "perpendicular", "curve_a": "1:0", "curve_b": "1:1", "tol": 1e-6},
+    {"type": "parallel", "curve_a": "0:0", "curve_b": "0:2", "tol": 1e-6},
+    {"type": "parallel", "curve_a": "1:0", "curve_b": "1:2", "tol": 1e-6},
+    {"type": "coincident_inert", "note": "CoincidentConstraint collapses sketch origin onto first outer corner; geometrically inert.", "tol": 1e-6}
+  ],
+
+  "validation_intents": [
+    {"id": "q_body_count", "intent": "body_count", "expected": 1},
+    {"id": "q_span_u", "intent": "span_along_frame_axis", "frame_axis": "u", "expected": 500.0, "tolerance": 0.1},
+    {"id": "q_span_v", "intent": "span_along_frame_axis", "frame_axis": "v", "expected": 300.0, "tolerance": 0.1},
+    {"id": "q_span_w", "intent": "span_along_frame_axis", "frame_axis": "w", "expected": 500.0, "tolerance": 0.1},
+    {"id": "q_all_planar", "intent": "all_faces_planar", "expected": true, "note": "all 10 faces planar (4 outer wall + 4 inner wall + 2 end caps)"},
+    {"id": "q_is_solid", "intent": "is_solid", "expected": true},
+    {"id": "q_occt_valid", "intent": "occt_is_valid", "expected": true},
+    {"id": "q_void_count", "intent": "through_void_count", "expected": 1, "note": "1 rectangular through-void (the inner rectangle extruded through)"},
+    {"id": "q_edge_ortho", "intent": "edge_orthogonality", "subject": "body_0", "expected": "3 direction groups", "tolerance": 1e-6}
+  ],
+
+  "derived": {
+    "part_category": "frame_or_hollow_box",
+    "world_bbox_estimate": {"along_x": 500.0, "along_y": 300.0, "along_z": 500.0}
+  },
+
+  "non_verifiable": {"world_pose": "Sketch plane origin at (0,0,0); assembly-context."},
+
+  "compiler_notes": {
+    "source_sketch_count": 1,
+    "source_extrude_count": 1,
+    "explicit_dimension_count": 6,
+    "inferred_dimensions": ["outer/inner length/width (point spans; 6 explicit dims are positioning/wall-thickness, not direct outer/inner dims)"],
+    "source_constraints": [
+      {"type": "CoincidentConstraint", "count": 1, "note": "geometrically_inert"},
+      {"type": "HorizontalConstraint", "count": 1},
+      {"type": "PerpendicularConstraint", "count": 6}
+    ],
+    "warnings": [
+      "Unit conversion cm->mm (x10): outer 50x30cm->500x300mm, inner 40x20cm->400x200mm, extrude=50cm->500mm.",
+      "RECTANGULAR_FRAME (v0.4 NEW profile type): profile e9625b6a has loops=2, total_curves=8 (outer 4-line rect + inner 4-line rect). v0.3 had no type for this (would fall to arbitrary_closed). v0.4 rectangular_frame captures outer/inner rectangle params.",
+      "6 explicit dimensions but NONE directly give outer/inner length/width. d1=20(V, inner width?), d2=5, d3=5, d4=50(H, outer length), d5=5, d6=5. These are wall-thickness + partial dims. Compiler must RECONSTRUCT outer/inner dims from point coordinates (inferred_from_point_span), not from dimensions directly.",
+      "GT: V=16,E=24,F=10, all PlaneSurfaceType. euler=16-24+10=2 (valid closed solid with 1 through-hole: euler=2-2*holes=2-2=0? but GT=2... rectangular frame topology differs from annulus. KQP through_void_count should use genus/hole-count not euler.)."
+    ],
+    "unit_conversion_applied": "cm_to_mm (x10)"
+  }
+}

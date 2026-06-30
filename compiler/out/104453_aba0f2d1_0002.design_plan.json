@@ -1,0 +1,293 @@
+{
+  "schema_version": "design_plan_v0.4",
+  "sample_id": "104453_aba0f2d1_0002",
+  "source_component_name": "ArmRest v1",
+  "unit": "mm",
+  "coordinate_system": {
+    "frame": "part_local",
+    "origin_convention": "bbox_min_corner",
+    "axes": {
+      "x": [
+        1,
+        0,
+        0
+      ],
+      "y": [
+        0,
+        1,
+        0
+      ],
+      "z": [
+        0,
+        0,
+        1
+      ]
+    },
+    "unit": "mm"
+  },
+  "target": {
+    "object_type": "single_part",
+    "part_category": "stadium_extrusion",
+    "body_count": 1,
+    "engineering_description": "(compiler-generated; no NL description)"
+  },
+  "solid_bodies": [
+    {
+      "id": "body_0",
+      "primitive_type": "extruded_stadium",
+      "frame": {
+        "u_dir": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "v_dir": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "w_dir": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "span_computation": "vertex_projection"
+      },
+      "profiles": [
+        {
+          "type": "stadium",
+          "rings": [
+            {
+              "role": "outer",
+              "loop_type": "composite_line_arc",
+              "curve_count": 4,
+              "curves": [
+                {
+                  "kind": "arc",
+                  "ref": null,
+                  "center_uv": [
+                    0.0,
+                    0.0
+                  ],
+                  "radius": 5.0,
+                  "start_angle_deg": 0.0,
+                  "end_angle_deg": 180.0
+                },
+                {
+                  "kind": "line",
+                  "ref": null,
+                  "start_uv": [
+                    0.0,
+                    -5.0
+                  ],
+                  "end_uv": [
+                    50.0,
+                    -5.0
+                  ]
+                },
+                {
+                  "kind": "arc",
+                  "ref": null,
+                  "center_uv": [
+                    50.0,
+                    0.0
+                  ],
+                  "radius": 5.0,
+                  "start_angle_deg": 0.0,
+                  "end_angle_deg": 180.0
+                },
+                {
+                  "kind": "line",
+                  "ref": null,
+                  "start_uv": [
+                    50.0,
+                    5.0
+                  ],
+                  "end_uv": [
+                    0.0,
+                    5.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "extrude": {
+        "extent_type": "one_side",
+        "direction": "+w",
+        "distance_total": {
+          "value": 100.0,
+          "tol": 0.01,
+          "tol_kind": "absolute",
+          "source": "explicit_dimension"
+        },
+        "operation": "new_body",
+        "taper_angle_deg": {
+          "value": 0.0,
+          "tol": 0.01,
+          "tol_kind": "absolute"
+        },
+        "direction_verified": true
+      },
+      "dimensions": {
+        "extrude_distance": {
+          "value": 100.0,
+          "tol": 0.01,
+          "tol_kind": "absolute",
+          "relative_tol": 0.0001,
+          "source": "explicit_dimension"
+        },
+        "profiles": [
+          {
+            "straight_length": {
+              "value": 500.0,
+              "tol": 0.01,
+              "tol_kind": "absolute",
+              "source": "inferred_from_point_span"
+            },
+            "radius": {
+              "value": 50.0,
+              "tol": 0.01,
+              "tol_kind": "absolute",
+              "source": "curve_field"
+            }
+          }
+        ]
+      },
+      "modifications": []
+    }
+  ],
+  "auxiliary_geometry": {
+    "unused_sketches": 0,
+    "note": "None."
+  },
+  "constraints": [
+    {
+      "type": "tangent",
+      "curve_a": "39ca46ba-e355-11ea-85db-54bf646e7e1f",
+      "curve_b": "39c9f8a8-e355-11ea-95d1-54bf646e7e1f",
+      "tol": 1e-06
+    },
+    {
+      "type": "tangent",
+      "curve_a": "39ca6dc2-e355-11ea-9ed4-54bf646e7e1f",
+      "curve_b": "39ca46ba-e355-11ea-85db-54bf646e7e1f",
+      "tol": 1e-06
+    },
+    {
+      "type": "parallel",
+      "curve_a": "39ca6dc2-e355-11ea-9ed4-54bf646e7e1f",
+      "curve_b": "39c9f8a8-e355-11ea-95d1-54bf646e7e1f",
+      "tol": 1e-06
+    },
+    {
+      "type": "tangent",
+      "curve_a": "39ca94d8-e355-11ea-bb13-54bf646e7e1f",
+      "curve_b": "39ca6dc2-e355-11ea-9ed4-54bf646e7e1f",
+      "tol": 1e-06
+    },
+    {
+      "type": "tangent",
+      "curve_a": "39ca94d8-e355-11ea-bb13-54bf646e7e1f",
+      "curve_b": "39c9f8a8-e355-11ea-95d1-54bf646e7e1f",
+      "tol": 1e-06
+    },
+    {
+      "type": "coincident_inert",
+      "note": "geometrically_inert",
+      "tol": 1e-06
+    }
+  ],
+  "validation_intents": [
+    {
+      "id": "q_body_count",
+      "intent": "body_count",
+      "expected": 1
+    },
+    {
+      "id": "q_span_u",
+      "intent": "span_along_frame_axis",
+      "frame_axis": "u",
+      "expected": 600.0,
+      "tolerance": 0.01
+    },
+    {
+      "id": "q_span_v",
+      "intent": "span_along_frame_axis",
+      "frame_axis": "v",
+      "expected": 100.0,
+      "tolerance": 0.01
+    },
+    {
+      "id": "q_span_w",
+      "intent": "span_along_frame_axis",
+      "frame_axis": "w",
+      "expected": 100.0,
+      "tolerance": 0.01
+    },
+    {
+      "id": "q_surf_dist",
+      "intent": "surface_type_distribution",
+      "expected": {
+        "PlaneSurfaceType": 4,
+        "CylinderSurfaceType": 2
+      }
+    },
+    {
+      "id": "q_cyl_count",
+      "intent": "cylinder_face_count",
+      "expected": 2
+    },
+    {
+      "id": "q_is_solid",
+      "intent": "is_solid",
+      "expected": true
+    },
+    {
+      "id": "q_occt_valid",
+      "intent": "occt_is_valid",
+      "expected": true
+    }
+  ],
+  "derived": {
+    "part_category": "stadium_extrusion",
+    "world_bbox_estimate": {
+      "along_x": 0,
+      "along_y": 0,
+      "along_z": 0
+    }
+  },
+  "non_verifiable": {
+    "world_pose": "Assembly-context world coordinates omitted."
+  },
+  "compiler_notes": {
+    "source_sketch_count": 1,
+    "source_extrude_count": 1,
+    "explicit_dimension_count": 2,
+    "inferred_dimensions": [
+      "straight_length"
+    ],
+    "inference_mode": "all",
+    "source_constraints": [
+      {
+        "type": "HorizontalConstraint",
+        "count": 1
+      },
+      {
+        "type": "TangentConstraint",
+        "count": 4
+      },
+      {
+        "type": "ParallelConstraint",
+        "count": 1
+      },
+      {
+        "type": "CoincidentConstraint",
+        "count": 1
+      }
+    ],
+    "warnings": [],
+    "unit_conversion_applied": "cm_to_mm (x10)"
+  }
+}

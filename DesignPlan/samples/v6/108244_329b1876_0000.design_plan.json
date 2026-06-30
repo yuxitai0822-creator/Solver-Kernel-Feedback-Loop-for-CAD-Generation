@@ -1,0 +1,90 @@
+{
+  "schema_version": "design_plan_v0.6",
+  "sample_id": "108244_329b1876_0000",
+  "source_component_name": "Untitled",
+  "unit": "mm",
+
+  "coordinate_system": {
+    "frame": "part_local", "origin_convention": "bbox_min_corner",
+    "axes": {"x": [1, 0, 0], "y": [0, 1, 0], "z": [0, 0, 1]}, "unit": "mm"
+  },
+
+  "target": {
+    "object_type": "single_part", "part_category": "rectangular_slat_or_strip", "body_count": 1,
+    "engineering_description": "Very long rectangular strip: 1219.2mm x 2590.8mm x 44.45mm. A long structural slat (aspect 2590/44=58). FULLY under-constrained (0 explicit dimensions)."
+  },
+
+  "solid_bodies": [
+    {
+      "id": "body_0", "primitive_type": "extruded_rectangle",
+      "frame": {"u_dir": [0, 0, 1], "v_dir": [1, 0, 0], "w_dir": [0, 1, 0], "span_computation": "vertex_projection"},
+      "profiles": [
+        {"type": "rectangle", "closed": true,
+          "rings": [{"role": "outer", "loop_type": "polyline", "curve_count": 4,
+            "curves": [
+              {"kind": "line", "ref": "0:0", "start_uv": [0, 0], "end_uv": [1219.2, 0]},
+              {"kind": "line", "ref": "0:1", "start_uv": [1219.2, 0], "end_uv": [1219.2, 2590.8]},
+              {"kind": "line", "ref": "0:2", "start_uv": [1219.2, 2590.8], "end_uv": [0, 2590.8]},
+              {"kind": "line", "ref": "0:3", "start_uv": [0, 2590.8], "end_uv": [0, 0]}
+            ], "note": "rectangle from point spans; u_span=1219.2, v_span=2590.8"}]}
+      ],
+      "extrude": {
+        "extent_type": "one_side", "direction": "+w",
+        "distance_total": {"value": 44.45, "tol": 0.05, "tol_kind": "absolute", "relative_tol": 1e-4, "source": "explicit_dimension"},
+        "operation": "new_body", "taper_angle_deg": {"value": 0.0, "tol": 0.01, "tol_kind": "absolute"},
+        "direction_verified": true
+      },
+      "dimensions": {
+        "extrude_distance": {"value": 44.45, "tol": 0.05, "tol_kind": "absolute", "relative_tol": 1e-4, "source": "explicit_dimension"},
+        "profiles": [
+          {"length_u": {"value": 1219.2, "tol": 0.5, "tol_kind": "absolute", "relative_tol": 1e-4, "source": "inferred_from_point_span", "note": "0 explicit dims; span_x=121.92cm"},
+           "width_v": {"value": 2590.8, "tol": 1.0, "tol_kind": "absolute", "relative_tol": 1e-4, "source": "inferred_from_point_span", "note": "span_y=259.08cm"}}
+        ]
+      },
+      "modifications": []
+    }
+  ],
+
+  "auxiliary_geometry": {"unused_sketches": 0, "note": "None. (2 in-sketch construction diagonals collapsed to origin via Coincident, profile-internal.)"},
+  "constraints": [
+    {"type": "orthogonal_adjacent_edges", "subject": "body_0", "expected": "3 mutually-orthogonal direction groups, 4 edges each", "tol": 1e-6},
+    {"type": "perpendicular", "curve_a": "0:0", "curve_b": "0:1", "tol": 1e-6},
+    {"type": "parallel", "curve_a": "0:0", "curve_b": "0:2", "tol": 1e-6},
+    {"type": "parallel", "curve_a": "0:1", "curve_b": "0:3", "tol": 1e-6},
+    {"type": "coincident_inert", "note": "2 CoincidentConstraints collapse construction diagonals; geometrically inert.", "tol": 1e-6}
+  ],
+
+  "validation_intents": [
+    {"id": "q_body_count", "intent": "body_count", "expected": 1},
+    {"id": "q_span_u", "intent": "span_along_frame_axis", "frame_axis": "u", "expected": 1219.2, "tolerance": 0.5},
+    {"id": "q_span_v", "intent": "span_along_frame_axis", "frame_axis": "v", "expected": 2590.8, "tolerance": 1.0},
+    {"id": "q_span_w", "intent": "span_along_frame_axis", "frame_axis": "w", "expected": 44.45, "tolerance": 0.05},
+    {"id": "q_all_planar", "intent": "all_faces_planar", "expected": true},
+    {"id": "q_is_solid", "intent": "is_solid", "expected": true},
+    {"id": "q_occt_valid", "intent": "occt_is_valid", "expected": true},
+    {"id": "q_edge_ortho", "intent": "edge_orthogonality", "subject": "body_0", "expected": "3 direction groups, 4 parallel edges each", "tolerance": 1e-6}
+  ],
+
+  "derived": {"part_category": "rectangular_slat_or_strip", "world_bbox_estimate": {"along_x": 1219.2, "along_y": 44.45, "along_z": 2590.8}},
+  "non_verifiable": {"world_pose": "Sketch plane origin at (0,0,0); assembly-context."},
+  "compiler_notes": {
+    "source_sketch_count": 1, "source_extrude_count": 1, "explicit_dimension_count": 0,
+    "inferred_dimensions": ["length_u (1219.2mm from point span)", "width_v (2590.8mm from point span)"],
+    "inference_mode": "all",
+    "_doc_inference": "v0.6 NEW: inference_mode=all. 0 explicit dimensions; BOTH in-plane dims from point spans. Most under-constrained case (worse than sample 5's partial). Compiler MUST back-fill both.",
+    "source_constraints": [
+      {"type": "HorizontalConstraint", "count": 2},
+      {"type": "VerticalConstraint", "count": 2},
+      {"type": "CoincidentConstraint", "count": 2, "note": "geometrically_inert"}
+    ],
+    "warnings": [
+      "Unit conversion cm->mm (x10): span_x=121.92cm->1219.2mm, span_y=259.08cm->2590.8mm, extrude=4.445cm->44.45mm.",
+      "FULLY UNDER-CONSTRAINED (v0.6 critical test, inference_mode=all): 0 explicit dimensions. Both length_u and width_v back-filled from point spans. A 'dimensions-only' compiler would produce null/null (catastrophic). point_span back-fill mandatory for both axes.",
+      "CORRECTIVE_TRANSFORM pattern: u_dir label=(0,0,1)=worldZ but actual sketch-x->world-x (bbox along_x=1219.2=length_u). Compiler derives dims from point spans, not u_dir labels.",
+      "Very large part (2.6m): v0.6 relative_tol=1e-4 (effective_tol for 2590.8mm = max(1.0, 0.259)=1.0mm). Avoids over-strict 0.01mm absolute.",
+      "Construction diagonals (2 extra SketchLines beyond 4 rect edges) collapsed; compiler uses profile.loops.",
+      "direction_verified=true: GT bbox y[0,4.445]cm consistent with +w (w=worldY)."
+    ],
+    "unit_conversion_applied": "cm_to_mm (x10)"
+  }
+}

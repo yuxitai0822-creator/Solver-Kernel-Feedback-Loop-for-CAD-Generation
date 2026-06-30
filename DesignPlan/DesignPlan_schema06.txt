@@ -1,0 +1,126 @@
+{
+  "schema_version": "design_plan_v0.6",
+  "schema_doc": "v0.6 changes (see doc/DesignPlan_schema_v5评审与v6改进.md): (1) tolerance += relative_tol (mixed rule effective_tol=max(abs, value*rel)); (2) extrude_distance single-source (extract_dimensions reuses extract_extrude.distance_total, no dual computation); (3) multi-profile body span = union bbox; (4) part_category quantified rules; (5) compiler_notes.inferred_dimensions += inference_mode (none/partial/all). Targeted fixes, backward compatible with v0.5.",
+
+  "sample_id": "<required: source JSON filename stem>",
+  "source_component_name": "<from metadata.component_name>",
+  "unit": "mm",
+
+  "coordinate_system": {
+    "frame": "part_local",
+    "origin_convention": "bbox_min_corner",
+    "axes": {"x": [1, 0, 0], "y": [0, 1, 0], "z": [0, 0, 1]},
+    "unit": "mm"
+  },
+
+  "target": {
+    "object_type": "single_part",
+    "part_category": "<derived, quantified per part_category_rules>",
+    "body_count": "<required: integer>",
+    "engineering_description": "<natural language; NOT verifiable>"
+  },
+
+  "solid_bodies": [
+    {
+      "id": "body_0",
+      "primitive_type": "<DERIVED from profiles[0].type>",
+      "frame": {
+        "u_dir": "<unit vector>",
+        "v_dir": "<unit vector>",
+        "w_dir": "<unit vector, = cross(u,v)>",
+        "span_computation": "vertex_projection",
+        "_doc_span_v06": "v0.6: for multi-profile bodies, span = UNION of all profiles' projections (not profile[0] only)."
+      },
+
+      "profiles": [
+        {
+          "type": "<rectangle | circle | annulus | stadium | polygon_with_fillets | rectangular_frame | arbitrary_closed>",
+          "closed": true,
+          "rings": [
+            {"role": "outer", "loop_type": "<polyline|circle|composite_line_arc>", "curve_count": 0, "curves": []},
+            {"role": "inner", "loop_type": "<...>", "curve_count": 0, "curves": []}
+          ]
+        }
+      ],
+
+      "extrude": {
+        "extent_type": "<one_side | two_side | symmetric | degenerate_two_side>",
+        "direction": "<+w | -w | both_symmetric | both_asymmetric>",
+        "distance_total": {"value": "<mm, positive>", "tol": "<mm>", "tol_kind": "absolute", "relative_tol": 1e-4, "source": "<explicit_dimension | inferred_from_point_span>"},
+        "_doc_tol_v06": "v0.6 NEW: relative_tol field. effective_tol = max(tol, value * relative_tol). For large parts (e.g. 2.4m panel), relative_tol prevents over-strict absolute tolerance. Default relative_tol=1e-4 (0.01%).",
+        "operation": "<new_body | join | cut | intersect>",
+        "taper_angle_deg": {"value": 0.0, "tol": 0.01, "tol_kind": "absolute"},
+        "direction_verified": "<true|false|null>"
+      },
+
+      "dimensions": {
+        "extrude_distance": {"value": "<mm>", "tol": "<mm>", "tol_kind": "absolute", "relative_tol": 1e-4, "source": "<...>"},
+        "_doc_extrude_v06": "v0.6: extrude_distance is NOW a direct reference to extrude.distance_total (single source). No independent computation. Prevents symmetric/degenerate inconsistency.",
+        "profiles": [
+          {
+            "_type_rectangle": {"length_u": {"value":0,"source":"...","relative_tol":1e-4}, "width_v": {"value":0,"source":"...","relative_tol":1e-4}},
+            "_type_circle": {"radius": {"value":0,"source":"..."}, "center_uv": [0, 0]},
+            "_type_annulus": {"outer_radius": {"value":0,"source":"..."}, "inner_radius": {"value":0,"source":"..."}, "center_uv": [0, 0]},
+            "_type_stadium": {"straight_length": {"value":0,"source":"..."}, "radius": {"value":0,"source":"..."}},
+            "_type_polygon_with_fillets": {"side_lengths": [], "fillet_radii": [], "hole_radii": []},
+            "_type_rectangular_frame": {"outer_length_u": {"value":0,"source":"..."}, "outer_width_v": {"value":0,"source":"..."}, "inner_length_u": {"value":0,"source":"..."}, "inner_width_v": {"value":0,"source":"..."}},
+            "_type_arbitrary_closed": {"curve_count": 0, "arc_radii": [], "line_lengths": [], "circle_radii": []}
+          }
+        ]
+      },
+
+      "modifications": []
+    }
+  ],
+
+  "auxiliary_geometry": {"unused_sketches": 0, "note": "..."},
+
+  "constraints": [
+    {"type": "<orthogonal_adjacent_edges|tangent|concentric|parallel|perpendicular|symmetry|coincident_inert|equal|midpoint>", "tol": 1e-6}
+  ],
+
+  "validation_intents": [
+    {"id": "<unique>", "intent": "<body_count|span_along_frame_axis|all_faces_planar|surface_type_distribution|cylinder_face_count|is_solid|occt_is_valid|euler_characteristic|edge_orthogonality|profile_closed|through_void_count|symmetric_about_plane>", "expected": "<value>", "tolerance": "<optional, uses effective_tol=max(abs,value*rel)>", "frame_axis": "<u|v|w>"}
+  ],
+
+  "derived": {
+    "part_category": "<auto-classified per part_category_rules>",
+    "world_bbox_estimate": {"along_x": 0, "along_y": 0, "along_z": 0}
+  },
+
+  "non_verifiable": {
+    "world_pose": "Assembly-context world coordinates omitted.",
+    "engineering_description": "Natural language; KQP ignores.",
+    "auxiliary_geometry": "Unused sketches recorded for traceability only."
+  },
+
+  "compiler_notes": {
+    "source_sketch_count": 0,
+    "source_extrude_count": 0,
+    "explicit_dimension_count": 0,
+    "inferred_dimensions": "<list>",
+    "inference_mode": "<none | partial | all>",
+    "_doc_inference_v06": "v0.6 NEW: inference_mode. none=all dims explicit; partial=some inferred (e.g. sample 5); all=ALL dims from point span, 0 explicit (e.g. sample 42). Helps flag under-constrained sources.",
+    "source_constraints": [{"type": "...", "count": 0, "note": "..."}],
+    "warnings": [],
+    "unit_conversion_applied": "cm_to_mm (x10)"
+  },
+
+  "part_category_rules": {
+    "_doc": "v0.6 quantified rules. dims = [extrude_distance, max_inplane, min_inplane] sorted -> [d_min, d_mid, d_max]. aspect = d_max/d_min.",
+    "rules": [
+      "profile.type==circle && no inner rings -> disk (if extrude < 0.5*radius) | cylinder (else)",
+      "profile.type==annulus -> bearing (if extrude > 0.3*outer_radius) | washer (else)",
+      "profile.type==stadium -> stadium_extrusion",
+      "profile.type==polygon_with_fillets -> bracket_with_fillets",
+      "profile.type==rectangular_frame -> frame_or_hollow_box",
+      "profile.type==rectangle: d_min==d_mid && aspect>3 -> square_strut; aspect>10 && d_min<d_mid*0.3 -> flat_plate_or_panel; aspect>10 -> rectangular_slat_or_strip; aspect<1.5 -> block; else rectangular_prism_generic"
+    ]
+  },
+
+  "forbidden_fields": {
+    "procedural": ["timeline_index", "sketch_id", "profile_id", "face_id", "edge_id", "body_token", "api_call_order", "operation_sequence", "extrude_feature_name", "fusion_uuid"],
+    "leakage": ["exact_face_count", "exact_edge_count", "exact_vertex_count", "exact_volume", "exact_surface_area", "exact_center_of_mass", "brep_topology", "world_coordinates", "density", "mass"],
+    "v0_5_removed": []
+  }
+}

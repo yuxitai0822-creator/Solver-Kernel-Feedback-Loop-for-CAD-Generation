@@ -1,0 +1,326 @@
+[
+  {
+    "sid": "102760_26430589_0037",
+    "status": "OK",
+    "checks": [
+      [
+        "profile.type",
+        "circle",
+        "circle",
+        true
+      ],
+      [
+        "extrude_distance",
+        4.0,
+        4.0,
+        true
+      ],
+      [
+        "direction",
+        "-w",
+        "-w",
+        true
+      ],
+      [
+        "radius",
+        0.8,
+        0.8,
+        true
+      ]
+    ]
+  },
+  {
+    "sid": "103284_e25015aa_0003",
+    "status": "OK",
+    "checks": [
+      [
+        "profile.type",
+        "circle",
+        "circle",
+        true
+      ],
+      [
+        "extrude_distance",
+        8.89,
+        8.89,
+        true
+      ],
+      [
+        "direction",
+        "+w",
+        "+w",
+        true
+      ],
+      [
+        "radius",
+        25.4,
+        25.4,
+        true
+      ]
+    ]
+  },
+  {
+    "sid": "103284_e25015aa_0004",
+    "status": "OK",
+    "checks": [
+      [
+        "profile.type",
+        "circle",
+        "circle",
+        true
+      ],
+      [
+        "extrude_distance",
+        12.7,
+        12.7,
+        true
+      ],
+      [
+        "direction",
+        "+w",
+        "+w",
+        true
+      ],
+      [
+        "radius",
+        11.938,
+        11.938,
+        true
+      ]
+    ]
+  },
+  {
+    "sid": "103481_b27a1cdf_0010",
+    "status": "OK",
+    "checks": [
+      [
+        "profile.type",
+        "rectangle",
+        "rectangle",
+        true
+      ],
+      [
+        "extrude_distance",
+        38.1,
+        38.1,
+        true
+      ],
+      [
+        "direction",
+        "+w",
+        "+w",
+        true
+      ],
+      [
+        "length_u",
+        101.6,
+        101.6,
+        true
+      ],
+      [
+        "width_v",
+        101.6,
+        101.6,
+        true
+      ]
+    ]
+  },
+  {
+    "sid": "103552_c3a389ed_0003",
+    "status": "OK",
+    "checks": [
+      [
+        "profile.type",
+        "stadium",
+        "stadium",
+        true
+      ],
+      [
+        "extrude_distance",
+        6.5,
+        6.5,
+        true
+      ],
+      [
+        "direction",
+        "+w",
+        "+w",
+        true
+      ],
+      [
+        "straight_length",
+        200.0,
+        200.0,
+        true
+      ],
+      [
+        "radius",
+        12.5,
+        12.5,
+        true
+      ]
+    ]
+  },
+  {
+    "sid": "104283_e5646f96_0000",
+    "status": "OK",
+    "checks": [
+      [
+        "profile.type",
+        "circle",
+        "circle",
+        true
+      ],
+      [
+        "extrude_distance",
+        75.0,
+        75.0,
+        true
+      ],
+      [
+        "direction",
+        "+w",
+        "+w",
+        true
+      ],
+      [
+        "radius",
+        12.5,
+        12.5,
+        true
+      ]
+    ]
+  },
+  {
+    "sid": "104283_e5646f96_0001",
+    "status": "OK",
+    "checks": [
+      [
+        "profile.type",
+        "rectangle",
+        "arbitrary_closed",
+        false
+      ],
+      [
+        "extrude_distance",
+        18.0,
+        18.0,
+        true
+      ],
+      [
+        "direction",
+        "+w",
+        "+w",
+        true
+      ],
+      [
+        "length_u",
+        28.812,
+        null,
+        false
+      ],
+      [
+        "width_v",
+        17.937,
+        null,
+        false
+      ]
+    ]
+  },
+  {
+    "sid": "104453_aba0f2d1_0002",
+    "status": "OK",
+    "checks": [
+      [
+        "profile.type",
+        "stadium",
+        "stadium",
+        true
+      ],
+      [
+        "extrude_distance",
+        100.0,
+        100.0,
+        true
+      ],
+      [
+        "direction",
+        "+w",
+        "+w",
+        true
+      ],
+      [
+        "straight_length",
+        500.0,
+        500.0,
+        true
+      ],
+      [
+        "radius",
+        50.0,
+        50.0,
+        true
+      ]
+    ]
+  },
+  {
+    "sid": "104453_aba0f2d1_0006",
+    "status": "OK",
+    "checks": [
+      [
+        "profile.type",
+        "rectangular_frame",
+        "rectangular_frame",
+        true
+      ],
+      [
+        "extrude_distance",
+        500.0,
+        500.0,
+        true
+      ],
+      [
+        "direction",
+        "+w",
+        "+w",
+        true
+      ],
+      [
+        "outer_length_u",
+        500.0,
+        500.0,
+        true
+      ]
+    ]
+  },
+  {
+    "sid": "104524_f829aab2_0001",
+    "status": "OK",
+    "checks": [
+      [
+        "profile.type",
+        "circle",
+        "circle",
+        true
+      ],
+      [
+        "extrude_distance",
+        20.0,
+        20.0,
+        true
+      ],
+      [
+        "direction",
+        "+w",
+        "+w",
+        true
+      ],
+      [
+        "radius",
+        7.5,
+        7.5,
+        true
+      ]
+    ]
+  }
+]

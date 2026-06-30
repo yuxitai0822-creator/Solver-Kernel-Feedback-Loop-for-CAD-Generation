@@ -1,0 +1,379 @@
+{
+  "schema_version": "design_plan_v0.4",
+  "sample_id": "104453_aba0f2d1_0006",
+  "source_component_name": "Untitled",
+  "unit": "mm",
+  "coordinate_system": {
+    "frame": "part_local",
+    "origin_convention": "bbox_min_corner",
+    "axes": {
+      "x": [
+        1,
+        0,
+        0
+      ],
+      "y": [
+        0,
+        1,
+        0
+      ],
+      "z": [
+        0,
+        0,
+        1
+      ]
+    },
+    "unit": "mm"
+  },
+  "target": {
+    "object_type": "single_part",
+    "part_category": "frame_or_hollow_box",
+    "body_count": 1,
+    "engineering_description": "(compiler-generated; no NL description)"
+  },
+  "solid_bodies": [
+    {
+      "id": "body_0",
+      "primitive_type": "extruded_rectangular_frame",
+      "frame": {
+        "u_dir": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "v_dir": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "w_dir": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "span_computation": "vertex_projection"
+      },
+      "profiles": [
+        {
+          "type": "rectangular_frame",
+          "rings": [
+            {
+              "role": "outer",
+              "loop_type": "polyline",
+              "curve_count": 4,
+              "curves": [
+                {
+                  "kind": "line",
+                  "ref": null,
+                  "start_uv": [
+                    0.0,
+                    30.0
+                  ],
+                  "end_uv": [
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "kind": "line",
+                  "ref": null,
+                  "start_uv": [
+                    0.0,
+                    0.0
+                  ],
+                  "end_uv": [
+                    50.0,
+                    0.0
+                  ]
+                },
+                {
+                  "kind": "line",
+                  "ref": null,
+                  "start_uv": [
+                    50.0,
+                    0.0
+                  ],
+                  "end_uv": [
+                    50.0,
+                    30.0
+                  ]
+                },
+                {
+                  "kind": "line",
+                  "ref": null,
+                  "start_uv": [
+                    50.0,
+                    30.0
+                  ],
+                  "end_uv": [
+                    0.0,
+                    30.0
+                  ]
+                }
+              ]
+            },
+            {
+              "role": "inner",
+              "loop_type": "polyline",
+              "curve_count": 4,
+              "curves": [
+                {
+                  "kind": "line",
+                  "ref": null,
+                  "start_uv": [
+                    5.0,
+                    5.0
+                  ],
+                  "end_uv": [
+                    5.0,
+                    25.0
+                  ]
+                },
+                {
+                  "kind": "line",
+                  "ref": null,
+                  "start_uv": [
+                    5.0,
+                    25.0
+                  ],
+                  "end_uv": [
+                    45.0,
+                    25.0
+                  ]
+                },
+                {
+                  "kind": "line",
+                  "ref": null,
+                  "start_uv": [
+                    45.0,
+                    25.0
+                  ],
+                  "end_uv": [
+                    45.0,
+                    5.0
+                  ]
+                },
+                {
+                  "kind": "line",
+                  "ref": null,
+                  "start_uv": [
+                    45.0,
+                    5.0
+                  ],
+                  "end_uv": [
+                    5.0,
+                    5.0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "extrude": {
+        "extent_type": "one_side",
+        "direction": "+w",
+        "distance_total": {
+          "value": 500.0,
+          "tol": 0.01,
+          "tol_kind": "absolute",
+          "source": "explicit_dimension"
+        },
+        "operation": "new_body",
+        "taper_angle_deg": {
+          "value": 0.0,
+          "tol": 0.01,
+          "tol_kind": "absolute"
+        },
+        "direction_verified": true
+      },
+      "dimensions": {
+        "extrude_distance": {
+          "value": 500.0,
+          "tol": 0.01,
+          "tol_kind": "absolute",
+          "relative_tol": 0.0001,
+          "source": "explicit_dimension"
+        },
+        "profiles": [
+          {
+            "outer_length_u": {
+              "value": 500.0,
+              "tol": 0.01,
+              "tol_kind": "absolute",
+              "source": "inferred_from_point_span"
+            },
+            "outer_width_v": {
+              "value": 300.0,
+              "tol": 0.01,
+              "tol_kind": "absolute",
+              "source": "inferred_from_point_span"
+            },
+            "inner_length_u": {
+              "value": 400.0,
+              "tol": 0.01,
+              "tol_kind": "absolute",
+              "source": "inferred_from_point_span"
+            },
+            "inner_width_v": {
+              "value": 200.0,
+              "tol": 0.01,
+              "tol_kind": "absolute",
+              "source": "inferred_from_point_span"
+            }
+          }
+        ]
+      },
+      "modifications": []
+    }
+  ],
+  "auxiliary_geometry": {
+    "unused_sketches": 0,
+    "note": "None."
+  },
+  "constraints": [
+    {
+      "type": "coincident_inert",
+      "note": "geometrically_inert",
+      "tol": 1e-06
+    },
+    {
+      "type": "perpendicular",
+      "curve_a": "40187166-e355-11ea-bd8c-54bf646e7e1f",
+      "curve_b": "40182352-e355-11ea-bcce-54bf646e7e1f",
+      "tol": 1e-06
+    },
+    {
+      "type": "perpendicular",
+      "curve_a": "4018bf6c-e355-11ea-a660-54bf646e7e1f",
+      "curve_b": "40187166-e355-11ea-bd8c-54bf646e7e1f",
+      "tol": 1e-06
+    },
+    {
+      "type": "perpendicular",
+      "curve_a": "4018e68c-e355-11ea-976d-54bf646e7e1f",
+      "curve_b": "40182352-e355-11ea-bcce-54bf646e7e1f",
+      "tol": 1e-06
+    },
+    {
+      "type": "perpendicular",
+      "curve_a": "401934a2-e355-11ea-bb02-54bf646e7e1f",
+      "curve_b": "4018e68c-e355-11ea-976d-54bf646e7e1f",
+      "tol": 1e-06
+    },
+    {
+      "type": "perpendicular",
+      "curve_a": "401982e2-e355-11ea-94e7-54bf646e7e1f",
+      "curve_b": "4018bf6c-e355-11ea-a660-54bf646e7e1f",
+      "tol": 1e-06
+    },
+    {
+      "type": "perpendicular",
+      "curve_a": "4019d0e2-e355-11ea-9ad5-54bf646e7e1f",
+      "curve_b": "4018e68c-e355-11ea-976d-54bf646e7e1f",
+      "tol": 1e-06
+    },
+    {
+      "type": "perpendicular",
+      "curve_a": "401a1f08-e355-11ea-97a2-54bf646e7e1f",
+      "curve_b": "401934a2-e355-11ea-bb02-54bf646e7e1f",
+      "tol": 1e-06
+    }
+  ],
+  "validation_intents": [
+    {
+      "id": "q_body_count",
+      "intent": "body_count",
+      "expected": 1
+    },
+    {
+      "id": "q_span_u",
+      "intent": "span_along_frame_axis",
+      "frame_axis": "u",
+      "expected": 500.0,
+      "tolerance": 0.01
+    },
+    {
+      "id": "q_span_v",
+      "intent": "span_along_frame_axis",
+      "frame_axis": "v",
+      "expected": 300.0,
+      "tolerance": 0.01
+    },
+    {
+      "id": "q_span_w",
+      "intent": "span_along_frame_axis",
+      "frame_axis": "w",
+      "expected": 500.0,
+      "tolerance": 0.01
+    },
+    {
+      "id": "q_surf_dist",
+      "intent": "surface_type_distribution",
+      "expected": {
+        "PlaneSurfaceType": 10
+      }
+    },
+    {
+      "id": "q_void_count",
+      "intent": "through_void_count",
+      "expected": 1
+    },
+    {
+      "id": "q_is_solid",
+      "intent": "is_solid",
+      "expected": true
+    },
+    {
+      "id": "q_occt_valid",
+      "intent": "occt_is_valid",
+      "expected": true
+    },
+    {
+      "id": "q_edge_ortho",
+      "intent": "edge_orthogonality",
+      "subject": "body_0",
+      "expected": "3 direction groups",
+      "tolerance": 1e-06
+    }
+  ],
+  "derived": {
+    "part_category": "frame_or_hollow_box",
+    "world_bbox_estimate": {
+      "along_x": 0,
+      "along_y": 0,
+      "along_z": 0
+    }
+  },
+  "non_verifiable": {
+    "world_pose": "Assembly-context world coordinates omitted."
+  },
+  "compiler_notes": {
+    "source_sketch_count": 1,
+    "source_extrude_count": 1,
+    "explicit_dimension_count": 6,
+    "inferred_dimensions": [
+      "outer_length_u",
+      "outer_width_v",
+      "inner_length_u",
+      "inner_width_v"
+    ],
+    "inference_mode": "all",
+    "source_constraints": [
+      {
+        "type": "CoincidentConstraint",
+        "count": 1
+      },
+      {
+        "type": "HorizontalConstraint",
+        "count": 1
+      },
+      {
+        "type": "PerpendicularConstraint",
+        "count": 7
+      }
+    ],
+    "warnings": [],
+    "unit_conversion_applied": "cm_to_mm (x10)"
+  }
+}

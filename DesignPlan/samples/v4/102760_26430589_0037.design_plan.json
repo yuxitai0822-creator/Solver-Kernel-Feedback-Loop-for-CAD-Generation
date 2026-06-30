@@ -1,0 +1,107 @@
+{
+  "schema_version": "design_plan_v0.4",
+  "sample_id": "102760_26430589_0037",
+  "source_component_name": "Винт с плоской г v2 (2)",
+  "unit": "mm",
+
+  "coordinate_system": {
+    "frame": "part_local",
+    "origin_convention": "bbox_min_corner",
+    "axes": {"x": [1, 0, 0], "y": [0, 1, 0], "z": [0, 0, 1]},
+    "unit": "mm"
+  },
+
+  "target": {
+    "object_type": "single_part",
+    "part_category": "negative_extrusion_part",
+    "body_count": 1,
+    "engineering_description": "Tiny cylindrical pin/dowel, diameter 1.6mm, extruded 4mm along -Y (negative direction). A flat-head screw blank sub-component."
+  },
+
+  "solid_bodies": [
+    {
+      "id": "body_0",
+      "primitive_type": "extruded_circle",
+
+      "frame": {
+        "u_dir": [0, 0, 1],
+        "v_dir": [1, 0, 0],
+        "w_dir": [0, 1, 0],
+        "span_computation": "vertex_projection"
+      },
+
+      "profiles": [
+        {
+          "type": "circle",
+          "closed": true,
+          "rings": [
+            {
+              "role": "outer",
+              "loop_type": "circle",
+              "curve_count": 1,
+              "curves": [
+                {"kind": "circle", "ref": "0:0", "center_uv": [0, 0], "radius": 0.8}
+              ]
+            }
+          ]
+        }
+      ],
+
+      "extrude": {
+        "extent_type": "one_side",
+        "direction": "-w",
+        "_doc_negative": "NEW v0.4 feature: source extent_one.distance = -0.4 (NEGATIVE). direction='-w' captures the sign; distance_total is the magnitude 4.0mm.",
+        "distance_total": {"value": 4.0, "tol": 0.01, "tol_kind": "absolute", "source": "explicit_dimension"},
+        "operation": "new_body",
+        "taper_angle_deg": {"value": 0.0, "tol": 0.01, "tol_kind": "absolute"}
+      },
+
+      "dimensions": {
+        "extrude_distance": {"value": 4.0, "tol": 0.01, "tol_kind": "absolute", "source": "explicit_dimension"},
+        "profiles": [
+          {"radius": {"value": 0.8, "tol": 0.005, "tol_kind": "absolute", "source": "explicit_dimension", "note": "d1_11=1.6cm diameter -> r=0.8mm"}}
+        ]
+      },
+
+      "modifications": []
+    }
+  ],
+
+  "auxiliary_geometry": {"unused_sketches": 0, "note": "None."},
+
+  "constraints": [
+    {"type": "coincident_inert", "note": "CoincidentConstraint collapses sketch origin onto circle center; geometrically inert.", "tol": 1e-6}
+  ],
+
+  "validation_intents": [
+    {"id": "q_body_count", "intent": "body_count", "expected": 1},
+    {"id": "q_span_u", "intent": "span_along_frame_axis", "frame_axis": "u", "expected": 1.6, "tolerance": 0.005, "note": "2*radius"},
+    {"id": "q_span_v", "intent": "span_along_frame_axis", "frame_axis": "v", "expected": 1.6, "tolerance": 0.005},
+    {"id": "q_span_w", "intent": "span_along_frame_axis", "frame_axis": "w", "expected": 4.0, "tolerance": 0.01, "note": "magnitude; direction -w captured separately"},
+    {"id": "q_surf_dist", "intent": "surface_type_distribution", "expected": {"PlaneSurfaceType": 2, "CylinderSurfaceType": 1}},
+    {"id": "q_cyl_count", "intent": "cylinder_face_count", "expected": 1},
+    {"id": "q_is_solid", "intent": "is_solid", "expected": true},
+    {"id": "q_occt_valid", "intent": "occt_is_valid", "expected": true}
+  ],
+
+  "derived": {
+    "part_category": "negative_extrusion_part",
+    "world_bbox_estimate": {"along_x": 1.6, "along_y": 4.0, "along_z": 1.6, "_doc": "y span is magnitude 4.0; sign -w means body occupies y in [-4,0] but span is 4.0"}
+  },
+
+  "non_verifiable": {"world_pose": "Sketch plane origin at (0,0,0); assembly-context."},
+
+  "compiler_notes": {
+    "source_sketch_count": 1,
+    "source_extrude_count": 1,
+    "explicit_dimension_count": 1,
+    "inferred_dimensions": [],
+    "source_constraints": [{"type": "CoincidentConstraint", "count": 1, "note": "geometrically_inert"}],
+    "warnings": [
+      "Unit conversion cm->mm (x10): d=1.6cm->1.6mm(r=0.8mm), extrude magnitude 0.4cm->4mm.",
+      "NEGATIVE EXTRUDE (v0.4 critical test): source extent_one.distance=-0.4. Compiler must split into direction='-w' + distance_total=abs(-0.4)*10=4.0mm. A compiler that takes raw distance would emit -4.0mm (wrong) or 4.0mm with no direction (loses sign).",
+      "GT vertex_valence: 2 vertices valence=1 (cylinder seam degeneracy, same as other pure cylinders)."
+    ],
+    "unit_conversion_applied": "cm_to_mm (x10)"
+  }
+}

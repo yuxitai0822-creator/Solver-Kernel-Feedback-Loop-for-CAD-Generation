@@ -18,22 +18,17 @@ from pathlib import Path
 
 SANITY_DIR = Path(__file__).resolve().parent / "sanity_set_50"
 IDS = [
-    "100243_9fb796fe_0005",
-    "100243_9fb796fe_0006",
-    "100877_ac1e5a17_0001",
-    "100877_ac1e5a17_0017",
-    "101269_f084ba14_0023",
-    # --- samples 11-20 (for v3 authoring + compiler verification) ---
-    "101817_b02acd9f_0004",
-    "102175_699d5e7c_0003",
-    "102295_86f842dd_0000",
-    "102314_91648bfc_0000",
-    "102369_65e5a7e6_0003",
-    "102410_f9877a7b_0000",
-    "102410_f9877a7b_0012",
-    "102525_06a3094b_0000",
-    "102525_06a3094b_0004",
-    "102525_06a3094b_0006",
+    # --- samples 41-50 (for v6 authoring + compiler verification) ---
+    "107668_cf76b132_0001",
+    "108244_329b1876_0000",
+    "108412_8de2f9c3_0000",
+    "108850_0dcd5ef1_0002",
+    "108850_0dcd5ef1_0004",
+    "108851_4d515b10_0005",
+    "108851_4d515b10_0006",
+    "108851_4d515b10_0007",
+    "108851_4d515b10_0009",
+    "108852_fed54702_0004",
 ]
 
 
@@ -158,7 +153,7 @@ def main():
             big_out.append("MISSING: " + str(p))
             continue
         big_out.append(summarize(p))
-    out_path = Path(__file__).resolve().parent / "dp_source_summary_11_20.txt"
+    out_path = Path(__file__).resolve().parent / "dp_source_summary_41_50.txt"
     out_path.write_text("\n\n".join(big_out), encoding="utf-8")
     print("Wrote", out_path)
 

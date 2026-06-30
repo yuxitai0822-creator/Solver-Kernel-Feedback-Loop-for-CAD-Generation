@@ -1,0 +1,146 @@
+{
+  "schema_version": "design_plan_v0.4",
+  "schema_doc": "v0.4 changes (see doc/DesignPlan_schema_v3评审与v4改进.md): (1) extrude.direction field for negative extrusion; (2) profiles[] (plural) for multi-profile single extrude; (3) profile.type += rectangular_frame; (4) source += curve_field; (5) part_category += frame_or_hollow_box; (6) validation_intents += through_void_count. Backward compatible with v0.3 for single-profile positive-extrusion cases.",
+
+  "sample_id": "<required: source JSON filename stem>",
+  "source_component_name": "<from metadata.component_name>",
+  "unit": "mm",
+
+  "coordinate_system": {
+    "frame": "part_local",
+    "origin_convention": "bbox_min_corner",
+    "axes": {"x": [1, 0, 0], "y": [0, 1, 0], "z": [0, 0, 1]},
+    "unit": "mm"
+  },
+
+  "target": {
+    "object_type": "single_part",
+    "part_category": "<derived. v0.4 adds: frame_or_hollow_box | negative_extrusion_part. Full set: square_strut | rectangular_slat_or_strip | flat_plate_or_panel | block | disk | tube_or_sleeve | stadium_extrusion | bracket_with_fillets | frame_or_hollow_box | negative_extrusion_part | uncategorized>",
+    "body_count": "<required: integer>",
+    "engineering_description": "<natural language; NOT verifiable>"
+  },
+
+  "solid_bodies": [
+    {
+      "id": "body_0",
+      "primitive_type": "<DERIVED from profiles[0].type (primary profile). For multi-profile bodies, the dominant/largest profile's type>",
+      "frame": {
+        "u_dir": "<unit vector>",
+        "v_dir": "<unit vector>",
+        "w_dir": "<unit vector, = cross(u,v)>",
+        "span_computation": "vertex_projection"
+      },
+
+      "profiles": [
+        {
+          "type": "<rectangle | circle | annulus | stadium | polygon_with_fillets | rectangular_frame | arbitrary_closed>",
+          "closed": true,
+          "rings": [
+            {
+              "role": "outer",
+              "loop_type": "<polyline | circle | composite_line_arc>",
+              "curve_count": "<integer>",
+              "curves": [
+                {"kind": "line", "ref": "0:0", "start_uv": [0,0], "end_uv": [0,0]},
+                {"kind": "arc", "ref": "0:1", "center_uv": [0,0], "radius": 0, "start_angle_deg": 0, "end_angle_deg": 0},
+                {"kind": "circle", "ref": "0:2", "center_uv": [0,0], "radius": 0}
+              ]
+            },
+            {
+              "role": "inner",
+              "loop_type": "<polyline | circle | composite_line_arc>",
+              "curve_count": "<integer>",
+              "curves": []
+            }
+          ],
+          "_doc_multi": "profiles[] is PLURAL: a single extrude may consume multiple profiles (sample 27). Single-profile cases have length 1 (backward compatible with v0.3 single 'profile'). rings[0] always outer; subsequent rings with role=inner are subtractive."
+        }
+      ],
+
+      "extrude": {
+        "extent_type": "<one_side | two_side | symmetric>",
+        "direction": "<+w | -w | both>",
+        "_doc_direction": "NEW in v0.4. '+w' = extrude along +w_dir (positive distance in source); '-w' = extrude along -w_dir (negative distance in source, e.g. sample 21 distance=-0.4); 'both' = two_side/symmetric. Decouples magnitude from sign.",
+        "distance_total": {"value": "<mm, always positive>", "tol": "<mm>", "tol_kind": "absolute", "source": "<explicit_dimension | inferred_from_point_span>"},
+        "_doc_distance": "RENAMED from v0.3 extrude_distance. Always positive magnitude; sign is in 'direction'. For two_side: sum of both extents.",
+        "operation": "<new_body | join | cut | intersect>",
+        "taper_angle_deg": {"value": 0.0, "tol": 0.01, "tol_kind": "absolute"}
+      },
+
+      "dimensions": {
+        "extrude_distance": {"value": "<mm>", "tol": "<mm>", "tol_kind": "absolute", "source": "<explicit_dimension | inferred_from_point_span | curve_field>"},
+        "_doc_dimensions": "Single source of truth. source += 'curve_field' (value from SketchCircle.radius/SketchArc.radius field, no Dimension; sample 30). For multi-profile bodies, per-profile params nest under dimensions.profiles[].",
+        "profiles": [
+          {
+            "_type_rectangle": {"length_u": {"value":0,"source":"..."}, "width_v": {"value":0,"source":"..."}},
+            "_type_circle": {"radius": {"value":0,"source":"..."}},
+            "_type_annulus": {"outer_radius": {"value":0,"source":"..."}, "inner_radius": {"value":0,"source":"..."}},
+            "_type_stadium": {"straight_length": {"value":0,"source":"..."}, "radius": {"value":0,"source":"..."}},
+            "_type_polygon_with_fillets": {"side_lengths": [], "fillet_radii": [], "hole_radii": []},
+            "_type_rectangular_frame": {"outer_length_u": {"value":0,"source":"..."}, "outer_width_v": {"value":0,"source":"..."}, "inner_length_u": {"value":0,"source":"..."}, "inner_width_v": {"value":0,"source":"..."}},
+            "_doc_frame": "NEW profile type: outer rectangle minus inner rectangle (sample 29). Both rectangles axis-aligned to frame, edges parallel."
+          }
+        ]
+      },
+
+      "modifications": []
+    }
+  ],
+
+  "auxiliary_geometry": {
+    "unused_sketches": "<integer>",
+    "note": "<why they exist>",
+    "_doc": "Unconsumed sketches (sample 22's Sketch5) recorded for traceability; NOT verifiable."
+  },
+
+  "constraints": [
+    {
+      "type": "<orthogonal_adjacent_edges | tangent | concentric | parallel | perpendicular | symmetry | coincident_inert>",
+      "subject": "<body_id, for orthogonal_adjacent_edges>",
+      "curve_a": "<ring:curve ref>",
+      "curve_b": "<ring:curve ref>",
+      "circle_a": "<ring:curve ref>",
+      "circle_b": "<ring:curve ref>",
+      "tol": 1e-6,
+      "note": "<optional>"
+    }
+  ],
+
+  "validation_intents": [
+    {
+      "id": "<unique>",
+      "intent": "<body_count | span_along_frame_axis | all_faces_planar | surface_type_distribution | cylinder_face_count | is_solid | occt_is_valid | euler_characteristic | edge_orthogonality | profile_closed | through_void_count>",
+      "expected": "<value>",
+      "tolerance": "<optional>",
+      "frame_axis": "<u|v|w, for span_along_frame_axis>",
+      "_doc_void": "NEW intent 'through_void_count': verifies number of through-holes/voids (genus-based). For annulus/rectangular_frame/polygon_with_holes: expected = number of inner rings."
+    }
+  ],
+
+  "derived": {
+    "part_category": "<auto-classified>",
+    "world_bbox_estimate": {"along_x": 0, "along_y": 0, "along_z": 0}
+  },
+
+  "non_verifiable": {
+    "world_pose": "Assembly-context world coordinates omitted.",
+    "engineering_description": "Natural language; KQP ignores.",
+    "auxiliary_geometry": "Unused sketches recorded for traceability only."
+  },
+
+  "compiler_notes": {
+    "source_sketch_count": "<integer>",
+    "source_extrude_count": "<integer>",
+    "explicit_dimension_count": "<integer>",
+    "inferred_dimensions": "<list>",
+    "source_constraints": [{"type": "...", "count": 0, "note": "..."}],
+    "warnings": "<list of strings>",
+    "unit_conversion_applied": "cm_to_mm (x10)"
+  },
+
+  "forbidden_fields": {
+    "procedural": ["timeline_index", "sketch_id", "profile_id", "face_id", "edge_id", "body_token", "api_call_order", "operation_sequence", "extrude_feature_name", "fusion_uuid"],
+    "leakage": ["exact_face_count", "exact_edge_count", "exact_vertex_count", "exact_volume", "exact_surface_area", "exact_center_of_mass", "brep_topology", "world_coordinates", "density", "mass"],
+    "v0_3_removed": ["profile (singular, -> profiles[])", "extrude_distance (-> distance_total + direction)"]
+  }
+}
