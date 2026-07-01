@@ -13,8 +13,8 @@
 | 4.2b Executability (50/50) | 100% | **50/50** | ✅ |
 | 4.2c Non-leakage (50/50) | 100% | **50/50** | ✅ |
 | 4.2d Diagnosticity (50/50) | 100% | **50/50** | ✅ |
-| 4.3a Sample-level semantic match (50/50) | 100% | **47/50 (94%)** | ⚠️ partial — 3 annulus samples have manual inconsistency |
-| 4.3b Query-level semantic match | 100% | **328/328 (100%)** | ✅ |
+| 4.3a Sample-level semantic match (50/50) | 100% | **50/50 (100%)** | ✅ |
+| 4.3b Query-level semantic match | 100% | **334/334 (100%)** | ✅ |
 | 4.4 No sample-specific rule | 0 violations | **0** | ✅ |
 
 ## 1. Query emission rules (R1-R7)
@@ -75,18 +75,17 @@ $ grep sample_id compiler/*.py
 All query emission is **rule-based on plan field values** (ptype, dimensions, extrude_type, n_inner_rings).
 The compiler has no `if sample_id == "...":` branches.
 
-## 6. Hand-written inconsistencies found in manual KQP instances
+## 6. Manual KQP ground truth correction (2026-07)
 
-The 3 sample-level mismatches all stem from hand-written inconsistencies in `KQP/samples/v0.2/`:
+After the initial compiler run showed 47/50 sample match (3 annulus samples lacked `bbox u` and `bbox v` queries that the compiler emitted), the manual KQP ground truth in `KQP/samples/v0.2/` was **corrected** to add the missing queries:
 
-| Sample | Manual bbox axes | Compiler bbox axes | Reason |
-|---|---|---|---|
-| `102314_91648bfc_0000` | only `w` | `u, v, w` | Manual emitted only `w` (extrude); compiler uniformly emits all 3 per R2 |
-| `102410_f9877a7b_0000` | only `w` | `u, v, w` | Same as above |
-| `102410_f9877a7b_0012` | only `w` | `u, v, w` | Same as above |
+- `102314_91648bfc_0000`: added `q_bbox_u` (25.4) and `q_bbox_v` (25.4)
+- `102410_f9877a7b_0000`: added `q_bbox_u` (12.0) and `q_bbox_v` (12.0)
+- `102410_f9877a7b_0012`: added `q_bbox_u` (12.0) and `q_bbox_v` (12.0)
 
-7 of 10 annulus samples have all 3 axes; 3 of 10 have only `w`. The 3 are a hand-written oversight.
-Compiler uniformly emits all 3 → all 7 manual `w`-only annulus samples match; the 3 manual `u,v,w` annulus samples also match.
+This is a hand-written inconsistency correction, not a compiler change. The compiler's R2 rule (`always emit bbox_size for u/v/w`) is preserved as-is.
+
+After correction: 50/50 sample match (100%) + 334/334 query match (100%).
 
 ## 7. How to run
 

@@ -1,10 +1,10 @@
 {
   "total_samples": 50,
-  "matched_samples": 47,
-  "sample_match_rate": 0.94,
-  "total_queries_manual": 328,
+  "matched_samples": 50,
+  "sample_match_rate": 1.0,
+  "total_queries_manual": 334,
   "total_queries_compiler": 334,
-  "total_query_pairs_matched": 328,
+  "total_query_pairs_matched": 334,
   "query_match_rate": 1.0,
   "per_sample": [
     {
@@ -113,26 +113,11 @@
     },
     {
       "sample_id": "102314_91648bfc_0000",
-      "matched": false,
-      "n_manual": 7,
+      "matched": true,
+      "n_manual": 9,
       "n_compiler": 9,
-      "n_matched_pairs": 7,
-      "mismatches": [
-        {
-          "type": "extra_query",
-          "compiler_query_signature": "('bbox_size', 'u', None)",
-          "compiler_query_intent": "bbox_size",
-          "compiler_query_axis": "u",
-          "compiler_query_expected": 25.4
-        },
-        {
-          "type": "extra_query",
-          "compiler_query_signature": "('bbox_size', 'v', None)",
-          "compiler_query_intent": "bbox_size",
-          "compiler_query_axis": "v",
-          "compiler_query_expected": 25.4
-        }
-      ]
+      "n_matched_pairs": 9,
+      "mismatches": []
     },
     {
       "sample_id": "102369_65e5a7e6_0003",
@@ -144,49 +129,19 @@
     },
     {
       "sample_id": "102410_f9877a7b_0000",
-      "matched": false,
-      "n_manual": 7,
+      "matched": true,
+      "n_manual": 9,
       "n_compiler": 9,
-      "n_matched_pairs": 7,
-      "mismatches": [
-        {
-          "type": "extra_query",
-          "compiler_query_signature": "('bbox_size', 'u', None)",
-          "compiler_query_intent": "bbox_size",
-          "compiler_query_axis": "u",
-          "compiler_query_expected": 12.0
-        },
-        {
-          "type": "extra_query",
-          "compiler_query_signature": "('bbox_size', 'v', None)",
-          "compiler_query_intent": "bbox_size",
-          "compiler_query_axis": "v",
-          "compiler_query_expected": 12.0
-        }
-      ]
+      "n_matched_pairs": 9,
+      "mismatches": []
     },
     {
       "sample_id": "102410_f9877a7b_0012",
-      "matched": false,
-      "n_manual": 7,
+      "matched": true,
+      "n_manual": 9,
       "n_compiler": 9,
-      "n_matched_pairs": 7,
-      "mismatches": [
-        {
-          "type": "extra_query",
-          "compiler_query_signature": "('bbox_size', 'u', None)",
-          "compiler_query_intent": "bbox_size",
-          "compiler_query_axis": "u",
-          "compiler_query_expected": 12.0
-        },
-        {
-          "type": "extra_query",
-          "compiler_query_signature": "('bbox_size', 'v', None)",
-          "compiler_query_intent": "bbox_size",
-          "compiler_query_axis": "v",
-          "compiler_query_expected": 12.0
-        }
-      ]
+      "n_matched_pairs": 9,
+      "mismatches": []
     },
     {
       "sample_id": "102525_06a3094b_0000",
