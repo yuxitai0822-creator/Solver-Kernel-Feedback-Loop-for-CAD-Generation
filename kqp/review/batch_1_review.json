@@ -1,7 +1,7 @@
 {
   "schema_version": "kqp_schema_v0.1",
   "n_files": 50,
-  "n_queries_total": 328,
+  "n_queries_total": 334,
   "issues_by_criterion": {},
   "per_file": [
     {
@@ -71,7 +71,7 @@
     },
     {
       "sid": "102314_91648bfc_0000",
-      "n_queries": 7,
+      "n_queries": 9,
       "issues": []
     },
     {
@@ -81,12 +81,12 @@
     },
     {
       "sid": "102410_f9877a7b_0000",
-      "n_queries": 7,
+      "n_queries": 9,
       "issues": []
     },
     {
       "sid": "102410_f9877a7b_0012",
-      "n_queries": 7,
+      "n_queries": 9,
       "issues": []
     },
     {

@@ -1,0 +1,68 @@
+{
+  "schema_version": "kqp_instance_v0.2",
+  "instance_id": "kqp_100877_ac1e5a17_0001",
+  "design_plan_id": "100877_ac1e5a17_0001",
+  "step_file": "data/sanity_set_50/100877_ac1e5a17_0001.step",
+  "queries": [
+    {
+      "id": "q_body_count",
+      "category": "A_topology",
+      "intent": "body_count",
+      "expected": 1,
+      "source_field": "$.target.body_count",
+      "feedback_enabled": true,
+      "feedback_template": "Expected body_count=1, got {actual}."
+    },
+    {
+      "id": "q_bbox_u",
+      "category": "B_geometry_dim",
+      "intent": "bbox_size",
+      "axis": "u",
+      "expected": 279.4,
+      "tolerance": 0.05,
+      "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+      "feedback_enabled": true,
+      "feedback_template": "Expected bbox u-size 279.4mm, got {actual}mm."
+    },
+    {
+      "id": "q_bbox_v",
+      "category": "B_geometry_dim",
+      "intent": "bbox_size",
+      "axis": "v",
+      "expected": 215.9,
+      "tolerance": 0.05,
+      "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+      "feedback_enabled": true,
+      "feedback_template": "Expected bbox v-size 215.9mm, got {actual}mm."
+    },
+    {
+      "id": "q_bbox_w",
+      "category": "B_geometry_dim",
+      "intent": "bbox_size",
+      "axis": "w",
+      "expected": 1.5875,
+      "tolerance": 0.005,
+      "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+      "feedback_enabled": true,
+      "feedback_template": "Expected bbox w-size 1.5875mm, got {actual}mm."
+    },
+    {
+      "id": "q_is_solid",
+      "category": "D_health",
+      "intent": "is_solid",
+      "expected": true,
+      "source_field": "(implicit: valid extrude implies solid)",
+      "feedback_enabled": true,
+      "feedback_template": "Body is not a closed solid. got {actual}."
+    },
+    {
+      "id": "q_occt_valid",
+      "category": "D_health",
+      "intent": "occt_valid",
+      "expected": true,
+      "source_field": "(implicit)",
+      "feedback_enabled": true,
+      "feedback_template": "OCCT validation failed. got {actual}."
+    }
+  ]
+}
