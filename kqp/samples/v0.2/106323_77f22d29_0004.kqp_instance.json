@@ -1,0 +1,114 @@
+{
+  "schema_version": "kqp_instance_v0.2",
+  "instance_id": "kqp_106323_77f22d29_0004",
+  "design_plan_id": "106323_77f22d29_0004",
+  "step_file": "data/sanity_set_50/106323_77f22d29_0004.step",
+  "queries": [
+    {
+      "id": "q_body_count",
+      "category": "A_topology",
+      "intent": "body_count",
+      "expected": 1,
+      "source_field": "$.target.body_count",
+      "feedback_enabled": true,
+      "feedback_template": "Expected body_count=1, got {actual}."
+    },
+    {
+      "id": "q_outer_radius",
+      "category": "B_geometry_dim",
+      "intent": "cylinder_radius",
+      "params": {
+        "selector": "outer"
+      },
+      "expected": 17.5,
+      "tolerance": 0.01,
+      "source_field": "$.solid_bodies[0].dimensions.profiles[0].outer_radius.value",
+      "feedback_enabled": true,
+      "feedback_template": "Expected outer cylinder radius 17.5mm, got {actual}mm."
+    },
+    {
+      "id": "q_inner_radius",
+      "category": "B_geometry_dim",
+      "intent": "cylinder_radius",
+      "params": {
+        "selector": "inner"
+      },
+      "expected": 12.5,
+      "tolerance": 0.01,
+      "source_field": "$.solid_bodies[0].dimensions.profiles[0].inner_radius.value",
+      "feedback_enabled": true,
+      "feedback_template": "Expected inner cylinder radius 12.5mm, got {actual}mm."
+    },
+    {
+      "id": "q_bbox_u",
+      "category": "B_geometry_dim",
+      "intent": "bbox_size",
+      "axis": "u",
+      "expected": 35.0,
+      "tolerance": 0.01,
+      "source_field": "$.solid_bodies[0].dimensions.profiles[0].outer_radius.value (computed: 2*r)",
+      "feedback_enabled": true,
+      "feedback_template": "Expected bbox u-size 35.0mm, got {actual}mm."
+    },
+    {
+      "id": "q_bbox_v",
+      "category": "B_geometry_dim",
+      "intent": "bbox_size",
+      "axis": "v",
+      "expected": 35.0,
+      "tolerance": 0.01,
+      "source_field": "$.solid_bodies[0].dimensions.profiles[0].outer_radius.value (computed: 2*r)",
+      "feedback_enabled": true,
+      "feedback_template": "Expected bbox v-size 35.0mm, got {actual}mm."
+    },
+    {
+      "id": "q_void_count",
+      "category": "C_feature",
+      "intent": "through_void_count",
+      "expected": 1,
+      "tolerance": 0,
+      "source_field": "$.solid_bodies[0].profiles[0].rings[*].role=='inner' count",
+      "feedback_enabled": true,
+      "feedback_template": "Expected 1 through-void(s), got {actual}."
+    },
+    {
+      "id": "q_bbox_w",
+      "category": "B_geometry_dim",
+      "intent": "bbox_size",
+      "axis": "w",
+      "expected": 10.0,
+      "tolerance": 0.01,
+      "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+      "feedback_enabled": true,
+      "feedback_template": "Expected bbox w-size 10.0mm (symmetric extrude, body straddles plane), got {actual}mm."
+    },
+    {
+      "id": "q_symmetric",
+      "category": "D_health",
+      "intent": "symmetric_about_plane",
+      "expected": true,
+      "tolerance": null,
+      "source_field": "(implicit: design_plan specifies symmetric extrude)",
+      "feedback_enabled": true,
+      "feedback_template": "Body is not symmetric about sketch plane (centroid not on plane). got {actual}."
+    },
+    {
+      "id": "q_is_solid",
+      "category": "D_health",
+      "intent": "is_solid",
+      "expected": true,
+      "source_field": "(implicit: valid extrude implies solid)",
+      "feedback_enabled": true,
+      "feedback_template": "Body is not a closed solid. got {actual}."
+    },
+    {
+      "id": "q_occt_valid",
+      "category": "D_health",
+      "intent": "occt_valid",
+      "expected": true,
+      "source_field": "(implicit)",
+      "feedback_enabled": true,
+      "feedback_template": "OCCT validation failed. got {actual}."
+    }
+  ]
+}

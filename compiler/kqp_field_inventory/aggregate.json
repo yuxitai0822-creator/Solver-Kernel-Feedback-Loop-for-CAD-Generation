@@ -1,0 +1,29 @@
+{
+  "samples": 50,
+  "field_coverage": {
+    "target.body_count": 50,
+    "extrude_distance": 50,
+    "length_u": 21,
+    "width_v": 21,
+    "outer_length_u": 5,
+    "outer_width_v": 5,
+    "inner_length_u": 5,
+    "inner_width_v": 5,
+    "inner_rings_count": 15,
+    "straight_length": 4,
+    "stadium_radius": 4,
+    "outer_radius": 7,
+    "inner_radius": 7,
+    "circle_radius": 10,
+    "line_lengths": 5,
+    "arc_radii": 2
+  },
+  "kqp_query_intents": {
+    "body_count": 50,
+    "bbox_size": 118,
+    "is_solid": 50,
+    "occt_valid": 50,
+    "through_void_count": 15,
+    "cylinder_radius": 17
+  }
+}

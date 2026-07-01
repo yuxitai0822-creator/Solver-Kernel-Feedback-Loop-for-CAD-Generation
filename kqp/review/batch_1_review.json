@@ -1,0 +1,258 @@
+{
+  "schema_version": "kqp_schema_v0.1",
+  "n_files": 50,
+  "n_queries_total": 328,
+  "issues_by_criterion": {},
+  "per_file": [
+    {
+      "sid": "100243_9fb796fe_0005",
+      "n_queries": 6,
+      "issues": []
+    },
+    {
+      "sid": "100243_9fb796fe_0006",
+      "n_queries": 6,
+      "issues": []
+    },
+    {
+      "sid": "100877_ac1e5a17_0001",
+      "n_queries": 6,
+      "issues": []
+    },
+    {
+      "sid": "100877_ac1e5a17_0017",
+      "n_queries": 6,
+      "issues": []
+    },
+    {
+      "sid": "101269_f084ba14_0023",
+      "n_queries": 6,
+      "issues": []
+    },
+    {
+      "sid": "101427_a9bcb09c_0001",
+      "n_queries": 7,
+      "issues": []
+    },
+    {
+      "sid": "101427_a9bcb09c_0002",
+      "n_queries": 6,
+      "issues": []
+    },
+    {
+      "sid": "101817_b02acd9f_0000",
+      "n_queries": 7,
+      "issues": []
+    },
+    {
+      "sid": "101817_b02acd9f_0001",
+      "n_queries": 7,
+      "issues": []
+    },
+    {
+      "sid": "101817_b02acd9f_0002",
+      "n_queries": 7,
+      "issues": []
+    },
+    {
+      "sid": "101817_b02acd9f_0004",
+      "n_queries": 6,
+      "issues": []
+    },
+    {
+      "sid": "102175_699d5e7c_0003",
+      "n_queries": 6,
+      "issues": []
+    },
+    {
+      "sid": "102295_86f842dd_0000",
+      "n_queries": 6,
+      "issues": []
+    },
+    {
+      "sid": "102314_91648bfc_0000",
+      "n_queries": 7,
+      "issues": []
+    },
+    {
+      "sid": "102369_65e5a7e6_0003",
+      "n_queries": 5,
+      "issues": []
+    },
+    {
+      "sid": "102410_f9877a7b_0000",
+      "n_queries": 7,
+      "issues": []
+    },
+    {
+      "sid": "102410_f9877a7b_0012",
+      "n_queries": 7,
+      "issues": []
+    },
+    {
+      "sid": "102525_06a3094b_0000",
+      "n_queries": 6,
+      "issues": []
+    },
+    {
+      "sid": "102525_06a3094b_0004",
+      "n_queries": 6,
+      "issues": []
+    },
+    {
+      "sid": "102525_06a3094b_0006",
+      "n_queries": 6,
+      "issues": []
+    },
+    {
+      "sid": "102760_26430589_0037",
+      "n_queries": 7,
+      "issues": []
+    },
+    {
+      "sid": "103284_e25015aa_0003",
+      "n_queries": 7,
+      "issues": []
+    },
+    {
+      "sid": "103284_e25015aa_0004",
+      "n_queries": 7,
+      "issues": []
+    },
+    {
+      "sid": "103481_b27a1cdf_0010",
+      "n_queries": 6,
+      "issues": []
+    },
+    {
+      "sid": "103552_c3a389ed_0003",
+      "n_queries": 7,
+      "issues": []
+    },
+    {
+      "sid": "104283_e5646f96_0000",
+      "n_queries": 7,
+      "issues": []
+    },
+    {
+      "sid": "104283_e5646f96_0001",
+      "n_queries": 4,
+      "issues": []
+    },
+    {
+      "sid": "104453_aba0f2d1_0002",
+      "n_queries": 6,
+      "issues": []
+    },
+    {
+      "sid": "104453_aba0f2d1_0006",
+      "n_queries": 7,
+      "issues": []
+    },
+    {
+      "sid": "104524_f829aab2_0001",
+      "n_queries": 7,
+      "issues": []
+    },
+    {
+      "sid": "105278_909f3813_0000",
+      "n_queries": 6,
+      "issues": []
+    },
+    {
+      "sid": "106323_77f22d29_0004",
+      "n_queries": 10,
+      "issues": []
+    },
+    {
+      "sid": "106817_bb28b7aa_0002",
+      "n_queries": 7,
+      "issues": []
+    },
+    {
+      "sid": "106817_bb28b7aa_0003",
+      "n_queries": 7,
+      "issues": []
+    },
+    {
+      "sid": "106817_bb28b7aa_0004",
+      "n_queries": 9,
+      "issues": []
+    },
+    {
+      "sid": "107055_0500fdd1_0027",
+      "n_queries": 9,
+      "issues": []
+    },
+    {
+      "sid": "107075_beb19139_0000",
+      "n_queries": 4,
+      "issues": []
+    },
+    {
+      "sid": "107466_72cd4ce9_0002",
+      "n_queries": 7,
+      "issues": []
+    },
+    {
+      "sid": "107467_a8afc51d_0000",
+      "n_queries": 7,
+      "issues": []
+    },
+    {
+      "sid": "107467_a8afc51d_0002",
+      "n_queries": 7,
+      "issues": []
+    },
+    {
+      "sid": "107668_cf76b132_0001",
+      "n_queries": 9,
+      "issues": []
+    },
+    {
+      "sid": "108244_329b1876_0000",
+      "n_queries": 6,
+      "issues": []
+    },
+    {
+      "sid": "108412_8de2f9c3_0000",
+      "n_queries": 6,
+      "issues": []
+    },
+    {
+      "sid": "108850_0dcd5ef1_0002",
+      "n_queries": 6,
+      "issues": []
+    },
+    {
+      "sid": "108850_0dcd5ef1_0004",
+      "n_queries": 6,
+      "issues": []
+    },
+    {
+      "sid": "108851_4d515b10_0005",
+      "n_queries": 6,
+      "issues": []
+    },
+    {
+      "sid": "108851_4d515b10_0006",
+      "n_queries": 6,
+      "issues": []
+    },
+    {
+      "sid": "108851_4d515b10_0007",
+      "n_queries": 6,
+      "issues": []
+    },
+    {
+      "sid": "108851_4d515b10_0009",
+      "n_queries": 6,
+      "issues": []
+    },
+    {
+      "sid": "108852_fed54702_0004",
+      "n_queries": 7,
+      "issues": []
+    }
+  ]
+}

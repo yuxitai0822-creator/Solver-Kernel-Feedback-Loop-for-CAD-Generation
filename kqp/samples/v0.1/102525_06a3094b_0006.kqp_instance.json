@@ -1,0 +1,68 @@
+{
+  "schema_version": "kqp_instance_v0.1",
+  "instance_id": "kqp_102525_06a3094b_0006",
+  "design_plan_id": "102525_06a3094b_0006",
+  "step_file": "data/sanity_set_50/102525_06a3094b_0006.step",
+  "queries": [
+    {
+      "id": "q_body_count",
+      "category": "A_topology",
+      "intent": "body_count",
+      "expected": 1,
+      "source_field": "$.target.body_count",
+      "feedback_enabled": true,
+      "feedback_template": "Expected body_count=1, got {actual}."
+    },
+    {
+      "id": "q_bbox_u",
+      "category": "B_geometry_dim",
+      "intent": "bbox_size",
+      "axis": "u",
+      "expected": 11.3,
+      "tolerance": 0.05,
+      "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+      "feedback_enabled": true,
+      "feedback_template": "Expected bbox u-size 11.3mm, got {actual}mm."
+    },
+    {
+      "id": "q_bbox_v",
+      "category": "B_geometry_dim",
+      "intent": "bbox_size",
+      "axis": "v",
+      "expected": 21.0,
+      "tolerance": 0.05,
+      "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+      "feedback_enabled": true,
+      "feedback_template": "Expected bbox v-size 21.0mm, got {actual}mm."
+    },
+    {
+      "id": "q_bbox_w",
+      "category": "B_geometry_dim",
+      "intent": "bbox_size",
+      "axis": "w",
+      "expected": 3.0,
+      "tolerance": 0.01,
+      "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+      "feedback_enabled": true,
+      "feedback_template": "Expected bbox w-size 3.0mm, got {actual}mm."
+    },
+    {
+      "id": "q_is_solid",
+      "category": "D_health",
+      "intent": "is_solid",
+      "expected": true,
+      "source_field": "(implicit: valid extrude implies solid)",
+      "feedback_enabled": true,
+      "feedback_template": "Body is not a closed solid. got {actual}."
+    },
+    {
+      "id": "q_occt_valid",
+      "category": "D_health",
+      "intent": "occt_valid",
+      "expected": true,
+      "source_field": "(implicit)",
+      "feedback_enabled": true,
+      "feedback_template": "OCCT validation failed. got {actual}."
+    }
+  ]
+}

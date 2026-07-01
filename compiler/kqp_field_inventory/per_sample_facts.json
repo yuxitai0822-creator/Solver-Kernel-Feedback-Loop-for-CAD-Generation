@@ -1,0 +1,2945 @@
+[
+  {
+    "sid": "100243_9fb796fe_0005",
+    "profile_type": "rectangle",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 200.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "length_u",
+        "value": 19.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_u",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "width_v",
+        "value": 19.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_v",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "100243_9fb796fe_0006",
+    "profile_type": "rectangle",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 130.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "length_u",
+        "value": 19.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_u",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "width_v",
+        "value": 19.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_v",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "100877_ac1e5a17_0001",
+    "profile_type": "rectangle",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 1.5875,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "length_u",
+        "value": 279.4,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_u",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "width_v",
+        "value": 215.9,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_v",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "100877_ac1e5a17_0017",
+    "profile_type": "rectangle",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 3.175,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "length_u",
+        "value": 254.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_u",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "width_v",
+        "value": 190.5,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_v",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "101269_f084ba14_0023",
+    "profile_type": "rectangle",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 19.05,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "length_u",
+        "value": 95.25,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_u",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "width_v",
+        "value": 571.5,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_v",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "101427_a9bcb09c_0001",
+    "profile_type": "rectangular_frame",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 25.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "outer_length_u",
+        "value": 1980.0,
+        "category": "geometry_dim",
+        "query_intent": "rect_frame_outer_length_u",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].outer_length_u.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "outer_width_v",
+        "value": 600.0,
+        "category": "geometry_dim",
+        "query_intent": "rect_frame_outer_width_v",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].outer_width_v.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "inner_length_u",
+        "value": 1930.0,
+        "category": "geometry_dim",
+        "query_intent": "rect_frame_inner_length_u",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].inner_length_u.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "inner_width_v",
+        "value": 550.0,
+        "category": "geometry_dim",
+        "query_intent": "rect_frame_inner_width_v",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].inner_width_v.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "inner_rings_count",
+        "value": 1,
+        "category": "feature",
+        "query_intent": "through_void_count",
+        "expected": 1,
+        "source_field": "$.solid_bodies[0].profiles[0].rings[*].role=='inner' count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "101427_a9bcb09c_0002",
+    "profile_type": "rectangle",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 50.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "length_u",
+        "value": 1930.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_u",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "width_v",
+        "value": 550.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_v",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "101817_b02acd9f_0000",
+    "profile_type": "rectangular_frame",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 780.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "outer_length_u",
+        "value": 40.0,
+        "category": "geometry_dim",
+        "query_intent": "rect_frame_outer_length_u",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].outer_length_u.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "outer_width_v",
+        "value": 40.0,
+        "category": "geometry_dim",
+        "query_intent": "rect_frame_outer_width_v",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].outer_width_v.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "inner_length_u",
+        "value": 37.6,
+        "category": "geometry_dim",
+        "query_intent": "rect_frame_inner_length_u",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].inner_length_u.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "inner_width_v",
+        "value": 37.6,
+        "category": "geometry_dim",
+        "query_intent": "rect_frame_inner_width_v",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].inner_width_v.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "inner_rings_count",
+        "value": 1,
+        "category": "feature",
+        "query_intent": "through_void_count",
+        "expected": 1,
+        "source_field": "$.solid_bodies[0].profiles[0].rings[*].role=='inner' count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "101817_b02acd9f_0001",
+    "profile_type": "rectangular_frame",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 520.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "outer_length_u",
+        "value": 40.0,
+        "category": "geometry_dim",
+        "query_intent": "rect_frame_outer_length_u",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].outer_length_u.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "outer_width_v",
+        "value": 40.0,
+        "category": "geometry_dim",
+        "query_intent": "rect_frame_outer_width_v",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].outer_width_v.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "inner_length_u",
+        "value": 37.6,
+        "category": "geometry_dim",
+        "query_intent": "rect_frame_inner_length_u",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].inner_length_u.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "inner_width_v",
+        "value": 37.6,
+        "category": "geometry_dim",
+        "query_intent": "rect_frame_inner_width_v",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].inner_width_v.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "inner_rings_count",
+        "value": 1,
+        "category": "feature",
+        "query_intent": "through_void_count",
+        "expected": 1,
+        "source_field": "$.solid_bodies[0].profiles[0].rings[*].role=='inner' count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "101817_b02acd9f_0002",
+    "profile_type": "rectangular_frame",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 1120.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "outer_length_u",
+        "value": 42.4,
+        "category": "geometry_dim",
+        "query_intent": "rect_frame_outer_length_u",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].outer_length_u.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "outer_width_v",
+        "value": 42.4,
+        "category": "geometry_dim",
+        "query_intent": "rect_frame_outer_width_v",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].outer_width_v.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "inner_length_u",
+        "value": 40.0,
+        "category": "geometry_dim",
+        "query_intent": "rect_frame_inner_length_u",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].inner_length_u.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "inner_width_v",
+        "value": 40.0,
+        "category": "geometry_dim",
+        "query_intent": "rect_frame_inner_width_v",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].inner_width_v.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "inner_rings_count",
+        "value": 1,
+        "category": "feature",
+        "query_intent": "through_void_count",
+        "expected": 1,
+        "source_field": "$.solid_bodies[0].profiles[0].rings[*].role=='inner' count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "101817_b02acd9f_0004",
+    "profile_type": "rectangle",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 20.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "length_u",
+        "value": 1200.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_u",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "width_v",
+        "value": 600.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_v",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "102175_699d5e7c_0003",
+    "profile_type": "rectangle",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 10.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "length_u",
+        "value": 39.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_u",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "width_v",
+        "value": 68.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_v",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "102295_86f842dd_0000",
+    "profile_type": "stadium",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 4.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "straight_length",
+        "value": 28.0,
+        "category": "geometry_dim",
+        "query_intent": "stadium_length_via_u (union span)",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].straight_length.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "stadium_radius",
+        "value": 10.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_v (2*radius)",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].radius.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "102314_91648bfc_0000",
+    "profile_type": "annulus",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 101.6,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "outer_radius",
+        "value": 12.7,
+        "category": "geometry_dim",
+        "query_intent": "annulus_outer (bbox u/v = 2*ro)",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].outer_radius.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "inner_radius",
+        "value": 7.965948,
+        "category": "geometry_dim",
+        "query_intent": "annulus_inner (hole_radius)",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].inner_radius.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "inner_rings_count",
+        "value": 1,
+        "category": "feature",
+        "query_intent": "through_void_count",
+        "expected": 1,
+        "source_field": "$.solid_bodies[0].profiles[0].rings[*].role=='inner' count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "102369_65e5a7e6_0003",
+    "profile_type": "polygon_with_fillets",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 3.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "inner_rings_count",
+        "value": 2,
+        "category": "feature",
+        "query_intent": "through_void_count",
+        "expected": 2,
+        "source_field": "$.solid_bodies[0].profiles[0].rings[*].role=='inner' count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "102410_f9877a7b_0000",
+    "profile_type": "annulus",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 11.5,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "outer_radius",
+        "value": 6.0,
+        "category": "geometry_dim",
+        "query_intent": "annulus_outer (bbox u/v = 2*ro)",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].outer_radius.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "inner_radius",
+        "value": 4.25,
+        "category": "geometry_dim",
+        "query_intent": "annulus_inner (hole_radius)",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].inner_radius.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "inner_rings_count",
+        "value": 1,
+        "category": "feature",
+        "query_intent": "through_void_count",
+        "expected": 1,
+        "source_field": "$.solid_bodies[0].profiles[0].rings[*].role=='inner' count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "102410_f9877a7b_0012",
+    "profile_type": "annulus",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 12.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "outer_radius",
+        "value": 6.0,
+        "category": "geometry_dim",
+        "query_intent": "annulus_outer (bbox u/v = 2*ro)",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].outer_radius.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "inner_radius",
+        "value": 4.25,
+        "category": "geometry_dim",
+        "query_intent": "annulus_inner (hole_radius)",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].inner_radius.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "inner_rings_count",
+        "value": 1,
+        "category": "feature",
+        "query_intent": "through_void_count",
+        "expected": 1,
+        "source_field": "$.solid_bodies[0].profiles[0].rings[*].role=='inner' count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "102525_06a3094b_0000",
+    "profile_type": "rectangle",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 1.55,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "length_u",
+        "value": 3.9,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_u",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "width_v",
+        "value": 4.9,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_v",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "102525_06a3094b_0004",
+    "profile_type": "rectangle",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 2.5,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "length_u",
+        "value": 8.5,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_u",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "width_v",
+        "value": 18.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_v",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "102525_06a3094b_0006",
+    "profile_type": "rectangle",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 3.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "length_u",
+        "value": 11.3,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_u",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "width_v",
+        "value": 21.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_v",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "102760_26430589_0037",
+    "profile_type": "circle",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 4.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "circle_radius",
+        "value": 0.8,
+        "category": "geometry_dim",
+        "query_intent": "cylinder_radius (bbox u/v = 2r)",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].radius.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "103284_e25015aa_0003",
+    "profile_type": "circle",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 8.89,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "circle_radius",
+        "value": 25.4,
+        "category": "geometry_dim",
+        "query_intent": "cylinder_radius (bbox u/v = 2r)",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].radius.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "103284_e25015aa_0004",
+    "profile_type": "circle",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 12.7,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "circle_radius",
+        "value": 11.938,
+        "category": "geometry_dim",
+        "query_intent": "cylinder_radius (bbox u/v = 2r)",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].radius.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "103481_b27a1cdf_0010",
+    "profile_type": "rectangle",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 38.1,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "length_u",
+        "value": 101.6,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_u",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "width_v",
+        "value": 101.6,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_v",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "103552_c3a389ed_0003",
+    "profile_type": "stadium",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 6.5,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "straight_length",
+        "value": 200.0,
+        "category": "geometry_dim",
+        "query_intent": "stadium_length_via_u (union span)",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].straight_length.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "stadium_radius",
+        "value": 12.5,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_v (2*radius)",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].radius.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "inner_rings_count",
+        "value": 2,
+        "category": "feature",
+        "query_intent": "through_void_count",
+        "expected": 2,
+        "source_field": "$.solid_bodies[0].profiles[0].rings[*].role=='inner' count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "104283_e5646f96_0000",
+    "profile_type": "circle",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 75.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "circle_radius",
+        "value": 12.5,
+        "category": "geometry_dim",
+        "query_intent": "cylinder_radius (bbox u/v = 2r)",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].radius.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "104283_e5646f96_0001",
+    "profile_type": "arbitrary_closed",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 18.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "line_lengths[0]",
+        "value": 17.936744,
+        "category": "geometry_dim",
+        "query_intent": "arbitrary_line_0_length",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].line_lengths[0].value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "line_lengths[1]",
+        "value": 28.811665,
+        "category": "geometry_dim",
+        "query_intent": "arbitrary_line_1_length",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].line_lengths[1].value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "line_lengths[2]",
+        "value": 17.936744,
+        "category": "geometry_dim",
+        "query_intent": "arbitrary_line_2_length",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].line_lengths[2].value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "104453_aba0f2d1_0002",
+    "profile_type": "stadium",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 100.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "straight_length",
+        "value": 500.0,
+        "category": "geometry_dim",
+        "query_intent": "stadium_length_via_u (union span)",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].straight_length.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "stadium_radius",
+        "value": 50.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_v (2*radius)",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].radius.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "104453_aba0f2d1_0006",
+    "profile_type": "rectangular_frame",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 500.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "outer_length_u",
+        "value": 500.0,
+        "category": "geometry_dim",
+        "query_intent": "rect_frame_outer_length_u",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].outer_length_u.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "outer_width_v",
+        "value": 300.0,
+        "category": "geometry_dim",
+        "query_intent": "rect_frame_outer_width_v",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].outer_width_v.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "inner_length_u",
+        "value": 400.0,
+        "category": "geometry_dim",
+        "query_intent": "rect_frame_inner_length_u",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].inner_length_u.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "inner_width_v",
+        "value": 200.0,
+        "category": "geometry_dim",
+        "query_intent": "rect_frame_inner_width_v",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].inner_width_v.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "inner_rings_count",
+        "value": 1,
+        "category": "feature",
+        "query_intent": "through_void_count",
+        "expected": 1,
+        "source_field": "$.solid_bodies[0].profiles[0].rings[*].role=='inner' count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "104524_f829aab2_0001",
+    "profile_type": "circle",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 20.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "circle_radius",
+        "value": 7.5,
+        "category": "geometry_dim",
+        "query_intent": "cylinder_radius (bbox u/v = 2r)",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].radius.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "105278_909f3813_0000",
+    "profile_type": "rectangle",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 40.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "length_u",
+        "value": 12.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_u",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "width_v",
+        "value": 60.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_v",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "106323_77f22d29_0004",
+    "profile_type": "annulus",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 10.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "outer_radius",
+        "value": 17.5,
+        "category": "geometry_dim",
+        "query_intent": "annulus_outer (bbox u/v = 2*ro)",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].outer_radius.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "inner_radius",
+        "value": 12.5,
+        "category": "geometry_dim",
+        "query_intent": "annulus_inner (hole_radius)",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].inner_radius.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "inner_rings_count",
+        "value": 1,
+        "category": "feature",
+        "query_intent": "through_void_count",
+        "expected": 1,
+        "source_field": "$.solid_bodies[0].profiles[0].rings[*].role=='inner' count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "106817_bb28b7aa_0002",
+    "profile_type": "circle",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 6.8707,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "circle_radius",
+        "value": 4.87045,
+        "category": "geometry_dim",
+        "query_intent": "cylinder_radius (bbox u/v = 2r)",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].radius.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "106817_bb28b7aa_0003",
+    "profile_type": "circle",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 12.192,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "circle_radius",
+        "value": 4.7117,
+        "category": "geometry_dim",
+        "query_intent": "cylinder_radius (bbox u/v = 2r)",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].radius.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "106817_bb28b7aa_0004",
+    "profile_type": "annulus",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 1.3208,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "outer_radius",
+        "value": 5.5372,
+        "category": "geometry_dim",
+        "query_intent": "annulus_outer (bbox u/v = 2*ro)",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].outer_radius.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "inner_radius",
+        "value": 1.9812,
+        "category": "geometry_dim",
+        "query_intent": "annulus_inner (hole_radius)",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].inner_radius.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "inner_rings_count",
+        "value": 1,
+        "category": "feature",
+        "query_intent": "through_void_count",
+        "expected": 1,
+        "source_field": "$.solid_bodies[0].profiles[0].rings[*].role=='inner' count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "107055_0500fdd1_0027",
+    "profile_type": "annulus",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 0.36,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "outer_radius",
+        "value": 3.49,
+        "category": "geometry_dim",
+        "query_intent": "annulus_outer (bbox u/v = 2*ro)",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].outer_radius.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "inner_radius",
+        "value": 2.0,
+        "category": "geometry_dim",
+        "query_intent": "annulus_inner (hole_radius)",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].inner_radius.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "inner_rings_count",
+        "value": 1,
+        "category": "feature",
+        "query_intent": "through_void_count",
+        "expected": 1,
+        "source_field": "$.solid_bodies[0].profiles[0].rings[*].role=='inner' count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "107075_beb19139_0000",
+    "profile_type": "arbitrary_closed",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 25.4,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "arc_radii[0]",
+        "value": 3.769693,
+        "category": "geometry_dim",
+        "query_intent": "arbitrary_arc_0_radius",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].arc_radii[0].value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "arc_radii[1]",
+        "value": 108.511247,
+        "category": "geometry_dim",
+        "query_intent": "arbitrary_arc_1_radius",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].arc_radii[1].value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "line_lengths[0]",
+        "value": 2.54,
+        "category": "geometry_dim",
+        "query_intent": "arbitrary_line_0_length",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].line_lengths[0].value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "line_lengths[1]",
+        "value": 25.526685,
+        "category": "geometry_dim",
+        "query_intent": "arbitrary_line_1_length",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].line_lengths[1].value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "107466_72cd4ce9_0002",
+    "profile_type": "stadium",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 10.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "straight_length",
+        "value": 80.0,
+        "category": "geometry_dim",
+        "query_intent": "stadium_length_via_u (union span)",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].straight_length.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "stadium_radius",
+        "value": 10.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_v (2*radius)",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].radius.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "inner_rings_count",
+        "value": 2,
+        "category": "feature",
+        "query_intent": "through_void_count",
+        "expected": 2,
+        "source_field": "$.solid_bodies[0].profiles[0].rings[*].role=='inner' count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "107467_a8afc51d_0000",
+    "profile_type": "circle",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 14.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "circle_radius",
+        "value": 3.0,
+        "category": "geometry_dim",
+        "query_intent": "cylinder_radius (bbox u/v = 2r)",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].radius.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "107467_a8afc51d_0002",
+    "profile_type": "circle",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 25.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "circle_radius",
+        "value": 3.0,
+        "category": "geometry_dim",
+        "query_intent": "cylinder_radius (bbox u/v = 2r)",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].radius.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "107668_cf76b132_0001",
+    "profile_type": "annulus",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 100.0,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "outer_radius",
+        "value": 132.5,
+        "category": "geometry_dim",
+        "query_intent": "annulus_outer (bbox u/v = 2*ro)",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].outer_radius.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "inner_radius",
+        "value": 75.0,
+        "category": "geometry_dim",
+        "query_intent": "annulus_inner (hole_radius)",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].inner_radius.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "inner_rings_count",
+        "value": 1,
+        "category": "feature",
+        "query_intent": "through_void_count",
+        "expected": 1,
+        "source_field": "$.solid_bodies[0].profiles[0].rings[*].role=='inner' count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "108244_329b1876_0000",
+    "profile_type": "rectangle",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 44.45,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "length_u",
+        "value": 1219.2,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_u",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "width_v",
+        "value": 2590.8,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_v",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "108412_8de2f9c3_0000",
+    "profile_type": "rectangle",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 12.7,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "length_u",
+        "value": 2438.4,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_u",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "width_v",
+        "value": 1219.2,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_v",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "108850_0dcd5ef1_0002",
+    "profile_type": "rectangle",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 6.35,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "length_u",
+        "value": 171.45,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_u",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "width_v",
+        "value": 38.1,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_v",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "108850_0dcd5ef1_0004",
+    "profile_type": "rectangle",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 6.35,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "length_u",
+        "value": 171.45,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_u",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "width_v",
+        "value": 110.998,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_v",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "108851_4d515b10_0005",
+    "profile_type": "rectangle",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 12.7,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "length_u",
+        "value": 307.848,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_u",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "width_v",
+        "value": 19.05,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_v",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "108851_4d515b10_0006",
+    "profile_type": "rectangle",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 12.7,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "length_u",
+        "value": 95.25,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_u",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "width_v",
+        "value": 19.05,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_v",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "108851_4d515b10_0007",
+    "profile_type": "rectangle",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 19.05,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "length_u",
+        "value": 279.4,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_u",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "width_v",
+        "value": 50.8,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_v",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "108851_4d515b10_0009",
+    "profile_type": "rectangle",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 19.05,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "length_u",
+        "value": 209.55,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_u",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "width_v",
+        "value": 57.912,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_v",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  },
+  {
+    "sid": "108852_fed54702_0004",
+    "profile_type": "circle",
+    "facts": [
+      {
+        "field_path": "target.body_count",
+        "value": 1,
+        "category": "topology",
+        "query_intent": "body_count",
+        "source_field": "$.target.body_count",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "solid_bodies.0.dimensions.extrude_distance.value",
+        "value": 139.7,
+        "category": "geometry_dim",
+        "query_intent": "bbox_size_axis_w (extrude axis)",
+        "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "circle_radius",
+        "value": 3.96875,
+        "category": "geometry_dim",
+        "query_intent": "cylinder_radius (bbox u/v = 2r)",
+        "source_field": "$.solid_bodies[0].dimensions.profiles[0].radius.value",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "is_solid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "is_solid",
+        "expected": true,
+        "source_field": "$.target.body_count == 1",
+        "feedback_enabled": true
+      },
+      {
+        "field_path": "occt_valid_inferred",
+        "value": true,
+        "category": "health",
+        "query_intent": "occt_valid",
+        "expected": true,
+        "source_field": "(implied by valid SKETCH + EXTRUDE)",
+        "feedback_enabled": true
+      }
+    ]
+  }
+]
