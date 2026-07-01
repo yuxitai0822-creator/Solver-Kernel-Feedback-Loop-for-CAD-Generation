@@ -1,0 +1,11 @@
+{
+  "total_samples": 50,
+  "runner_success": 50,
+  "overall_pass": 50,
+  "total_queries": 334,
+  "passed_queries": 334,
+  "failed_queries": 0,
+  "error_queries": 0,
+  "unsupported_queries": 0,
+  "crashed_samples": []
+}
