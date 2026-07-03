@@ -1,0 +1,91 @@
+{
+  "phase": "Phase 2 KQP validation (KQP run on generated STEP)",
+  "total_samples": 50,
+  "kqp_pass_samples": 44,
+  "kqp_fail_samples": 6,
+  "total_queries": 334,
+  "passed_queries": 326,
+  "failed_queries": 8,
+  "kqp_pass_rate": "88.0%",
+  "query_pass_rate": "97.6%",
+  "failures": [
+    {
+      "sample_id": "102295_86f842dd_0000",
+      "failing_queries": [
+        [
+          "q_bbox_u",
+          "bbox_size",
+          48.0,
+          47.914449
+        ]
+      ]
+    },
+    {
+      "sample_id": "102369_65e5a7e6_0003",
+      "failing_queries": [
+        [
+          "q_void_count",
+          "through_void_count",
+          2,
+          1
+        ],
+        [
+          "q_occt_valid",
+          "occt_valid",
+          true,
+          false
+        ]
+      ]
+    },
+    {
+      "sample_id": "103552_c3a389ed_0003",
+      "failing_queries": [
+        [
+          "q_bbox_u",
+          "bbox_size",
+          225.0,
+          224.893061
+        ],
+        [
+          "q_void_count",
+          "through_void_count",
+          2,
+          1
+        ]
+      ]
+    },
+    {
+      "sample_id": "104453_aba0f2d1_0002",
+      "failing_queries": [
+        [
+          "q_bbox_u",
+          "bbox_size",
+          600.0,
+          599.572243
+        ]
+      ]
+    },
+    {
+      "sample_id": "107075_beb19139_0000",
+      "failing_queries": [
+        [
+          "q_occt_valid",
+          "occt_valid",
+          true,
+          false
+        ]
+      ]
+    },
+    {
+      "sample_id": "107466_72cd4ce9_0002",
+      "failing_queries": [
+        [
+          "q_void_count",
+          "through_void_count",
+          2,
+          1
+        ]
+      ]
+    }
+  ]
+}

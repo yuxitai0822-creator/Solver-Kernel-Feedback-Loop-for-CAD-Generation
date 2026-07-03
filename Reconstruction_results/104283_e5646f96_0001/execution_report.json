@@ -1,0 +1,13 @@
+{
+  "sample_id": "104283_e5646f96_0001",
+  "compile_success": true,
+  "execute_success": true,
+  "export_success": true,
+  "occt_load_success": true,
+  "occt_load_status": "RetDone",
+  "unsupported_ops": [],
+  "errors": [],
+  "extent_type": "OneSideFeatureExtentType",
+  "sketch_curve_count": 5,
+  "consumed_profile_count": 2
+}

@@ -1,0 +1,13 @@
+{
+  "sample_id": "108852_fed54702_0004",
+  "compile_success": true,
+  "execute_success": true,
+  "export_success": true,
+  "occt_load_success": true,
+  "occt_load_status": "RetDone",
+  "unsupported_ops": [],
+  "errors": [],
+  "extent_type": "OneSideFeatureExtentType",
+  "sketch_curve_count": 1,
+  "consumed_profile_count": 1
+}
