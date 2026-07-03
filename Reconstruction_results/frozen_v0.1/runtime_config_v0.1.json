@@ -1,0 +1,14 @@
+{
+  "reconstruction_engine_version": "v0.1",
+  "arc_discretization_segments": 128,
+  "unit_conversion": "cm_to_mm_x10",
+  "execution_mode": "subprocess_isolated",
+  "cut_prism_overshoot": 1.5,
+  "subprocess_timeout_seconds": 60,
+  "backend": {
+    "cadquery": "2.8.0",
+    "ocp": "7.8.x (via OCP pybind11)",
+    "python": "3.11.15"
+  },
+  "os": "win32"
+}

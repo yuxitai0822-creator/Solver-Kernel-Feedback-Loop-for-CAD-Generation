@@ -1,0 +1,357 @@
+{
+  "dataset_name": "sanity_set_50",
+  "num_samples": 50,
+  "selection_rule": "sketch+extrude only; <=2 sketch; ==1 extrude; <=8 curves/sketch; no spline/ellipse/conic; first 50 by sorted id",
+  "samples": [
+    {
+      "sample_id": "100243_9fb796fe_0005",
+      "history_json": "data/sanity_set_50/100243_9fb796fe_0005.json",
+      "gt_step": "data/sanity_set_50/100243_9fb796fe_0005.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/100243_9fb796fe_0005.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/100243_9fb796fe_0005.kqp_instance.json"
+    },
+    {
+      "sample_id": "100243_9fb796fe_0006",
+      "history_json": "data/sanity_set_50/100243_9fb796fe_0006.json",
+      "gt_step": "data/sanity_set_50/100243_9fb796fe_0006.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/100243_9fb796fe_0006.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/100243_9fb796fe_0006.kqp_instance.json"
+    },
+    {
+      "sample_id": "100877_ac1e5a17_0001",
+      "history_json": "data/sanity_set_50/100877_ac1e5a17_0001.json",
+      "gt_step": "data/sanity_set_50/100877_ac1e5a17_0001.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/100877_ac1e5a17_0001.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/100877_ac1e5a17_0001.kqp_instance.json"
+    },
+    {
+      "sample_id": "100877_ac1e5a17_0017",
+      "history_json": "data/sanity_set_50/100877_ac1e5a17_0017.json",
+      "gt_step": "data/sanity_set_50/100877_ac1e5a17_0017.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/100877_ac1e5a17_0017.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/100877_ac1e5a17_0017.kqp_instance.json"
+    },
+    {
+      "sample_id": "101269_f084ba14_0023",
+      "history_json": "data/sanity_set_50/101269_f084ba14_0023.json",
+      "gt_step": "data/sanity_set_50/101269_f084ba14_0023.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/101269_f084ba14_0023.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/101269_f084ba14_0023.kqp_instance.json"
+    },
+    {
+      "sample_id": "101427_a9bcb09c_0001",
+      "history_json": "data/sanity_set_50/101427_a9bcb09c_0001.json",
+      "gt_step": "data/sanity_set_50/101427_a9bcb09c_0001.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/101427_a9bcb09c_0001.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/101427_a9bcb09c_0001.kqp_instance.json"
+    },
+    {
+      "sample_id": "101427_a9bcb09c_0002",
+      "history_json": "data/sanity_set_50/101427_a9bcb09c_0002.json",
+      "gt_step": "data/sanity_set_50/101427_a9bcb09c_0002.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/101427_a9bcb09c_0002.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/101427_a9bcb09c_0002.kqp_instance.json"
+    },
+    {
+      "sample_id": "101817_b02acd9f_0000",
+      "history_json": "data/sanity_set_50/101817_b02acd9f_0000.json",
+      "gt_step": "data/sanity_set_50/101817_b02acd9f_0000.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/101817_b02acd9f_0000.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/101817_b02acd9f_0000.kqp_instance.json"
+    },
+    {
+      "sample_id": "101817_b02acd9f_0001",
+      "history_json": "data/sanity_set_50/101817_b02acd9f_0001.json",
+      "gt_step": "data/sanity_set_50/101817_b02acd9f_0001.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/101817_b02acd9f_0001.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/101817_b02acd9f_0001.kqp_instance.json"
+    },
+    {
+      "sample_id": "101817_b02acd9f_0002",
+      "history_json": "data/sanity_set_50/101817_b02acd9f_0002.json",
+      "gt_step": "data/sanity_set_50/101817_b02acd9f_0002.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/101817_b02acd9f_0002.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/101817_b02acd9f_0002.kqp_instance.json"
+    },
+    {
+      "sample_id": "101817_b02acd9f_0004",
+      "history_json": "data/sanity_set_50/101817_b02acd9f_0004.json",
+      "gt_step": "data/sanity_set_50/101817_b02acd9f_0004.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/101817_b02acd9f_0004.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/101817_b02acd9f_0004.kqp_instance.json"
+    },
+    {
+      "sample_id": "102175_699d5e7c_0003",
+      "history_json": "data/sanity_set_50/102175_699d5e7c_0003.json",
+      "gt_step": "data/sanity_set_50/102175_699d5e7c_0003.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/102175_699d5e7c_0003.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/102175_699d5e7c_0003.kqp_instance.json"
+    },
+    {
+      "sample_id": "102295_86f842dd_0000",
+      "history_json": "data/sanity_set_50/102295_86f842dd_0000.json",
+      "gt_step": "data/sanity_set_50/102295_86f842dd_0000.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/102295_86f842dd_0000.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/102295_86f842dd_0000.kqp_instance.json"
+    },
+    {
+      "sample_id": "102314_91648bfc_0000",
+      "history_json": "data/sanity_set_50/102314_91648bfc_0000.json",
+      "gt_step": "data/sanity_set_50/102314_91648bfc_0000.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/102314_91648bfc_0000.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/102314_91648bfc_0000.kqp_instance.json"
+    },
+    {
+      "sample_id": "102369_65e5a7e6_0003",
+      "history_json": "data/sanity_set_50/102369_65e5a7e6_0003.json",
+      "gt_step": "data/sanity_set_50/102369_65e5a7e6_0003.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/102369_65e5a7e6_0003.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/102369_65e5a7e6_0003.kqp_instance.json"
+    },
+    {
+      "sample_id": "102410_f9877a7b_0000",
+      "history_json": "data/sanity_set_50/102410_f9877a7b_0000.json",
+      "gt_step": "data/sanity_set_50/102410_f9877a7b_0000.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/102410_f9877a7b_0000.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/102410_f9877a7b_0000.kqp_instance.json"
+    },
+    {
+      "sample_id": "102410_f9877a7b_0012",
+      "history_json": "data/sanity_set_50/102410_f9877a7b_0012.json",
+      "gt_step": "data/sanity_set_50/102410_f9877a7b_0012.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/102410_f9877a7b_0012.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/102410_f9877a7b_0012.kqp_instance.json"
+    },
+    {
+      "sample_id": "102525_06a3094b_0000",
+      "history_json": "data/sanity_set_50/102525_06a3094b_0000.json",
+      "gt_step": "data/sanity_set_50/102525_06a3094b_0000.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/102525_06a3094b_0000.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/102525_06a3094b_0000.kqp_instance.json"
+    },
+    {
+      "sample_id": "102525_06a3094b_0004",
+      "history_json": "data/sanity_set_50/102525_06a3094b_0004.json",
+      "gt_step": "data/sanity_set_50/102525_06a3094b_0004.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/102525_06a3094b_0004.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/102525_06a3094b_0004.kqp_instance.json"
+    },
+    {
+      "sample_id": "102525_06a3094b_0006",
+      "history_json": "data/sanity_set_50/102525_06a3094b_0006.json",
+      "gt_step": "data/sanity_set_50/102525_06a3094b_0006.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/102525_06a3094b_0006.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/102525_06a3094b_0006.kqp_instance.json"
+    },
+    {
+      "sample_id": "102760_26430589_0037",
+      "history_json": "data/sanity_set_50/102760_26430589_0037.json",
+      "gt_step": "data/sanity_set_50/102760_26430589_0037.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/102760_26430589_0037.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/102760_26430589_0037.kqp_instance.json"
+    },
+    {
+      "sample_id": "103284_e25015aa_0003",
+      "history_json": "data/sanity_set_50/103284_e25015aa_0003.json",
+      "gt_step": "data/sanity_set_50/103284_e25015aa_0003.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/103284_e25015aa_0003.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/103284_e25015aa_0003.kqp_instance.json"
+    },
+    {
+      "sample_id": "103284_e25015aa_0004",
+      "history_json": "data/sanity_set_50/103284_e25015aa_0004.json",
+      "gt_step": "data/sanity_set_50/103284_e25015aa_0004.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/103284_e25015aa_0004.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/103284_e25015aa_0004.kqp_instance.json"
+    },
+    {
+      "sample_id": "103481_b27a1cdf_0010",
+      "history_json": "data/sanity_set_50/103481_b27a1cdf_0010.json",
+      "gt_step": "data/sanity_set_50/103481_b27a1cdf_0010.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/103481_b27a1cdf_0010.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/103481_b27a1cdf_0010.kqp_instance.json"
+    },
+    {
+      "sample_id": "103552_c3a389ed_0003",
+      "history_json": "data/sanity_set_50/103552_c3a389ed_0003.json",
+      "gt_step": "data/sanity_set_50/103552_c3a389ed_0003.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/103552_c3a389ed_0003.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/103552_c3a389ed_0003.kqp_instance.json"
+    },
+    {
+      "sample_id": "104283_e5646f96_0000",
+      "history_json": "data/sanity_set_50/104283_e5646f96_0000.json",
+      "gt_step": "data/sanity_set_50/104283_e5646f96_0000.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/104283_e5646f96_0000.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/104283_e5646f96_0000.kqp_instance.json"
+    },
+    {
+      "sample_id": "104283_e5646f96_0001",
+      "history_json": "data/sanity_set_50/104283_e5646f96_0001.json",
+      "gt_step": "data/sanity_set_50/104283_e5646f96_0001.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/104283_e5646f96_0001.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/104283_e5646f96_0001.kqp_instance.json"
+    },
+    {
+      "sample_id": "104453_aba0f2d1_0002",
+      "history_json": "data/sanity_set_50/104453_aba0f2d1_0002.json",
+      "gt_step": "data/sanity_set_50/104453_aba0f2d1_0002.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/104453_aba0f2d1_0002.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/104453_aba0f2d1_0002.kqp_instance.json"
+    },
+    {
+      "sample_id": "104453_aba0f2d1_0006",
+      "history_json": "data/sanity_set_50/104453_aba0f2d1_0006.json",
+      "gt_step": "data/sanity_set_50/104453_aba0f2d1_0006.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/104453_aba0f2d1_0006.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/104453_aba0f2d1_0006.kqp_instance.json"
+    },
+    {
+      "sample_id": "104524_f829aab2_0001",
+      "history_json": "data/sanity_set_50/104524_f829aab2_0001.json",
+      "gt_step": "data/sanity_set_50/104524_f829aab2_0001.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/104524_f829aab2_0001.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/104524_f829aab2_0001.kqp_instance.json"
+    },
+    {
+      "sample_id": "105278_909f3813_0000",
+      "history_json": "data/sanity_set_50/105278_909f3813_0000.json",
+      "gt_step": "data/sanity_set_50/105278_909f3813_0000.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/105278_909f3813_0000.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/105278_909f3813_0000.kqp_instance.json"
+    },
+    {
+      "sample_id": "106323_77f22d29_0004",
+      "history_json": "data/sanity_set_50/106323_77f22d29_0004.json",
+      "gt_step": "data/sanity_set_50/106323_77f22d29_0004.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/106323_77f22d29_0004.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/106323_77f22d29_0004.kqp_instance.json"
+    },
+    {
+      "sample_id": "106817_bb28b7aa_0002",
+      "history_json": "data/sanity_set_50/106817_bb28b7aa_0002.json",
+      "gt_step": "data/sanity_set_50/106817_bb28b7aa_0002.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/106817_bb28b7aa_0002.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/106817_bb28b7aa_0002.kqp_instance.json"
+    },
+    {
+      "sample_id": "106817_bb28b7aa_0003",
+      "history_json": "data/sanity_set_50/106817_bb28b7aa_0003.json",
+      "gt_step": "data/sanity_set_50/106817_bb28b7aa_0003.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/106817_bb28b7aa_0003.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/106817_bb28b7aa_0003.kqp_instance.json"
+    },
+    {
+      "sample_id": "106817_bb28b7aa_0004",
+      "history_json": "data/sanity_set_50/106817_bb28b7aa_0004.json",
+      "gt_step": "data/sanity_set_50/106817_bb28b7aa_0004.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/106817_bb28b7aa_0004.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/106817_bb28b7aa_0004.kqp_instance.json"
+    },
+    {
+      "sample_id": "107055_0500fdd1_0027",
+      "history_json": "data/sanity_set_50/107055_0500fdd1_0027.json",
+      "gt_step": "data/sanity_set_50/107055_0500fdd1_0027.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/107055_0500fdd1_0027.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/107055_0500fdd1_0027.kqp_instance.json"
+    },
+    {
+      "sample_id": "107075_beb19139_0000",
+      "history_json": "data/sanity_set_50/107075_beb19139_0000.json",
+      "gt_step": "data/sanity_set_50/107075_beb19139_0000.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/107075_beb19139_0000.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/107075_beb19139_0000.kqp_instance.json"
+    },
+    {
+      "sample_id": "107466_72cd4ce9_0002",
+      "history_json": "data/sanity_set_50/107466_72cd4ce9_0002.json",
+      "gt_step": "data/sanity_set_50/107466_72cd4ce9_0002.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/107466_72cd4ce9_0002.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/107466_72cd4ce9_0002.kqp_instance.json"
+    },
+    {
+      "sample_id": "107467_a8afc51d_0000",
+      "history_json": "data/sanity_set_50/107467_a8afc51d_0000.json",
+      "gt_step": "data/sanity_set_50/107467_a8afc51d_0000.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/107467_a8afc51d_0000.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/107467_a8afc51d_0000.kqp_instance.json"
+    },
+    {
+      "sample_id": "107467_a8afc51d_0002",
+      "history_json": "data/sanity_set_50/107467_a8afc51d_0002.json",
+      "gt_step": "data/sanity_set_50/107467_a8afc51d_0002.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/107467_a8afc51d_0002.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/107467_a8afc51d_0002.kqp_instance.json"
+    },
+    {
+      "sample_id": "107668_cf76b132_0001",
+      "history_json": "data/sanity_set_50/107668_cf76b132_0001.json",
+      "gt_step": "data/sanity_set_50/107668_cf76b132_0001.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/107668_cf76b132_0001.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/107668_cf76b132_0001.kqp_instance.json"
+    },
+    {
+      "sample_id": "108244_329b1876_0000",
+      "history_json": "data/sanity_set_50/108244_329b1876_0000.json",
+      "gt_step": "data/sanity_set_50/108244_329b1876_0000.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/108244_329b1876_0000.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/108244_329b1876_0000.kqp_instance.json"
+    },
+    {
+      "sample_id": "108412_8de2f9c3_0000",
+      "history_json": "data/sanity_set_50/108412_8de2f9c3_0000.json",
+      "gt_step": "data/sanity_set_50/108412_8de2f9c3_0000.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/108412_8de2f9c3_0000.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/108412_8de2f9c3_0000.kqp_instance.json"
+    },
+    {
+      "sample_id": "108850_0dcd5ef1_0002",
+      "history_json": "data/sanity_set_50/108850_0dcd5ef1_0002.json",
+      "gt_step": "data/sanity_set_50/108850_0dcd5ef1_0002.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/108850_0dcd5ef1_0002.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/108850_0dcd5ef1_0002.kqp_instance.json"
+    },
+    {
+      "sample_id": "108850_0dcd5ef1_0004",
+      "history_json": "data/sanity_set_50/108850_0dcd5ef1_0004.json",
+      "gt_step": "data/sanity_set_50/108850_0dcd5ef1_0004.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/108850_0dcd5ef1_0004.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/108850_0dcd5ef1_0004.kqp_instance.json"
+    },
+    {
+      "sample_id": "108851_4d515b10_0005",
+      "history_json": "data/sanity_set_50/108851_4d515b10_0005.json",
+      "gt_step": "data/sanity_set_50/108851_4d515b10_0005.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/108851_4d515b10_0005.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/108851_4d515b10_0005.kqp_instance.json"
+    },
+    {
+      "sample_id": "108851_4d515b10_0006",
+      "history_json": "data/sanity_set_50/108851_4d515b10_0006.json",
+      "gt_step": "data/sanity_set_50/108851_4d515b10_0006.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/108851_4d515b10_0006.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/108851_4d515b10_0006.kqp_instance.json"
+    },
+    {
+      "sample_id": "108851_4d515b10_0007",
+      "history_json": "data/sanity_set_50/108851_4d515b10_0007.json",
+      "gt_step": "data/sanity_set_50/108851_4d515b10_0007.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/108851_4d515b10_0007.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/108851_4d515b10_0007.kqp_instance.json"
+    },
+    {
+      "sample_id": "108851_4d515b10_0009",
+      "history_json": "data/sanity_set_50/108851_4d515b10_0009.json",
+      "gt_step": "data/sanity_set_50/108851_4d515b10_0009.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/108851_4d515b10_0009.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/108851_4d515b10_0009.kqp_instance.json"
+    },
+    {
+      "sample_id": "108852_fed54702_0004",
+      "history_json": "data/sanity_set_50/108852_fed54702_0004.json",
+      "gt_step": "data/sanity_set_50/108852_fed54702_0004.step",
+      "design_plan": "DesignPlan/compiler/instances_v6/108852_fed54702_0004.design_plan.json",
+      "kqp_instance": "kqp/samples/v0.2/108852_fed54702_0004.kqp_instance.json"
+    }
+  ]
+}

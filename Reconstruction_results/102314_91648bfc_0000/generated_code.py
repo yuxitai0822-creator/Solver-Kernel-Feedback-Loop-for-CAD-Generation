@@ -54,7 +54,7 @@ def build_loop_wp(loop_def, is_outer, base_wp):
         # discretized into small polyline segments (N=24 by default) to
         # avoid cadquery's radiusArc numerical edge cases (radius not
         # large enough to reach the end point).
-        N_ARC = 24
+        N_ARC = 128
         wp = base_wp
         for i, cd in enumerate(curves):
             if cd.get("type") == "line":
