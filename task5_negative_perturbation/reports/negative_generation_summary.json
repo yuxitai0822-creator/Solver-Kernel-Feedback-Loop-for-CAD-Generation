@@ -1,0 +1,2130 @@
+{
+  "total_samples": 46,
+  "total_negatives": 138,
+  "target_negatives": 138,
+  "perturbations_per_sample": 3,
+  "perturbation_apply_success_count": 138,
+  "reconstruction_success_count": 132,
+  "operator_distribution": {
+    "E2_extrude_deep": 45,
+    "E1_envelope_u": 22,
+    "E1_envelope_v_shrink": 24,
+    "E4_void_remove_one": 10,
+    "E3_radius_up": 19,
+    "E6_inner_gt_outer": 6,
+    "E4_void_add": 10,
+    "E5_extent_type_change": 1,
+    "E2_extrude_shallow": 1
+  },
+  "error_category_distribution": {
+    "E2_extrude_depth": 46,
+    "E1_envelope_dim": 46,
+    "E4_void": 20,
+    "E3_radius": 19,
+    "E6_validity": 6,
+    "E5_extent_type": 1
+  },
+  "target_intent_distribution": {
+    "bbox_size": 92,
+    "through_void_count": 20,
+    "cylinder_radius": 19,
+    "is_solid": 6,
+    "symmetric_about_plane": 1
+  },
+  "per_negative_rows": [
+    {
+      "sample_id": "100243_9fb796fe_0005",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 16138
+    },
+    {
+      "sample_id": "100243_9fb796fe_0005",
+      "negative_id": "neg_02",
+      "operator": "E1_envelope_u",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 16148
+    },
+    {
+      "sample_id": "100243_9fb796fe_0005",
+      "negative_id": "neg_03",
+      "operator": "E1_envelope_v_shrink",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 16140
+    },
+    {
+      "sample_id": "100243_9fb796fe_0006",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 16138
+    },
+    {
+      "sample_id": "100243_9fb796fe_0006",
+      "negative_id": "neg_02",
+      "operator": "E1_envelope_u",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 16148
+    },
+    {
+      "sample_id": "100243_9fb796fe_0006",
+      "negative_id": "neg_03",
+      "operator": "E1_envelope_v_shrink",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 16140
+    },
+    {
+      "sample_id": "100877_ac1e5a17_0001",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15613
+    },
+    {
+      "sample_id": "100877_ac1e5a17_0001",
+      "negative_id": "neg_02",
+      "operator": "E1_envelope_u",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15670
+    },
+    {
+      "sample_id": "100877_ac1e5a17_0001",
+      "negative_id": "neg_03",
+      "operator": "E1_envelope_v_shrink",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15642
+    },
+    {
+      "sample_id": "100877_ac1e5a17_0017",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15566
+    },
+    {
+      "sample_id": "100877_ac1e5a17_0017",
+      "negative_id": "neg_02",
+      "operator": "E1_envelope_u",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15611
+    },
+    {
+      "sample_id": "100877_ac1e5a17_0017",
+      "negative_id": "neg_03",
+      "operator": "E1_envelope_v_shrink",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15593
+    },
+    {
+      "sample_id": "101269_f084ba14_0023",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15632
+    },
+    {
+      "sample_id": "101269_f084ba14_0023",
+      "negative_id": "neg_02",
+      "operator": "E1_envelope_u",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15683
+    },
+    {
+      "sample_id": "101269_f084ba14_0023",
+      "negative_id": "neg_03",
+      "operator": "E1_envelope_v_shrink",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15659
+    },
+    {
+      "sample_id": "101427_a9bcb09c_0001",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 26567
+    },
+    {
+      "sample_id": "101427_a9bcb09c_0001",
+      "negative_id": "neg_02",
+      "operator": "E4_void_remove_one",
+      "error_category": "E4_void",
+      "target_intent": "through_void_count",
+      "expected_query_ids": [
+        "q_void_count"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15641
+    },
+    {
+      "sample_id": "101427_a9bcb09c_0001",
+      "negative_id": "neg_03",
+      "operator": "E4_void_remove_one",
+      "error_category": "E4_void",
+      "target_intent": "through_void_count",
+      "expected_query_ids": [
+        "q_void_count"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15641
+    },
+    {
+      "sample_id": "101427_a9bcb09c_0002",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15581
+    },
+    {
+      "sample_id": "101427_a9bcb09c_0002",
+      "negative_id": "neg_02",
+      "operator": "E1_envelope_u",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15671
+    },
+    {
+      "sample_id": "101427_a9bcb09c_0002",
+      "negative_id": "neg_03",
+      "operator": "E1_envelope_v_shrink",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15593
+    },
+    {
+      "sample_id": "101817_b02acd9f_0000",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 29875
+    },
+    {
+      "sample_id": "101817_b02acd9f_0000",
+      "negative_id": "neg_02",
+      "operator": "E4_void_remove_one",
+      "error_category": "E4_void",
+      "target_intent": "through_void_count",
+      "expected_query_ids": [
+        "q_void_count"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15552
+    },
+    {
+      "sample_id": "101817_b02acd9f_0000",
+      "negative_id": "neg_03",
+      "operator": "E4_void_remove_one",
+      "error_category": "E4_void",
+      "target_intent": "through_void_count",
+      "expected_query_ids": [
+        "q_void_count"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15552
+    },
+    {
+      "sample_id": "101817_b02acd9f_0001",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 29736
+    },
+    {
+      "sample_id": "101817_b02acd9f_0001",
+      "negative_id": "neg_02",
+      "operator": "E4_void_remove_one",
+      "error_category": "E4_void",
+      "target_intent": "through_void_count",
+      "expected_query_ids": [
+        "q_void_count"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15482
+    },
+    {
+      "sample_id": "101817_b02acd9f_0001",
+      "negative_id": "neg_03",
+      "operator": "E4_void_remove_one",
+      "error_category": "E4_void",
+      "target_intent": "through_void_count",
+      "expected_query_ids": [
+        "q_void_count"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15482
+    },
+    {
+      "sample_id": "101817_b02acd9f_0002",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 26526
+    },
+    {
+      "sample_id": "101817_b02acd9f_0002",
+      "negative_id": "neg_02",
+      "operator": "E4_void_remove_one",
+      "error_category": "E4_void",
+      "target_intent": "through_void_count",
+      "expected_query_ids": [
+        "q_void_count"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15664
+    },
+    {
+      "sample_id": "101817_b02acd9f_0002",
+      "negative_id": "neg_03",
+      "operator": "E4_void_remove_one",
+      "error_category": "E4_void",
+      "target_intent": "through_void_count",
+      "expected_query_ids": [
+        "q_void_count"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15664
+    },
+    {
+      "sample_id": "101817_b02acd9f_0004",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 16187
+    },
+    {
+      "sample_id": "101817_b02acd9f_0004",
+      "negative_id": "neg_02",
+      "operator": "E1_envelope_u",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 16189
+    },
+    {
+      "sample_id": "101817_b02acd9f_0004",
+      "negative_id": "neg_03",
+      "operator": "E1_envelope_v_shrink",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 16187
+    },
+    {
+      "sample_id": "102175_699d5e7c_0003",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15479
+    },
+    {
+      "sample_id": "102175_699d5e7c_0003",
+      "negative_id": "neg_02",
+      "operator": "E1_envelope_u",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15505
+    },
+    {
+      "sample_id": "102175_699d5e7c_0003",
+      "negative_id": "neg_03",
+      "operator": "E1_envelope_v_shrink",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15513
+    },
+    {
+      "sample_id": "102295_86f842dd_0000",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 925861
+    },
+    {
+      "sample_id": "102295_86f842dd_0000",
+      "negative_id": "neg_02",
+      "operator": "E3_radius_up",
+      "error_category": "E3_radius",
+      "target_intent": "cylinder_radius",
+      "expected_query_ids": [],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 1019081
+    },
+    {
+      "sample_id": "102295_86f842dd_0000",
+      "negative_id": "neg_03",
+      "operator": "E1_envelope_v_shrink",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 1018597
+    },
+    {
+      "sample_id": "102314_91648bfc_0000",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 10182
+    },
+    {
+      "sample_id": "102314_91648bfc_0000",
+      "negative_id": "neg_02",
+      "operator": "E3_radius_up",
+      "error_category": "E3_radius",
+      "target_intent": "cylinder_radius",
+      "expected_query_ids": [
+        "q_outer_radius",
+        "q_inner_radius"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 10201
+    },
+    {
+      "sample_id": "102314_91648bfc_0000",
+      "negative_id": "neg_03",
+      "operator": "E6_inner_gt_outer",
+      "error_category": "E6_validity",
+      "target_intent": "is_solid",
+      "expected_query_ids": [
+        "q_is_solid"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": false,
+      "occt_load_success": false,
+      "step_size_bytes": 1661
+    },
+    {
+      "sample_id": "102410_f9877a7b_0000",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 10037
+    },
+    {
+      "sample_id": "102410_f9877a7b_0000",
+      "negative_id": "neg_02",
+      "operator": "E3_radius_up",
+      "error_category": "E3_radius",
+      "target_intent": "cylinder_radius",
+      "expected_query_ids": [
+        "q_outer_radius",
+        "q_inner_radius"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 10038
+    },
+    {
+      "sample_id": "102410_f9877a7b_0000",
+      "negative_id": "neg_03",
+      "operator": "E6_inner_gt_outer",
+      "error_category": "E6_validity",
+      "target_intent": "is_solid",
+      "expected_query_ids": [
+        "q_is_solid"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": false,
+      "occt_load_success": false,
+      "step_size_bytes": 1661
+    },
+    {
+      "sample_id": "102410_f9877a7b_0012",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 10020
+    },
+    {
+      "sample_id": "102410_f9877a7b_0012",
+      "negative_id": "neg_02",
+      "operator": "E3_radius_up",
+      "error_category": "E3_radius",
+      "target_intent": "cylinder_radius",
+      "expected_query_ids": [
+        "q_outer_radius",
+        "q_inner_radius"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 10038
+    },
+    {
+      "sample_id": "102410_f9877a7b_0012",
+      "negative_id": "neg_03",
+      "operator": "E6_inner_gt_outer",
+      "error_category": "E6_validity",
+      "target_intent": "is_solid",
+      "expected_query_ids": [
+        "q_is_solid"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": false,
+      "occt_load_success": false,
+      "step_size_bytes": 1661
+    },
+    {
+      "sample_id": "102525_06a3094b_0000",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15645
+    },
+    {
+      "sample_id": "102525_06a3094b_0000",
+      "negative_id": "neg_02",
+      "operator": "E1_envelope_u",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15662
+    },
+    {
+      "sample_id": "102525_06a3094b_0000",
+      "negative_id": "neg_03",
+      "operator": "E1_envelope_v_shrink",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15671
+    },
+    {
+      "sample_id": "102525_06a3094b_0004",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15534
+    },
+    {
+      "sample_id": "102525_06a3094b_0004",
+      "negative_id": "neg_02",
+      "operator": "E1_envelope_u",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15557
+    },
+    {
+      "sample_id": "102525_06a3094b_0004",
+      "negative_id": "neg_03",
+      "operator": "E1_envelope_v_shrink",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15621
+    },
+    {
+      "sample_id": "102525_06a3094b_0006",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15621
+    },
+    {
+      "sample_id": "102525_06a3094b_0006",
+      "negative_id": "neg_02",
+      "operator": "E1_envelope_u",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15610
+    },
+    {
+      "sample_id": "102525_06a3094b_0006",
+      "negative_id": "neg_03",
+      "operator": "E1_envelope_v_shrink",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15578
+    },
+    {
+      "sample_id": "102760_26430589_0037",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 5759
+    },
+    {
+      "sample_id": "102760_26430589_0037",
+      "negative_id": "neg_02",
+      "operator": "E3_radius_up",
+      "error_category": "E3_radius",
+      "target_intent": "cylinder_radius",
+      "expected_query_ids": [
+        "q_radius"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 5751
+    },
+    {
+      "sample_id": "102760_26430589_0037",
+      "negative_id": "neg_03",
+      "operator": "E4_void_add",
+      "error_category": "E4_void",
+      "target_intent": "through_void_count",
+      "expected_query_ids": [],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 10007
+    },
+    {
+      "sample_id": "103284_e25015aa_0003",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 5844
+    },
+    {
+      "sample_id": "103284_e25015aa_0003",
+      "negative_id": "neg_02",
+      "operator": "E3_radius_up",
+      "error_category": "E3_radius",
+      "target_intent": "cylinder_radius",
+      "expected_query_ids": [
+        "q_radius"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 5841
+    },
+    {
+      "sample_id": "103284_e25015aa_0003",
+      "negative_id": "neg_03",
+      "operator": "E4_void_add",
+      "error_category": "E4_void",
+      "target_intent": "through_void_count",
+      "expected_query_ids": [],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 10177
+    },
+    {
+      "sample_id": "103284_e25015aa_0004",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 5899
+    },
+    {
+      "sample_id": "103284_e25015aa_0004",
+      "negative_id": "neg_02",
+      "operator": "E3_radius_up",
+      "error_category": "E3_radius",
+      "target_intent": "cylinder_radius",
+      "expected_query_ids": [
+        "q_radius"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 5868
+    },
+    {
+      "sample_id": "103284_e25015aa_0004",
+      "negative_id": "neg_03",
+      "operator": "E4_void_add",
+      "error_category": "E4_void",
+      "target_intent": "through_void_count",
+      "expected_query_ids": [],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 10285
+    },
+    {
+      "sample_id": "103481_b27a1cdf_0010",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15659
+    },
+    {
+      "sample_id": "103481_b27a1cdf_0010",
+      "negative_id": "neg_02",
+      "operator": "E1_envelope_u",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15618
+    },
+    {
+      "sample_id": "103481_b27a1cdf_0010",
+      "negative_id": "neg_03",
+      "operator": "E1_envelope_v_shrink",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15650
+    },
+    {
+      "sample_id": "104283_e5646f96_0000",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 5658
+    },
+    {
+      "sample_id": "104283_e5646f96_0000",
+      "negative_id": "neg_02",
+      "operator": "E3_radius_up",
+      "error_category": "E3_radius",
+      "target_intent": "cylinder_radius",
+      "expected_query_ids": [
+        "q_radius"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 5721
+    },
+    {
+      "sample_id": "104283_e5646f96_0000",
+      "negative_id": "neg_03",
+      "operator": "E4_void_add",
+      "error_category": "E4_void",
+      "target_intent": "through_void_count",
+      "expected_query_ids": [],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 9855
+    },
+    {
+      "sample_id": "104283_e5646f96_0001",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 12771
+    },
+    {
+      "sample_id": "104283_e5646f96_0001",
+      "negative_id": "neg_02",
+      "operator": "E1_envelope_u",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 12785
+    },
+    {
+      "sample_id": "104283_e5646f96_0001",
+      "negative_id": "neg_03",
+      "operator": "E1_envelope_v_shrink",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 12907
+    },
+    {
+      "sample_id": "104453_aba0f2d1_0002",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 799329
+    },
+    {
+      "sample_id": "104453_aba0f2d1_0002",
+      "negative_id": "neg_02",
+      "operator": "E3_radius_up",
+      "error_category": "E3_radius",
+      "target_intent": "cylinder_radius",
+      "expected_query_ids": [],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 1020877
+    },
+    {
+      "sample_id": "104453_aba0f2d1_0002",
+      "negative_id": "neg_03",
+      "operator": "E1_envelope_v_shrink",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 1020825
+    },
+    {
+      "sample_id": "104453_aba0f2d1_0006",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 29751
+    },
+    {
+      "sample_id": "104453_aba0f2d1_0006",
+      "negative_id": "neg_02",
+      "operator": "E4_void_remove_one",
+      "error_category": "E4_void",
+      "target_intent": "through_void_count",
+      "expected_query_ids": [
+        "q_void_count"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15516
+    },
+    {
+      "sample_id": "104453_aba0f2d1_0006",
+      "negative_id": "neg_03",
+      "operator": "E4_void_remove_one",
+      "error_category": "E4_void",
+      "target_intent": "through_void_count",
+      "expected_query_ids": [
+        "q_void_count"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15516
+    },
+    {
+      "sample_id": "104524_f829aab2_0001",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 5763
+    },
+    {
+      "sample_id": "104524_f829aab2_0001",
+      "negative_id": "neg_02",
+      "operator": "E3_radius_up",
+      "error_category": "E3_radius",
+      "target_intent": "cylinder_radius",
+      "expected_query_ids": [
+        "q_radius"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 5779
+    },
+    {
+      "sample_id": "104524_f829aab2_0001",
+      "negative_id": "neg_03",
+      "operator": "E4_void_add",
+      "error_category": "E4_void",
+      "target_intent": "through_void_count",
+      "expected_query_ids": [],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 10014
+    },
+    {
+      "sample_id": "105278_909f3813_0000",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15555
+    },
+    {
+      "sample_id": "105278_909f3813_0000",
+      "negative_id": "neg_02",
+      "operator": "E1_envelope_u",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15589
+    },
+    {
+      "sample_id": "105278_909f3813_0000",
+      "negative_id": "neg_03",
+      "operator": "E1_envelope_v_shrink",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15553
+    },
+    {
+      "sample_id": "106323_77f22d29_0004",
+      "negative_id": "neg_01",
+      "operator": "E5_extent_type_change",
+      "error_category": "E5_extent_type",
+      "target_intent": "symmetric_about_plane",
+      "expected_query_ids": [
+        "q_symmetric"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 10020
+    },
+    {
+      "sample_id": "106323_77f22d29_0004",
+      "negative_id": "neg_02",
+      "operator": "E3_radius_up",
+      "error_category": "E3_radius",
+      "target_intent": "cylinder_radius",
+      "expected_query_ids": [
+        "q_outer_radius",
+        "q_inner_radius"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 10043
+    },
+    {
+      "sample_id": "106323_77f22d29_0004",
+      "negative_id": "neg_03",
+      "operator": "E2_extrude_shallow",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 10020
+    },
+    {
+      "sample_id": "106817_bb28b7aa_0002",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 5860
+    },
+    {
+      "sample_id": "106817_bb28b7aa_0002",
+      "negative_id": "neg_02",
+      "operator": "E3_radius_up",
+      "error_category": "E3_radius",
+      "target_intent": "cylinder_radius",
+      "expected_query_ids": [
+        "q_radius"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 5832
+    },
+    {
+      "sample_id": "106817_bb28b7aa_0002",
+      "negative_id": "neg_03",
+      "operator": "E4_void_add",
+      "error_category": "E4_void",
+      "target_intent": "through_void_count",
+      "expected_query_ids": [],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 10180
+    },
+    {
+      "sample_id": "106817_bb28b7aa_0003",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 5897
+    },
+    {
+      "sample_id": "106817_bb28b7aa_0003",
+      "negative_id": "neg_02",
+      "operator": "E3_radius_up",
+      "error_category": "E3_radius",
+      "target_intent": "cylinder_radius",
+      "expected_query_ids": [
+        "q_radius"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 5909
+    },
+    {
+      "sample_id": "106817_bb28b7aa_0003",
+      "negative_id": "neg_03",
+      "operator": "E4_void_add",
+      "error_category": "E4_void",
+      "target_intent": "through_void_count",
+      "expected_query_ids": [],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 10262
+    },
+    {
+      "sample_id": "106817_bb28b7aa_0004",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 10322
+    },
+    {
+      "sample_id": "106817_bb28b7aa_0004",
+      "negative_id": "neg_02",
+      "operator": "E3_radius_up",
+      "error_category": "E3_radius",
+      "target_intent": "cylinder_radius",
+      "expected_query_ids": [
+        "q_outer_radius",
+        "q_inner_radius"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 10364
+    },
+    {
+      "sample_id": "106817_bb28b7aa_0004",
+      "negative_id": "neg_03",
+      "operator": "E6_inner_gt_outer",
+      "error_category": "E6_validity",
+      "target_intent": "is_solid",
+      "expected_query_ids": [
+        "q_is_solid"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": false,
+      "occt_load_success": false,
+      "step_size_bytes": 1661
+    },
+    {
+      "sample_id": "107055_0500fdd1_0027",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 10001
+    },
+    {
+      "sample_id": "107055_0500fdd1_0027",
+      "negative_id": "neg_02",
+      "operator": "E3_radius_up",
+      "error_category": "E3_radius",
+      "target_intent": "cylinder_radius",
+      "expected_query_ids": [
+        "q_outer_radius",
+        "q_inner_radius"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 10022
+    },
+    {
+      "sample_id": "107055_0500fdd1_0027",
+      "negative_id": "neg_03",
+      "operator": "E6_inner_gt_outer",
+      "error_category": "E6_validity",
+      "target_intent": "is_solid",
+      "expected_query_ids": [
+        "q_is_solid"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": false,
+      "occt_load_success": false,
+      "step_size_bytes": 1661
+    },
+    {
+      "sample_id": "107467_a8afc51d_0000",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 5746
+    },
+    {
+      "sample_id": "107467_a8afc51d_0000",
+      "negative_id": "neg_02",
+      "operator": "E3_radius_up",
+      "error_category": "E3_radius",
+      "target_intent": "cylinder_radius",
+      "expected_query_ids": [
+        "q_radius"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 5762
+    },
+    {
+      "sample_id": "107467_a8afc51d_0000",
+      "negative_id": "neg_03",
+      "operator": "E4_void_add",
+      "error_category": "E4_void",
+      "target_intent": "through_void_count",
+      "expected_query_ids": [],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 9998
+    },
+    {
+      "sample_id": "107467_a8afc51d_0002",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 5750
+    },
+    {
+      "sample_id": "107467_a8afc51d_0002",
+      "negative_id": "neg_02",
+      "operator": "E3_radius_up",
+      "error_category": "E3_radius",
+      "target_intent": "cylinder_radius",
+      "expected_query_ids": [
+        "q_radius"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 5762
+    },
+    {
+      "sample_id": "107467_a8afc51d_0002",
+      "negative_id": "neg_03",
+      "operator": "E4_void_add",
+      "error_category": "E4_void",
+      "target_intent": "through_void_count",
+      "expected_query_ids": [],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 9998
+    },
+    {
+      "sample_id": "107668_cf76b132_0001",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 10040
+    },
+    {
+      "sample_id": "107668_cf76b132_0001",
+      "negative_id": "neg_02",
+      "operator": "E3_radius_up",
+      "error_category": "E3_radius",
+      "target_intent": "cylinder_radius",
+      "expected_query_ids": [
+        "q_outer_radius",
+        "q_inner_radius"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 9968
+    },
+    {
+      "sample_id": "107668_cf76b132_0001",
+      "negative_id": "neg_03",
+      "operator": "E6_inner_gt_outer",
+      "error_category": "E6_validity",
+      "target_intent": "is_solid",
+      "expected_query_ids": [
+        "q_is_solid"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": false,
+      "occt_load_success": false,
+      "step_size_bytes": 1661
+    },
+    {
+      "sample_id": "108244_329b1876_0000",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 16380
+    },
+    {
+      "sample_id": "108244_329b1876_0000",
+      "negative_id": "neg_02",
+      "operator": "E1_envelope_u",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 16381
+    },
+    {
+      "sample_id": "108244_329b1876_0000",
+      "negative_id": "neg_03",
+      "operator": "E1_envelope_v_shrink",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 16373
+    },
+    {
+      "sample_id": "108412_8de2f9c3_0000",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15841
+    },
+    {
+      "sample_id": "108412_8de2f9c3_0000",
+      "negative_id": "neg_02",
+      "operator": "E1_envelope_u",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15928
+    },
+    {
+      "sample_id": "108412_8de2f9c3_0000",
+      "negative_id": "neg_03",
+      "operator": "E1_envelope_v_shrink",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15852
+    },
+    {
+      "sample_id": "108850_0dcd5ef1_0002",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15609
+    },
+    {
+      "sample_id": "108850_0dcd5ef1_0002",
+      "negative_id": "neg_02",
+      "operator": "E1_envelope_u",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15668
+    },
+    {
+      "sample_id": "108850_0dcd5ef1_0002",
+      "negative_id": "neg_03",
+      "operator": "E1_envelope_v_shrink",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15634
+    },
+    {
+      "sample_id": "108850_0dcd5ef1_0004",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15639
+    },
+    {
+      "sample_id": "108850_0dcd5ef1_0004",
+      "negative_id": "neg_02",
+      "operator": "E1_envelope_u",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15698
+    },
+    {
+      "sample_id": "108850_0dcd5ef1_0004",
+      "negative_id": "neg_03",
+      "operator": "E1_envelope_v_shrink",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15694
+    },
+    {
+      "sample_id": "108851_4d515b10_0005",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15625
+    },
+    {
+      "sample_id": "108851_4d515b10_0005",
+      "negative_id": "neg_02",
+      "operator": "E1_envelope_u",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15706
+    },
+    {
+      "sample_id": "108851_4d515b10_0005",
+      "negative_id": "neg_03",
+      "operator": "E1_envelope_v_shrink",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15652
+    },
+    {
+      "sample_id": "108851_4d515b10_0006",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15587
+    },
+    {
+      "sample_id": "108851_4d515b10_0006",
+      "negative_id": "neg_02",
+      "operator": "E1_envelope_u",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15638
+    },
+    {
+      "sample_id": "108851_4d515b10_0006",
+      "negative_id": "neg_03",
+      "operator": "E1_envelope_v_shrink",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15614
+    },
+    {
+      "sample_id": "108851_4d515b10_0007",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15588
+    },
+    {
+      "sample_id": "108851_4d515b10_0007",
+      "negative_id": "neg_02",
+      "operator": "E1_envelope_u",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15645
+    },
+    {
+      "sample_id": "108851_4d515b10_0007",
+      "negative_id": "neg_03",
+      "operator": "E1_envelope_v_shrink",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15621
+    },
+    {
+      "sample_id": "108851_4d515b10_0009",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15670
+    },
+    {
+      "sample_id": "108851_4d515b10_0009",
+      "negative_id": "neg_02",
+      "operator": "E1_envelope_u",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15721
+    },
+    {
+      "sample_id": "108851_4d515b10_0009",
+      "negative_id": "neg_03",
+      "operator": "E1_envelope_v_shrink",
+      "error_category": "E1_envelope_dim",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 15727
+    },
+    {
+      "sample_id": "108852_fed54702_0004",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep",
+      "error_category": "E2_extrude_depth",
+      "target_intent": "bbox_size",
+      "expected_query_ids": [
+        "q_bbox_u",
+        "q_bbox_v",
+        "q_bbox_w"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 5801
+    },
+    {
+      "sample_id": "108852_fed54702_0004",
+      "negative_id": "neg_02",
+      "operator": "E3_radius_up",
+      "error_category": "E3_radius",
+      "target_intent": "cylinder_radius",
+      "expected_query_ids": [
+        "q_radius"
+      ],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 5813
+    },
+    {
+      "sample_id": "108852_fed54702_0004",
+      "negative_id": "neg_03",
+      "operator": "E4_void_add",
+      "error_category": "E4_void",
+      "target_intent": "through_void_count",
+      "expected_query_ids": [],
+      "perturbation_apply_success": true,
+      "reconstruction_success": true,
+      "occt_load_success": true,
+      "step_size_bytes": 10055
+    }
+  ],
+  "reconstruction_rate": 0.9565217391304348
+}

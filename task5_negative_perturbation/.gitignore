@@ -1,0 +1,3 @@
+# Per-sample perturbation artifacts are regenerated from run_task5_generation.py
+# and not tracked in git to keep the repo light.  Re-run the pipeline to recreate.
+perturbations/

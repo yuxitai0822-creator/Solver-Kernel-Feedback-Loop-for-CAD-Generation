@@ -1,0 +1,1114 @@
+{
+  "total_negatives_attempted": 138,
+  "ran": 138,
+  "cached": 0,
+  "skipped_no_step": 0,
+  "timeout": 0,
+  "exception": 0,
+  "rows": [
+    {
+      "sample_id": "100243_9fb796fe_0005",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\100243_9fb796fe_0005\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "100243_9fb796fe_0005",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\100243_9fb796fe_0005\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "100243_9fb796fe_0005",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\100243_9fb796fe_0005\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "100243_9fb796fe_0006",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\100243_9fb796fe_0006\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "100243_9fb796fe_0006",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\100243_9fb796fe_0006\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "100243_9fb796fe_0006",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\100243_9fb796fe_0006\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "100877_ac1e5a17_0001",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\100877_ac1e5a17_0001\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "100877_ac1e5a17_0001",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\100877_ac1e5a17_0001\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "100877_ac1e5a17_0001",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\100877_ac1e5a17_0001\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "100877_ac1e5a17_0017",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\100877_ac1e5a17_0017\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "100877_ac1e5a17_0017",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\100877_ac1e5a17_0017\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "100877_ac1e5a17_0017",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\100877_ac1e5a17_0017\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "101269_f084ba14_0023",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\101269_f084ba14_0023\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "101269_f084ba14_0023",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\101269_f084ba14_0023\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "101269_f084ba14_0023",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\101269_f084ba14_0023\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "101427_a9bcb09c_0001",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\101427_a9bcb09c_0001\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "101427_a9bcb09c_0001",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\101427_a9bcb09c_0001\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "101427_a9bcb09c_0001",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\101427_a9bcb09c_0001\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "101427_a9bcb09c_0002",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\101427_a9bcb09c_0002\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "101427_a9bcb09c_0002",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\101427_a9bcb09c_0002\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "101427_a9bcb09c_0002",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\101427_a9bcb09c_0002\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "101817_b02acd9f_0000",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\101817_b02acd9f_0000\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "101817_b02acd9f_0000",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\101817_b02acd9f_0000\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "101817_b02acd9f_0000",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\101817_b02acd9f_0000\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "101817_b02acd9f_0001",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\101817_b02acd9f_0001\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "101817_b02acd9f_0001",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\101817_b02acd9f_0001\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "101817_b02acd9f_0001",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\101817_b02acd9f_0001\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "101817_b02acd9f_0002",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\101817_b02acd9f_0002\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "101817_b02acd9f_0002",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\101817_b02acd9f_0002\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "101817_b02acd9f_0002",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\101817_b02acd9f_0002\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "101817_b02acd9f_0004",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\101817_b02acd9f_0004\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "101817_b02acd9f_0004",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\101817_b02acd9f_0004\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "101817_b02acd9f_0004",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\101817_b02acd9f_0004\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "102175_699d5e7c_0003",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\102175_699d5e7c_0003\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "102175_699d5e7c_0003",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\102175_699d5e7c_0003\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "102175_699d5e7c_0003",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\102175_699d5e7c_0003\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "102295_86f842dd_0000",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\102295_86f842dd_0000\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "102295_86f842dd_0000",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\102295_86f842dd_0000\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "102295_86f842dd_0000",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\102295_86f842dd_0000\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "102314_91648bfc_0000",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\102314_91648bfc_0000\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "102314_91648bfc_0000",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\102314_91648bfc_0000\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "102314_91648bfc_0000",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 1,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\102314_91648bfc_0000\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "102410_f9877a7b_0000",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\102410_f9877a7b_0000\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "102410_f9877a7b_0000",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\102410_f9877a7b_0000\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "102410_f9877a7b_0000",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 1,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\102410_f9877a7b_0000\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "102410_f9877a7b_0012",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\102410_f9877a7b_0012\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "102410_f9877a7b_0012",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\102410_f9877a7b_0012\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "102410_f9877a7b_0012",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 1,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\102410_f9877a7b_0012\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "102525_06a3094b_0000",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\102525_06a3094b_0000\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "102525_06a3094b_0000",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\102525_06a3094b_0000\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "102525_06a3094b_0000",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\102525_06a3094b_0000\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "102525_06a3094b_0004",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\102525_06a3094b_0004\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "102525_06a3094b_0004",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\102525_06a3094b_0004\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "102525_06a3094b_0004",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\102525_06a3094b_0004\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "102525_06a3094b_0006",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\102525_06a3094b_0006\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "102525_06a3094b_0006",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\102525_06a3094b_0006\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "102525_06a3094b_0006",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\102525_06a3094b_0006\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "102760_26430589_0037",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\102760_26430589_0037\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "102760_26430589_0037",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\102760_26430589_0037\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "102760_26430589_0037",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\102760_26430589_0037\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "103284_e25015aa_0003",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\103284_e25015aa_0003\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "103284_e25015aa_0003",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\103284_e25015aa_0003\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "103284_e25015aa_0003",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\103284_e25015aa_0003\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "103284_e25015aa_0004",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\103284_e25015aa_0004\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "103284_e25015aa_0004",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\103284_e25015aa_0004\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "103284_e25015aa_0004",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\103284_e25015aa_0004\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "103481_b27a1cdf_0010",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\103481_b27a1cdf_0010\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "103481_b27a1cdf_0010",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\103481_b27a1cdf_0010\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "103481_b27a1cdf_0010",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\103481_b27a1cdf_0010\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "104283_e5646f96_0000",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\104283_e5646f96_0000\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "104283_e5646f96_0000",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\104283_e5646f96_0000\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "104283_e5646f96_0000",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\104283_e5646f96_0000\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "104283_e5646f96_0001",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\104283_e5646f96_0001\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "104283_e5646f96_0001",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\104283_e5646f96_0001\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "104283_e5646f96_0001",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\104283_e5646f96_0001\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "104453_aba0f2d1_0002",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\104453_aba0f2d1_0002\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "104453_aba0f2d1_0002",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\104453_aba0f2d1_0002\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "104453_aba0f2d1_0002",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\104453_aba0f2d1_0002\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "104453_aba0f2d1_0006",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\104453_aba0f2d1_0006\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "104453_aba0f2d1_0006",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\104453_aba0f2d1_0006\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "104453_aba0f2d1_0006",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\104453_aba0f2d1_0006\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "104524_f829aab2_0001",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\104524_f829aab2_0001\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "104524_f829aab2_0001",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\104524_f829aab2_0001\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "104524_f829aab2_0001",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\104524_f829aab2_0001\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "105278_909f3813_0000",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\105278_909f3813_0000\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "105278_909f3813_0000",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\105278_909f3813_0000\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "105278_909f3813_0000",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\105278_909f3813_0000\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "106323_77f22d29_0004",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\106323_77f22d29_0004\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "106323_77f22d29_0004",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\106323_77f22d29_0004\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "106323_77f22d29_0004",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\106323_77f22d29_0004\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "106817_bb28b7aa_0002",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\106817_bb28b7aa_0002\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "106817_bb28b7aa_0002",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\106817_bb28b7aa_0002\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "106817_bb28b7aa_0002",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\106817_bb28b7aa_0002\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "106817_bb28b7aa_0003",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\106817_bb28b7aa_0003\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "106817_bb28b7aa_0003",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\106817_bb28b7aa_0003\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "106817_bb28b7aa_0003",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\106817_bb28b7aa_0003\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "106817_bb28b7aa_0004",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\106817_bb28b7aa_0004\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "106817_bb28b7aa_0004",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\106817_bb28b7aa_0004\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "106817_bb28b7aa_0004",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 1,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\106817_bb28b7aa_0004\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "107055_0500fdd1_0027",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\107055_0500fdd1_0027\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "107055_0500fdd1_0027",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\107055_0500fdd1_0027\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "107055_0500fdd1_0027",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 1,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\107055_0500fdd1_0027\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "107467_a8afc51d_0000",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\107467_a8afc51d_0000\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "107467_a8afc51d_0000",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\107467_a8afc51d_0000\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "107467_a8afc51d_0000",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\107467_a8afc51d_0000\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "107467_a8afc51d_0002",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\107467_a8afc51d_0002\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "107467_a8afc51d_0002",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\107467_a8afc51d_0002\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "107467_a8afc51d_0002",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\107467_a8afc51d_0002\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "107668_cf76b132_0001",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\107668_cf76b132_0001\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "107668_cf76b132_0001",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\107668_cf76b132_0001\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "107668_cf76b132_0001",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 1,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\107668_cf76b132_0001\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "108244_329b1876_0000",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\108244_329b1876_0000\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "108244_329b1876_0000",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\108244_329b1876_0000\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "108244_329b1876_0000",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\108244_329b1876_0000\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "108412_8de2f9c3_0000",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\108412_8de2f9c3_0000\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "108412_8de2f9c3_0000",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\108412_8de2f9c3_0000\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "108412_8de2f9c3_0000",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\108412_8de2f9c3_0000\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "108850_0dcd5ef1_0002",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\108850_0dcd5ef1_0002\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "108850_0dcd5ef1_0002",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\108850_0dcd5ef1_0002\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "108850_0dcd5ef1_0002",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\108850_0dcd5ef1_0002\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "108850_0dcd5ef1_0004",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\108850_0dcd5ef1_0004\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "108850_0dcd5ef1_0004",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\108850_0dcd5ef1_0004\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "108850_0dcd5ef1_0004",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\108850_0dcd5ef1_0004\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "108851_4d515b10_0005",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\108851_4d515b10_0005\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "108851_4d515b10_0005",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\108851_4d515b10_0005\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "108851_4d515b10_0005",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\108851_4d515b10_0005\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "108851_4d515b10_0006",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\108851_4d515b10_0006\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "108851_4d515b10_0006",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\108851_4d515b10_0006\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "108851_4d515b10_0006",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\108851_4d515b10_0006\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "108851_4d515b10_0007",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\108851_4d515b10_0007\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "108851_4d515b10_0007",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\108851_4d515b10_0007\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "108851_4d515b10_0007",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\108851_4d515b10_0007\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "108851_4d515b10_0009",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\108851_4d515b10_0009\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "108851_4d515b10_0009",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\108851_4d515b10_0009\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "108851_4d515b10_0009",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\108851_4d515b10_0009\\neg_03\\kqp_result.json"
+    },
+    {
+      "sample_id": "108852_fed54702_0004",
+      "negative_id": "neg_01",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\108852_fed54702_0004\\neg_01\\kqp_result.json"
+    },
+    {
+      "sample_id": "108852_fed54702_0004",
+      "negative_id": "neg_02",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\108852_fed54702_0004\\neg_02\\kqp_result.json"
+    },
+    {
+      "sample_id": "108852_fed54702_0004",
+      "negative_id": "neg_03",
+      "step_exists": true,
+      "kqp_run": "ran",
+      "returncode": 0,
+      "result_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\108852_fed54702_0004\\neg_03\\kqp_result.json"
+    }
+  ]
+}

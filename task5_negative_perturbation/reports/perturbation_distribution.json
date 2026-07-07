@@ -1,0 +1,135 @@
+{
+  "phase": "Task5 perturbation distribution",
+  "n_clean_samples": 46,
+  "n_negatives_total": 138,
+  "n_reconstr_success": 132,
+  "n_reconstr_failed": 6,
+  "n_kqp_run_done": 132,
+  "n_eligible": 132,
+  "by_target_intent": {
+    "bbox_size": {
+      "n_total": 92,
+      "n_eligible": 92,
+      "n_detected": 81,
+      "n_targeted": 80
+    },
+    "through_void_count": {
+      "n_total": 20,
+      "n_eligible": 20,
+      "n_detected": 20,
+      "n_targeted": 10
+    },
+    "cylinder_radius": {
+      "n_total": 19,
+      "n_eligible": 19,
+      "n_detected": 19,
+      "n_targeted": 17
+    },
+    "is_solid": {
+      "n_total": 6,
+      "n_eligible": 0,
+      "n_detected": 0,
+      "n_targeted": 0
+    },
+    "symmetric_about_plane": {
+      "n_total": 1,
+      "n_eligible": 1,
+      "n_detected": 1,
+      "n_targeted": 0
+    }
+  },
+  "by_error_category": {
+    "E2_extrude_depth": {
+      "n_total": 46,
+      "n_eligible": 46,
+      "n_detected": 43,
+      "n_targeted": 43
+    },
+    "E1_envelope_dim": {
+      "n_total": 46,
+      "n_eligible": 46,
+      "n_detected": 38,
+      "n_targeted": 37
+    },
+    "E4_void": {
+      "n_total": 20,
+      "n_eligible": 20,
+      "n_detected": 20,
+      "n_targeted": 10
+    },
+    "E3_radius": {
+      "n_total": 19,
+      "n_eligible": 19,
+      "n_detected": 19,
+      "n_targeted": 17
+    },
+    "E6_validity": {
+      "n_total": 6,
+      "n_eligible": 0,
+      "n_detected": 0,
+      "n_targeted": 0
+    },
+    "E5_extent_type": {
+      "n_total": 1,
+      "n_eligible": 1,
+      "n_detected": 1,
+      "n_targeted": 0
+    }
+  },
+  "by_operator": {
+    "E2_extrude_deep": {
+      "n_total": 45,
+      "n_eligible": 45,
+      "n_detected": 42,
+      "n_targeted": 42
+    },
+    "E1_envelope_u": {
+      "n_total": 22,
+      "n_eligible": 22,
+      "n_detected": 18,
+      "n_targeted": 18
+    },
+    "E1_envelope_v_shrink": {
+      "n_total": 24,
+      "n_eligible": 24,
+      "n_detected": 20,
+      "n_targeted": 19
+    },
+    "E4_void_remove_one": {
+      "n_total": 10,
+      "n_eligible": 10,
+      "n_detected": 10,
+      "n_targeted": 10
+    },
+    "E3_radius_up": {
+      "n_total": 19,
+      "n_eligible": 19,
+      "n_detected": 19,
+      "n_targeted": 17
+    },
+    "E6_inner_gt_outer": {
+      "n_total": 6,
+      "n_eligible": 0,
+      "n_detected": 0,
+      "n_targeted": 0
+    },
+    "E4_void_add": {
+      "n_total": 10,
+      "n_eligible": 10,
+      "n_detected": 10,
+      "n_targeted": 0
+    },
+    "E5_extent_type_change": {
+      "n_total": 1,
+      "n_eligible": 1,
+      "n_detected": 1,
+      "n_targeted": 0
+    },
+    "E2_extrude_shallow": {
+      "n_total": 1,
+      "n_eligible": 1,
+      "n_detected": 1,
+      "n_targeted": 1
+    }
+  }
+}
