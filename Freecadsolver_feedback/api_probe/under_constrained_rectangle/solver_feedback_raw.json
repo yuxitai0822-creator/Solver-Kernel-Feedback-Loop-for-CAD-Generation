@@ -1,0 +1,41 @@
+{
+  "test_case": "under_constrained_rectangle",
+  "description": "Rotated 30° rectangle with only 2 orientation constraints.",
+  "expected_solve_status": "under_constrained",
+  "expected_severity": "warning",
+  "num_lines": 4,
+  "num_constraints": 2,
+  "solve_return_code": 0,
+  "solve_status_str": "success",
+  "dof": 14,
+  "redundant_constraints": [],
+  "conflicting_constraints": [],
+  "partially_redundant_constraints": [],
+  "malformed_constraints": [],
+  "missing_vertical_horizontal_constraints": [],
+  "missing_line_equality_constraints": [],
+  "missing_point_on_point_constraints": [],
+  "missing_radius_constraints": [],
+  "constraint_count": 2,
+  "geometry_count": 4,
+  "constraints_summary": [
+    {
+      "index": 0,
+      "type": "Horizontal",
+      "first": 0,
+      "second": -2000,
+      "third": -2000,
+      "value": 0.0
+    },
+    {
+      "index": 1,
+      "type": "Vertical",
+      "first": 3,
+      "second": -2000,
+      "third": -2000,
+      "value": 0.0
+    }
+  ],
+  "recompute_success": true,
+  "recompute_exception": null
+}

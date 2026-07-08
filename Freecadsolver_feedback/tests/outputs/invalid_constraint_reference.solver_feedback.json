@@ -1,0 +1,144 @@
+{
+  "solver_feedback_version": "v0.1",
+  "sample_id": "invalid_constraint_reference",
+  "sketch_id": "Sketch1",
+  "runtime": {
+    "script_executed": true,
+    "execution_error": null
+  },
+  "solve": {
+    "solve_status": "redundant",
+    "severity": "warning",
+    "dof": 12,
+    "return_code": -2,
+    "exception": null,
+    "message": "FreeCAD solve() returned -2",
+    "flags": {
+      "has_conflict": false,
+      "has_redundancy": true,
+      "has_invalid_constraints": false,
+      "has_over_constrained": false,
+      "has_partially_redundant": false,
+      "has_missing_v_h_constraints": false,
+      "has_non_linear_constraints": false,
+      "has_solver_error": false
+    },
+    "non_linear_constraint_ids": [],
+    "redundant_constraint_ids": [
+      5
+    ],
+    "conflicting_constraint_ids": [],
+    "malformed_constraint_ids": []
+  },
+  "recompute": {
+    "recompute_status": "success",
+    "failed_features": [],
+    "message": "doc.recompute() succeeded; no feature in Invalid state"
+  },
+  "registry": {
+    "num_geometries": 4,
+    "num_constraints": 5,
+    "geometry_registry": {
+      "geometry:0": {
+        "type": "unknown",
+        "construction": false
+      },
+      "geometry:1": {
+        "type": "unknown",
+        "construction": false
+      },
+      "geometry:2": {
+        "type": "unknown",
+        "construction": false
+      },
+      "geometry:3": {
+        "type": "unknown",
+        "construction": false
+      }
+    },
+    "constraint_registry": {
+      "c0": {
+        "type": "Horizontal",
+        "entities": [
+          0,
+          -2000,
+          -2000
+        ],
+        "value": 0.0
+      },
+      "c1": {
+        "type": "Vertical",
+        "entities": [
+          1,
+          -2000,
+          -2000
+        ],
+        "value": 0.0
+      },
+      "c2": {
+        "type": "Horizontal",
+        "entities": [
+          2,
+          -2000,
+          -2000
+        ],
+        "value": 0.0
+      },
+      "c3": {
+        "type": "Vertical",
+        "entities": [
+          3,
+          -2000,
+          -2000
+        ],
+        "value": 0.0
+      },
+      "c4": {
+        "type": "Coincident",
+        "entities": [
+          0,
+          0,
+          -2000
+        ],
+        "value": 0.0
+      }
+    }
+  },
+  "constraint_diagnostics": {
+    "conflicting_constraints": [],
+    "redundant_constraints": [
+      {
+        "id": "c5",
+        "type": "redundant",
+        "entities": [],
+        "description": "Constraint c5 (?) is redundant — removing it does not change the solved geometry"
+      }
+    ],
+    "invalid_constraints": [],
+    "underconstrained_entities": [
+      {
+        "entity": "sketch",
+        "reason": "sketch has 12 degree(s) of freedom; geometry is not fully pinned by constraints"
+      }
+    ]
+  },
+  "fallback_diagnostics": {
+    "used": false,
+    "method": null,
+    "redundant_constraint_ids": [],
+    "suspected_conflicting_constraint_ids": [],
+    "note": "FreeCAD Sketcher exposes redundant/conflicting constraints directly; no fallback needed."
+  },
+  "llm_feedback": {
+    "summary": "Sketch contains 1 redundant constraint(s) (FreeCAD solver detected).",
+    "blocking_errors": [],
+    "warnings": [
+      "Constraint c5 (redundant) is redundant; removing it does not change the solved geometry."
+    ],
+    "suggested_actions": [],
+    "do_not_change": [
+      "Do not change geometry dimensions that are required by the Design Plan.",
+      "Do not remove unrelated constraints."
+    ]
+  }
+}

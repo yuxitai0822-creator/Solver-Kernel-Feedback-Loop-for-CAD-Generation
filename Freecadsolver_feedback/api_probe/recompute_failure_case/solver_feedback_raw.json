@@ -1,0 +1,96 @@
+{
+  "test_case": "recompute_failure_case",
+  "description": "Sketch solves but Pad with Length=0 — pad is marked Invalid.",
+  "expected_recompute_status": "failed",
+  "expected_severity": "blocking",
+  "num_lines": 4,
+  "num_constraints": 8,
+  "num_pad": 1,
+  "solve_return_code": 0,
+  "solve_status_str": "success",
+  "dof": 4,
+  "redundant_constraints": [],
+  "conflicting_constraints": [],
+  "partially_redundant_constraints": [],
+  "malformed_constraints": [],
+  "missing_vertical_horizontal_constraints": [],
+  "missing_line_equality_constraints": [],
+  "missing_point_on_point_constraints": [],
+  "missing_radius_constraints": [],
+  "constraint_count": 8,
+  "geometry_count": 4,
+  "constraints_summary": [
+    {
+      "index": 0,
+      "type": "Horizontal",
+      "first": 0,
+      "second": -2000,
+      "third": -2000,
+      "value": 0.0
+    },
+    {
+      "index": 1,
+      "type": "Vertical",
+      "first": 1,
+      "second": -2000,
+      "third": -2000,
+      "value": 0.0
+    },
+    {
+      "index": 2,
+      "type": "Horizontal",
+      "first": 2,
+      "second": -2000,
+      "third": -2000,
+      "value": 0.0
+    },
+    {
+      "index": 3,
+      "type": "Vertical",
+      "first": 3,
+      "second": -2000,
+      "third": -2000,
+      "value": 0.0
+    },
+    {
+      "index": 4,
+      "type": "Coincident",
+      "first": 0,
+      "second": 1,
+      "third": -2000,
+      "value": 0.0
+    },
+    {
+      "index": 5,
+      "type": "Coincident",
+      "first": 1,
+      "second": 2,
+      "third": -2000,
+      "value": 0.0
+    },
+    {
+      "index": 6,
+      "type": "Coincident",
+      "first": 2,
+      "second": 3,
+      "third": -2000,
+      "value": 0.0
+    },
+    {
+      "index": 7,
+      "type": "Coincident",
+      "first": 3,
+      "second": 0,
+      "third": -2000,
+      "value": 0.0
+    }
+  ],
+  "recompute_success": true,
+  "recompute_exception": null,
+  "pad_state": [
+    "Touched",
+    "Invalid"
+  ],
+  "pad_invalid": true,
+  "pad_length": 0.0
+}

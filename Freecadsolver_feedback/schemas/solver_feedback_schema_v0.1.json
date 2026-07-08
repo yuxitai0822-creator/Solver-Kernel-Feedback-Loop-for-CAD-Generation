@@ -1,0 +1,145 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "solver_feedback_schema_v0.1.json",
+  "title": "SolverFeedback v0.1",
+  "description": "Sketch-constraint solver feedback for the Solver-KQP double-feedback loop.",
+  "type": "object",
+  "required": [
+    "solver_feedback_version",
+    "sample_id",
+    "sketch_id",
+    "runtime",
+    "solve",
+    "recompute",
+    "registry",
+    "constraint_diagnostics",
+    "fallback_diagnostics",
+    "llm_feedback"
+  ],
+  "properties": {
+    "solver_feedback_version": {
+      "type": "string",
+      "const": "v0.1"
+    },
+    "sample_id": {
+      "type": "string",
+      "description": "Sample identifier (Fusion360 component name or sanitized sample id)."
+    },
+    "sketch_id": {
+      "type": "string",
+      "description": "Sketch entity UUID or display name."
+    },
+    "runtime": {
+      "type": "object",
+      "required": ["script_executed"],
+      "properties": {
+        "script_executed": {"type": "boolean"},
+        "execution_error": {"type": ["string", "null"]}
+      }
+    },
+    "solve": {
+      "type": "object",
+      "required": ["status", "severity", "return_code", "dof", "message"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "fully_constrained",
+            "under_constrained",
+            "over_constrained",
+            "conflicting",
+            "redundant",
+            "unsolvable",
+            "invalid_constraint_reference",
+            "unknown"
+          ]
+        },
+        "severity": {
+          "type": "string",
+          "enum": ["pass", "warning", "blocking", "error"]
+        },
+        "return_code": {"type": "integer"},
+        "dof": {
+          "type": ["integer", "null"],
+          "description": "Degrees of freedom after solve; null when undeterminable."
+        },
+        "message": {"type": "string"}
+      }
+    },
+    "recompute": {
+      "type": "object",
+      "required": ["status", "failed_features", "message"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["success", "failed", "skipped", "unknown"]
+        },
+        "failed_features": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "reason"],
+            "properties": {
+              "name": {"type": "string"},
+              "reason": {"type": "string"}
+            }
+          }
+        },
+        "message": {"type": ["string", "null"]}
+      }
+    },
+    "registry": {
+      "type": "object",
+      "required": ["num_geometries", "num_constraints"],
+      "properties": {
+        "num_geometries": {"type": "integer"},
+        "num_constraints": {"type": "integer"},
+        "geometry_registry": {"type": "object"},
+        "constraint_registry": {"type": "object"}
+      }
+    },
+    "constraint_diagnostics": {
+      "type": "object",
+      "required": [
+        "conflicting_constraints",
+        "redundant_constraints",
+        "invalid_constraints",
+        "underconstrained_entities"
+      ],
+      "properties": {
+        "conflicting_constraints": {"type": "array"},
+        "redundant_constraints": {"type": "array"},
+        "invalid_constraints": {"type": "array"},
+        "underconstrained_entities": {"type": "array"}
+      }
+    },
+    "fallback_diagnostics": {
+      "type": "object",
+      "required": ["used", "method"],
+      "properties": {
+        "used": {"type": "boolean"},
+        "method": {"type": ["string", "null"]},
+        "suspected_conflicting_constraints": {"type": "array"},
+        "suspected_redundant_constraints": {"type": "array"},
+        "note": {"type": ["string", "null"]}
+      }
+    },
+    "llm_feedback": {
+      "type": "object",
+      "required": [
+        "summary",
+        "blocking_errors",
+        "warnings",
+        "suggested_actions",
+        "do_not_change"
+      ],
+      "properties": {
+        "summary": {"type": "string"},
+        "blocking_errors": {"type": "array", "items": {"type": "string"}},
+        "warnings": {"type": "array", "items": {"type": "string"}},
+        "suggested_actions": {"type": "array", "items": {"type": "string"}},
+        "do_not_change": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}

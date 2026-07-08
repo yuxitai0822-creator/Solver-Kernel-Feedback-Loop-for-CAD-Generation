@@ -1,0 +1,172 @@
+{
+  "solver_feedback_version": "v0.1",
+  "sample_id": "recompute_failure_case",
+  "sketch_id": "Sketch1",
+  "runtime": {
+    "script_executed": true,
+    "execution_error": null
+  },
+  "solve": {
+    "solve_status": "under_constrained",
+    "severity": "warning",
+    "dof": 4,
+    "return_code": 0,
+    "exception": null,
+    "message": "FreeCAD solve() returned 0",
+    "flags": {
+      "has_conflict": false,
+      "has_redundancy": false,
+      "has_invalid_constraints": false,
+      "has_over_constrained": false,
+      "has_partially_redundant": false,
+      "has_missing_v_h_constraints": false,
+      "has_non_linear_constraints": false,
+      "has_solver_error": false
+    },
+    "non_linear_constraint_ids": [],
+    "redundant_constraint_ids": [],
+    "conflicting_constraint_ids": [],
+    "malformed_constraint_ids": []
+  },
+  "recompute": {
+    "recompute_status": "failed",
+    "failed_features": [
+      {
+        "name": "Pad",
+        "reason": "Pad.Length=0.0 is invalid; Pad.State=['Touched', 'Invalid']"
+      }
+    ],
+    "message": "Pad: Pad.Length=0.0 is invalid; Pad.State=['Touched', 'Invalid']"
+  },
+  "registry": {
+    "num_geometries": 4,
+    "num_constraints": 8,
+    "geometry_registry": {
+      "geometry:0": {
+        "type": "unknown",
+        "construction": false
+      },
+      "geometry:1": {
+        "type": "unknown",
+        "construction": false
+      },
+      "geometry:2": {
+        "type": "unknown",
+        "construction": false
+      },
+      "geometry:3": {
+        "type": "unknown",
+        "construction": false
+      }
+    },
+    "constraint_registry": {
+      "c0": {
+        "type": "Horizontal",
+        "entities": [
+          0,
+          -2000,
+          -2000
+        ],
+        "value": 0.0
+      },
+      "c1": {
+        "type": "Vertical",
+        "entities": [
+          1,
+          -2000,
+          -2000
+        ],
+        "value": 0.0
+      },
+      "c2": {
+        "type": "Horizontal",
+        "entities": [
+          2,
+          -2000,
+          -2000
+        ],
+        "value": 0.0
+      },
+      "c3": {
+        "type": "Vertical",
+        "entities": [
+          3,
+          -2000,
+          -2000
+        ],
+        "value": 0.0
+      },
+      "c4": {
+        "type": "Coincident",
+        "entities": [
+          0,
+          1,
+          -2000
+        ],
+        "value": 0.0
+      },
+      "c5": {
+        "type": "Coincident",
+        "entities": [
+          1,
+          2,
+          -2000
+        ],
+        "value": 0.0
+      },
+      "c6": {
+        "type": "Coincident",
+        "entities": [
+          2,
+          3,
+          -2000
+        ],
+        "value": 0.0
+      },
+      "c7": {
+        "type": "Coincident",
+        "entities": [
+          3,
+          0,
+          -2000
+        ],
+        "value": 0.0
+      }
+    }
+  },
+  "constraint_diagnostics": {
+    "conflicting_constraints": [],
+    "redundant_constraints": [],
+    "invalid_constraints": [],
+    "underconstrained_entities": [
+      {
+        "entity": "sketch",
+        "reason": "sketch has 4 degree(s) of freedom; geometry is not fully pinned by constraints"
+      }
+    ]
+  },
+  "fallback_diagnostics": {
+    "used": false,
+    "method": null,
+    "redundant_constraint_ids": [],
+    "suspected_conflicting_constraint_ids": [],
+    "note": "FreeCAD Sketcher exposes redundant/conflicting constraints directly; no fallback needed."
+  },
+  "llm_feedback": {
+    "summary": "Sketch is under-constrained (DOF=4). Some dimensions are not pinned by any constraint. Document recompute failed: 1 feature(s) in Invalid state.",
+    "blocking_errors": [
+      "Pad: Pad.Length=0.0 is invalid; Pad.State=['Touched', 'Invalid']"
+    ],
+    "warnings": [
+      "Sketch is under-constrained (DOF=4). The CAD result may differ from the Design Plan's intended dimensions."
+    ],
+    "suggested_actions": [
+      "Add dimension constraints (LinearDimension / DiameterDimension) to lock the geometry to the values specified in the Design Plan.",
+      "Fix feature Pad: Pad.Length=0.0 is invalid; Pad.State=['Touched', 'Invalid']."
+    ],
+    "do_not_change": [
+      "Do not change geometry dimensions that are required by the Design Plan.",
+      "Do not remove unrelated constraints."
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "case": "under_constrained_rectangle",
+    "solve_status": "under_constrained",
+    "severity": "warning",
+    "dof": 14,
+    "recompute_status": "success",
+    "n_blocking": 0,
+    "n_warnings": 1
+  },
+  {
+    "case": "fully_constrained_rectangle",
+    "solve_status": "under_constrained",
+    "severity": "warning",
+    "dof": 2,
+    "recompute_status": "success",
+    "n_blocking": 0,
+    "n_warnings": 1
+  },
+  {
+    "case": "redundant_rectangle",
+    "solve_status": "redundant",
+    "severity": "warning",
+    "dof": 12,
+    "recompute_status": "success",
+    "n_blocking": 0,
+    "n_warnings": 1
+  },
+  {
+    "case": "conflicting_line_orientation",
+    "solve_status": "conflicting",
+    "severity": "blocking",
+    "dof": 2,
+    "recompute_status": "success",
+    "n_blocking": 1,
+    "n_warnings": 0
+  },
+  {
+    "case": "invalid_constraint_reference",
+    "solve_status": "redundant",
+    "severity": "warning",
+    "dof": 12,
+    "recompute_status": "success",
+    "n_blocking": 0,
+    "n_warnings": 1
+  },
+  {
+    "case": "recompute_failure_case",
+    "solve_status": "under_constrained",
+    "severity": "warning",
+    "dof": 4,
+    "recompute_status": "failed",
+    "n_blocking": 1,
+    "n_warnings": 1
+  }
+]

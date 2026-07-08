@@ -1,0 +1,98 @@
+{
+  "solver_feedback_version": "v0.1",
+  "sample_id": "conflicting_line_orientation",
+  "sketch_id": "Sketch1",
+  "runtime": {
+    "script_executed": true,
+    "execution_error": null
+  },
+  "solve": {
+    "solve_status": "conflicting",
+    "severity": "blocking",
+    "dof": 2,
+    "return_code": -1,
+    "exception": null,
+    "message": "FreeCAD solve() returned -1",
+    "flags": {
+      "has_conflict": false,
+      "has_redundancy": false,
+      "has_invalid_constraints": false,
+      "has_over_constrained": false,
+      "has_partially_redundant": false,
+      "has_missing_v_h_constraints": false,
+      "has_non_linear_constraints": false,
+      "has_solver_error": true
+    },
+    "non_linear_constraint_ids": [],
+    "redundant_constraint_ids": [],
+    "conflicting_constraint_ids": [],
+    "malformed_constraint_ids": []
+  },
+  "recompute": {
+    "recompute_status": "success",
+    "failed_features": [],
+    "message": "doc.recompute() succeeded; no feature in Invalid state"
+  },
+  "registry": {
+    "num_geometries": 1,
+    "num_constraints": 2,
+    "geometry_registry": {
+      "geometry:0": {
+        "type": "unknown",
+        "construction": false
+      }
+    },
+    "constraint_registry": {
+      "c0": {
+        "type": "Horizontal",
+        "entities": [
+          0,
+          -2000,
+          -2000
+        ],
+        "value": 0.0
+      },
+      "c1": {
+        "type": "Vertical",
+        "entities": [
+          0,
+          -2000,
+          -2000
+        ],
+        "value": 0.0
+      }
+    }
+  },
+  "constraint_diagnostics": {
+    "conflicting_constraints": [],
+    "redundant_constraints": [],
+    "invalid_constraints": [],
+    "underconstrained_entities": [
+      {
+        "entity": "sketch",
+        "reason": "sketch has 2 degree(s) of freedom; geometry is not fully pinned by constraints"
+      }
+    ]
+  },
+  "fallback_diagnostics": {
+    "used": false,
+    "method": null,
+    "redundant_constraint_ids": [],
+    "suspected_conflicting_constraint_ids": [],
+    "note": "FreeCAD Sketcher exposes redundant/conflicting constraints directly; no fallback needed."
+  },
+  "llm_feedback": {
+    "summary": "Sketch is conflicting (FreeCAD solver reported a non-zero return code; no structured conflict list was emitted).",
+    "blocking_errors": [
+      "FreeCAD solver failed to solve the sketch; inspect the constraint set manually for semantic conflicts."
+    ],
+    "warnings": [],
+    "suggested_actions": [
+      "Remove or relax one of the conflicting constraints."
+    ],
+    "do_not_change": [
+      "Do not change geometry dimensions that are required by the Design Plan.",
+      "Do not remove unrelated constraints."
+    ]
+  }
+}

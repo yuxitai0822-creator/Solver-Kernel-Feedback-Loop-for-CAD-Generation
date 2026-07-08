@@ -1,0 +1,105 @@
+{
+  "test_case": "fully_constrained_rectangle",
+  "description": "Rotated 30° rectangle with 4 orientations + 4 corner-coincidences + 2 distance constraints.",
+  "expected_solve_status": "fully_constrained",
+  "expected_severity": "pass",
+  "num_lines": 4,
+  "num_constraints": 10,
+  "solve_return_code": 0,
+  "solve_status_str": "success",
+  "dof": 2,
+  "redundant_constraints": [],
+  "conflicting_constraints": [],
+  "partially_redundant_constraints": [],
+  "malformed_constraints": [],
+  "missing_vertical_horizontal_constraints": [],
+  "missing_line_equality_constraints": [],
+  "missing_point_on_point_constraints": [],
+  "missing_radius_constraints": [],
+  "constraint_count": 10,
+  "geometry_count": 4,
+  "constraints_summary": [
+    {
+      "index": 0,
+      "type": "Horizontal",
+      "first": 0,
+      "second": -2000,
+      "third": -2000,
+      "value": 0.0
+    },
+    {
+      "index": 1,
+      "type": "Vertical",
+      "first": 1,
+      "second": -2000,
+      "third": -2000,
+      "value": 0.0
+    },
+    {
+      "index": 2,
+      "type": "Horizontal",
+      "first": 2,
+      "second": -2000,
+      "third": -2000,
+      "value": 0.0
+    },
+    {
+      "index": 3,
+      "type": "Vertical",
+      "first": 3,
+      "second": -2000,
+      "third": -2000,
+      "value": 0.0
+    },
+    {
+      "index": 4,
+      "type": "Coincident",
+      "first": 0,
+      "second": 1,
+      "third": -2000,
+      "value": 0.0
+    },
+    {
+      "index": 5,
+      "type": "Coincident",
+      "first": 1,
+      "second": 2,
+      "third": -2000,
+      "value": 0.0
+    },
+    {
+      "index": 6,
+      "type": "Coincident",
+      "first": 2,
+      "second": 3,
+      "third": -2000,
+      "value": 0.0
+    },
+    {
+      "index": 7,
+      "type": "Coincident",
+      "first": 3,
+      "second": 0,
+      "third": -2000,
+      "value": 0.0
+    },
+    {
+      "index": 8,
+      "type": "DistanceX",
+      "first": 0,
+      "second": -2000,
+      "third": -2000,
+      "value": 10.0
+    },
+    {
+      "index": 9,
+      "type": "DistanceY",
+      "first": 1,
+      "second": -2000,
+      "third": -2000,
+      "value": 5.0
+    }
+  ],
+  "recompute_success": true,
+  "recompute_exception": null
+}

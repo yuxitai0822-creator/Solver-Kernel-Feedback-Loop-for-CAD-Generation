@@ -1,0 +1,67 @@
+{
+  "test_case": "redundant_rectangle",
+  "description": "Rotated 30° rectangle with 4 orientations + 1 duplicate Horizontal(l0).",
+  "expected_solve_status": "redundant",
+  "expected_severity": "warning",
+  "num_lines": 4,
+  "num_constraints": 5,
+  "solve_return_code": -2,
+  "solve_status_str": "redundant",
+  "dof": 12,
+  "redundant_constraints": [
+    2
+  ],
+  "conflicting_constraints": [],
+  "partially_redundant_constraints": [],
+  "malformed_constraints": [],
+  "missing_vertical_horizontal_constraints": [],
+  "missing_line_equality_constraints": [],
+  "missing_point_on_point_constraints": [],
+  "missing_radius_constraints": [],
+  "constraint_count": 5,
+  "geometry_count": 4,
+  "constraints_summary": [
+    {
+      "index": 0,
+      "type": "Horizontal",
+      "first": 0,
+      "second": -2000,
+      "third": -2000,
+      "value": 0.0
+    },
+    {
+      "index": 1,
+      "type": "Horizontal",
+      "first": 0,
+      "second": -2000,
+      "third": -2000,
+      "value": 0.0
+    },
+    {
+      "index": 2,
+      "type": "Vertical",
+      "first": 1,
+      "second": -2000,
+      "third": -2000,
+      "value": 0.0
+    },
+    {
+      "index": 3,
+      "type": "Horizontal",
+      "first": 2,
+      "second": -2000,
+      "third": -2000,
+      "value": 0.0
+    },
+    {
+      "index": 4,
+      "type": "Vertical",
+      "first": 3,
+      "second": -2000,
+      "third": -2000,
+      "value": 0.0
+    }
+  ],
+  "recompute_success": true,
+  "recompute_exception": null
+}
