@@ -1,0 +1,24 @@
+{
+  "phase": "API Probe — solver_feedback v0.1 backend capability check",
+  "backend": "kiwisolver + python adapter (FreeCAD Sketcher NOT available)",
+  "scripts": {
+    "probe_under_constrained.py": {
+      "ok": true
+    },
+    "probe_fully_constrained.py": {
+      "ok": true
+    },
+    "probe_redundant.py": {
+      "ok": true
+    },
+    "probe_conflicting.py": {
+      "ok": true
+    },
+    "probe_invalid_reference.py": {
+      "ok": true
+    },
+    "probe_recompute_failure.py": {
+      "ok": true
+    }
+  }
+}

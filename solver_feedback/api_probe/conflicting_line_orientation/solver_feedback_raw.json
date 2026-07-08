@@ -1,0 +1,18 @@
+{
+  "test_case": "conflicting_line_orientation",
+  "description": "Line l0 constrained both Horizontal AND Vertical — collapse to zero-length point.",
+  "expected_solve_status": "conflicting",
+  "expected_severity": "blocking",
+  "num_constraints": 2,
+  "raw_solve": {
+    "return_code": 0,
+    "exception": null,
+    "message": "kiwisolver updateVariables succeeded"
+  },
+  "dof_estimate": 2,
+  "invalid_constraint_ids": [],
+  "semantic_conflicts": [
+    "line_l0_collapsed_to_point: start=(10.0,0.0) end=(10.0,0.0)"
+  ],
+  "method": "kiwisolver+python_adapter+degeneracy_check"
+}

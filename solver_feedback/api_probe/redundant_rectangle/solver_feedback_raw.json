@@ -1,0 +1,16 @@
+{
+  "test_case": "redundant_rectangle",
+  "description": "Rectangle with a duplicate Horizontal constraint on l0.",
+  "expected_solve_status": "fully_constrained_with_redundancy",
+  "expected_severity": "warning",
+  "num_constraints": 5,
+  "raw_solve": {
+    "return_code": 0,
+    "exception": null,
+    "message": "kiwisolver updateVariables succeeded"
+  },
+  "dof_estimate": 3,
+  "invalid_constraint_ids": [],
+  "semantic_conflicts": [],
+  "note": "Redundancy is NOT detected by kiwisolver directly; fallback_analyzer.leave_one_out_redundancy() is needed."
+}

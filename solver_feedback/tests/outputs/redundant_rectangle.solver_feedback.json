@@ -1,0 +1,170 @@
+{
+  "solver_feedback_version": "v0.1",
+  "sample_id": "redundant_rectangle",
+  "sketch_id": "Sketch1",
+  "runtime": {
+    "script_executed": true,
+    "execution_error": null
+  },
+  "solve": {
+    "solve_status": "under_constrained",
+    "severity": "warning",
+    "dof": 1,
+    "return_code": 0,
+    "exception": null,
+    "message": "kiwisolver updateVariables succeeded",
+    "flags": {
+      "has_conflict": false,
+      "has_redundancy": false,
+      "has_invalid_constraints": false,
+      "has_non_linear_constraints": false
+    },
+    "non_linear_constraint_ids": []
+  },
+  "recompute": {
+    "recompute_status": "success",
+    "failed_features": [],
+    "message": "all downstream feature sanity rules passed"
+  },
+  "registry": {
+    "num_geometries": 8,
+    "num_constraints": 7,
+    "geometry_registry": {
+      "pt:p0": {
+        "type": "Point",
+        "x": 0.0,
+        "y": 0.0,
+        "construction": false
+      },
+      "pt:p1": {
+        "type": "Point",
+        "x": 10.0,
+        "y": 0.0,
+        "construction": false
+      },
+      "pt:p2": {
+        "type": "Point",
+        "x": 10.0,
+        "y": 5.0,
+        "construction": false
+      },
+      "pt:p3": {
+        "type": "Point",
+        "x": 0.0,
+        "y": 5.0,
+        "construction": false
+      },
+      "line:l0": {
+        "type": "Line",
+        "start": "pt:p0",
+        "end": "pt:p1",
+        "construction": false
+      },
+      "line:l1": {
+        "type": "Line",
+        "start": "pt:p1",
+        "end": "pt:p2",
+        "construction": false
+      },
+      "line:l2": {
+        "type": "Line",
+        "start": "pt:p2",
+        "end": "pt:p3",
+        "construction": false
+      },
+      "line:l3": {
+        "type": "Line",
+        "start": "pt:p3",
+        "end": "pt:p0",
+        "construction": false
+      }
+    },
+    "constraint_registry": {
+      "c_h0a": {
+        "type": "Horizontal",
+        "entities": [
+          "l0"
+        ],
+        "value": null
+      },
+      "c_h0b": {
+        "type": "Horizontal",
+        "entities": [
+          "l0"
+        ],
+        "value": null
+      },
+      "c_h1": {
+        "type": "Horizontal",
+        "entities": [
+          "l2"
+        ],
+        "value": null
+      },
+      "c_v0": {
+        "type": "Vertical",
+        "entities": [
+          "l1"
+        ],
+        "value": null
+      },
+      "c_v1": {
+        "type": "Vertical",
+        "entities": [
+          "l3"
+        ],
+        "value": null
+      },
+      "c_dx_l0": {
+        "type": "Offset",
+        "entities": [
+          "p0",
+          "p1",
+          "x"
+        ],
+        "value": 10.0
+      },
+      "c_dy_l1": {
+        "type": "Offset",
+        "entities": [
+          "p1",
+          "p2",
+          "y"
+        ],
+        "value": 5.0
+      }
+    }
+  },
+  "constraint_diagnostics": {
+    "conflicting_constraints": [],
+    "redundant_constraints": [],
+    "invalid_constraints": [],
+    "underconstrained_entities": [
+      {
+        "entity": "pt_p0.x",
+        "reason": "variable pt_p0.x is not pinned by any constraint"
+      }
+    ]
+  },
+  "fallback_diagnostics": {
+    "used": true,
+    "method": "kiwisolver + leave-one-out",
+    "redundant_constraint_ids": [],
+    "suspected_conflicting_constraint_ids": [],
+    "note": "Redundancy + suspected conflict detected via leave-one-out re-solves.  Each re-solve is O(constraints * solve_cost)."
+  },
+  "llm_feedback": {
+    "summary": "Sketch is under-constrained (DOF=1). Some dimensions are not pinned by any constraint.",
+    "blocking_errors": [],
+    "warnings": [
+      "Sketch is under-constrained (DOF=1). The CAD result may differ from the Design Plan's intended dimensions."
+    ],
+    "suggested_actions": [
+      "Add dimension constraints (LinearDimension / DiameterDimension) to lock the geometry to the values specified in the Design Plan."
+    ],
+    "do_not_change": [
+      "Do not change geometry dimensions that are required by the Design Plan.",
+      "Do not remove unrelated constraints."
+    ]
+  }
+}

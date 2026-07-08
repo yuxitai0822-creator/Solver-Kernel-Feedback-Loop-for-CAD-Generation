@@ -1,0 +1,23 @@
+{
+  "test_case": "under_constrained_rectangle",
+  "description": "Rectangle with only horizontal constraints — should be under-constrained.",
+  "expected_solve_status": "under_constrained",
+  "expected_severity": "warning",
+  "num_points": 4,
+  "num_lines": 4,
+  "num_constraints": 2,
+  "raw_solve": {
+    "return_code": 0,
+    "exception": null,
+    "message": "kiwisolver updateVariables succeeded"
+  },
+  "dof_estimate": 6,
+  "invalid_constraint_ids": [],
+  "semantic_conflicts": [],
+  "var_values_sample": {
+    "pt_p0.x": 0.0,
+    "pt_p0.y": 0.0,
+    "pt_p1.x": 10.0,
+    "pt_p1.y": 0.0
+  }
+}

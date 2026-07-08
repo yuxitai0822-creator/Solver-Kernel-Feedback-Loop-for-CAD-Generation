@@ -1,0 +1,23 @@
+{
+  "test_case": "fully_constrained_rectangle",
+  "description": "Rectangle with 4 orientations + length constraints along x and y.",
+  "expected_solve_status": "fully_constrained",
+  "expected_severity": "pass",
+  "num_points": 4,
+  "num_lines": 4,
+  "num_constraints": 7,
+  "raw_solve": {
+    "return_code": 0,
+    "exception": null,
+    "message": "kiwisolver updateVariables succeeded"
+  },
+  "dof_estimate": 1,
+  "invalid_constraint_ids": [],
+  "semantic_conflicts": [],
+  "var_values_sample": {
+    "pt_p0.x": 0.0,
+    "pt_p0.y": 0.0,
+    "pt_p1.x": 10.0,
+    "pt_p1.y": 0.0
+  }
+}

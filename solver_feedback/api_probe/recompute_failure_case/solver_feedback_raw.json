@@ -1,0 +1,23 @@
+{
+  "test_case": "recompute_failure_case",
+  "description": "Sketch solves but downstream extrude feature fails (distance=0).",
+  "expected_recompute_status": "failed",
+  "expected_severity": "blocking",
+  "sketch_solve_pass": true,
+  "recompute_success": false,
+  "failed_features": [
+    {
+      "name": "ExtrudeFeature",
+      "reason": "extrude.distance <= 0"
+    }
+  ],
+  "raw_solve": {
+    "return_code": 0,
+    "exception": null,
+    "message": "kiwisolver updateVariables succeeded"
+  },
+  "dof_estimate": 4,
+  "invalid_constraint_ids": [],
+  "semantic_conflicts": [],
+  "method": "kiwisolver+python_adapter+degeneracy_check"
+}

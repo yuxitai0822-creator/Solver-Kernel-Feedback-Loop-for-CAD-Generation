@@ -1,0 +1,114 @@
+{
+  "solver_feedback_version": "v0.1",
+  "sample_id": "conflicting_line_orientation",
+  "sketch_id": "Sketch1",
+  "runtime": {
+    "script_executed": true,
+    "execution_error": null
+  },
+  "solve": {
+    "solve_status": "conflicting",
+    "severity": "blocking",
+    "dof": 2,
+    "return_code": 0,
+    "exception": null,
+    "message": "kiwisolver updateVariables succeeded",
+    "flags": {
+      "has_conflict": true,
+      "has_redundancy": false,
+      "has_invalid_constraints": false,
+      "has_non_linear_constraints": false
+    },
+    "non_linear_constraint_ids": []
+  },
+  "recompute": {
+    "recompute_status": "success",
+    "failed_features": [],
+    "message": "all downstream feature sanity rules passed"
+  },
+  "registry": {
+    "num_geometries": 3,
+    "num_constraints": 2,
+    "geometry_registry": {
+      "pt:p0": {
+        "type": "Point",
+        "x": 0.0,
+        "y": 0.0,
+        "construction": false
+      },
+      "pt:p1": {
+        "type": "Point",
+        "x": 10.0,
+        "y": 0.0,
+        "construction": false
+      },
+      "line:l0": {
+        "type": "Line",
+        "start": "pt:p0",
+        "end": "pt:p1",
+        "construction": false
+      }
+    },
+    "constraint_registry": {
+      "c_h": {
+        "type": "Horizontal",
+        "entities": [
+          "l0"
+        ],
+        "value": null
+      },
+      "c_v": {
+        "type": "Vertical",
+        "entities": [
+          "l0"
+        ],
+        "value": null
+      }
+    }
+  },
+  "constraint_diagnostics": {
+    "conflicting_constraints": [
+      {
+        "id": "semantic:l0_collapsed_to_point",
+        "type": "semantic_conflict",
+        "entities": [
+          "line:l0_collapsed_to_point"
+        ],
+        "description": "Line l0_collapsed_to_point has been collapsed to a single point by incompatible orientation constraints (e.g. Horizontal + Vertical on the same line)."
+      }
+    ],
+    "redundant_constraints": [],
+    "invalid_constraints": [],
+    "underconstrained_entities": [
+      {
+        "entity": "pt_p0.y",
+        "reason": "variable pt_p0.y is not pinned by any constraint"
+      },
+      {
+        "entity": "pt_p1.y",
+        "reason": "variable pt_p1.y is not pinned by any constraint"
+      }
+    ]
+  },
+  "fallback_diagnostics": {
+    "used": true,
+    "method": "kiwisolver + leave-one-out",
+    "redundant_constraint_ids": [],
+    "suspected_conflicting_constraint_ids": [],
+    "note": "Redundancy + suspected conflict detected via leave-one-out re-solves.  Each re-solve is O(constraints * solve_cost)."
+  },
+  "llm_feedback": {
+    "summary": "Sketch is conflicting: 1 semantic conflict(s) detected.",
+    "blocking_errors": [
+      "Line l0_collapsed_to_point has been collapsed to a single point by incompatible orientation constraints (e.g. Horizontal + Vertical on the same line)."
+    ],
+    "warnings": [],
+    "suggested_actions": [
+      "Resolve constraint on ['line:l0_collapsed_to_point']: remove one of the conflicting constraints or rewrite the geometry."
+    ],
+    "do_not_change": [
+      "Do not change geometry dimensions that are required by the Design Plan.",
+      "Do not remove unrelated constraints."
+    ]
+  }
+}

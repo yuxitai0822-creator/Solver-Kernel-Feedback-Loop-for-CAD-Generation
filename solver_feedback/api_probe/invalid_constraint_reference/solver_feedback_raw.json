@@ -1,0 +1,20 @@
+{
+  "test_case": "invalid_constraint_reference",
+  "description": "Coincident constraint references a deleted geometry id (p_deleted).",
+  "expected_solve_status": "invalid_constraint_reference",
+  "expected_severity": "blocking",
+  "num_constraints": 2,
+  "raw_solve": {
+    "return_code": 0,
+    "exception": null,
+    "message": "kiwisolver updateVariables succeeded"
+  },
+  "dof_estimate": 1,
+  "invalid_constraint_ids": [
+    "c_coin_bad:point p0 or p_deleted missing"
+  ],
+  "semantic_conflicts": [],
+  "deleted_entities_referenced": [
+    "p_deleted"
+  ]
+}
