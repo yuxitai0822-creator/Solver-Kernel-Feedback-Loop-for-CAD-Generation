@@ -1,0 +1,37 @@
+{
+  "schema_version": "cad_ir_v0.1",
+  "sample_id": "manual_demo_annulus_with_cut",
+  "unit": "mm",
+  "coordinate_system": {"up_axis": "z", "front_axis": "y", "right_axis": "x"},
+  "operations": [
+    {
+      "op_id": "op_001",
+      "op_type": "sketch_annulus",
+      "role": "base_profile",
+      "plane": "XY",
+      "params": {
+        "inner_radius": 8.0,
+        "outer_radius": 25.0,
+        "center": [0.0, 0.0]
+      }
+    },
+    {
+      "op_id": "op_002",
+      "op_type": "extrude",
+      "role": "base_body",
+      "input": "op_001",
+      "params": {
+        "distance": 15.0,
+        "extent_type": "one_side",
+        "operation": "new_body",
+        "direction": "+normal"
+      }
+    },
+    {
+      "op_id": "op_003",
+      "op_type": "export_step",
+      "input": "op_002",
+      "params": {"path": "manual_demo_annulus.step"}
+    }
+  ]
+}

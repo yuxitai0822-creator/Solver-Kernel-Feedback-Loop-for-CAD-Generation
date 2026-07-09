@@ -1,0 +1,50 @@
+{
+  "schema_version": "cad_ir_v0.1",
+  "sample_id": "102314_91648bfc_0000",
+  "unit": "mm",
+  "coordinate_system": {
+    "up_axis": "z",
+    "front_axis": "y",
+    "right_axis": "x"
+  },
+  "operations": [
+    {
+      "op_id": "op_001",
+      "op_type": "sketch_annulus",
+      "role": "base_profile",
+      "plane": "XY",
+      "params": {
+        "inner_radius": 7.965948,
+        "outer_radius": 12.7,
+        "center": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "op_id": "op_002",
+      "op_type": "extrude",
+      "role": "base_body",
+      "input": "op_001",
+      "params": {
+        "distance": 101.6,
+        "extent_type": "one_side",
+        "operation": "new_body",
+        "direction": "+normal"
+      }
+    },
+    {
+      "op_id": "op_003",
+      "op_type": "export_step",
+      "input": "op_002",
+      "params": {
+        "path": "102314_91648bfc_0000.step"
+      }
+    }
+  ],
+  "metadata": {
+    "source": "manual_from_clean_sample",
+    "profile_type": "annulus"
+  }
+}

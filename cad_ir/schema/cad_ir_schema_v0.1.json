@@ -1,0 +1,335 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "cad_ir_schema_v0.1.json",
+  "title": "CAD Operation IR v0.1",
+  "description": "Structured CAD Operation Intermediate Representation — backend-agnostic declaration of CAD operations for the Code Agent → IR → Adaptor → CAD Script pipeline.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "sample_id",
+    "unit",
+    "coordinate_system",
+    "operations"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "const": "cad_ir_v0.1"},
+    "sample_id": {
+      "type": "string",
+      "description": "Sample identifier (FreeCAD/Fusion360 component name or sanitized id)."
+    },
+    "unit": {
+      "type": "string",
+      "enum": ["mm", "cm", "m", "in"],
+      "description": "Linear unit used throughout the IR.  v0.1 only mm and cm are validated; cm is converted to mm by the adaptor (×10)."
+    },
+    "coordinate_system": {
+      "type": "object",
+      "description": "Reference coordinate frame for the entire IR.",
+      "required": ["up_axis", "front_axis", "right_axis"],
+      "properties": {
+        "up_axis":   {"type": "string", "enum": ["x", "y", "z"]},
+        "front_axis": {"type": "string", "enum": ["x", "y", "z"]},
+        "right_axis": {"type": "string", "enum": ["x", "y", "z"]}
+      }
+    },
+    "operations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/definitions/operation"}
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Optional metadata for repair-loop bookkeeping.",
+      "properties": {
+        "round": {"type": "integer"},
+        "iteration": {"type": "integer"},
+        "source": {"type": "string"},
+        "comments": {"type": "string"}
+      }
+    }
+  },
+  "definitions": {
+    "operation": {
+      "type": "object",
+      "required": ["op_id", "op_type", "params"],
+      "properties": {
+        "op_id": {
+          "type": "string",
+          "description": "Stable operation identifier (e.g. 'op_001').  Must be unique within an IR."
+        },
+        "op_type": {
+          "type": "string",
+          "enum": [
+            "sketch_rectangle",
+            "sketch_circle",
+            "sketch_annulus",
+            "sketch_rectangular_frame",
+            "sketch_stadium",
+            "sketch_polygon",
+            "extrude",
+            "cut",
+            "join",
+            "add_constraint",
+            "set_dimension",
+            "export_step"
+          ]
+        },
+        "role": {
+          "type": "string",
+          "description": "Semantic role of this op within the design (e.g. base_profile, base_body, inner_void, bolt_hole)."
+        },
+        "input": {
+          "type": "string",
+          "description": "op_id of the predecessor operation whose output this op consumes (e.g. extrude consumes a sketch)."
+        },
+        "plane": {
+          "type": "string",
+          "enum": ["XY", "XZ", "YZ", "XY_NEG", "XZ_NEG", "YZ_NEG"],
+          "description": "Sketch plane (sketch_* and dimension ops)."
+        },
+        "params": {
+          "type": "object",
+          "description": "Operation-specific parameters (see per-op_type schemas below)."
+        }
+      },
+      "allOf": [
+        {"$ref": "#/definitions/sketch_rectangle_op"},
+        {"$ref": "#/definitions/sketch_circle_op"},
+        {"$ref": "#/definitions/sketch_annulus_op"},
+        {"$ref": "#/definitions/sketch_rectangular_frame_op"},
+        {"$ref": "#/definitions/sketch_stadium_op"},
+        {"$ref": "#/definitions/sketch_polygon_op"},
+        {"$ref": "#/definitions/extrude_op"},
+        {"$ref": "#/definitions/cut_op"},
+        {"$ref": "#/definitions/join_op"},
+        {"$ref": "#/definitions/add_constraint_op"},
+        {"$ref": "#/definitions/set_dimension_op"},
+        {"$ref": "#/definitions/export_step_op"}
+      ]
+    },
+    "sketch_rectangle_op": {
+      "if": {"properties": {"op_type": {"const": "sketch_rectangle"}}},
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "required": ["width", "height", "center"],
+            "properties": {
+              "width":  {"type": "number", "exclusiveMinimum": 0},
+              "height": {"type": "number", "exclusiveMinimum": 0},
+              "center": {"type": "array", "minItems": 2, "maxItems": 2,
+                          "items": {"type": "number"}},
+              "center_u_to_v_axis": {"type": "string",
+                                        "enum": ["x_to_y", "x_to_z", "y_to_x",
+                                                   "y_to_z", "z_to_x", "z_to_y"]}
+            }
+          }
+        }
+      }
+    },
+    "sketch_circle_op": {
+      "if": {"properties": {"op_type": {"const": "sketch_circle"}}},
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "required": ["radius", "center"],
+            "properties": {
+              "radius": {"type": "number", "exclusiveMinimum": 0},
+              "center": {"type": "array", "minItems": 2, "maxItems": 2,
+                          "items": {"type": "number"}}
+            }
+          }
+        }
+      }
+    },
+    "sketch_annulus_op": {
+      "if": {"properties": {"op_type": {"const": "sketch_annulus"}}},
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "required": ["inner_radius", "outer_radius", "center"],
+            "properties": {
+              "inner_radius": {"type": "number", "exclusiveMinimum": 0},
+              "outer_radius": {"type": "number", "exclusiveMinimum": 0},
+              "center": {"type": "array", "minItems": 2, "maxItems": 2,
+                          "items": {"type": "number"}}
+            }
+          }
+        }
+      }
+    },
+    "sketch_rectangular_frame_op": {
+      "if": {"properties": {"op_type": {"const": "sketch_rectangular_frame"}}},
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "required": ["outer_width", "outer_height", "inner_width", "inner_height", "center"],
+            "properties": {
+              "outer_width":  {"type": "number", "exclusiveMinimum": 0},
+              "outer_height": {"type": "number", "exclusiveMinimum": 0},
+              "inner_width":  {"type": "number", "exclusiveMinimum": 0},
+              "inner_height": {"type": "number", "exclusiveMinimum": 0},
+              "center": {"type": "array", "minItems": 2, "maxItems": 2,
+                          "items": {"type": "number"}}
+            }
+          }
+        }
+      }
+    },
+    "sketch_stadium_op": {
+      "if": {"properties": {"op_type": {"const": "sketch_stadium"}}},
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "required": ["length", "radius", "center"],
+            "properties": {
+              "length": {"type": "number", "exclusiveMinimum": 0},
+              "radius": {"type": "number", "exclusiveMinimum": 0},
+              "center": {"type": "array", "minItems": 2, "maxItems": 2,
+                          "items": {"type": "number"}}
+            }
+          }
+        }
+      }
+    },
+    "sketch_polygon_op": {
+      "if": {"properties": {"op_type": {"const": "sketch_polygon"}}},
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "required": ["vertices"],
+            "properties": {
+              "vertices": {
+                "type": "array",
+                "minItems": 3,
+                "items": {"type": "array", "minItems": 2, "maxItems": 2,
+                            "items": {"type": "number"}}
+              },
+              "center": {"type": "array", "minItems": 2, "maxItems": 2,
+                          "items": {"type": "number"}}
+            }
+          }
+        }
+      }
+    },
+    "extrude_op": {
+      "if": {"properties": {"op_type": {"const": "extrude"}}},
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "required": ["distance", "extent_type"],
+            "properties": {
+              "distance": {"type": "number"},
+              "extent_type": {"type": "string",
+                                "enum": ["one_side", "symmetric", "two_sides"]},
+              "operation": {"type": "string",
+                              "enum": ["new_body", "join", "cut", "intersect"],
+                              "default": "new_body"},
+              "direction": {"type": "string",
+                                "enum": ["+normal", "-normal", "symmetric"],
+                                "default": "+normal"},
+              "taper_angle": {"type": "number", "default": 0}
+            }
+          }
+        }
+      }
+    },
+    "cut_op": {
+      "if": {"properties": {"op_type": {"const": "cut"}}},
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "required": ["distance", "target"],
+            "properties": {
+              "distance": {"type": "number"},
+              "target": {"type": "string",
+                            "description": "op_id of the body to cut from"},
+              "tool":    {"type": "string",
+                            "description": "op_id of the cutting tool (sketch); if omitted, uses input"},
+              "through_all": {"type": "boolean", "default": false}
+            }
+          }
+        }
+      }
+    },
+    "join_op": {
+      "if": {"properties": {"op_type": {"const": "join"}}},
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "required": ["target"],
+            "properties": {
+              "target": {"type": "string"},
+              "tool": {"type": "string"}
+            }
+          }
+        }
+      }
+    },
+    "add_constraint_op": {
+      "if": {"properties": {"op_type": {"const": "add_constraint"}}},
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "required": ["constraint_type", "target"],
+            "properties": {
+              "constraint_type": {"type": "string",
+                                    "enum": ["horizontal", "vertical", "coincident",
+                                              "perpendicular", "parallel", "tangent",
+                                              "concentric", "equal", "midpoint", "offset"]},
+              "target": {"type": "string",
+                            "description": "op_id of the sketch this constraint attaches to"},
+              "entities": {"type": "array", "items": {"type": "string"}},
+              "value": {"type": "number"}
+            }
+          }
+        }
+      }
+    },
+    "set_dimension_op": {
+      "if": {"properties": {"op_type": {"const": "set_dimension"}}},
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "required": ["dimension_type", "value", "target"],
+            "properties": {
+              "dimension_type": {"type": "string",
+                                    "enum": ["linear", "diameter", "radius", "angular"]},
+              "target": {"type": "string",
+                            "description": "op_id of the sketch the dimension attaches to"},
+              "entity": {"type": "string",
+                            "description": "curve or line uuid within the sketch"},
+              "value": {"type": "number", "exclusiveMinimum": 0}
+            }
+          }
+        }
+      }
+    },
+    "export_step_op": {
+      "if": {"properties": {"op_type": {"const": "export_step"}}},
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "required": ["path"],
+            "properties": {
+              "path": {"type": "string"},
+              "input": {"type": "string",
+                          "description": "op_id of the body to export; defaults to last extrude"}
+            }
+          }
+        }
+      }
+    }
+  }
+}
