@@ -1,0 +1,94 @@
+{
+  "case_id": 26,
+  "category": "param_edit",
+  "ir_t": {
+    "schema_version": "cad_ir_v0.1",
+    "sample_id": "param_cir_v2",
+    "unit": "mm",
+    "coordinate_system": {
+      "up_axis": "z",
+      "front_axis": "y",
+      "right_axis": "x"
+    },
+    "operations": [
+      {
+        "op_id": "op_001",
+        "op_type": "sketch_circle",
+        "role": "base_profile",
+        "plane": "XY",
+        "params": {
+          "radius": 5,
+          "center": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      {
+        "op_id": "op_002",
+        "op_type": "extrude",
+        "role": "base_body",
+        "input": "op_001",
+        "params": {
+          "distance": 10,
+          "extent_type": "one_side",
+          "operation": "new_body",
+          "direction": "+normal"
+        }
+      },
+      {
+        "op_id": "op_003",
+        "op_type": "export_step",
+        "input": "op_002",
+        "params": {
+          "path": "param_cir_v2.step"
+        }
+      }
+    ]
+  },
+  "ir_t1": {
+    "schema_version": "cad_ir_v0.1",
+    "sample_id": "param_cir_v2",
+    "unit": "mm",
+    "coordinate_system": {
+      "up_axis": "z",
+      "front_axis": "y",
+      "right_axis": "x"
+    },
+    "operations": [
+      {
+        "op_id": "op_001",
+        "op_type": "sketch_circle",
+        "role": "base_profile",
+        "plane": "XY",
+        "params": {
+          "radius": 6.5,
+          "center": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      {
+        "op_id": "op_002",
+        "op_type": "extrude",
+        "role": "base_body",
+        "input": "op_001",
+        "params": {
+          "distance": 10,
+          "extent_type": "one_side",
+          "operation": "new_body",
+          "direction": "+normal"
+        }
+      },
+      {
+        "op_id": "op_003",
+        "op_type": "export_step",
+        "input": "op_002",
+        "params": {
+          "path": "param_cir_v2.step"
+        }
+      }
+    ]
+  }
+}

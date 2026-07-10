@@ -1,0 +1,22 @@
+{
+  "sample_id": "108244_329b1876_0000",
+  "trace_type": "executed",
+  "operations": [
+    {
+      "op_id": "op_001",
+      "op_type": "sketch_rectangle",
+      "runtime_status": "success"
+    },
+    {
+      "op_id": "op_002",
+      "op_type": "extrude",
+      "runtime_status": "success"
+    },
+    {
+      "op_id": "op_003",
+      "op_type": "export_step",
+      "runtime_status": "success"
+    }
+  ],
+  "failed_at": null
+}

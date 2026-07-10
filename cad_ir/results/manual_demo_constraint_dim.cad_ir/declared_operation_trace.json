@@ -1,0 +1,67 @@
+{
+  "sample_id": "manual_demo_constraint_dim",
+  "trace_type": "declared",
+  "operations": [
+    {
+      "op_id": "op_001",
+      "op_type": "sketch_rectangle",
+      "role": "base_profile",
+      "input": null,
+      "params": {
+        "width": 50.0,
+        "height": 30.0,
+        "center": [
+          0.0,
+          0.0
+        ]
+      },
+      "status": "declared"
+    },
+    {
+      "op_id": "op_002",
+      "op_type": "add_constraint",
+      "role": null,
+      "input": null,
+      "params": {
+        "constraint_type": "horizontal",
+        "target": "op_001"
+      },
+      "status": "declared"
+    },
+    {
+      "op_id": "op_003",
+      "op_type": "set_dimension",
+      "role": null,
+      "input": null,
+      "params": {
+        "dimension_type": "linear",
+        "target": "op_001",
+        "value": 50.0
+      },
+      "status": "declared"
+    },
+    {
+      "op_id": "op_004",
+      "op_type": "extrude",
+      "role": "base_body",
+      "input": "op_001",
+      "params": {
+        "distance": 8.0,
+        "extent_type": "one_side",
+        "operation": "new_body",
+        "direction": "+normal"
+      },
+      "status": "declared"
+    },
+    {
+      "op_id": "op_005",
+      "op_type": "export_step",
+      "role": null,
+      "input": "op_004",
+      "params": {
+        "path": "manual_demo_constraint_dim.step"
+      },
+      "status": "declared"
+    }
+  ]
+}

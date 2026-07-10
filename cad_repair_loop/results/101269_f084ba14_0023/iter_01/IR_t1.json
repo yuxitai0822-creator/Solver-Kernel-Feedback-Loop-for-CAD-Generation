@@ -1,0 +1,50 @@
+{
+  "schema_version": "cad_ir_v0.1",
+  "sample_id": "101269_f084ba14_0023",
+  "unit": "mm",
+  "coordinate_system": {
+    "up_axis": "z",
+    "front_axis": "y",
+    "right_axis": "x"
+  },
+  "operations": [
+    {
+      "op_id": "op_001",
+      "op_type": "sketch_rectangle",
+      "role": "base_profile",
+      "plane": "XY",
+      "params": {
+        "width": 95.25,
+        "height": 571.5,
+        "center": [
+          5.0,
+          5.0
+        ]
+      }
+    },
+    {
+      "op_id": "op_002",
+      "op_type": "extrude",
+      "role": "base_body",
+      "input": "op_001",
+      "params": {
+        "distance": 19.05,
+        "extent_type": "one_side",
+        "operation": "new_body",
+        "direction": "+normal"
+      }
+    },
+    {
+      "op_id": "op_003",
+      "op_type": "export_step",
+      "input": "op_002",
+      "params": {
+        "path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\cad_repair_loop\\results\\101269_f084ba14_0023\\iter_01\\101269_f084ba14_0023.step"
+      }
+    }
+  ],
+  "metadata": {
+    "source": "manual_from_clean_sample",
+    "profile_type": "rectangle"
+  }
+}

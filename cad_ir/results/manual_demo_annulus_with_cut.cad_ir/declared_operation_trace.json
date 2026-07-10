@@ -1,0 +1,44 @@
+{
+  "sample_id": "manual_demo_annulus_with_cut",
+  "trace_type": "declared",
+  "operations": [
+    {
+      "op_id": "op_001",
+      "op_type": "sketch_annulus",
+      "role": "base_profile",
+      "input": null,
+      "params": {
+        "inner_radius": 8.0,
+        "outer_radius": 25.0,
+        "center": [
+          0.0,
+          0.0
+        ]
+      },
+      "status": "declared"
+    },
+    {
+      "op_id": "op_002",
+      "op_type": "extrude",
+      "role": "base_body",
+      "input": "op_001",
+      "params": {
+        "distance": 15.0,
+        "extent_type": "one_side",
+        "operation": "new_body",
+        "direction": "+normal"
+      },
+      "status": "declared"
+    },
+    {
+      "op_id": "op_003",
+      "op_type": "export_step",
+      "role": null,
+      "input": "op_002",
+      "params": {
+        "path": "manual_demo_annulus.step"
+      },
+      "status": "declared"
+    }
+  ]
+}
