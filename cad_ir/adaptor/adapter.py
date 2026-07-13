@@ -108,14 +108,20 @@ def _render_ir_to_script(ir: dict) -> tuple[str, list[dict], dict]:
 
 
 def _execute_script_subprocess(script_path: Path,
-                                  step_path: Path) -> dict:
-    """Execute the script in a subprocess, return execution outcome."""
+                                  step_path: Path,
+                                  *, python_exe: str | None = None) -> dict:
+    """Execute the script in a subprocess, return execution outcome.
+
+    python_exe: optional override (used when running the repair loop in a
+        different env than the one with cadquery).  Defaults to sys.executable.
+    """
     import subprocess
     script_path = Path(script_path).resolve()
     step_path = Path(step_path).resolve()
+    exe = python_exe or sys.executable
     try:
         proc = subprocess.run(
-            [sys.executable, str(script_path)],
+            [exe, str(script_path)],
             capture_output=True, text=True, timeout=60,
             cwd=str(script_path.parent),
         )
@@ -158,8 +164,21 @@ def _extract_runtime_status(render_log: list[dict],
 
 
 def adapt(ir: dict, out_dir: Path,
-            sample_id: str | None = None) -> dict:
+            sample_id: str | None = None,
+            *, python_exe: str | None = None,
+            timeout: int = 60) -> dict:
     """Top-level entry.  Writes generated_script.py + STEP + reports to out_dir.
+
+    Args:
+      ir: cad_ir_v0.1 dict
+      out_dir: output directory
+      sample_id: optional override for sample id
+      python_exe: optional Python interpreter for executing the script;
+        needed when this is called from an env without cadquery (e.g.
+        the freecad_sketcher env).  Pass CADQUERY_PYTHON (path to
+        cad_subproject1 python.exe) to dispatch execution to the env
+        that has cadquery installed.
+      timeout: subprocess timeout in seconds
 
     Returns the adapter_report dict.
     """
@@ -236,7 +255,8 @@ def adapt(ir: dict, out_dir: Path,
     # 4. Execute
     if step_path is None:
         step_path = out_dir / f"{sample_id}.step"
-    exec_outcome = _execute_script_subprocess(script_path, step_path)
+    exec_outcome = _execute_script_subprocess(script_path, step_path,
+                                               python_exe=python_exe)
     (out_dir / "stdout.txt").write_text(exec_outcome.get("stdout", ""),
                                           encoding="utf-8")
     (out_dir / "stderr.txt").write_text(exec_outcome.get("stderr", ""),

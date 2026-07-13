@@ -189,7 +189,68 @@ python cad_repair_loop/run_repair_loop.py --no-solver-feedback
 
 All three pilot questions addressed:
 1. Solver Feedback was skipped because of two structural issues — now auto-discovered from `Reconstruction_results/<sample_id>/input_history.json` and runs whenever FreeCAD is available.
-2. `ZHIPU_API_KEY` is confirmed readable in `cad_subproject1` env (49 chars, prefix `184e4ae5`).
+2. `ZHIPU_API_KEY` is confirmed readable in `cad_subproject1` env (49 chars, prefix `184e4ae5`).  Also confirmed readable in `freecad_sketcher` env (Phase 4 cross-env pilot).
 3. KQP feedback was failing because of two bugs — wrong call signature + wrong sample-id extraction.  Fixed; clean IRs now produce `overall_status: pass` immediately.
 
 With these fixes, the perturbation test (deliberately halved extrude distance) shows the **online ZHIPU agent emits a minimal-cost 1.0-CED repair in exactly one iteration**, restoring KQP to `pass` and giving RepairCost = 1.6 per sample.
+
+---
+
+## 12. Cross-environment support (`freecad_sketcher` pilot)
+
+A **subprocess bridge** (`cad_repair_loop/subprocess_bridge.py`) routes the cadquery-dependent code (Adaptor + KQP runner) to the `cad_subproject1` python interpreter while the main loop runs in `freecad_sketcher` python.  This allows **all 3 feedback channels** (FreeCAD Solver + KQP + ZHIPU LLM) to be exercised from a single Python process tree:
+
+```
+freecad_sketcher/python cad_repair_loop/run_repair_loop.py
+   ├── in-process:   FreeCAD Solver Feedback   (status="ran")
+   ├── subprocess →  cad_subproject1/python:  Cadquery Adaptor → STEP
+   ├── subprocess →  cad_subproject1/python:  kqp/runner/run_kqp.py
+   └── in-process:   ZHIPU glm-5.1 LLM agent
+```
+
+Verified in `freecad_sketcher` env (FreeCAD 1.1.0, ZHIPU_API_KEY present, no cadquery):
+
+| Test | iter 0 KQP | iter 0 Solver | iter 1 KQP | final | CED_sum | RepairCost |
+|---|---|---|---|---|---|---|
+| Clean 100243_…0005 (pilot) | pass | under_constrained (dof=12) | — | success | 0.0 | 0.3 |
+| Clean 100243_…0006 (pilot) | pass | under_constrained (dof=12) | — | success | 0.0 | 0.3 |
+| Clean 100877_…0001 (pilot) | pass | under_constrained (dof=12) | — | success | 0.0 | 0.3 |
+| Perturbed 100243_…0005 | fail (1) | under_constrained (dof=12) | pass | success | 1.0 | 1.6 |
+| Perturbed 100243_…0006 | fail (1) | under_constrained (dof=12) | pass | success | 1.0 | 1.6 |
+| Perturbed 100877_…0001 | fail (1) | under_constrained (dof=12) | pass | success | 1.0 | 1.6 |
+
+### Cross-env required packages (installed only for the support env)
+
+In `freecad_sketcher`:
+* `requests` (for ZHIPU HTTP) — installed via `pip install requests`
+* `jsonschema` (optional; Phase 1 validator has a hand-written fallback)
+
+In `cad_subproject1`: already includes cadquery + OCP + jsonschema from the Frozen Reconstruction Engine / KQP / Solver Feedback stacks.
+
+### Key fixes from the `freecad_sketcher` pilot
+
+1. **`adapt.py` accepted `python_exe=` parameter**.  V0.1 hardcoded `sys.executable` as the subprocess interpreter, which broke when the loop ran in an env without cadquery.  Now defaults to `sys.executable`; the repair_loop passes `CADQUERY_PYTHON`.
+2. **`normalize_recompute` re-import**.  The repair_loop had `from Freecadsolver_feedback.core.recompute_runner import normalize_recompute`, but `normalize_recompute` actually lives in `diagnostic_normalizer.py`.  Fixed.
+3. **Subprocess path escaping**.  Already fixed in Phase 2 commit; verified to work in both envs.
+
+---
+
+## 13. Cross-env repro
+
+```bash
+# Run in freecad_sketcher env (FreeCAD + ZHIPU + subprocess cadquery)
+conda activate freecad_sketcher
+set ZHIPU_API_KEY=...
+
+# Clean pilot (offline agent, KQP + Solver both run in-process or subprocess)
+python cad_repair_loop/run_repair_loop.py --agent-mode offline --n 5
+
+# Online mode (real ZHIPU API calls)
+python cad_repair_loop/run_repair_loop.py --agent-mode online --n 3
+
+# Deliberately perturbed IR test (verifies agent actually fixes things)
+python cad_repair_loop/test_repair_against_perturbed_ir.py
+
+# Skip solver feedback if running without FreeCAD
+python cad_repair_loop/run_repair_loop.py --no-solver-feedback
+```

@@ -28,21 +28,51 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "cad_ir" / "validator"))
-sys.path.insert(0, str(ROOT / "cad_ir" / "adaptor"))
 sys.path.insert(0, str(ROOT / "cad_edit_distance"))
 
 import importlib
 _validate_mod = importlib.import_module("cad_ir.validator.validator")
 validate = _validate_mod.validate
 
-_adapt_mod = importlib.import_module("cad_ir.adaptor.adapter")
-adapt = _adapt_mod.adapt
-
 _ced_mod = importlib.import_module("cad_edit_distance.compute_ced")
 compute_all = _ced_mod.compute_all
 
 _agent_mod = importlib.import_module("cad_repair_loop.llm_agent")
 call_agent = _agent_mod.call_agent
+
+
+# In-process Adaptor reference (used when running in cad_subproject1
+# env which has cadquery available).  When running in freecad_sketcher
+# env, we use the subprocess_bridge instead.
+try:
+    _adapt_mod = importlib.import_module("cad_ir.adaptor.adapter")
+    _inproc_adapt = _adapt_mod.adapt
+    _HAS_INPROC_ADAPTOR = True
+except Exception:
+    _inproc_adapt = None
+    _HAS_INPROC_ADAPTOR = False
+
+
+def _adapt(ir: dict, iter_dir: Path, sample_id: str) -> dict:
+    """Adaptor dispatch:
+       * in-process with cadquery env's python if cadquery is importable;
+       * subprocess via cad_subproject1 python otherwise.
+
+    Always pass python_exe=cadquery python when cadquery is not in
+    sys.path so the generated script runs in an env with cadquery.
+    """
+    from cad_repair_loop.subprocess_bridge import CADQUERY_PYTHON
+
+    if _HAS_INPROC_ADAPTOR:
+        try:
+            return _inproc_adapt(ir, iter_dir, sample_id=sample_id,
+                                  python_exe=CADQUERY_PYTHON)
+        except Exception as e:
+            return {"sample_id": sample_id, "adapter_status": "fail",
+                    "warnings": [f"in-process adaptor failed: {type(e).__name__}: {e}"]}
+    # Subprocess path
+    from cad_repair_loop.subprocess_bridge import run_adaptor_subprocess
+    return run_adaptor_subprocess(ir, iter_dir)
 
 
 # ---------------------------------------------------------------------------
@@ -62,20 +92,19 @@ def _resolve_kqp_artifact_paths(sample_id: str) -> tuple[Path | None, Path | Non
     return kqp_path, plan_path
 
 
-def run_kqp_feedback(step_path: Path, design_plan: dict) -> dict:
+def run_kqp_feedback(step_path: Path, design_plan: dict,
+                      *, output_path: Path | None = None) -> dict:
     """Run the (frozen) KQP runner on a STEP file + KQP instance + DesignPlan.
+
+    Routing:
+      * in-process if `kqp.runner.run_kqp.run_kqp` is importable
+        (cad_subproject1 env)
+      * via subprocess in `cad_subproject1` env otherwise
+        (freecad_sketcher env — FreeCAD only)
 
     Requires the on-disk KQP instance and DesignPlan JSON.  If they're
     missing, returns `overall_status: unknown`.
     """
-    try:
-        sys.path.insert(0, str(ROOT / "kqp" / "runner"))
-        from kqp.runner.run_kqp import run_kqp as kqp_run
-    except Exception as e:
-        return {"overall_status": "unknown",
-                "query_results": [],
-                "error": f"KQP not loadable: {e}"}
-
     sample_id = (design_plan.get("sample_id", "")
                   or design_plan.get("source_component_name", "")
                   or (design_plan.get("solid_bodies", [{}])[0]
@@ -85,39 +114,42 @@ def run_kqp_feedback(step_path: Path, design_plan: dict) -> dict:
 
     kqp_path, plan_path = _resolve_kqp_artifact_paths(sample_id)
 
-    # Build a stub design_plan from the IR if no real DP
-    if not plan_path:
-        # Use the IR's coordinate_system as a minimal DP for frame extraction
-        plan_dict = {
-            "solid_bodies": [{
-                "name": sample_id,
-                "frame": {
-                    "u_dir": [1, 0, 0],
-                    "v_dir": [0, 1, 0],
-                    "w_dir": [0, 0, 1],
-                },
-            }],
-            "sample_id": sample_id,
-        }
-    else:
-        plan_dict = json.loads(plan_path.read_text(encoding="utf-8"))
+    if not step_path or not step_path.exists():
+        return {"overall_status": "fail", "query_results": [],
+                "error": "no step_path"}
 
     if not kqp_path:
         return {"overall_status": "unknown",
                 "query_results": [],
-                "error": f"no KQP instance for {sample_id} (looked at "
-                           f"{kqp_path or 'kqp/outputs/compiler_v0.1'})"}
+                "error": f"no KQP instance for {sample_id}"}
 
-    kqp_dict = json.loads(kqp_path.read_text(encoding="utf-8"))
+    # Try in-process first
     try:
-        result = kqp_run(step_path, kqp_dict, plan_dict)
+        sys.path.insert(0, str(ROOT / "kqp" / "runner"))
+        from kqp.runner.run_kqp import run_kqp as kqp_run
+        if plan_path and plan_path.exists():
+            plan_dict = json.loads(plan_path.read_text(encoding="utf-8"))
+        else:
+            plan_dict = {"solid_bodies": [{"name": sample_id,
+                                             "frame": {"u_dir": [1,0,0],
+                                                        "v_dir": [0,1,0],
+                                                        "w_dir": [0,0,1]}}],
+                          "sample_id": sample_id}
+        kqp_dict = json.loads(kqp_path.read_text(encoding="utf-8"))
+        return kqp_run(step_path, kqp_dict, plan_dict)
     except Exception as e:
-        import traceback
-        return {"overall_status": "fail",
-                "query_results": [],
-                "error": f"{type(e).__name__}: {e}",
-                "traceback": traceback.format_exc()[-500:]}
-    return result
+        # In-process failed (e.g. OCP missing in freecad_sketcher env);
+        # fall back to subprocess.
+        if output_path is None:
+            output_path = step_path.parent / "kqp_feedback_subprocess.json"
+        try:
+            from cad_repair_loop.subprocess_bridge import run_kqp_subprocess
+            return run_kqp_subprocess(step_path, kqp_path, plan_path or Path(""), output_path)
+        except Exception as e2:
+            return {"overall_status": "fail",
+                    "query_results": [],
+                    "error": f"in-process: {type(e).__name__}: {e}; "
+                              f"subprocess: {type(e2).__name__}: {e2}"}
 
 
 # ---------------------------------------------------------------------------
@@ -170,9 +202,7 @@ def run_solver_feedback(step_path_or_ir: dict | Path | None = None,
         from Freecadsolver_feedback.core.recompute_runner import (
             run_recompute_from_state)
         from Freecadsolver_feedback.core.diagnostic_normalizer import (
-            normalize_solve)
-        from Freecadsolver_feedback.core.recompute_runner import (
-            normalize_recompute)
+            normalize_solve, normalize_recompute)
     except Exception as e:
         return {"status": "skipped",
                 "reason": f"FreeCAD solver feedback not importable: {e}"}
@@ -267,14 +297,20 @@ def run_repair_loop(initial_ir: dict,
             iter_records.append({"iter": it, "status": "invalid_ir"})
             break
 
-        # Step 2: run adaptor
+        # Step 2: run adaptor (subprocess in cad_subproject1)
         try:
-            adapt_report = adapt(ir_t, iter_dir, sample_id=sample_id)
-        except Exception as e:
-            adapt_report = {"adapter_status": "fail",
-                              "warnings": [str(e)]}
+            adapt_report = _adapt(ir_t, iter_dir, sample_id=sample_id)
+            # Persist the report so user can inspect
             (iter_dir / "adapter_report.json").write_text(
-                json.dumps(adapt_report, indent=2),
+                json.dumps(adapt_report, indent=2, ensure_ascii=False),
+                encoding="utf-8")
+        except Exception as e:
+            import traceback
+            adapt_report = {"adapter_status": "fail",
+                              "warnings": [f"{type(e).__name__}: {e}"],
+                              "traceback": traceback.format_exc()[-500:]}
+            (iter_dir / "adapter_report.json").write_text(
+                json.dumps(adapt_report, indent=2, ensure_ascii=False),
                 encoding="utf-8")
         exec_count += 1
         step_path = iter_dir / f"{sample_id}.step"

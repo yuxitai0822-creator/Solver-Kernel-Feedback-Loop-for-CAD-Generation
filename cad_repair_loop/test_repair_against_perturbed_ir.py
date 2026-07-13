@@ -48,7 +48,7 @@ def run_one(sample_id: str, out_dir: Path, n_iter: int = 3) -> dict:
     rep = repair_loop.run_repair_loop(
         ir, plan, out_dir,
         history_path=history_path if history_path.exists() else None,
-        use_solver_feedback=False,
+        use_solver_feedback=True,
         max_iterations=n_iter,
         agent_mode="online",
     )
