@@ -3,25 +3,17 @@
   "iter_records": [
     {
       "iter": 0,
-      "status": "kqp_fail",
-      "kqp_status": "fail",
-      "solver_status": "under_constrained"
-    },
-    {
-      "iter": 1,
       "status": "success",
       "kqp_status": "pass",
       "solver_status": "under_constrained"
     }
   ],
-  "n_iterations": 2,
-  "n_execution_attempts": 2,
-  "n_verification_calls": 4,
-  "ced_values_raw": [
-    1.0
-  ],
-  "ced_sum_raw": 1.0,
-  "repair_cost": 1.6,
+  "n_iterations": 1,
+  "n_execution_attempts": 1,
+  "n_verification_calls": 2,
+  "ced_values_raw": [],
+  "ced_sum_raw": 0,
+  "repair_cost": 0.30000000000000004,
   "final_status": "success",
   "use_solver_feedback": true,
   "agent_mode": "online",

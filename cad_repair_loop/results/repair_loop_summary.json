@@ -1,5 +1,5 @@
 {
-  "total": 2,
+  "total": 3,
   "agent_mode": "online",
   "use_solver_feedback": true,
   "rows": [
@@ -16,6 +16,17 @@
     },
     {
       "sample_id": "100243_9fb796fe_0006",
+      "n_iterations": 1,
+      "n_execution_attempts": 1,
+      "n_verification_calls": 2,
+      "ced_sum_raw": 0,
+      "repair_cost": 0.3,
+      "final_status": "success",
+      "agent_mode": "online",
+      "use_solver_feedback": true
+    },
+    {
+      "sample_id": "100877_ac1e5a17_0001",
       "n_iterations": 1,
       "n_execution_attempts": 1,
       "n_verification_calls": 2,

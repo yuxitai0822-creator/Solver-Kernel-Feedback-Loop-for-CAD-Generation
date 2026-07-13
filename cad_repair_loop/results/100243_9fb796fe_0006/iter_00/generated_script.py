@@ -20,7 +20,7 @@ except Exception as op_exc_op_002:
     raise
 # --- op op_003 (export_step) ---
 try:
-    cq.exporters.export(body_op_002, r'D:\PythonProgramming\CAD Generation\Constraint-grounded agentic CAD generation\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\cad_repair_loop\results\100243_9fb796fe_0006\iter_00\100243_9fb796fe_0006.step')
+    cq.exporters.export(body_op_002, 'D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\cad_repair_loop\\results\\100243_9fb796fe_0006\\iter_00\\100243_9fb796fe_0006.step')
 except Exception as op_exc_op_003:
     print("OP_ERROR: op=" + 'op_003' + " type=" + 'export_step' + " exc=" + repr(op_exc_op_003))
     raise

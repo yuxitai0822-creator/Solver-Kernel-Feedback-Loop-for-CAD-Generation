@@ -5,7 +5,7 @@
       "iter": 0,
       "status": "success",
       "kqp_status": "pass",
-      "solver_status": "skipped"
+      "solver_status": "under_constrained"
     }
   ],
   "n_iterations": 1,
