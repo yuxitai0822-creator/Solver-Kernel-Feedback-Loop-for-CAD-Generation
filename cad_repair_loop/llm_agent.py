@@ -84,7 +84,7 @@ def call_zhipu(prompt: str, model: str = "glm-5.1",
         "temperature": 0.0,
         "max_tokens": 4096,
     }
-    r = requests.post(url, headers=headers, json=payload, timeout=60)
+    r = requests.post(url, headers=headers, json=payload, timeout=120)
     r.raise_for_status()
     data = r.json()
     return data["choices"][0]["message"]["content"]

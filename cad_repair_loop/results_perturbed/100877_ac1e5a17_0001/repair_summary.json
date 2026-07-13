@@ -1,0 +1,29 @@
+{
+  "sample_id": "100877_ac1e5a17_0001",
+  "iter_records": [
+    {
+      "iter": 0,
+      "status": "kqp_fail",
+      "kqp_status": "fail",
+      "solver_status": "skipped"
+    },
+    {
+      "iter": 1,
+      "status": "success",
+      "kqp_status": "pass",
+      "solver_status": "skipped"
+    }
+  ],
+  "n_iterations": 2,
+  "n_execution_attempts": 2,
+  "n_verification_calls": 4,
+  "ced_values_raw": [
+    1.0
+  ],
+  "ced_sum_raw": 1.0,
+  "repair_cost": 1.6,
+  "final_status": "success",
+  "use_solver_feedback": false,
+  "agent_mode": "online",
+  "history_path_resolved": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\Reconstruction_results\\100877_ac1e5a17_0001\\input_history.json"
+}

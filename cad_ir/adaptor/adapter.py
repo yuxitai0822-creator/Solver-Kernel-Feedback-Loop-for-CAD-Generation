@@ -207,15 +207,23 @@ def adapt(ir: dict, out_dir: Path,
         render_meta = {"unsupported": [], "ctx_id": {}}
 
     # Update export_step path to write into out_dir.
-    # Use raw-string representation (r'...') so backslashes in Windows
-    # paths are preserved instead of being interpreted as escape sequences.
+    # The path is embedded in script_text via `{path!r}` (Python repr)
+    # which produces a string like 'D:\\file\\path.step' (escaped).
+    # We must replace with `repr(new_path)` to match the escape pattern.
     for op in ir.get("operations", []):
         if op.get("op_type") == "export_step":
             orig_path = op.get("params", {}).get("path", "out.step")
             new_path = str((out_dir / Path(orig_path).name).resolve())
             op["params"]["path"] = new_path
-            script_text = script_text.replace(
-                f"'{orig_path}'", f"r'{new_path}'")
+            # The renderer uses repr() so we must match with repr() too.
+            # Also try additional patterns for robustness.
+            for old_str in (repr(orig_path),
+                             f"'{orig_path}'",
+                             f"r'{orig_path}'",
+                             f'r"{orig_path}"',
+                             f'"{orig_path}"'):
+                if old_str in script_text:
+                    script_text = script_text.replace(old_str, repr(new_path))
     step_path = None
     for op in ir.get("operations", []):
         if op.get("op_type") == "export_step":

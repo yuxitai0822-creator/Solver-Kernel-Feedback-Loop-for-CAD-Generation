@@ -1,7 +1,7 @@
 {
   "sample_id": "100243_9fb796fe_0005",
   "kqp_schema_version": "kqp_instance_v0.2",
-  "step_file": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\cad_repair_loop\\results\\100243_9fb796fe_0005\\iter_00\\100243_9fb796fe_0005.step",
+  "step_file": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\cad_repair_loop\\results_perturbed\\100243_9fb796fe_0005\\iter_01\\100243_9fb796fe_0005.step",
   "overall_status": "pass",
   "summary": {
     "total_queries": 6,

@@ -1,4 +1,4 @@
 {
   "status": "skipped",
-  "note": "FreeCAD not active in Phase 4"
+  "reason": "FreeCAD solver feedback not importable: cannot import name 'normalize_recompute' from 'Freecadsolver_feedback.core.recompute_runner' (D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\Freecadsolver_feedback\\core\\recompute_runner.py)"
 }
