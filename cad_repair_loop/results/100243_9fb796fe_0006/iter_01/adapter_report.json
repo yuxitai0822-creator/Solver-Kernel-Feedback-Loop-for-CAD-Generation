@@ -2,10 +2,10 @@
   "sample_id": "100243_9fb796fe_0006",
   "schema_check": "pass",
   "semantic_validation": "pass",
-  "adapter_status": "partial",
+  "adapter_status": "success",
   "script_syntax_status": "pass",
   "execution_status": "pass",
-  "step_export_status": "fail",
+  "step_export_status": "pass",
   "unsupported_ops": [],
   "warnings": [],
   "return_code": 0
