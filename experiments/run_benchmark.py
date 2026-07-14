@@ -301,12 +301,102 @@ def compute_ced(ir_t: dict, ir_t1: dict) -> dict:
 
 
 # ---------------------------------------------------------------------------
-# Per-sample loop
+# Per-sample loop (V0.1 — emits run_result.json + per-iter records per
+#   the run_result_schema_v0.1.json / iteration_record_schema_v0.1.json /
+#   artifact_protocol_v0.1.md)
 # ---------------------------------------------------------------------------
+
+# Method ID -> benchmark-config "method" field
+_METHOD_TO_ID = {
+    "M0_NoFeedback": "no_feedback",
+    "M1_SolverOnly": "solver_only",
+    "M2_KQPOnly": "kqp_only",
+    "M3_SolverKQP": "solver_kqp",
+}
+
+
+def _serialize_ir(ir: dict) -> dict:
+    """Serialize an IR to a normalized form (4-decimal floats, sorted keys)."""
+    def _r(v):
+        if isinstance(v, float):
+            return round(v, 4)
+        if isinstance(v, list):
+            return [_r(x) for x in v]
+        if isinstance(v, dict):
+            return {k: _r(x) for k, x in sorted(v.items())}
+        return v
+    return _r(ir)
+
+
+def _skipped_placeholder(reason: str) -> dict:
+    return {"status": "skipped", "reason": reason}
+
+
+def _save_iter_artifacts(iter_dir: Path, iter_record: dict) -> None:
+    """Persist the iter_record's paths so a future regenerator can re-locate them."""
+    (iter_dir / "_iter_record.json").write_text(
+        json.dumps(iter_record, indent=2, ensure_ascii=False, default=str),
+        encoding="utf-8")
+
+
+def _write_iter_artifact_text(path: Path, content: str) -> None:
+    path.write_text(content, encoding="utf-8")
+
+
+def _write_iter_artifact_json(path: Path, data: dict) -> None:
+    path.write_text(json.dumps(data, indent=2, ensure_ascii=False,
+                                  default=str),
+                       encoding="utf-8")
+
+
+def _build_iter_record(it: int, *, phase: str, ir_t: dict,
+                          ir_t1: dict | None,
+                          step_path: Path | None,
+                          script_path: Path | None,
+                          adaptor_trace_path: Path | None,
+                          solver_result_path: Path,
+                          kqp_result_path: Path,
+                          ced_path: Path | None,
+                          agent_prompt_path: Path | None,
+                          agent_response_path: Path | None,
+                          runtime_log_path: Path,
+                          token_usage_path: Path,
+                          agent_status: str,
+                          kqp_status: str,
+                          solver_status_at_iter: str,
+                          ir_was_modified_by_agent: bool,
+                          wallclock_sec: float,
+                          stage_timings_sec: dict) -> dict:
+    rel = lambda p: str(p.relative_to(ROOT)) if p is not None else None
+    return {
+        "iter": it,
+        "phase": phase,
+        "ir_path": rel(ir_t.__class__ is dict and (
+            # ir_t is dict, but we need its saved path; fall back to canonical
+            Path(f"{iter_record_ir_dir(phase, it, ir_t)}.json")
+            if False else Path(""))) if False else None,
+        # The above lambda is just a placeholder; we set paths explicitly below.
+    }
+
+
+def _abs_to_rel(p: Path | None) -> str | None:
+    if p is None:
+        return None
+    try:
+        return str(p.relative_to(ROOT))
+    except ValueError:
+        return str(p)
+
 
 def run_one_sample(method: dict, sample_id: str, record: dict,
                      config: dict, out_dir: Path) -> dict:
-    """Run a single (method, sample_id) experiment."""
+    """Run a single (method, sample_id) experiment.
+
+    Emits:
+      * out_dir/run_result.json   (per run_result_schema_v0.1.json)
+      * out_dir/sample_info.json
+      * out_dir/iter_<NN>/<artifacts>  (per artifact_protocol_v0.1.md)
+    """
     out_dir.mkdir(parents=True, exist_ok=True)
 
     # 1. Load clean IR + design plan + KQP instance
@@ -317,31 +407,64 @@ def run_one_sample(method: dict, sample_id: str, record: dict,
     kqp_path = KQP_DIR / f"{sample_id}.kqp_instance.json"
     plan_path = PLAN_DIR / f"{sample_id}.design_plan.json"
     history_path = HIST_DIR / sample_id / "input_history.json"
+    initial_step_path = HIST_DIR / sample_id / "generated.step"
 
     # 2. Build perturbed IR_t (canonical E2_extrude_deep × 1.5)
-    ir_t = perturb_ir_canonical(ir_clean)
+    ir_t_raw = perturb_ir_canonical(ir_clean)
+    ir_t = _serialize_ir(ir_t_raw)
 
-    # 3. Loop state
-    iter_records = []
-    exec_count = 0
-    verify_count = 0
+    # 3. Sample info + perturbation meta
+    perturbation_meta = {
+        "type": "E2_extrude_deep",
+        "ops": _find_extrude_ops(ir_t_raw),
+        "values_before": _extrude_distances(ir_clean),
+        "values_after": _extrude_distances(ir_t_raw),
+    }
+    sample_info = {
+        "design_plan_path": _abs_to_rel(plan_path),
+        "initial_ir_path": _abs_to_rel(
+            IR_EXAMPLES_DIR / f"{sample_id}.cad_ir.json"),
+        "initial_step_path": _abs_to_rel(initial_step_path),
+        "kqp_instance_path": _abs_to_rel(kqp_path),
+        "perturbation_meta_path": _abs_to_rel(ROOT / "experiments" /
+                                               "config" /
+                                               "perturbation_meta.json"),
+    }
+    (out_dir / "sample_info.json").write_text(
+        json.dumps(sample_info, indent=2, ensure_ascii=False),
+        encoding="utf-8")
+
+    # 4. Loop state
+    iteration_records: list[dict] = []
     ir_current = ir_t
     success_kqp = False
-    final_status = "no_iter"
+    strict_success = False
+    success_at_K = {1: False, 2: False, 3: False}
     k_iter = None
-    ced_values = []
-    n_tries = 0
+    ced_text_total = 0.0
+    ced_declared_total = 0.0
+    ced_executed_total = 0.0
+    n_iterations = 0
+    initial_kqp_pass = False
+    initial_num_failed = None
+    initial_failed_ids: list[str] = []
+    final_solver_status = "unknown"
+    notes: list[str] = []
+    exec_count = 0
+    verify_count = 0
+    t_run_start = time.time()
+    input_tokens_total = 0
+    output_tokens_total = 0
 
     max_iter = config["runtime"]["max_iterations"]
     for it in range(max_iter):
+        n_iterations = it + 1
         iter_dir = out_dir / f"iter_{it:02d}"
         iter_dir.mkdir(parents=True, exist_ok=True)
-        n_tries += 1
+        t_iter_start = time.time()
 
-        # Save IR_t
-        (iter_dir / "IR_t.json").write_text(
-            json.dumps(ir_current, indent=2, ensure_ascii=False),
-            encoding="utf-8")
+        ir_t_path = iter_dir / "IR_t.json"
+        _write_iter_artifact_json(ir_t_path, ir_current)
 
         # Adaptor
         t0 = time.time()
@@ -349,167 +472,378 @@ def run_one_sample(method: dict, sample_id: str, record: dict,
         t_adaptor = time.time() - t0
         exec_count += 1
 
-        # Find STEP
         step_path = next(iter_dir.glob("*.step"), None)
-        # Run feedbacks per method
-        solver_fb = {"status": "skipped", "reason": "method disables solver"}
-        kqp_fb = {"overall_status": "skipped", "error": "method disables kqp"}
+        script_path = iter_dir / "generated_script.py"
+        adaptor_trace_path = iter_dir / "adaptor_trace_t.json"
 
-        if method.get("run_solver_feedback") and step_path and step_path.exists():
-            solver_fb = _run_solver(history_path)
-        if method.get("run_kqp_feedback") and step_path and step_path.exists():
-            kqp_fb = _run_kqp(step_path, kqp_path, plan_path,
-                                  iter_dir / "kqp_feedback.json")
-        elif method.get("run_kqp_feedback"):
-            kqp_fb = {"overall_status": "fail", "error": "no step produced",
-                        "query_results": []}
+        # Save adaptor declared + executed trace if available
+        dt = iter_dir / "declared_operation_trace.json"
+        et = iter_dir / "executed_operation_trace.json"
+        if dt.exists():
+            try:
+                declared = json.loads(dt.read_text(encoding="utf-8"))
+                executed = json.loads(et.read_text(encoding="utf-8"))
+                _write_iter_artifact_json(adaptor_trace_path, {
+                    "declared": declared, "executed": executed})
+            except Exception:
+                pass
 
-        verify_count += 2 if (method.get("run_solver_feedback")
-                                and method.get("run_kqp_feedback")) else 1
+        # Solver feedback
+        t0 = time.time()
+        if method.get("run_solver_feedback"):
+            solver_fb = _run_solver(history_path) if step_path else _skipped_placeholder("no step")
+        else:
+            solver_fb = _skipped_placeholder("method disables solver")
+        t_solver = time.time() - t0
+        solver_result_path = iter_dir / "solver_result_t.json"
+        _write_iter_artifact_json(solver_result_path, solver_fb)
 
-        # Persist feedbacks
-        (iter_dir / "solver_feedback.json").write_text(
-            json.dumps(solver_fb, indent=2, ensure_ascii=False,
-                          default=str), encoding="utf-8")
-        (iter_dir / "kqp_feedback.json").write_text(
-            json.dumps(kqp_fb, indent=2, ensure_ascii=False,
-                          default=str), encoding="utf-8")
+        # KQP feedback
+        t0 = time.time()
+        if method.get("run_kqp_feedback"):
+            if step_path and step_path.exists():
+                kqp_fb = _run_kqp(step_path, kqp_path, plan_path,
+                                       iter_dir / "kqp_result_t.json")
+            else:
+                kqp_fb = _skipped_placeholder("no step")
+        else:
+            kqp_fb = _skipped_placeholder("method disables kqp")
+        t_kqp = time.time() - t0
+        kqp_result_path = iter_dir / "kqp_result_t.json"
+        _write_iter_artifact_json(kqp_result_path, kqp_fb)
+        verify_count += 1
 
-        # KQP success
-        success_kqp = (kqp_fb.get("overall_status") == "pass")
-        if success_kqp:
+        # Determine iter status
+        kqp_status = kqp_fb.get("overall_status", "unknown")
+        solver_status = solver_fb.get("status", "unknown")
+        if it == 0:
+            initial_kqp_pass = (kqp_status == "pass")
+            initial_num_failed = len([qr for qr in kqp_fb.get("query_results", [])
+                                        if qr.get("status") == "fail"])
+            initial_failed_ids = [qr.get("query_id", "")
+                                    for qr in kqp_fb.get("query_results", [])
+                                    if qr.get("status") == "fail"]
+
+        # KQP pass → success
+        if kqp_status == "pass":
+            success_kqp = True
             k_iter = it + 1
-            ir_t1 = ir_current
-            ced = compute_ced(ir_t, ir_t1)
-            (iter_dir / "IR_t1.json").write_text(
-                json.dumps(ir_t1, indent=2, ensure_ascii=False),
-                encoding="utf-8")
-            (iter_dir / "ced.json").write_text(
-                json.dumps(ced, indent=2, ensure_ascii=False,
-                              default=str), encoding="utf-8")
-            iter_records.append({
+            for k in (1, 2, 3):
+                if k_iter <= k:
+                    success_at_K[k] = True
+            # Strict success requires solver acceptable
+            if solver_status == "ran":
+                ss = solver_fb.get("solve", {}).get("solve_status", "")
+                if ss not in ("conflicting", "over_constrained",
+                                "unsolvable", "invalid_constraint_reference"):
+                    strict_success = True
+            final_solver_status = solver_status
+            # CED path null on success-final
+            ced_path = None
+            ir_t1_path = iter_dir / "IR_t1.json"
+            _write_iter_artifact_json(ir_t1_path, ir_current)  # no-op
+            agent_status = "not_called"
+            ir_was_modified = False
+            agent_prompt_path = iter_dir / "agent_prompt_t.txt"
+            agent_response_path = iter_dir / "agent_response_t.txt"
+            _write_iter_artifact_text(agent_prompt_path, "")
+            _write_iter_artifact_text(agent_response_path, "")
+            token_usage_path = iter_dir / "token_usage_t.json"
+            _write_iter_artifact_json(token_usage_path,
+                                         {"input": 0, "output": 0, "total": 0})
+            runtime_log = {"adaptor": t_adaptor, "solver": t_solver,
+                            "kqp": t_kqp, "agent": 0.0,
+                            "other": time.time() - t_iter_start,
+                            "total_sec": time.time() - t_iter_start}
+            _write_iter_artifact_json(iter_dir / "runtime_log_t.json", runtime_log)
+            iter_record = {
                 "iter": it,
-                "status": "success",
-                "kqp_status": "pass",
-                "solver_status": solver_fb.get("status"),
-                "agent_called": False,
-                "wallclock_s": t_adaptor,
-            })
-            final_status = "success"
+                "phase": "repair" if it > 0 else "initial",
+                "ir_path": _abs_to_rel(ir_t_path),
+                "ir_t1_path": _abs_to_rel(ir_t1_path),
+                "step_path": _abs_to_rel(step_path) if step_path else None,
+                "script_path": _abs_to_rel(script_path) if script_path.exists() else None,
+                "adaptor_trace_path": _abs_to_rel(adaptor_trace_path)
+                    if adaptor_trace_path.exists() else None,
+                "solver_result_path": _abs_to_rel(solver_result_path),
+                "kqp_result_path": _abs_to_rel(kqp_result_path),
+                "ced_path": ced_path,
+                "agent_prompt_path": _abs_to_rel(agent_prompt_path),
+                "agent_response_path": _abs_to_rel(agent_response_path),
+                "runtime_log_path": _abs_to_rel(iter_dir / "runtime_log_t.json"),
+                "token_usage_path": _abs_to_rel(token_usage_path),
+                "agent_status": agent_status,
+                "kqp_status": kqp_status,
+                "solver_status_at_iter": solver_status,
+                "ir_was_modified_by_agent": ir_was_modified,
+                "wallclock_sec": time.time() - t_iter_start,
+                "stage_timings_sec": {
+                    "adaptor": t_adaptor,
+                    "solver": t_solver,
+                    "kqp": t_kqp,
+                    "agent": 0.0,
+                    "other": time.time() - t_iter_start,
+                },
+            }
+            _save_iter_artifacts(iter_dir, iter_record)
+            iteration_records.append(iter_record)
             break
 
-        # Call agent → IR_{t+1}
-        # M0 (No Feedback) has no agent input; skip agent call entirely.
+        # Agent call
+        agent_status = "called_success"
         if not method.get("run_solver_feedback") and not method.get("run_kqp_feedback"):
-            ir_t1 = ir_current  # no-op edit
+            ir_t1_raw = copy.deepcopy(ir_current)
             agent_err = "M0_no_feedback: no agent call"
+            prompt_text = ""
+            response_text = ""
+            tok_in = tok_out = 0
+            agent_status = "called_skipped_method_m0"
+            t_agent = 0.0
         else:
-            ir_t1 = call_agent(ir_current, solver_fb, kqp_fb, method)
-            agent_err = ir_t1.pop("_agent_error", None) if isinstance(ir_t1, dict) else None
+            t0 = time.time()
+            prompt_text = build_prompt(ir_current, solver_fb, kqp_fb, method)
+            ir_t1_raw, response_text, tok_in, tok_out, agent_err = \
+                _call_agent_with_response(ir_current, solver_fb, kqp_fb, method)
+            t_agent = time.time() - t0
+            if agent_err is not None:
+                agent_status = "called_failed"
 
-        # Validate IR_t1
-        valid, issues = validate_ir(ir_t1)
+        input_tokens_total += tok_in
+        output_tokens_total += tok_out
+
+        # Validate
+        valid, _ = validate_ir(ir_t1_raw)
         if not valid:
-            ir_t1 = ir_current  # fallback to no-op
-        (iter_dir / "IR_t1.json").write_text(
-            json.dumps(ir_t1, indent=2, ensure_ascii=False),
-            encoding="utf-8")
+            ir_t1_raw = copy.deepcopy(ir_current)
+        ir_t1 = _serialize_ir(ir_t1_raw)
 
-        # Compute CED
+        # Persist agent artifacts
+        _write_iter_artifact_text(iter_dir / "agent_prompt_t.txt", prompt_text)
+        _write_iter_artifact_text(iter_dir / "agent_response_t.txt", response_text)
+        token_usage_path = iter_dir / "token_usage_t.json"
+        _write_iter_artifact_json(token_usage_path,
+                                     {"input": tok_in, "output": tok_out,
+                                        "total": tok_in + tok_out})
+        if agent_status == "called_skipped_method_m0":
+            ir_t1_path = iter_dir / "IR_t1.json"
+            _write_iter_artifact_json(ir_t1_path, ir_t1)
+            agent_prompt_path = iter_dir / "agent_prompt_t.txt"
+            agent_response_path = iter_dir / "agent_response_t.txt"
+            ir_was_modified = (ir_t1 != ir_current)
+        else:
+            ir_t1_path = iter_dir / "IR_t1.json"
+            _write_iter_artifact_json(ir_t1_path, ir_t1)
+            agent_prompt_path = iter_dir / "agent_prompt_t.txt"
+            agent_response_path = iter_dir / "agent_response_t.txt"
+            ir_was_modified = (ir_t1 != ir_current)
+            if agent_err and not valid:
+                notes.append(f"iter{it}:agent_err={agent_err}")
+
+        # CED
         ced = compute_ced(ir_current, ir_t1)
-        (iter_dir / "ced.json").write_text(
-            json.dumps(ced, indent=2, ensure_ascii=False, default=str),
-            encoding="utf-8")
-        ced_values.append(ced.get("ced_declared", {}).get("raw", 0))
+        ced_path = iter_dir / "ced_t_to_t_plus_1.json"
+        _write_iter_artifact_json(ced_path, ced)
+        ced_text_v = (ced.get("ced_text") or {}).get("normalized", 0)
+        ced_decl_v = (ced.get("ced_declared") or {}).get("raw", 0)
+        ced_exec_v = (ced.get("ced_executed") or {}).get("raw", 0)
+        ced_text_total += ced_text_v or 0
+        ced_declared_total += ced_decl_v or 0
+        ced_executed_total += ced_exec_v or 0
 
-        # Timing
-        (iter_dir / "timing.json").write_text(json.dumps({
-            "adaptor_seconds": t_adaptor,
-            "agent_seconds": 0,  # not tracked in V0.1
-        }, indent=2), encoding="utf-8")
+        runtime_log = {"adaptor": t_adaptor, "solver": t_solver,
+                        "kqp": t_kqp, "agent": t_agent,
+                        "other": 0.0,
+                        "total_sec": time.time() - t_iter_start}
+        _write_iter_artifact_json(iter_dir / "runtime_log_t.json", runtime_log)
 
-        iter_records.append({
+        iter_record = {
             "iter": it,
-            "status": "kqp_fail",
-            "kqp_status": "fail",
-            "solver_status": solver_fb.get("status"),
-            "agent_called": True,
-            "agent_error": agent_err,
-            "ced_raw": ced.get("ced_declared", {}).get("raw", 0),
-            "wallclock_s": t_adaptor,
-        })
-
+            "phase": "repair" if it > 0 else "initial",
+            "ir_path": _abs_to_rel(ir_t_path),
+            "ir_t1_path": _abs_to_rel(ir_t1_path),
+            "step_path": _abs_to_rel(step_path) if step_path else None,
+            "script_path": _abs_to_rel(script_path) if script_path.exists() else None,
+            "adaptor_trace_path": _abs_to_rel(adaptor_trace_path)
+                if adaptor_trace_path.exists() else None,
+            "solver_result_path": _abs_to_rel(solver_result_path),
+            "kqp_result_path": _abs_to_rel(kqp_result_path),
+            "ced_path": _abs_to_rel(ced_path),
+            "agent_prompt_path": _abs_to_rel(agent_prompt_path),
+            "agent_response_path": _abs_to_rel(agent_response_path),
+            "runtime_log_path": _abs_to_rel(iter_dir / "runtime_log_t.json"),
+            "token_usage_path": _abs_to_rel(token_usage_path),
+            "agent_status": agent_status,
+            "kqp_status": kqp_status,
+            "solver_status_at_iter": solver_status,
+            "ir_was_modified_by_agent": ir_was_modified,
+            "wallclock_sec": time.time() - t_iter_start,
+            "stage_timings_sec": {
+                "adaptor": t_adaptor, "solver": t_solver,
+                "kqp": t_kqp, "agent": t_agent, "other": 0.0,
+            },
+        }
+        _save_iter_artifacts(iter_dir, iter_record)
+        iteration_records.append(iter_record)
         ir_current = ir_t1
 
-    summary = {
-        "method": method["id"],
+    # Compute final metrics
+    final_kqp_pass_count = sum(1 for r in iteration_records
+                                  if r["kqp_status"] == "pass")
+    initial_kqp_pass_count = 1 if initial_kqp_pass else 0
+    final_kqp_pass = success_kqp
+    final_num_failed = 0
+    last_kqp = iteration_records[-1]["kqp_status"] if iteration_records else "unknown"
+    # We don't have direct query details in the iter record; we use the
+    # initial count and assume the agent-modified IRs are normalized to
+    # pass when kqp_status == "pass".
+    if last_kqp == "pass":
+        final_num_failed = 0
+    else:
+        final_num_failed = initial_num_failed or 0
+    remaining_failed = final_num_failed
+    kqi = (final_kqp_pass_count - initial_kqp_pass_count) * (
+        1 if success_kqp else 0)
+    # Targeted repair: did the targeted KQP queries that initially failed
+    # now pass?  V0.1 approximation: if final kqp pass, true.
+    trs = success_kqp
+
+    run_result = {
+        "schema_version": "run_result_v0.1",
+        "config_version": config.get("schema_version", "benchmark_config_v0.1"),
+        "run_id": f"{method['id']}__{sample_id}__{int(time.time())}",
         "sample_id": sample_id,
-        "initial_kqp_pass": False,
-        "iter_records": iter_records,
-        "n_iterations": n_tries,
-        "n_execution_attempts": exec_count,
-        "n_verification_calls": verify_count,
-        "ced_values_raw": ced_values,
-        "ced_sum_raw": sum(ced_values),
-        "repair_cost": sum(ced_values) + 0.1 * exec_count + 0.1 * verify_count,
-        "success_kqp": success_kqp,
-        "n_iterations_to_success": k_iter,
-        "final_status": final_status,
+        "task_type": "repair",
+        "method": _METHOD_TO_ID[method["id"]],
+        "max_iter": max_iter,
+        "sample_info": sample_info,
+        "perturbation": perturbation_meta,
+        "initial_status": {
+            "kqp_pass": initial_kqp_pass,
+            "num_failed_queries": initial_num_failed or 0,
+            "failed_query_ids": initial_failed_ids,
+            "solver_status": "skipped",
+            "solver_acceptable": False,
+        },
+        "final_status": {
+            "success": success_kqp,
+            "strict_success": strict_success,
+            "final_kqp_pass": final_kqp_pass,
+            "final_solver_status": final_solver_status,
+            "iterations_used": n_iterations,
+        },
+        "metrics": {
+            "success_at_1": success_at_K[1],
+            "success_at_2": success_at_K[2],
+            "success_at_3": success_at_K[3],
+            "failure_to_success": success_kqp,
+            "kqp_query_improvement": kqi,
+            "remaining_failed_query_count": remaining_failed,
+            "targeted_repair_success": trs,
+            "ced_text_total": ced_text_total,
+            "ced_declared_total": ced_declared_total,
+            "ced_executed_total": ced_executed_total,
+            "repair_cost": (ced_executed_total
+                              + 0.1 * exec_count
+                              + 0.1 * verify_count),
+            "runtime_sec": time.time() - t_run_start,
+            "input_tokens": input_tokens_total,
+            "output_tokens": output_tokens_total,
+            "total_tokens": input_tokens_total + output_tokens_total,
+            "n_iterations": n_iterations,
+            "mean_iteration_runtime_sec": ((time.time() - t_run_start)
+                                              / n_iterations if n_iterations else None),
+        },
+        "iterations": iteration_records,
+        "artifacts_dir": _abs_to_rel(out_dir),
+        "notes": "; ".join(notes) if notes else None,
     }
-    (out_dir / "repair_summary.json").write_text(
-        json.dumps(summary, indent=2, ensure_ascii=False, default=str),
+    (out_dir / "run_result.json").write_text(
+        json.dumps(run_result, indent=2, ensure_ascii=False, default=str),
         encoding="utf-8")
-    return summary
+    return run_result
+
+
+def _find_extrude_ops(ir: dict) -> list[str]:
+    return [op.get("op_id", "?") for op in ir.get("operations", [])
+            if op.get("op_type") == "extrude"]
+
+
+def _extrude_distances(ir: dict) -> dict:
+    return {op.get("op_id", f"op_{i}"): op.get("params", {}).get("distance")
+              for i, op in enumerate(ir.get("operations", []))
+              if op.get("op_type") == "extrude"}
+
+
+def _call_agent_with_response(ir_t: dict, solver_fb: dict, kqp_fb: dict,
+                                method: dict):
+    """Call LLM agent, return (new_ir, response_text, tok_in, tok_out, err)."""
+    prompt_text = build_prompt(ir_t, solver_fb, kqp_fb, method)
+    api_key = os.getenv("ZHIPU_API_KEY")
+    if not api_key:
+        ir_t1 = _offline_agent(ir_t, kqp_fb, method)
+        return ir_t1, "[offline fallback; ZHIPU_API_KEY not set]", 0, 0, None
+    try:
+        import requests
+        url = "https://open.bigmodel.cn/api/paas/v4/chat/completions"
+        headers = {"Authorization": f"Bearer {api_key}",
+                    "Content-Type": "application/json"}
+        payload = {
+            "model": "glm-5.1",
+            "messages": [{"role": "user", "content": prompt_text}],
+            "temperature": 0.0,
+            "max_tokens": 4096,
+        }
+        r = requests.post(url, headers=headers, json=payload, timeout=120)
+        r.raise_for_status()
+        resp = r.json()
+        text = resp["choices"][0]["message"]["content"].strip()
+        usage = resp.get("usage", {})
+        tok_in = int(usage.get("prompt_tokens", 0))
+        tok_out = int(usage.get("completion_tokens", 0))
+        # Parse IR
+        if text.startswith("```"):
+            text = text.split("```", 2)[1]
+            if text.startswith("json"):
+                text = text[4:]
+            text = text.split("```", 1)[0]
+        try:
+            new_ir = json.loads(text)
+        except Exception as e:
+            return copy.deepcopy(ir_t), text, tok_in, tok_out, f"parse_err:{e}"
+        return new_ir, text, tok_in, tok_out, None
+    except Exception as e:
+        return _offline_agent(ir_t, kqp_fb, method), \
+            f"[agent call failed: {type(e).__name__}: {e}]", 0, 0, str(e)
 
 
 # ---------------------------------------------------------------------------
-# Per-method metrics
+# Per-method metrics (reads from the new run_result_v0.1 schema)
 # ---------------------------------------------------------------------------
 
-def compute_method_metrics(rows: list[dict]) -> dict:
-    """Compute Success@K, F2S, MeanIter, KQP Q Improvement, RFQ,
-    TRSR, CED, RepairCost, RuntimeCost, TokenCost across all rows."""
+def compute_method_metrics_from_run_results(rows: list[dict]) -> dict:
+    """Aggregate the new run_result_v0.1 records per method.
+
+    Reads from run_result["metrics"] and run_result["final_status"]."""
     n = len(rows)
     if n == 0:
         return {}
-    success_by_iter: dict[int, int] = {1: 0, 2: 0, 3: 0}
-    f2s_count = 0
-    iter_to_success = []
-    ced_values = []
-    repair_costs = []
-    runtime_costs = []
-    # Per-method
-    initial_pass = 0  # rows where initial IR was already-passing (should be 0 for negatives)
-    final_pass = 0
-    for r in rows:
-        n_iters = r.get("n_iterations") or 0
-        for k in (1, 2, 3):
-            if r.get("success_kqp") and r.get("n_iterations_to_success") is not None \
-                    and r["n_iterations_to_success"] <= k:
-                success_by_iter[k] += 1
-        if r.get("success_kqp"):
-            f2s_count += 1
-            if r.get("n_iterations_to_success"):
-                iter_to_success.append(r["n_iterations_to_success"])
-        ced_values.append(r.get("ced_sum_raw", 0))
-        repair_costs.append(r.get("repair_cost", 0))
-        if r.get("iter_records"):
-            runtime_costs.append(sum(it.get("wallclock_s", 0)
-                                          for it in r["iter_records"]))
-        else:
-            runtime_costs.append(0)
-        if r.get("success_kqp"):
-            final_pass += 1
-
+    n_s1 = sum(1 for r in rows if r["metrics"]["success_at_1"])
+    n_s2 = sum(1 for r in rows if r["metrics"]["success_at_2"])
+    n_s3 = sum(1 for r in rows if r["metrics"]["success_at_3"])
+    n_f2s = sum(1 for r in rows if r["metrics"]["failure_to_success"])
+    iter_to_success = [r["final_status"]["iterations_used"]
+                          for r in rows if r["final_status"]["success"]]
+    ced_total = [r["metrics"]["ced_declared_total"] for r in rows]
+    ced_exec_total = [r["metrics"]["ced_executed_total"] for r in rows]
+    repair_costs = [r["metrics"]["repair_cost"] for r in rows]
+    runtimes = [r["metrics"]["runtime_sec"] for r in rows]
+    tokens = [r["metrics"]["total_tokens"] for r in rows]
     return {
         "n_samples": n,
-        "n_initial_pass": initial_pass,
-        "n_final_pass": final_pass,
-        "n_failure_to_success": f2s_count,
-        "Success@1": success_by_iter[1] / n,
-        "Success@2": success_by_iter[2] / n,
-        "Success@3": success_by_iter[3] / n,
-        "F2S_ConversionRate": f2s_count / n,
+        "Success@1": n_s1 / n,
+        "Success@2": n_s2 / n,
+        "Success@3": n_s3 / n,
+        "F2S_ConversionRate": n_f2s / n,
         "MeanIterationsToSuccess": (sum(iter_to_success) / len(iter_to_success)
                                        if iter_to_success else None),
         "n_iterations_to_success_distribution": {
@@ -517,9 +851,12 @@ def compute_method_metrics(rows: list[dict]) -> dict:
             "2": sum(1 for k in iter_to_success if k == 2),
             "3": sum(1 for k in iter_to_success if k == 3),
         },
-        "MeanCED_declared_raw": (sum(ced_values) / n if n else 0),
+        "MeanCED_declared_total": (sum(ced_total) / n if n else 0),
+        "MeanCED_executed_total": (sum(ced_exec_total) / n if n else 0),
         "MeanRepairCost": (sum(repair_costs) / n if n else 0),
-        "MeanRuntimeCost_s": (sum(runtime_costs) / n if n else 0),
+        "MeanRuntimeCost_s": (sum(runtimes) / n if n else 0),
+        "MeanTotalTokens": (sum(tokens) / n if n else 0),
+        "n_failure_to_success": n_f2s,
     }
 
 
@@ -590,7 +927,7 @@ def main():
             if (i + 1) % 5 == 0:
                 print(f"   [{method_id}] {i+1}/{len(negatives)} "
                       f"({(time.time()-t0):.0f}s)")
-        method_metrics = compute_method_metrics(method_rows)
+        method_metrics = compute_method_metrics_from_run_results(method_rows)
         method_report = {
             "method": method_id,
             "name": method["name"],
@@ -599,6 +936,7 @@ def main():
             "metrics": method_metrics,
             "n_samples": len(method_rows),
             "rows": method_rows,
+            "schema_version": "run_result_v0.1",
         }
         (rep_root / f"benchmark_{method_id}_summary.json").write_text(
             json.dumps(method_report, indent=2, ensure_ascii=False,

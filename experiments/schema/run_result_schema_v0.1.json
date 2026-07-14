@@ -1,0 +1,149 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "run_result_schema_v0.1.json",
+  "title": "Run Result v0.1",
+  "description": "Unified record format for a single (method, sample_id) experiment run.  Each repair / generation run emits one of these records, plus one iteration record per iteration (see iteration_record_schema_v0.1.json).",
+  "type": "object",
+  "required": [
+    "schema_version", "run_id", "sample_id", "task_type", "method",
+    "max_iter", "initial_status", "final_status", "metrics",
+    "iterations", "artifacts_dir", "config_version"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "const": "run_result_v0.1"},
+    "config_version": {"type": "string",
+                        "description": "benchmark_config version this run was produced under."},
+    "run_id": {
+      "type": "string",
+      "description": "Globally unique run id; <method>_<sample_id>_<timestamp>."
+    },
+    "sample_id": {
+      "type": "string",
+      "description": "Frozen sample id (e.g. 100243_9fb796fe_0005)."
+    },
+    "task_type": {
+      "type": "string",
+      "enum": ["repair", "no_op", "generation"],
+      "description": "Task type: repair (perturb + iterate), no_op (no perturbation), generation (clean IR → CAD)."
+    },
+    "method": {
+      "type": "string",
+      "enum": ["no_feedback", "solver_only", "kqp_only", "solver_kqp"],
+      "description": "Feedback-mask method used for this run."
+    },
+    "max_iter": {
+      "type": "integer",
+      "description": "Repair-iteration budget (frozen at 3 for v0.1)."
+    },
+    "sample_info": {
+      "type": "object",
+      "description": "Frozen input paths (all relative to project root).",
+      "required": ["design_plan_path", "initial_ir_path",
+                    "initial_step_path", "kqp_instance_path"],
+      "properties": {
+        "design_plan_path": {"type": "string"},
+        "initial_ir_path": {"type": "string",
+                              "description": "The clean IR the perturbation was applied to."},
+        "initial_step_path": {"type": "string",
+                                "description": "Frozen GT STEP for bbox/KQP GT comparison."},
+        "kqp_instance_path": {"type": "string"},
+        "perturbation_meta_path": {"type": ["string", "null"],
+                                       "description": "Optional canonical perturbation description."}
+      }
+    },
+    "perturbation": {
+      "type": "object",
+      "description": "The canonical perturbation applied to IR_t to produce IR_0.  V0.1 only supports E2_extrude_deep (multiply distance).",
+      "required": ["type", "ops", "values_before", "values_after"],
+      "properties": {
+        "type": {"type": "string",
+                  "enum": ["E1_envelope_dim", "E2_extrude_deep", "E3_radius",
+                            "E4_void_remove", "E5_extent_type", "E6_validity"]},
+        "ops": {"type": "array", "items": {"type": "string"}},
+        "values_before": {"type": "object"},
+        "values_after": {"type": "object"}
+      }
+    },
+    "initial_status": {
+      "type": "object",
+      "description": "Status of IR_t after iter 0 (BEFORE any agent call).",
+      "required": ["kqp_pass", "solver_acceptable"],
+      "properties": {
+        "kqp_pass": {"type": "boolean"},
+        "num_failed_queries": {"type": "integer"},
+        "failed_query_ids": {"type": "array", "items": {"type": "string"}},
+        "solver_status": {"type": "string",
+                            "enum": ["ran", "skipped", "unknown"]},
+        "solver_acceptable": {"type": "boolean",
+                                "description": "solver.status==ran AND solve.solve_status not in (conflicting,over_constrained,unsolvable,invalid_constraint_reference)"}
+      }
+    },
+    "final_status": {
+      "type": "object",
+      "description": "Status of the run at termination (success or max_iter reached).",
+      "required": ["success", "final_kqp_pass", "iterations_used"],
+      "properties": {
+        "success": {"type": "boolean",
+                    "description": "primary success = KQP overall pass within max_iter"},
+        "strict_success": {"type": "boolean",
+                              "description": "success + solver acceptable"},
+        "final_kqp_pass": {"type": "boolean"},
+        "final_solver_status": {"type": "string"},
+        "iterations_used": {"type": "integer",
+                              "description": "Total iterations executed (≤ max_iter)."}
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "description": "Frozen v0.1 metrics.  Raw + normalized (CED) per task spec §5-7.",
+      "required": [
+        "success_at_1", "success_at_2", "success_at_3",
+        "failure_to_success",
+        "kqp_query_improvement", "remaining_failed_query_count",
+        "targeted_repair_success",
+        "ced_text_total", "ced_declared_total", "ced_executed_total",
+        "repair_cost", "runtime_sec", "input_tokens", "output_tokens",
+        "total_tokens", "n_iterations"
+      ],
+      "properties": {
+        "success_at_1": {"type": "boolean"},
+        "success_at_2": {"type": "boolean"},
+        "success_at_3": {"type": "boolean"},
+        "failure_to_success": {"type": "boolean"},
+        "kqp_query_improvement": {"type": "integer",
+                                    "description": "ΔQPR = final_pass_count - initial_pass_count"},
+        "remaining_failed_query_count": {"type": "integer"},
+        "targeted_repair_success": {"type": "boolean",
+                                       "description": "All targeted KQP queries that initially failed now pass."},
+        "ced_text_total": {"type": "number",
+                              "description": "Sum of normalized CED_text over the repair trajectory."},
+        "ced_declared_total": {"type": "number",
+                                 "description": "Sum of unnormalized CED_declared over the trajectory."},
+        "ced_executed_total": {"type": "number",
+                                "description": "Sum of unnormalized CED_executed over the trajectory."},
+        "repair_cost": {"type": "number",
+                          "description": "Σ CED_executed + 0.1 × #exec + 0.1 × #verify."},
+        "runtime_sec": {"type": "number",
+                          "description": "Total wall-clock seconds for this run."},
+        "input_tokens": {"type": "integer"},
+        "output_tokens": {"type": "integer"},
+        "total_tokens": {"type": "integer"},
+        "n_iterations": {"type": "integer"},
+        "mean_iteration_runtime_sec": {"type": ["number", "null"]}
+      }
+    },
+    "iterations": {
+      "type": "array",
+      "description": "Per-iteration records (one per iter the loop actually ran).",
+      "items": {"$ref": "iteration_record_schema_v0.1.json"}
+    },
+    "artifacts_dir": {
+      "type": "string",
+      "description": "Directory containing per-iter artifacts (relative to project root)."
+    },
+    "notes": {
+      "type": ["string", "null"],
+      "description": "Free-form notes (e.g. agent timeout, parse failure)."
+    }
+  }
+}

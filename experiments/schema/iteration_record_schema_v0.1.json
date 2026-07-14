@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "iteration_record_schema_v0.1.json",
+  "title": "Iteration Record v0.1",
+  "description": "Per-iteration record.  One emitted for every iteration the repair loop actually ran (including iter 0).  The artifact paths are relative to the run's `artifacts_dir`.",
+  "type": "object",
+  "required": ["iter", "ir_path", "step_path", "solver_result_path",
+                "kqp_result_path", "ced_path", "agent_status",
+                "kqp_status", "wallclock_sec"],
+  "properties": {
+    "iter": {"type": "integer", "minimum": 0},
+    "phase": {"type": "string",
+                "enum": ["initial", "repair"],
+                "description": "initial = iter 0 (BEFORE first agent call); repair = iter >= 1."},
+    "ir_path": {"type": "string",
+                  "description": "Path to IR_t.json (this iteration's input IR)."},
+    "ir_t1_path": {"type": ["string", "null"],
+                      "description": "Path to IR_t1.json (this iteration's output IR).  Null on iter-final when success at this iter (no IR_t1 generated)."},
+    "step_path": {"type": "string",
+                    "description": "Path to generated_step_t.step (Adaptor output)."},
+    "script_path": {"type": "string",
+                      "description": "Path to generated_script_t.py."},
+    "adaptor_trace_path": {"type": "string",
+                             "description": "Path to adaptor_trace_t.json (declared+executed trace)."},
+    "solver_result_path": {"type": "string",
+                              "description": "Path to solver_result_t.json (FreeCAD Solver Feedback)."},
+    "kqp_result_path": {"type": "string",
+                          "description": "Path to kqp_result_t.json (KQP runner output)."},
+    "ced_path": {"type": ["string", "null"],
+                  "description": "Path to ced_t_to_t_plus_1.json.  Null on iter-final when success."},
+    "agent_prompt_path": {"type": ["string", "null"]},
+    "agent_response_path": {"type": ["string", "null"]},
+    "runtime_log_path": {"type": "string",
+                            "description": "Path to runtime_log_t.json (per-stage wall-clock)."},
+    "token_usage_path": {"type": ["string", "null"]},
+    "agent_status": {
+      "type": "string",
+      "enum": ["not_called", "called_success", "called_failed",
+                "called_skipped_method_m0"],
+      "description": "Whether the LLM agent was invoked and whether it returned a valid IR."
+    },
+    "kqp_status": {
+      "type": "string",
+      "enum": ["pass", "fail", "unknown", "skipped", "error"],
+      "description": "KQP overall_status at this iteration."
+    },
+    "solver_status_at_iter": {
+      "type": "string",
+      "enum": ["ran", "skipped", "unknown"],
+      "description": "Solver feedback status at this iteration."
+    },
+    "ir_was_modified_by_agent": {"type": "boolean"},
+    "wallclock_sec": {"type": "number", "minimum": 0},
+    "stage_timings_sec": {
+      "type": "object",
+      "description": "Per-stage wall-clock times.",
+      "properties": {
+        "adaptor": {"type": "number"},
+        "solver": {"type": "number"},
+        "kqp": {"type": "number"},
+        "agent": {"type": "number"},
+        "other": {"type": "number"}
+      }
+    }
+  }
+}
