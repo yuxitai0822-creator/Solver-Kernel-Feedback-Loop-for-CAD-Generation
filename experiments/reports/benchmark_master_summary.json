@@ -1,0 +1,25 @@
+{
+  "experiment": "Solver-KQP Repair Loop Benchmark v0.1",
+  "n_samples": 3,
+  "methods": {
+    "M3_SolverKQP": {
+      "n_samples": 3,
+      "n_initial_pass": 0,
+      "n_final_pass": 3,
+      "n_failure_to_success": 3,
+      "Success@1": 0.0,
+      "Success@2": 1.0,
+      "Success@3": 1.0,
+      "F2S_ConversionRate": 1.0,
+      "MeanIterationsToSuccess": 2.0,
+      "n_iterations_to_success_distribution": {
+        "1": 0,
+        "2": 3,
+        "3": 0
+      },
+      "MeanCED_declared_raw": 1.0,
+      "MeanRepairCost": 1.6000000000000003,
+      "MeanRuntimeCost_s": 10.021873950958252
+    }
+  }
+}

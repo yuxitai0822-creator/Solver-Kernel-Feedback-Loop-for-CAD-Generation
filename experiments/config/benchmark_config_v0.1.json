@@ -1,0 +1,125 @@
+{
+  "schema_version": "benchmark_config_v0.1",
+  "date": "2026-07-09",
+  "status": "FROZEN",
+  "experiment_name": "Solver-KQP Repair Loop Benchmark v0.1",
+  "inputs": {
+    "negative_records_path": "task5_negative_perturbation/",
+    "negative_records_glob": "perturbations/**/*.step",
+    "valid_negative_subset_path": "task5_negative_perturbation/reports/adaptor_run_summary.json",
+    "valid_negative_filter": "reconstruction_success == true",
+    "expected_negative_count": 132,
+    "clean_positive_count": 46,
+    "ir_examples_dir": "cad_ir/samples/manual_ir_examples/",
+    "design_plan_dir": "DesignPlan/compiler/instances_v6/",
+    "kqp_instance_dir": "kqp/outputs/compiler_v0.1/",
+    "original_history_dir": "Reconstruction_results/"
+  },
+  "frozen_components": {
+    "design_plan_schema": "v0.6",
+    "kqp_instance_schema": "v0.2",
+    "reconstruction_engine": "v0.1",
+    "solver_feedback_freecad": "v0.1",
+    "cad_ir_schema": "v0.1",
+    "cad_ir_adaptor": "v0.1",
+    "ced": "v0.1",
+    "repair_loop": "v0.1"
+  },
+  "runtime": {
+    "llm_backend": "zhipu",
+    "llm_model": "glm-5.1",
+    "llm_base_url": "https://open.bigmodel.cn/api/paas/v4/",
+    "llm_temperature": 0.0,
+    "llm_max_tokens": 4096,
+    "llm_timeout_seconds": 120,
+    "llm_max_retries": 1,
+    "adaptor_subprocess_timeout_seconds": 60,
+    "kqp_subprocess_timeout_seconds": 180,
+    "max_iterations": 3,
+    "primary_success": "KQP_overall_pass",
+    "strict_success": "KQP_pass_AND_solver_acceptable",
+    "cadquery_python": "D:/Anaconda/envs/cad_subproject1/python.exe",
+    "freecad_python": "D:/Anaconda/envs/freecad_sketcher/python.exe",
+    "random_seed": 42
+  },
+  "methods": [
+    {
+      "id": "M0_NoFeedback",
+      "name": "No Feedback (open-loop LLM)",
+      "run_solver_feedback": false,
+      "run_kqp_feedback": false,
+      "description": "Agent receives neither solver nor KQP feedback. It must fix from the IR alone.  Tests pure open-loop generation quality."
+    },
+    {
+      "id": "M1_SolverOnly",
+      "name": "Solver Feedback Only",
+      "run_solver_feedback": true,
+      "run_kqp_feedback": false,
+      "description": "Agent sees FreeCAD Solver Feedback (sketch constraint solver state) but no KQP feedback.  Tests whether geometric-sketch feedback alone is sufficient."
+    },
+    {
+      "id": "M2_KQPOnly",
+      "name": "KQP Feedback Only",
+      "run_solver_feedback": false,
+      "run_kqp_feedback": true,
+      "description": "Agent sees KQP feedback (final-geometry intent compliance) but no solver feedback.  Tests whether intent-level feedback alone is sufficient."
+    },
+    {
+      "id": "M3_SolverKQP",
+      "name": "Solver + KQP Feedback",
+      "run_solver_feedback": true,
+      "run_kqp_feedback": true,
+      "description": "Full double feedback.  Tests whether combining both improves repair."
+    }
+  ],
+  "metrics": {
+    "repair": [
+      "Success@1", "Success@2", "Success@3",
+      "FailureToSuccessConversionRate",
+      "MeanIterationsToSuccess",
+      "KQPQueryImprovement",
+      "RemainingFailedQueryCount",
+      "TargetedRepairSuccessRate",
+      "CED_declared", "CED_executed", "RepairCost",
+      "RuntimeCost", "TokenCost"
+    ],
+    "generation": [
+      "CompileSuccess", "ExecuteSuccess", "STEPExportSuccess",
+      "OCCTLoadSuccess", "SolverSketchValidity", "KQPSamplePass",
+      "KQPQueryPass", "PerIntentPass"
+    ],
+    "auxiliary": [
+      "CED_text", "EditEfficiency", "BBoxError",
+      "VolumeError", "ChamferDistance", "IoU"
+    ]
+  },
+  "success_criteria": {
+    "primary": "Success@3 (KQP pass within 3 iterations)",
+    "secondary": "strict_success (KQP pass + solver acceptable)",
+    "primary_editing_cost": "CED_declared (lower is better)",
+    "primary_runtime": "RuntimeCost (lower is better)"
+  },
+  "artifact_protocol": {
+    "per_sample_dir": "experiments/results/<method>/<sample_id>/iter_<NN>/",
+    "per_sample_artifacts": [
+      "IR_t.json", "IR_t1.json", "ced.json",
+      "solver_feedback.json", "kqp_feedback.json",
+      "generated_script.py", "generated.step",
+      "adapter_report.json",
+      "declared_operation_trace.json",
+      "executed_operation_trace.json",
+      "stdout.txt", "stderr.txt",
+      "agent_request.json", "agent_response.json",
+      "timing.json"
+    ],
+    "per_sample_summary": "repair_summary.json",
+    "per_method_summary": "experiments/reports/benchmark_<method>_summary.json",
+    "master_summary": "experiments/reports/benchmark_master_summary.json"
+  },
+  "output": {
+    "results_dir": "experiments/results/",
+    "reports_dir": "experiments/reports/",
+    "config_path": "experiments/config/benchmark_config_v0.1.json",
+    "runner_path": "experiments/run_benchmark.py"
+  }
+}
