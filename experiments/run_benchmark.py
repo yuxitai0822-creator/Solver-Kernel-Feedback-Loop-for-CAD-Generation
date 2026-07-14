@@ -399,8 +399,13 @@ def run_one_sample(method: dict, sample_id: str, record: dict,
             break
 
         # Call agent → IR_{t+1}
-        ir_t1 = call_agent(ir_current, solver_fb, kqp_fb, method)
-        agent_err = ir_t1.pop("_agent_error", None) if isinstance(ir_t1, dict) else None
+        # M0 (No Feedback) has no agent input; skip agent call entirely.
+        if not method.get("run_solver_feedback") and not method.get("run_kqp_feedback"):
+            ir_t1 = ir_current  # no-op edit
+            agent_err = "M0_no_feedback: no agent call"
+        else:
+            ir_t1 = call_agent(ir_current, solver_fb, kqp_fb, method)
+            agent_err = ir_t1.pop("_agent_error", None) if isinstance(ir_t1, dict) else None
 
         # Validate IR_t1
         valid, issues = validate_ir(ir_t1)
