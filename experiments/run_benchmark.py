@@ -457,7 +457,13 @@ def run_one_sample(method: dict, sample_id: str, record: dict,
     output_tokens_total = 0
 
     max_iter = config["runtime"]["max_iterations"]
-    for it in range(max_iter):
+    is_m0 = (not method.get("run_solver_feedback")
+               and not method.get("run_kqp_feedback"))
+    # M0 fast-path: only run iter 0 (initial verification); skip 3 iterations
+    # because the agent has no feedback to act on and the canonical
+    # perturbation guarantees KQP fail.  Saves ~30s per sample.
+    effective_max_iter = 1 if is_m0 else max_iter
+    for it in range(effective_max_iter):
         n_iterations = it + 1
         iter_dir = out_dir / f"iter_{it:02d}"
         iter_dir.mkdir(parents=True, exist_ok=True)
@@ -592,8 +598,10 @@ def run_one_sample(method: dict, sample_id: str, record: dict,
         # Agent call
         agent_status = "called_success"
         if not method.get("run_solver_feedback") and not method.get("run_kqp_feedback"):
+            # M0: open-loop — agent has no signal; treat as one-shot
+            # failure (no edit).  This is the documented M0 baseline.
             ir_t1_raw = copy.deepcopy(ir_current)
-            agent_err = "M0_no_feedback: no agent call"
+            agent_err = "M0_no_feedback: no agent call (open-loop baseline)"
             prompt_text = ""
             response_text = ""
             tok_in = tok_out = 0
