@@ -1,0 +1,13 @@
+{
+  "sample_id": "101817_b02acd9f_0001",
+  "schema_check": "fail",
+  "semantic_validation": "fail",
+  "adapter_status": "fail",
+  "script_syntax_status": "fail",
+  "execution_status": "fail",
+  "step_export_status": "fail",
+  "unsupported_ops": [],
+  "warnings": [
+    "validation failed: {'schema_status': 'fail', 'schema_issues': [\"json-schema: 0.0 is less than or equal to the minimum of 0 at path ['operations', 0, 'params', 'outer_radius']\"], 'semantic_status': 'fail', 'semantic_issues': ['semantic: op[0] annulus inner_radius must be > 0', 'semantic: op[0] annulus outer_radius must be > 0', 'semantic: op[0] annulus inner_radius (0.0) must be < outer_radius (0.0)'], 'overall': 'fail'}"
+  ]
+}
