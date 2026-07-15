@@ -1,0 +1,64 @@
+{
+  "schema_version": "cad_ir_v0.1",
+  "sample_id": "102525_06a3094b_0004",
+  "unit": "mm",
+  "coordinate_system": {
+    "up_axis": "z",
+    "front_axis": "y",
+    "right_axis": "x"
+  },
+  "operations": [
+    {
+      "op_id": "sk_4b4cc8de",
+      "op_type": "sketch_polygon",
+      "role": "base_profile",
+      "plane": "XY",
+      "params": {
+        "vertices": [
+          [
+            4.25,
+            9.0
+          ],
+          [
+            -4.25,
+            9.0
+          ],
+          [
+            -4.25,
+            -9.0
+          ],
+          [
+            4.25,
+            -9.0
+          ]
+        ]
+      }
+    },
+    {
+      "op_id": "ft_4b6d48ee",
+      "op_type": "extrude",
+      "role": "base_body",
+      "input": "sk_4b4cc8de",
+      "params": {
+        "distance": 2.5,
+        "extent_type": "one_side",
+        "operation": "new_body",
+        "direction": "+normal",
+        "taper_angle": 0
+      }
+    },
+    {
+      "op_id": "op_export_step",
+      "op_type": "export_step",
+      "role": "export",
+      "input": "ft_4b6d48ee",
+      "params": {
+        "path": "102525_06a3094b_0004.step"
+      }
+    }
+  ],
+  "metadata": {
+    "compiler": "history2ir_v0.1",
+    "source": "history_json"
+  }
+}

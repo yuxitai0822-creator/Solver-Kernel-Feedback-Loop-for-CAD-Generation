@@ -1,0 +1,20 @@
+{
+  "sample_level_agreement": true,
+  "query_level_agreement": 1.0,
+  "targeted_failure_preserved": true,
+  "history_signature": [
+    "q_body_count",
+    "q_bbox_u",
+    "q_bbox_v",
+    "q_bbox_w",
+    "q_is_solid"
+  ],
+  "ir_signature": [
+    "q_body_count",
+    "q_bbox_u",
+    "q_bbox_v",
+    "q_bbox_w",
+    "q_is_solid"
+  ],
+  "issues": []
+}

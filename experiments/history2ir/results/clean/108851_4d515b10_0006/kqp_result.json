@@ -1,0 +1,80 @@
+{
+  "sample_id": "108851_4d515b10_0006",
+  "kqp_schema_version": "kqp_instance_v0.2",
+  "step_file": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\history2ir\\results\\clean\\108851_4d515b10_0006\\108851_4d515b10_0006.step",
+  "overall_status": "pass",
+  "summary": {
+    "total_queries": 6,
+    "passed_queries": 6,
+    "failed_queries": 0,
+    "error_queries": 0
+  },
+  "query_results": [
+    {
+      "query_id": "q_body_count",
+      "intent": "body_count",
+      "status": "pass",
+      "expected": 1,
+      "actual": 1,
+      "tolerance": 0,
+      "error": 0,
+      "source_field": "$.target.body_count",
+      "feedback": null
+    },
+    {
+      "query_id": "q_bbox_u",
+      "intent": "bbox_size",
+      "status": "pass",
+      "expected": 95.25,
+      "actual": 95.25,
+      "tolerance": 0.05,
+      "error": 0.0,
+      "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+      "feedback": null
+    },
+    {
+      "query_id": "q_bbox_v",
+      "intent": "bbox_size",
+      "status": "pass",
+      "expected": 19.05,
+      "actual": 19.05,
+      "tolerance": 0.01,
+      "error": 0.0,
+      "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+      "feedback": null
+    },
+    {
+      "query_id": "q_bbox_w",
+      "intent": "bbox_size",
+      "status": "pass",
+      "expected": 12.7,
+      "actual": 12.7,
+      "tolerance": 0.01,
+      "error": 0.0,
+      "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+      "feedback": null
+    },
+    {
+      "query_id": "q_is_solid",
+      "intent": "is_solid",
+      "status": "pass",
+      "expected": true,
+      "actual": true,
+      "tolerance": null,
+      "error": 0,
+      "source_field": "(implicit: valid extrude implies solid)",
+      "feedback": null
+    },
+    {
+      "query_id": "q_occt_valid",
+      "intent": "occt_valid",
+      "status": "pass",
+      "expected": true,
+      "actual": true,
+      "tolerance": null,
+      "error": 0,
+      "source_field": "(implicit)",
+      "feedback": null
+    }
+  ]
+}

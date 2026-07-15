@@ -1,0 +1,14 @@
+{
+  "sample_id": "103284_e25015aa_0003",
+  "negative_id": "neg_03",
+  "perturbation_type": "E4_void_add",
+  "validation": {
+    "passed": false,
+    "issues": [
+      "could not locate None/None in IR to match perturbation E4_void_add"
+    ],
+    "found_match": false,
+    "target_op_type": null,
+    "target_field": null
+  }
+}

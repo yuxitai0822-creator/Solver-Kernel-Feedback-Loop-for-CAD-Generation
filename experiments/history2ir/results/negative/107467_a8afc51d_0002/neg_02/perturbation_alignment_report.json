@@ -1,0 +1,22 @@
+{
+  "sample_id": "107467_a8afc51d_0002",
+  "negative_id": "neg_02",
+  "perturbation_type": "E3_radius_up",
+  "history_delta": {
+    "entity_id": "sketch.curves[3ea29dca-e30e-11ea-8623-54bf646e7e1f].radius",
+    "field": "E3_radius_up",
+    "before": 0.30000000000000004,
+    "after": 0.37500000000000006
+  },
+  "ir_delta": {
+    "operation_id": null,
+    "field": null,
+    "before": null,
+    "after": null
+  },
+  "target_operation_match": false,
+  "target_field_match": false,
+  "before_value_match": false,
+  "after_value_match": false,
+  "delta_consistent": false
+}

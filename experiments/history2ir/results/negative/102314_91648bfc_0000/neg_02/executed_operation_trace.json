@@ -1,0 +1,27 @@
+{
+  "sample_id": "102314_91648bfc_0000",
+  "trace_type": "executed",
+  "operations": [
+    {
+      "op_id": "sk_c71d47b8",
+      "op_type": "sketch_polygon",
+      "runtime_status": "success"
+    },
+    {
+      "op_id": "ft_c71e5929",
+      "op_type": "extrude",
+      "runtime_status": "success"
+    },
+    {
+      "op_id": "sk_c71e592a",
+      "op_type": "sketch_polygon",
+      "runtime_status": "success"
+    },
+    {
+      "op_id": "op_export_step",
+      "op_type": "export_step",
+      "runtime_status": "success"
+    }
+  ],
+  "failed_at": null
+}

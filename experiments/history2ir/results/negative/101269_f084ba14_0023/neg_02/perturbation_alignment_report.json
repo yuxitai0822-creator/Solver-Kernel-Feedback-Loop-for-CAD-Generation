@@ -1,0 +1,22 @@
+{
+  "sample_id": "101269_f084ba14_0023",
+  "negative_id": "neg_02",
+  "perturbation_type": "E1_envelope_u",
+  "history_delta": {
+    "entity_id": "sketch.points[*].x|y",
+    "field": "E1_envelope_u",
+    "before": 9.525000000000013,
+    "after": 11.430000000000016
+  },
+  "ir_delta": {
+    "operation_id": null,
+    "field": null,
+    "before": null,
+    "after": null
+  },
+  "target_operation_match": false,
+  "target_field_match": false,
+  "before_value_match": false,
+  "after_value_match": false,
+  "delta_consistent": false
+}

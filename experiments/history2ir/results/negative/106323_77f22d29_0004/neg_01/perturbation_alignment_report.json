@@ -1,0 +1,22 @@
+{
+  "sample_id": "106323_77f22d29_0004",
+  "negative_id": "neg_01",
+  "perturbation_type": "E5_extent_type_change",
+  "history_delta": {
+    "entity_id": "extrude.extent_type",
+    "field": "E5_extent_type_change",
+    "before": "SymmetricFeatureExtentType",
+    "after": "OneSideFeatureExtentType"
+  },
+  "ir_delta": {
+    "operation_id": null,
+    "field": null,
+    "before": null,
+    "after": null
+  },
+  "target_operation_match": false,
+  "target_field_match": false,
+  "before_value_match": false,
+  "after_value_match": false,
+  "delta_consistent": false
+}

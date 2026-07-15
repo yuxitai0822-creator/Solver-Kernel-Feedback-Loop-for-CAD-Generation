@@ -1,0 +1,22 @@
+{
+  "sample_id": "102760_26430589_0037",
+  "negative_id": "neg_03",
+  "perturbation_type": "E4_void_add",
+  "history_delta": {
+    "entity_id": "sketch.profiles[a4e936fd-7c39-37b3-bf60-22d77e085732].loops[new_inner]",
+    "field": "E4_void_add",
+    "before": 0,
+    "after": 1
+  },
+  "ir_delta": {
+    "operation_id": null,
+    "field": null,
+    "before": null,
+    "after": null
+  },
+  "target_operation_match": false,
+  "target_field_match": false,
+  "before_value_match": false,
+  "after_value_match": false,
+  "delta_consistent": false
+}

@@ -1,0 +1,22 @@
+{
+  "sample_id": "102525_06a3094b_0004",
+  "negative_id": "neg_01",
+  "perturbation_type": "E2_extrude_deep",
+  "history_delta": {
+    "entity_id": "extrude.extent_one.distance.value",
+    "field": "E2_extrude_deep",
+    "before": 0.25,
+    "after": 0.375
+  },
+  "ir_delta": {
+    "operation_id": "ft_4b6d48ee",
+    "field": "distance",
+    "before": 2.5,
+    "after": 3.75
+  },
+  "target_operation_match": true,
+  "target_field_match": true,
+  "before_value_match": true,
+  "after_value_match": true,
+  "delta_consistent": true
+}

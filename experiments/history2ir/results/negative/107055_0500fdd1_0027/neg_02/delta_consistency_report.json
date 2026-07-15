@@ -1,0 +1,14 @@
+{
+  "sample_id": "107055_0500fdd1_0027",
+  "negative_id": "neg_02",
+  "perturbation_type": "E3_radius_up",
+  "validation": {
+    "passed": false,
+    "issues": [
+      "could not locate sketch_circle/radius in IR to match perturbation E3_radius_up"
+    ],
+    "found_match": false,
+    "target_op_type": "sketch_circle",
+    "target_field": "radius"
+  }
+}

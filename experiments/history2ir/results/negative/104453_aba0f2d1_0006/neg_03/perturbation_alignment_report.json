@@ -1,0 +1,22 @@
+{
+  "sample_id": "104453_aba0f2d1_0006",
+  "negative_id": "neg_03",
+  "perturbation_type": "E4_void_remove_one",
+  "history_delta": {
+    "entity_id": "sketch.profiles[e9625b6a-255c-3c87-90a8-f7bbe6cf2cbf].loops[0] (removed)",
+    "field": "E4_void_remove_one",
+    "before": 1,
+    "after": 0
+  },
+  "ir_delta": {
+    "operation_id": null,
+    "field": null,
+    "before": null,
+    "after": null
+  },
+  "target_operation_match": false,
+  "target_field_match": false,
+  "before_value_match": false,
+  "after_value_match": false,
+  "delta_consistent": false
+}

@@ -1,0 +1,15 @@
+{
+  "sample_level_agreement": true,
+  "query_level_agreement": 0.8333333333333334,
+  "targeted_failure_preserved": false,
+  "history_signature": [
+    "q_bbox_v",
+    "q_occt_valid"
+  ],
+  "ir_signature": [
+    "q_bbox_v"
+  ],
+  "issues": [
+    "query-level agreement 83.33% < 95%"
+  ]
+}

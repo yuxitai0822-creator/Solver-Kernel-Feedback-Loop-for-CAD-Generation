@@ -1,0 +1,22 @@
+{
+  "sample_id": "101817_b02acd9f_0004",
+  "trace_type": "executed",
+  "operations": [
+    {
+      "op_id": "sk_89a67a10",
+      "op_type": "sketch_polygon",
+      "runtime_status": "success"
+    },
+    {
+      "op_id": "ft_89ab5c06",
+      "op_type": "extrude",
+      "runtime_status": "success"
+    },
+    {
+      "op_id": "op_export_step",
+      "op_type": "export_step",
+      "runtime_status": "success"
+    }
+  ],
+  "failed_at": null
+}

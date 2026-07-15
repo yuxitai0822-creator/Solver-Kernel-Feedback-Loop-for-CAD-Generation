@@ -1,0 +1,14 @@
+{
+  "sample_id": "106323_77f22d29_0004",
+  "negative_id": "neg_01",
+  "perturbation_type": "E5_extent_type_change",
+  "validation": {
+    "passed": false,
+    "issues": [
+      "could not locate None/None in IR to match perturbation E5_extent_type_change"
+    ],
+    "found_match": false,
+    "target_op_type": null,
+    "target_field": null
+  }
+}

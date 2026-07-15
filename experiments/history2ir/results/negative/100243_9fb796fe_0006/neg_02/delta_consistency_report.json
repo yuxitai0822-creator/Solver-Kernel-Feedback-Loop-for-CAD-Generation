@@ -1,0 +1,14 @@
+{
+  "sample_id": "100243_9fb796fe_0006",
+  "negative_id": "neg_02",
+  "perturbation_type": "E1_envelope_u",
+  "validation": {
+    "passed": false,
+    "issues": [
+      "could not locate sketch_rectangle/width in IR to match perturbation E1_envelope_u"
+    ],
+    "found_match": false,
+    "target_op_type": "sketch_rectangle",
+    "target_field": "width"
+  }
+}

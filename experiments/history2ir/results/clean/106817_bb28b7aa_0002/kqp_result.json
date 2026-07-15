@@ -1,0 +1,100 @@
+{
+  "sample_id": "106817_bb28b7aa_0002",
+  "kqp_schema_version": "kqp_instance_v0.2",
+  "step_file": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\history2ir\\results\\clean\\106817_bb28b7aa_0002\\106817_bb28b7aa_0002.step",
+  "overall_status": "fail",
+  "summary": {
+    "total_queries": 7,
+    "passed_queries": 4,
+    "failed_queries": 2,
+    "error_queries": 1
+  },
+  "query_results": [
+    {
+      "query_id": "q_body_count",
+      "intent": "body_count",
+      "status": "pass",
+      "expected": 1,
+      "actual": 1,
+      "tolerance": 0,
+      "error": 0,
+      "source_field": "$.target.body_count",
+      "feedback": null
+    },
+    {
+      "query_id": "q_bbox_u",
+      "intent": "bbox_size",
+      "status": "fail",
+      "expected": 9.7409,
+      "actual": 6.8707,
+      "tolerance": 0.01,
+      "error": 2.8702,
+      "source_field": "$.solid_bodies[0].dimensions.profiles[0].radius.value (computed: 2*r)",
+      "feedback": {
+        "error_type": "dimension_mismatch",
+        "message": "Expected bbox u-size 9.7409mm (2*r), got 6.870700200000001mm."
+      }
+    },
+    {
+      "query_id": "q_bbox_v",
+      "intent": "bbox_size",
+      "status": "fail",
+      "expected": 9.7409,
+      "actual": 6.8707,
+      "tolerance": 0.01,
+      "error": 2.8702,
+      "source_field": "$.solid_bodies[0].dimensions.profiles[0].radius.value (computed: 2*r)",
+      "feedback": {
+        "error_type": "dimension_mismatch",
+        "message": "Expected bbox v-size 9.7409mm (2*r), got 6.870700200000001mm."
+      }
+    },
+    {
+      "query_id": "q_bbox_w",
+      "intent": "bbox_size",
+      "status": "pass",
+      "expected": 6.8707,
+      "actual": 6.8707,
+      "tolerance": 0.01,
+      "error": 0.0,
+      "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+      "feedback": null
+    },
+    {
+      "query_id": "q_radius",
+      "intent": "cylinder_radius",
+      "status": "error",
+      "expected": 4.87045,
+      "actual": null,
+      "tolerance": 0.01,
+      "error": null,
+      "source_field": "$.solid_bodies[0].dimensions.profiles[0].radius.value",
+      "feedback": {
+        "error_type": "no_cylinder_face",
+        "message": "No cylindrical face found in shape."
+      }
+    },
+    {
+      "query_id": "q_is_solid",
+      "intent": "is_solid",
+      "status": "pass",
+      "expected": true,
+      "actual": true,
+      "tolerance": null,
+      "error": 0,
+      "source_field": "(implicit: valid extrude implies solid)",
+      "feedback": null
+    },
+    {
+      "query_id": "q_occt_valid",
+      "intent": "occt_valid",
+      "status": "pass",
+      "expected": true,
+      "actual": true,
+      "tolerance": null,
+      "error": 0,
+      "source_field": "(implicit)",
+      "feedback": null
+    }
+  ]
+}

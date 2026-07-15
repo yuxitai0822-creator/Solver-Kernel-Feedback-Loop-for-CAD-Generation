@@ -147,26 +147,41 @@ def compile_clean_set(clean_samples: list[dict]) -> list[dict]:
         hist_path = CLEAN_HIST_DIR / sid / "input_history.json"
         if not hist_path.exists():
             continue
-        history = json.loads(hist_path.read_text(encoding="utf-8"))
+        try:
+            history = json.loads(hist_path.read_text(encoding="utf-8"))
+        except Exception as e:
+            rows.append({"sample_id": sid, "label": "clean", "error": f"history parse: {e}"})
+            continue
         out_dir = OUT_ROOT / "clean" / sid
+        out_dir.mkdir(parents=True, exist_ok=True)
         try:
             res = compile_and_save(history, out_dir, sample_id=sid, label="clean")
             ir = res["ir"]
         except Exception as e:
-            rows.append({"sample_id": sid, "label": "clean", "error": str(e)})
+            import traceback
+            rows.append({"sample_id": sid, "label": "clean",
+                          "error": f"compile: {type(e).__name__}: {e}",
+                          "traceback": traceback.format_exc()[-500:]})
             continue
 
         # Adaptor + KQP on IR
-        adapt_rep = run_adaptor_subprocess(ir, out_dir)
+        try:
+            adapt_rep = run_adaptor_subprocess(ir, out_dir)
+        except Exception as e:
+            adapt_rep = {"adapter_status": "fail", "error": str(e)}
         kqp_instance = ROOT / "kqp" / "outputs" / "compiler_v0.1" / f"{sid}.kqp_instance.json"
         plan = ROOT / "DesignPlan" / "compiler" / "instances_v6" / f"{sid}.design_plan.json"
         step = next(out_dir.glob("*.step"), None)
-        kqp_ir = (run_kqp_subprocess(step, kqp_instance, plan,
-                                       out_dir / "kqp_result.json")
-                    if step and step.exists() else {"overall_status": "fail"})
+        kqp_ir = {"overall_status": "fail", "query_results": []}
+        if step and step.exists():
+            try:
+                kqp_ir = run_kqp_subprocess(step, kqp_instance, plan,
+                                              out_dir / "kqp_result.json")
+            except Exception as e:
+                kqp_ir = {"overall_status": "fail", "error": f"{type(e).__name__}: {e}"}
 
         # Behavioral equivalence: compare IR-KQP to Reconstruction-KQP (if available)
-        rec_kqp_path = CLEAN_HIST_DIR / sid / "kqp_feedback.json"  # may not exist
+        rec_kqp_path = CLEAN_HIST_DIR / sid / "kqp_feedback.json"
         # Use task5's KQP from the FIRST perturbation's kqp_result (cleanest reference)
         # but for clean samples we just use IR-KQP as the canonical
         # (we don't have a separate "reconstruction" KQP for the clean case,
@@ -181,16 +196,19 @@ def compile_clean_set(clean_samples: list[dict]) -> list[dict]:
             "kqp_n_passed": sum(1 for qr in kqp_ir.get("query_results", [])
                                   if qr.get("status") == "pass"),
         }
-        (out_dir / "execution_report.json").write_text(
-            json.dumps(execution_report, indent=2, ensure_ascii=False),
-            encoding="utf-8")
+        out_dir.mkdir(parents=True, exist_ok=True)
+        try:
+            (out_dir / "execution_report.json").write_text(
+                json.dumps(execution_report, indent=2, ensure_ascii=False),
+                encoding="utf-8")
+            beq = compare_kqp_equivalence(kqp_ir, kqp_ir)
+            (out_dir / "behavioral_equivalence_report.json").write_text(
+                json.dumps(beq, indent=2, ensure_ascii=False),
+                encoding="utf-8")
+        except Exception as e:
+            rows.append({"sample_id": sid, "label": "clean",
+                          "stage": "report_write", "error": f"{type(e).__name__}: {e}"})
 
-        # Behavioral equivalence: clean baseline = IR KQP (it's the only path)
-        # We compare IR-KQP to itself (trivial) but record both signatures.
-        beq = compare_kqp_equivalence(kqp_ir, kqp_ir)
-        (out_dir / "behavioral_equivalence_report.json").write_text(
-            json.dumps(beq, indent=2, ensure_ascii=False),
-            encoding="utf-8")
         rows.append({"sample_id": sid, "label": "clean",
                        "ir_path": str(out_dir.relative_to(ROOT)),
                        "compile_pass": res["compile_report"]["overall"] == "pass",
@@ -235,20 +253,28 @@ def compile_negative_set(adaptor_summary: dict | None = None) -> list[dict]:
         kqp_hist_path = neg_dir / "kqp_result.json"
         if not pert_hist_path.exists():
             continue
-        history = json.loads(pert_hist_path.read_text(encoding="utf-8"))
-        pert_meta = (json.loads(pert_meta_path.read_text(encoding="utf-8"))
-                       if pert_meta_path.exists() else {})
-        kqp_history = (json.loads(kqp_hist_path.read_text(encoding="utf-8"))
-                          if kqp_hist_path.exists() else {})
+        try:
+            history = json.loads(pert_hist_path.read_text(encoding="utf-8"))
+            pert_meta = (json.loads(pert_meta_path.read_text(encoding="utf-8"))
+                           if pert_meta_path.exists() else {})
+            kqp_history = (json.loads(kqp_hist_path.read_text(encoding="utf-8"))
+                              if kqp_hist_path.exists() else {})
+        except Exception as e:
+            rows.append({"sample_id": sid, "negative_id": nid,
+                          "label": "negative", "error": f"parse: {e}"})
+            continue
 
         out_dir = OUT_ROOT / "negative" / sid / nid
+        out_dir.mkdir(parents=True, exist_ok=True)
         try:
             res = compile_and_save(history, out_dir, sample_id=sid,
                                       perturbation_meta=pert_meta, label="negative")
             ir_neg = res["ir"]
         except Exception as e:
+            import traceback
             rows.append({"sample_id": sid, "negative_id": nid,
-                          "label": "negative", "error": str(e)})
+                          "label": "negative", "error": f"compile: {type(e).__name__}: {e}",
+                          "traceback": traceback.format_exc()[-500:]})
             continue
 
         # Clean IR (for delta comparison)
@@ -257,13 +283,20 @@ def compile_negative_set(adaptor_summary: dict | None = None) -> list[dict]:
                        if clean_ir_path.exists() else None)
 
         # Adaptor + KQP on IR
-        adapt_rep = run_adaptor_subprocess(ir_neg, out_dir)
+        try:
+            adapt_rep = run_adaptor_subprocess(ir_neg, out_dir)
+        except Exception as e:
+            adapt_rep = {"adapter_status": "fail", "error": str(e)}
         kqp_inst = ROOT / "kqp" / "outputs" / "compiler_v0.1" / f"{sid}.kqp_instance.json"
         plan = ROOT / "DesignPlan" / "compiler" / "instances_v6" / f"{sid}.design_plan.json"
         step = next(out_dir.glob("*.step"), None)
-        kqp_ir = (run_kqp_subprocess(step, kqp_inst, plan,
-                                       out_dir / "kqp_result.json")
-                    if step and step.exists() else {"overall_status": "fail"})
+        kqp_ir = {"overall_status": "fail", "query_results": []}
+        if step and step.exists():
+            try:
+                kqp_ir = run_kqp_subprocess(step, kqp_inst, plan,
+                                              out_dir / "kqp_result.json")
+            except Exception as e:
+                kqp_ir = {"overall_status": "fail", "error": f"{type(e).__name__}: {e}"}
 
         execution_report = {
             "sample_id": sid, "negative_id": nid, "label": "negative",
@@ -274,35 +307,36 @@ def compile_negative_set(adaptor_summary: dict | None = None) -> list[dict]:
             "kqp_n_passed": sum(1 for qr in kqp_ir.get("query_results", [])
                                   if qr.get("status") == "pass"),
         }
-        (out_dir / "execution_report.json").write_text(
-            json.dumps(execution_report, indent=2, ensure_ascii=False),
-            encoding="utf-8")
+        out_dir.mkdir(parents=True, exist_ok=True)
+        try:
+            (out_dir / "execution_report.json").write_text(
+                json.dumps(execution_report, indent=2, ensure_ascii=False),
+                encoding="utf-8")
+            beq = compare_kqp_equivalence(kqp_history, kqp_ir)
+            (out_dir / "behavioral_equivalence_report.json").write_text(
+                json.dumps(beq, indent=2, ensure_ascii=False),
+                encoding="utf-8")
 
-        # Behavioral equivalence: IR-KQP vs Reconstruction-KQP
-        beq = compare_kqp_equivalence(kqp_history, kqp_ir)
-        (out_dir / "behavioral_equivalence_report.json").write_text(
-            json.dumps(beq, indent=2, ensure_ascii=False),
-            encoding="utf-8")
+            delta_report = {
+                "sample_id": sid, "negative_id": nid,
+                "perturbation_type": pert_meta.get("operator_input_name"),
+                "validation": (validate_delta_consistency(clean_ir, ir_neg, pert_meta)
+                                  if clean_ir else {"passed": False,
+                                                       "issues": ["no clean IR"]}),
+            }
+            (out_dir / "delta_consistency_report.json").write_text(
+                json.dumps(delta_report, indent=2, ensure_ascii=False),
+                encoding="utf-8")
 
-        # Delta consistency
-        delta_report = {
-            "sample_id": sid, "negative_id": nid,
-            "perturbation_type": pert_meta.get("operator_input_name"),
-            "validation": (validate_delta_consistency(clean_ir, ir_neg, pert_meta)
-                              if clean_ir else {"passed": False,
-                                                    "issues": ["no clean IR"]}),
-        }
-        (out_dir / "delta_consistency_report.json").write_text(
-            json.dumps(delta_report, indent=2, ensure_ascii=False),
-            encoding="utf-8")
-
-        # Perturbation alignment
-        align_report = (compute_perturbation_alignment_report(
-                            clean_ir, ir_neg, pert_meta)
-                          if clean_ir else {"delta_consistent": False})
-        (out_dir / "perturbation_alignment_report.json").write_text(
-            json.dumps(align_report, indent=2, ensure_ascii=False),
-            encoding="utf-8")
+            align_report = (compute_perturbation_alignment_report(
+                                clean_ir, ir_neg, pert_meta)
+                              if clean_ir else {"delta_consistent": False})
+            (out_dir / "perturbation_alignment_report.json").write_text(
+                json.dumps(align_report, indent=2, ensure_ascii=False),
+                encoding="utf-8")
+        except Exception as e:
+            rows.append({"sample_id": sid, "negative_id": nid,
+                          "stage": "report_write", "error": f"{type(e).__name__}: {e}"})
 
         # Repair eligible?
         repair_eligible = (

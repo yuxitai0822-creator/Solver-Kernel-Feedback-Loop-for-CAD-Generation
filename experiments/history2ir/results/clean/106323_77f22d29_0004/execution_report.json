@@ -1,0 +1,9 @@
+{
+  "sample_id": "106323_77f22d29_0004",
+  "label": "clean",
+  "adaptor_status": "success",
+  "step_exists": true,
+  "kqp_overall_status": "fail",
+  "kqp_n_queries": 10,
+  "kqp_n_passed": 9
+}

@@ -1,0 +1,15 @@
+{
+  "sample_id": "106323_77f22d29_0004",
+  "label": "negative",
+  "schema_validation": {
+    "passed": true,
+    "schema_status": "pass",
+    "semantic_status": "pass",
+    "issues": []
+  },
+  "history2ir_semantic": {
+    "passed": true,
+    "issues": []
+  },
+  "overall": "pass"
+}

@@ -1,0 +1,109 @@
+{
+  "sample_id": "103284_e25015aa_0003",
+  "kqp_schema_version": "kqp_instance_v0.2",
+  "step_file": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\history2ir\\results\\negative\\103284_e25015aa_0003\\neg_02\\103284_e25015aa_0003.step",
+  "overall_status": "fail",
+  "summary": {
+    "total_queries": 7,
+    "passed_queries": 1,
+    "failed_queries": 5,
+    "error_queries": 1
+  },
+  "query_results": [
+    {
+      "query_id": "q_body_count",
+      "intent": "body_count",
+      "status": "fail",
+      "expected": 1,
+      "actual": 0,
+      "tolerance": 0,
+      "error": 1,
+      "source_field": "$.target.body_count",
+      "feedback": {
+        "error_type": "topology_mismatch",
+        "message": "Expected body_count=1, got 0."
+      }
+    },
+    {
+      "query_id": "q_bbox_u",
+      "intent": "bbox_size",
+      "status": "fail",
+      "expected": 50.8,
+      "actual": 12.7,
+      "tolerance": 0.01,
+      "error": 38.1,
+      "source_field": "$.solid_bodies[0].dimensions.profiles[0].radius.value (computed: 2*r)",
+      "feedback": {
+        "error_type": "dimension_mismatch",
+        "message": "Expected bbox u-size 50.8mm (2*r), got 12.700000200000002mm."
+      }
+    },
+    {
+      "query_id": "q_bbox_v",
+      "intent": "bbox_size",
+      "status": "fail",
+      "expected": 50.8,
+      "actual": 12.7,
+      "tolerance": 0.01,
+      "error": 38.1,
+      "source_field": "$.solid_bodies[0].dimensions.profiles[0].radius.value (computed: 2*r)",
+      "feedback": {
+        "error_type": "dimension_mismatch",
+        "message": "Expected bbox v-size 50.8mm (2*r), got 12.700000200000002mm."
+      }
+    },
+    {
+      "query_id": "q_bbox_w",
+      "intent": "bbox_size",
+      "status": "fail",
+      "expected": 8.89,
+      "actual": 12.7,
+      "tolerance": 0.01,
+      "error": 3.81,
+      "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+      "feedback": {
+        "error_type": "dimension_mismatch",
+        "message": "Expected bbox w-size 8.89mm, got 12.700000199999998mm."
+      }
+    },
+    {
+      "query_id": "q_radius",
+      "intent": "cylinder_radius",
+      "status": "error",
+      "expected": 25.4,
+      "actual": null,
+      "tolerance": 0.01,
+      "error": null,
+      "source_field": "$.solid_bodies[0].dimensions.profiles[0].radius.value",
+      "feedback": {
+        "error_type": "no_cylinder_face",
+        "message": "No cylindrical face found in shape."
+      }
+    },
+    {
+      "query_id": "q_is_solid",
+      "intent": "is_solid",
+      "status": "fail",
+      "expected": true,
+      "actual": false,
+      "tolerance": null,
+      "error": 1,
+      "source_field": "(implicit: valid extrude implies solid)",
+      "feedback": {
+        "error_type": "health_violation",
+        "message": "Body is not a closed solid. got False."
+      }
+    },
+    {
+      "query_id": "q_occt_valid",
+      "intent": "occt_valid",
+      "status": "pass",
+      "expected": true,
+      "actual": true,
+      "tolerance": null,
+      "error": 0,
+      "source_field": "(implicit)",
+      "feedback": null
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "sample_id": "100243_9fb796fe_0005",
+  "negative_id": "neg_03",
+  "perturbation_type": "E1_envelope_v_shrink",
+  "history_delta": {
+    "entity_id": "sketch.points[*].x|y",
+    "field": "E1_envelope_v_shrink",
+    "before": 1.9000000000000004,
+    "after": 1.5200000000000005
+  },
+  "ir_delta": {
+    "operation_id": null,
+    "field": null,
+    "before": null,
+    "after": null
+  },
+  "target_operation_match": false,
+  "target_field_match": false,
+  "before_value_match": false,
+  "after_value_match": false,
+  "delta_consistent": false
+}

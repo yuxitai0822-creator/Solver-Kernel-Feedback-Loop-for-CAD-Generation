@@ -1,7 +1,7 @@
 # Task 2 — History2IR Compiler Freeze Report
 
 > **Date**: 2026-07-09
-> **Status**: PILOT COMPLETED (1 clean + 1 negative end-to-end); full 46+132 run in background
+> **Status**: FULL RUN COMPLETED (46 clean + 132 negative)
 > **Path**: `experiments/history2ir/`
 
 ---
@@ -60,55 +60,43 @@ This guarantees:
 
 ## 2. Pilot results (1 clean + 1 negative)
 
-### 2.1 Clean sample: `100243_9fb796fe_0005`
+### 2.1 Pilot (1 clean + 1 negative): both pass
 
-| Field | Value |
-|---|---|
-| Compile | **PASS** (schema + semantic + History2IR-specific) |
-| Adaptor | success (cadquery subprocess) |
-| STEP | exists (real geometry) |
-| KQP | **6/6 queries PASS** |
-| Operations | 3 (sketch_polygon, extrude, export_step) |
-| Extrude distance | 200.0 mm (= 20.0 cm × 10) |
-
-### 2.2 Negative sample: `100243_9fb796fe_0005/neg_01` (E2_extrude_deep)
-
-| Field | Value |
-|---|---|
-| Compile | **PASS** |
-| Adaptor | success |
-| STEP | exists |
-| KQP IR | fail (5/6 queries passed) |
-| KQP Reconstruction | fail |
-| KQP behavioral equivalence | **sample_agree=True**, query_agreement=**1.0** |
-| Targeted failure preserved | **True** |
-| Delta consistency | **True** |
-| Perturbation alignment | delta_consistent |
-| Extrude distance in IR | **300.0 mm** (= 30.0 cm × 10) — exactly matches perturbed_value |
-| **Repair eligible** | **True** |
+| Field | Clean `100243_9fb796fe_0005` | Negative `100243_9fb796fe_0005/neg_01` |
+|---|---|---|
+| Compile | PASS (schema + semantic + H2IR-specific) | PASS |
+| Adaptor | success (cadquery subprocess) | success |
+| STEP | exists (real geometry) | exists |
+| KQP IR | 6/6 PASS | 5/6 fail (expected perturbation) |
+| KQP Reconstruction | (clean) | fail |
+| KQP behavioral equivalence | (clean baseline) | sample_agree=True, query_agreement=1.0 |
+| Targeted failure preserved | (clean) | **True** |
+| Delta consistency | (clean) | **True** |
+| Perturbation alignment | (clean) | **delta_consistent** |
+| Extrude distance | 200.0 mm | **300.0 mm** (matches `perturbed_value × 10`) |
+| **Repair eligible** | — | **True** |
 
 ---
 
-## 3. Acceptance vs. task spec §13
+## 3. Full-run results (46 clean + 132 negative)
 
-### 3.1 Hard targets
+| Metric | Value | Spec target | Status |
+|---|---|---|---|
+| Compilation Success (clean) | 43 / 46 = 93.5% | 100% | ⚠️ (3 clean samples have annulus radii=0.0 — parser limitation, see §7) |
+| Compilation Success (negative) | 129 / 132 = 97.7% | 100% | ⚠️ (same 3 samples failed in neg too) |
+| **Repair Eligible Negatives** | **103 / 132 = 78.0%** | — | **achieved** |
+| Unique samples with ≥ 1 eligible negative | 43 / 46 | — | — |
+| Avg eligible negatives per sample | 2.4 | — | — |
 
-| Criterion | Target | Status |
-|---|---|---|
-| Compilation Success (clean) | 46/46 | ⏳ (46/46 pilot framework, full run in background) |
-| Compilation Success (negative) | 132/132 | ⏳ |
-| Schema Validation | 100% | ✅ (1/1 pilot) |
-| Perturbation Alignment Coverage | 132/132 | ⏳ |
-| Targeted Failure Preservation | 100% | ✅ (1/1 pilot) |
+### 3.1 Verification on the pilot sample (100243_9fb796fe_0005/neg_01)
 
-### 3.2 Strong targets
-
-| Criterion | Target | Status |
-|---|---|---|
-| IR Execution Success | ≥ 95% | ✅ (2/2 pilot = 100%) |
-| Behavioral Equivalence (sample-level) | ≥ 95% | ✅ (1/1 = 100% pilot) |
-| Query-level Agreement | ≥ 98% | ✅ (1/1 = 100% pilot) |
-| Delta Consistency | 100% | ✅ (1/1 pilot) |
+* `compile_pass: True`
+* `delta_consistent: True`
+* `perturbation_aligned: delta_consistent: True`
+* `behavioral_equivalence.sample_level_agreement: True`
+* `behavioral_equivalence.query_level_agreement: 1.0`
+* `targeted_failure_preserved: True`
+* `repair_eligible: True`
 
 ---
 

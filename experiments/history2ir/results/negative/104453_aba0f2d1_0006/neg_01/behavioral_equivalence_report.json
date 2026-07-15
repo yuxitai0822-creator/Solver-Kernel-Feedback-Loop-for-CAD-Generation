@@ -1,0 +1,18 @@
+{
+  "sample_level_agreement": false,
+  "query_level_agreement": 0.0,
+  "targeted_failure_preserved": false,
+  "history_signature": [
+    "q_body_count",
+    "q_bbox_u",
+    "q_bbox_v",
+    "q_bbox_w",
+    "q_void_count",
+    "q_is_solid",
+    "q_occt_valid"
+  ],
+  "ir_signature": [],
+  "issues": [
+    "no common query ids"
+  ]
+}

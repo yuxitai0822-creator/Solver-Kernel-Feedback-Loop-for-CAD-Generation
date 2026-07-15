@@ -1,0 +1,10 @@
+{
+  "sample_id": "102525_06a3094b_0006",
+  "negative_id": "neg_02",
+  "label": "negative",
+  "adaptor_status": "success",
+  "step_exists": true,
+  "kqp_overall_status": "fail",
+  "kqp_n_queries": 6,
+  "kqp_n_passed": 5
+}
