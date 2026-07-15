@@ -1,0 +1,28 @@
+{
+  "iter": 0,
+  "phase": "initial",
+  "ir_path": "experiments\\results\\M0_NoFeedback\\100877_ac1e5a17_0001\\iter_00\\IR_t.json",
+  "ir_t1_path": "experiments\\results\\M0_NoFeedback\\100877_ac1e5a17_0001\\iter_00\\IR_t1.json",
+  "step_path": "experiments\\results\\M0_NoFeedback\\100877_ac1e5a17_0001\\iter_00\\100877_ac1e5a17_0001.step",
+  "script_path": "experiments\\results\\M0_NoFeedback\\100877_ac1e5a17_0001\\iter_00\\generated_script.py",
+  "adaptor_trace_path": "experiments\\results\\M0_NoFeedback\\100877_ac1e5a17_0001\\iter_00\\adaptor_trace_t.json",
+  "solver_result_path": "experiments\\results\\M0_NoFeedback\\100877_ac1e5a17_0001\\iter_00\\solver_result_t.json",
+  "kqp_result_path": "experiments\\results\\M0_NoFeedback\\100877_ac1e5a17_0001\\iter_00\\kqp_result_t.json",
+  "ced_path": "experiments\\results\\M0_NoFeedback\\100877_ac1e5a17_0001\\iter_00\\ced_t_to_t_plus_1.json",
+  "agent_prompt_path": "experiments\\results\\M0_NoFeedback\\100877_ac1e5a17_0001\\iter_00\\agent_prompt_t.txt",
+  "agent_response_path": "experiments\\results\\M0_NoFeedback\\100877_ac1e5a17_0001\\iter_00\\agent_response_t.txt",
+  "runtime_log_path": "experiments\\results\\M0_NoFeedback\\100877_ac1e5a17_0001\\iter_00\\runtime_log_t.json",
+  "token_usage_path": "experiments\\results\\M0_NoFeedback\\100877_ac1e5a17_0001\\iter_00\\token_usage_t.json",
+  "agent_status": "called_skipped_method_m0",
+  "kqp_status": "unknown",
+  "solver_status_at_iter": "skipped",
+  "ir_was_modified_by_agent": false,
+  "wallclock_sec": 5.954951047897339,
+  "stage_timings_sec": {
+    "adaptor": 5.886121988296509,
+    "solver": 0.0,
+    "kqp": 0.0,
+    "agent": 0.0,
+    "other": 0.0
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "coordinate_system": {
+    "front_axis": "y",
+    "right_axis": "x",
+    "up_axis": "z"
+  },
+  "metadata": {
+    "profile_type": "rectangle",
+    "source": "manual_from_clean_sample"
+  },
+  "operations": [
+    {
+      "op_id": "op_001",
+      "op_type": "sketch_rectangle",
+      "params": {
+        "center": [
+          5.0,
+          5.0
+        ],
+        "height": 19.0,
+        "width": 19.0
+      },
+      "plane": "XY",
+      "role": "base_profile"
+    },
+    {
+      "input": "op_001",
+      "op_id": "op_002",
+      "op_type": "extrude",
+      "params": {
+        "direction": "+normal",
+        "distance": 300.0,
+        "extent_type": "one_side",
+        "operation": "new_body"
+      },
+      "role": "base_body"
+    },
+    {
+      "input": "op_002",
+      "op_id": "op_003",
+      "op_type": "export_step",
+      "params": {
+        "path": "100243_9fb796fe_0005.step"
+      }
+    }
+  ],
+  "sample_id": "100243_9fb796fe_0005",
+  "schema_version": "cad_ir_v0.1",
+  "unit": "mm"
+}

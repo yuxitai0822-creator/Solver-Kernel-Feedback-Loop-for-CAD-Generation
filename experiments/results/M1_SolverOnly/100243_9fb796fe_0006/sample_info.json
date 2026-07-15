@@ -1,0 +1,7 @@
+{
+  "design_plan_path": "DesignPlan\\compiler\\instances_v6\\100243_9fb796fe_0006.design_plan.json",
+  "initial_ir_path": "cad_ir\\samples\\manual_ir_examples\\100243_9fb796fe_0006.cad_ir.json",
+  "initial_step_path": "Reconstruction_results\\100243_9fb796fe_0006\\generated.step",
+  "kqp_instance_path": "kqp\\outputs\\compiler_v0.1\\100243_9fb796fe_0006.kqp_instance.json",
+  "perturbation_meta_path": "experiments\\config\\perturbation_meta.json"
+}

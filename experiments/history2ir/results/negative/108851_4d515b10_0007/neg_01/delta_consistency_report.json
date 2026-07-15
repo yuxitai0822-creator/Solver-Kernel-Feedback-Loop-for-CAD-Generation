@@ -1,0 +1,12 @@
+{
+  "sample_id": "108851_4d515b10_0007",
+  "negative_id": "neg_01",
+  "perturbation_type": "E2_extrude_deep",
+  "validation": {
+    "passed": true,
+    "issues": [],
+    "found_match": true,
+    "target_op_type": "extrude",
+    "target_field": "distance"
+  }
+}

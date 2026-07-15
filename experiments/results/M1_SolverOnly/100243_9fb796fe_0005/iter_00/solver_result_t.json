@@ -1,0 +1,35 @@
+{
+  "status": "ran",
+  "raw_solve_return_code": 0,
+  "raw_dof": 12,
+  "solve": {
+    "solve_status": "under_constrained",
+    "severity": "warning",
+    "dof": 12,
+    "return_code": 0,
+    "exception": null,
+    "message": "FreeCAD solve() returned 0",
+    "flags": {
+      "has_conflict": false,
+      "has_redundancy": false,
+      "has_invalid_constraints": false,
+      "has_over_constrained": false,
+      "has_partially_redundant": false,
+      "has_missing_v_h_constraints": false,
+      "has_non_linear_constraints": false,
+      "has_solver_error": false
+    },
+    "non_linear_constraint_ids": [],
+    "redundant_constraint_ids": [],
+    "conflicting_constraint_ids": [],
+    "malformed_constraint_ids": []
+  },
+  "recompute": {
+    "recompute_status": "success",
+    "failed_features": [],
+    "message": "doc.recompute() succeeded; no feature in Invalid state"
+  },
+  "conflicting": [],
+  "redundant": [],
+  "malformed": []
+}

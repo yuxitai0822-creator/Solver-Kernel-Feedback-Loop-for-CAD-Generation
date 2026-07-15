@@ -1,0 +1,93 @@
+{
+  "schema_version": "run_result_v0.1",
+  "config_version": "benchmark_config_v0.1",
+  "run_id": "M0_NoFeedback__101427_a9bcb09c_0001__1784017501",
+  "sample_id": "101427_a9bcb09c_0001",
+  "task_type": "repair",
+  "method": "no_feedback",
+  "max_iter": 3,
+  "sample_info": {
+    "design_plan_path": "DesignPlan\\compiler\\instances_v6\\101427_a9bcb09c_0001.design_plan.json",
+    "initial_ir_path": "cad_ir\\samples\\manual_ir_examples\\101427_a9bcb09c_0001.cad_ir.json",
+    "initial_step_path": "Reconstruction_results\\101427_a9bcb09c_0001\\generated.step",
+    "kqp_instance_path": "kqp\\outputs\\compiler_v0.1\\101427_a9bcb09c_0001.kqp_instance.json",
+    "perturbation_meta_path": "experiments\\config\\perturbation_meta.json"
+  },
+  "perturbation": {
+    "type": "E2_extrude_deep",
+    "ops": [
+      "op_002"
+    ],
+    "values_before": {
+      "op_002": 25.0
+    },
+    "values_after": {
+      "op_002": 37.5
+    }
+  },
+  "initial_status": {
+    "kqp_pass": false,
+    "num_failed_queries": 0,
+    "failed_query_ids": [],
+    "solver_status": "skipped",
+    "solver_acceptable": false
+  },
+  "final_status": {
+    "success": false,
+    "strict_success": false,
+    "final_kqp_pass": false,
+    "final_solver_status": "unknown",
+    "iterations_used": 1
+  },
+  "metrics": {
+    "success_at_1": false,
+    "success_at_2": false,
+    "success_at_3": false,
+    "failure_to_success": false,
+    "kqp_query_improvement": 0,
+    "remaining_failed_query_count": 0,
+    "targeted_repair_success": false,
+    "ced_text_total": 0.0,
+    "ced_declared_total": 0.0,
+    "ced_executed_total": 0.0,
+    "repair_cost": 0.2,
+    "runtime_sec": 5.803909063339233,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "total_tokens": 0,
+    "n_iterations": 1,
+    "mean_iteration_runtime_sec": 5.803909063339233
+  },
+  "iterations": [
+    {
+      "iter": 0,
+      "phase": "initial",
+      "ir_path": "experiments\\results\\M0_NoFeedback\\101427_a9bcb09c_0001\\iter_00\\IR_t.json",
+      "ir_t1_path": "experiments\\results\\M0_NoFeedback\\101427_a9bcb09c_0001\\iter_00\\IR_t1.json",
+      "step_path": "experiments\\results\\M0_NoFeedback\\101427_a9bcb09c_0001\\iter_00\\101427_a9bcb09c_0001.step",
+      "script_path": "experiments\\results\\M0_NoFeedback\\101427_a9bcb09c_0001\\iter_00\\generated_script.py",
+      "adaptor_trace_path": "experiments\\results\\M0_NoFeedback\\101427_a9bcb09c_0001\\iter_00\\adaptor_trace_t.json",
+      "solver_result_path": "experiments\\results\\M0_NoFeedback\\101427_a9bcb09c_0001\\iter_00\\solver_result_t.json",
+      "kqp_result_path": "experiments\\results\\M0_NoFeedback\\101427_a9bcb09c_0001\\iter_00\\kqp_result_t.json",
+      "ced_path": "experiments\\results\\M0_NoFeedback\\101427_a9bcb09c_0001\\iter_00\\ced_t_to_t_plus_1.json",
+      "agent_prompt_path": "experiments\\results\\M0_NoFeedback\\101427_a9bcb09c_0001\\iter_00\\agent_prompt_t.txt",
+      "agent_response_path": "experiments\\results\\M0_NoFeedback\\101427_a9bcb09c_0001\\iter_00\\agent_response_t.txt",
+      "runtime_log_path": "experiments\\results\\M0_NoFeedback\\101427_a9bcb09c_0001\\iter_00\\runtime_log_t.json",
+      "token_usage_path": "experiments\\results\\M0_NoFeedback\\101427_a9bcb09c_0001\\iter_00\\token_usage_t.json",
+      "agent_status": "called_skipped_method_m0",
+      "kqp_status": "unknown",
+      "solver_status_at_iter": "skipped",
+      "ir_was_modified_by_agent": false,
+      "wallclock_sec": 5.800578594207764,
+      "stage_timings_sec": {
+        "adaptor": 5.724970102310181,
+        "solver": 0.0,
+        "kqp": 0.0,
+        "agent": 0.0,
+        "other": 0.0
+      }
+    }
+  ],
+  "artifacts_dir": "experiments\\results\\M0_NoFeedback\\101427_a9bcb09c_0001",
+  "notes": null
+}

@@ -1,0 +1,478 @@
+{
+  "method": "solver_only",
+  "method_label": "M1_SolverOnly",
+  "schema_version": "run_result_v0.1",
+  "metrics": {
+    "n_samples": 3,
+    "n_initial_pass": 0,
+    "n_final_pass": 0,
+    "Success@1": 0.0,
+    "Success@2": 0.0,
+    "Success@3": 0.0,
+    "F2S_ConversionRate": 0.0,
+    "n_iterations_to_success_distribution": {
+      "1": 0,
+      "2": 0,
+      "3": 0
+    },
+    "MeanIterationsToSuccess": null,
+    "MeanCED_declared_total": 0.0,
+    "MeanCED_executed_total": 0.0,
+    "MeanRepairCost": 0.6000000000000001,
+    "MeanRuntimeCost_s": 183.2556521097819,
+    "MeanInputTokens": 2092.0,
+    "MeanOutputTokens": 7812.666666666667,
+    "MeanTotalTokens": 9904.666666666666,
+    "n_failure_to_success": 0
+  },
+  "n_samples": 3,
+  "rows": [
+    {
+      "schema_version": "run_result_v0.1",
+      "config_version": "benchmark_config_v0.1",
+      "run_id": "M1_SolverOnly__100243_9fb796fe_0005__1784017702",
+      "sample_id": "100243_9fb796fe_0005",
+      "task_type": "repair",
+      "method": "solver_only",
+      "max_iter": 3,
+      "sample_info": {
+        "design_plan_path": "DesignPlan\\compiler\\instances_v6\\100243_9fb796fe_0005.design_plan.json",
+        "initial_ir_path": "cad_ir\\samples\\manual_ir_examples\\100243_9fb796fe_0005.cad_ir.json",
+        "initial_step_path": "Reconstruction_results\\100243_9fb796fe_0005\\generated.step",
+        "kqp_instance_path": "kqp\\outputs\\compiler_v0.1\\100243_9fb796fe_0005.kqp_instance.json",
+        "perturbation_meta_path": "experiments\\config\\perturbation_meta.json"
+      },
+      "perturbation": {
+        "type": "E2_extrude_deep",
+        "ops": [
+          "op_002"
+        ],
+        "values_before": {
+          "op_002": 200.0
+        },
+        "values_after": {
+          "op_002": 300.0
+        }
+      },
+      "initial_status": {
+        "kqp_pass": false,
+        "num_failed_queries": 0,
+        "failed_query_ids": [],
+        "solver_status": "skipped",
+        "solver_acceptable": false
+      },
+      "final_status": {
+        "success": false,
+        "strict_success": false,
+        "final_kqp_pass": false,
+        "final_solver_status": "unknown",
+        "iterations_used": 3
+      },
+      "metrics": {
+        "success_at_1": false,
+        "success_at_2": false,
+        "success_at_3": false,
+        "failure_to_success": false,
+        "kqp_query_improvement": 0,
+        "remaining_failed_query_count": 0,
+        "targeted_repair_success": false,
+        "ced_text_total": 0.0,
+        "ced_declared_total": 0.0,
+        "ced_executed_total": 0.0,
+        "repair_cost": 0.6000000000000001,
+        "runtime_sec": 201.3754439353943,
+        "input_tokens": 2058,
+        "output_tokens": 8026,
+        "total_tokens": 10084,
+        "n_iterations": 3,
+        "mean_iteration_runtime_sec": 67.12514797846477
+      },
+      "iterations": [
+        {
+          "iter": 0,
+          "phase": "initial",
+          "ir_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_00\\IR_t.json",
+          "ir_t1_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_00\\IR_t1.json",
+          "step_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_00\\100243_9fb796fe_0005.step",
+          "script_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_00\\generated_script.py",
+          "adaptor_trace_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_00\\adaptor_trace_t.json",
+          "solver_result_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_00\\solver_result_t.json",
+          "kqp_result_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_00\\kqp_result_t.json",
+          "ced_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_00\\ced_t_to_t_plus_1.json",
+          "agent_prompt_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_00\\agent_prompt_t.txt",
+          "agent_response_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_00\\agent_response_t.txt",
+          "runtime_log_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_00\\runtime_log_t.json",
+          "token_usage_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_00\\token_usage_t.json",
+          "agent_status": "called_success",
+          "kqp_status": "unknown",
+          "solver_status_at_iter": "ran",
+          "ir_was_modified_by_agent": false,
+          "wallclock_sec": 63.61855936050415,
+          "stage_timings_sec": {
+            "adaptor": 6.667639493942261,
+            "solver": 0.9787542819976807,
+            "kqp": 0.0,
+            "agent": 55.92275595664978,
+            "other": 0.0
+          }
+        },
+        {
+          "iter": 1,
+          "phase": "repair",
+          "ir_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_01\\IR_t.json",
+          "ir_t1_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_01\\IR_t1.json",
+          "step_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_01\\100243_9fb796fe_0005.step",
+          "script_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_01\\generated_script.py",
+          "adaptor_trace_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_01\\adaptor_trace_t.json",
+          "solver_result_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_01\\solver_result_t.json",
+          "kqp_result_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_01\\kqp_result_t.json",
+          "ced_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_01\\ced_t_to_t_plus_1.json",
+          "agent_prompt_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_01\\agent_prompt_t.txt",
+          "agent_response_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_01\\agent_response_t.txt",
+          "runtime_log_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_01\\runtime_log_t.json",
+          "token_usage_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_01\\token_usage_t.json",
+          "agent_status": "called_success",
+          "kqp_status": "unknown",
+          "solver_status_at_iter": "ran",
+          "ir_was_modified_by_agent": false,
+          "wallclock_sec": 49.126951456069946,
+          "stage_timings_sec": {
+            "adaptor": 6.900254964828491,
+            "solver": 0.02380514144897461,
+            "kqp": 0.0,
+            "agent": 42.150026082992554,
+            "other": 0.0
+          }
+        },
+        {
+          "iter": 2,
+          "phase": "repair",
+          "ir_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_02\\IR_t.json",
+          "ir_t1_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_02\\IR_t1.json",
+          "step_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_02\\100243_9fb796fe_0005.step",
+          "script_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_02\\generated_script.py",
+          "adaptor_trace_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_02\\adaptor_trace_t.json",
+          "solver_result_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_02\\solver_result_t.json",
+          "kqp_result_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_02\\kqp_result_t.json",
+          "ced_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_02\\ced_t_to_t_plus_1.json",
+          "agent_prompt_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_02\\agent_prompt_t.txt",
+          "agent_response_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_02\\agent_response_t.txt",
+          "runtime_log_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_02\\runtime_log_t.json",
+          "token_usage_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_02\\token_usage_t.json",
+          "agent_status": "called_failed",
+          "kqp_status": "unknown",
+          "solver_status_at_iter": "ran",
+          "ir_was_modified_by_agent": false,
+          "wallclock_sec": 88.6187059879303,
+          "stage_timings_sec": {
+            "adaptor": 6.149964332580566,
+            "solver": 0.022899389266967773,
+            "kqp": 0.0,
+            "agent": 82.34591126441956,
+            "other": 0.0
+          }
+        }
+      ],
+      "artifacts_dir": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005",
+      "notes": null
+    },
+    {
+      "schema_version": "run_result_v0.1",
+      "config_version": "benchmark_config_v0.1",
+      "run_id": "M1_SolverOnly__100243_9fb796fe_0006__1784017890",
+      "sample_id": "100243_9fb796fe_0006",
+      "task_type": "repair",
+      "method": "solver_only",
+      "max_iter": 3,
+      "sample_info": {
+        "design_plan_path": "DesignPlan\\compiler\\instances_v6\\100243_9fb796fe_0006.design_plan.json",
+        "initial_ir_path": "cad_ir\\samples\\manual_ir_examples\\100243_9fb796fe_0006.cad_ir.json",
+        "initial_step_path": "Reconstruction_results\\100243_9fb796fe_0006\\generated.step",
+        "kqp_instance_path": "kqp\\outputs\\compiler_v0.1\\100243_9fb796fe_0006.kqp_instance.json",
+        "perturbation_meta_path": "experiments\\config\\perturbation_meta.json"
+      },
+      "perturbation": {
+        "type": "E2_extrude_deep",
+        "ops": [
+          "op_002"
+        ],
+        "values_before": {
+          "op_002": 130.0
+        },
+        "values_after": {
+          "op_002": 195.0
+        }
+      },
+      "initial_status": {
+        "kqp_pass": false,
+        "num_failed_queries": 0,
+        "failed_query_ids": [],
+        "solver_status": "skipped",
+        "solver_acceptable": false
+      },
+      "final_status": {
+        "success": false,
+        "strict_success": false,
+        "final_kqp_pass": false,
+        "final_solver_status": "unknown",
+        "iterations_used": 3
+      },
+      "metrics": {
+        "success_at_1": false,
+        "success_at_2": false,
+        "success_at_3": false,
+        "failure_to_success": false,
+        "kqp_query_improvement": 0,
+        "remaining_failed_query_count": 0,
+        "targeted_repair_success": false,
+        "ced_text_total": 0.0,
+        "ced_declared_total": 0.0,
+        "ced_executed_total": 0.0,
+        "repair_cost": 0.6000000000000001,
+        "runtime_sec": 187.24971961975098,
+        "input_tokens": 2058,
+        "output_tokens": 8437,
+        "total_tokens": 10495,
+        "n_iterations": 3,
+        "mean_iteration_runtime_sec": 62.41657320658366
+      },
+      "iterations": [
+        {
+          "iter": 0,
+          "phase": "initial",
+          "ir_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0006\\iter_00\\IR_t.json",
+          "ir_t1_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0006\\iter_00\\IR_t1.json",
+          "step_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0006\\iter_00\\100243_9fb796fe_0006.step",
+          "script_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0006\\iter_00\\generated_script.py",
+          "adaptor_trace_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0006\\iter_00\\adaptor_trace_t.json",
+          "solver_result_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0006\\iter_00\\solver_result_t.json",
+          "kqp_result_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0006\\iter_00\\kqp_result_t.json",
+          "ced_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0006\\iter_00\\ced_t_to_t_plus_1.json",
+          "agent_prompt_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0006\\iter_00\\agent_prompt_t.txt",
+          "agent_response_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0006\\iter_00\\agent_response_t.txt",
+          "runtime_log_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0006\\iter_00\\runtime_log_t.json",
+          "token_usage_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0006\\iter_00\\token_usage_t.json",
+          "agent_status": "called_success",
+          "kqp_status": "unknown",
+          "solver_status_at_iter": "ran",
+          "ir_was_modified_by_agent": false,
+          "wallclock_sec": 56.69002437591553,
+          "stage_timings_sec": {
+            "adaptor": 6.0898425579071045,
+            "solver": 0.024137496948242188,
+            "kqp": 0.0,
+            "agent": 50.51813578605652,
+            "other": 0.0
+          }
+        },
+        {
+          "iter": 1,
+          "phase": "repair",
+          "ir_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0006\\iter_01\\IR_t.json",
+          "ir_t1_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0006\\iter_01\\IR_t1.json",
+          "step_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0006\\iter_01\\100243_9fb796fe_0006.step",
+          "script_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0006\\iter_01\\generated_script.py",
+          "adaptor_trace_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0006\\iter_01\\adaptor_trace_t.json",
+          "solver_result_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0006\\iter_01\\solver_result_t.json",
+          "kqp_result_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0006\\iter_01\\kqp_result_t.json",
+          "ced_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0006\\iter_01\\ced_t_to_t_plus_1.json",
+          "agent_prompt_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0006\\iter_01\\agent_prompt_t.txt",
+          "agent_response_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0006\\iter_01\\agent_response_t.txt",
+          "runtime_log_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0006\\iter_01\\runtime_log_t.json",
+          "token_usage_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0006\\iter_01\\token_usage_t.json",
+          "agent_status": "called_success",
+          "kqp_status": "unknown",
+          "solver_status_at_iter": "ran",
+          "ir_was_modified_by_agent": false,
+          "wallclock_sec": 42.518301486968994,
+          "stage_timings_sec": {
+            "adaptor": 5.437582731246948,
+            "solver": 0.0214693546295166,
+            "kqp": 0.0,
+            "agent": 36.99954342842102,
+            "other": 0.0
+          }
+        },
+        {
+          "iter": 2,
+          "phase": "repair",
+          "ir_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0006\\iter_02\\IR_t.json",
+          "ir_t1_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0006\\iter_02\\IR_t1.json",
+          "step_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0006\\iter_02\\100243_9fb796fe_0006.step",
+          "script_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0006\\iter_02\\generated_script.py",
+          "adaptor_trace_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0006\\iter_02\\adaptor_trace_t.json",
+          "solver_result_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0006\\iter_02\\solver_result_t.json",
+          "kqp_result_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0006\\iter_02\\kqp_result_t.json",
+          "ced_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0006\\iter_02\\ced_t_to_t_plus_1.json",
+          "agent_prompt_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0006\\iter_02\\agent_prompt_t.txt",
+          "agent_response_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0006\\iter_02\\agent_response_t.txt",
+          "runtime_log_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0006\\iter_02\\runtime_log_t.json",
+          "token_usage_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0006\\iter_02\\token_usage_t.json",
+          "agent_status": "called_failed",
+          "kqp_status": "unknown",
+          "solver_status_at_iter": "ran",
+          "ir_was_modified_by_agent": false,
+          "wallclock_sec": 88.03245091438293,
+          "stage_timings_sec": {
+            "adaptor": 6.32420802116394,
+            "solver": 0.03385519981384277,
+            "kqp": 0.0,
+            "agent": 81.62051796913147,
+            "other": 0.0
+          }
+        }
+      ],
+      "artifacts_dir": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0006",
+      "notes": null
+    },
+    {
+      "schema_version": "run_result_v0.1",
+      "config_version": "benchmark_config_v0.1",
+      "run_id": "M1_SolverOnly__100877_ac1e5a17_0001__1784018051",
+      "sample_id": "100877_ac1e5a17_0001",
+      "task_type": "repair",
+      "method": "solver_only",
+      "max_iter": 3,
+      "sample_info": {
+        "design_plan_path": "DesignPlan\\compiler\\instances_v6\\100877_ac1e5a17_0001.design_plan.json",
+        "initial_ir_path": "cad_ir\\samples\\manual_ir_examples\\100877_ac1e5a17_0001.cad_ir.json",
+        "initial_step_path": "Reconstruction_results\\100877_ac1e5a17_0001\\generated.step",
+        "kqp_instance_path": "kqp\\outputs\\compiler_v0.1\\100877_ac1e5a17_0001.kqp_instance.json",
+        "perturbation_meta_path": "experiments\\config\\perturbation_meta.json"
+      },
+      "perturbation": {
+        "type": "E2_extrude_deep",
+        "ops": [
+          "op_002"
+        ],
+        "values_before": {
+          "op_002": 1.5875
+        },
+        "values_after": {
+          "op_002": 2.3812
+        }
+      },
+      "initial_status": {
+        "kqp_pass": false,
+        "num_failed_queries": 0,
+        "failed_query_ids": [],
+        "solver_status": "skipped",
+        "solver_acceptable": false
+      },
+      "final_status": {
+        "success": false,
+        "strict_success": false,
+        "final_kqp_pass": false,
+        "final_solver_status": "unknown",
+        "iterations_used": 3
+      },
+      "metrics": {
+        "success_at_1": false,
+        "success_at_2": false,
+        "success_at_3": false,
+        "failure_to_success": false,
+        "kqp_query_improvement": 0,
+        "remaining_failed_query_count": 0,
+        "targeted_repair_success": false,
+        "ced_text_total": 0.0,
+        "ced_declared_total": 0.0,
+        "ced_executed_total": 0.0,
+        "repair_cost": 0.6000000000000001,
+        "runtime_sec": 161.14179277420044,
+        "input_tokens": 2160,
+        "output_tokens": 6975,
+        "total_tokens": 9135,
+        "n_iterations": 3,
+        "mean_iteration_runtime_sec": 53.71393092473348
+      },
+      "iterations": [
+        {
+          "iter": 0,
+          "phase": "initial",
+          "ir_path": "experiments\\results\\M1_SolverOnly\\100877_ac1e5a17_0001\\iter_00\\IR_t.json",
+          "ir_t1_path": "experiments\\results\\M1_SolverOnly\\100877_ac1e5a17_0001\\iter_00\\IR_t1.json",
+          "step_path": "experiments\\results\\M1_SolverOnly\\100877_ac1e5a17_0001\\iter_00\\100877_ac1e5a17_0001.step",
+          "script_path": "experiments\\results\\M1_SolverOnly\\100877_ac1e5a17_0001\\iter_00\\generated_script.py",
+          "adaptor_trace_path": "experiments\\results\\M1_SolverOnly\\100877_ac1e5a17_0001\\iter_00\\adaptor_trace_t.json",
+          "solver_result_path": "experiments\\results\\M1_SolverOnly\\100877_ac1e5a17_0001\\iter_00\\solver_result_t.json",
+          "kqp_result_path": "experiments\\results\\M1_SolverOnly\\100877_ac1e5a17_0001\\iter_00\\kqp_result_t.json",
+          "ced_path": "experiments\\results\\M1_SolverOnly\\100877_ac1e5a17_0001\\iter_00\\ced_t_to_t_plus_1.json",
+          "agent_prompt_path": "experiments\\results\\M1_SolverOnly\\100877_ac1e5a17_0001\\iter_00\\agent_prompt_t.txt",
+          "agent_response_path": "experiments\\results\\M1_SolverOnly\\100877_ac1e5a17_0001\\iter_00\\agent_response_t.txt",
+          "runtime_log_path": "experiments\\results\\M1_SolverOnly\\100877_ac1e5a17_0001\\iter_00\\runtime_log_t.json",
+          "token_usage_path": "experiments\\results\\M1_SolverOnly\\100877_ac1e5a17_0001\\iter_00\\token_usage_t.json",
+          "agent_status": "called_failed",
+          "kqp_status": "unknown",
+          "solver_status_at_iter": "ran",
+          "ir_was_modified_by_agent": false,
+          "wallclock_sec": 65.82829999923706,
+          "stage_timings_sec": {
+            "adaptor": 6.177808523178101,
+            "solver": 0.02027153968811035,
+            "kqp": 0.0,
+            "agent": 59.58072257041931,
+            "other": 0.0
+          }
+        },
+        {
+          "iter": 1,
+          "phase": "repair",
+          "ir_path": "experiments\\results\\M1_SolverOnly\\100877_ac1e5a17_0001\\iter_01\\IR_t.json",
+          "ir_t1_path": "experiments\\results\\M1_SolverOnly\\100877_ac1e5a17_0001\\iter_01\\IR_t1.json",
+          "step_path": "experiments\\results\\M1_SolverOnly\\100877_ac1e5a17_0001\\iter_01\\100877_ac1e5a17_0001.step",
+          "script_path": "experiments\\results\\M1_SolverOnly\\100877_ac1e5a17_0001\\iter_01\\generated_script.py",
+          "adaptor_trace_path": "experiments\\results\\M1_SolverOnly\\100877_ac1e5a17_0001\\iter_01\\adaptor_trace_t.json",
+          "solver_result_path": "experiments\\results\\M1_SolverOnly\\100877_ac1e5a17_0001\\iter_01\\solver_result_t.json",
+          "kqp_result_path": "experiments\\results\\M1_SolverOnly\\100877_ac1e5a17_0001\\iter_01\\kqp_result_t.json",
+          "ced_path": "experiments\\results\\M1_SolverOnly\\100877_ac1e5a17_0001\\iter_01\\ced_t_to_t_plus_1.json",
+          "agent_prompt_path": "experiments\\results\\M1_SolverOnly\\100877_ac1e5a17_0001\\iter_01\\agent_prompt_t.txt",
+          "agent_response_path": "experiments\\results\\M1_SolverOnly\\100877_ac1e5a17_0001\\iter_01\\agent_response_t.txt",
+          "runtime_log_path": "experiments\\results\\M1_SolverOnly\\100877_ac1e5a17_0001\\iter_01\\runtime_log_t.json",
+          "token_usage_path": "experiments\\results\\M1_SolverOnly\\100877_ac1e5a17_0001\\iter_01\\token_usage_t.json",
+          "agent_status": "called_success",
+          "kqp_status": "unknown",
+          "solver_status_at_iter": "ran",
+          "ir_was_modified_by_agent": false,
+          "wallclock_sec": 42.600799798965454,
+          "stage_timings_sec": {
+            "adaptor": 6.433883428573608,
+            "solver": 0.024250268936157227,
+            "kqp": 0.0,
+            "agent": 36.059887170791626,
+            "other": 0.0
+          }
+        },
+        {
+          "iter": 2,
+          "phase": "repair",
+          "ir_path": "experiments\\results\\M1_SolverOnly\\100877_ac1e5a17_0001\\iter_02\\IR_t.json",
+          "ir_t1_path": "experiments\\results\\M1_SolverOnly\\100877_ac1e5a17_0001\\iter_02\\IR_t1.json",
+          "step_path": "experiments\\results\\M1_SolverOnly\\100877_ac1e5a17_0001\\iter_02\\100877_ac1e5a17_0001.step",
+          "script_path": "experiments\\results\\M1_SolverOnly\\100877_ac1e5a17_0001\\iter_02\\generated_script.py",
+          "adaptor_trace_path": "experiments\\results\\M1_SolverOnly\\100877_ac1e5a17_0001\\iter_02\\adaptor_trace_t.json",
+          "solver_result_path": "experiments\\results\\M1_SolverOnly\\100877_ac1e5a17_0001\\iter_02\\solver_result_t.json",
+          "kqp_result_path": "experiments\\results\\M1_SolverOnly\\100877_ac1e5a17_0001\\iter_02\\kqp_result_t.json",
+          "ced_path": "experiments\\results\\M1_SolverOnly\\100877_ac1e5a17_0001\\iter_02\\ced_t_to_t_plus_1.json",
+          "agent_prompt_path": "experiments\\results\\M1_SolverOnly\\100877_ac1e5a17_0001\\iter_02\\agent_prompt_t.txt",
+          "agent_response_path": "experiments\\results\\M1_SolverOnly\\100877_ac1e5a17_0001\\iter_02\\agent_response_t.txt",
+          "runtime_log_path": "experiments\\results\\M1_SolverOnly\\100877_ac1e5a17_0001\\iter_02\\runtime_log_t.json",
+          "token_usage_path": "experiments\\results\\M1_SolverOnly\\100877_ac1e5a17_0001\\iter_02\\token_usage_t.json",
+          "agent_status": "called_success",
+          "kqp_status": "unknown",
+          "solver_status_at_iter": "ran",
+          "ir_was_modified_by_agent": false,
+          "wallclock_sec": 52.703195333480835,
+          "stage_timings_sec": {
+            "adaptor": 5.927580833435059,
+            "solver": 0.021778345108032227,
+            "kqp": 0.0,
+            "agent": 46.69889712333679,
+            "other": 0.0
+          }
+        }
+      ],
+      "artifacts_dir": "experiments\\results\\M1_SolverOnly\\100877_ac1e5a17_0001",
+      "notes": null
+    }
+  ]
+}

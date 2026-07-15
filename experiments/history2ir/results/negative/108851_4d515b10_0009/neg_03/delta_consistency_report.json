@@ -1,0 +1,14 @@
+{
+  "sample_id": "108851_4d515b10_0009",
+  "negative_id": "neg_03",
+  "perturbation_type": "E1_envelope_v_shrink",
+  "validation": {
+    "passed": false,
+    "issues": [
+      "could not locate sketch_rectangle/height in IR to match perturbation E1_envelope_v_shrink"
+    ],
+    "found_match": false,
+    "target_op_type": "sketch_rectangle",
+    "target_field": "height"
+  }
+}

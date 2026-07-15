@@ -1,25 +1,102 @@
 {
   "experiment": "Solver-KQP Repair Loop Benchmark v0.1",
-  "n_samples": 3,
+  "schema_version": "run_result_v0.1",
   "methods": {
-    "M3_SolverKQP": {
-      "n_samples": 3,
+    "no_feedback": {
+      "n_samples": 6,
       "n_initial_pass": 0,
-      "n_final_pass": 3,
-      "n_failure_to_success": 3,
+      "n_final_pass": 0,
       "Success@1": 0.0,
-      "Success@2": 1.0,
-      "Success@3": 1.0,
-      "F2S_ConversionRate": 1.0,
-      "MeanIterationsToSuccess": 2.0,
+      "Success@2": 0.0,
+      "Success@3": 0.0,
+      "F2S_ConversionRate": 0.0,
       "n_iterations_to_success_distribution": {
         "1": 0,
-        "2": 3,
+        "2": 0,
         "3": 0
       },
-      "MeanCED_declared_raw": 1.0,
-      "MeanRepairCost": 1.6000000000000003,
-      "MeanRuntimeCost_s": 10.021873950958252
+      "MeanIterationsToSuccess": null,
+      "MeanCED_declared_total": 0.0,
+      "MeanCED_executed_total": 0.0,
+      "MeanRepairCost": 0.19999999999999998,
+      "MeanRuntimeCost_s": 6.115202943483989,
+      "MeanInputTokens": 0.0,
+      "MeanOutputTokens": 0.0,
+      "MeanTotalTokens": 0.0,
+      "n_failure_to_success": 0
+    },
+    "solver_only": {
+      "n_samples": 3,
+      "n_initial_pass": 0,
+      "n_final_pass": 0,
+      "Success@1": 0.0,
+      "Success@2": 0.0,
+      "Success@3": 0.0,
+      "F2S_ConversionRate": 0.0,
+      "n_iterations_to_success_distribution": {
+        "1": 0,
+        "2": 0,
+        "3": 0
+      },
+      "MeanIterationsToSuccess": null,
+      "MeanCED_declared_total": 0.0,
+      "MeanCED_executed_total": 0.0,
+      "MeanRepairCost": 0.6000000000000001,
+      "MeanRuntimeCost_s": 183.2556521097819,
+      "MeanInputTokens": 2092.0,
+      "MeanOutputTokens": 7812.666666666667,
+      "MeanTotalTokens": 9904.666666666666,
+      "n_failure_to_success": 0
     }
+  },
+  "comparison_table": {
+    "M0_NoFeedback": {
+      "n_samples": 6,
+      "n_initial_pass": 0,
+      "n_final_pass": 0,
+      "Success@1": 0.0,
+      "Success@2": 0.0,
+      "Success@3": 0.0,
+      "F2S_ConversionRate": 0.0,
+      "n_iterations_to_success_distribution": {
+        "1": 0,
+        "2": 0,
+        "3": 0
+      },
+      "MeanIterationsToSuccess": null,
+      "MeanCED_declared_total": 0.0,
+      "MeanCED_executed_total": 0.0,
+      "MeanRepairCost": 0.19999999999999998,
+      "MeanRuntimeCost_s": 6.115202943483989,
+      "MeanInputTokens": 0.0,
+      "MeanOutputTokens": 0.0,
+      "MeanTotalTokens": 0.0,
+      "n_failure_to_success": 0
+    },
+    "M1_SolverOnly": {
+      "n_samples": 3,
+      "n_initial_pass": 0,
+      "n_final_pass": 0,
+      "Success@1": 0.0,
+      "Success@2": 0.0,
+      "Success@3": 0.0,
+      "F2S_ConversionRate": 0.0,
+      "n_iterations_to_success_distribution": {
+        "1": 0,
+        "2": 0,
+        "3": 0
+      },
+      "MeanIterationsToSuccess": null,
+      "MeanCED_declared_total": 0.0,
+      "MeanCED_executed_total": 0.0,
+      "MeanRepairCost": 0.6000000000000001,
+      "MeanRuntimeCost_s": 183.2556521097819,
+      "MeanInputTokens": 2092.0,
+      "MeanOutputTokens": 7812.666666666667,
+      "MeanTotalTokens": 9904.666666666666,
+      "n_failure_to_success": 0
+    },
+    "M2_KQPOnly": {},
+    "M3_SolverKQP": {}
   }
 }

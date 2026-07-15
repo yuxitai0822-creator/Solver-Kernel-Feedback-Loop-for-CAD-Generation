@@ -1,0 +1,70 @@
+{
+  "declared": {
+    "sample_id": "101427_a9bcb09c_0001",
+    "trace_type": "declared",
+    "operations": [
+      {
+        "op_id": "op_001",
+        "op_type": "sketch_rectangular_frame",
+        "role": "base_profile",
+        "input": null,
+        "params": {
+          "center": [
+            5.0,
+            5.0
+          ],
+          "inner_height": 550.0,
+          "inner_width": 1930.0,
+          "outer_height": 600.0,
+          "outer_width": 1980.0
+        },
+        "status": "declared"
+      },
+      {
+        "op_id": "op_002",
+        "op_type": "extrude",
+        "role": "base_body",
+        "input": "op_001",
+        "params": {
+          "direction": "+normal",
+          "distance": 37.5,
+          "extent_type": "one_side",
+          "operation": "new_body"
+        },
+        "status": "declared"
+      },
+      {
+        "op_id": "op_003",
+        "op_type": "export_step",
+        "role": null,
+        "input": "op_002",
+        "params": {
+          "path": "101427_a9bcb09c_0001.step"
+        },
+        "status": "declared"
+      }
+    ]
+  },
+  "executed": {
+    "sample_id": "101427_a9bcb09c_0001",
+    "trace_type": "executed",
+    "operations": [
+      {
+        "op_id": "op_001",
+        "op_type": "sketch_rectangular_frame",
+        "runtime_status": "success"
+      },
+      {
+        "op_id": "op_002",
+        "op_type": "extrude",
+        "runtime_status": "success"
+      },
+      {
+        "op_id": "op_003",
+        "op_type": "export_step",
+        "runtime_status": "success"
+      }
+    ],
+    "failed_at": null
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "iter": 0,
+  "phase": "initial",
+  "ir_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_00\\IR_t.json",
+  "ir_t1_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_00\\IR_t1.json",
+  "step_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_00\\100243_9fb796fe_0005.step",
+  "script_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_00\\generated_script.py",
+  "adaptor_trace_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_00\\adaptor_trace_t.json",
+  "solver_result_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_00\\solver_result_t.json",
+  "kqp_result_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_00\\kqp_result_t.json",
+  "ced_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_00\\ced_t_to_t_plus_1.json",
+  "agent_prompt_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_00\\agent_prompt_t.txt",
+  "agent_response_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_00\\agent_response_t.txt",
+  "runtime_log_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_00\\runtime_log_t.json",
+  "token_usage_path": "experiments\\results\\M1_SolverOnly\\100243_9fb796fe_0005\\iter_00\\token_usage_t.json",
+  "agent_status": "called_success",
+  "kqp_status": "unknown",
+  "solver_status_at_iter": "ran",
+  "ir_was_modified_by_agent": false,
+  "wallclock_sec": 63.61855936050415,
+  "stage_timings_sec": {
+    "adaptor": 6.667639493942261,
+    "solver": 0.9787542819976807,
+    "kqp": 0.0,
+    "agent": 55.92275595664978,
+    "other": 0.0
+  }
+}

@@ -1,0 +1,7 @@
+Compiling 46 clean samples...
+Clean: 43/46 compiled + adaptor OK
+Compiling negatives from task5 adaptor summary (132 reconstructable)...
+Negative: 129/132 compiled OK, 103 repair-eligible
+
+Summary → D:\PythonProgramming\CAD Generation\Constraint-grounded agentic CAD generation\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\experiments\history2ir\reports\compile_summary.json
+Manifest → D:\PythonProgramming\CAD Generation\Constraint-grounded agentic CAD generation\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\experiments\history2ir\reports\repair_eligible_manifest.json
