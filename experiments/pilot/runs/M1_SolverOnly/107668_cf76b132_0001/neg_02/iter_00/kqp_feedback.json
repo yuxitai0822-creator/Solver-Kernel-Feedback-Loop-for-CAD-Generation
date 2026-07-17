@@ -1,0 +1,122 @@
+{
+  "sample_id": "107668_cf76b132_0001",
+  "kqp_schema_version": "kqp_instance_v0.2",
+  "step_file": "experiments\\pilot\\runs\\M1_SolverOnly\\107668_cf76b132_0001\\neg_02\\iter_00\\107668_cf76b132_0001.step",
+  "overall_status": "fail",
+  "summary": {
+    "total_queries": 9,
+    "passed_queries": 6,
+    "failed_queries": 3,
+    "error_queries": 0
+  },
+  "query_results": [
+    {
+      "query_id": "q_body_count",
+      "intent": "body_count",
+      "status": "pass",
+      "expected": 1,
+      "actual": 1,
+      "tolerance": 0,
+      "error": 0,
+      "source_field": "$.target.body_count",
+      "feedback": null
+    },
+    {
+      "query_id": "q_bbox_u",
+      "intent": "bbox_size",
+      "status": "fail",
+      "expected": 265.0,
+      "actual": 331.25,
+      "tolerance": 0.05,
+      "error": 66.25,
+      "source_field": "$.solid_bodies[0].dimensions.profiles[0].outer_radius.value (computed: 2*r)",
+      "feedback": {
+        "error_type": "dimension_mismatch",
+        "message": "Expected bbox u-size 265.0mm (2*r), got 331.2500002mm."
+      }
+    },
+    {
+      "query_id": "q_bbox_v",
+      "intent": "bbox_size",
+      "status": "fail",
+      "expected": 265.0,
+      "actual": 331.25,
+      "tolerance": 0.05,
+      "error": 66.25,
+      "source_field": "$.solid_bodies[0].dimensions.profiles[0].outer_radius.value (computed: 2*r)",
+      "feedback": {
+        "error_type": "dimension_mismatch",
+        "message": "Expected bbox v-size 265.0mm (2*r), got 331.2500002mm."
+      }
+    },
+    {
+      "query_id": "q_bbox_w",
+      "intent": "bbox_size",
+      "status": "pass",
+      "expected": 100.0,
+      "actual": 100.0,
+      "tolerance": 0.01,
+      "error": 0.0,
+      "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+      "feedback": null
+    },
+    {
+      "query_id": "q_outer_radius",
+      "intent": "cylinder_radius",
+      "status": "fail",
+      "expected": 132.5,
+      "actual": 165.625,
+      "tolerance": 0.01,
+      "error": 33.125,
+      "source_field": "$.solid_bodies[0].dimensions.profiles[0].outer_radius.value",
+      "feedback": {
+        "error_type": "dimension_mismatch",
+        "message": "Expected outer cylinder radius 132.5mm, got 165.625mm."
+      }
+    },
+    {
+      "query_id": "q_inner_radius",
+      "intent": "cylinder_radius",
+      "status": "pass",
+      "expected": 75.0,
+      "actual": 75.0,
+      "tolerance": 0.01,
+      "error": 0.0,
+      "source_field": "$.solid_bodies[0].dimensions.profiles[0].inner_radius.value",
+      "feedback": null
+    },
+    {
+      "query_id": "q_void_count",
+      "intent": "through_void_count",
+      "status": "pass",
+      "expected": 1,
+      "actual": 1,
+      "tolerance": 0,
+      "error": 0,
+      "source_field": "$.solid_bodies[0].profiles[0].rings[*].role=='inner' count",
+      "feedback": null
+    },
+    {
+      "query_id": "q_is_solid",
+      "intent": "is_solid",
+      "status": "pass",
+      "expected": true,
+      "actual": true,
+      "tolerance": null,
+      "error": 0,
+      "source_field": "(implicit: valid extrude implies solid)",
+      "feedback": null
+    },
+    {
+      "query_id": "q_occt_valid",
+      "intent": "occt_valid",
+      "status": "pass",
+      "expected": true,
+      "actual": true,
+      "tolerance": null,
+      "error": 0,
+      "source_field": "(implicit)",
+      "feedback": null
+    }
+  ]
+}

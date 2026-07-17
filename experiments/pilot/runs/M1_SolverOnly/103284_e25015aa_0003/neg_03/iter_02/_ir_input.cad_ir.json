@@ -1,0 +1,51 @@
+{
+  "coordinate_system": {
+    "front_axis": "y",
+    "right_axis": "x",
+    "up_axis": "z"
+  },
+  "metadata": {
+    "comments": "Changed sketch_annulus to sketch_circle to match design plan's single solid disk body and removed unconsumed sketch causing solver conflict.",
+    "source": "repair"
+  },
+  "operations": [
+    {
+      "op_id": "sk_714de298",
+      "op_type": "sketch_circle",
+      "params": {
+        "center": [
+          16.9947,
+          17.9986
+        ],
+        "radius": 25.4
+      },
+      "plane": "XY",
+      "role": "base_profile"
+    },
+    {
+      "input": "sk_714de298",
+      "op_id": "ft_716031ee",
+      "op_type": "extrude",
+      "params": {
+        "direction": "+normal",
+        "distance": 8.89,
+        "extent_type": "one_side",
+        "operation": "new_body",
+        "taper_angle": 0
+      },
+      "role": "base_body"
+    },
+    {
+      "input": "ft_716031ee",
+      "op_id": "op_export_step",
+      "op_type": "export_step",
+      "params": {
+        "path": "103284_e25015aa_0003.step"
+      },
+      "role": "export"
+    }
+  ],
+  "sample_id": "103284_e25015aa_0003",
+  "schema_version": "cad_ir_v0.1",
+  "unit": "mm"
+}

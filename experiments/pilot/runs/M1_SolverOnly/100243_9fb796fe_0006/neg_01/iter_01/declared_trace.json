@@ -1,0 +1,57 @@
+{
+  "sample_id": "100243_9fb796fe_0006",
+  "trace_type": "declared",
+  "operations": [
+    {
+      "op_id": "sk_3d2c7500",
+      "op_type": "sketch_polygon",
+      "role": "base_profile",
+      "input": null,
+      "params": {
+        "vertices": [
+          [
+            -582.782,
+            -139.4015
+          ],
+          [
+            -563.782,
+            -139.4015
+          ],
+          [
+            -563.782,
+            -120.4015
+          ],
+          [
+            -582.782,
+            -120.4015
+          ]
+        ]
+      },
+      "status": "declared"
+    },
+    {
+      "op_id": "ft_3d87fc64",
+      "op_type": "extrude",
+      "role": "base_body",
+      "input": "sk_3d2c7500",
+      "params": {
+        "direction": "+normal",
+        "distance": 195.0,
+        "extent_type": "one_side",
+        "operation": "new_body",
+        "taper_angle": 0
+      },
+      "status": "declared"
+    },
+    {
+      "op_id": "op_export_step",
+      "op_type": "export_step",
+      "role": "export",
+      "input": "ft_3d87fc64",
+      "params": {
+        "path": "100243_9fb796fe_0006.step"
+      },
+      "status": "declared"
+    }
+  ]
+}

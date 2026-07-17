@@ -1,0 +1,41 @@
+{
+  "iter": 0,
+  "phase": "initial",
+  "ir_path": "experiments\\pilot\\runs\\M0_NoFeedback\\102525_06a3094b_0000\\neg_01\\iter_00\\IR_t.json",
+  "ir_t1_path": null,
+  "step_path": "experiments\\pilot\\runs\\M0_NoFeedback\\102525_06a3094b_0000\\neg_01\\iter_00\\102525_06a3094b_0000.step",
+  "script_path": "experiments\\pilot\\runs\\M0_NoFeedback\\102525_06a3094b_0000\\neg_01\\iter_00\\generated_script.py",
+  "solver_feedback_path": "experiments\\pilot\\runs\\M0_NoFeedback\\102525_06a3094b_0000\\neg_01\\iter_00\\solver_feedback.json",
+  "kqp_feedback_path": "experiments\\pilot\\runs\\M0_NoFeedback\\102525_06a3094b_0000\\neg_01\\iter_00\\kqp_feedback.json",
+  "agent_request_path": null,
+  "agent_response_path": null,
+  "timing_path": "experiments\\pilot\\runs\\M0_NoFeedback\\102525_06a3094b_0000\\neg_01\\iter_00\\timing.json",
+  "token_usage_path": null,
+  "ced_path": null,
+  "agent_status": "not_called_iter_0",
+  "action": null,
+  "pipeline_valid": false,
+  "pipeline_valid_breakdown": {
+    "compile": true,
+    "execute": true,
+    "step_export": false,
+    "occt_load": false
+  },
+  "solver_status": "under_constrained",
+  "solver_acceptable": true,
+  "kqp_pass": false,
+  "kqp_failed_query_ids": [
+    "q_bbox_w"
+  ],
+  "success": false,
+  "strict_success": false,
+  "ir_was_modified_by_agent": false,
+  "stop_rule": null,
+  "wallclock_sec": 7.399806499481201,
+  "stage_timings_sec": {
+    "adaptor": 5.15464186668396,
+    "solver": 0.01017618179321289,
+    "kqp": 2.2130050659179688,
+    "agent": 0.0
+  }
+}

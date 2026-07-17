@@ -9,14 +9,14 @@
     "after": 97.536
   },
   "ir_delta": {
-    "operation_id": null,
-    "field": null,
-    "before": null,
-    "after": null
+    "operation_id": "sk_cbb87e52",
+    "field": "height",
+    "before": 1219.2,
+    "after": 975.36
   },
-  "target_operation_match": false,
-  "target_field_match": false,
-  "before_value_match": false,
-  "after_value_match": false,
-  "delta_consistent": false
+  "target_operation_match": true,
+  "target_field_match": true,
+  "before_value_match": true,
+  "after_value_match": true,
+  "delta_consistent": true
 }

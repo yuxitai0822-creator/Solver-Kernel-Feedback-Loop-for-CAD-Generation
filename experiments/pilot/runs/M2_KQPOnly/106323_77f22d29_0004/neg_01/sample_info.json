@@ -1,0 +1,14 @@
+{
+  "design_plan_path": "DesignPlan\\compiler\\instances_v6\\106323_77f22d29_0004.design_plan.json",
+  "initial_ir_path": "cad_ir\\samples\\manual_ir_examples\\106323_77f22d29_0004.cad_ir.json",
+  "initial_step_path": "Reconstruction_results\\106323_77f22d29_0004\\generated.step",
+  "kqp_instance_path": "kqp\\outputs\\compiler_v0.1\\106323_77f22d29_0004.kqp_instance.json",
+  "perturbation_meta_path": "task5_negative_perturbation\\perturbations\\106323_77f22d29_0004\\neg_01\\perturbation_meta.json",
+  "perturbed_history_path": "task5_negative_perturbation\\perturbations\\106323_77f22d29_0004\\neg_01\\106323_77f22d29_0004_perturbed.json",
+  "sample_id": "106323_77f22d29_0004",
+  "negative_id": "neg_01",
+  "source": "task5_perturbed_history",
+  "perturbation_type": null,
+  "perturbation_operator": "E5_extent_type_change",
+  "perturbation_target_intent": "symmetric_about_plane"
+}

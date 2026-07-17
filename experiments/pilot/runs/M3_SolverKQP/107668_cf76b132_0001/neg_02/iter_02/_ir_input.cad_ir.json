@@ -1,0 +1,52 @@
+{
+  "coordinate_system": {
+    "front_axis": "y",
+    "right_axis": "x",
+    "up_axis": "z"
+  },
+  "metadata": {
+    "comments": "Fixed outer_radius from 165.625 to 132.5 to match design plan and pass bbox/radius validation queries.",
+    "source": "repair"
+  },
+  "operations": [
+    {
+      "op_id": "sk_d27fbc76",
+      "op_type": "sketch_annulus",
+      "params": {
+        "center": [
+          0.0,
+          0.0
+        ],
+        "inner_radius": 75.0,
+        "outer_radius": 132.5
+      },
+      "plane": "XY",
+      "role": "base_profile"
+    },
+    {
+      "input": "sk_d27fbc76",
+      "op_id": "ft_d2822d8a",
+      "op_type": "extrude",
+      "params": {
+        "direction": "+normal",
+        "distance": 100.0,
+        "extent_type": "one_side",
+        "operation": "new_body",
+        "taper_angle": 0
+      },
+      "role": "base_body"
+    },
+    {
+      "input": "ft_d2822d8a",
+      "op_id": "op_export_step",
+      "op_type": "export_step",
+      "params": {
+        "path": "107668_cf76b132_0001.step"
+      },
+      "role": "export"
+    }
+  ],
+  "sample_id": "107668_cf76b132_0001",
+  "schema_version": "cad_ir_v0.1",
+  "unit": "mm"
+}

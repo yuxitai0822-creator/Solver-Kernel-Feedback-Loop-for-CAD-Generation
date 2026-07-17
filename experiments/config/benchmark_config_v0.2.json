@@ -1,0 +1,149 @@
+{
+  "schema_version": "benchmark_config_v0.2",
+  "experiment_contract": "doc/experiment_contract_v0.1.md (sections 3, 4)",
+  "population": {
+    "clean_reconstruction_set": "Reconstruction_results/clean_reconstruction_set.json",
+    "perturbations_root": "task5_negative_perturbation/perturbations",
+    "eligible_negatives_manifest": "experiments/history2ir/reports/repair_eligible_manifest.json",
+    "n_clean": 46,
+    "n_eligible_negatives": 104
+  },
+  "runtime": {
+    "max_iterations": 3,
+    "llm_timeout_seconds": 120,
+    "llm_model": "glm-5.1",
+    "llm_temperature": 0.0,
+    "max_tokens": 4096,
+    "verify_repair_subprocess_per_iter": true
+  },
+  "metrics": {
+    "success_definition": "Success(C) = PipelineValid(C) AND SolverValid(C) AND KQPSamplePass(C)",
+    "solver_valid_states": ["fully_constrained", "under_constrained"],
+    "pipeline_valid_stages": ["compile", "execute", "step_export", "occt_load"],
+    "repair_cost_formula": "SUM(ced_declared) + 0.1 * n_execution + 0.1 * n_verification"
+  },
+  "methods": [
+    {
+      "id": "M0_NoFeedback",
+      "name": "No (diagnostic) Feedback — pipeline only",
+      "feedback_channels": ["pipeline"],
+      "run_solver_feedback": true,
+      "run_kqp_feedback": true,
+      "inject_solver_feedback": false,
+      "inject_kqp_feedback": false,
+      "use_fast_path": false,
+      "description": "M0: pipeline result is the shared base. Solver/KQP always run for Success computation, but are NOT injected into the agent prompt."
+    },
+    {
+      "id": "M1_SolverOnly",
+      "name": "Solver Feedback Only — pipeline + solver",
+      "feedback_channels": ["pipeline", "solver"],
+      "run_solver_feedback": true,
+      "run_kqp_feedback": true,
+      "inject_solver_feedback": true,
+      "inject_kqp_feedback": false,
+      "use_fast_path": false,
+      "description": "M1: pipeline + solver injected. KQP runs for Success computation but is NOT injected."
+    },
+    {
+      "id": "M2_KQPOnly",
+      "name": "KQP Feedback Only — pipeline + kqp",
+      "feedback_channels": ["pipeline", "kqp"],
+      "run_solver_feedback": true,
+      "run_kqp_feedback": true,
+      "inject_solver_feedback": false,
+      "inject_kqp_feedback": true,
+      "use_fast_path": false,
+      "description": "M2: pipeline + KQP injected. Solver runs for Success computation but is NOT injected."
+    },
+    {
+      "id": "M3_SolverKQP",
+      "name": "Solver + KQP Feedback — full diagnostics",
+      "feedback_channels": ["pipeline", "solver", "kqp"],
+      "run_solver_feedback": true,
+      "run_kqp_feedback": true,
+      "inject_solver_feedback": true,
+      "inject_kqp_feedback": true,
+      "use_fast_path": false,
+      "description": "M3: full diagnostics — pipeline + solver + KQP all injected."
+    }
+  ],
+  "verification_pipeline_stages": [
+    "adaptor_compile_and_render",
+    "step_export",
+    "solver_feedback",
+    "kqp_feedback"
+  ],
+  "stop_rules": {
+    "S1": "agent outputs action=no_change",
+    "S2": "IR_{t+1} == IR_t (no actual change)",
+    "S3": "Success(C) = True (efficiency cutoff; not fed back to agent)",
+    "S4": "max_iter=3 reached"
+  },
+  "info_leakage_boundary": {
+    "FORBIDDEN_in_prompt_for_all_methods": [
+      "clean_ir",
+      "gt_history_json",
+      "perturbation_metadata",
+      "cross_method_feedback"
+    ]
+  },
+  "artifact_protocol": {
+    "per_iter": [
+      "IR_t.json",
+      "IR_t1.json",
+      "ced.json",
+      "solver_feedback.json",
+      "kqp_feedback.json",
+      "generated_script.py",
+      "generated.step",
+      "adapter_report.json",
+      "declared_trace.json",
+      "executed_trace.json",
+      "stdout.txt",
+      "stderr.txt",
+      "agent_request.json",
+      "agent_response.json",
+      "timing.json"
+    ],
+    "per_sample": [
+      "run_result.json",
+      "sample_info.json",
+      "repair_summary.json"
+    ]
+  },
+  "secondary_analysis": {
+    "name": "Stop-Bar Sensitivity",
+    "section": "experiment_contract §13",
+    "trigger": "always (post-hoc replay on M3 trajectory)",
+    "bars": {
+      "B0": "PipelineValid (weakest)",
+      "B1": "PipelineValid AND SolverValid",
+      "B2": "PipelineValid AND KQPSamplePass",
+      "B3": "PipelineValid AND SolverValid AND KQPSamplePass (= §4.2 main stop criterion)"
+    },
+    "monotonicity": "B0 subseteq B1 subseteq B3; B0 subseteq B2 subseteq B3; B1, B2 incomparable",
+    "replay_script": "experiments/replay_threshold_trajectories.py",
+    "outputs": [
+      "experiments/reports/threshold_sensitivity_analysis.json",
+      "experiments/reports/threshold_sensitivity_report.md"
+    ],
+    "n0_n3_conditional_trigger": "B0 to B3 quality gap >= 0.10 (default); overridable via --gap-trigger",
+    "n0_n3_decision_gate": "Run N0-N3 ONLY IF paper explicitly needs deployment-cost numbers (§13.7)",
+    "n0_n3_reference": [
+      {"group": "N0", "solver_runs": false, "kqp_runs": false, "feedback": ["pipeline"], "stop_bar": "P"},
+      {"group": "N1", "solver_runs": true, "kqp_runs": false, "feedback": ["pipeline", "solver"], "stop_bar": "P AND S"},
+      {"group": "N2", "solver_runs": false, "kqp_runs": true, "feedback": ["pipeline", "kqp"], "stop_bar": "P AND K"},
+      {"group": "N3", "solver_runs": true, "kqp_runs": true, "feedback": ["pipeline", "solver", "kqp"], "stop_bar": "P AND S AND K"}
+    ]
+  },
+  "llm_connectivity": {
+    "probe_function": "experiments.run_benchmark_v0.2.probe_llm_connectivity",
+    "default_proxy_mode": "bypass_system_proxy",
+    "env_to_enable_proxy": "REQUESTS_USE_PROXY=1",
+    "probe_runs_before_main": true,
+    "failure_action": "abort_with_sys_exit(2)",
+    "skip_flag": "--skip-probe",
+    "rationale": "Prevents silent offline-fallback failures caused by stale system proxy (e.g. 127.0.0.1:7890 Clash down). Without probe, the script silently uses _offline_agent and produces zero-token artifacts that look correct but contain no LLM signal."
+  }
+}

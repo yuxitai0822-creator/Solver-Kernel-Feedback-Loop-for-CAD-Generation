@@ -1,0 +1,91 @@
+{
+  "ced_text": {
+    "raw": 267,
+    "normalized": 0.30067567567567566,
+    "text_a_len": 888,
+    "text_b_len": 786
+  },
+  "ced_declared": {
+    "raw": 12.0,
+    "normalized": 1.0,
+    "weight_a": 6,
+    "weight_b": 6,
+    "base": 6,
+    "n_ops_a": 3,
+    "n_ops_b": 3,
+    "available": true,
+    "breakdown": {
+      "n_matches_added": 1,
+      "n_matches_deleted": 1,
+      "n_matches_matched": 2,
+      "by_kind": {
+        "extrude": {
+          "added": 0,
+          "deleted": 0,
+          "matched": 1,
+          "cost": 4.5
+        },
+        "export_step": {
+          "added": 0,
+          "deleted": 0,
+          "matched": 1,
+          "cost": 3.5
+        },
+        "sketch_polygon": {
+          "added": 0,
+          "deleted": 1,
+          "matched": 0,
+          "cost": 2.0
+        },
+        "sketch_rectangle": {
+          "added": 1,
+          "deleted": 0,
+          "matched": 0,
+          "cost": 2.0
+        }
+      },
+      "match_pairs": [
+        {
+          "match_kind": "matched",
+          "match_by": "op_type:extrude",
+          "a_op_id": "ft_7493fb24",
+          "b_op_id": "op_002",
+          "a_op_type": "extrude",
+          "b_op_type": "extrude",
+          "cost": 4.5
+        },
+        {
+          "match_kind": "matched",
+          "match_by": "op_type:export_step",
+          "a_op_id": "op_export_step",
+          "b_op_id": "op_003",
+          "a_op_type": "export_step",
+          "b_op_type": "export_step",
+          "cost": 3.5
+        },
+        {
+          "match_kind": "deleted",
+          "match_by": "unmatched_a",
+          "a_op_id": "sk_748a1092",
+          "b_op_id": null,
+          "a_op_type": "sketch_polygon",
+          "b_op_type": null,
+          "cost": 2.0
+        },
+        {
+          "match_kind": "added",
+          "match_by": "unmatched_b",
+          "a_op_id": null,
+          "b_op_id": "op_001",
+          "a_op_type": null,
+          "b_op_type": "sketch_rectangle",
+          "cost": 2.0
+        }
+      ]
+    }
+  },
+  "ced_executed": null,
+  "primary_metric": "CED_declared",
+  "primary_value": 1.0,
+  "primary_raw": 12.0
+}

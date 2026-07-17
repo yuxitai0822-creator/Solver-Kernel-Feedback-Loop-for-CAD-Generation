@@ -1,0 +1,54 @@
+{
+  "bars": [
+    {
+      "bar": "B0",
+      "n_samples": 1,
+      "own_bar_stop_rate": 0.0,
+      "mean_stop_iter": null,
+      "common_bar_quality": 0.0,
+      "quality_gap_vs_B3": 0.0,
+      "mean_token_savings_vs_B3": 0.0
+    },
+    {
+      "bar": "B1",
+      "n_samples": 1,
+      "own_bar_stop_rate": 0.0,
+      "mean_stop_iter": null,
+      "common_bar_quality": 0.0,
+      "quality_gap_vs_B3": 0.0,
+      "mean_token_savings_vs_B3": 0.0
+    },
+    {
+      "bar": "B2",
+      "n_samples": 1,
+      "own_bar_stop_rate": 0.0,
+      "mean_stop_iter": null,
+      "common_bar_quality": 0.0,
+      "quality_gap_vs_B3": 0.0,
+      "mean_token_savings_vs_B3": 0.0
+    },
+    {
+      "bar": "B3",
+      "n_samples": 1,
+      "own_bar_stop_rate": 0.0,
+      "mean_stop_iter": null,
+      "common_bar_quality": 0.0,
+      "quality_gap_vs_B3": 0.0,
+      "mean_token_savings_vs_B3": 0.0
+    }
+  ],
+  "interpretation": {
+    "b0_to_b3_quality_gap": 0.0,
+    "b1_minus_b2_quality_gap": 0.0,
+    "verdict": "small_gap",
+    "triggers_n0_n3": false,
+    "caveat": "M3 trajectory is full-feedback; weaker-bar deployment quality ≤ this common-bar quality (upper bound per §13.6)."
+  },
+  "n_samples": 1,
+  "n_skipped": 0,
+  "m3_root": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\results_v0.2\\M3_SolverKQP",
+  "n0_n3_status": {
+    "triggered": false,
+    "reason": "B0→B3 gap < 0.10; §13 alone suffices."
+  }
+}

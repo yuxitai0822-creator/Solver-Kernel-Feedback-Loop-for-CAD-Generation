@@ -152,6 +152,11 @@ def _parse_fillet(eid: str, e: dict) -> dict:
 def extract_sketches(entities: dict) -> list[dict]:
     """Find all Sketch entities and normalize them.
 
+    V0.1.3 fix: detect when 2 SEPARATE profiles (each a single loop)
+    together form a frame (one outer + one inner rectangle).  In that
+    case the classifier returns 'rectangular_frame' (matching
+    BehaviourV0.1's 'frame_or_polygon_with_holes' shape).
+
     Returns list of:
         {sketch_id, name, profile_uuid, profile_type, geometry_count, ...}
     """
@@ -161,11 +166,31 @@ def extract_sketches(entities: dict) -> list[dict]:
             continue
         profiles = e.get("profiles", {}) or {}
         first_pid = next(iter(profiles.keys()), None) if profiles else None
+        ptype = _classify_profile(profiles, entities)
+        # Detect 2 separate profile loops each with 1 loop, all line-only.
+        # This means the sketch has outer rect + inner rect but in
+        # different profiles — treat as rectangular_frame.
+        if ptype in ("polygon", "rectangle_or_polygon", "unknown", "mixed(Line3D)") and len(profiles) >= 2:
+            line_loops = []
+            for pid, prof in profiles.items():
+                if len(prof.get("loops", [])) == 1:
+                    line_types = set()
+                    for pc in prof["loops"][0].get("profile_curves", []):
+                        cid = pc.get("curve")
+                        for ent in entities.values():
+                            if ent.get("type") == "Sketch":
+                                c = ent.get("curves", {}).get(cid)
+                                if c:
+                                    line_types.add(c.get("type"))
+                    if line_types and line_types <= {"SketchLine"}:
+                        line_loops.append((pid, prof))
+            if len(line_loops) >= 2:
+                ptype = "rectangular_frame"
         out.append({
             "sketch_id": eid,
             "name": e.get("name"),
             "profile_uuid": first_pid,
-            "profile_type": _classify_profile(profiles, entities),
+            "profile_type": ptype,
             "geometry_count": len(e.get("curves", {}) or {}),
             "constraint_count": len(e.get("constraints", {}) or {}),
             "points": _summarize_points(e),
@@ -174,23 +199,50 @@ def extract_sketches(entities: dict) -> list[dict]:
 
 
 def _classify_profile(profiles: dict, entities: dict) -> str:
-    """Classify the dominant profile type from a sketch's geometry."""
+    """Classify the dominant profile type from a sketch's geometry.
+
+    V0.1.1 fix: distinguish annulus (circles) from rectangular_frame
+    (lines) by inspecting the actual curve types in the loops, not just
+    the loop count.
+    """
     if not profiles:
         return "unknown"
     first_pid = next(iter(profiles.keys()))
     profile = profiles.get(first_pid, {})
-    # Walk loops to detect shape
+
     inner_count = 0
+    all_curve_types: set[str] = set()
+    # Walk all loops' profile_curves and resolve curve types via entities
     for loop in profile.get("loops", []):
         if not loop.get("is_outer", True):
             inner_count += 1
-    if not inner_count:
-        # Detect rect / circle / polygon
-        # Simpler: use the geometry types in this sketch
-        sketch_id = profile.get("sketch")  # not always present
-        # walk profile.curves (if any)
+        for pc in loop.get("profile_curves", []):
+            curve_uuid = pc.get("curve")
+            if curve_uuid:
+                # Look up the curve's type by scanning all entities
+                for ent in entities.values():
+                    if ent.get("type") == "Sketch":
+                        c = ent.get("curves", {}).get(curve_uuid)
+                        if c:
+                            all_curve_types.add(c.get("type", "unknown"))
+                            break
+            # Also check the top-level curves dict (legacy)
+            if curve_uuid in entities.get("curves", {}):
+                all_curve_types.add(entities["curves"][curve_uuid].get("type", "unknown"))
+
+    has_lines = "SketchLine" in all_curve_types
+    has_circles = "SketchCircle" in all_curve_types
+
+    if inner_count == 0:
         return _shape_from_profile_curves(profile, entities)
-    return "annulus" if inner_count == 1 else "frame_or_polygon_with_holes"
+    # inner_count >= 1: could be annulus or frame
+    if has_circles and not has_lines:
+        return "annulus" if inner_count == 1 else "frame_or_polygon_with_holes"
+    if has_lines and not has_circles:
+        return "rectangular_frame"
+    if has_lines and has_circles:
+        return "polygon"
+    return "annulus"  # fallback (should not happen)
 
 
 def _shape_from_profile_curves(profile: dict, entities: dict) -> str:

@@ -1,0 +1,100 @@
+{
+  "phase": "Pilot v0.1 re-read after B-001 + B-004 fix",
+  "date": "2026-07-16",
+  "bugs_fixed_applied": [
+    "B-001 (S1>S3>S2 stop-rule)",
+    "B-004 (pipeline_valid 'pass'/'success')"
+  ],
+  "methods": {
+    "M0_NoFeedback": {
+      "n_samples": 18,
+      "n_success": 10,
+      "Success@1": 0.16666666666666666,
+      "Success@2": 0.16666666666666666,
+      "Success@3": 0.5555555555555556,
+      "stop_distribution": {
+        "S3": 10,
+        "S4": 7,
+        "S2": 1
+      }
+    },
+    "M1_SolverOnly": {
+      "n_samples": 18,
+      "n_success": 10,
+      "Success@1": 0.16666666666666666,
+      "Success@2": 0.16666666666666666,
+      "Success@3": 0.5555555555555556,
+      "stop_distribution": {
+        "S3": 10,
+        "S2": 2,
+        "S4": 6
+      }
+    },
+    "M2_KQPOnly": {
+      "n_samples": 18,
+      "n_success": 10,
+      "Success@1": 0.16666666666666666,
+      "Success@2": 0.16666666666666666,
+      "Success@3": 0.5555555555555556,
+      "stop_distribution": {
+        "S3": 10,
+        "S4": 7,
+        "S2": 1
+      }
+    },
+    "M3_SolverKQP": {
+      "n_samples": 18,
+      "n_success": 10,
+      "Success@1": 0.16666666666666666,
+      "Success@2": 0.16666666666666666,
+      "Success@3": 0.5555555555555556,
+      "stop_distribution": {
+        "S3": 10,
+        "S4": 7,
+        "S2": 1
+      }
+    }
+  },
+  "kqp_visible_stratum_8": {
+    "M0_NoFeedback": {
+      "n": 8,
+      "n_success": 6,
+      "Success@1": 0.125,
+      "Success@3": 0.75,
+      "stop_distribution": {
+        "S3": 6,
+        "S4": 2
+      }
+    },
+    "M1_SolverOnly": {
+      "n": 8,
+      "n_success": 6,
+      "Success@1": 0.125,
+      "Success@3": 0.75,
+      "stop_distribution": {
+        "S3": 6,
+        "S4": 2
+      }
+    },
+    "M2_KQPOnly": {
+      "n": 8,
+      "n_success": 6,
+      "Success@1": 0.125,
+      "Success@3": 0.75,
+      "stop_distribution": {
+        "S3": 6,
+        "S4": 2
+      }
+    },
+    "M3_SolverKQP": {
+      "n": 8,
+      "n_success": 6,
+      "Success@1": 0.125,
+      "Success@3": 0.75,
+      "stop_distribution": {
+        "S3": 6,
+        "S4": 2
+      }
+    }
+  }
+}

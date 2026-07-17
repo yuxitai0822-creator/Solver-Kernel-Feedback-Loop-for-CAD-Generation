@@ -1,0 +1,76 @@
+{
+  "ced_text": {
+    "raw": 130,
+    "normalized": 0.1473922902494331,
+    "text_a_len": 783,
+    "text_b_len": 882
+  },
+  "ced_declared": {
+    "raw": 1.0,
+    "normalized": 0.16666666666666666,
+    "weight_a": 6,
+    "weight_b": 6,
+    "base": 6,
+    "n_ops_a": 3,
+    "n_ops_b": 3,
+    "available": true,
+    "breakdown": {
+      "n_matches_added": 0,
+      "n_matches_deleted": 0,
+      "n_matches_matched": 3,
+      "by_kind": {
+        "sketch_annulus": {
+          "added": 0,
+          "deleted": 0,
+          "matched": 1,
+          "cost": 0.0
+        },
+        "extrude": {
+          "added": 0,
+          "deleted": 0,
+          "matched": 1,
+          "cost": 1.0
+        },
+        "export_step": {
+          "added": 0,
+          "deleted": 0,
+          "matched": 1,
+          "cost": 0.0
+        }
+      },
+      "match_pairs": [
+        {
+          "match_kind": "matched",
+          "match_by": "op_id",
+          "a_op_id": "sk_dc38ed94",
+          "b_op_id": "sk_dc38ed94",
+          "a_op_type": "sketch_annulus",
+          "b_op_type": "sketch_annulus",
+          "cost": 0.0
+        },
+        {
+          "match_kind": "matched",
+          "match_by": "op_id",
+          "a_op_id": "ft_dc42b100",
+          "b_op_id": "ft_dc42b100",
+          "a_op_type": "extrude",
+          "b_op_type": "extrude",
+          "cost": 1.0
+        },
+        {
+          "match_kind": "matched",
+          "match_by": "op_id",
+          "a_op_id": "op_export_step",
+          "b_op_id": "op_export_step",
+          "a_op_type": "export_step",
+          "b_op_type": "export_step",
+          "cost": 0.0
+        }
+      ]
+    }
+  },
+  "ced_executed": null,
+  "primary_metric": "CED_declared",
+  "primary_value": 0.16666666666666666,
+  "primary_raw": 1.0
+}

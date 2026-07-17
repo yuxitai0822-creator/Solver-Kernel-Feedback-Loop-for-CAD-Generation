@@ -5,7 +5,7 @@
   "validation": {
     "passed": false,
     "issues": [
-      "could not locate sketch_circle/radius in IR to match perturbation E3_radius_up"
+      "could not locate E3_radius_up → [('sketch_circle', 'radius')] in IR_neg"
     ],
     "found_match": false,
     "target_op_type": "sketch_circle",

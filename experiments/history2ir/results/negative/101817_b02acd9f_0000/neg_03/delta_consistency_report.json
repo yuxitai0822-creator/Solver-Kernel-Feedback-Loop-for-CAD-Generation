@@ -3,12 +3,11 @@
   "negative_id": "neg_03",
   "perturbation_type": "E4_void_remove_one",
   "validation": {
-    "passed": false,
-    "issues": [
-      "could not locate None/None in IR to match perturbation E4_void_remove_one"
-    ],
-    "found_match": false,
-    "target_op_type": null,
-    "target_field": null
+    "passed": true,
+    "issues": [],
+    "found_match": true,
+    "target_op_type": "structural",
+    "target_field": "loops",
+    "bbox_unchanged": true
   }
 }

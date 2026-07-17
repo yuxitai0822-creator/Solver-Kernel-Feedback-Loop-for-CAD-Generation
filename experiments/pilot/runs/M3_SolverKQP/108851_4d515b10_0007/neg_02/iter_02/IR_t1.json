@@ -1,0 +1,52 @@
+{
+  "coordinate_system": {
+    "front_axis": "y",
+    "right_axis": "x",
+    "up_axis": "z"
+  },
+  "metadata": {
+    "comments": "All KQP queries passed and pipeline execution succeeded; no changes required.",
+    "source": "repair"
+  },
+  "operations": [
+    {
+      "op_id": "op_001",
+      "op_type": "sketch_rectangle",
+      "params": {
+        "center": [
+          139.7,
+          25.4
+        ],
+        "height": 50.8,
+        "width": 279.4
+      },
+      "plane": "XY",
+      "role": "base_profile"
+    },
+    {
+      "input": "op_001",
+      "op_id": "op_002",
+      "op_type": "extrude",
+      "params": {
+        "direction": "+normal",
+        "distance": 19.05,
+        "extent_type": "one_side",
+        "operation": "new_body",
+        "taper_angle": 0
+      },
+      "role": "base_body"
+    },
+    {
+      "input": "op_002",
+      "op_id": "op_003",
+      "op_type": "export_step",
+      "params": {
+        "path": "108851_4d515b10_0007.step"
+      },
+      "role": "export"
+    }
+  ],
+  "sample_id": "108851_4d515b10_0007",
+  "schema_version": "cad_ir_v0.1",
+  "unit": "mm"
+}

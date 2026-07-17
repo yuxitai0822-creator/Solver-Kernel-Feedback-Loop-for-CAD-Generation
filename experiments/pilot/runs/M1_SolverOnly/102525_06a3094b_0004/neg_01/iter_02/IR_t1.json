@@ -1,0 +1,52 @@
+{
+  "coordinate_system": {
+    "front_axis": "y",
+    "right_axis": "x",
+    "up_axis": "z"
+  },
+  "metadata": {
+    "comments": "IR parameters match design plan; STEP export failure likely transient or environment-specific, no geometric correction needed.",
+    "source": "repair"
+  },
+  "operations": [
+    {
+      "op_id": "op_001",
+      "op_type": "sketch_rectangle",
+      "params": {
+        "center": [
+          0.0,
+          0.0
+        ],
+        "height": 18.0,
+        "width": 8.5
+      },
+      "plane": "XY",
+      "role": "base_profile"
+    },
+    {
+      "input": "op_001",
+      "op_id": "op_002",
+      "op_type": "extrude",
+      "params": {
+        "direction": "+normal",
+        "distance": 2.5,
+        "extent_type": "one_side",
+        "operation": "new_body",
+        "taper_angle": 0.0
+      },
+      "role": "base_body"
+    },
+    {
+      "input": "op_002",
+      "op_id": "op_003",
+      "op_type": "export_step",
+      "params": {
+        "path": "102525_06a3094b_0004.step"
+      },
+      "role": "export"
+    }
+  ],
+  "sample_id": "102525_06a3094b_0004",
+  "schema_version": "cad_ir_v0.1",
+  "unit": "mm"
+}

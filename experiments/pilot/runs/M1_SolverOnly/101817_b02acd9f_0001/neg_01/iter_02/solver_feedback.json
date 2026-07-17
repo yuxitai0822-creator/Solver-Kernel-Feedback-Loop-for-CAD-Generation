@@ -1,0 +1,27 @@
+{
+  "solve_status": "under_constrained",
+  "severity": "warning",
+  "dof": 28,
+  "return_code": 0,
+  "exception": null,
+  "message": "FreeCAD solve() returned 0",
+  "flags": {
+    "has_conflict": false,
+    "has_redundancy": false,
+    "has_invalid_constraints": false,
+    "has_over_constrained": false,
+    "has_partially_redundant": false,
+    "has_missing_v_h_constraints": false,
+    "has_non_linear_constraints": true,
+    "has_solver_error": false
+  },
+  "non_linear_constraint_ids": [
+    "85d21d0b-e2f9-11ea-b0e5-54bf646e7e1f",
+    "85d24426-e2f9-11ea-a679-54bf646e7e1f"
+  ],
+  "redundant_constraint_ids": [],
+  "conflicting_constraint_ids": [],
+  "malformed_constraint_ids": [],
+  "recompute_status": "success",
+  "status": "ran"
+}

@@ -1,0 +1,113 @@
+{
+  "schema": "bug_db_v0.1",
+  "owner": "execution agent + human reviewer (periodic batch)",
+  "policy": {
+    "intent": "Staging area for bugs surfaced during pilot / benchmark runs.",
+    "review_cycle_cadence": "At every phase boundary (pre-task / pre-full-benchmark / pre-paper-submission).",
+    "rules": [
+      "Every bug must have a reproducer.",
+      "F-protocol severity triggers immediate halt.",
+      "Bugs closed 'fixed-shipped' must include verifying evidence."
+    ]
+  },
+  "bugs": [
+    {
+      "id": "B-001",
+      "title": "S2 stop-rule pre-empts S3 when both fire at same iter",
+      "severity": "major",
+      "category": "F-protocol",
+      "discovered_during": "smoke test M0/M1/M2/M3 with IR-schema protocol",
+      "evidence": "run_benchmark_v0.2.py stop-rule block: S1>S2>S3 ordering caused S2 to fire when ir_t1==ir_current even if Success(C)=True, under-reporting success_at_K.",
+      "contract_violation": true,
+      "status": "fixed-shipped",
+      "decided_at": "2026-07-16T20:30:00+08:00",
+      "decider": "execution agent (user approved fix)",
+      "fix_committed_in": "run_benchmark_v0.2.py:1090-1102 — reordered to S1>S3>S2. Verified: re_read_pilot_results.py shows S3 now fires correctly when success=True."
+    },
+    {
+      "id": "B-002",
+      "title": "Protocol §2.2 'import FreeCAD' pre-flight check unrealisable but solver path works",
+      "severity": "minor",
+      "category": "F-docs",
+      "discovered_during": "pilot_protocol_v0.1.md §2 pre-flight",
+      "evidence": "freecad_sketcher env lacks 'FreeCAD' module (uppercase) but has 'freecad' shim. solver_runner works from cad_subproject1 env in-process.",
+      "contract_violation": false,
+      "status": "open",
+      "decided_at": null,
+      "decider": null
+    },
+    {
+      "id": "B-003",
+      "title": "run_benchmark_v0.2 collapses (sample_id, negative_id) pair — out_dir clash",
+      "severity": "major",
+      "category": "F-correctness",
+      "discovered_during": "Pilot §3.2 M2 launch",
+      "evidence": "run_one_sample used sample_id only for out_dir; multiple negs per sample overwrote each other; aggregate() KeyError.",
+      "contract_violation": false,
+      "status": "fixed-shipped",
+      "decided_at": "2026-07-16T20:30:00+08:00",
+      "decider": "execution agent (user approved fix)",
+      "fix_committed_in": "run_benchmark_v0.2.py: parse_sample_arg() + load_initial_ir() + run_benchmark(samples: list[tuple]) + aggregate error-filter. Verified: 18/18 parseable run_result.json per method, 0 errors."
+    },
+    {
+      "id": "B-004",
+      "title": "_pipeline_valid enum mismatch: adaptor writes 'pass', validator compares 'success'",
+      "severity": "critical",
+      "category": "F-protocol",
+      "discovered_during": "Pilot §4 post-mortem (Success@3=0 across all methods)",
+      "evidence": "adapter_report.json has step_export_status='pass'; _pipeline_valid compared == 'success'. All 72 pilot runs showed pipeline_valid=False despite genuine STEP export success.",
+      "contract_violation": true,
+      "status": "fixed-shipped",
+      "decided_at": "2026-07-16T20:40:00+08:00",
+      "decider": "execution agent (user approved fix)",
+      "fix_committed_in": "run_benchmark_v0.2.py: _is_truthy_status() helper accepting {'success','pass','ok','true'}; _pipeline_valid rewritten. Verified by re_read_pilot_results.py: pipeline_valid now True where adapter succeeded."
+    },
+    {
+      "id": "B-005",
+      "title": "task5 perturbation battery + iter_0 always-Success means agent is NEVER exercised; pipeline_valid=True reveals pilot perturbation battery is too weak",
+      "severity": "major",
+      "category": "F-data",
+      "discovered_during": "Pilot re-read after B-001 + B-004 fix; per-method discrimination collapsed to identical 55.6%",
+      "evidence": "After B-001 + B-004 fixes, re_read_pilot_results.py shows all 4 methods × 18 samples have P=True,S=True,K=True at iter_0 → S3 fires immediately → agent never called → Success@1=Success@3 for all methods. The perturbed IR from task5 battery passes KQP tolerance without repair. Methods are indistinguishable because the agent is never called.",
+      "reproducer": "python experiments/pilot/re_read_pilot_results.py → inspect iter_records_summary: every iter_0 = success=True, stop_reason=stop_S3_success_at_iter_1.",
+      "contract_violation": false,
+      "fix_proposal": "(a) Increase perturbation scale (E1/E2 ×2.0 instead of ×1.5); (b) tighten KQP tolerance in frozen instances; (c) add new perturbation operators that break KQP more aggressively. ~4-6 hours.",
+      "risk_if_kept": "Cannot measure M0≠M1≠M2≠M3 — the ablation's core proposition is untestable on this battery. §6.2 critical check (M0≠M2 on KQP-visible stratum) fails because both are identical.",
+      "status": "obsolete-superseded-by-B-006",
+      "decided_at": "2026-07-16T21:30:00+08:00",
+      "decider": "execution agent",
+      "obsolescence_reason": "Re-read (2026-07-16 21:30) shows the actual blocker is not perturbation strength — it's that 7/8 failures are sketch_annulus samples where the FreeCAD solver_runner returns solve_status='conflicting' + exception='no lines in sketch' because the shim doesn't add concentric constraints for annulus shapes. Agent cannot fix this (it can only change params, not op_type). B-005 was a symptom misdiagnosis; the real bug is B-006 (solver_runner annulus translation).",
+      "replaced_by": "B-006"
+    },
+    {
+      "id": "B-007",
+      "title": "Pilot perturbation battery is dominated by Design-Plan self-diagnosis; KQP feedback channel is structurally redundant",
+      "severity": "major",
+      "category": "F-data",
+      "discovered_during": "Pilot success analysis (10/18 succeeded)",
+      "evidence": "All 7 LLM-repaired successes emit the exact KQP-feedback-expected value, but M0's [FEEDBACK] block contains NO KQP channel — only the pipeline block. The expected value (e.g., 130.0 mm) appears 3 times in the M0 prompt, all in the [DESIGN PLAN] block: extrude.distance_total.value=130.0, dimensions.extrude_distance.value=130.0, and q_span_w: expected=130.0 (KQP query list embedded in DesignPlan.validation_intents). The LLM is reading the Design Plan, NOT the KQP feedback. M0 ≡ M2 ≡ M3 across the pilot because all methods have equal access to the Design Plan; the KQP feedback channel is unused for parameter-value selection on this battery.",
+      "reproducer": "Open M0 agent_request.json for any of the 7 repaired successes; observe that the [FEEDBACK] block contains only the pipeline sub-block (no kqp sub-block) and the KQP expected value is absent from [FEEDBACK] but present in [DESIGN PLAN].",
+      "contract_violation": false,
+      "fix_proposal": "Pilot battery is not a true feedback ablation. To test feedback value, perturbations must exceed the Design Plan's information content: (a) introduce perturbations that the DP cannot directly specify (e.g., a different extrude direction; perturbed tolerance); (b) test cases where the LLM has to reconcile conflicting DP fields; (c) samples with multi-step repairs where one step uses DP and another uses feedback. Otherwise M0 ≡ M2 ≡ M3 ≡ M1 is a structural property, not a feedback-value measurement.",
+      "risk_if_kept": "The current pilot cannot answer the §3.1 RQ1/RQ2/RQ3 (feedback value). All 4 methods are demonstrably equivalent on this battery. The ablation can only measure 'feedback value on perturbations that exceed DP knowledge', which requires perturbation redesign.",
+      "status": "open",
+      "decided_at": null,
+      "decider": null
+    },
+    {
+      "id": "B-006",
+      "title": "solver_runner returns solve_status='conflicting' for sketch_annulus shapes (no concentric constraints generated)",
+      "severity": "critical",
+      "category": "F-data",
+      "discovered_during": "Pilot failure analysis: 7/8 failed samples are sketch_annulus",
+      "evidence": "All 7 sketch_annulus samples in the pilot return solver_feedback.json with: solve_status='conflicting', exception='no lines in sketch', flags.has_solver_error=True, dof=0. The solver_runner.py translates sketch_annulus (2 concentric circles) into FreeCAD geometry but doesn't add Concentric/Equal constraints, so FreeCAD sees two unconstrained circles. Result: SolverValid=False → §4.2 conjunction fails → sample is unfixable regardless of method/agent.",
+      "reproducer": "Run solver_runner on any annulus IR; observe solve_status='conflicting' + exception='no lines in sketch'. Sample list: 102410_f9877a7b_0000/neg_01, /neg_02; 102410_f9877a7b_0012/neg_01, /neg_02; 103284_e25015aa_0003/neg_03; 106323_77f22d29_0004/neg_01; 107668_cf76b132_0001/neg_02.",
+      "contract_violation": false,
+      "fix_proposal": "In Freecadsolver_feedback/core/solver_runner.py, when building the annulus shape: (a) add Sketcher.Constraint('Concentric', circle1, circle2) to enforce concentricity; (b) add Sketcher.Constraint('Radius', circle_outer, radius_value) for both circles so the system is fully-constrained. Expected: dof=0 with solve_status='success' instead of solve_status='conflicting'. ~1-2 hours code + re-test on the 7 annulus samples.",
+      "risk_if_kept": "7/18 pilot samples (and likely ~25-40% of full 104-sample benchmark) are structurally unfixable by the current SolverRunner. The §4.2 Success conjunction always fails on these because SolverValid=False. Cannot distinguish M0 from M1 from M2 from M3 on annulus samples. Pilot cannot test the ablation on these.",
+      "status": "open",
+      "decided_at": null,
+      "decider": null
+    }
+  ]
+}

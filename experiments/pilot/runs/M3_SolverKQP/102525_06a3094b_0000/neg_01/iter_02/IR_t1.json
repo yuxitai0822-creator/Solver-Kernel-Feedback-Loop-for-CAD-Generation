@@ -1,0 +1,52 @@
+{
+  "coordinate_system": {
+    "front_axis": "y",
+    "right_axis": "x",
+    "up_axis": "z"
+  },
+  "metadata": {
+    "comments": "Replaced sketch_polygon with sketch_rectangle to resolve step_export/occt_load failures while preserving dimensions and extrude parameters.",
+    "source": "repair"
+  },
+  "operations": [
+    {
+      "op_id": "sk_44a24774",
+      "op_type": "sketch_rectangle",
+      "params": {
+        "center": [
+          0.0,
+          0.0
+        ],
+        "height": 4.9,
+        "width": 3.9
+      },
+      "plane": "XY",
+      "role": "base_profile"
+    },
+    {
+      "input": "sk_44a24774",
+      "op_id": "ft_44ba150a",
+      "op_type": "extrude",
+      "params": {
+        "direction": "+normal",
+        "distance": 1.55,
+        "extent_type": "one_side",
+        "operation": "new_body",
+        "taper_angle": 0
+      },
+      "role": "base_body"
+    },
+    {
+      "input": "ft_44ba150a",
+      "op_id": "op_export_step",
+      "op_type": "export_step",
+      "params": {
+        "path": "102525_06a3094b_0000.step"
+      },
+      "role": "export"
+    }
+  ],
+  "sample_id": "102525_06a3094b_0000",
+  "schema_version": "cad_ir_v0.1",
+  "unit": "mm"
+}

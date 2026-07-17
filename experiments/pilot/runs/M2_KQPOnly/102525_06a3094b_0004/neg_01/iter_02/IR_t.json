@@ -1,0 +1,64 @@
+{
+  "coordinate_system": {
+    "front_axis": "y",
+    "right_axis": "x",
+    "up_axis": "z"
+  },
+  "metadata": {
+    "comments": "Fixed extrude distance from 3.75 to 2.5 to match design plan and pass bbox_w validation.",
+    "source": "repair"
+  },
+  "operations": [
+    {
+      "op_id": "sk_4b4cc8de",
+      "op_type": "sketch_polygon",
+      "params": {
+        "vertices": [
+          [
+            4.25,
+            9.0
+          ],
+          [
+            -4.25,
+            9.0
+          ],
+          [
+            -4.25,
+            -9.0
+          ],
+          [
+            4.25,
+            -9.0
+          ]
+        ]
+      },
+      "plane": "XY",
+      "role": "base_profile"
+    },
+    {
+      "input": "sk_4b4cc8de",
+      "op_id": "ft_4b6d48ee",
+      "op_type": "extrude",
+      "params": {
+        "direction": "+normal",
+        "distance": 2.5,
+        "extent_type": "one_side",
+        "operation": "new_body",
+        "taper_angle": 0
+      },
+      "role": "base_body"
+    },
+    {
+      "input": "ft_4b6d48ee",
+      "op_id": "op_export_step",
+      "op_type": "export_step",
+      "params": {
+        "path": "102525_06a3094b_0004.step"
+      },
+      "role": "export"
+    }
+  ],
+  "sample_id": "102525_06a3094b_0004",
+  "schema_version": "cad_ir_v0.1",
+  "unit": "mm"
+}

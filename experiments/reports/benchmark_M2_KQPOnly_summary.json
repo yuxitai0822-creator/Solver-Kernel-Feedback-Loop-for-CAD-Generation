@@ -1,0 +1,32 @@
+{
+  "method": "M2_KQPOnly",
+  "name": "KQP Feedback Only — pipeline + kqp",
+  "feedback_channels": [
+    "pipeline",
+    "kqp"
+  ],
+  "schema_version": "benchmark_config_v0.2",
+  "metrics": {
+    "n_samples": 10,
+    "n_errors": 0,
+    "errors": [],
+    "Success@1": 0.0,
+    "Success@2": 0.0,
+    "Success@3": 0.0,
+    "F2S_ConversionRate": 0.0,
+    "MeanIterationsToSuccess": null,
+    "n_iterations_to_success_distribution": {
+      "1": 0,
+      "2": 0,
+      "3": 0
+    },
+    "MeanCED_declared_total": 4.0,
+    "MeanCED_executed_total": 0.0,
+    "MeanRepairCost": 4.87,
+    "MeanRuntimeCost_s": 37.002033543586734,
+    "MeanInputTokens": 6149.4,
+    "MeanOutputTokens": 757.0,
+    "MeanTotalTokens": 6906.4,
+    "n_failure_to_success": 0
+  }
+}

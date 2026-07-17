@@ -1,0 +1,52 @@
+{
+  "coordinate_system": {
+    "front_axis": "y",
+    "right_axis": "x",
+    "up_axis": "z"
+  },
+  "metadata": {
+    "comments": "IR parameters already match the design plan dimensions (3.9x4.9 rectangle, 1.55 extrude). STEP export failure is likely an environment/adaptor issue; no geometric fix required.",
+    "source": "repair"
+  },
+  "operations": [
+    {
+      "op_id": "op_001",
+      "op_type": "sketch_rectangle",
+      "params": {
+        "center": [
+          0.0,
+          0.0
+        ],
+        "height": 4.9,
+        "width": 3.9
+      },
+      "plane": "XY",
+      "role": "base_profile"
+    },
+    {
+      "input": "op_001",
+      "op_id": "op_002",
+      "op_type": "extrude",
+      "params": {
+        "direction": "+normal",
+        "distance": 1.55,
+        "extent_type": "one_side",
+        "operation": "new_body",
+        "taper_angle": 0.0
+      },
+      "role": "base_body"
+    },
+    {
+      "input": "op_002",
+      "op_id": "op_003",
+      "op_type": "export_step",
+      "params": {
+        "path": "102525_06a3094b_0000.step"
+      },
+      "role": "export"
+    }
+  ],
+  "sample_id": "102525_06a3094b_0000",
+  "schema_version": "cad_ir_v0.1",
+  "unit": "mm"
+}

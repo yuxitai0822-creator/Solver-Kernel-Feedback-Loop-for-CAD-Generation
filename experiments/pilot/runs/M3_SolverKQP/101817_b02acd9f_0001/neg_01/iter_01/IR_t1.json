@@ -1,0 +1,54 @@
+{
+  "coordinate_system": {
+    "front_axis": "y",
+    "right_axis": "x",
+    "up_axis": "z"
+  },
+  "metadata": {
+    "comments": "Fixed extrude distance from 780.0 to 520.0 to match design plan and pass q_bbox_w validation.",
+    "source": "repair"
+  },
+  "operations": [
+    {
+      "op_id": "sk_85cec1ba",
+      "op_type": "sketch_rectangular_frame",
+      "params": {
+        "center": [
+          -20.0,
+          20.0
+        ],
+        "inner_height": 37.6,
+        "inner_width": 37.6,
+        "outer_height": 40.0,
+        "outer_width": 40.0
+      },
+      "plane": "XY",
+      "role": "base_profile"
+    },
+    {
+      "input": "sk_85cec1ba",
+      "op_id": "ft_85d29240",
+      "op_type": "extrude",
+      "params": {
+        "direction": "+normal",
+        "distance": 520.0,
+        "extent_type": "one_side",
+        "operation": "new_body",
+        "taper_angle": 0
+      },
+      "role": "base_body"
+    },
+    {
+      "input": "ft_85d29240",
+      "op_id": "op_export_step",
+      "op_type": "export_step",
+      "params": {
+        "path": "101817_b02acd9f_0001.step"
+      },
+      "role": "export"
+    }
+  ],
+  "sample_id": "101817_b02acd9f_0001",
+  "schema_version": "cad_ir_v0.1",
+  "unit": "mm"
+}

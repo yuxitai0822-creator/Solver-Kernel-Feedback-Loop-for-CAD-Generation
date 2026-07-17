@@ -1,0 +1,14 @@
+{
+  "design_plan_path": "DesignPlan\\compiler\\instances_v6\\108851_4d515b10_0009.design_plan.json",
+  "initial_ir_path": "cad_ir\\samples\\manual_ir_examples\\108851_4d515b10_0009.cad_ir.json",
+  "initial_step_path": "Reconstruction_results\\108851_4d515b10_0009\\generated.step",
+  "kqp_instance_path": "kqp\\outputs\\compiler_v0.1\\108851_4d515b10_0009.kqp_instance.json",
+  "perturbation_meta_path": "task5_negative_perturbation\\perturbations\\108851_4d515b10_0009\\neg_03\\perturbation_meta.json",
+  "perturbed_history_path": "task5_negative_perturbation\\perturbations\\108851_4d515b10_0009\\neg_03\\108851_4d515b10_0009_perturbed.json",
+  "sample_id": "108851_4d515b10_0009",
+  "negative_id": "neg_03",
+  "source": "task5_perturbed_history",
+  "perturbation_type": null,
+  "perturbation_operator": "E1_envelope_v_shrink",
+  "perturbation_target_intent": "bbox_size"
+}

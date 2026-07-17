@@ -1,0 +1,162 @@
+{
+  "selection_seed": 42,
+  "rationale": "Per pilot_protocol §1.2 grid; padded to 18 with E2_extrude_deep extras",
+  "negative_samples": {
+    "kqp_visible_solver_blind": [
+      {
+        "sample_id": "108851_4d515b10_0007",
+        "negative_id": "neg_02"
+      },
+      {
+        "sample_id": "100877_ac1e5a17_0017",
+        "negative_id": "neg_02"
+      },
+      {
+        "sample_id": "100243_9fb796fe_0005",
+        "negative_id": "neg_03"
+      },
+      {
+        "sample_id": "108851_4d515b10_0009",
+        "negative_id": "neg_03"
+      },
+      {
+        "sample_id": "102525_06a3094b_0004",
+        "negative_id": "neg_01"
+      },
+      {
+        "sample_id": "102410_f9877a7b_0012",
+        "negative_id": "neg_01"
+      },
+      {
+        "sample_id": "102410_f9877a7b_0000",
+        "negative_id": "neg_01"
+      },
+      {
+        "sample_id": "101817_b02acd9f_0001",
+        "negative_id": "neg_01"
+      }
+    ],
+    "solver_visible": [
+      {
+        "sample_id": "102410_f9877a7b_0012",
+        "negative_id": "neg_02"
+      },
+      {
+        "sample_id": "107668_cf76b132_0001",
+        "negative_id": "neg_02"
+      },
+      {
+        "sample_id": "102410_f9877a7b_0000",
+        "negative_id": "neg_02"
+      },
+      {
+        "sample_id": "104453_aba0f2d1_0006",
+        "negative_id": "neg_02"
+      },
+      {
+        "sample_id": "101817_b02acd9f_0000",
+        "negative_id": "neg_03"
+      },
+      {
+        "sample_id": "103284_e25015aa_0003",
+        "negative_id": "neg_03"
+      }
+    ],
+    "both_visible_edge": [
+      {
+        "sample_id": "106323_77f22d29_0004",
+        "negative_id": "neg_01"
+      }
+    ],
+    "pipeline_fragile": [
+      {
+        "sample_id": "100243_9fb796fe_0006",
+        "negative_id": "neg_01"
+      },
+      {
+        "sample_id": "101427_a9bcb09c_0001",
+        "negative_id": "neg_01"
+      },
+      {
+        "sample_id": "102525_06a3094b_0000",
+        "negative_id": "neg_01"
+      }
+    ]
+  },
+  "positive_samples": [],
+  "no_op_decision": "Option A deferred — no-op CLI not yet implemented",
+  "all_negative_samples": [
+    {
+      "sample_id": "108851_4d515b10_0007",
+      "negative_id": "neg_02"
+    },
+    {
+      "sample_id": "100877_ac1e5a17_0017",
+      "negative_id": "neg_02"
+    },
+    {
+      "sample_id": "100243_9fb796fe_0005",
+      "negative_id": "neg_03"
+    },
+    {
+      "sample_id": "108851_4d515b10_0009",
+      "negative_id": "neg_03"
+    },
+    {
+      "sample_id": "102525_06a3094b_0004",
+      "negative_id": "neg_01"
+    },
+    {
+      "sample_id": "102410_f9877a7b_0012",
+      "negative_id": "neg_01"
+    },
+    {
+      "sample_id": "102410_f9877a7b_0000",
+      "negative_id": "neg_01"
+    },
+    {
+      "sample_id": "101817_b02acd9f_0001",
+      "negative_id": "neg_01"
+    },
+    {
+      "sample_id": "102410_f9877a7b_0012",
+      "negative_id": "neg_02"
+    },
+    {
+      "sample_id": "107668_cf76b132_0001",
+      "negative_id": "neg_02"
+    },
+    {
+      "sample_id": "102410_f9877a7b_0000",
+      "negative_id": "neg_02"
+    },
+    {
+      "sample_id": "104453_aba0f2d1_0006",
+      "negative_id": "neg_02"
+    },
+    {
+      "sample_id": "101817_b02acd9f_0000",
+      "negative_id": "neg_03"
+    },
+    {
+      "sample_id": "103284_e25015aa_0003",
+      "negative_id": "neg_03"
+    },
+    {
+      "sample_id": "106323_77f22d29_0004",
+      "negative_id": "neg_01"
+    },
+    {
+      "sample_id": "100243_9fb796fe_0006",
+      "negative_id": "neg_01"
+    },
+    {
+      "sample_id": "101427_a9bcb09c_0001",
+      "negative_id": "neg_01"
+    },
+    {
+      "sample_id": "102525_06a3094b_0000",
+      "negative_id": "neg_01"
+    }
+  ]
+}

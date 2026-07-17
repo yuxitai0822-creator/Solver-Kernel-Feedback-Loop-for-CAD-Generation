@@ -1,0 +1,64 @@
+{
+  "sample_id": "102410_f9877a7b_0000",
+  "method": "M1_SolverOnly",
+  "n_iterations": 3,
+  "success": false,
+  "strict_success": false,
+  "n_iterations_to_success": null,
+  "stop_reason": "stop_S4_max_iter",
+  "metrics": {
+    "success_at_1": false,
+    "success_at_2": false,
+    "success_at_3": false,
+    "failure_to_success": false,
+    "kqp_query_improvement": 0,
+    "remaining_failed_query_count": 0,
+    "targeted_repair_success": false,
+    "ced_text_total": 0.25510204081632654,
+    "ced_declared_total": 1.0,
+    "ced_executed_total": 0.0,
+    "repair_cost": 1.9000000000000001,
+    "n_execution": 3,
+    "n_verification": 6,
+    "runtime_sec": 42.41667032241821,
+    "input_tokens": 5240,
+    "output_tokens": 757,
+    "total_tokens": 5997,
+    "n_iterations": 3
+  },
+  "iter_records_summary": [
+    {
+      "iter": 0,
+      "phase": "initial",
+      "stop_rule": null,
+      "pipeline_valid": false,
+      "solver_status": "conflict",
+      "solver_acceptable": false,
+      "kqp_pass": false,
+      "success": false,
+      "action": null
+    },
+    {
+      "iter": 1,
+      "phase": "repair",
+      "stop_rule": null,
+      "pipeline_valid": false,
+      "solver_status": "conflict",
+      "solver_acceptable": false,
+      "kqp_pass": false,
+      "success": false,
+      "action": "repair"
+    },
+    {
+      "iter": 2,
+      "phase": "repair",
+      "stop_rule": null,
+      "pipeline_valid": false,
+      "solver_status": "conflict",
+      "solver_acceptable": false,
+      "kqp_pass": true,
+      "success": false,
+      "action": "repair"
+    }
+  ]
+}

@@ -3,12 +3,10 @@
   "negative_id": "neg_01",
   "perturbation_type": "E5_extent_type_change",
   "validation": {
-    "passed": false,
-    "issues": [
-      "could not locate None/None in IR to match perturbation E5_extent_type_change"
-    ],
-    "found_match": false,
-    "target_op_type": null,
-    "target_field": null
+    "passed": true,
+    "issues": [],
+    "found_match": true,
+    "target_op_type": "extrude",
+    "target_field": "extent_type"
   }
 }

@@ -9,13 +9,13 @@
     "after": 3.175
   },
   "ir_delta": {
-    "operation_id": null,
-    "field": null,
-    "before": null,
-    "after": null
+    "operation_id": "sk_7161dfa8",
+    "field": "radius",
+    "before": 6.35,
+    "after": 6.35
   },
-  "target_operation_match": false,
-  "target_field_match": false,
+  "target_operation_match": true,
+  "target_field_match": true,
   "before_value_match": false,
   "after_value_match": false,
   "delta_consistent": false

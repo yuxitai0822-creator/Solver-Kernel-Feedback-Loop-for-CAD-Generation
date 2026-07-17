@@ -1,0 +1,52 @@
+{
+  "coordinate_system": {
+    "front_axis": "y",
+    "right_axis": "x",
+    "up_axis": "z"
+  },
+  "metadata": {
+    "comments": "Corrected sketch_rectangle width and height from 19.0 to 1.9 to account for cm-to-mm unit conversion applied to dimensions but not coordinates, aligning with the 1.9 mm span derived from the original 0.19 cm vertex coordinates.",
+    "source": "repair"
+  },
+  "operations": [
+    {
+      "op_id": "op_001",
+      "op_type": "sketch_rectangle",
+      "params": {
+        "center": [
+          -57.3282,
+          -12.9901
+        ],
+        "height": 1.9,
+        "width": 1.9
+      },
+      "plane": "XY",
+      "role": "base_profile"
+    },
+    {
+      "input": "op_001",
+      "op_id": "op_002",
+      "op_type": "extrude",
+      "params": {
+        "direction": "+normal",
+        "distance": 200.0,
+        "extent_type": "one_side",
+        "operation": "new_body",
+        "taper_angle": 0.0
+      },
+      "role": "base_body"
+    },
+    {
+      "input": "op_002",
+      "op_id": "op_003",
+      "op_type": "export_step",
+      "params": {
+        "path": "100243_9fb796fe_0005.step"
+      },
+      "role": "export"
+    }
+  ],
+  "sample_id": "100243_9fb796fe_0005",
+  "schema_version": "cad_ir_v0.1",
+  "unit": "mm"
+}

@@ -1,0 +1,83 @@
+{
+  "sample_id": "102525_06a3094b_0004",
+  "kqp_schema_version": "kqp_instance_v0.2",
+  "step_file": "experiments\\pilot\\runs\\M0_NoFeedback\\102525_06a3094b_0004\\neg_01\\iter_00\\102525_06a3094b_0004.step",
+  "overall_status": "fail",
+  "summary": {
+    "total_queries": 6,
+    "passed_queries": 5,
+    "failed_queries": 1,
+    "error_queries": 0
+  },
+  "query_results": [
+    {
+      "query_id": "q_body_count",
+      "intent": "body_count",
+      "status": "pass",
+      "expected": 1,
+      "actual": 1,
+      "tolerance": 0,
+      "error": 0,
+      "source_field": "$.target.body_count",
+      "feedback": null
+    },
+    {
+      "query_id": "q_bbox_u",
+      "intent": "bbox_size",
+      "status": "pass",
+      "expected": 8.5,
+      "actual": 8.5,
+      "tolerance": 0.01,
+      "error": 0.0,
+      "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+      "feedback": null
+    },
+    {
+      "query_id": "q_bbox_v",
+      "intent": "bbox_size",
+      "status": "pass",
+      "expected": 18.0,
+      "actual": 18.0,
+      "tolerance": 0.01,
+      "error": 0.0,
+      "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+      "feedback": null
+    },
+    {
+      "query_id": "q_bbox_w",
+      "intent": "bbox_size",
+      "status": "fail",
+      "expected": 2.5,
+      "actual": 3.75,
+      "tolerance": 0.005,
+      "error": 1.25,
+      "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+      "feedback": {
+        "error_type": "dimension_mismatch",
+        "message": "Expected bbox w-size 2.5mm, got 3.7500001999999997mm."
+      }
+    },
+    {
+      "query_id": "q_is_solid",
+      "intent": "is_solid",
+      "status": "pass",
+      "expected": true,
+      "actual": true,
+      "tolerance": null,
+      "error": 0,
+      "source_field": "(implicit: valid extrude implies solid)",
+      "feedback": null
+    },
+    {
+      "query_id": "q_occt_valid",
+      "intent": "occt_valid",
+      "status": "pass",
+      "expected": true,
+      "actual": true,
+      "tolerance": null,
+      "error": 0,
+      "source_field": "(implicit)",
+      "feedback": null
+    }
+  ]
+}

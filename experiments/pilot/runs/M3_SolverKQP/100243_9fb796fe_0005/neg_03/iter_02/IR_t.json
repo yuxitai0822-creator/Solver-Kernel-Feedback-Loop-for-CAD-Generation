@@ -1,0 +1,52 @@
+{
+  "coordinate_system": {
+    "front_axis": "y",
+    "right_axis": "x",
+    "up_axis": "z"
+  },
+  "metadata": {
+    "comments": "Replaced sketch_polygon with sketch_rectangle using correct mm coordinates and dimensions to resolve step_export failure.",
+    "source": "repair"
+  },
+  "operations": [
+    {
+      "op_id": "sk_3b2b7018",
+      "op_type": "sketch_rectangle",
+      "params": {
+        "center": [
+          -57.3282,
+          -12.9902
+        ],
+        "height": 19.0,
+        "width": 19.0
+      },
+      "plane": "XY",
+      "role": "base_profile"
+    },
+    {
+      "input": "sk_3b2b7018",
+      "op_id": "ft_3b7963dc",
+      "op_type": "extrude",
+      "params": {
+        "direction": "+normal",
+        "distance": 200.0,
+        "extent_type": "one_side",
+        "operation": "new_body",
+        "taper_angle": 0
+      },
+      "role": "base_body"
+    },
+    {
+      "input": "ft_3b7963dc",
+      "op_id": "op_export_step",
+      "op_type": "export_step",
+      "params": {
+        "path": "100243_9fb796fe_0005.step"
+      },
+      "role": "export"
+    }
+  ],
+  "sample_id": "100243_9fb796fe_0005",
+  "schema_version": "cad_ir_v0.1",
+  "unit": "mm"
+}

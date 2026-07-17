@@ -1,0 +1,48 @@
+{
+  "coordinate_system": {
+    "front_axis": "y",
+    "right_axis": "x",
+    "up_axis": "z"
+  },
+  "metadata": {
+    "comments": "Replaced sketch_polygon with sketch_rectangle to resolve STEP export failure while preserving dimensions and bbox_min_corner origin.",
+    "source": "repair"
+  },
+  "operations": [
+    {
+      "op_id": "op_001",
+      "op_type": "sketch_rectangle",
+      "params": {
+        "center": [
+          104.775,
+          28.956
+        ],
+        "height": 57.912,
+        "width": 209.55
+      },
+      "plane": "XY"
+    },
+    {
+      "input": "op_001",
+      "op_id": "op_002",
+      "op_type": "extrude",
+      "params": {
+        "direction": "+normal",
+        "distance": 19.05,
+        "extent_type": "one_side",
+        "operation": "new_body"
+      }
+    },
+    {
+      "input": "op_002",
+      "op_id": "op_003",
+      "op_type": "export_step",
+      "params": {
+        "path": "108851_4d515b10_0009.step"
+      }
+    }
+  ],
+  "sample_id": "108851_4d515b10_0009",
+  "schema_version": "cad_ir_v0.1",
+  "unit": "mm"
+}

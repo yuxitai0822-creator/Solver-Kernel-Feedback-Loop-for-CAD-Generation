@@ -2,19 +2,14 @@
   "sample_id": "101817_b02acd9f_0000",
   "label": "negative",
   "schema_validation": {
-    "passed": false,
-    "schema_status": "fail",
-    "semantic_status": "fail",
-    "issues": [
-      "json-schema: 0.0 is less than or equal to the minimum of 0 at path ['operations', 0, 'params', 'outer_radius']",
-      "semantic: op[0] annulus inner_radius must be > 0",
-      "semantic: op[0] annulus outer_radius must be > 0",
-      "semantic: op[0] annulus inner_radius (0.0) must be < outer_radius (0.0)"
-    ]
+    "passed": true,
+    "schema_status": "pass",
+    "semantic_status": "pass",
+    "issues": []
   },
   "history2ir_semantic": {
     "passed": true,
     "issues": []
   },
-  "overall": "fail"
+  "overall": "pass"
 }

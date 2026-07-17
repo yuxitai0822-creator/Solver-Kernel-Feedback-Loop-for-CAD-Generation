@@ -1,0 +1,40 @@
+{
+  "iter": 1,
+  "phase": "repair",
+  "ir_path": "experiments\\pilot\\runs\\M1_SolverOnly\\102410_f9877a7b_0012\\neg_01\\iter_01\\IR_t.json",
+  "ir_t1_path": "experiments\\pilot\\runs\\M1_SolverOnly\\102410_f9877a7b_0012\\neg_01\\iter_01\\IR_t1.json",
+  "step_path": "experiments\\pilot\\runs\\M1_SolverOnly\\102410_f9877a7b_0012\\neg_01\\iter_01\\102410_f9877a7b_0012.step",
+  "script_path": "experiments\\pilot\\runs\\M1_SolverOnly\\102410_f9877a7b_0012\\neg_01\\iter_01\\generated_script.py",
+  "solver_feedback_path": "experiments\\pilot\\runs\\M1_SolverOnly\\102410_f9877a7b_0012\\neg_01\\iter_01\\solver_feedback.json",
+  "kqp_feedback_path": "experiments\\pilot\\runs\\M1_SolverOnly\\102410_f9877a7b_0012\\neg_01\\iter_01\\kqp_feedback.json",
+  "agent_request_path": "experiments\\pilot\\runs\\M1_SolverOnly\\102410_f9877a7b_0012\\neg_01\\iter_01\\agent_request.json",
+  "agent_response_path": "experiments\\pilot\\runs\\M1_SolverOnly\\102410_f9877a7b_0012\\neg_01\\iter_01\\agent_response.json",
+  "timing_path": "experiments\\pilot\\runs\\M1_SolverOnly\\102410_f9877a7b_0012\\neg_01\\iter_01\\timing.json",
+  "token_usage_path": "experiments\\pilot\\runs\\M1_SolverOnly\\102410_f9877a7b_0012\\neg_01\\iter_01\\token_usage.json",
+  "ced_path": "experiments\\pilot\\runs\\M1_SolverOnly\\102410_f9877a7b_0012\\neg_01\\iter_01\\ced.json",
+  "agent_status": "ok_repair",
+  "action": "repair",
+  "pipeline_valid": false,
+  "pipeline_valid_breakdown": {
+    "compile": true,
+    "execute": true,
+    "step_export": false,
+    "occt_load": false
+  },
+  "solver_status": "conflict",
+  "solver_acceptable": false,
+  "kqp_pass": true,
+  "kqp_failed_query_ids": [],
+  "success": false,
+  "strict_success": false,
+  "ir_was_modified_by_agent": true,
+  "stop_rule": null,
+  "wallclock_sec": 18.21856141090393,
+  "stage_timings_sec": {
+    "adaptor": 5.204409122467041,
+    "solver": 0.0013742446899414062,
+    "kqp": 2.363208293914795,
+    "agent": 10.265946388244629,
+    "total_sec": 18.219104051589966
+  }
+}

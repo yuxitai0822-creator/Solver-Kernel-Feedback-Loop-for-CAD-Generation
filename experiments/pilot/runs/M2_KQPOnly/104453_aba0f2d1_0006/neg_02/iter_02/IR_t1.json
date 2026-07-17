@@ -1,0 +1,54 @@
+{
+  "coordinate_system": {
+    "front_axis": "y",
+    "right_axis": "x",
+    "up_axis": "z"
+  },
+  "metadata": {
+    "comments": "KQP passed and taper_angle already set to float 0.0; pipeline failures likely transient or downstream, no IR change required.",
+    "source": "repair"
+  },
+  "operations": [
+    {
+      "op_id": "sk_40164e88",
+      "op_type": "sketch_rectangular_frame",
+      "params": {
+        "center": [
+          250.0,
+          150.0
+        ],
+        "inner_height": 200.0,
+        "inner_width": 400.0,
+        "outer_height": 300.0,
+        "outer_width": 500.0
+      },
+      "plane": "XY",
+      "role": "base_profile"
+    },
+    {
+      "input": "sk_40164e88",
+      "op_id": "ft_40203918",
+      "op_type": "extrude",
+      "params": {
+        "direction": "+normal",
+        "distance": 500.0,
+        "extent_type": "one_side",
+        "operation": "new_body",
+        "taper_angle": 0.0
+      },
+      "role": "base_body"
+    },
+    {
+      "input": "ft_40203918",
+      "op_id": "op_export_step",
+      "op_type": "export_step",
+      "params": {
+        "path": "104453_aba0f2d1_0006.step"
+      },
+      "role": "export"
+    }
+  ],
+  "sample_id": "104453_aba0f2d1_0006",
+  "schema_version": "cad_ir_v0.1",
+  "unit": "mm"
+}

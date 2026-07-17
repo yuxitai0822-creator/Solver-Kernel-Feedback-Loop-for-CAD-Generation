@@ -1,0 +1,249 @@
+{
+  "schema_version": "run_result_v0.2",
+  "config_version": "benchmark_config_v0.2",
+  "run_id": "M1_SolverOnly__101817_b02acd9f_0001__neg_01__1784199682",
+  "sample_id": "101817_b02acd9f_0001",
+  "negative_id": "neg_01",
+  "task_type": "repair",
+  "method": "solver_only",
+  "method_id": "M1_SolverOnly",
+  "max_iter": 3,
+  "sample_info": {
+    "design_plan_path": "DesignPlan\\compiler\\instances_v6\\101817_b02acd9f_0001.design_plan.json",
+    "initial_ir_path": "cad_ir\\samples\\manual_ir_examples\\101817_b02acd9f_0001.cad_ir.json",
+    "initial_step_path": "Reconstruction_results\\101817_b02acd9f_0001\\generated.step",
+    "kqp_instance_path": "kqp\\outputs\\compiler_v0.1\\101817_b02acd9f_0001.kqp_instance.json",
+    "perturbation_meta_path": "task5_negative_perturbation\\perturbations\\101817_b02acd9f_0001\\neg_01\\perturbation_meta.json",
+    "perturbed_history_path": "task5_negative_perturbation\\perturbations\\101817_b02acd9f_0001\\neg_01\\101817_b02acd9f_0001_perturbed.json",
+    "sample_id": "101817_b02acd9f_0001",
+    "negative_id": "neg_01",
+    "source": "task5_perturbed_history",
+    "perturbation_type": null,
+    "perturbation_operator": "E2_extrude_deep",
+    "perturbation_target_intent": "bbox_size"
+  },
+  "perturbation": {
+    "operator": "E2_extrude_depth",
+    "scale": 1.5,
+    "modified_history_field": "extrude.extent_one.distance.value",
+    "source_design_plan_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+    "original_value": 52.0,
+    "perturbed_value": 78.0,
+    "target_intent": "bbox_size",
+    "error_category": "E2_extrude_depth",
+    "expected_failed_query": [
+      "q_bbox_w"
+    ],
+    "allowed_secondary_failed_queries": [
+      "cylinder_radius",
+      "through_void_count",
+      "is_solid",
+      "occt_valid",
+      "symmetric_about_plane"
+    ],
+    "perturbation_id": 1,
+    "operator_input_name": "E2_extrude_deep",
+    "profile_type": "rectangular_frame",
+    "extent_type": "one_side",
+    "expected_query_ids_resolved": [
+      "q_bbox_u",
+      "q_bbox_v",
+      "q_bbox_w"
+    ],
+    "sample_id": "101817_b02acd9f_0001",
+    "negative_id": "neg_01"
+  },
+  "initial_status": {
+    "success": false,
+    "strict_success": false,
+    "pipeline_valid": false,
+    "solver_status": "under_constrained",
+    "solver_acceptable": true,
+    "kqp_pass": false,
+    "kqp_failed_query_ids": [
+      "q_bbox_w"
+    ]
+  },
+  "final_status": {
+    "success": true,
+    "strict_success": false,
+    "n_iterations": 3,
+    "n_iterations_to_success": 3,
+    "stop_reason": "stop_S3_success_at_iter_3",
+    "stop_rule_b001_fix": "S3",
+    "final_solver_status": "under_constrained",
+    "final_kqp_pass": true,
+    "final_pipeline_valid": true,
+    "_notes": "Re-read after B-001 (S1>S3>S2 stop-rule) and B-004 (pipeline_valid enum-equivalence 'pass'|'success') fix."
+  },
+  "metrics": {
+    "success_at_1": false,
+    "success_at_2": false,
+    "success_at_3": true,
+    "failure_to_success": true,
+    "n_iterations": 3
+  },
+  "iterations": [
+    {
+      "iter": 0,
+      "phase": "initial",
+      "ir_path": "experiments\\pilot\\runs\\M1_SolverOnly\\101817_b02acd9f_0001\\neg_01\\iter_00\\IR_t.json",
+      "ir_t1_path": null,
+      "step_path": "experiments\\pilot\\runs\\M1_SolverOnly\\101817_b02acd9f_0001\\neg_01\\iter_00\\101817_b02acd9f_0001.step",
+      "script_path": "experiments\\pilot\\runs\\M1_SolverOnly\\101817_b02acd9f_0001\\neg_01\\iter_00\\generated_script.py",
+      "solver_feedback_path": "experiments\\pilot\\runs\\M1_SolverOnly\\101817_b02acd9f_0001\\neg_01\\iter_00\\solver_feedback.json",
+      "kqp_feedback_path": "experiments\\pilot\\runs\\M1_SolverOnly\\101817_b02acd9f_0001\\neg_01\\iter_00\\kqp_feedback.json",
+      "agent_request_path": null,
+      "agent_response_path": null,
+      "timing_path": "experiments\\pilot\\runs\\M1_SolverOnly\\101817_b02acd9f_0001\\neg_01\\iter_00\\timing.json",
+      "token_usage_path": null,
+      "ced_path": null,
+      "agent_status": "not_called_iter_0",
+      "action": null,
+      "pipeline_valid": false,
+      "pipeline_valid_breakdown": {
+        "compile": true,
+        "execute": true,
+        "step_export": false,
+        "occt_load": false
+      },
+      "solver_status": "under_constrained",
+      "solver_acceptable": true,
+      "kqp_pass": false,
+      "kqp_failed_query_ids": [
+        "q_bbox_w"
+      ],
+      "success": false,
+      "strict_success": false,
+      "ir_was_modified_by_agent": false,
+      "stop_rule": null,
+      "wallclock_sec": 7.8076171875,
+      "stage_timings_sec": {
+        "adaptor": 5.299661636352539,
+        "solver": 0.028985977172851562,
+        "kqp": 2.466362714767456,
+        "agent": 0.0
+      }
+    },
+    {
+      "iter": 1,
+      "phase": "repair",
+      "ir_path": "experiments\\pilot\\runs\\M1_SolverOnly\\101817_b02acd9f_0001\\neg_01\\iter_01\\IR_t.json",
+      "ir_t1_path": "experiments\\pilot\\runs\\M1_SolverOnly\\101817_b02acd9f_0001\\neg_01\\iter_01\\IR_t1.json",
+      "step_path": "experiments\\pilot\\runs\\M1_SolverOnly\\101817_b02acd9f_0001\\neg_01\\iter_01\\101817_b02acd9f_0001.step",
+      "script_path": "experiments\\pilot\\runs\\M1_SolverOnly\\101817_b02acd9f_0001\\neg_01\\iter_01\\generated_script.py",
+      "solver_feedback_path": "experiments\\pilot\\runs\\M1_SolverOnly\\101817_b02acd9f_0001\\neg_01\\iter_01\\solver_feedback.json",
+      "kqp_feedback_path": "experiments\\pilot\\runs\\M1_SolverOnly\\101817_b02acd9f_0001\\neg_01\\iter_01\\kqp_feedback.json",
+      "agent_request_path": "experiments\\pilot\\runs\\M1_SolverOnly\\101817_b02acd9f_0001\\neg_01\\iter_01\\agent_request.json",
+      "agent_response_path": "experiments\\pilot\\runs\\M1_SolverOnly\\101817_b02acd9f_0001\\neg_01\\iter_01\\agent_response.json",
+      "timing_path": "experiments\\pilot\\runs\\M1_SolverOnly\\101817_b02acd9f_0001\\neg_01\\iter_01\\timing.json",
+      "token_usage_path": "experiments\\pilot\\runs\\M1_SolverOnly\\101817_b02acd9f_0001\\neg_01\\iter_01\\token_usage.json",
+      "ced_path": "experiments\\pilot\\runs\\M1_SolverOnly\\101817_b02acd9f_0001\\neg_01\\iter_01\\ced.json",
+      "agent_status": "ok_repair",
+      "action": "repair",
+      "pipeline_valid": false,
+      "pipeline_valid_breakdown": {
+        "compile": true,
+        "execute": true,
+        "step_export": false,
+        "occt_load": false
+      },
+      "solver_status": "under_constrained",
+      "solver_acceptable": true,
+      "kqp_pass": false,
+      "kqp_failed_query_ids": [
+        "q_bbox_w"
+      ],
+      "success": false,
+      "strict_success": false,
+      "ir_was_modified_by_agent": true,
+      "stop_rule": null,
+      "wallclock_sec": 14.032330513000488,
+      "stage_timings_sec": {
+        "adaptor": 5.3376336097717285,
+        "solver": 0.018405914306640625,
+        "kqp": 2.434152841567993,
+        "agent": 5.782813787460327,
+        "total_sec": 14.032330513000488
+      }
+    },
+    {
+      "iter": 2,
+      "phase": "repair",
+      "ir_path": "experiments\\pilot\\runs\\M1_SolverOnly\\101817_b02acd9f_0001\\neg_01\\iter_02\\IR_t.json",
+      "ir_t1_path": "experiments\\pilot\\runs\\M1_SolverOnly\\101817_b02acd9f_0001\\neg_01\\iter_02\\IR_t1.json",
+      "step_path": "experiments\\pilot\\runs\\M1_SolverOnly\\101817_b02acd9f_0001\\neg_01\\iter_02\\101817_b02acd9f_0001.step",
+      "script_path": "experiments\\pilot\\runs\\M1_SolverOnly\\101817_b02acd9f_0001\\neg_01\\iter_02\\generated_script.py",
+      "solver_feedback_path": "experiments\\pilot\\runs\\M1_SolverOnly\\101817_b02acd9f_0001\\neg_01\\iter_02\\solver_feedback.json",
+      "kqp_feedback_path": "experiments\\pilot\\runs\\M1_SolverOnly\\101817_b02acd9f_0001\\neg_01\\iter_02\\kqp_feedback.json",
+      "agent_request_path": "experiments\\pilot\\runs\\M1_SolverOnly\\101817_b02acd9f_0001\\neg_01\\iter_02\\agent_request.json",
+      "agent_response_path": "experiments\\pilot\\runs\\M1_SolverOnly\\101817_b02acd9f_0001\\neg_01\\iter_02\\agent_response.json",
+      "timing_path": "experiments\\pilot\\runs\\M1_SolverOnly\\101817_b02acd9f_0001\\neg_01\\iter_02\\timing.json",
+      "token_usage_path": "experiments\\pilot\\runs\\M1_SolverOnly\\101817_b02acd9f_0001\\neg_01\\iter_02\\token_usage.json",
+      "ced_path": "experiments\\pilot\\runs\\M1_SolverOnly\\101817_b02acd9f_0001\\neg_01\\iter_02\\ced.json",
+      "agent_status": "ok_repair",
+      "action": "repair",
+      "pipeline_valid": false,
+      "pipeline_valid_breakdown": {
+        "compile": true,
+        "execute": true,
+        "step_export": false,
+        "occt_load": false
+      },
+      "solver_status": "under_constrained",
+      "solver_acceptable": true,
+      "kqp_pass": true,
+      "kqp_failed_query_ids": [],
+      "success": false,
+      "strict_success": false,
+      "ir_was_modified_by_agent": true,
+      "stop_rule": null,
+      "wallclock_sec": 16.2065646648407,
+      "stage_timings_sec": {
+        "adaptor": 5.223697900772095,
+        "solver": 0.019673585891723633,
+        "kqp": 2.3251147270202637,
+        "agent": 8.228278160095215,
+        "total_sec": 16.2065646648407
+      }
+    }
+  ],
+  "artifacts_dir": "experiments\\pilot\\runs\\M1_SolverOnly\\101817_b02acd9f_0001\\neg_01",
+  "notes": null,
+  "iter_records_summary": [
+    {
+      "iter": 0,
+      "phase": "initial",
+      "pipeline_valid": true,
+      "solver_status": "under_constrained",
+      "solver_acceptable": true,
+      "kqp_pass": false,
+      "kqp_failed_query_ids": [
+        "q_bbox_w"
+      ],
+      "success": false
+    },
+    {
+      "iter": 1,
+      "phase": "repair",
+      "pipeline_valid": true,
+      "solver_status": "under_constrained",
+      "solver_acceptable": true,
+      "kqp_pass": false,
+      "kqp_failed_query_ids": [
+        "q_bbox_w"
+      ],
+      "success": false
+    },
+    {
+      "iter": 2,
+      "phase": "repair",
+      "pipeline_valid": true,
+      "solver_status": "under_constrained",
+      "solver_acceptable": true,
+      "kqp_pass": true,
+      "kqp_failed_query_ids": [],
+      "success": true
+    }
+  ]
+}

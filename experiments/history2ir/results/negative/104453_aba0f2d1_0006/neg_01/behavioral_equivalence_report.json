@@ -1,18 +1,13 @@
 {
   "sample_level_agreement": false,
-  "query_level_agreement": 0.0,
-  "targeted_failure_preserved": false,
-  "history_signature": [
-    "q_body_count",
-    "q_bbox_u",
-    "q_bbox_v",
-    "q_bbox_w",
-    "q_void_count",
-    "q_is_solid",
-    "q_occt_valid"
+  "query_level_agreement": 0.8571428571428571,
+  "targeted_failure_preserved": true,
+  "history_signature": [],
+  "ir_signature": [
+    "q_void_count"
   ],
-  "ir_signature": [],
   "issues": [
-    "no common query ids"
+    "sample-level disagreement: history True vs IR False",
+    "query-level agreement 85.71% < 95%"
   ]
 }

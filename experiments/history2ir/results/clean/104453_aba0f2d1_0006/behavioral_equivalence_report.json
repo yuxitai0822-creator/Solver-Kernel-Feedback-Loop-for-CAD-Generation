@@ -1,10 +1,12 @@
 {
   "sample_level_agreement": true,
-  "query_level_agreement": 0.0,
-  "targeted_failure_preserved": false,
-  "history_signature": [],
-  "ir_signature": [],
-  "issues": [
-    "no common query ids"
-  ]
+  "query_level_agreement": 1.0,
+  "targeted_failure_preserved": true,
+  "history_signature": [
+    "q_void_count"
+  ],
+  "ir_signature": [
+    "q_void_count"
+  ],
+  "issues": []
 }

@@ -1,0 +1,42 @@
+{
+  "iter": 1,
+  "phase": "repair",
+  "ir_path": "experiments\\pilot\\runs\\M0_NoFeedback\\106323_77f22d29_0004\\neg_01\\iter_01\\IR_t.json",
+  "ir_t1_path": "experiments\\pilot\\runs\\M0_NoFeedback\\106323_77f22d29_0004\\neg_01\\iter_01\\IR_t1.json",
+  "step_path": "experiments\\pilot\\runs\\M0_NoFeedback\\106323_77f22d29_0004\\neg_01\\iter_01\\106323_77f22d29_0004.step",
+  "script_path": "experiments\\pilot\\runs\\M0_NoFeedback\\106323_77f22d29_0004\\neg_01\\iter_01\\generated_script.py",
+  "solver_feedback_path": "experiments\\pilot\\runs\\M0_NoFeedback\\106323_77f22d29_0004\\neg_01\\iter_01\\solver_feedback.json",
+  "kqp_feedback_path": "experiments\\pilot\\runs\\M0_NoFeedback\\106323_77f22d29_0004\\neg_01\\iter_01\\kqp_feedback.json",
+  "agent_request_path": "experiments\\pilot\\runs\\M0_NoFeedback\\106323_77f22d29_0004\\neg_01\\iter_01\\agent_request.json",
+  "agent_response_path": "experiments\\pilot\\runs\\M0_NoFeedback\\106323_77f22d29_0004\\neg_01\\iter_01\\agent_response.json",
+  "timing_path": "experiments\\pilot\\runs\\M0_NoFeedback\\106323_77f22d29_0004\\neg_01\\iter_01\\timing.json",
+  "token_usage_path": "experiments\\pilot\\runs\\M0_NoFeedback\\106323_77f22d29_0004\\neg_01\\iter_01\\token_usage.json",
+  "ced_path": "experiments\\pilot\\runs\\M0_NoFeedback\\106323_77f22d29_0004\\neg_01\\iter_01\\ced.json",
+  "agent_status": "ok_repair",
+  "action": "repair",
+  "pipeline_valid": false,
+  "pipeline_valid_breakdown": {
+    "compile": true,
+    "execute": true,
+    "step_export": false,
+    "occt_load": false
+  },
+  "solver_status": "conflict",
+  "solver_acceptable": false,
+  "kqp_pass": false,
+  "kqp_failed_query_ids": [
+    "q_bbox_w"
+  ],
+  "success": false,
+  "strict_success": false,
+  "ir_was_modified_by_agent": false,
+  "stop_rule": "S2",
+  "wallclock_sec": 13.990119218826294,
+  "stage_timings_sec": {
+    "adaptor": 5.486001014709473,
+    "solver": 0.0019192695617675781,
+    "kqp": 2.109983444213867,
+    "agent": 6.360485076904297,
+    "total_sec": 13.990119218826294
+  }
+}

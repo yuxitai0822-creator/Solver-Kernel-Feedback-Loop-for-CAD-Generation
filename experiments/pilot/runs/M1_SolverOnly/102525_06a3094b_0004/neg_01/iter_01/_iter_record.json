@@ -1,0 +1,42 @@
+{
+  "iter": 1,
+  "phase": "repair",
+  "ir_path": "experiments\\pilot\\runs\\M1_SolverOnly\\102525_06a3094b_0004\\neg_01\\iter_01\\IR_t.json",
+  "ir_t1_path": "experiments\\pilot\\runs\\M1_SolverOnly\\102525_06a3094b_0004\\neg_01\\iter_01\\IR_t1.json",
+  "step_path": "experiments\\pilot\\runs\\M1_SolverOnly\\102525_06a3094b_0004\\neg_01\\iter_01\\102525_06a3094b_0004.step",
+  "script_path": "experiments\\pilot\\runs\\M1_SolverOnly\\102525_06a3094b_0004\\neg_01\\iter_01\\generated_script.py",
+  "solver_feedback_path": "experiments\\pilot\\runs\\M1_SolverOnly\\102525_06a3094b_0004\\neg_01\\iter_01\\solver_feedback.json",
+  "kqp_feedback_path": "experiments\\pilot\\runs\\M1_SolverOnly\\102525_06a3094b_0004\\neg_01\\iter_01\\kqp_feedback.json",
+  "agent_request_path": "experiments\\pilot\\runs\\M1_SolverOnly\\102525_06a3094b_0004\\neg_01\\iter_01\\agent_request.json",
+  "agent_response_path": "experiments\\pilot\\runs\\M1_SolverOnly\\102525_06a3094b_0004\\neg_01\\iter_01\\agent_response.json",
+  "timing_path": "experiments\\pilot\\runs\\M1_SolverOnly\\102525_06a3094b_0004\\neg_01\\iter_01\\timing.json",
+  "token_usage_path": "experiments\\pilot\\runs\\M1_SolverOnly\\102525_06a3094b_0004\\neg_01\\iter_01\\token_usage.json",
+  "ced_path": "experiments\\pilot\\runs\\M1_SolverOnly\\102525_06a3094b_0004\\neg_01\\iter_01\\ced.json",
+  "agent_status": "ok_repair",
+  "action": "repair",
+  "pipeline_valid": false,
+  "pipeline_valid_breakdown": {
+    "compile": true,
+    "execute": true,
+    "step_export": false,
+    "occt_load": false
+  },
+  "solver_status": "under_constrained",
+  "solver_acceptable": true,
+  "kqp_pass": false,
+  "kqp_failed_query_ids": [
+    "q_bbox_w"
+  ],
+  "success": false,
+  "strict_success": false,
+  "ir_was_modified_by_agent": true,
+  "stop_rule": null,
+  "wallclock_sec": 14.335633516311646,
+  "stage_timings_sec": {
+    "adaptor": 5.018561124801636,
+    "solver": 0.011960744857788086,
+    "kqp": 2.3576719760894775,
+    "agent": 6.501537799835205,
+    "total_sec": 14.335633516311646
+  }
+}

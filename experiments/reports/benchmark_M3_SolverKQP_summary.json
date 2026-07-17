@@ -1,0 +1,33 @@
+{
+  "method": "M3_SolverKQP",
+  "name": "Solver + KQP Feedback — full diagnostics",
+  "feedback_channels": [
+    "pipeline",
+    "solver",
+    "kqp"
+  ],
+  "schema_version": "benchmark_config_v0.2",
+  "metrics": {
+    "n_samples": 18,
+    "n_errors": 0,
+    "errors": [],
+    "Success@1": 0.0,
+    "Success@2": 0.0,
+    "Success@3": 0.0,
+    "F2S_ConversionRate": 0.0,
+    "MeanIterationsToSuccess": null,
+    "n_iterations_to_success_distribution": {
+      "1": 0,
+      "2": 0,
+      "3": 0
+    },
+    "MeanCED_declared_total": 3.4444444444444446,
+    "MeanCED_executed_total": 0.0,
+    "MeanRepairCost": 4.327777777777778,
+    "MeanRuntimeCost_s": 37.669753114382424,
+    "MeanInputTokens": 6219.111111111111,
+    "MeanOutputTokens": 767.3888888888889,
+    "MeanTotalTokens": 6986.5,
+    "n_failure_to_success": 0
+  }
+}

@@ -3,12 +3,10 @@
   "negative_id": "neg_02",
   "perturbation_type": "E1_envelope_u",
   "validation": {
-    "passed": false,
-    "issues": [
-      "could not locate sketch_rectangle/width in IR to match perturbation E1_envelope_u"
-    ],
-    "found_match": false,
-    "target_op_type": "sketch_rectangle",
+    "passed": true,
+    "issues": [],
+    "found_match": true,
+    "target_op_type": "sketch_polygon",
     "target_field": "width"
   }
 }

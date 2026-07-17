@@ -1,0 +1,237 @@
+{
+  "schema_version": "run_result_v0.2",
+  "config_version": "benchmark_config_v0.2",
+  "run_id": "M0_NoFeedback__100243_9fb796fe_0005__neg_03__1784200168",
+  "sample_id": "100243_9fb796fe_0005",
+  "negative_id": "neg_03",
+  "task_type": "repair",
+  "method": "no_feedback",
+  "method_id": "M0_NoFeedback",
+  "max_iter": 3,
+  "sample_info": {
+    "design_plan_path": "DesignPlan\\compiler\\instances_v6\\100243_9fb796fe_0005.design_plan.json",
+    "initial_ir_path": "cad_ir\\samples\\manual_ir_examples\\100243_9fb796fe_0005.cad_ir.json",
+    "initial_step_path": "Reconstruction_results\\100243_9fb796fe_0005\\generated.step",
+    "kqp_instance_path": "kqp\\outputs\\compiler_v0.1\\100243_9fb796fe_0005.kqp_instance.json",
+    "perturbation_meta_path": "task5_negative_perturbation\\perturbations\\100243_9fb796fe_0005\\neg_03\\perturbation_meta.json",
+    "perturbed_history_path": "task5_negative_perturbation\\perturbations\\100243_9fb796fe_0005\\neg_03\\100243_9fb796fe_0005_perturbed.json",
+    "sample_id": "100243_9fb796fe_0005",
+    "negative_id": "neg_03",
+    "source": "task5_perturbed_history",
+    "perturbation_type": null,
+    "perturbation_operator": "E1_envelope_v_shrink",
+    "perturbation_target_intent": "bbox_size"
+  },
+  "perturbation": {
+    "operator": "E1_envelope",
+    "axis": "v",
+    "scale": 0.8,
+    "modified_history_field": "sketch.points[*].x|y",
+    "source_design_plan_field": "$.global_envelope.bbox.v.value",
+    "original_value": 1.9000000000000004,
+    "perturbed_value": 1.5200000000000005,
+    "target_intent": "bbox_size",
+    "error_category": "E1_envelope_dim",
+    "expected_failed_query": [
+      "q_bbox_v"
+    ],
+    "allowed_secondary_failed_queries": [
+      "cylinder_radius",
+      "through_void_count"
+    ],
+    "perturbation_id": 3,
+    "operator_input_name": "E1_envelope_v_shrink",
+    "profile_type": "rectangle",
+    "extent_type": "one_side",
+    "expected_query_ids_resolved": [
+      "q_bbox_u",
+      "q_bbox_v",
+      "q_bbox_w"
+    ],
+    "sample_id": "100243_9fb796fe_0005",
+    "negative_id": "neg_03"
+  },
+  "initial_status": {
+    "success": false,
+    "strict_success": false,
+    "pipeline_valid": false,
+    "solver_status": "under_constrained",
+    "solver_acceptable": true,
+    "kqp_pass": true,
+    "kqp_failed_query_ids": []
+  },
+  "final_status": {
+    "success": true,
+    "strict_success": false,
+    "n_iterations": 3,
+    "n_iterations_to_success": 1,
+    "stop_reason": "stop_S3_success_at_iter_1",
+    "stop_rule_b001_fix": "S3",
+    "final_solver_status": "under_constrained",
+    "final_kqp_pass": true,
+    "final_pipeline_valid": true,
+    "_notes": "Re-read after B-001 (S1>S3>S2 stop-rule) and B-004 (pipeline_valid enum-equivalence 'pass'|'success') fix."
+  },
+  "metrics": {
+    "success_at_1": true,
+    "success_at_2": true,
+    "success_at_3": true,
+    "failure_to_success": true,
+    "n_iterations": 3
+  },
+  "iterations": [
+    {
+      "iter": 0,
+      "phase": "initial",
+      "ir_path": "experiments\\pilot\\runs\\M0_NoFeedback\\100243_9fb796fe_0005\\neg_03\\iter_00\\IR_t.json",
+      "ir_t1_path": null,
+      "step_path": "experiments\\pilot\\runs\\M0_NoFeedback\\100243_9fb796fe_0005\\neg_03\\iter_00\\100243_9fb796fe_0005.step",
+      "script_path": "experiments\\pilot\\runs\\M0_NoFeedback\\100243_9fb796fe_0005\\neg_03\\iter_00\\generated_script.py",
+      "solver_feedback_path": "experiments\\pilot\\runs\\M0_NoFeedback\\100243_9fb796fe_0005\\neg_03\\iter_00\\solver_feedback.json",
+      "kqp_feedback_path": "experiments\\pilot\\runs\\M0_NoFeedback\\100243_9fb796fe_0005\\neg_03\\iter_00\\kqp_feedback.json",
+      "agent_request_path": null,
+      "agent_response_path": null,
+      "timing_path": "experiments\\pilot\\runs\\M0_NoFeedback\\100243_9fb796fe_0005\\neg_03\\iter_00\\timing.json",
+      "token_usage_path": null,
+      "ced_path": null,
+      "agent_status": "not_called_iter_0",
+      "action": null,
+      "pipeline_valid": false,
+      "pipeline_valid_breakdown": {
+        "compile": true,
+        "execute": true,
+        "step_export": false,
+        "occt_load": false
+      },
+      "solver_status": "under_constrained",
+      "solver_acceptable": true,
+      "kqp_pass": true,
+      "kqp_failed_query_ids": [],
+      "success": false,
+      "strict_success": false,
+      "ir_was_modified_by_agent": false,
+      "stop_rule": null,
+      "wallclock_sec": 7.935073614120483,
+      "stage_timings_sec": {
+        "adaptor": 5.093705892562866,
+        "solver": 0.01950812339782715,
+        "kqp": 2.7901909351348877,
+        "agent": 0.0
+      }
+    },
+    {
+      "iter": 1,
+      "phase": "repair",
+      "ir_path": "experiments\\pilot\\runs\\M0_NoFeedback\\100243_9fb796fe_0005\\neg_03\\iter_01\\IR_t.json",
+      "ir_t1_path": "experiments\\pilot\\runs\\M0_NoFeedback\\100243_9fb796fe_0005\\neg_03\\iter_01\\IR_t1.json",
+      "step_path": "experiments\\pilot\\runs\\M0_NoFeedback\\100243_9fb796fe_0005\\neg_03\\iter_01\\100243_9fb796fe_0005.step",
+      "script_path": "experiments\\pilot\\runs\\M0_NoFeedback\\100243_9fb796fe_0005\\neg_03\\iter_01\\generated_script.py",
+      "solver_feedback_path": "experiments\\pilot\\runs\\M0_NoFeedback\\100243_9fb796fe_0005\\neg_03\\iter_01\\solver_feedback.json",
+      "kqp_feedback_path": "experiments\\pilot\\runs\\M0_NoFeedback\\100243_9fb796fe_0005\\neg_03\\iter_01\\kqp_feedback.json",
+      "agent_request_path": "experiments\\pilot\\runs\\M0_NoFeedback\\100243_9fb796fe_0005\\neg_03\\iter_01\\agent_request.json",
+      "agent_response_path": "experiments\\pilot\\runs\\M0_NoFeedback\\100243_9fb796fe_0005\\neg_03\\iter_01\\agent_response.json",
+      "timing_path": "experiments\\pilot\\runs\\M0_NoFeedback\\100243_9fb796fe_0005\\neg_03\\iter_01\\timing.json",
+      "token_usage_path": "experiments\\pilot\\runs\\M0_NoFeedback\\100243_9fb796fe_0005\\neg_03\\iter_01\\token_usage.json",
+      "ced_path": "experiments\\pilot\\runs\\M0_NoFeedback\\100243_9fb796fe_0005\\neg_03\\iter_01\\ced.json",
+      "agent_status": "ok_repair",
+      "action": "repair",
+      "pipeline_valid": false,
+      "pipeline_valid_breakdown": {
+        "compile": true,
+        "execute": true,
+        "step_export": false,
+        "occt_load": false
+      },
+      "solver_status": "under_constrained",
+      "solver_acceptable": true,
+      "kqp_pass": true,
+      "kqp_failed_query_ids": [],
+      "success": false,
+      "strict_success": false,
+      "ir_was_modified_by_agent": true,
+      "stop_rule": null,
+      "wallclock_sec": 14.663862228393555,
+      "stage_timings_sec": {
+        "adaptor": 4.782419681549072,
+        "solver": 0.012409687042236328,
+        "kqp": 2.4703524112701416,
+        "agent": 6.852483510971069,
+        "total_sec": 14.663862228393555
+      }
+    },
+    {
+      "iter": 2,
+      "phase": "repair",
+      "ir_path": "experiments\\pilot\\runs\\M0_NoFeedback\\100243_9fb796fe_0005\\neg_03\\iter_02\\IR_t.json",
+      "ir_t1_path": "experiments\\pilot\\runs\\M0_NoFeedback\\100243_9fb796fe_0005\\neg_03\\iter_02\\IR_t1.json",
+      "step_path": "experiments\\pilot\\runs\\M0_NoFeedback\\100243_9fb796fe_0005\\neg_03\\iter_02\\100243_9fb796fe_0005.step",
+      "script_path": "experiments\\pilot\\runs\\M0_NoFeedback\\100243_9fb796fe_0005\\neg_03\\iter_02\\generated_script.py",
+      "solver_feedback_path": "experiments\\pilot\\runs\\M0_NoFeedback\\100243_9fb796fe_0005\\neg_03\\iter_02\\solver_feedback.json",
+      "kqp_feedback_path": "experiments\\pilot\\runs\\M0_NoFeedback\\100243_9fb796fe_0005\\neg_03\\iter_02\\kqp_feedback.json",
+      "agent_request_path": "experiments\\pilot\\runs\\M0_NoFeedback\\100243_9fb796fe_0005\\neg_03\\iter_02\\agent_request.json",
+      "agent_response_path": "experiments\\pilot\\runs\\M0_NoFeedback\\100243_9fb796fe_0005\\neg_03\\iter_02\\agent_response.json",
+      "timing_path": "experiments\\pilot\\runs\\M0_NoFeedback\\100243_9fb796fe_0005\\neg_03\\iter_02\\timing.json",
+      "token_usage_path": "experiments\\pilot\\runs\\M0_NoFeedback\\100243_9fb796fe_0005\\neg_03\\iter_02\\token_usage.json",
+      "ced_path": "experiments\\pilot\\runs\\M0_NoFeedback\\100243_9fb796fe_0005\\neg_03\\iter_02\\ced.json",
+      "agent_status": "ok_repair",
+      "action": "repair",
+      "pipeline_valid": false,
+      "pipeline_valid_breakdown": {
+        "compile": true,
+        "execute": true,
+        "step_export": false,
+        "occt_load": false
+      },
+      "solver_status": "under_constrained",
+      "solver_acceptable": true,
+      "kqp_pass": true,
+      "kqp_failed_query_ids": [],
+      "success": false,
+      "strict_success": false,
+      "ir_was_modified_by_agent": true,
+      "stop_rule": null,
+      "wallclock_sec": 13.521262407302856,
+      "stage_timings_sec": {
+        "adaptor": 4.98671555519104,
+        "solver": 0.024499177932739258,
+        "kqp": 2.1786861419677734,
+        "agent": 5.746699333190918,
+        "total_sec": 13.521262407302856
+      }
+    }
+  ],
+  "artifacts_dir": "experiments\\pilot\\runs\\M0_NoFeedback\\100243_9fb796fe_0005\\neg_03",
+  "notes": null,
+  "iter_records_summary": [
+    {
+      "iter": 0,
+      "phase": "initial",
+      "pipeline_valid": true,
+      "solver_status": "under_constrained",
+      "solver_acceptable": true,
+      "kqp_pass": true,
+      "kqp_failed_query_ids": [],
+      "success": true
+    },
+    {
+      "iter": 1,
+      "phase": "repair",
+      "pipeline_valid": true,
+      "solver_status": "under_constrained",
+      "solver_acceptable": true,
+      "kqp_pass": true,
+      "kqp_failed_query_ids": [],
+      "success": true
+    },
+    {
+      "iter": 2,
+      "phase": "repair",
+      "pipeline_valid": true,
+      "solver_status": "under_constrained",
+      "solver_acceptable": true,
+      "kqp_pass": true,
+      "kqp_failed_query_ids": [],
+      "success": true
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "method": "M1_SolverOnly",
+  "name": "Solver Feedback Only — pipeline + solver",
+  "feedback_channels": [
+    "pipeline",
+    "solver"
+  ],
+  "schema_version": "benchmark_config_v0.2",
+  "metrics": {
+    "n_samples": 1,
+    "n_errors": 0,
+    "errors": [],
+    "Success@1": 0.0,
+    "Success@2": 0.0,
+    "Success@3": 0.0,
+    "F2S_ConversionRate": 0.0,
+    "MeanIterationsToSuccess": null,
+    "n_iterations_to_success_distribution": {
+      "1": 0,
+      "2": 0,
+      "3": 0
+    },
+    "MeanCED_declared_total": 9.0,
+    "MeanCED_executed_total": 0.0,
+    "MeanRepairCost": 9.9,
+    "MeanRuntimeCost_s": 38.452128410339355,
+    "MeanInputTokens": 5889.0,
+    "MeanOutputTokens": 773.0,
+    "MeanTotalTokens": 6662.0,
+    "n_failure_to_success": 0
+  }
+}

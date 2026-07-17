@@ -1,0 +1,52 @@
+{
+  "coordinate_system": {
+    "front_axis": "y",
+    "right_axis": "x",
+    "up_axis": "z"
+  },
+  "metadata": {
+    "comments": "Fixed V-axis bbox dimension by replacing the incorrect sketch_polygon with a sketch_rectangle of width 209.55 and height 57.912, matching the design plan.",
+    "source": "repair"
+  },
+  "operations": [
+    {
+      "op_id": "sk_748a1092",
+      "op_type": "sketch_rectangle",
+      "params": {
+        "center": [
+          104.775,
+          28.956
+        ],
+        "height": 57.912,
+        "width": 209.55
+      },
+      "plane": "XY",
+      "role": "base_profile"
+    },
+    {
+      "input": "sk_748a1092",
+      "op_id": "ft_7493fb24",
+      "op_type": "extrude",
+      "params": {
+        "direction": "+normal",
+        "distance": 19.05,
+        "extent_type": "one_side",
+        "operation": "new_body",
+        "taper_angle": 0
+      },
+      "role": "base_body"
+    },
+    {
+      "input": "ft_7493fb24",
+      "op_id": "op_export_step",
+      "op_type": "export_step",
+      "params": {
+        "path": "108851_4d515b10_0009.step"
+      },
+      "role": "export"
+    }
+  ],
+  "sample_id": "108851_4d515b10_0009",
+  "schema_version": "cad_ir_v0.1",
+  "unit": "mm"
+}

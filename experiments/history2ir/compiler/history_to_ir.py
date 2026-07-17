@@ -117,18 +117,43 @@ def compile_history_to_ir(history: dict, sample_id: str | None = None,
 
 def _build_sketch_op(sketch_info: dict, entities: dict,
                         entity_to_opid: dict[str, str]) -> dict:
-    """Build a sketch_<type> operation from a parsed sketch_info dict."""
+    """Build a sketch_<type> operation from a parsed sketch_info dict.
+
+    V0.1.2 fix: 2-loop case (outer + 1 inner) emits sketch_rectangular_frame
+    with frame params, NOT sketch_polygon with 8 vertices.  This is
+    what makes the Adaptor produce a real frame (with hole) rather than
+    a self-intersecting polygon.
+    """
     sketch_id = sketch_info["sketch_id"]
     op_id = _make_op_id(sketch_id, "sk")
     entity_to_opid[sketch_id] = op_id
     ptype = sketch_info.get("profile_type", "unknown")
 
     sketch_entity = entities.get(sketch_id, {})
+    # Determine if this is a 2-loop case:
+    #   - one profile with 2 loops (inner+outer rectangle in one profile)
+    #   - OR two separate profiles each with 1 loop (outer + inner in different profiles)
+    profiles = sketch_entity.get("profiles", {})
+    is_2_loop = False
+    if profiles:
+        first_p = next(iter(profiles.values()))
+        is_2_loop = len(first_p.get("loops", [])) == 2
+        if not is_2_loop and len(profiles) >= 2:
+            # Count total line-only loops across all profiles
+            n_loops = sum(len(p.get("loops", [])) for p in profiles.values())
+            if n_loops == 2:
+                is_2_loop = True
+
     params = _compute_sketch_params(ptype, sketch_entity)
+    if is_2_loop and "outer_width" in params:
+        # Re-route to rectangular_frame for proper frame rendering
+        op_type = "sketch_rectangular_frame"
+    else:
+        op_type = _sketch_type_from_profile(ptype)
 
     return {
         "op_id": op_id,
-        "op_type": _sketch_type_from_profile(ptype),
+        "op_type": op_type,
         "role": "base_profile",
         "plane": "XY",
         "params": params,
@@ -169,6 +194,8 @@ def _compute_sketch_params(ptype: str, sketch_entity: dict) -> dict:
         return _annulus_params(curves, pmm)
     if ptype == "frame_or_polygon_with_holes":
         return _frame_params(curves, pmm)
+    if ptype == "rectangular_frame":
+        return _frame_params_for_separate_profiles(sketch_entity)
     if ptype == "rectangle_or_polygon":
         return _rectangle_params(curves, pmm, profiles, sketch_entity)
     if ptype == "stadium":
@@ -227,6 +254,90 @@ def _frame_params(curves, pmm):
     }
 
 
+def _loop_bbox(loop: dict, curves: dict, points: dict) -> dict | None:
+    """Compute bbox of a single loop's profile_curves (in raw cm units)."""
+    xs, ys = [], []
+    for pc in loop.get("profile_curves", []):
+        cid = pc.get("curve")
+        c = curves.get(cid)
+        if not c:
+            continue
+        for pt_id in (c.get("start_point"), c.get("end_point")):
+            if pt_id and pt_id in points:
+                xs.append(points[pt_id].get("x", 0))
+                ys.append(points[pt_id].get("y", 0))
+    if not xs:
+        return None
+    return {"x_min": min(xs), "x_max": max(xs),
+              "y_min": min(ys), "y_max": max(ys)}
+
+
+def _frame_params_for_separate_profiles(sketch_entity: dict) -> dict:
+    """For 2 separate profile loops (outer + inner rect), compute outer/inner
+    bbox from each loop separately.
+
+    V0.1.4 fix: handle the Fusion360 pattern where the same rectangle appears
+    in TWO profiles — one with both outer+inner loops, another with a single
+    duplicate loop.  We dedupe loop-bboxes by curve-id set, then take the
+    two distinct bboxes (outer=larger, inner=smaller).
+
+    Falls back to ``_frame_params`` (which uses all 8 lines) when no clean
+    outer/inner bbox pair can be derived, so we never emit zero-dim frames.
+    """
+    profiles = sketch_entity.get("profiles", {}) or {}
+    curves = sketch_entity.get("curves", {}) or {}
+    points = sketch_entity.get("points", {}) or {}
+
+    # Build bbox-per-loop; dedupe by frozen curve-id set (order-independent).
+    seen_curve_sets: set[frozenset] = set()
+    bboxes: list[dict] = []
+    for pid, prof in profiles.items():
+        for loop in prof.get("loops", []):
+            curve_ids = frozenset(pc.get("curve") for pc in loop.get("profile_curves", []))
+            if not curve_ids or curve_ids in seen_curve_sets:
+                continue
+            seen_curve_sets.add(curve_ids)
+            bb = _loop_bbox(loop, curves, points)
+            if bb:
+                bboxes.append(bb)
+
+    if len(bboxes) >= 2:
+        # Outer = larger bbox; Inner = smaller bbox (mm via x*10)
+        bboxes.sort(key=lambda b: -((b["x_max"] - b["x_min"]) * (b["y_max"] - b["y_min"])))
+        ob = bboxes[0]
+        ib = bboxes[1]
+        ow = (ob["x_max"] - ob["x_min"]) * 10
+        oh = (ob["y_max"] - ob["y_min"]) * 10
+        iw = (ib["x_max"] - ib["x_min"]) * 10
+        ih = (ib["y_max"] - ib["y_min"]) * 10
+        # Validate: inner must fit inside outer (rare bug: inner>outer means
+        # the loops are swapped; flip them in that case).
+        if iw > ow or ih > oh:
+            ow, iw = iw, ow
+            oh, ih = ih, oh
+            ob, ib = ib, ob
+        cx = ((ob["x_min"] + ob["x_max"]) / 2) * 10
+        cy = ((ob["y_min"] + ob["y_max"]) / 2) * 10
+        return {
+            "outer_width": round(ow, 4), "outer_height": round(oh, 4),
+            "inner_width": round(iw, 4), "inner_height": round(ih, 4),
+            "center": [round(cx, 4), round(cy, 4)],
+        }
+
+    # Fallback: only 1 distinct loop visible (e.g., 2-loop profile where the
+    # loop sets are equivalent, OR the second profile is a pure duplicate).
+    # Use the all-line bbox as outer; inner becomes the second-largest bbox
+    # from a finer-grained scan.
+    pmm = {pid: {"x": round(p["x"] * 10, 4), "y": round(p["y"] * 10, 4)}
+             for pid, p in points.items() if isinstance(p, dict)}
+    all_bb = _frame_params(curves, pmm)
+    # If we still got zeros, return zero-bbox (caller will treat as failure).
+    if all_bb["outer_width"] <= 0 or all_bb["outer_height"] <= 0:
+        return {"outer_width": 0, "outer_height": 0,
+                  "inner_width": 0, "inner_height": 0, "center": [0, 0]}
+    return all_bb
+
+
 def _rectangle_params(curves, pmm, profiles, sketch_entity):
     """Outer rect: 4 SketchLines forming a closed loop.  Return width/height/center."""
     xs, ys = [], []
@@ -270,7 +381,69 @@ def _stadium_params(curves, pmm):
 
 
 def _polygon_params(curves, pmm, profiles, sketch_entity):
-    """Generic polygon: extract vertices from line endpoints."""
+    """Generic polygon: extract vertices from line endpoints.
+
+    V0.1.2 fix: detect 2-loop case (outer + inner rectangle) and
+    return separate outer/inner vertex lists.  The renderer in
+    cadquery_backend handles 2-loop case by using
+    `Workplane.center(...).rect(outer).rect(inner).extrude(H)`.
+    For 1-loop or 3+-loop, return a single combined list.
+
+    Note: 2-loop case is detected from `profiles[*].loops` (not from
+    `curves`) since we have `profiles` in scope.
+    """
+    # First, check if there are 2 loops (outer + 1 inner)
+    if profiles:
+        first_pid = next(iter(profiles.keys()))
+        first_profile = profiles[first_pid]
+        loops = first_profile.get("loops", [])
+        if len(loops) == 2:
+            # Find outer + inner
+            outer_loop = None
+            inner_loop = None
+            for loop in loops:
+                if loop.get("is_outer", True):
+                    outer_loop = loop
+                else:
+                    inner_loop = loop
+            if outer_loop and inner_loop:
+                # Extract outer and inner rectangle parameters from loops
+                outer_cids = [pc.get("curve") for pc in outer_loop.get("profile_curves", [])]
+                inner_cids = [pc.get("curve") for pc in inner_loop.get("profile_curves", [])]
+                if outer_cids and inner_cids:
+                    # Pull curves to get bbox
+                    def bbox(cids):
+                        xs, ys = [], []
+                        for cid in cids:
+                            if cid in sketch_entity.get("curves", {}):
+                                c = sketch_entity["curves"][cid]
+                                sp = sketch_entity.get("points", {}).get(c.get("start_point"))
+                                ep = sketch_entity.get("points", {}).get(c.get("end_point"))
+                                for p in [sp, ep]:
+                                    if p:
+                                        xs.append(p.get("x", 0))
+                                        ys.append(p.get("y", 0))
+                        if not xs:
+                            return None
+                        return {"x_min": min(xs), "x_max": max(xs),
+                                  "y_min": min(ys), "y_max": max(ys)}
+                    ob = bbox(outer_cids)
+                    ib = bbox(inner_cids)
+                    if ob and ib:
+                        outer_w = ob["x_max"] - ob["x_min"]
+                        outer_h = ob["y_max"] - ob["y_min"]
+                        inner_w = ib["x_max"] - ib["x_min"]
+                        inner_h = ib["y_max"] - ib["y_min"]
+                        cx = (ob["x_min"] + ob["x_max"]) / 2
+                        cy = (ob["y_min"] + ob["y_max"]) / 2
+                        return {
+                            "outer_width": round(outer_w, 4),
+                            "outer_height": round(outer_h, 4),
+                            "inner_width": round(inner_w, 4),
+                            "inner_height": round(inner_h, 4),
+                            "center": [round(cx, 4), round(cy, 4)],
+                        }
+    # Generic polygon case: extract vertices from line endpoints
     verts = []
     seen = set()
     for c in curves.values():
@@ -284,7 +457,6 @@ def _polygon_params(curves, pmm, profiles, sketch_entity):
                     seen.add(pt)
                     verts.append([pt[0], pt[1]])
     if not verts:
-        # Fallback to arbitrary_polygon: use the bbox of the first profile's curves
         return {"vertices": [[0, 0], [1, 0], [1, 1], [0, 1]]}
     return {"vertices": verts}
 

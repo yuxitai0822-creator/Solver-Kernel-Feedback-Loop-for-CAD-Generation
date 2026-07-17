@@ -1,0 +1,64 @@
+{
+  "coordinate_system": {
+    "front_axis": "y",
+    "right_axis": "x",
+    "up_axis": "z"
+  },
+  "metadata": {
+    "comments": "Fixed sketch polygon vertices to match design plan profile dimensions (width_v=57.912) and origin at bbox_min_corner.",
+    "source": "repair"
+  },
+  "operations": [
+    {
+      "op_id": "sk_748a1092",
+      "op_type": "sketch_polygon",
+      "params": {
+        "vertices": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            209.55,
+            0.0
+          ],
+          [
+            209.55,
+            57.912
+          ],
+          [
+            0.0,
+            57.912
+          ]
+        ]
+      },
+      "plane": "XY",
+      "role": "base_profile"
+    },
+    {
+      "input": "sk_748a1092",
+      "op_id": "ft_7493fb24",
+      "op_type": "extrude",
+      "params": {
+        "direction": "+normal",
+        "distance": 19.05,
+        "extent_type": "one_side",
+        "operation": "new_body",
+        "taper_angle": 0
+      },
+      "role": "base_body"
+    },
+    {
+      "input": "ft_7493fb24",
+      "op_id": "op_export_step",
+      "op_type": "export_step",
+      "params": {
+        "path": "108851_4d515b10_0009.step"
+      },
+      "role": "export"
+    }
+  ],
+  "sample_id": "108851_4d515b10_0009",
+  "schema_version": "cad_ir_v0.1",
+  "unit": "mm"
+}

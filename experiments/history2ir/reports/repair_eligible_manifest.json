@@ -1,9 +1,9 @@
 {
-  "phase": "Repair Eligible Negative Set v0.1",
+  "phase": "Repair Eligible Negative Set v0.1.4",
   "criteria": "compile_pass AND adaptor success AND step_exists AND behavioral_equivalence.sample_agree AND behavioral_equivalence.targeted_failure_preserved",
-  "n_eligible": 103,
+  "n_eligible": 104,
   "n_total_negatives": 132,
-  "eligible_ratio": 0.7803030303030303,
+  "eligible_ratio": 0.7878787878787878,
   "samples": [
     {
       "sample_id": "100243_9fb796fe_0005",
@@ -80,6 +80,14 @@
     {
       "sample_id": "101427_a9bcb09c_0002",
       "negative_id": "neg_03"
+    },
+    {
+      "sample_id": "101817_b02acd9f_0000",
+      "negative_id": "neg_01"
+    },
+    {
+      "sample_id": "101817_b02acd9f_0001",
+      "negative_id": "neg_01"
     },
     {
       "sample_id": "101817_b02acd9f_0002",
@@ -292,10 +300,6 @@
     {
       "sample_id": "107467_a8afc51d_0000",
       "negative_id": "neg_01"
-    },
-    {
-      "sample_id": "107467_a8afc51d_0000",
-      "negative_id": "neg_03"
     },
     {
       "sample_id": "107467_a8afc51d_0002",

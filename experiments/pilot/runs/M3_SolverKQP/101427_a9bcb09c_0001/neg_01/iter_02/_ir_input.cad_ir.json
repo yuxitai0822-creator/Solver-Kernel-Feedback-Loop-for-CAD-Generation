@@ -1,0 +1,80 @@
+{
+  "coordinate_system": {
+    "front_axis": "y",
+    "right_axis": "x",
+    "up_axis": "z"
+  },
+  "metadata": {
+    "comments": "Fixed extrude distance from 37.5 to 25.0 to match design plan and pass q_bbox_w validation.",
+    "source": "repair"
+  },
+  "operations": [
+    {
+      "op_id": "sk_34da9014",
+      "op_type": "sketch_polygon",
+      "params": {
+        "vertices": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            1930.0,
+            0.0
+          ],
+          [
+            1930.0,
+            550.0
+          ],
+          [
+            0.0,
+            550.0
+          ],
+          [
+            -25.0,
+            -25.0
+          ],
+          [
+            1955.0,
+            -25.0
+          ],
+          [
+            1955.0,
+            575.0
+          ],
+          [
+            -25.0,
+            575.0
+          ]
+        ]
+      },
+      "plane": "XY",
+      "role": "base_profile"
+    },
+    {
+      "input": "sk_34da9014",
+      "op_id": "ft_34de879d",
+      "op_type": "extrude",
+      "params": {
+        "direction": "+normal",
+        "distance": 25.0,
+        "extent_type": "one_side",
+        "operation": "new_body",
+        "taper_angle": 0
+      },
+      "role": "base_body"
+    },
+    {
+      "input": "ft_34de879d",
+      "op_id": "op_export_step",
+      "op_type": "export_step",
+      "params": {
+        "path": "101427_a9bcb09c_0001.step"
+      },
+      "role": "export"
+    }
+  ],
+  "sample_id": "101427_a9bcb09c_0001",
+  "schema_version": "cad_ir_v0.1",
+  "unit": "mm"
+}

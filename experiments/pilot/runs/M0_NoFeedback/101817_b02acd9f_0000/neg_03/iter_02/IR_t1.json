@@ -1,0 +1,54 @@
+{
+  "coordinate_system": {
+    "front_axis": "y",
+    "right_axis": "x",
+    "up_axis": "z"
+  },
+  "metadata": {
+    "comments": "Corrected export_step input reference to match the extrude op_id, resolving the downstream execution and export failure.",
+    "source": "repair"
+  },
+  "operations": [
+    {
+      "op_id": "sk_84927334",
+      "op_type": "sketch_rectangular_frame",
+      "params": {
+        "center": [
+          80.0,
+          -50.0
+        ],
+        "inner_height": 37.6,
+        "inner_width": 37.6,
+        "outer_height": 40.0,
+        "outer_width": 40.0
+      },
+      "plane": "XY",
+      "role": "base_profile"
+    },
+    {
+      "input": "sk_84927334",
+      "op_id": "ft_8495a77a",
+      "op_type": "extrude",
+      "params": {
+        "direction": "+normal",
+        "distance": 780.0,
+        "extent_type": "one_side",
+        "operation": "new_body",
+        "taper_angle": 0.0
+      },
+      "role": "base_body"
+    },
+    {
+      "input": "ft_8495a77a",
+      "op_id": "op_export_step",
+      "op_type": "export_step",
+      "params": {
+        "path": "101817_b02acd9f_0000.step"
+      },
+      "role": "export"
+    }
+  ],
+  "sample_id": "101817_b02acd9f_0000",
+  "schema_version": "cad_ir_v0.1",
+  "unit": "mm"
+}

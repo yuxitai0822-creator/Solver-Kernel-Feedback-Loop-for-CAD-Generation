@@ -1,0 +1,27 @@
+{
+  "solve_status": "conflicting",
+  "severity": "blocking",
+  "dof": 0,
+  "return_code": 0,
+  "exception": "no lines in sketch",
+  "message": "no SketchLine entities found",
+  "flags": {
+    "has_conflict": false,
+    "has_redundancy": false,
+    "has_invalid_constraints": false,
+    "has_over_constrained": false,
+    "has_partially_redundant": false,
+    "has_missing_v_h_constraints": false,
+    "has_non_linear_constraints": true,
+    "has_solver_error": true
+  },
+  "non_linear_constraint_ids": [
+    "dc40dc5c-e353-11ea-aee5-54bf646e7e1f",
+    "dc417892-e353-11ea-b74a-54bf646e7e1f"
+  ],
+  "redundant_constraint_ids": [],
+  "conflicting_constraint_ids": [],
+  "malformed_constraint_ids": [],
+  "recompute_status": "success",
+  "status": "ran"
+}

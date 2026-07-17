@@ -10,15 +10,43 @@
   "operations": [
     {
       "op_id": "sk_84927334",
-      "op_type": "sketch_annulus",
+      "op_type": "sketch_polygon",
       "role": "base_profile",
       "plane": "XY",
       "params": {
-        "inner_radius": 0.0,
-        "outer_radius": 0.0,
-        "center": [
-          0.0,
-          0.0
+        "vertices": [
+          [
+            60.0,
+            -30.0
+          ],
+          [
+            100.0,
+            -30.0
+          ],
+          [
+            100.0,
+            -70.0
+          ],
+          [
+            60.0,
+            -70.0
+          ],
+          [
+            61.2,
+            -31.2
+          ],
+          [
+            98.8,
+            -31.2
+          ],
+          [
+            98.8,
+            -68.8
+          ],
+          [
+            61.2,
+            -68.8
+          ]
         ]
       }
     },

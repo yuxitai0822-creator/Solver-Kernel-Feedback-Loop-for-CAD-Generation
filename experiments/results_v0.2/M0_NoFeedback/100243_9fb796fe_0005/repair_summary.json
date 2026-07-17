@@ -1,0 +1,53 @@
+{
+  "sample_id": "100243_9fb796fe_0005",
+  "method": "M0_NoFeedback",
+  "n_iterations": 2,
+  "success": false,
+  "strict_success": false,
+  "n_iterations_to_success": null,
+  "stop_reason": "stop_S2_ir_unchanged",
+  "metrics": {
+    "success_at_1": false,
+    "success_at_2": false,
+    "success_at_3": false,
+    "failure_to_success": false,
+    "kqp_query_improvement": 0,
+    "remaining_failed_query_count": 1,
+    "targeted_repair_success": false,
+    "ced_text_total": 0.0,
+    "ced_declared_total": 0.0,
+    "ced_executed_total": 0.0,
+    "repair_cost": 0.6000000000000001,
+    "n_execution": 2,
+    "n_verification": 4,
+    "runtime_sec": 59.101274251937866,
+    "input_tokens": 2086,
+    "output_tokens": 1541,
+    "total_tokens": 3627,
+    "n_iterations": 2
+  },
+  "iter_records_summary": [
+    {
+      "iter": 0,
+      "phase": "initial",
+      "stop_rule": null,
+      "pipeline_valid": false,
+      "solver_status": "under_constrained",
+      "solver_acceptable": true,
+      "kqp_pass": false,
+      "success": false,
+      "action": null
+    },
+    {
+      "iter": 1,
+      "phase": "repair",
+      "stop_rule": "S2",
+      "pipeline_valid": false,
+      "solver_status": "under_constrained",
+      "solver_acceptable": true,
+      "kqp_pass": false,
+      "success": false,
+      "action": "repair"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "coordinate_system": {
+    "front_axis": "y",
+    "right_axis": "x",
+    "up_axis": "z"
+  },
+  "metadata": {
+    "comments": "Fixed unit conversion scaling for sketch vertices and extrude distance to match design plan dimensions (19x19x130 mm).",
+    "source": "repair"
+  },
+  "operations": [
+    {
+      "op_id": "sk_3d2c7500",
+      "op_type": "sketch_rectangle",
+      "params": {
+        "center": [
+          -572.782,
+          -129.4015
+        ],
+        "height": 19.0,
+        "width": 19.0
+      },
+      "plane": "XY",
+      "role": "base_profile"
+    },
+    {
+      "input": "sk_3d2c7500",
+      "op_id": "ft_3d87fc64",
+      "op_type": "extrude",
+      "params": {
+        "direction": "+normal",
+        "distance": 130.0,
+        "extent_type": "one_side",
+        "operation": "new_body",
+        "taper_angle": 0
+      },
+      "role": "base_body"
+    },
+    {
+      "input": "ft_3d87fc64",
+      "op_id": "op_export_step",
+      "op_type": "export_step",
+      "params": {
+        "path": "100243_9fb796fe_0006.step"
+      },
+      "role": "export"
+    }
+  ],
+  "sample_id": "100243_9fb796fe_0006",
+  "schema_version": "cad_ir_v0.1",
+  "unit": "mm"
+}

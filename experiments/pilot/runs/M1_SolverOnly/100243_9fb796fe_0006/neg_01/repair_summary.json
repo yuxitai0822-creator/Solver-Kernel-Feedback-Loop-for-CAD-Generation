@@ -1,0 +1,64 @@
+{
+  "sample_id": "100243_9fb796fe_0006",
+  "method": "M1_SolverOnly",
+  "n_iterations": 3,
+  "success": false,
+  "strict_success": false,
+  "n_iterations_to_success": null,
+  "stop_reason": "stop_S4_max_iter",
+  "metrics": {
+    "success_at_1": false,
+    "success_at_2": false,
+    "success_at_3": false,
+    "failure_to_success": false,
+    "kqp_query_improvement": 0,
+    "remaining_failed_query_count": 0,
+    "targeted_repair_success": false,
+    "ced_text_total": 0.3427922814982974,
+    "ced_declared_total": 7.0,
+    "ced_executed_total": 0.0,
+    "repair_cost": 7.9,
+    "n_execution": 3,
+    "n_verification": 6,
+    "runtime_sec": 36.378472328186035,
+    "input_tokens": 5334,
+    "output_tokens": 767,
+    "total_tokens": 6101,
+    "n_iterations": 3
+  },
+  "iter_records_summary": [
+    {
+      "iter": 0,
+      "phase": "initial",
+      "stop_rule": null,
+      "pipeline_valid": false,
+      "solver_status": "under_constrained",
+      "solver_acceptable": true,
+      "kqp_pass": false,
+      "success": false,
+      "action": null
+    },
+    {
+      "iter": 1,
+      "phase": "repair",
+      "stop_rule": null,
+      "pipeline_valid": false,
+      "solver_status": "under_constrained",
+      "solver_acceptable": true,
+      "kqp_pass": false,
+      "success": false,
+      "action": "repair"
+    },
+    {
+      "iter": 2,
+      "phase": "repair",
+      "stop_rule": null,
+      "pipeline_valid": false,
+      "solver_status": "under_constrained",
+      "solver_acceptable": true,
+      "kqp_pass": true,
+      "success": false,
+      "action": "repair"
+    }
+  ]
+}

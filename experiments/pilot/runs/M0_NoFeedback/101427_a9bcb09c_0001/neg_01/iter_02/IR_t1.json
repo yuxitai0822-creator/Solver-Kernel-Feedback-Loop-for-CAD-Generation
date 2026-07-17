@@ -1,0 +1,79 @@
+{
+  "coordinate_system": {
+    "front_axis": "y",
+    "right_axis": "x",
+    "up_axis": "z"
+  },
+  "metadata": {
+    "comments": "Replaced invalid sketch_polygon with two sketch_rectangles and extrusions (new_body then cut) to create the rectangular frame.",
+    "source": "repair"
+  },
+  "operations": [
+    {
+      "op_id": "op_001",
+      "op_type": "sketch_rectangle",
+      "params": {
+        "center": [
+          965.0,
+          275.0
+        ],
+        "height": 600.0,
+        "width": 1980.0
+      },
+      "plane": "XY",
+      "role": "base_profile"
+    },
+    {
+      "input": "op_001",
+      "op_id": "op_002",
+      "op_type": "extrude",
+      "params": {
+        "direction": "+normal",
+        "distance": 25.0,
+        "extent_type": "one_side",
+        "operation": "new_body",
+        "taper_angle": 0.0
+      },
+      "role": "base_body"
+    },
+    {
+      "op_id": "op_003",
+      "op_type": "sketch_rectangle",
+      "params": {
+        "center": [
+          965.0,
+          275.0
+        ],
+        "height": 550.0,
+        "width": 1930.0
+      },
+      "plane": "XY",
+      "role": "cut_profile"
+    },
+    {
+      "input": "op_003",
+      "op_id": "op_004",
+      "op_type": "extrude",
+      "params": {
+        "direction": "+normal",
+        "distance": 25.0,
+        "extent_type": "one_side",
+        "operation": "cut",
+        "taper_angle": 0.0
+      },
+      "role": "cut_body"
+    },
+    {
+      "input": "op_004",
+      "op_id": "op_005",
+      "op_type": "export_step",
+      "params": {
+        "path": "101427_a9bcb09c_0001.step"
+      },
+      "role": "export"
+    }
+  ],
+  "sample_id": "101427_a9bcb09c_0001",
+  "schema_version": "cad_ir_v0.1",
+  "unit": "mm"
+}

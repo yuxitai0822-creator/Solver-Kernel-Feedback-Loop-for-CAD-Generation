@@ -1,0 +1,14 @@
+{
+  "design_plan_path": "DesignPlan\\compiler\\instances_v6\\107668_cf76b132_0001.design_plan.json",
+  "initial_ir_path": "cad_ir\\samples\\manual_ir_examples\\107668_cf76b132_0001.cad_ir.json",
+  "initial_step_path": "Reconstruction_results\\107668_cf76b132_0001\\generated.step",
+  "kqp_instance_path": "kqp\\outputs\\compiler_v0.1\\107668_cf76b132_0001.kqp_instance.json",
+  "perturbation_meta_path": "task5_negative_perturbation\\perturbations\\107668_cf76b132_0001\\neg_02\\perturbation_meta.json",
+  "perturbed_history_path": "task5_negative_perturbation\\perturbations\\107668_cf76b132_0001\\neg_02\\107668_cf76b132_0001_perturbed.json",
+  "sample_id": "107668_cf76b132_0001",
+  "negative_id": "neg_02",
+  "source": "task5_perturbed_history",
+  "perturbation_type": null,
+  "perturbation_operator": "E3_radius_up",
+  "perturbation_target_intent": "cylinder_radius"
+}

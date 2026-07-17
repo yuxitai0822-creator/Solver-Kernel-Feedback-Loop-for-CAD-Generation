@@ -1,0 +1,85 @@
+{
+  "ced_text": {
+    "raw": 341,
+    "normalized": 0.35118434603501547,
+    "text_a_len": 971,
+    "text_b_len": 860
+  },
+  "ced_declared": {
+    "raw": 6.0,
+    "normalized": 0.75,
+    "weight_a": 8,
+    "weight_b": 6,
+    "base": 8,
+    "n_ops_a": 4,
+    "n_ops_b": 3,
+    "available": true,
+    "breakdown": {
+      "n_matches_added": 0,
+      "n_matches_deleted": 1,
+      "n_matches_matched": 3,
+      "by_kind": {
+        "sketch_annulus": {
+          "added": 0,
+          "deleted": 1,
+          "matched": 1,
+          "cost": 6.0
+        },
+        "extrude": {
+          "added": 0,
+          "deleted": 0,
+          "matched": 1,
+          "cost": 0.0
+        },
+        "export_step": {
+          "added": 0,
+          "deleted": 0,
+          "matched": 1,
+          "cost": 0.0
+        }
+      },
+      "match_pairs": [
+        {
+          "match_kind": "matched",
+          "match_by": "op_id",
+          "a_op_id": "sk_714de298",
+          "b_op_id": "sk_714de298",
+          "a_op_type": "sketch_annulus",
+          "b_op_type": "sketch_circle",
+          "cost": 4.0
+        },
+        {
+          "match_kind": "matched",
+          "match_by": "op_id",
+          "a_op_id": "ft_716031ee",
+          "b_op_id": "ft_716031ee",
+          "a_op_type": "extrude",
+          "b_op_type": "extrude",
+          "cost": 0.0
+        },
+        {
+          "match_kind": "matched",
+          "match_by": "op_id",
+          "a_op_id": "op_export_step",
+          "b_op_id": "op_export_step",
+          "a_op_type": "export_step",
+          "b_op_type": "export_step",
+          "cost": 0.0
+        },
+        {
+          "match_kind": "deleted",
+          "match_by": "unmatched_a",
+          "a_op_id": "sk_7161dfa8",
+          "b_op_id": null,
+          "a_op_type": "sketch_annulus",
+          "b_op_type": null,
+          "cost": 2.0
+        }
+      ]
+    }
+  },
+  "ced_executed": null,
+  "primary_metric": "CED_declared",
+  "primary_value": 0.75,
+  "primary_raw": 6.0
+}

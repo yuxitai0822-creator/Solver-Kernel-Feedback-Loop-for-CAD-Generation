@@ -1,0 +1,61 @@
+{
+  "phase": "Pilot v0.1",
+  "date": "2026-07-16",
+  "sample_selection": "experiments/pilot/pilot_sample_selection.json",
+  "methods_tested": [
+    "M0_NoFeedback",
+    "M1_SolverOnly",
+    "M2_KQPOnly",
+    "M3_SolverKQP"
+  ],
+  "per_method": {
+    "M0_NoFeedback": {
+      "n_samples": 18,
+      "n_success": 0,
+      "Success@3": 0.0,
+      "tokens_in_total": 92618,
+      "tokens_out_total": 13367,
+      "tokens_in_per_sample": 5145,
+      "tokens_out_per_sample": 742,
+      "n_ir_was_modified": 29,
+      "n_ced_nonzero": 15
+    },
+    "M1_SolverOnly": {
+      "n_samples": 18,
+      "n_success": 0,
+      "Success@3": 0.0,
+      "tokens_in_total": 90497,
+      "tokens_out_total": 13008,
+      "tokens_in_per_sample": 5027,
+      "tokens_out_per_sample": 722,
+      "n_ir_was_modified": 28,
+      "n_ced_nonzero": 15
+    },
+    "M2_KQPOnly": {
+      "n_samples": 18,
+      "n_success": 0,
+      "Success@3": 0.0,
+      "tokens_in_total": 110712,
+      "tokens_out_total": 13595,
+      "tokens_in_per_sample": 6150,
+      "tokens_out_per_sample": 755,
+      "n_ir_was_modified": 34,
+      "n_ced_nonzero": 15
+    },
+    "M3_SolverKQP": {
+      "n_samples": 18,
+      "n_success": 0,
+      "Success@3": 0.0,
+      "tokens_in_total": 111944,
+      "tokens_out_total": 13813,
+      "tokens_in_per_sample": 6219,
+      "tokens_out_per_sample": 767,
+      "n_ir_was_modified": 33,
+      "n_ced_nonzero": 16
+    }
+  },
+  "config_version": "benchmark_config_v0.2",
+  "contract_section": "doc/experiment_contract_v0.1.md §3, §4",
+  "protocol": "doc/pilot_protocol_v0.1.md",
+  "note": "Pilot is NOT statistical — n=18 per method. Numbers are descriptive pipeline-integrity checks per §6 of pilot_protocol."
+}

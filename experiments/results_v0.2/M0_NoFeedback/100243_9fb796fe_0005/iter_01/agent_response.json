@@ -1,0 +1,4 @@
+{
+  "method": "M0_NoFeedback",
+  "response_text": "```json\n{\n  \"action\": \"repair\",\n  \"repair_operations\": [\n    {\n      \"op\": \"MODIFY\",\n      \"target\": \"op_002\",\n      \"field\": \"params.distance\",\n      \"old\": 300.0,\n      \"new\": 200.0\n    }\n  ]\n}\n```"
+}
