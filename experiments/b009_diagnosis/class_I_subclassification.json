@@ -1,0 +1,191 @@
+{
+  "n_class_I-a": 0,
+  "n_class_I-b": 4,
+  "n_class_I-c": 0,
+  "n_class_unclear": 0,
+  "per_sample": [
+    {
+      "sample_id": "108850_0dcd5ef1_0004",
+      "decision": "I-b",
+      "evidence": [
+        "frame.w_dir doesn't match the body's smallest world axis"
+      ]
+    },
+    {
+      "sample_id": "108851_4d515b10_0005",
+      "decision": "I-b",
+      "evidence": [
+        "frame.w_dir doesn't match the body's smallest world axis"
+      ]
+    },
+    {
+      "sample_id": "108851_4d515b10_0006",
+      "decision": "I-b",
+      "evidence": [
+        "frame.w_dir doesn't match the body's smallest world axis"
+      ]
+    },
+    {
+      "sample_id": "108852_fed54702_0004",
+      "decision": "I-b",
+      "evidence": [
+        "frame.w_dir doesn't match the body's smallest world axis"
+      ]
+    }
+  ],
+  "by_class": {
+    "I-a": [],
+    "I-b": [
+      {
+        "sample_id": "108850_0dcd5ef1_0004",
+        "frame.u_dir": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "frame.v_dir": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "frame.w_dir": [
+          -0.0,
+          1.0,
+          0.0
+        ],
+        "hist.plane.normal": [
+          1.0,
+          -8.465450562766823e-16,
+          6.175615574477436e-15
+        ],
+        "hist.transform.x_axis": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "world_spans": {
+          "x": 6.35,
+          "y": 171.45,
+          "z": 110.998
+        },
+        "has_corrective_transform": false,
+        "evidence": [
+          "frame.w_dir doesn't match the body's smallest world axis"
+        ]
+      },
+      {
+        "sample_id": "108851_4d515b10_0005",
+        "frame.u_dir": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "frame.v_dir": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "frame.w_dir": [
+          -0.0,
+          1.0,
+          0.0
+        ],
+        "hist.plane.normal": [
+          1.0,
+          1.4085954624931678e-14,
+          2.220446049250336e-16
+        ],
+        "hist.transform.x_axis": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "world_spans": {
+          "x": 12.7,
+          "y": 307.848,
+          "z": 19.05
+        },
+        "has_corrective_transform": false,
+        "evidence": [
+          "frame.w_dir doesn't match the body's smallest world axis"
+        ]
+      },
+      {
+        "sample_id": "108851_4d515b10_0006",
+        "frame.u_dir": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "frame.v_dir": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "frame.w_dir": [
+          -0.0,
+          1.0,
+          0.0
+        ],
+        "hist.plane.normal": [
+          1.0,
+          6.10622663543835e-16,
+          4.163336342344337e-16
+        ],
+        "hist.transform.x_axis": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "world_spans": {
+          "x": 12.7,
+          "y": 95.25,
+          "z": 19.05
+        },
+        "has_corrective_transform": false,
+        "evidence": [
+          "frame.w_dir doesn't match the body's smallest world axis"
+        ]
+      },
+      {
+        "sample_id": "108852_fed54702_0004",
+        "frame.u_dir": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "frame.v_dir": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "frame.w_dir": [
+          -0.0,
+          1.0,
+          0.0
+        ],
+        "hist.plane.normal": [
+          -0.0,
+          1.137978600240786e-15,
+          1.0
+        ],
+        "hist.transform.x_axis": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "world_spans": {
+          "x": 7.9375,
+          "y": 7.9375,
+          "z": 139.7
+        },
+        "has_corrective_transform": false,
+        "evidence": [
+          "frame.w_dir doesn't match the body's smallest world axis"
+        ]
+      }
+    ],
+    "I-c": [],
+    "unclear": []
+  }
+}

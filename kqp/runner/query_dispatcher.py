@@ -42,48 +42,26 @@ def dispatch_query(shape, query: dict, frame: dict) -> dict:
             return _build_result(actual, expected, 0, query)
 
         elif intent == "bbox_size":
-            # For bbox_size, we use a hybrid approach:
-            # 1. Compute the axis-aligned bbox spans along world X, Y, Z.
-            # 2. For each frame axis (u/v/w), compute the projected span.
-            # 3. Since frame labels may be unreliable (corrective_transform issue),
-            #    we use a "best-match" strategy: for axis u, pick the world-axis
-            #    span that's closest to expected. This works because:
-            #    - For axis-aligned frames, u/v/w map directly to X/Y/Z.
-            #    - For swapped frames, the expected value tells us which dimension
-            #      we're looking for, so we can find it regardless of label.
-            # 4. For rotated frames (sample 20), we use the frame-axis projection
-            #    directly (bbox corner projection).
+            # B-009 + B-010 fix (2026-07-17): the pre-fix code used a
+            # "best-match" strategy for axis-aligned frames — it picked the
+            # world axis with the closest span to the expected value.  This
+            # was a safety net for mislabeled frames but it ALSO masked
+            # execution-level perturbations (EX1 plane swap, EX2 axis
+            # flip) where the body is rotated relative to the design
+            # plan's frame.
+            #
+            # Post-fix: ALWAYS use the frame-axis projection.  For clean
+            # samples (where the body is correctly oriented and the DP
+            # compiler correctly extracted the frame), the projection
+            # gives a value that matches the design plan's expected value.
+            # For EX1/EX2 perturbed samples, the projection produces a
+            # value that does NOT match the expected, making the
+            # perturbation detectable.
             u_dir = frame.get("u_dir", [1, 0, 0])
             v_dir = frame.get("v_dir", [0, 1, 0])
             w_dir = frame.get("w_dir", [0, 0, 1])
-
-            # Compute world-axis spans
-            xmin, ymin, zmin, xmax, ymax, zmax = gb.get_axis_aligned_bbox(shape)
-            world_spans = {
-                "x": xmax - xmin,
-                "y": ymax - ymin,
-                "z": zmax - zmin,
-            }
-
-            # Check if frame is axis-aligned (each direction has exactly one dominant component)
-            def is_axis_aligned(d):
-                return sum(1 for c in d if abs(c) > 0.5) == 1
-
-            if is_axis_aligned(u_dir) and is_axis_aligned(v_dir) and is_axis_aligned(w_dir):
-                # Axis-aligned frame: use best-match strategy
-                # For each axis, find the world span closest to expected
-                expected_f = float(expected)
-                best_actual = None
-                best_diff = float('inf')
-                for ws in world_spans.values():
-                    diff = abs(ws - expected_f)
-                    if diff < best_diff:
-                        best_diff = diff
-                        best_actual = ws
-                actual = best_actual
-            else:
-                # Rotated frame: use bbox corner projection
-                actual = gb.get_bbox_size_along_frame_axis(shape, axis, u_dir, v_dir, w_dir)
+            actual = gb.get_bbox_size_along_frame_axis(shape, axis,
+                                                       u_dir, v_dir, w_dir)
             return _build_result(actual, expected, tolerance, query)
 
         elif intent == "cylinder_radius":

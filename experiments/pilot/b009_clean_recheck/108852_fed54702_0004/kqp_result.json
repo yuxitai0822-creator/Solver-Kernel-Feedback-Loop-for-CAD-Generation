@@ -1,0 +1,97 @@
+{
+  "sample_id": "108852_fed54702_0004",
+  "kqp_schema_version": "kqp_instance_v0.2",
+  "step_file": "Reconstruction_results\\108852_fed54702_0004\\generated.step",
+  "overall_status": "fail",
+  "summary": {
+    "total_queries": 7,
+    "passed_queries": 5,
+    "failed_queries": 2,
+    "error_queries": 0
+  },
+  "query_results": [
+    {
+      "query_id": "q_body_count",
+      "intent": "body_count",
+      "status": "pass",
+      "expected": 1,
+      "actual": 1,
+      "tolerance": 0,
+      "error": 0,
+      "source_field": "$.target.body_count",
+      "feedback": null
+    },
+    {
+      "query_id": "q_bbox_u",
+      "intent": "bbox_size",
+      "status": "pass",
+      "expected": 7.9375,
+      "actual": 7.9375,
+      "tolerance": 0.01,
+      "error": 0.0,
+      "source_field": "$.solid_bodies[0].dimensions.profiles[0].radius.value (computed: 2*r)",
+      "feedback": null
+    },
+    {
+      "query_id": "q_bbox_v",
+      "intent": "bbox_size",
+      "status": "fail",
+      "expected": 7.9375,
+      "actual": 139.7,
+      "tolerance": 0.01,
+      "error": 131.7625,
+      "source_field": "$.solid_bodies[0].dimensions.profiles[0].radius.value (computed: 2*r)",
+      "feedback": {
+        "error_type": "dimension_mismatch",
+        "message": "Expected bbox v-size 7.9375mm (2*r), got 139.70000019999998mm."
+      }
+    },
+    {
+      "query_id": "q_bbox_w",
+      "intent": "bbox_size",
+      "status": "fail",
+      "expected": 139.7,
+      "actual": 7.9375,
+      "tolerance": 0.01,
+      "error": 131.7625,
+      "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+      "feedback": {
+        "error_type": "dimension_mismatch",
+        "message": "Expected bbox w-size 139.7mm, got 7.9375002mm."
+      }
+    },
+    {
+      "query_id": "q_radius",
+      "intent": "cylinder_radius",
+      "status": "pass",
+      "expected": 3.96875,
+      "actual": 3.96875,
+      "tolerance": 0.01,
+      "error": 0.0,
+      "source_field": "$.solid_bodies[0].dimensions.profiles[0].radius.value",
+      "feedback": null
+    },
+    {
+      "query_id": "q_is_solid",
+      "intent": "is_solid",
+      "status": "pass",
+      "expected": true,
+      "actual": true,
+      "tolerance": null,
+      "error": 0,
+      "source_field": "(implicit: valid extrude implies solid)",
+      "feedback": null
+    },
+    {
+      "query_id": "q_occt_valid",
+      "intent": "occt_valid",
+      "status": "pass",
+      "expected": true,
+      "actual": true,
+      "tolerance": null,
+      "error": 0,
+      "source_field": "(implicit)",
+      "feedback": null
+    }
+  ]
+}

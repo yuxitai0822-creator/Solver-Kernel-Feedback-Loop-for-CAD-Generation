@@ -37,21 +37,22 @@
       "primitive_type": "extruded_circle",
       "frame": {
         "u_dir": [
-          0.0,
-          -1.0,
-          0.0
-        ],
-        "v_dir": [
           1.0,
           0.0,
           0.0
         ],
-        "w_dir": [
+        "v_dir": [
           0.0,
           0.0,
-          1.0
+          -1.0
         ],
-        "span_computation": "vertex_projection"
+        "w_dir": [
+          -0.0,
+          1.0,
+          0.0
+        ],
+        "span_computation": "vertex_projection",
+        "frame_source": "transform.x_axis+y_axis+plane.normal"
       },
       "profiles": [
         {

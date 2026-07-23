@@ -1,0 +1,3665 @@
+{
+  "ex1": [],
+  "ex2": [
+    {
+      "sample_id": "100877_ac1e5a17_0001",
+      "operator": "EX2_coordinate_flip",
+      "status": "ok",
+      "meta": {
+        "perturbation_type": "EX2_coordinate_flip",
+        "error_category": "EX2_axis_flip",
+        "swapped_axes": "axis_0<->axis_1",
+        "target_intent": "bbox_size",
+        "expected_failed_queries": [
+          "q_bbox_u",
+          "q_bbox_v"
+        ],
+        "allowed_secondary_failed_queries": [],
+        "source_design_plan_field": "$.global_envelope.bbox",
+        "should_reconstruct": true,
+        "should_fail_kqp": true,
+        "operator": "EX2_coordinate_flip",
+        "n_points_swapped": 5
+      },
+      "bbox_mm": [
+        279.4,
+        215.9,
+        1.5875
+      ],
+      "step_exists": true,
+      "exec_report": {
+        "returncode": 0,
+        "compile_success": true,
+        "execute_success": true,
+        "export_success": true,
+        "occt_load_success": true,
+        "errors": [],
+        "export_success_at_out_step": true
+      },
+      "kqp": {
+        "sample_id": "100877_ac1e5a17_0001",
+        "kqp_schema_version": "kqp_instance_v0.2",
+        "step_file": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\100877_ac1e5a17_0001\\ex2\\generated.step",
+        "overall_status": "fail",
+        "summary": {
+          "total_queries": 6,
+          "passed_queries": 4,
+          "failed_queries": 2,
+          "error_queries": 0
+        },
+        "query_results": [
+          {
+            "query_id": "q_body_count",
+            "intent": "body_count",
+            "status": "pass",
+            "expected": 1,
+            "actual": 1,
+            "tolerance": 0,
+            "error": 0,
+            "source_field": "$.target.body_count",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_u",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 279.4,
+            "actual": 215.9,
+            "tolerance": 0.05,
+            "error": 63.5,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox u-size 279.4mm, got 215.9000002mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_v",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 215.9,
+            "actual": 279.4,
+            "tolerance": 0.05,
+            "error": 63.5,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox v-size 215.9mm, got 279.4000002mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_w",
+            "intent": "bbox_size",
+            "status": "pass",
+            "expected": 1.5875,
+            "actual": 1.5875,
+            "tolerance": 0.005,
+            "error": 0.0,
+            "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+            "feedback": null
+          },
+          {
+            "query_id": "q_is_solid",
+            "intent": "is_solid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit: valid extrude implies solid)",
+            "feedback": null
+          },
+          {
+            "query_id": "q_occt_valid",
+            "intent": "occt_valid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit)",
+            "feedback": null
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "100877_ac1e5a17_0017",
+      "operator": "EX2_coordinate_flip",
+      "status": "ok",
+      "meta": {
+        "perturbation_type": "EX2_coordinate_flip",
+        "error_category": "EX2_axis_flip",
+        "swapped_axes": "axis_0<->axis_1",
+        "target_intent": "bbox_size",
+        "expected_failed_queries": [
+          "q_bbox_u",
+          "q_bbox_v"
+        ],
+        "allowed_secondary_failed_queries": [],
+        "source_design_plan_field": "$.global_envelope.bbox",
+        "should_reconstruct": true,
+        "should_fail_kqp": true,
+        "operator": "EX2_coordinate_flip",
+        "n_points_swapped": 5
+      },
+      "bbox_mm": [
+        254.0,
+        190.5,
+        3.175
+      ],
+      "step_exists": true,
+      "exec_report": {
+        "returncode": 0,
+        "compile_success": true,
+        "execute_success": true,
+        "export_success": true,
+        "occt_load_success": true,
+        "errors": [],
+        "export_success_at_out_step": true
+      },
+      "kqp": {
+        "sample_id": "100877_ac1e5a17_0017",
+        "kqp_schema_version": "kqp_instance_v0.2",
+        "step_file": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\100877_ac1e5a17_0017\\ex2\\generated.step",
+        "overall_status": "fail",
+        "summary": {
+          "total_queries": 6,
+          "passed_queries": 4,
+          "failed_queries": 2,
+          "error_queries": 0
+        },
+        "query_results": [
+          {
+            "query_id": "q_body_count",
+            "intent": "body_count",
+            "status": "pass",
+            "expected": 1,
+            "actual": 1,
+            "tolerance": 0,
+            "error": 0,
+            "source_field": "$.target.body_count",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_u",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 254.0,
+            "actual": 190.5,
+            "tolerance": 0.05,
+            "error": 63.5,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox u-size 254.0mm, got 190.5000002mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_v",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 190.5,
+            "actual": 254.0,
+            "tolerance": 0.05,
+            "error": 63.5,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox v-size 190.5mm, got 254.0000002mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_w",
+            "intent": "bbox_size",
+            "status": "pass",
+            "expected": 3.175,
+            "actual": 3.175,
+            "tolerance": 0.01,
+            "error": 0.0,
+            "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+            "feedback": null
+          },
+          {
+            "query_id": "q_is_solid",
+            "intent": "is_solid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit: valid extrude implies solid)",
+            "feedback": null
+          },
+          {
+            "query_id": "q_occt_valid",
+            "intent": "occt_valid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit)",
+            "feedback": null
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "101269_f084ba14_0023",
+      "operator": "EX2_coordinate_flip",
+      "status": "ok",
+      "meta": {
+        "perturbation_type": "EX2_coordinate_flip",
+        "error_category": "EX2_axis_flip",
+        "swapped_axes": "axis_0<->axis_2",
+        "target_intent": "bbox_size",
+        "expected_failed_queries": [
+          "q_bbox_u",
+          "q_bbox_v"
+        ],
+        "allowed_secondary_failed_queries": [],
+        "source_design_plan_field": "$.global_envelope.bbox",
+        "should_reconstruct": true,
+        "should_fail_kqp": true,
+        "operator": "EX2_coordinate_flip",
+        "n_points_swapped": 5
+      },
+      "bbox_mm": [
+        95.25,
+        19.05,
+        571.5
+      ],
+      "step_exists": true,
+      "exec_report": {
+        "returncode": 0,
+        "compile_success": true,
+        "execute_success": true,
+        "export_success": true,
+        "occt_load_success": true,
+        "errors": [],
+        "export_success_at_out_step": true
+      },
+      "kqp": {
+        "sample_id": "101269_f084ba14_0023",
+        "kqp_schema_version": "kqp_instance_v0.2",
+        "step_file": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\101269_f084ba14_0023\\ex2\\generated.step",
+        "overall_status": "fail",
+        "summary": {
+          "total_queries": 6,
+          "passed_queries": 3,
+          "failed_queries": 3,
+          "error_queries": 0
+        },
+        "query_results": [
+          {
+            "query_id": "q_body_count",
+            "intent": "body_count",
+            "status": "pass",
+            "expected": 1,
+            "actual": 1,
+            "tolerance": 0,
+            "error": 0,
+            "source_field": "$.target.body_count",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_u",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 95.25,
+            "actual": 0.0,
+            "tolerance": 0.05,
+            "error": 95.25,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox u-size 95.25mm, got 2e-07mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_v",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 571.5,
+            "actual": 19.05,
+            "tolerance": 0.05,
+            "error": 552.45,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox v-size 571.5mm, got 19.050000200000003mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_w",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 19.05,
+            "actual": 571.5,
+            "tolerance": 0.01,
+            "error": 552.45,
+            "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox w-size 19.05mm, got 571.5000001999999mm."
+            }
+          },
+          {
+            "query_id": "q_is_solid",
+            "intent": "is_solid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit: valid extrude implies solid)",
+            "feedback": null
+          },
+          {
+            "query_id": "q_occt_valid",
+            "intent": "occt_valid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit)",
+            "feedback": null
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "101427_a9bcb09c_0001",
+      "operator": "EX2_coordinate_flip",
+      "status": "ok",
+      "meta": {
+        "perturbation_type": "EX2_coordinate_flip",
+        "error_category": "EX2_axis_flip",
+        "swapped_axes": "axis_0<->axis_2",
+        "target_intent": "bbox_size",
+        "expected_failed_queries": [
+          "q_bbox_u",
+          "q_bbox_v"
+        ],
+        "allowed_secondary_failed_queries": [],
+        "source_design_plan_field": "$.global_envelope.bbox",
+        "should_reconstruct": true,
+        "should_fail_kqp": true,
+        "operator": "EX2_coordinate_flip",
+        "n_points_swapped": 10
+      },
+      "bbox_mm": [
+        1980.0,
+        25.0,
+        600.0
+      ],
+      "step_exists": false,
+      "exec_report": {
+        "returncode": 0,
+        "compile_success": true,
+        "execute_success": false,
+        "export_success": false,
+        "occt_load_success": false,
+        "errors": [
+          "subprocess exit code 1"
+        ],
+        "export_success_at_out_step": false
+      },
+      "kqp": {}
+    },
+    {
+      "sample_id": "101427_a9bcb09c_0002",
+      "operator": "EX2_coordinate_flip",
+      "status": "ok",
+      "meta": {
+        "perturbation_type": "EX2_coordinate_flip",
+        "error_category": "EX2_axis_flip",
+        "swapped_axes": "axis_0<->axis_2",
+        "target_intent": "bbox_size",
+        "expected_failed_queries": [
+          "q_bbox_u",
+          "q_bbox_v"
+        ],
+        "allowed_secondary_failed_queries": [],
+        "source_design_plan_field": "$.global_envelope.bbox",
+        "should_reconstruct": true,
+        "should_fail_kqp": true,
+        "operator": "EX2_coordinate_flip",
+        "n_points_swapped": 6
+      },
+      "bbox_mm": [
+        1930.0,
+        50.0,
+        550.0
+      ],
+      "step_exists": true,
+      "exec_report": {
+        "returncode": 0,
+        "compile_success": true,
+        "execute_success": true,
+        "export_success": true,
+        "occt_load_success": true,
+        "errors": [],
+        "export_success_at_out_step": true
+      },
+      "kqp": {
+        "sample_id": "101427_a9bcb09c_0002",
+        "kqp_schema_version": "kqp_instance_v0.2",
+        "step_file": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\101427_a9bcb09c_0002\\ex2\\generated.step",
+        "overall_status": "fail",
+        "summary": {
+          "total_queries": 6,
+          "passed_queries": 3,
+          "failed_queries": 3,
+          "error_queries": 0
+        },
+        "query_results": [
+          {
+            "query_id": "q_body_count",
+            "intent": "body_count",
+            "status": "pass",
+            "expected": 1,
+            "actual": 1,
+            "tolerance": 0,
+            "error": 0,
+            "source_field": "$.target.body_count",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_u",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 1930.0,
+            "actual": 0.0,
+            "tolerance": 0.5,
+            "error": 1930.0,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox u-size 1930.0mm, got 2e-07mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_v",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 550.0,
+            "actual": 50.0,
+            "tolerance": 0.05,
+            "error": 500.0,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox v-size 550.0mm, got 50.0000002mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_w",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 50.0,
+            "actual": 550.0,
+            "tolerance": 0.01,
+            "error": 500.0,
+            "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox w-size 50.0mm, got 550.0000001999999mm."
+            }
+          },
+          {
+            "query_id": "q_is_solid",
+            "intent": "is_solid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit: valid extrude implies solid)",
+            "feedback": null
+          },
+          {
+            "query_id": "q_occt_valid",
+            "intent": "occt_valid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit)",
+            "feedback": null
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "101817_b02acd9f_0004",
+      "operator": "EX2_coordinate_flip",
+      "status": "ok",
+      "meta": {
+        "perturbation_type": "EX2_coordinate_flip",
+        "error_category": "EX2_axis_flip",
+        "swapped_axes": "axis_0<->axis_2",
+        "target_intent": "bbox_size",
+        "expected_failed_queries": [
+          "q_bbox_u",
+          "q_bbox_v"
+        ],
+        "allowed_secondary_failed_queries": [],
+        "source_design_plan_field": "$.global_envelope.bbox",
+        "should_reconstruct": true,
+        "should_fail_kqp": true,
+        "operator": "EX2_coordinate_flip",
+        "n_points_swapped": 5
+      },
+      "bbox_mm": [
+        1200.0,
+        20.0,
+        600.0
+      ],
+      "step_exists": true,
+      "exec_report": {
+        "returncode": 0,
+        "compile_success": true,
+        "execute_success": true,
+        "export_success": true,
+        "occt_load_success": true,
+        "errors": [],
+        "export_success_at_out_step": true
+      },
+      "kqp": {
+        "sample_id": "101817_b02acd9f_0004",
+        "kqp_schema_version": "kqp_instance_v0.2",
+        "step_file": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\101817_b02acd9f_0004\\ex2\\generated.step",
+        "overall_status": "fail",
+        "summary": {
+          "total_queries": 6,
+          "passed_queries": 3,
+          "failed_queries": 3,
+          "error_queries": 0
+        },
+        "query_results": [
+          {
+            "query_id": "q_body_count",
+            "intent": "body_count",
+            "status": "pass",
+            "expected": 1,
+            "actual": 1,
+            "tolerance": 0,
+            "error": 0,
+            "source_field": "$.target.body_count",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_u",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 1200.0,
+            "actual": 0.0,
+            "tolerance": 0.1,
+            "error": 1200.0,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox u-size 1200.0mm, got 2e-07mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_v",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 600.0,
+            "actual": 20.0,
+            "tolerance": 0.1,
+            "error": 580.0,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox v-size 600.0mm, got 20.000000200000002mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_w",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 20.0,
+            "actual": 600.0,
+            "tolerance": 0.01,
+            "error": 580.0,
+            "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox w-size 20.0mm, got 600.00000019998mm."
+            }
+          },
+          {
+            "query_id": "q_is_solid",
+            "intent": "is_solid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit: valid extrude implies solid)",
+            "feedback": null
+          },
+          {
+            "query_id": "q_occt_valid",
+            "intent": "occt_valid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit)",
+            "feedback": null
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "102175_699d5e7c_0003",
+      "operator": "EX2_coordinate_flip",
+      "status": "ok",
+      "meta": {
+        "perturbation_type": "EX2_coordinate_flip",
+        "error_category": "EX2_axis_flip",
+        "swapped_axes": "axis_0<->axis_1",
+        "target_intent": "bbox_size",
+        "expected_failed_queries": [
+          "q_bbox_u",
+          "q_bbox_v"
+        ],
+        "allowed_secondary_failed_queries": [],
+        "source_design_plan_field": "$.global_envelope.bbox",
+        "should_reconstruct": true,
+        "should_fail_kqp": true,
+        "operator": "EX2_coordinate_flip",
+        "n_points_swapped": 5
+      },
+      "bbox_mm": [
+        39.0,
+        68.0,
+        10.0
+      ],
+      "step_exists": true,
+      "exec_report": {
+        "returncode": 0,
+        "compile_success": true,
+        "execute_success": true,
+        "export_success": true,
+        "occt_load_success": true,
+        "errors": [],
+        "export_success_at_out_step": true
+      },
+      "kqp": {
+        "sample_id": "102175_699d5e7c_0003",
+        "kqp_schema_version": "kqp_instance_v0.2",
+        "step_file": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\102175_699d5e7c_0003\\ex2\\generated.step",
+        "overall_status": "fail",
+        "summary": {
+          "total_queries": 6,
+          "passed_queries": 4,
+          "failed_queries": 2,
+          "error_queries": 0
+        },
+        "query_results": [
+          {
+            "query_id": "q_body_count",
+            "intent": "body_count",
+            "status": "pass",
+            "expected": 1,
+            "actual": 1,
+            "tolerance": 0,
+            "error": 0,
+            "source_field": "$.target.body_count",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_u",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 39.0,
+            "actual": 68.0,
+            "tolerance": 0.01,
+            "error": 29.0,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox u-size 39.0mm, got 68.00000019999999mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_v",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 68.0,
+            "actual": 39.0,
+            "tolerance": 0.05,
+            "error": 29.0,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox v-size 68.0mm, got 39.0000002mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_w",
+            "intent": "bbox_size",
+            "status": "pass",
+            "expected": 10.0,
+            "actual": 10.0,
+            "tolerance": 0.01,
+            "error": 0.0,
+            "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+            "feedback": null
+          },
+          {
+            "query_id": "q_is_solid",
+            "intent": "is_solid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit: valid extrude implies solid)",
+            "feedback": null
+          },
+          {
+            "query_id": "q_occt_valid",
+            "intent": "occt_valid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit)",
+            "feedback": null
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "102295_86f842dd_0000",
+      "operator": "EX2_coordinate_flip",
+      "status": "ok",
+      "meta": {
+        "perturbation_type": "EX2_coordinate_flip",
+        "error_category": "EX2_axis_flip",
+        "swapped_axes": "axis_0<->axis_2",
+        "target_intent": "bbox_size",
+        "expected_failed_queries": [
+          "q_bbox_u",
+          "q_bbox_v"
+        ],
+        "allowed_secondary_failed_queries": [],
+        "source_design_plan_field": "$.global_envelope.bbox",
+        "should_reconstruct": true,
+        "should_fail_kqp": true,
+        "operator": "EX2_coordinate_flip",
+        "n_points_swapped": 9
+      },
+      "bbox_mm": [
+        47.997,
+        4.0,
+        20.0
+      ],
+      "step_exists": true,
+      "exec_report": {
+        "returncode": 0,
+        "compile_success": true,
+        "execute_success": true,
+        "export_success": true,
+        "occt_load_success": true,
+        "errors": [],
+        "export_success_at_out_step": true
+      },
+      "kqp": {
+        "sample_id": "102295_86f842dd_0000",
+        "kqp_schema_version": "kqp_instance_v0.2",
+        "step_file": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\102295_86f842dd_0000\\ex2\\generated.step",
+        "overall_status": "fail",
+        "summary": {
+          "total_queries": 6,
+          "passed_queries": 2,
+          "failed_queries": 4,
+          "error_queries": 0
+        },
+        "query_results": [
+          {
+            "query_id": "q_body_count",
+            "intent": "body_count",
+            "status": "pass",
+            "expected": 1,
+            "actual": 1,
+            "tolerance": 0,
+            "error": 0,
+            "source_field": "$.target.body_count",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_u",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 48.0,
+            "actual": 20.0,
+            "tolerance": 0.01,
+            "error": 28.0,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].straight_length.value + $.solid_bodies[0].dimensions.profiles[0].radius.value (computed: straight + 2*r)",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox u-size 48.0mm (=straight+2*r), got 20.000000200000002mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_v",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 20.0,
+            "actual": 4.0,
+            "tolerance": 0.01,
+            "error": 16.0,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].radius.value (computed: 2*r)",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox v-size 20.0mm (=2*r), got 4.000000200000001mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_w",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 4.0,
+            "actual": 20.0,
+            "tolerance": 0.01,
+            "error": 16.0,
+            "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox w-size 4.0mm, got 20.000000200000002mm."
+            }
+          },
+          {
+            "query_id": "q_is_solid",
+            "intent": "is_solid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit: valid extrude implies solid)",
+            "feedback": null
+          },
+          {
+            "query_id": "q_occt_valid",
+            "intent": "occt_valid",
+            "status": "fail",
+            "expected": true,
+            "actual": false,
+            "tolerance": null,
+            "error": 1,
+            "source_field": "(implicit)",
+            "feedback": {
+              "error_type": "health_violation",
+              "message": "OCCT validation failed. got False."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "102525_06a3094b_0000",
+      "operator": "EX2_coordinate_flip",
+      "status": "ok",
+      "meta": {
+        "perturbation_type": "EX2_coordinate_flip",
+        "error_category": "EX2_axis_flip",
+        "swapped_axes": "axis_0<->axis_2",
+        "target_intent": "bbox_size",
+        "expected_failed_queries": [
+          "q_bbox_u",
+          "q_bbox_v"
+        ],
+        "allowed_secondary_failed_queries": [],
+        "source_design_plan_field": "$.global_envelope.bbox",
+        "should_reconstruct": true,
+        "should_fail_kqp": true,
+        "operator": "EX2_coordinate_flip",
+        "n_points_swapped": 6
+      },
+      "bbox_mm": [
+        3.9,
+        1.55,
+        4.9
+      ],
+      "step_exists": true,
+      "exec_report": {
+        "returncode": 0,
+        "compile_success": true,
+        "execute_success": true,
+        "export_success": true,
+        "occt_load_success": true,
+        "errors": [],
+        "export_success_at_out_step": true
+      },
+      "kqp": {
+        "sample_id": "102525_06a3094b_0000",
+        "kqp_schema_version": "kqp_instance_v0.2",
+        "step_file": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\102525_06a3094b_0000\\ex2\\generated.step",
+        "overall_status": "fail",
+        "summary": {
+          "total_queries": 6,
+          "passed_queries": 3,
+          "failed_queries": 3,
+          "error_queries": 0
+        },
+        "query_results": [
+          {
+            "query_id": "q_body_count",
+            "intent": "body_count",
+            "status": "pass",
+            "expected": 1,
+            "actual": 1,
+            "tolerance": 0,
+            "error": 0,
+            "source_field": "$.target.body_count",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_u",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 3.9,
+            "actual": 0.0,
+            "tolerance": 0.01,
+            "error": 3.9,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox u-size 3.9mm, got 2e-07mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_v",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 4.9,
+            "actual": 1.55,
+            "tolerance": 0.01,
+            "error": 3.35,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox v-size 4.9mm, got 1.5500002000000002mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_w",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 1.55,
+            "actual": 4.9,
+            "tolerance": 0.005,
+            "error": 3.35,
+            "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox w-size 1.55mm, got 4.9000002mm."
+            }
+          },
+          {
+            "query_id": "q_is_solid",
+            "intent": "is_solid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit: valid extrude implies solid)",
+            "feedback": null
+          },
+          {
+            "query_id": "q_occt_valid",
+            "intent": "occt_valid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit)",
+            "feedback": null
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "102525_06a3094b_0004",
+      "operator": "EX2_coordinate_flip",
+      "status": "ok",
+      "meta": {
+        "perturbation_type": "EX2_coordinate_flip",
+        "error_category": "EX2_axis_flip",
+        "swapped_axes": "axis_0<->axis_2",
+        "target_intent": "bbox_size",
+        "expected_failed_queries": [
+          "q_bbox_u",
+          "q_bbox_v"
+        ],
+        "allowed_secondary_failed_queries": [],
+        "source_design_plan_field": "$.global_envelope.bbox",
+        "should_reconstruct": true,
+        "should_fail_kqp": true,
+        "operator": "EX2_coordinate_flip",
+        "n_points_swapped": 6
+      },
+      "bbox_mm": [
+        8.5,
+        2.5,
+        18.0
+      ],
+      "step_exists": true,
+      "exec_report": {
+        "returncode": 0,
+        "compile_success": true,
+        "execute_success": true,
+        "export_success": true,
+        "occt_load_success": true,
+        "errors": [],
+        "export_success_at_out_step": true
+      },
+      "kqp": {
+        "sample_id": "102525_06a3094b_0004",
+        "kqp_schema_version": "kqp_instance_v0.2",
+        "step_file": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\102525_06a3094b_0004\\ex2\\generated.step",
+        "overall_status": "fail",
+        "summary": {
+          "total_queries": 6,
+          "passed_queries": 3,
+          "failed_queries": 3,
+          "error_queries": 0
+        },
+        "query_results": [
+          {
+            "query_id": "q_body_count",
+            "intent": "body_count",
+            "status": "pass",
+            "expected": 1,
+            "actual": 1,
+            "tolerance": 0,
+            "error": 0,
+            "source_field": "$.target.body_count",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_u",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 8.5,
+            "actual": 0.0,
+            "tolerance": 0.01,
+            "error": 8.5,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox u-size 8.5mm, got 2e-07mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_v",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 18.0,
+            "actual": 2.5,
+            "tolerance": 0.01,
+            "error": 15.5,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox v-size 18.0mm, got 2.5000001999999997mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_w",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 2.5,
+            "actual": 18.0,
+            "tolerance": 0.005,
+            "error": 15.5,
+            "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox w-size 2.5mm, got 18.0000002mm."
+            }
+          },
+          {
+            "query_id": "q_is_solid",
+            "intent": "is_solid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit: valid extrude implies solid)",
+            "feedback": null
+          },
+          {
+            "query_id": "q_occt_valid",
+            "intent": "occt_valid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit)",
+            "feedback": null
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "102525_06a3094b_0006",
+      "operator": "EX2_coordinate_flip",
+      "status": "ok",
+      "meta": {
+        "perturbation_type": "EX2_coordinate_flip",
+        "error_category": "EX2_axis_flip",
+        "swapped_axes": "axis_0<->axis_2",
+        "target_intent": "bbox_size",
+        "expected_failed_queries": [
+          "q_bbox_u",
+          "q_bbox_v"
+        ],
+        "allowed_secondary_failed_queries": [],
+        "source_design_plan_field": "$.global_envelope.bbox",
+        "should_reconstruct": true,
+        "should_fail_kqp": true,
+        "operator": "EX2_coordinate_flip",
+        "n_points_swapped": 6
+      },
+      "bbox_mm": [
+        11.3,
+        3.0,
+        21.0
+      ],
+      "step_exists": true,
+      "exec_report": {
+        "returncode": 0,
+        "compile_success": true,
+        "execute_success": true,
+        "export_success": true,
+        "occt_load_success": true,
+        "errors": [],
+        "export_success_at_out_step": true
+      },
+      "kqp": {
+        "sample_id": "102525_06a3094b_0006",
+        "kqp_schema_version": "kqp_instance_v0.2",
+        "step_file": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\102525_06a3094b_0006\\ex2\\generated.step",
+        "overall_status": "fail",
+        "summary": {
+          "total_queries": 6,
+          "passed_queries": 3,
+          "failed_queries": 3,
+          "error_queries": 0
+        },
+        "query_results": [
+          {
+            "query_id": "q_body_count",
+            "intent": "body_count",
+            "status": "pass",
+            "expected": 1,
+            "actual": 1,
+            "tolerance": 0,
+            "error": 0,
+            "source_field": "$.target.body_count",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_u",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 11.3,
+            "actual": 0.0,
+            "tolerance": 0.01,
+            "error": 11.3,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox u-size 11.3mm, got 2e-07mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_v",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 21.0,
+            "actual": 3.0,
+            "tolerance": 0.01,
+            "error": 18.0,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox v-size 21.0mm, got 3.0000001999999997mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_w",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 3.0,
+            "actual": 21.0,
+            "tolerance": 0.01,
+            "error": 18.0,
+            "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox w-size 3.0mm, got 21.0000002mm."
+            }
+          },
+          {
+            "query_id": "q_is_solid",
+            "intent": "is_solid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit: valid extrude implies solid)",
+            "feedback": null
+          },
+          {
+            "query_id": "q_occt_valid",
+            "intent": "occt_valid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit)",
+            "feedback": null
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "103284_e25015aa_0003",
+      "operator": "EX2_coordinate_flip",
+      "status": "ok",
+      "meta": {
+        "perturbation_type": "EX2_coordinate_flip",
+        "error_category": "EX2_axis_flip",
+        "swapped_axes": "axis_0<->axis_1",
+        "target_intent": "bbox_size",
+        "expected_failed_queries": [
+          "q_bbox_u",
+          "q_bbox_v"
+        ],
+        "allowed_secondary_failed_queries": [],
+        "source_design_plan_field": "$.global_envelope.bbox",
+        "should_reconstruct": true,
+        "should_fail_kqp": true,
+        "operator": "EX2_coordinate_flip",
+        "n_points_swapped": 2
+      },
+      "bbox_mm": [
+        50.8,
+        50.8,
+        8.89
+      ],
+      "step_exists": true,
+      "exec_report": {
+        "returncode": 0,
+        "compile_success": true,
+        "execute_success": true,
+        "export_success": true,
+        "occt_load_success": true,
+        "errors": [],
+        "export_success_at_out_step": true
+      },
+      "kqp": {
+        "sample_id": "103284_e25015aa_0003",
+        "kqp_schema_version": "kqp_instance_v0.2",
+        "step_file": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\103284_e25015aa_0003\\ex2\\generated.step",
+        "overall_status": "pass",
+        "summary": {
+          "total_queries": 7,
+          "passed_queries": 7,
+          "failed_queries": 0,
+          "error_queries": 0
+        },
+        "query_results": [
+          {
+            "query_id": "q_body_count",
+            "intent": "body_count",
+            "status": "pass",
+            "expected": 1,
+            "actual": 1,
+            "tolerance": 0,
+            "error": 0,
+            "source_field": "$.target.body_count",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_u",
+            "intent": "bbox_size",
+            "status": "pass",
+            "expected": 50.8,
+            "actual": 50.8,
+            "tolerance": 0.01,
+            "error": 0.0,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].radius.value (computed: 2*r)",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_v",
+            "intent": "bbox_size",
+            "status": "pass",
+            "expected": 50.8,
+            "actual": 50.8,
+            "tolerance": 0.01,
+            "error": 0.0,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].radius.value (computed: 2*r)",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_w",
+            "intent": "bbox_size",
+            "status": "pass",
+            "expected": 8.89,
+            "actual": 8.89,
+            "tolerance": 0.01,
+            "error": 0.0,
+            "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+            "feedback": null
+          },
+          {
+            "query_id": "q_radius",
+            "intent": "cylinder_radius",
+            "status": "pass",
+            "expected": 25.4,
+            "actual": 25.4,
+            "tolerance": 0.01,
+            "error": 0.0,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].radius.value",
+            "feedback": null
+          },
+          {
+            "query_id": "q_is_solid",
+            "intent": "is_solid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit: valid extrude implies solid)",
+            "feedback": null
+          },
+          {
+            "query_id": "q_occt_valid",
+            "intent": "occt_valid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit)",
+            "feedback": null
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "103284_e25015aa_0004",
+      "operator": "EX2_coordinate_flip",
+      "status": "ok",
+      "meta": {
+        "perturbation_type": "EX2_coordinate_flip",
+        "error_category": "EX2_axis_flip",
+        "swapped_axes": "axis_0<->axis_1",
+        "target_intent": "bbox_size",
+        "expected_failed_queries": [
+          "q_bbox_u",
+          "q_bbox_v"
+        ],
+        "allowed_secondary_failed_queries": [],
+        "source_design_plan_field": "$.global_envelope.bbox",
+        "should_reconstruct": true,
+        "should_fail_kqp": true,
+        "operator": "EX2_coordinate_flip",
+        "n_points_swapped": 2
+      },
+      "bbox_mm": [
+        23.876,
+        23.876,
+        12.7
+      ],
+      "step_exists": true,
+      "exec_report": {
+        "returncode": 0,
+        "compile_success": true,
+        "execute_success": true,
+        "export_success": true,
+        "occt_load_success": true,
+        "errors": [],
+        "export_success_at_out_step": true
+      },
+      "kqp": {
+        "sample_id": "103284_e25015aa_0004",
+        "kqp_schema_version": "kqp_instance_v0.2",
+        "step_file": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\103284_e25015aa_0004\\ex2\\generated.step",
+        "overall_status": "pass",
+        "summary": {
+          "total_queries": 7,
+          "passed_queries": 7,
+          "failed_queries": 0,
+          "error_queries": 0
+        },
+        "query_results": [
+          {
+            "query_id": "q_body_count",
+            "intent": "body_count",
+            "status": "pass",
+            "expected": 1,
+            "actual": 1,
+            "tolerance": 0,
+            "error": 0,
+            "source_field": "$.target.body_count",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_u",
+            "intent": "bbox_size",
+            "status": "pass",
+            "expected": 23.876,
+            "actual": 23.876,
+            "tolerance": 0.01,
+            "error": 0.0,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].radius.value (computed: 2*r)",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_v",
+            "intent": "bbox_size",
+            "status": "pass",
+            "expected": 23.876,
+            "actual": 23.876,
+            "tolerance": 0.01,
+            "error": 0.0,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].radius.value (computed: 2*r)",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_w",
+            "intent": "bbox_size",
+            "status": "pass",
+            "expected": 12.7,
+            "actual": 12.7,
+            "tolerance": 0.01,
+            "error": 0.0,
+            "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+            "feedback": null
+          },
+          {
+            "query_id": "q_radius",
+            "intent": "cylinder_radius",
+            "status": "pass",
+            "expected": 11.938,
+            "actual": 11.938,
+            "tolerance": 0.01,
+            "error": 0.0,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].radius.value",
+            "feedback": null
+          },
+          {
+            "query_id": "q_is_solid",
+            "intent": "is_solid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit: valid extrude implies solid)",
+            "feedback": null
+          },
+          {
+            "query_id": "q_occt_valid",
+            "intent": "occt_valid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit)",
+            "feedback": null
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "103481_b27a1cdf_0010",
+      "operator": "EX2_coordinate_flip",
+      "status": "ok",
+      "meta": {
+        "perturbation_type": "EX2_coordinate_flip",
+        "error_category": "EX2_axis_flip",
+        "swapped_axes": "axis_0<->axis_1",
+        "target_intent": "bbox_size",
+        "expected_failed_queries": [
+          "q_bbox_u",
+          "q_bbox_v"
+        ],
+        "allowed_secondary_failed_queries": [],
+        "source_design_plan_field": "$.global_envelope.bbox",
+        "should_reconstruct": true,
+        "should_fail_kqp": true,
+        "operator": "EX2_coordinate_flip",
+        "n_points_swapped": 6
+      },
+      "bbox_mm": [
+        101.6,
+        101.6,
+        38.1
+      ],
+      "step_exists": true,
+      "exec_report": {
+        "returncode": 0,
+        "compile_success": true,
+        "execute_success": true,
+        "export_success": true,
+        "occt_load_success": true,
+        "errors": [],
+        "export_success_at_out_step": true
+      },
+      "kqp": {
+        "sample_id": "103481_b27a1cdf_0010",
+        "kqp_schema_version": "kqp_instance_v0.2",
+        "step_file": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\103481_b27a1cdf_0010\\ex2\\generated.step",
+        "overall_status": "pass",
+        "summary": {
+          "total_queries": 6,
+          "passed_queries": 6,
+          "failed_queries": 0,
+          "error_queries": 0
+        },
+        "query_results": [
+          {
+            "query_id": "q_body_count",
+            "intent": "body_count",
+            "status": "pass",
+            "expected": 1,
+            "actual": 1,
+            "tolerance": 0,
+            "error": 0,
+            "source_field": "$.target.body_count",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_u",
+            "intent": "bbox_size",
+            "status": "pass",
+            "expected": 101.6,
+            "actual": 101.6,
+            "tolerance": 0.05,
+            "error": 0.0,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_v",
+            "intent": "bbox_size",
+            "status": "pass",
+            "expected": 101.6,
+            "actual": 101.6,
+            "tolerance": 0.05,
+            "error": 0.0,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_w",
+            "intent": "bbox_size",
+            "status": "pass",
+            "expected": 38.1,
+            "actual": 38.1,
+            "tolerance": 0.01,
+            "error": 0.0,
+            "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+            "feedback": null
+          },
+          {
+            "query_id": "q_is_solid",
+            "intent": "is_solid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit: valid extrude implies solid)",
+            "feedback": null
+          },
+          {
+            "query_id": "q_occt_valid",
+            "intent": "occt_valid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit)",
+            "feedback": null
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "104453_aba0f2d1_0006",
+      "operator": "EX2_coordinate_flip",
+      "status": "ok",
+      "meta": {
+        "perturbation_type": "EX2_coordinate_flip",
+        "error_category": "EX2_axis_flip",
+        "swapped_axes": "axis_0<->axis_1",
+        "target_intent": "bbox_size",
+        "expected_failed_queries": [
+          "q_bbox_u",
+          "q_bbox_v"
+        ],
+        "allowed_secondary_failed_queries": [],
+        "source_design_plan_field": "$.global_envelope.bbox",
+        "should_reconstruct": true,
+        "should_fail_kqp": true,
+        "operator": "EX2_coordinate_flip",
+        "n_points_swapped": 9
+      },
+      "bbox_mm": [
+        500.0,
+        300.0,
+        500.0
+      ],
+      "step_exists": true,
+      "exec_report": {
+        "returncode": 0,
+        "compile_success": true,
+        "execute_success": true,
+        "export_success": true,
+        "occt_load_success": true,
+        "errors": [],
+        "export_success_at_out_step": true
+      },
+      "kqp": {
+        "sample_id": "104453_aba0f2d1_0006",
+        "kqp_schema_version": "kqp_instance_v0.2",
+        "step_file": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\104453_aba0f2d1_0006\\ex2\\generated.step",
+        "overall_status": "fail",
+        "summary": {
+          "total_queries": 7,
+          "passed_queries": 5,
+          "failed_queries": 2,
+          "error_queries": 0
+        },
+        "query_results": [
+          {
+            "query_id": "q_body_count",
+            "intent": "body_count",
+            "status": "pass",
+            "expected": 1,
+            "actual": 1,
+            "tolerance": 0,
+            "error": 0,
+            "source_field": "$.target.body_count",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_u",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 500.0,
+            "actual": 300.0,
+            "tolerance": 0.05,
+            "error": 200.0,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].outer_length_u.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox u-size 500.0mm, got 300.00000020000004mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_v",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 300.0,
+            "actual": 500.0,
+            "tolerance": 0.05,
+            "error": 200.0,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].outer_width_v.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox v-size 300.0mm, got 500.00000020000004mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_w",
+            "intent": "bbox_size",
+            "status": "pass",
+            "expected": 500.0,
+            "actual": 500.0,
+            "tolerance": 0.05,
+            "error": 0.0,
+            "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+            "feedback": null
+          },
+          {
+            "query_id": "q_void_count",
+            "intent": "through_void_count",
+            "status": "pass",
+            "expected": 1,
+            "actual": 1,
+            "tolerance": 0,
+            "error": 0,
+            "source_field": "$.solid_bodies[0].profiles[0].rings[*].role=='inner' count",
+            "feedback": null
+          },
+          {
+            "query_id": "q_is_solid",
+            "intent": "is_solid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit: valid extrude implies solid)",
+            "feedback": null
+          },
+          {
+            "query_id": "q_occt_valid",
+            "intent": "occt_valid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit)",
+            "feedback": null
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "105278_909f3813_0000",
+      "operator": "EX2_coordinate_flip",
+      "status": "ok",
+      "meta": {
+        "perturbation_type": "EX2_coordinate_flip",
+        "error_category": "EX2_axis_flip",
+        "swapped_axes": "axis_0<->axis_2",
+        "target_intent": "bbox_size",
+        "expected_failed_queries": [
+          "q_bbox_u",
+          "q_bbox_v"
+        ],
+        "allowed_secondary_failed_queries": [],
+        "source_design_plan_field": "$.global_envelope.bbox",
+        "should_reconstruct": true,
+        "should_fail_kqp": true,
+        "operator": "EX2_coordinate_flip",
+        "n_points_swapped": 6
+      },
+      "bbox_mm": [
+        12.0,
+        40.0,
+        60.0
+      ],
+      "step_exists": true,
+      "exec_report": {
+        "returncode": 0,
+        "compile_success": true,
+        "execute_success": true,
+        "export_success": true,
+        "occt_load_success": true,
+        "errors": [],
+        "export_success_at_out_step": true
+      },
+      "kqp": {
+        "sample_id": "105278_909f3813_0000",
+        "kqp_schema_version": "kqp_instance_v0.2",
+        "step_file": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\105278_909f3813_0000\\ex2\\generated.step",
+        "overall_status": "fail",
+        "summary": {
+          "total_queries": 6,
+          "passed_queries": 3,
+          "failed_queries": 3,
+          "error_queries": 0
+        },
+        "query_results": [
+          {
+            "query_id": "q_body_count",
+            "intent": "body_count",
+            "status": "pass",
+            "expected": 1,
+            "actual": 1,
+            "tolerance": 0,
+            "error": 0,
+            "source_field": "$.target.body_count",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_u",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 12.0,
+            "actual": 0.0,
+            "tolerance": 0.01,
+            "error": 12.0,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox u-size 12.0mm, got 2e-07mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_v",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 60.0,
+            "actual": 40.0,
+            "tolerance": 0.05,
+            "error": 20.0,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox v-size 60.0mm, got 40.0000002mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_w",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 40.0,
+            "actual": 60.0,
+            "tolerance": 0.01,
+            "error": 20.0,
+            "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox w-size 40.0mm, got 60.0000002mm."
+            }
+          },
+          {
+            "query_id": "q_is_solid",
+            "intent": "is_solid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit: valid extrude implies solid)",
+            "feedback": null
+          },
+          {
+            "query_id": "q_occt_valid",
+            "intent": "occt_valid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit)",
+            "feedback": null
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "106323_77f22d29_0004",
+      "operator": "EX2_coordinate_flip",
+      "status": "ok",
+      "meta": {
+        "perturbation_type": "EX2_coordinate_flip",
+        "error_category": "EX2_axis_flip",
+        "swapped_axes": "axis_0<->axis_1",
+        "target_intent": "bbox_size",
+        "expected_failed_queries": [
+          "q_bbox_u",
+          "q_bbox_v"
+        ],
+        "allowed_secondary_failed_queries": [],
+        "source_design_plan_field": "$.global_envelope.bbox",
+        "should_reconstruct": true,
+        "should_fail_kqp": true,
+        "operator": "EX2_coordinate_flip",
+        "n_points_swapped": 3
+      },
+      "bbox_mm": [
+        35.0,
+        35.0,
+        10.0
+      ],
+      "step_exists": true,
+      "exec_report": {
+        "returncode": 0,
+        "compile_success": true,
+        "execute_success": true,
+        "export_success": true,
+        "occt_load_success": true,
+        "errors": [],
+        "export_success_at_out_step": true
+      },
+      "kqp": {
+        "sample_id": "106323_77f22d29_0004",
+        "kqp_schema_version": "kqp_instance_v0.2",
+        "step_file": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\106323_77f22d29_0004\\ex2\\generated.step",
+        "overall_status": "pass",
+        "summary": {
+          "total_queries": 10,
+          "passed_queries": 10,
+          "failed_queries": 0,
+          "error_queries": 0
+        },
+        "query_results": [
+          {
+            "query_id": "q_body_count",
+            "intent": "body_count",
+            "status": "pass",
+            "expected": 1,
+            "actual": 1,
+            "tolerance": 0,
+            "error": 0,
+            "source_field": "$.target.body_count",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_u",
+            "intent": "bbox_size",
+            "status": "pass",
+            "expected": 35.0,
+            "actual": 35.0,
+            "tolerance": 0.01,
+            "error": 0.0,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].outer_radius.value (computed: 2*r)",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_v",
+            "intent": "bbox_size",
+            "status": "pass",
+            "expected": 35.0,
+            "actual": 35.0,
+            "tolerance": 0.01,
+            "error": 0.0,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].outer_radius.value (computed: 2*r)",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_w",
+            "intent": "bbox_size",
+            "status": "pass",
+            "expected": 10.0,
+            "actual": 10.0,
+            "tolerance": 0.01,
+            "error": 0.0,
+            "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+            "feedback": null
+          },
+          {
+            "query_id": "q_outer_radius",
+            "intent": "cylinder_radius",
+            "status": "pass",
+            "expected": 17.5,
+            "actual": 17.5,
+            "tolerance": 0.01,
+            "error": 0.0,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].outer_radius.value",
+            "feedback": null
+          },
+          {
+            "query_id": "q_inner_radius",
+            "intent": "cylinder_radius",
+            "status": "pass",
+            "expected": 12.5,
+            "actual": 12.5,
+            "tolerance": 0.01,
+            "error": 0.0,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].inner_radius.value",
+            "feedback": null
+          },
+          {
+            "query_id": "q_void_count",
+            "intent": "through_void_count",
+            "status": "pass",
+            "expected": 1,
+            "actual": 1,
+            "tolerance": 0,
+            "error": 0,
+            "source_field": "$.solid_bodies[0].profiles[0].rings[*].role=='inner' count",
+            "feedback": null
+          },
+          {
+            "query_id": "q_is_solid",
+            "intent": "is_solid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit: valid extrude implies solid)",
+            "feedback": null
+          },
+          {
+            "query_id": "q_occt_valid",
+            "intent": "occt_valid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit)",
+            "feedback": null
+          },
+          {
+            "query_id": "q_symmetric",
+            "intent": "symmetric_about_plane",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit: design_plan specifies symmetric extrude)",
+            "feedback": null
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "106817_bb28b7aa_0002",
+      "operator": "EX2_coordinate_flip",
+      "status": "ok",
+      "meta": {
+        "perturbation_type": "EX2_coordinate_flip",
+        "error_category": "EX2_axis_flip",
+        "swapped_axes": "axis_0<->axis_2",
+        "target_intent": "bbox_size",
+        "expected_failed_queries": [
+          "q_bbox_u",
+          "q_bbox_v"
+        ],
+        "allowed_secondary_failed_queries": [],
+        "source_design_plan_field": "$.global_envelope.bbox",
+        "should_reconstruct": true,
+        "should_fail_kqp": true,
+        "operator": "EX2_coordinate_flip",
+        "n_points_swapped": 2
+      },
+      "bbox_mm": [
+        9.7409,
+        6.8707,
+        9.7409
+      ],
+      "step_exists": true,
+      "exec_report": {
+        "returncode": 0,
+        "compile_success": true,
+        "execute_success": true,
+        "export_success": true,
+        "occt_load_success": true,
+        "errors": [],
+        "export_success_at_out_step": true
+      },
+      "kqp": {
+        "sample_id": "106817_bb28b7aa_0002",
+        "kqp_schema_version": "kqp_instance_v0.2",
+        "step_file": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\106817_bb28b7aa_0002\\ex2\\generated.step",
+        "overall_status": "fail",
+        "summary": {
+          "total_queries": 7,
+          "passed_queries": 5,
+          "failed_queries": 2,
+          "error_queries": 0
+        },
+        "query_results": [
+          {
+            "query_id": "q_body_count",
+            "intent": "body_count",
+            "status": "pass",
+            "expected": 1,
+            "actual": 1,
+            "tolerance": 0,
+            "error": 0,
+            "source_field": "$.target.body_count",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_u",
+            "intent": "bbox_size",
+            "status": "pass",
+            "expected": 9.7409,
+            "actual": 9.7409,
+            "tolerance": 0.01,
+            "error": 0.0,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].radius.value (computed: 2*r)",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_v",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 9.7409,
+            "actual": 6.8707,
+            "tolerance": 0.01,
+            "error": 2.8702,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].radius.value (computed: 2*r)",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox v-size 9.7409mm (2*r), got 6.870700200000001mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_w",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 6.8707,
+            "actual": 9.7409,
+            "tolerance": 0.01,
+            "error": 2.8702,
+            "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox w-size 6.8707mm, got 9.7409002mm."
+            }
+          },
+          {
+            "query_id": "q_radius",
+            "intent": "cylinder_radius",
+            "status": "pass",
+            "expected": 4.87045,
+            "actual": 4.87045,
+            "tolerance": 0.01,
+            "error": 0.0,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].radius.value",
+            "feedback": null
+          },
+          {
+            "query_id": "q_is_solid",
+            "intent": "is_solid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit: valid extrude implies solid)",
+            "feedback": null
+          },
+          {
+            "query_id": "q_occt_valid",
+            "intent": "occt_valid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit)",
+            "feedback": null
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "106817_bb28b7aa_0004",
+      "operator": "EX2_coordinate_flip",
+      "status": "ok",
+      "meta": {
+        "perturbation_type": "EX2_coordinate_flip",
+        "error_category": "EX2_axis_flip",
+        "swapped_axes": "axis_0<->axis_2",
+        "target_intent": "bbox_size",
+        "expected_failed_queries": [
+          "q_bbox_u",
+          "q_bbox_v"
+        ],
+        "allowed_secondary_failed_queries": [],
+        "source_design_plan_field": "$.global_envelope.bbox",
+        "should_reconstruct": true,
+        "should_fail_kqp": true,
+        "operator": "EX2_coordinate_flip",
+        "n_points_swapped": 3
+      },
+      "bbox_mm": [
+        11.0744,
+        1.3208,
+        11.0744
+      ],
+      "step_exists": true,
+      "exec_report": {
+        "returncode": 0,
+        "compile_success": true,
+        "execute_success": true,
+        "export_success": true,
+        "occt_load_success": true,
+        "errors": [],
+        "export_success_at_out_step": true
+      },
+      "kqp": {
+        "sample_id": "106817_bb28b7aa_0004",
+        "kqp_schema_version": "kqp_instance_v0.2",
+        "step_file": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\106817_bb28b7aa_0004\\ex2\\generated.step",
+        "overall_status": "fail",
+        "summary": {
+          "total_queries": 9,
+          "passed_queries": 7,
+          "failed_queries": 2,
+          "error_queries": 0
+        },
+        "query_results": [
+          {
+            "query_id": "q_body_count",
+            "intent": "body_count",
+            "status": "pass",
+            "expected": 1,
+            "actual": 1,
+            "tolerance": 0,
+            "error": 0,
+            "source_field": "$.target.body_count",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_u",
+            "intent": "bbox_size",
+            "status": "pass",
+            "expected": 11.0744,
+            "actual": 11.0744,
+            "tolerance": 0.01,
+            "error": 0.0,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].outer_radius.value (computed: 2*r)",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_v",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 11.0744,
+            "actual": 1.3208,
+            "tolerance": 0.01,
+            "error": 9.7536,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].outer_radius.value (computed: 2*r)",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox v-size 11.0744mm (2*r), got 1.3208002mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_w",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 1.3208,
+            "actual": 11.0744,
+            "tolerance": 0.01,
+            "error": 9.7536,
+            "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox w-size 1.3208mm, got 11.074400200000003mm."
+            }
+          },
+          {
+            "query_id": "q_outer_radius",
+            "intent": "cylinder_radius",
+            "status": "pass",
+            "expected": 5.5372,
+            "actual": 5.5372,
+            "tolerance": 0.01,
+            "error": 0.0,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].outer_radius.value",
+            "feedback": null
+          },
+          {
+            "query_id": "q_inner_radius",
+            "intent": "cylinder_radius",
+            "status": "pass",
+            "expected": 1.9812,
+            "actual": 1.9812,
+            "tolerance": 0.01,
+            "error": 0.0,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].inner_radius.value",
+            "feedback": null
+          },
+          {
+            "query_id": "q_void_count",
+            "intent": "through_void_count",
+            "status": "pass",
+            "expected": 1,
+            "actual": 1,
+            "tolerance": 0,
+            "error": 0,
+            "source_field": "$.solid_bodies[0].profiles[0].rings[*].role=='inner' count",
+            "feedback": null
+          },
+          {
+            "query_id": "q_is_solid",
+            "intent": "is_solid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit: valid extrude implies solid)",
+            "feedback": null
+          },
+          {
+            "query_id": "q_occt_valid",
+            "intent": "occt_valid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit)",
+            "feedback": null
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "107055_0500fdd1_0027",
+      "operator": "EX2_coordinate_flip",
+      "status": "ok",
+      "meta": {
+        "perturbation_type": "EX2_coordinate_flip",
+        "error_category": "EX2_axis_flip",
+        "swapped_axes": "axis_0<->axis_1",
+        "target_intent": "bbox_size",
+        "expected_failed_queries": [
+          "q_bbox_u",
+          "q_bbox_v"
+        ],
+        "allowed_secondary_failed_queries": [],
+        "source_design_plan_field": "$.global_envelope.bbox",
+        "should_reconstruct": true,
+        "should_fail_kqp": true,
+        "operator": "EX2_coordinate_flip",
+        "n_points_swapped": 3
+      },
+      "bbox_mm": [
+        6.98,
+        6.98,
+        0.36
+      ],
+      "step_exists": true,
+      "exec_report": {
+        "returncode": 0,
+        "compile_success": true,
+        "execute_success": true,
+        "export_success": true,
+        "occt_load_success": true,
+        "errors": [],
+        "export_success_at_out_step": true
+      },
+      "kqp": {
+        "sample_id": "107055_0500fdd1_0027",
+        "kqp_schema_version": "kqp_instance_v0.2",
+        "step_file": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\107055_0500fdd1_0027\\ex2\\generated.step",
+        "overall_status": "pass",
+        "summary": {
+          "total_queries": 9,
+          "passed_queries": 9,
+          "failed_queries": 0,
+          "error_queries": 0
+        },
+        "query_results": [
+          {
+            "query_id": "q_body_count",
+            "intent": "body_count",
+            "status": "pass",
+            "expected": 1,
+            "actual": 1,
+            "tolerance": 0,
+            "error": 0,
+            "source_field": "$.target.body_count",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_u",
+            "intent": "bbox_size",
+            "status": "pass",
+            "expected": 6.98,
+            "actual": 6.98,
+            "tolerance": 0.01,
+            "error": 0.0,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].outer_radius.value (computed: 2*r)",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_v",
+            "intent": "bbox_size",
+            "status": "pass",
+            "expected": 6.98,
+            "actual": 6.98,
+            "tolerance": 0.01,
+            "error": 0.0,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].outer_radius.value (computed: 2*r)",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_w",
+            "intent": "bbox_size",
+            "status": "pass",
+            "expected": 0.36,
+            "actual": 0.36,
+            "tolerance": 0.01,
+            "error": 0.0,
+            "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+            "feedback": null
+          },
+          {
+            "query_id": "q_outer_radius",
+            "intent": "cylinder_radius",
+            "status": "pass",
+            "expected": 3.49,
+            "actual": 3.49,
+            "tolerance": 0.01,
+            "error": 0.0,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].outer_radius.value",
+            "feedback": null
+          },
+          {
+            "query_id": "q_inner_radius",
+            "intent": "cylinder_radius",
+            "status": "pass",
+            "expected": 2.0,
+            "actual": 2.0,
+            "tolerance": 0.01,
+            "error": 0.0,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].inner_radius.value",
+            "feedback": null
+          },
+          {
+            "query_id": "q_void_count",
+            "intent": "through_void_count",
+            "status": "pass",
+            "expected": 1,
+            "actual": 1,
+            "tolerance": 0,
+            "error": 0,
+            "source_field": "$.solid_bodies[0].profiles[0].rings[*].role=='inner' count",
+            "feedback": null
+          },
+          {
+            "query_id": "q_is_solid",
+            "intent": "is_solid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit: valid extrude implies solid)",
+            "feedback": null
+          },
+          {
+            "query_id": "q_occt_valid",
+            "intent": "occt_valid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit)",
+            "feedback": null
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "107668_cf76b132_0001",
+      "operator": "EX2_coordinate_flip",
+      "status": "ok",
+      "meta": {
+        "perturbation_type": "EX2_coordinate_flip",
+        "error_category": "EX2_axis_flip",
+        "swapped_axes": "axis_2<->axis_1",
+        "target_intent": "bbox_size",
+        "expected_failed_queries": [
+          "q_bbox_u",
+          "q_bbox_v"
+        ],
+        "allowed_secondary_failed_queries": [],
+        "source_design_plan_field": "$.global_envelope.bbox",
+        "should_reconstruct": true,
+        "should_fail_kqp": true,
+        "operator": "EX2_coordinate_flip",
+        "n_points_swapped": 3
+      },
+      "bbox_mm": [
+        100.0,
+        265.0,
+        265.0
+      ],
+      "step_exists": true,
+      "exec_report": {
+        "returncode": 0,
+        "compile_success": true,
+        "execute_success": true,
+        "export_success": true,
+        "occt_load_success": true,
+        "errors": [],
+        "export_success_at_out_step": true
+      },
+      "kqp": {
+        "sample_id": "107668_cf76b132_0001",
+        "kqp_schema_version": "kqp_instance_v0.2",
+        "step_file": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\107668_cf76b132_0001\\ex2\\generated.step",
+        "overall_status": "fail",
+        "summary": {
+          "total_queries": 9,
+          "passed_queries": 7,
+          "failed_queries": 2,
+          "error_queries": 0
+        },
+        "query_results": [
+          {
+            "query_id": "q_body_count",
+            "intent": "body_count",
+            "status": "pass",
+            "expected": 1,
+            "actual": 1,
+            "tolerance": 0,
+            "error": 0,
+            "source_field": "$.target.body_count",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_u",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 265.0,
+            "actual": 100.0,
+            "tolerance": 0.05,
+            "error": 165.0,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].outer_radius.value (computed: 2*r)",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox u-size 265.0mm (2*r), got 100.00000019999999mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_v",
+            "intent": "bbox_size",
+            "status": "pass",
+            "expected": 265.0,
+            "actual": 265.0,
+            "tolerance": 0.05,
+            "error": 0.0,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].outer_radius.value (computed: 2*r)",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_w",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 100.0,
+            "actual": 265.0,
+            "tolerance": 0.01,
+            "error": 165.0,
+            "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox w-size 100.0mm, got 265.0000002mm."
+            }
+          },
+          {
+            "query_id": "q_outer_radius",
+            "intent": "cylinder_radius",
+            "status": "pass",
+            "expected": 132.5,
+            "actual": 132.5,
+            "tolerance": 0.01,
+            "error": 0.0,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].outer_radius.value",
+            "feedback": null
+          },
+          {
+            "query_id": "q_inner_radius",
+            "intent": "cylinder_radius",
+            "status": "pass",
+            "expected": 75.0,
+            "actual": 75.0,
+            "tolerance": 0.01,
+            "error": 0.0,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].inner_radius.value",
+            "feedback": null
+          },
+          {
+            "query_id": "q_void_count",
+            "intent": "through_void_count",
+            "status": "pass",
+            "expected": 1,
+            "actual": 1,
+            "tolerance": 0,
+            "error": 0,
+            "source_field": "$.solid_bodies[0].profiles[0].rings[*].role=='inner' count",
+            "feedback": null
+          },
+          {
+            "query_id": "q_is_solid",
+            "intent": "is_solid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit: valid extrude implies solid)",
+            "feedback": null
+          },
+          {
+            "query_id": "q_occt_valid",
+            "intent": "occt_valid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit)",
+            "feedback": null
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "108244_329b1876_0000",
+      "operator": "EX2_coordinate_flip",
+      "status": "ok",
+      "meta": {
+        "perturbation_type": "EX2_coordinate_flip",
+        "error_category": "EX2_axis_flip",
+        "swapped_axes": "axis_0<->axis_2",
+        "target_intent": "bbox_size",
+        "expected_failed_queries": [
+          "q_bbox_u",
+          "q_bbox_v"
+        ],
+        "allowed_secondary_failed_queries": [],
+        "source_design_plan_field": "$.global_envelope.bbox",
+        "should_reconstruct": true,
+        "should_fail_kqp": true,
+        "operator": "EX2_coordinate_flip",
+        "n_points_swapped": 7
+      },
+      "bbox_mm": [
+        1219.2,
+        44.45,
+        2590.8
+      ],
+      "step_exists": true,
+      "exec_report": {
+        "returncode": 0,
+        "compile_success": true,
+        "execute_success": true,
+        "export_success": true,
+        "occt_load_success": true,
+        "errors": [],
+        "export_success_at_out_step": true
+      },
+      "kqp": {
+        "sample_id": "108244_329b1876_0000",
+        "kqp_schema_version": "kqp_instance_v0.2",
+        "step_file": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\108244_329b1876_0000\\ex2\\generated.step",
+        "overall_status": "fail",
+        "summary": {
+          "total_queries": 6,
+          "passed_queries": 3,
+          "failed_queries": 3,
+          "error_queries": 0
+        },
+        "query_results": [
+          {
+            "query_id": "q_body_count",
+            "intent": "body_count",
+            "status": "pass",
+            "expected": 1,
+            "actual": 1,
+            "tolerance": 0,
+            "error": 0,
+            "source_field": "$.target.body_count",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_u",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 1219.2,
+            "actual": 0.0,
+            "tolerance": 0.1,
+            "error": 1219.2,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox u-size 1219.2mm, got 2e-07mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_v",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 2590.8,
+            "actual": 44.45,
+            "tolerance": 0.5,
+            "error": 2546.35,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox v-size 2590.8mm, got 44.450000200000005mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_w",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 44.45,
+            "actual": 2590.8,
+            "tolerance": 0.01,
+            "error": 2546.35,
+            "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox w-size 44.45mm, got 2590.80000020008mm."
+            }
+          },
+          {
+            "query_id": "q_is_solid",
+            "intent": "is_solid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit: valid extrude implies solid)",
+            "feedback": null
+          },
+          {
+            "query_id": "q_occt_valid",
+            "intent": "occt_valid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit)",
+            "feedback": null
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "108412_8de2f9c3_0000",
+      "operator": "EX2_coordinate_flip",
+      "status": "ok",
+      "meta": {
+        "perturbation_type": "EX2_coordinate_flip",
+        "error_category": "EX2_axis_flip",
+        "swapped_axes": "axis_0<->axis_1",
+        "target_intent": "bbox_size",
+        "expected_failed_queries": [
+          "q_bbox_u",
+          "q_bbox_v"
+        ],
+        "allowed_secondary_failed_queries": [],
+        "source_design_plan_field": "$.global_envelope.bbox",
+        "should_reconstruct": true,
+        "should_fail_kqp": true,
+        "operator": "EX2_coordinate_flip",
+        "n_points_swapped": 6
+      },
+      "bbox_mm": [
+        2438.4,
+        1219.2,
+        12.7
+      ],
+      "step_exists": true,
+      "exec_report": {
+        "returncode": 0,
+        "compile_success": true,
+        "execute_success": true,
+        "export_success": true,
+        "occt_load_success": true,
+        "errors": [],
+        "export_success_at_out_step": true
+      },
+      "kqp": {
+        "sample_id": "108412_8de2f9c3_0000",
+        "kqp_schema_version": "kqp_instance_v0.2",
+        "step_file": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\108412_8de2f9c3_0000\\ex2\\generated.step",
+        "overall_status": "fail",
+        "summary": {
+          "total_queries": 6,
+          "passed_queries": 4,
+          "failed_queries": 2,
+          "error_queries": 0
+        },
+        "query_results": [
+          {
+            "query_id": "q_body_count",
+            "intent": "body_count",
+            "status": "pass",
+            "expected": 1,
+            "actual": 1,
+            "tolerance": 0,
+            "error": 0,
+            "source_field": "$.target.body_count",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_u",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 2438.4,
+            "actual": 1219.2,
+            "tolerance": 0.5,
+            "error": 1219.2,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox u-size 2438.4mm, got 1219.2000002mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_v",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 1219.2,
+            "actual": 2438.4,
+            "tolerance": 0.1,
+            "error": 1219.2,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox v-size 1219.2mm, got 2438.4000002000002mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_w",
+            "intent": "bbox_size",
+            "status": "pass",
+            "expected": 12.7,
+            "actual": 12.7,
+            "tolerance": 0.01,
+            "error": 0.0,
+            "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+            "feedback": null
+          },
+          {
+            "query_id": "q_is_solid",
+            "intent": "is_solid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit: valid extrude implies solid)",
+            "feedback": null
+          },
+          {
+            "query_id": "q_occt_valid",
+            "intent": "occt_valid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit)",
+            "feedback": null
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "108850_0dcd5ef1_0002",
+      "operator": "EX2_coordinate_flip",
+      "status": "ok",
+      "meta": {
+        "perturbation_type": "EX2_coordinate_flip",
+        "error_category": "EX2_axis_flip",
+        "swapped_axes": "axis_0<->axis_2",
+        "target_intent": "bbox_size",
+        "expected_failed_queries": [
+          "q_bbox_u",
+          "q_bbox_v"
+        ],
+        "allowed_secondary_failed_queries": [],
+        "source_design_plan_field": "$.global_envelope.bbox",
+        "should_reconstruct": true,
+        "should_fail_kqp": true,
+        "operator": "EX2_coordinate_flip",
+        "n_points_swapped": 5
+      },
+      "bbox_mm": [
+        171.45,
+        6.35,
+        38.1
+      ],
+      "step_exists": true,
+      "exec_report": {
+        "returncode": 0,
+        "compile_success": true,
+        "execute_success": true,
+        "export_success": true,
+        "occt_load_success": true,
+        "errors": [],
+        "export_success_at_out_step": true
+      },
+      "kqp": {
+        "sample_id": "108850_0dcd5ef1_0002",
+        "kqp_schema_version": "kqp_instance_v0.2",
+        "step_file": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\108850_0dcd5ef1_0002\\ex2\\generated.step",
+        "overall_status": "fail",
+        "summary": {
+          "total_queries": 6,
+          "passed_queries": 3,
+          "failed_queries": 3,
+          "error_queries": 0
+        },
+        "query_results": [
+          {
+            "query_id": "q_body_count",
+            "intent": "body_count",
+            "status": "pass",
+            "expected": 1,
+            "actual": 1,
+            "tolerance": 0,
+            "error": 0,
+            "source_field": "$.target.body_count",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_u",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 171.45,
+            "actual": 0.0,
+            "tolerance": 0.05,
+            "error": 171.45,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox u-size 171.45mm, got 2e-07mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_v",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 38.1,
+            "actual": 6.35,
+            "tolerance": 0.01,
+            "error": 31.75,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox v-size 38.1mm, got 6.3500002mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_w",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 6.35,
+            "actual": 38.1,
+            "tolerance": 0.01,
+            "error": 31.75,
+            "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox w-size 6.35mm, got 38.100000200000004mm."
+            }
+          },
+          {
+            "query_id": "q_is_solid",
+            "intent": "is_solid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit: valid extrude implies solid)",
+            "feedback": null
+          },
+          {
+            "query_id": "q_occt_valid",
+            "intent": "occt_valid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit)",
+            "feedback": null
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "108850_0dcd5ef1_0004",
+      "operator": "EX2_coordinate_flip",
+      "status": "ok",
+      "meta": {
+        "perturbation_type": "EX2_coordinate_flip",
+        "error_category": "EX2_axis_flip",
+        "swapped_axes": "axis_0<->axis_2",
+        "target_intent": "bbox_size",
+        "expected_failed_queries": [
+          "q_bbox_u",
+          "q_bbox_v"
+        ],
+        "allowed_secondary_failed_queries": [],
+        "source_design_plan_field": "$.global_envelope.bbox",
+        "should_reconstruct": true,
+        "should_fail_kqp": true,
+        "operator": "EX2_coordinate_flip",
+        "n_points_swapped": 5
+      },
+      "bbox_mm": [
+        6.35,
+        171.45,
+        110.998
+      ],
+      "step_exists": true,
+      "exec_report": {
+        "returncode": 0,
+        "compile_success": true,
+        "execute_success": true,
+        "export_success": true,
+        "occt_load_success": true,
+        "errors": [],
+        "export_success_at_out_step": true
+      },
+      "kqp": {
+        "sample_id": "108850_0dcd5ef1_0004",
+        "kqp_schema_version": "kqp_instance_v0.2",
+        "step_file": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\108850_0dcd5ef1_0004\\ex2\\generated.step",
+        "overall_status": "fail",
+        "summary": {
+          "total_queries": 6,
+          "passed_queries": 3,
+          "failed_queries": 3,
+          "error_queries": 0
+        },
+        "query_results": [
+          {
+            "query_id": "q_body_count",
+            "intent": "body_count",
+            "status": "pass",
+            "expected": 1,
+            "actual": 1,
+            "tolerance": 0,
+            "error": 0,
+            "source_field": "$.target.body_count",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_u",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 171.45,
+            "actual": 6.35,
+            "tolerance": 0.05,
+            "error": 165.1,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox u-size 171.45mm, got 6.3500002mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_v",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 110.998,
+            "actual": 0.0,
+            "tolerance": 0.05,
+            "error": 110.998,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox v-size 110.998mm, got 2e-07mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_w",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 6.35,
+            "actual": 110.998,
+            "tolerance": 0.01,
+            "error": 104.648,
+            "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox w-size 6.35mm, got 110.99800019999999mm."
+            }
+          },
+          {
+            "query_id": "q_is_solid",
+            "intent": "is_solid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit: valid extrude implies solid)",
+            "feedback": null
+          },
+          {
+            "query_id": "q_occt_valid",
+            "intent": "occt_valid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit)",
+            "feedback": null
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "108851_4d515b10_0005",
+      "operator": "EX2_coordinate_flip",
+      "status": "ok",
+      "meta": {
+        "perturbation_type": "EX2_coordinate_flip",
+        "error_category": "EX2_axis_flip",
+        "swapped_axes": "axis_0<->axis_2",
+        "target_intent": "bbox_size",
+        "expected_failed_queries": [
+          "q_bbox_u",
+          "q_bbox_v"
+        ],
+        "allowed_secondary_failed_queries": [],
+        "source_design_plan_field": "$.global_envelope.bbox",
+        "should_reconstruct": true,
+        "should_fail_kqp": true,
+        "operator": "EX2_coordinate_flip",
+        "n_points_swapped": 5
+      },
+      "bbox_mm": [
+        12.7,
+        307.848,
+        19.05
+      ],
+      "step_exists": true,
+      "exec_report": {
+        "returncode": 0,
+        "compile_success": true,
+        "execute_success": true,
+        "export_success": true,
+        "occt_load_success": true,
+        "errors": [],
+        "export_success_at_out_step": true
+      },
+      "kqp": {
+        "sample_id": "108851_4d515b10_0005",
+        "kqp_schema_version": "kqp_instance_v0.2",
+        "step_file": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\108851_4d515b10_0005\\ex2\\generated.step",
+        "overall_status": "fail",
+        "summary": {
+          "total_queries": 6,
+          "passed_queries": 3,
+          "failed_queries": 3,
+          "error_queries": 0
+        },
+        "query_results": [
+          {
+            "query_id": "q_body_count",
+            "intent": "body_count",
+            "status": "pass",
+            "expected": 1,
+            "actual": 1,
+            "tolerance": 0,
+            "error": 0,
+            "source_field": "$.target.body_count",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_u",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 307.848,
+            "actual": 12.7,
+            "tolerance": 0.05,
+            "error": 295.148,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox u-size 307.848mm, got 12.700000199999998mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_v",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 19.05,
+            "actual": 0.0,
+            "tolerance": 0.01,
+            "error": 19.05,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox v-size 19.05mm, got 2e-07mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_w",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 12.7,
+            "actual": 19.05,
+            "tolerance": 0.01,
+            "error": 6.35,
+            "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox w-size 12.7mm, got 19.050000200000003mm."
+            }
+          },
+          {
+            "query_id": "q_is_solid",
+            "intent": "is_solid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit: valid extrude implies solid)",
+            "feedback": null
+          },
+          {
+            "query_id": "q_occt_valid",
+            "intent": "occt_valid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit)",
+            "feedback": null
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "108851_4d515b10_0006",
+      "operator": "EX2_coordinate_flip",
+      "status": "ok",
+      "meta": {
+        "perturbation_type": "EX2_coordinate_flip",
+        "error_category": "EX2_axis_flip",
+        "swapped_axes": "axis_0<->axis_2",
+        "target_intent": "bbox_size",
+        "expected_failed_queries": [
+          "q_bbox_u",
+          "q_bbox_v"
+        ],
+        "allowed_secondary_failed_queries": [],
+        "source_design_plan_field": "$.global_envelope.bbox",
+        "should_reconstruct": true,
+        "should_fail_kqp": true,
+        "operator": "EX2_coordinate_flip",
+        "n_points_swapped": 5
+      },
+      "bbox_mm": [
+        12.7,
+        95.25,
+        19.05
+      ],
+      "step_exists": true,
+      "exec_report": {
+        "returncode": 0,
+        "compile_success": true,
+        "execute_success": true,
+        "export_success": true,
+        "occt_load_success": true,
+        "errors": [],
+        "export_success_at_out_step": true
+      },
+      "kqp": {
+        "sample_id": "108851_4d515b10_0006",
+        "kqp_schema_version": "kqp_instance_v0.2",
+        "step_file": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\108851_4d515b10_0006\\ex2\\generated.step",
+        "overall_status": "fail",
+        "summary": {
+          "total_queries": 6,
+          "passed_queries": 3,
+          "failed_queries": 3,
+          "error_queries": 0
+        },
+        "query_results": [
+          {
+            "query_id": "q_body_count",
+            "intent": "body_count",
+            "status": "pass",
+            "expected": 1,
+            "actual": 1,
+            "tolerance": 0,
+            "error": 0,
+            "source_field": "$.target.body_count",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_u",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 95.25,
+            "actual": 12.7,
+            "tolerance": 0.05,
+            "error": 82.55,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox u-size 95.25mm, got 12.700000199999998mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_v",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 19.05,
+            "actual": 0.0,
+            "tolerance": 0.01,
+            "error": 19.05,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox v-size 19.05mm, got 2e-07mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_w",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 12.7,
+            "actual": 19.05,
+            "tolerance": 0.01,
+            "error": 6.35,
+            "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox w-size 12.7mm, got 19.050000200000003mm."
+            }
+          },
+          {
+            "query_id": "q_is_solid",
+            "intent": "is_solid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit: valid extrude implies solid)",
+            "feedback": null
+          },
+          {
+            "query_id": "q_occt_valid",
+            "intent": "occt_valid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit)",
+            "feedback": null
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "108851_4d515b10_0007",
+      "operator": "EX2_coordinate_flip",
+      "status": "ok",
+      "meta": {
+        "perturbation_type": "EX2_coordinate_flip",
+        "error_category": "EX2_axis_flip",
+        "swapped_axes": "axis_0<->axis_2",
+        "target_intent": "bbox_size",
+        "expected_failed_queries": [
+          "q_bbox_u",
+          "q_bbox_v"
+        ],
+        "allowed_secondary_failed_queries": [],
+        "source_design_plan_field": "$.global_envelope.bbox",
+        "should_reconstruct": true,
+        "should_fail_kqp": true,
+        "operator": "EX2_coordinate_flip",
+        "n_points_swapped": 5
+      },
+      "bbox_mm": [
+        279.4,
+        19.05,
+        50.8
+      ],
+      "step_exists": true,
+      "exec_report": {
+        "returncode": 0,
+        "compile_success": true,
+        "execute_success": true,
+        "export_success": true,
+        "occt_load_success": true,
+        "errors": [],
+        "export_success_at_out_step": true
+      },
+      "kqp": {
+        "sample_id": "108851_4d515b10_0007",
+        "kqp_schema_version": "kqp_instance_v0.2",
+        "step_file": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\108851_4d515b10_0007\\ex2\\generated.step",
+        "overall_status": "fail",
+        "summary": {
+          "total_queries": 6,
+          "passed_queries": 3,
+          "failed_queries": 3,
+          "error_queries": 0
+        },
+        "query_results": [
+          {
+            "query_id": "q_body_count",
+            "intent": "body_count",
+            "status": "pass",
+            "expected": 1,
+            "actual": 1,
+            "tolerance": 0,
+            "error": 0,
+            "source_field": "$.target.body_count",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_u",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 279.4,
+            "actual": 0.0,
+            "tolerance": 0.05,
+            "error": 279.4,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox u-size 279.4mm, got 2e-07mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_v",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 50.8,
+            "actual": 19.05,
+            "tolerance": 0.01,
+            "error": 31.75,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox v-size 50.8mm, got 19.050000200000003mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_w",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 19.05,
+            "actual": 50.8,
+            "tolerance": 0.01,
+            "error": 31.75,
+            "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox w-size 19.05mm, got 50.8000002mm."
+            }
+          },
+          {
+            "query_id": "q_is_solid",
+            "intent": "is_solid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit: valid extrude implies solid)",
+            "feedback": null
+          },
+          {
+            "query_id": "q_occt_valid",
+            "intent": "occt_valid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit)",
+            "feedback": null
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "108851_4d515b10_0009",
+      "operator": "EX2_coordinate_flip",
+      "status": "ok",
+      "meta": {
+        "perturbation_type": "EX2_coordinate_flip",
+        "error_category": "EX2_axis_flip",
+        "swapped_axes": "axis_0<->axis_2",
+        "target_intent": "bbox_size",
+        "expected_failed_queries": [
+          "q_bbox_u",
+          "q_bbox_v"
+        ],
+        "allowed_secondary_failed_queries": [],
+        "source_design_plan_field": "$.global_envelope.bbox",
+        "should_reconstruct": true,
+        "should_fail_kqp": true,
+        "operator": "EX2_coordinate_flip",
+        "n_points_swapped": 5
+      },
+      "bbox_mm": [
+        209.55,
+        19.05,
+        57.912
+      ],
+      "step_exists": true,
+      "exec_report": {
+        "returncode": 0,
+        "compile_success": true,
+        "execute_success": true,
+        "export_success": true,
+        "occt_load_success": true,
+        "errors": [],
+        "export_success_at_out_step": true
+      },
+      "kqp": {
+        "sample_id": "108851_4d515b10_0009",
+        "kqp_schema_version": "kqp_instance_v0.2",
+        "step_file": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\108851_4d515b10_0009\\ex2\\generated.step",
+        "overall_status": "fail",
+        "summary": {
+          "total_queries": 6,
+          "passed_queries": 3,
+          "failed_queries": 3,
+          "error_queries": 0
+        },
+        "query_results": [
+          {
+            "query_id": "q_body_count",
+            "intent": "body_count",
+            "status": "pass",
+            "expected": 1,
+            "actual": 1,
+            "tolerance": 0,
+            "error": 0,
+            "source_field": "$.target.body_count",
+            "feedback": null
+          },
+          {
+            "query_id": "q_bbox_u",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 209.55,
+            "actual": 0.0,
+            "tolerance": 0.05,
+            "error": 209.55,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox u-size 209.55mm, got 2e-07mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_v",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 57.912,
+            "actual": 19.05,
+            "tolerance": 0.01,
+            "error": 38.862,
+            "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox v-size 57.912mm, got 19.050000200000003mm."
+            }
+          },
+          {
+            "query_id": "q_bbox_w",
+            "intent": "bbox_size",
+            "status": "fail",
+            "expected": 19.05,
+            "actual": 57.912,
+            "tolerance": 0.01,
+            "error": 38.862,
+            "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+            "feedback": {
+              "error_type": "dimension_mismatch",
+              "message": "Expected bbox w-size 19.05mm, got 57.9120002mm."
+            }
+          },
+          {
+            "query_id": "q_is_solid",
+            "intent": "is_solid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit: valid extrude implies solid)",
+            "feedback": null
+          },
+          {
+            "query_id": "q_occt_valid",
+            "intent": "occt_valid",
+            "status": "pass",
+            "expected": true,
+            "actual": true,
+            "tolerance": null,
+            "error": 0,
+            "source_field": "(implicit)",
+            "feedback": null
+          }
+        ]
+      }
+    }
+  ]
+}

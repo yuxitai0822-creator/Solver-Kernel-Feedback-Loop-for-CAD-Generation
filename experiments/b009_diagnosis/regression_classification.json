@@ -1,0 +1,230 @@
+{
+  "n_regressed_samples": 4,
+  "n_class_I": 8,
+  "n_class_II": 0,
+  "n_class_III": 0,
+  "per_sample": [
+    {
+      "sample_id": "108850_0dcd5ef1_0004",
+      "n_regressed": 2,
+      "classifications": [
+        {
+          "query_id": "q_bbox_u",
+          "expected": 171.45,
+          "frame_axis": "u",
+          "class": "I",
+          "permutation": "u→y",
+          "evidence": "frame_axis_span=6.3500 ≠ expected=171.4500; world axis(es) ['y'] with span(s) [171.45] match the expected, indicating the body is rotated relative to the design plan's frame ([1.0, 0.0, 0.0])."
+        },
+        {
+          "query_id": "q_bbox_w",
+          "expected": 6.35,
+          "frame_axis": "w",
+          "class": "I",
+          "permutation": "w→x",
+          "evidence": "frame_axis_span=171.4500 ≠ expected=6.3500; world axis(es) ['x'] with span(s) [6.35] match the expected, indicating the body is rotated relative to the design plan's frame ([-0.0, 1.0, 0.0])."
+        }
+      ]
+    },
+    {
+      "sample_id": "108851_4d515b10_0005",
+      "n_regressed": 2,
+      "classifications": [
+        {
+          "query_id": "q_bbox_u",
+          "expected": 307.848,
+          "frame_axis": "u",
+          "class": "I",
+          "permutation": "u→y",
+          "evidence": "frame_axis_span=12.7000 ≠ expected=307.8480; world axis(es) ['y'] with span(s) [307.848] match the expected, indicating the body is rotated relative to the design plan's frame ([1.0, 0.0, 0.0])."
+        },
+        {
+          "query_id": "q_bbox_w",
+          "expected": 12.7,
+          "frame_axis": "w",
+          "class": "I",
+          "permutation": "w→x",
+          "evidence": "frame_axis_span=307.8480 ≠ expected=12.7000; world axis(es) ['x'] with span(s) [12.7] match the expected, indicating the body is rotated relative to the design plan's frame ([-0.0, 1.0, 0.0])."
+        }
+      ]
+    },
+    {
+      "sample_id": "108851_4d515b10_0006",
+      "n_regressed": 2,
+      "classifications": [
+        {
+          "query_id": "q_bbox_u",
+          "expected": 95.25,
+          "frame_axis": "u",
+          "class": "I",
+          "permutation": "u→y",
+          "evidence": "frame_axis_span=12.7000 ≠ expected=95.2500; world axis(es) ['y'] with span(s) [95.25] match the expected, indicating the body is rotated relative to the design plan's frame ([1.0, 0.0, 0.0])."
+        },
+        {
+          "query_id": "q_bbox_w",
+          "expected": 12.7,
+          "frame_axis": "w",
+          "class": "I",
+          "permutation": "w→x",
+          "evidence": "frame_axis_span=95.2500 ≠ expected=12.7000; world axis(es) ['x'] with span(s) [12.7] match the expected, indicating the body is rotated relative to the design plan's frame ([-0.0, 1.0, 0.0])."
+        }
+      ]
+    },
+    {
+      "sample_id": "108852_fed54702_0004",
+      "n_regressed": 2,
+      "classifications": [
+        {
+          "query_id": "q_bbox_v",
+          "expected": 7.9375,
+          "frame_axis": "v",
+          "class": "I",
+          "permutation": "v→x",
+          "evidence": "frame_axis_span=139.7000 ≠ expected=7.9375; world axis(es) ['x', 'y'] with span(s) [7.9375, 7.9375] match the expected, indicating the body is rotated relative to the design plan's frame ([0.0, 0.0, -1.0])."
+        },
+        {
+          "query_id": "q_bbox_w",
+          "expected": 139.7,
+          "frame_axis": "w",
+          "class": "I",
+          "permutation": "w→z",
+          "evidence": "frame_axis_span=7.9375 ≠ expected=139.7000; world axis(es) ['z'] with span(s) [139.7] match the expected, indicating the body is rotated relative to the design plan's frame ([-0.0, 1.0, 0.0])."
+        }
+      ]
+    }
+  ],
+  "by_class": {
+    "I": [
+      {
+        "sample_id": "108850_0dcd5ef1_0004",
+        "query_id": "q_bbox_u",
+        "expected": 171.45,
+        "frame_dir": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "frame_axis_span": 6.35,
+        "world_spans": {
+          "x": 6.35,
+          "y": 171.45,
+          "z": 110.998
+        }
+      },
+      {
+        "sample_id": "108850_0dcd5ef1_0004",
+        "query_id": "q_bbox_w",
+        "expected": 6.35,
+        "frame_dir": [
+          -0.0,
+          1.0,
+          0.0
+        ],
+        "frame_axis_span": 171.45,
+        "world_spans": {
+          "x": 6.35,
+          "y": 171.45,
+          "z": 110.998
+        }
+      },
+      {
+        "sample_id": "108851_4d515b10_0005",
+        "query_id": "q_bbox_u",
+        "expected": 307.848,
+        "frame_dir": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "frame_axis_span": 12.7,
+        "world_spans": {
+          "x": 12.7,
+          "y": 307.848,
+          "z": 19.05
+        }
+      },
+      {
+        "sample_id": "108851_4d515b10_0005",
+        "query_id": "q_bbox_w",
+        "expected": 12.7,
+        "frame_dir": [
+          -0.0,
+          1.0,
+          0.0
+        ],
+        "frame_axis_span": 307.848,
+        "world_spans": {
+          "x": 12.7,
+          "y": 307.848,
+          "z": 19.05
+        }
+      },
+      {
+        "sample_id": "108851_4d515b10_0006",
+        "query_id": "q_bbox_u",
+        "expected": 95.25,
+        "frame_dir": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "frame_axis_span": 12.7,
+        "world_spans": {
+          "x": 12.7,
+          "y": 95.25,
+          "z": 19.05
+        }
+      },
+      {
+        "sample_id": "108851_4d515b10_0006",
+        "query_id": "q_bbox_w",
+        "expected": 12.7,
+        "frame_dir": [
+          -0.0,
+          1.0,
+          0.0
+        ],
+        "frame_axis_span": 95.25,
+        "world_spans": {
+          "x": 12.7,
+          "y": 95.25,
+          "z": 19.05
+        }
+      },
+      {
+        "sample_id": "108852_fed54702_0004",
+        "query_id": "q_bbox_v",
+        "expected": 7.9375,
+        "frame_dir": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "frame_axis_span": 139.7,
+        "world_spans": {
+          "x": 7.9375,
+          "y": 7.9375,
+          "z": 139.7
+        }
+      },
+      {
+        "sample_id": "108852_fed54702_0004",
+        "query_id": "q_bbox_w",
+        "expected": 139.7,
+        "frame_dir": [
+          -0.0,
+          1.0,
+          0.0
+        ],
+        "frame_axis_span": 7.9375,
+        "world_spans": {
+          "x": 7.9375,
+          "y": 7.9375,
+          "z": 139.7
+        }
+      }
+    ],
+    "II": [],
+    "III": []
+  }
+}

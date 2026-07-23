@@ -69,14 +69,29 @@ class LineSpec:
 
 
 @dataclass
+class CircleSpec:
+    """A FreeCAD Sketcher circle (B-006 fix).
+
+    (cx, cy) is the centre in mm; radius in mm.  Use ``Concentric`` /
+    ``Radius`` constraints to fully constrain an annulus (two circles).
+    """
+    uuid: str
+    center: tuple[float, float]
+    radius: float
+
+
+@dataclass
 class ConstraintSpec:
     """A FreeCAD Sketcher-style constraint spec."""
     type: str      # 'Horizontal' | 'Vertical' | 'Coincident' | 'Equal' |
                    # 'DistanceX' | 'DistanceY' | 'Angle' | 'Perpendicular' |
-                   # 'Parallel' | 'Symmetric' | 'Radius' | 'Diameter'
+                   # 'Parallel' | 'Symmetric' | 'Radius' | 'Diameter' |
+                   # 'Concentric'  (B-006 fix)
     params: tuple[Any, ...] = ()
     """Constructor arguments AFTER (geoId1, posId1).
     E.g. for Coincident(a, b): params = (geoId2, posId2)
+    For Concentric(a, b): params = (geoId2,)
+    For Radius(a, value): params = (value,)
     """
     target_geo: int = -1  # for Orientation constraints (Horizontal/Vertical): the geo id
     target_pos: int = -1  # for pos-tagged constraints
@@ -97,6 +112,7 @@ def build_sketch(spec: dict) -> dict:
 
     spec = {
       'lines': [LineSpec(...), ...],
+      'circles': [CircleSpec(...), ...],   # B-006 fix:  added
       'constraints': [ConstraintSpec(...), ...],
       'pad': PadSpec(...) | None,        # optional downstream feature
     }
@@ -113,6 +129,14 @@ def build_sketch(spec: dict) -> dict:
         p2 = app.Vector(ln.end[0], ln.end[1], 0.0)
         gid = sketch.addGeometry(Part.LineSegment(p1, p2), False)
         geo_ids.append(gid)
+    for ci in spec.get('circles', []):                       # B-006 fix
+        cx, cy = ci.center
+        # Part.Circle requires Vector objects (not tuples) for centre & axis
+        geom = Part.Circle(app.Vector(cx, cy, 0.0),
+                             app.Vector(0, 0, 1),
+                             ci.radius)
+        gid = sketch.addGeometry(geom, False)
+        geo_ids.append(gid)
     for c in spec.get('constraints', []):
         _add_constraint(sketch, c, geo_ids, Sketcher)
 
@@ -123,7 +147,10 @@ def build_sketch(spec: dict) -> dict:
         pad.Profile = sketch
         pad.Length = spec['pad'].length
 
-    return {'doc': doc, 'sketch': sketch, 'pad': pad, 'geometry_ids': geo_ids}
+    return {'doc': doc, 'sketch': sketch, 'pad': pad,
+              'geometry_ids': geo_ids,
+              'num_lines': len(spec.get('lines', [])),
+              'num_circles': len(spec.get('circles', []))}
 
 
 def _add_constraint(sketch, c: ConstraintSpec, geo_ids: list[int],
@@ -157,11 +184,20 @@ def _add_constraint(sketch, c: ConstraintSpec, geo_ids: list[int],
         return sketch.addConstraint(
             Sketcher.Constraint('Parallel', c.params[0], c.params[1]))
     if c.type == 'Radius':
+        # Sketcher.Constraint('Radius', geoId, value)
         return sketch.addConstraint(
-            Sketcher.Constraint('Radius', c.params[0], c.params[1]))
+            Sketcher.Constraint('Radius', c.target_geo, c.params[0]))
     if c.type == 'Diameter':
         return sketch.addConstraint(
-            Sketcher.Constraint('Diameter', c.params[0], c.params[1]))
+            Sketcher.Constraint('Diameter', c.target_geo, c.params[0]))
+    if c.type == 'Concentric':                      # B-006 fix
+        # The current FreeCAD build's Sketcher.Constraint does NOT accept
+        # the 'Concentric' name in this binding (it returns "Constraint
+        # type and index" as the only valid signature).  We achieve the
+        # same semantics by Coincident-locking the two circle centres
+        # (pos index 3 is the centre of a circle in Sketcher).
+        return sketch.addConstraint(
+            Sketcher.Constraint('Coincident', c.target_geo, 3, c.params[0], 3))
     raise ValueError(f"unsupported constraint type {c.type}")
 
 

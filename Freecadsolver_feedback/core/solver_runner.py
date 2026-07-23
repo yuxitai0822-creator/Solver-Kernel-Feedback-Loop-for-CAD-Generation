@@ -26,8 +26,8 @@ sys.path.insert(0, str(ROOT / "api_probe"))
 
 from core.history_parser import parse_history_to_sketch_spec
 from api_probe.probe_lib import (
-    get_modules, build_sketch, probe_sketch_state, LineSpec, ConstraintSpec,
-    PadSpec,
+    get_modules, build_sketch, probe_sketch_state, LineSpec, CircleSpec,
+    ConstraintSpec, PadSpec,
 )
 
 
@@ -36,6 +36,9 @@ def _spec_to_dataclasses(spec: dict) -> dict:
     return {
         "lines": [LineSpec(ln["uuid"], ln["start"], ln["end"])
                    for ln in spec.get("lines", [])],
+        # B-006 fix:  emit circles so annulus shapes reach the FreeCAD sketch
+        "circles": [CircleSpec(ci["uuid"], tuple(ci["center"]), ci["radius"])
+                      for ci in spec.get("circles", [])],
         "constraints": [ConstraintSpec(
             type=c["type"],
             params=tuple(c.get("params") or ()),
@@ -53,11 +56,14 @@ def run_solver_from_history(history: dict) -> dict:
     deleted = spec.get("deleted_entities", set())
     dc = _spec_to_dataclasses(spec)
 
-    # If there are no lines, return empty state.
-    if not dc["lines"]:
+    # If there are no lines AND no circles, return empty state.
+    # B-006 fix:  annulus shapes emit 0 lines + 2 circles; without this
+    # check, the early return would discard the annulus with a
+    # misleading "no lines in sketch" error.
+    if not dc["lines"] and not dc["circles"]:
         return {
-            "raw_solve": {"return_code": -1, "exception": "no lines in sketch",
-                          "message": "no SketchLine entities found"},
+            "raw_solve": {"return_code": -1, "exception": "no geometry in sketch",
+                          "message": "no SketchLine or SketchCircle entities found"},
             "dof": 0,
             "invalid_constraint_ids": [],
             "deleted_entities_referenced": sorted(deleted),
@@ -82,16 +88,19 @@ def run_solver_from_history(history: dict) -> dict:
             "semantic_conflicts": [],
             "non_linear_constraint_ids": list(non_linear),
             "registry": {"num_points": 0, "num_lines": len(dc["lines"]),
-                          "num_circles": 0,
+                          "num_circles": len(dc.get("circles", [])),
                           "num_constraints": len(dc["constraints"])},
         }
 
     state["deleted_entities_referenced"] = sorted(deleted)
     state["non_linear_constraint_ids"] = list(non_linear)
+    # B-006 fix:  num_circles is the build_sketch circle count, not the
+    # line-only `geometry_count` (which is what FreeCAD's GeometryCount
+    # returns — it counts Part.LineSegment but not Part.Circle).
     state["registry"] = {
         "num_points": 0,  # not tracked separately in V0.1
-        "num_lines": state.get("geometry_count", 0),
-        "num_circles": 0,
+        "num_lines": result.get("num_lines", 0),
+        "num_circles": result.get("num_circles", 0),
         "num_constraints": state.get("constraint_count", 0),
     }
     return state

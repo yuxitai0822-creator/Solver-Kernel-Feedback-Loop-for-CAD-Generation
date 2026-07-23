@@ -1,0 +1,159 @@
+{
+  "rationale": "15 Type A stratified by operator + 15 EX2 random; EX1 dropped per R5 escalation; B-011 C-path filter applied.",
+  "n_type_a": 15,
+  "n_ex2": 15,
+  "type_a_pick": [
+    {
+      "sample_id": "108851_4d515b10_0007",
+      "negative_id": "neg_02",
+      "operator": "E1_envelope_u"
+    },
+    {
+      "sample_id": "100877_ac1e5a17_0017",
+      "negative_id": "neg_02",
+      "operator": "E1_envelope_u"
+    },
+    {
+      "sample_id": "100243_9fb796fe_0005",
+      "negative_id": "neg_03",
+      "operator": "E1_envelope_v_shrink"
+    },
+    {
+      "sample_id": "108851_4d515b10_0009",
+      "negative_id": "neg_03",
+      "operator": "E1_envelope_v_shrink"
+    },
+    {
+      "sample_id": "102525_06a3094b_0004",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep"
+    },
+    {
+      "sample_id": "102410_f9877a7b_0012",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep"
+    },
+    {
+      "sample_id": "102410_f9877a7b_0000",
+      "negative_id": "neg_01",
+      "operator": "E2_extrude_deep"
+    },
+    {
+      "sample_id": "106323_77f22d29_0004",
+      "negative_id": "neg_03",
+      "operator": "E2_extrude_shallow"
+    },
+    {
+      "sample_id": "102410_f9877a7b_0012",
+      "negative_id": "neg_02",
+      "operator": "E3_radius_up"
+    },
+    {
+      "sample_id": "107668_cf76b132_0001",
+      "negative_id": "neg_02",
+      "operator": "E3_radius_up"
+    },
+    {
+      "sample_id": "103284_e25015aa_0003",
+      "negative_id": "neg_03",
+      "operator": "E4_void_add"
+    },
+    {
+      "sample_id": "106817_bb28b7aa_0003",
+      "negative_id": "neg_03",
+      "operator": "E4_void_add"
+    },
+    {
+      "sample_id": "101427_a9bcb09c_0001",
+      "negative_id": "neg_02",
+      "operator": "E4_void_remove_one"
+    },
+    {
+      "sample_id": "104453_aba0f2d1_0006",
+      "negative_id": "neg_03",
+      "operator": "E4_void_remove_one"
+    },
+    {
+      "sample_id": "106323_77f22d29_0004",
+      "negative_id": "neg_01",
+      "operator": "E5_extent_type_change"
+    }
+  ],
+  "ex2_pick": [
+    {
+      "sample_id": "102295_86f842dd_0000",
+      "negative_id": "ex2",
+      "operator": "EX2_coordinate_flip"
+    },
+    {
+      "sample_id": "102525_06a3094b_0000",
+      "negative_id": "ex2",
+      "operator": "EX2_coordinate_flip"
+    },
+    {
+      "sample_id": "106817_bb28b7aa_0002",
+      "negative_id": "ex2",
+      "operator": "EX2_coordinate_flip"
+    },
+    {
+      "sample_id": "107668_cf76b132_0001",
+      "negative_id": "ex2",
+      "operator": "EX2_coordinate_flip"
+    },
+    {
+      "sample_id": "100877_ac1e5a17_0001",
+      "negative_id": "ex2",
+      "operator": "EX2_coordinate_flip"
+    },
+    {
+      "sample_id": "106817_bb28b7aa_0004",
+      "negative_id": "ex2",
+      "operator": "EX2_coordinate_flip"
+    },
+    {
+      "sample_id": "108851_4d515b10_0009",
+      "negative_id": "ex2",
+      "operator": "EX2_coordinate_flip"
+    },
+    {
+      "sample_id": "108244_329b1876_0000",
+      "negative_id": "ex2",
+      "operator": "EX2_coordinate_flip"
+    },
+    {
+      "sample_id": "108850_0dcd5ef1_0002",
+      "negative_id": "ex2",
+      "operator": "EX2_coordinate_flip"
+    },
+    {
+      "sample_id": "104453_aba0f2d1_0006",
+      "negative_id": "ex2",
+      "operator": "EX2_coordinate_flip"
+    },
+    {
+      "sample_id": "108851_4d515b10_0007",
+      "negative_id": "ex2",
+      "operator": "EX2_coordinate_flip"
+    },
+    {
+      "sample_id": "105278_909f3813_0000",
+      "negative_id": "ex2",
+      "operator": "EX2_coordinate_flip"
+    },
+    {
+      "sample_id": "102525_06a3094b_0004",
+      "negative_id": "ex2",
+      "operator": "EX2_coordinate_flip"
+    },
+    {
+      "sample_id": "103481_b27a1cdf_0010",
+      "negative_id": "ex2",
+      "operator": "EX2_coordinate_flip"
+    },
+    {
+      "sample_id": "107055_0500fdd1_0027",
+      "negative_id": "ex2",
+      "operator": "EX2_coordinate_flip"
+    }
+  ]
+}

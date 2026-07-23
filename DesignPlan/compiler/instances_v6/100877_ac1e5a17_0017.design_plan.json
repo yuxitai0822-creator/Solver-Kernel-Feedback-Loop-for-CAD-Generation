@@ -51,7 +51,8 @@
           0.0,
           1.0
         ],
-        "span_computation": "vertex_projection"
+        "span_computation": "vertex_projection",
+        "frame_source": "transform.x_axis+y_axis+plane.normal"
       },
       "profiles": [
         {

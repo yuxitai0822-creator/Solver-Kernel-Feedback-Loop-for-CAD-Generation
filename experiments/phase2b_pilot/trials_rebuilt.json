@@ -1,0 +1,1132 @@
+[
+  {
+    "method": "M0_NoFeedback",
+    "sid": "108851_4d515b10_0007",
+    "nid": "neg_02",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M0_NoFeedback\\108851_4d515b10_0007\\neg_02\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M0_NoFeedback",
+    "sid": "100877_ac1e5a17_0017",
+    "nid": "neg_02",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M0_NoFeedback\\100877_ac1e5a17_0017\\neg_02\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M0_NoFeedback",
+    "sid": "100243_9fb796fe_0005",
+    "nid": "neg_03",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M0_NoFeedback\\100243_9fb796fe_0005\\neg_03\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M0_NoFeedback",
+    "sid": "108851_4d515b10_0009",
+    "nid": "neg_03",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M0_NoFeedback\\108851_4d515b10_0009\\neg_03\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M0_NoFeedback",
+    "sid": "102525_06a3094b_0004",
+    "nid": "neg_01",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M0_NoFeedback\\102525_06a3094b_0004\\neg_01\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M0_NoFeedback",
+    "sid": "102410_f9877a7b_0012",
+    "nid": "neg_01",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M0_NoFeedback\\102410_f9877a7b_0012\\neg_01\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M0_NoFeedback",
+    "sid": "102410_f9877a7b_0000",
+    "nid": "neg_01",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M0_NoFeedback\\102410_f9877a7b_0000\\neg_01\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M0_NoFeedback",
+    "sid": "106323_77f22d29_0004",
+    "nid": "neg_03",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M0_NoFeedback\\106323_77f22d29_0004\\neg_03\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M0_NoFeedback",
+    "sid": "102410_f9877a7b_0012",
+    "nid": "neg_02",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M0_NoFeedback\\102410_f9877a7b_0012\\neg_02\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M0_NoFeedback",
+    "sid": "107668_cf76b132_0001",
+    "nid": "neg_02",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M0_NoFeedback\\107668_cf76b132_0001\\neg_02\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M0_NoFeedback",
+    "sid": "103284_e25015aa_0003",
+    "nid": "neg_03",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M0_NoFeedback\\103284_e25015aa_0003\\neg_03\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M0_NoFeedback",
+    "sid": "106817_bb28b7aa_0003",
+    "nid": "neg_03",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M0_NoFeedback\\106817_bb28b7aa_0003\\neg_03\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M0_NoFeedback",
+    "sid": "101427_a9bcb09c_0001",
+    "nid": "neg_02",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M0_NoFeedback\\101427_a9bcb09c_0001\\neg_02\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M0_NoFeedback",
+    "sid": "106323_77f22d29_0004",
+    "nid": "neg_01",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M0_NoFeedback\\106323_77f22d29_0004\\neg_01\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M0_NoFeedback",
+    "sid": "102295_86f842dd_0000",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M0_NoFeedback\\102295_86f842dd_0000\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M0_NoFeedback",
+    "sid": "102525_06a3094b_0000",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M0_NoFeedback\\102525_06a3094b_0000\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M0_NoFeedback",
+    "sid": "106817_bb28b7aa_0002",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M0_NoFeedback\\106817_bb28b7aa_0002\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M0_NoFeedback",
+    "sid": "107668_cf76b132_0001",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M0_NoFeedback\\107668_cf76b132_0001\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M0_NoFeedback",
+    "sid": "100877_ac1e5a17_0001",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M0_NoFeedback\\100877_ac1e5a17_0001\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M0_NoFeedback",
+    "sid": "106817_bb28b7aa_0004",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M0_NoFeedback\\106817_bb28b7aa_0004\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M0_NoFeedback",
+    "sid": "108851_4d515b10_0009",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M0_NoFeedback\\108851_4d515b10_0009\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M0_NoFeedback",
+    "sid": "108244_329b1876_0000",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M0_NoFeedback\\108244_329b1876_0000\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M0_NoFeedback",
+    "sid": "108850_0dcd5ef1_0002",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M0_NoFeedback\\108850_0dcd5ef1_0002\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M0_NoFeedback",
+    "sid": "104453_aba0f2d1_0006",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M0_NoFeedback\\104453_aba0f2d1_0006\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M0_NoFeedback",
+    "sid": "108851_4d515b10_0007",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M0_NoFeedback\\108851_4d515b10_0007\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M0_NoFeedback",
+    "sid": "105278_909f3813_0000",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M0_NoFeedback\\105278_909f3813_0000\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M0_NoFeedback",
+    "sid": "102525_06a3094b_0004",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M0_NoFeedback\\102525_06a3094b_0004\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M0_NoFeedback",
+    "sid": "103481_b27a1cdf_0010",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M0_NoFeedback\\103481_b27a1cdf_0010\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M0_NoFeedback",
+    "sid": "107055_0500fdd1_0027",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M0_NoFeedback\\107055_0500fdd1_0027\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M1_SolverOnly",
+    "sid": "108851_4d515b10_0007",
+    "nid": "neg_02",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M1_SolverOnly\\108851_4d515b10_0007\\neg_02\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M1_SolverOnly",
+    "sid": "100877_ac1e5a17_0017",
+    "nid": "neg_02",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M1_SolverOnly\\100877_ac1e5a17_0017\\neg_02\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M1_SolverOnly",
+    "sid": "100243_9fb796fe_0005",
+    "nid": "neg_03",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M1_SolverOnly\\100243_9fb796fe_0005\\neg_03\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M1_SolverOnly",
+    "sid": "108851_4d515b10_0009",
+    "nid": "neg_03",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M1_SolverOnly\\108851_4d515b10_0009\\neg_03\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M1_SolverOnly",
+    "sid": "102525_06a3094b_0004",
+    "nid": "neg_01",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M1_SolverOnly\\102525_06a3094b_0004\\neg_01\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M1_SolverOnly",
+    "sid": "102410_f9877a7b_0012",
+    "nid": "neg_01",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M1_SolverOnly\\102410_f9877a7b_0012\\neg_01\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M1_SolverOnly",
+    "sid": "102410_f9877a7b_0000",
+    "nid": "neg_01",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M1_SolverOnly\\102410_f9877a7b_0000\\neg_01\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M1_SolverOnly",
+    "sid": "106323_77f22d29_0004",
+    "nid": "neg_03",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M1_SolverOnly\\106323_77f22d29_0004\\neg_03\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M1_SolverOnly",
+    "sid": "102410_f9877a7b_0012",
+    "nid": "neg_02",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M1_SolverOnly\\102410_f9877a7b_0012\\neg_02\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M1_SolverOnly",
+    "sid": "107668_cf76b132_0001",
+    "nid": "neg_02",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M1_SolverOnly\\107668_cf76b132_0001\\neg_02\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M1_SolverOnly",
+    "sid": "103284_e25015aa_0003",
+    "nid": "neg_03",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M1_SolverOnly\\103284_e25015aa_0003\\neg_03\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M1_SolverOnly",
+    "sid": "106817_bb28b7aa_0003",
+    "nid": "neg_03",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M1_SolverOnly\\106817_bb28b7aa_0003\\neg_03\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M1_SolverOnly",
+    "sid": "101427_a9bcb09c_0001",
+    "nid": "neg_02",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M1_SolverOnly\\101427_a9bcb09c_0001\\neg_02\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M1_SolverOnly",
+    "sid": "104453_aba0f2d1_0006",
+    "nid": "neg_03",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M1_SolverOnly\\104453_aba0f2d1_0006\\neg_03\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M1_SolverOnly",
+    "sid": "106323_77f22d29_0004",
+    "nid": "neg_01",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M1_SolverOnly\\106323_77f22d29_0004\\neg_01\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M1_SolverOnly",
+    "sid": "102525_06a3094b_0000",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M1_SolverOnly\\102525_06a3094b_0000\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M1_SolverOnly",
+    "sid": "106817_bb28b7aa_0002",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M1_SolverOnly\\106817_bb28b7aa_0002\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M1_SolverOnly",
+    "sid": "107668_cf76b132_0001",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M1_SolverOnly\\107668_cf76b132_0001\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M1_SolverOnly",
+    "sid": "100877_ac1e5a17_0001",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M1_SolverOnly\\100877_ac1e5a17_0001\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M1_SolverOnly",
+    "sid": "106817_bb28b7aa_0004",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M1_SolverOnly\\106817_bb28b7aa_0004\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M1_SolverOnly",
+    "sid": "108851_4d515b10_0009",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M1_SolverOnly\\108851_4d515b10_0009\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M1_SolverOnly",
+    "sid": "108244_329b1876_0000",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M1_SolverOnly\\108244_329b1876_0000\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M1_SolverOnly",
+    "sid": "108850_0dcd5ef1_0002",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M1_SolverOnly\\108850_0dcd5ef1_0002\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M1_SolverOnly",
+    "sid": "104453_aba0f2d1_0006",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M1_SolverOnly\\104453_aba0f2d1_0006\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M1_SolverOnly",
+    "sid": "108851_4d515b10_0007",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M1_SolverOnly\\108851_4d515b10_0007\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M1_SolverOnly",
+    "sid": "105278_909f3813_0000",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M1_SolverOnly\\105278_909f3813_0000\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M1_SolverOnly",
+    "sid": "102525_06a3094b_0004",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M1_SolverOnly\\102525_06a3094b_0004\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M1_SolverOnly",
+    "sid": "107055_0500fdd1_0027",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M1_SolverOnly\\107055_0500fdd1_0027\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M2_KQPOnly",
+    "sid": "108851_4d515b10_0007",
+    "nid": "neg_02",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M2_KQPOnly\\108851_4d515b10_0007\\neg_02\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M2_KQPOnly",
+    "sid": "100243_9fb796fe_0005",
+    "nid": "neg_03",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M2_KQPOnly\\100243_9fb796fe_0005\\neg_03\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M2_KQPOnly",
+    "sid": "108851_4d515b10_0009",
+    "nid": "neg_03",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M2_KQPOnly\\108851_4d515b10_0009\\neg_03\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M2_KQPOnly",
+    "sid": "102525_06a3094b_0004",
+    "nid": "neg_01",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M2_KQPOnly\\102525_06a3094b_0004\\neg_01\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M2_KQPOnly",
+    "sid": "102410_f9877a7b_0012",
+    "nid": "neg_01",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M2_KQPOnly\\102410_f9877a7b_0012\\neg_01\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M2_KQPOnly",
+    "sid": "102410_f9877a7b_0000",
+    "nid": "neg_01",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M2_KQPOnly\\102410_f9877a7b_0000\\neg_01\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M2_KQPOnly",
+    "sid": "106323_77f22d29_0004",
+    "nid": "neg_03",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M2_KQPOnly\\106323_77f22d29_0004\\neg_03\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M2_KQPOnly",
+    "sid": "102410_f9877a7b_0012",
+    "nid": "neg_02",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M2_KQPOnly\\102410_f9877a7b_0012\\neg_02\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M2_KQPOnly",
+    "sid": "107668_cf76b132_0001",
+    "nid": "neg_02",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M2_KQPOnly\\107668_cf76b132_0001\\neg_02\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M2_KQPOnly",
+    "sid": "103284_e25015aa_0003",
+    "nid": "neg_03",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M2_KQPOnly\\103284_e25015aa_0003\\neg_03\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M2_KQPOnly",
+    "sid": "106817_bb28b7aa_0003",
+    "nid": "neg_03",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M2_KQPOnly\\106817_bb28b7aa_0003\\neg_03\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M2_KQPOnly",
+    "sid": "101427_a9bcb09c_0001",
+    "nid": "neg_02",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M2_KQPOnly\\101427_a9bcb09c_0001\\neg_02\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M2_KQPOnly",
+    "sid": "104453_aba0f2d1_0006",
+    "nid": "neg_03",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M2_KQPOnly\\104453_aba0f2d1_0006\\neg_03\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M2_KQPOnly",
+    "sid": "106323_77f22d29_0004",
+    "nid": "neg_01",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M2_KQPOnly\\106323_77f22d29_0004\\neg_01\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M2_KQPOnly",
+    "sid": "102295_86f842dd_0000",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M2_KQPOnly\\102295_86f842dd_0000\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M2_KQPOnly",
+    "sid": "102525_06a3094b_0000",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M2_KQPOnly\\102525_06a3094b_0000\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M2_KQPOnly",
+    "sid": "106817_bb28b7aa_0002",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M2_KQPOnly\\106817_bb28b7aa_0002\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M2_KQPOnly",
+    "sid": "107668_cf76b132_0001",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M2_KQPOnly\\107668_cf76b132_0001\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M2_KQPOnly",
+    "sid": "100877_ac1e5a17_0001",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M2_KQPOnly\\100877_ac1e5a17_0001\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M2_KQPOnly",
+    "sid": "106817_bb28b7aa_0004",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M2_KQPOnly\\106817_bb28b7aa_0004\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M2_KQPOnly",
+    "sid": "108851_4d515b10_0009",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M2_KQPOnly\\108851_4d515b10_0009\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M2_KQPOnly",
+    "sid": "108244_329b1876_0000",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M2_KQPOnly\\108244_329b1876_0000\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M2_KQPOnly",
+    "sid": "108850_0dcd5ef1_0002",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M2_KQPOnly\\108850_0dcd5ef1_0002\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M2_KQPOnly",
+    "sid": "108851_4d515b10_0007",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M2_KQPOnly\\108851_4d515b10_0007\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M2_KQPOnly",
+    "sid": "105278_909f3813_0000",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M2_KQPOnly\\105278_909f3813_0000\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M2_KQPOnly",
+    "sid": "102525_06a3094b_0004",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M2_KQPOnly\\102525_06a3094b_0004\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M2_KQPOnly",
+    "sid": "103481_b27a1cdf_0010",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M2_KQPOnly\\103481_b27a1cdf_0010\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M2_KQPOnly",
+    "sid": "107055_0500fdd1_0027",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M2_KQPOnly\\107055_0500fdd1_0027\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M3_SolverKQP",
+    "sid": "108851_4d515b10_0007",
+    "nid": "neg_02",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M3_SolverKQP\\108851_4d515b10_0007\\neg_02\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M3_SolverKQP",
+    "sid": "100877_ac1e5a17_0017",
+    "nid": "neg_02",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M3_SolverKQP\\100877_ac1e5a17_0017\\neg_02\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M3_SolverKQP",
+    "sid": "100243_9fb796fe_0005",
+    "nid": "neg_03",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M3_SolverKQP\\100243_9fb796fe_0005\\neg_03\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M3_SolverKQP",
+    "sid": "108851_4d515b10_0009",
+    "nid": "neg_03",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M3_SolverKQP\\108851_4d515b10_0009\\neg_03\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M3_SolverKQP",
+    "sid": "102525_06a3094b_0004",
+    "nid": "neg_01",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M3_SolverKQP\\102525_06a3094b_0004\\neg_01\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M3_SolverKQP",
+    "sid": "102410_f9877a7b_0012",
+    "nid": "neg_01",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M3_SolverKQP\\102410_f9877a7b_0012\\neg_01\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M3_SolverKQP",
+    "sid": "102410_f9877a7b_0000",
+    "nid": "neg_01",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M3_SolverKQP\\102410_f9877a7b_0000\\neg_01\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M3_SolverKQP",
+    "sid": "106323_77f22d29_0004",
+    "nid": "neg_03",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M3_SolverKQP\\106323_77f22d29_0004\\neg_03\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M3_SolverKQP",
+    "sid": "102410_f9877a7b_0012",
+    "nid": "neg_02",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M3_SolverKQP\\102410_f9877a7b_0012\\neg_02\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M3_SolverKQP",
+    "sid": "103284_e25015aa_0003",
+    "nid": "neg_03",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M3_SolverKQP\\103284_e25015aa_0003\\neg_03\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M3_SolverKQP",
+    "sid": "106817_bb28b7aa_0003",
+    "nid": "neg_03",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M3_SolverKQP\\106817_bb28b7aa_0003\\neg_03\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M3_SolverKQP",
+    "sid": "101427_a9bcb09c_0001",
+    "nid": "neg_02",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M3_SolverKQP\\101427_a9bcb09c_0001\\neg_02\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M3_SolverKQP",
+    "sid": "104453_aba0f2d1_0006",
+    "nid": "neg_03",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M3_SolverKQP\\104453_aba0f2d1_0006\\neg_03\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M3_SolverKQP",
+    "sid": "106323_77f22d29_0004",
+    "nid": "neg_01",
+    "layer": "TypeA",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M3_SolverKQP\\106323_77f22d29_0004\\neg_01\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M3_SolverKQP",
+    "sid": "102295_86f842dd_0000",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M3_SolverKQP\\102295_86f842dd_0000\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M3_SolverKQP",
+    "sid": "102525_06a3094b_0000",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M3_SolverKQP\\102525_06a3094b_0000\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M3_SolverKQP",
+    "sid": "106817_bb28b7aa_0002",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M3_SolverKQP\\106817_bb28b7aa_0002\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M3_SolverKQP",
+    "sid": "107668_cf76b132_0001",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M3_SolverKQP\\107668_cf76b132_0001\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M3_SolverKQP",
+    "sid": "100877_ac1e5a17_0001",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M3_SolverKQP\\100877_ac1e5a17_0001\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M3_SolverKQP",
+    "sid": "106817_bb28b7aa_0004",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M3_SolverKQP\\106817_bb28b7aa_0004\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M3_SolverKQP",
+    "sid": "108851_4d515b10_0009",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M3_SolverKQP\\108851_4d515b10_0009\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M3_SolverKQP",
+    "sid": "108244_329b1876_0000",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M3_SolverKQP\\108244_329b1876_0000\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M3_SolverKQP",
+    "sid": "108850_0dcd5ef1_0002",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M3_SolverKQP\\108850_0dcd5ef1_0002\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M3_SolverKQP",
+    "sid": "108851_4d515b10_0007",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M3_SolverKQP\\108851_4d515b10_0007\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M3_SolverKQP",
+    "sid": "105278_909f3813_0000",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M3_SolverKQP\\105278_909f3813_0000\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M3_SolverKQP",
+    "sid": "102525_06a3094b_0004",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M3_SolverKQP\\102525_06a3094b_0004\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M3_SolverKQP",
+    "sid": "103481_b27a1cdf_0010",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M3_SolverKQP\\103481_b27a1cdf_0010\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  },
+  {
+    "method": "M3_SolverKQP",
+    "sid": "107055_0500fdd1_0027",
+    "nid": "ex2",
+    "layer": "EX2",
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_pilot\\M3_SolverKQP\\107055_0500fdd1_0027\\ex2\\generated.step",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true
+  }
+]

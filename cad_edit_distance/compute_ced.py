@@ -193,6 +193,132 @@ def ced_executed(trace_a: dict, trace_b: dict) -> dict:
 # Combined entry
 # ---------------------------------------------------------------------------
 
+def _ops_to_ir_dicts(ops: list) -> list[dict]:
+    """Convert a list of code2oper ``Operation`` objects to the IR
+    dict-list shape expected by ``match_ops`` and ``match_cost``.
+    The IR-path normaliser (``normalize_ir``) produces these field
+    names; we mimic them here.
+    """
+    # Mirror the v0.1 IR compiler's ``base_weight`` table.
+    BASE_WEIGHTS = {
+        "rectangle": 2.0, "circle": 1.5, "line": 0.5, "polygon": 1.5,
+        "arc": 1.0,
+        "extrude": 3.0, "cut": 3.0, "union": 1.0, "shell": 1.0,
+        "fillet": 1.0,
+        "translate": 0.5, "rotate": 0.5, "mirror": 0.5,
+    }
+    irs = []
+    for i, op in enumerate(ops):
+        op_type = op.operation
+        op_id = f"op_{i+1:03d}"
+        params = dict(op.parameters)
+        irs.append({
+            "op_id": op_id,
+            "op_type": op_type,
+            "parameters": params,
+            "params_normalized": params,
+            "base_weight": BASE_WEIGHTS.get(op_type, 1.0),
+            "connections": {},
+            "source": dict(op.source),
+        })
+    return irs
+
+
+def ced_declared_ops(ops_a: list, ops_b: list) -> dict:
+    """Weighted edit distance over two Operation lists (from code2oper).
+
+    This is the v0.2-adapter for compute_ced.ced_declared: it accepts
+    the structured operation lists produced by ``code2oper.parse`` rather
+    than full IR dicts.  The weight model and match-cost model are
+    identical to the IR-path version; only the input representation
+    changes.
+    """
+    irs_a = _ops_to_ir_dicts(ops_a)
+    irs_b = _ops_to_ir_dicts(ops_b)
+    matches = match_ops(irs_a, irs_b)
+    raw = sum(match_cost(m) for m in matches)
+    weight_a = total_weight(irs_a)
+    weight_b = total_weight(irs_b)
+    base = max(weight_a, weight_b, 1)
+    normalized = raw / base
+    clipped = min(1.0, normalized)
+    breakdown = {
+        "n_matches_added": sum(1 for m in matches if m["match_kind"] == "added"),
+        "n_matches_deleted": sum(1 for m in matches if m["match_kind"] == "deleted"),
+        "n_matches_matched": sum(1 for m in matches if m["match_kind"] == "matched"),
+        "by_kind": _breakdown_by_kind(matches),
+        "match_pairs": _format_match_pairs(matches),
+    }
+    return {
+        "raw": raw,
+        "normalized": clipped,
+        "weight_a": weight_a,
+        "weight_b": weight_b,
+        "base": base,
+        "n_ops_a": len(ops_a),
+        "n_ops_b": len(ops_b),
+        "available": True,
+        "breakdown": breakdown,
+    }
+
+
+def ced_with_fallback(ops_a: list | None, ops_b: list | None,
+                        script_a: str | None = None,
+                        script_b: str | None = None) -> dict:
+    """Phase 2A R3 wrapper:  compute CED on Operation lists when both
+    are parseable; fall back to CED_text (Levenshtein on the script
+    source) when one or both are unparseable.
+
+    Returns a single result dict with:
+        parsed         : bool  (both ops lists valid)
+        ced_declared   : dict | None   (None if not parseable)
+        ced_text       : dict           (always present)
+        primary_metric : "ced_declared" or "ced_text"
+        primary_value  : float in [0, 1]
+        primary_raw    : int
+        parse_coverage : bool
+    """
+    parsed_a = ops_a is not None
+    parsed_b = ops_b is not None
+    parseable = parsed_a and parsed_b
+    ced_declared_result = None
+    if parseable:
+        ced_declared_result = ced_declared_ops(ops_a, ops_b)
+    # CED_text on the script text (always available).  We import the
+    # helper lazily; if it's missing the inline fallback below kicks in.
+    ced_text_result = ced_text_text(script_a or "", script_b or "")
+    if ced_declared_result is not None:
+        primary = "ced_declared"
+        primary_value = ced_declared_result["normalized"]
+        primary_raw = ced_declared_result["raw"]
+    else:
+        primary = "ced_text"
+        primary_value = ced_text_result["ced_text_normalized"]
+        primary_raw = ced_text_result["ced_text_raw"]
+    return {
+        "parsed": parseable,
+        "parse_coverage": float(parseable),  # 0 or 1
+        "ced_declared": ced_declared_result,
+        "ced_text": ced_text_result,
+        "primary_metric": primary,
+        "primary_value": primary_value,
+        "primary_raw": primary_raw,
+    }
+
+
+def ced_text_text(s_a: str, s_b: str) -> dict:
+    """CED_text on raw script text (Levenshtein / length-normalised)."""
+    import re
+    a = re.sub(r"\s+", " ", s_a or "").strip()
+    b = re.sub(r"\s+", " ", s_b or "").strip()
+    if not a and not b:
+        return {"ced_text_normalized": 0.0, "ced_text_raw": 0}
+    if not a or not b:
+        return {"ced_text_normalized": 1.0, "ced_text_raw": max(len(a), len(b))}
+    raw = _levenshtein(a, b)
+    return {"ced_text_normalized": raw / max(len(a), len(b)), "ced_text_raw": raw}
+
+
 def compute_all(ir_a, ir_b, *,
                   declared_a=None, declared_b=None,
                   executed_a=None, executed_b=None) -> dict:

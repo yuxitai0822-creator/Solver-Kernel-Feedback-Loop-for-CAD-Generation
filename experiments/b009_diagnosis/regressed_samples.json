@@ -1,0 +1,200 @@
+{
+  "n_clean": 50,
+  "n_bestmatch_pass": 46,
+  "n_frameonly_pass": 4,
+  "n_regressed": 4,
+  "regressed_samples": [
+    {
+      "sample_id": "108850_0dcd5ef1_0004",
+      "n_regressed_queries": 2,
+      "regressed_queries": [
+        {
+          "query_id": "q_bbox_u",
+          "expected": 171.45,
+          "tolerance": 0.05,
+          "frame_axis": "u",
+          "frame_dir": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "frame_axis_span": 6.35,
+          "world_spans": {
+            "x": 6.35,
+            "y": 171.45,
+            "z": 110.998
+          },
+          "bestmatch_axis": "y",
+          "bestmatch_span": 171.45,
+          "frame_pass_check": -165.1,
+          "best_pass_check": 0.0
+        },
+        {
+          "query_id": "q_bbox_w",
+          "expected": 6.35,
+          "tolerance": 0.01,
+          "frame_axis": "w",
+          "frame_dir": [
+            -0.0,
+            1.0,
+            0.0
+          ],
+          "frame_axis_span": 171.45,
+          "world_spans": {
+            "x": 6.35,
+            "y": 171.45,
+            "z": 110.998
+          },
+          "bestmatch_axis": "x",
+          "bestmatch_span": 6.35,
+          "frame_pass_check": 165.1,
+          "best_pass_check": 0.0
+        }
+      ]
+    },
+    {
+      "sample_id": "108851_4d515b10_0005",
+      "n_regressed_queries": 2,
+      "regressed_queries": [
+        {
+          "query_id": "q_bbox_u",
+          "expected": 307.848,
+          "tolerance": 0.05,
+          "frame_axis": "u",
+          "frame_dir": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "frame_axis_span": 12.7,
+          "world_spans": {
+            "x": 12.7,
+            "y": 307.848,
+            "z": 19.05
+          },
+          "bestmatch_axis": "y",
+          "bestmatch_span": 307.848,
+          "frame_pass_check": -295.148,
+          "best_pass_check": 0.0
+        },
+        {
+          "query_id": "q_bbox_w",
+          "expected": 12.7,
+          "tolerance": 0.01,
+          "frame_axis": "w",
+          "frame_dir": [
+            -0.0,
+            1.0,
+            0.0
+          ],
+          "frame_axis_span": 307.848,
+          "world_spans": {
+            "x": 12.7,
+            "y": 307.848,
+            "z": 19.05
+          },
+          "bestmatch_axis": "x",
+          "bestmatch_span": 12.7,
+          "frame_pass_check": 295.148,
+          "best_pass_check": 0.0
+        }
+      ]
+    },
+    {
+      "sample_id": "108851_4d515b10_0006",
+      "n_regressed_queries": 2,
+      "regressed_queries": [
+        {
+          "query_id": "q_bbox_u",
+          "expected": 95.25,
+          "tolerance": 0.05,
+          "frame_axis": "u",
+          "frame_dir": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "frame_axis_span": 12.7,
+          "world_spans": {
+            "x": 12.7,
+            "y": 95.25,
+            "z": 19.05
+          },
+          "bestmatch_axis": "y",
+          "bestmatch_span": 95.25,
+          "frame_pass_check": -82.55,
+          "best_pass_check": 0.0
+        },
+        {
+          "query_id": "q_bbox_w",
+          "expected": 12.7,
+          "tolerance": 0.01,
+          "frame_axis": "w",
+          "frame_dir": [
+            -0.0,
+            1.0,
+            0.0
+          ],
+          "frame_axis_span": 95.25,
+          "world_spans": {
+            "x": 12.7,
+            "y": 95.25,
+            "z": 19.05
+          },
+          "bestmatch_axis": "x",
+          "bestmatch_span": 12.7,
+          "frame_pass_check": 82.55,
+          "best_pass_check": 0.0
+        }
+      ]
+    },
+    {
+      "sample_id": "108852_fed54702_0004",
+      "n_regressed_queries": 2,
+      "regressed_queries": [
+        {
+          "query_id": "q_bbox_v",
+          "expected": 7.9375,
+          "tolerance": 0.01,
+          "frame_axis": "v",
+          "frame_dir": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "frame_axis_span": 139.7,
+          "world_spans": {
+            "x": 7.9375,
+            "y": 7.9375,
+            "z": 139.7
+          },
+          "bestmatch_axis": "x",
+          "bestmatch_span": 7.9375,
+          "frame_pass_check": 131.7625,
+          "best_pass_check": 0.0
+        },
+        {
+          "query_id": "q_bbox_w",
+          "expected": 139.7,
+          "tolerance": 0.01,
+          "frame_axis": "w",
+          "frame_dir": [
+            -0.0,
+            1.0,
+            0.0
+          ],
+          "frame_axis_span": 7.9375,
+          "world_spans": {
+            "x": 7.9375,
+            "y": 7.9375,
+            "z": 139.7
+          },
+          "bestmatch_axis": "z",
+          "bestmatch_span": 139.7,
+          "frame_pass_check": -131.7625,
+          "best_pass_check": 0.0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "sample_id": "103552_c3a389ed_0003",
+  "kqp_schema_version": "kqp_instance_v0.2",
+  "step_file": "Reconstruction_results\\103552_c3a389ed_0003\\generated.step",
+  "overall_status": "fail",
+  "summary": {
+    "total_queries": 7,
+    "passed_queries": 6,
+    "failed_queries": 1,
+    "error_queries": 0
+  },
+  "query_results": [
+    {
+      "query_id": "q_body_count",
+      "intent": "body_count",
+      "status": "pass",
+      "expected": 1,
+      "actual": 1,
+      "tolerance": 0,
+      "error": 0,
+      "source_field": "$.target.body_count",
+      "feedback": null
+    },
+    {
+      "query_id": "q_bbox_u",
+      "intent": "bbox_size",
+      "status": "pass",
+      "expected": 225.0,
+      "actual": 224.996235,
+      "tolerance": 0.05,
+      "error": 0.003765,
+      "source_field": "$.solid_bodies[0].dimensions.profiles[0].straight_length.value + $.solid_bodies[0].dimensions.profiles[0].radius.value (computed: straight + 2*r)",
+      "feedback": null
+    },
+    {
+      "query_id": "q_bbox_v",
+      "intent": "bbox_size",
+      "status": "pass",
+      "expected": 25.0,
+      "actual": 25.0,
+      "tolerance": 0.01,
+      "error": 0.0,
+      "source_field": "$.solid_bodies[0].dimensions.profiles[0].radius.value (computed: 2*r)",
+      "feedback": null
+    },
+    {
+      "query_id": "q_bbox_w",
+      "intent": "bbox_size",
+      "status": "pass",
+      "expected": 6.5,
+      "actual": 6.5,
+      "tolerance": 0.01,
+      "error": 0.0,
+      "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+      "feedback": null
+    },
+    {
+      "query_id": "q_void_count",
+      "intent": "through_void_count",
+      "status": "fail",
+      "expected": 2,
+      "actual": 1,
+      "tolerance": 0,
+      "error": 1,
+      "source_field": "$.solid_bodies[0].profiles[0].rings[*].role=='inner' count",
+      "feedback": {
+        "error_type": "feature_mismatch",
+        "message": "Expected 2 through-void(s), got 1."
+      }
+    },
+    {
+      "query_id": "q_is_solid",
+      "intent": "is_solid",
+      "status": "pass",
+      "expected": true,
+      "actual": true,
+      "tolerance": null,
+      "error": 0,
+      "source_field": "(implicit: valid extrude implies solid)",
+      "feedback": null
+    },
+    {
+      "query_id": "q_occt_valid",
+      "intent": "occt_valid",
+      "status": "pass",
+      "expected": true,
+      "actual": true,
+      "tolerance": null,
+      "error": 0,
+      "source_field": "(implicit)",
+      "feedback": null
+    }
+  ]
+}

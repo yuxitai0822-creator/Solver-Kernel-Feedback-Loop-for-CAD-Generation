@@ -598,11 +598,49 @@ def extract_extrude(extrude_entity: dict, properties: dict = None) -> dict:
 # ---------------------------------------------------------------------------
 
 def extract_frame(sketch_entity: dict) -> dict:
+    """Extract the body's local (u, v, w) frame from the sketch entity.
+
+    B-010 fix (2026-07-17): the previous implementation read
+    `reference_plane.plane.{u_direction, v_direction}`, but those fields
+    are None for the current history corpus (only `normal` and
+    `transform.{x_axis, y_axis, z_axis}` are populated). The `transform`
+    fields are the body's LOCAL 2D axes (u = transform.x_axis, v = transform.y_axis)
+    and the extrude direction (w = transform.z_axis = plane normal).
+
+    This fix gives the KQP dispatcher a frame that matches the body's
+    actual orientation. Combined with the KQP frame-only mode, EX1/EX2
+    perturbations (which swap plane/axes) are now detectable.
+    """
     rp = sketch_entity.get("reference_plane", {})
     plane = rp.get("plane", {})
-    u = vec_from_dict(plane.get("u_direction", {}))
-    v = vec_from_dict(plane.get("v_direction", {}))
-    n = vec_from_dict(plane.get("normal", {}))
+    transform = sketch_entity.get("transform", {}) or {}
+
+    # Prefer the body's LOCAL frame (transform.x_axis = local u in 2D rect).
+    # Fall back to reference_plane u_direction / v_direction if the
+    # transform is missing (rare in the current corpus but defensive).
+    u_t = vec_from_dict(transform.get("x_axis", {}))
+    v_t = vec_from_dict(transform.get("y_axis", {}))
+    z_t = vec_from_dict(transform.get("z_axis", {}))
+    u_p = vec_from_dict(plane.get("u_direction", {}))
+    v_p = vec_from_dict(plane.get("v_direction", {}))
+    n_p = vec_from_dict(plane.get("normal", {}))
+
+    # Use the transform's axes if all three are non-zero.  Otherwise
+    # fall back to plane.{u_direction, v_direction, normal}.
+    if any(c != 0 for c in u_t) and any(c != 0 for c in v_t):
+        u = u_t
+        v = v_t
+    elif any(c != 0 for c in u_p) and any(c != 0 for c in v_p):
+        u = u_p
+        v = v_p
+    else:
+        u = (1.0, 0.0, 0.0)
+        v = (0.0, 1.0, 0.0)
+    # w = normal: prefer plane.normal, else transform.z_axis
+    n = n_p if any(c != 0 for c in n_p) else z_t
+    if not any(c != 0 for c in n):
+        n = (0.0, 0.0, 1.0)
+
     u = tuple(clean_unit_vec_component(c) for c in u)
     v = tuple(clean_unit_vec_component(c) for c in v)
     n = tuple(clean_unit_vec_component(c) for c in n)
@@ -613,7 +651,11 @@ def extract_frame(sketch_entity: dict) -> dict:
     w2 = normalize_vec3(*cross3(u, v))
     if all(abs(w[i]) < FLOAT_ZERO_TOL for i in range(3)) or abs(dot3(w, w2) - 1.0) > 0.01:
         w = w2
-    return {"u_dir": list(u), "v_dir": list(v), "w_dir": list(w), "span_computation": "vertex_projection"}
+    return {"u_dir": list(u), "v_dir": list(v), "w_dir": list(w),
+              "span_computation": "vertex_projection",
+              "frame_source": "transform.x_axis+y_axis+plane.normal" if (
+                  any(c != 0 for c in u_t) and any(c != 0 for c in v_t)
+              ) else "plane.u_direction+v_direction+normal"}
 
 
 # ---------------------------------------------------------------------------
@@ -902,7 +944,8 @@ def compile_design_plan(json_path: Path) -> dict:
 
     plan = {
         "schema_version": "design_plan_v0.4",
-        "sample_id": json_path.stem,
+        "sample_id": (json_path.parent.name if json_path.parent.name
+                          else json_path.stem),
         "source_component_name": md.get("component_name", ""),
         "unit": "mm",
         "coordinate_system": {

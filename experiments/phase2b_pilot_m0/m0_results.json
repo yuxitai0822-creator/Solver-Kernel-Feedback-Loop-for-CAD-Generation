@@ -1,0 +1,302 @@
+[
+  {
+    "sid": "108851_4d515b10_0007",
+    "nid": "neg_02",
+    "layer": "TypeA",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true,
+    "runtime_error": null,
+    "wallclock": 17.81
+  },
+  {
+    "sid": "100877_ac1e5a17_0017",
+    "nid": "neg_02",
+    "layer": "TypeA",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true,
+    "runtime_error": null,
+    "wallclock": 12.75
+  },
+  {
+    "sid": "100243_9fb796fe_0005",
+    "nid": "neg_03",
+    "layer": "TypeA",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true,
+    "runtime_error": null,
+    "wallclock": 14.61
+  },
+  {
+    "sid": "108851_4d515b10_0009",
+    "nid": "neg_03",
+    "layer": "TypeA",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true,
+    "runtime_error": null,
+    "wallclock": 13.71
+  },
+  {
+    "sid": "102525_06a3094b_0004",
+    "nid": "neg_01",
+    "layer": "TypeA",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true,
+    "runtime_error": null,
+    "wallclock": 16.72
+  },
+  {
+    "sid": "102410_f9877a7b_0012",
+    "nid": "neg_01",
+    "layer": "TypeA",
+    "agent_action": "repair",
+    "step_export": false,
+    "occt_load": false,
+    "runtime_error": null,
+    "wallclock": 12.68
+  },
+  {
+    "sid": "102410_f9877a7b_0000",
+    "nid": "neg_01",
+    "layer": "TypeA",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true,
+    "runtime_error": null,
+    "wallclock": 13.14
+  },
+  {
+    "sid": "106323_77f22d29_0004",
+    "nid": "neg_03",
+    "layer": "TypeA",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true,
+    "runtime_error": null,
+    "wallclock": 12.43
+  },
+  {
+    "sid": "102410_f9877a7b_0012",
+    "nid": "neg_02",
+    "layer": "TypeA",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true,
+    "runtime_error": null,
+    "wallclock": 12.07
+  },
+  {
+    "sid": "107668_cf76b132_0001",
+    "nid": "neg_02",
+    "layer": "TypeA",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true,
+    "runtime_error": null,
+    "wallclock": 17.51
+  },
+  {
+    "sid": "103284_e25015aa_0003",
+    "nid": "neg_03",
+    "layer": "TypeA",
+    "agent_action": "repair",
+    "step_export": false,
+    "occt_load": false,
+    "runtime_error": null,
+    "wallclock": 14.5
+  },
+  {
+    "sid": "106817_bb28b7aa_0003",
+    "nid": "neg_03",
+    "layer": "TypeA",
+    "agent_action": "repair",
+    "step_export": false,
+    "occt_load": false,
+    "runtime_error": null,
+    "wallclock": 14.37
+  },
+  {
+    "sid": "101427_a9bcb09c_0001",
+    "nid": "neg_02",
+    "layer": "TypeA",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true,
+    "runtime_error": null,
+    "wallclock": 23.47
+  },
+  {
+    "sid": "104453_aba0f2d1_0006",
+    "nid": "neg_03",
+    "layer": "TypeA",
+    "agent_action": "repair",
+    "step_export": false,
+    "occt_load": false,
+    "runtime_error": null,
+    "wallclock": 13.65
+  },
+  {
+    "sid": "106323_77f22d29_0004",
+    "nid": "neg_01",
+    "layer": "TypeA",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true,
+    "runtime_error": null,
+    "wallclock": 11.8
+  },
+  {
+    "sid": "102295_86f842dd_0000",
+    "nid": "ex2",
+    "layer": "EX2",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true,
+    "runtime_error": null,
+    "wallclock": 16.55
+  },
+  {
+    "sid": "102525_06a3094b_0000",
+    "nid": "ex2",
+    "layer": "EX2",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true,
+    "runtime_error": null,
+    "wallclock": 12.49
+  },
+  {
+    "sid": "106817_bb28b7aa_0002",
+    "nid": "ex2",
+    "layer": "EX2",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true,
+    "runtime_error": null,
+    "wallclock": 13.09
+  },
+  {
+    "sid": "107668_cf76b132_0001",
+    "nid": "ex2",
+    "layer": "EX2",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true,
+    "runtime_error": null,
+    "wallclock": 16.34
+  },
+  {
+    "sid": "100877_ac1e5a17_0001",
+    "nid": "ex2",
+    "layer": "EX2",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true,
+    "runtime_error": null,
+    "wallclock": 13.27
+  },
+  {
+    "sid": "106817_bb28b7aa_0004",
+    "nid": "ex2",
+    "layer": "EX2",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true,
+    "runtime_error": null,
+    "wallclock": 14.27
+  },
+  {
+    "sid": "108851_4d515b10_0009",
+    "nid": "ex2",
+    "layer": "EX2",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true,
+    "runtime_error": null,
+    "wallclock": 15.27
+  },
+  {
+    "sid": "108244_329b1876_0000",
+    "nid": "ex2",
+    "layer": "EX2",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true,
+    "runtime_error": null,
+    "wallclock": 15.58
+  },
+  {
+    "sid": "108850_0dcd5ef1_0002",
+    "nid": "ex2",
+    "layer": "EX2",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true,
+    "runtime_error": null,
+    "wallclock": 15.28
+  },
+  {
+    "sid": "104453_aba0f2d1_0006",
+    "nid": "ex2",
+    "layer": "EX2",
+    "agent_action": "repair",
+    "step_export": false,
+    "occt_load": false,
+    "runtime_error": null,
+    "wallclock": 13.37
+  },
+  {
+    "sid": "108851_4d515b10_0007",
+    "nid": "ex2",
+    "layer": "EX2",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true,
+    "runtime_error": null,
+    "wallclock": 13.01
+  },
+  {
+    "sid": "105278_909f3813_0000",
+    "nid": "ex2",
+    "layer": "EX2",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true,
+    "runtime_error": null,
+    "wallclock": 17.55
+  },
+  {
+    "sid": "102525_06a3094b_0004",
+    "nid": "ex2",
+    "layer": "EX2",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true,
+    "runtime_error": null,
+    "wallclock": 13.33
+  },
+  {
+    "sid": "103481_b27a1cdf_0010",
+    "nid": "ex2",
+    "layer": "EX2",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true,
+    "runtime_error": null,
+    "wallclock": 14.17
+  },
+  {
+    "sid": "107055_0500fdd1_0027",
+    "nid": "ex2",
+    "layer": "EX2",
+    "agent_action": "repair",
+    "step_export": true,
+    "occt_load": true,
+    "runtime_error": null,
+    "wallclock": 13.27
+  }
+]

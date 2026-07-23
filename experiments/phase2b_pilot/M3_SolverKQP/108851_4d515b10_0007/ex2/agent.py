@@ -1,0 +1,25 @@
+import cadquery as cq
+
+# Design Plan: SoapCutterBackBar1 v1
+# Body_0: extruded_rectangle
+# Frame: u=(1,0,0), v=(0,0,-1), w=(0,1,0)
+# Profile rectangle: length_u = 279.4 mm, width_v = 50.8 mm
+# Extrude: direction +w, distance = 19.05 mm
+
+# The sketch plane is defined by u and v directions.
+# u_dir = (1, 0, 0) -> X axis
+# v_dir = (0, 0, -1) -> negative Z axis
+# Plane normal (w_dir) = (0, 1, 0) -> Y axis
+# This corresponds to the XZ plane (specifically 'XZ' in cadquery, where Y is normal)
+# In cadquery's 'XZ' plane, the local x maps to global X, and local y maps to global Z.
+# Since v_dir is (0, 0, -1), we need to flip the local y axis to match the negative Z direction.
+
+result = (
+    cq.Workplane("XZ")
+    .transformed(offset=(0, 0, 0), rotate=(0, 0, 180)) # Flip local Y to align with -Z
+    .rect(279.4, 50.8) # length_u, width_v
+    .extrude(19.05)    # extrude along +w (+Y)
+)
+
+OUT_STEP_PATH = r"D:\PythonProgramming\CAD Generation\Constraint-grounded agentic CAD generation\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\experiments\phase2b_pilot\M3_SolverKQP\108851_4d515b10_0007\ex2/generated.step"
+cq.exporters.export(result, OUT_STEP_PATH)

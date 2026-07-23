@@ -43,15 +43,16 @@
         ],
         "v_dir": [
           0.0,
-          1.0,
+          -1.0,
           0.0
         ],
         "w_dir": [
           0.0,
           0.0,
-          1.0
+          -1.0
         ],
-        "span_computation": "vertex_projection"
+        "span_computation": "vertex_projection",
+        "frame_source": "transform.x_axis+y_axis+plane.normal"
       },
       "profiles": [
         {
@@ -94,7 +95,7 @@
       ],
       "extrude": {
         "extent_type": "one_side",
-        "direction": "-w",
+        "direction": "+w",
         "distance_total": {
           "value": 0.36,
           "tol": 0.01,
@@ -243,9 +244,7 @@
         "count": 2
       }
     ],
-    "warnings": [
-      "DIRECTION CORRECTED: source distance positive but GT bbox shows body in -w direction (sample 36 pattern). Cross-validation flipped +w -> -w."
-    ],
+    "warnings": [],
     "unit_conversion_applied": "cm_to_mm (x10)"
   }
 }
