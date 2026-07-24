@@ -1,0 +1,87 @@
+{
+  "n_total_results": 1237,
+  "n_real": 667,
+  "n_errored": 570,
+  "by_method_layer": {
+    "M0_NoFeedback|EX2": {
+      "n_total": 29,
+      "n_step_export": 29,
+      "n_step_export_occt_load": 29,
+      "n_kqp_run": 29,
+      "n_kqp_fail": 15
+    },
+    "M0_NoFeedback|TypeA": {
+      "n_total": 138,
+      "n_step_export": 129,
+      "n_step_export_occt_load": 129,
+      "n_kqp_run": 129,
+      "n_kqp_fail": 61
+    },
+    "M1_SolverOnly|EX2": {
+      "n_total": 29,
+      "n_step_export": 29,
+      "n_step_export_occt_load": 29,
+      "n_kqp_run": 29,
+      "n_kqp_fail": 15
+    },
+    "M1_SolverOnly|TypeA": {
+      "n_total": 138,
+      "n_step_export": 132,
+      "n_step_export_occt_load": 132,
+      "n_kqp_run": 132,
+      "n_kqp_fail": 59
+    },
+    "M2_KQPOnly|EX2": {
+      "n_total": 29,
+      "n_step_export": 27,
+      "n_step_export_occt_load": 27,
+      "n_kqp_run": 27,
+      "n_kqp_fail": 10
+    },
+    "M2_KQPOnly|TypeA": {
+      "n_total": 138,
+      "n_step_export": 120,
+      "n_step_export_occt_load": 120,
+      "n_kqp_run": 120,
+      "n_kqp_fail": 55
+    },
+    "M3_SolverKQP|EX2": {
+      "n_total": 29,
+      "n_step_export": 28,
+      "n_step_export_occt_load": 28,
+      "n_kqp_run": 28,
+      "n_kqp_fail": 14
+    },
+    "M3_SolverKQP|TypeA": {
+      "n_total": 137,
+      "n_step_export": 125,
+      "n_step_export_occt_load": 125,
+      "n_kqp_run": 125,
+      "n_kqp_fail": 43
+    }
+  },
+  "mcnemar_M0_vs_M2": {
+    "TypeA": {
+      "b_M0pass_M2fail": 17,
+      "c_M0fail_M2pass": 23,
+      "p": 0.42959050784338615
+    },
+    "EX2": {
+      "b_M0pass_M2fail": 2,
+      "c_M0fail_M2pass": 7,
+      "p": 0.1796875
+    }
+  },
+  "mcnemar_M0_vs_M3": {
+    "TypeA": {
+      "b_M0pass_M3fail": 12,
+      "c_M0fail_M3pass": 29,
+      "p": 0.011507789735333063
+    },
+    "EX2": {
+      "b_M0pass_M3fail": 6,
+      "c_M0fail_M3pass": 7,
+      "p": 1.0
+    }
+  }
+}
