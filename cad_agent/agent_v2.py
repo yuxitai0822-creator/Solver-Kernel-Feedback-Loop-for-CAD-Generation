@@ -140,6 +140,10 @@ def call_cad_agent(
     max_retries: int = DEFAULT_MAX_RETRIES,
     retry_base_delay: float = DEFAULT_RETRY_BASE_DELAY,
     retry_max_delay: float = DEFAULT_RETRY_MAX_DELAY,
+    feedback: list[dict] | None = None,
+    perturbation_description: str | None = None,
+    iteration: int = 0,
+    max_iterations: int = 3,
 ):
     """Call the LLM CAD Agent via DeepSeek's OpenAI-compatible API.
 
@@ -155,8 +159,24 @@ def call_cad_agent(
     with exponential back-off and full jitter.  Validation /
     JSON-parse errors are NOT retried — they indicate a bad model
     response, not transport.
+
+    M0-M3 iter loop: when ``feedback`` is provided the prompt is
+    rendered by ``cad_agent.prompt_builder_v2.build_prompt_v2``
+    (per the M0-M3 spec).  When ``feedback is None`` (the default)
+    the original Phase 2A template is used — backward-compatible
+    with the v0 single-shot ``p2b_full.py``.
     """
-    prompt = build_prompt(design_plan, current_script, out_dir)
+    # The prompt builder back-compat shim handles both v0 and v2
+    # rendering based on whether ``feedback`` is None.
+    prompt = build_prompt(
+        design_plan,
+        current_script,
+        out_dir,
+        feedback=feedback,
+        perturbation_description=perturbation_description or "",
+        iteration=iteration,
+        max_iterations=max_iterations,
+    )
     api_key = api_key or os.getenv(DEEPSEEK_API_KEY_ENV) or _load_key_from_dotenv()
     if not api_key:
         raise ValueError(f"{DEEPSEEK_API_KEY_ENV} not set; cannot call LLM")
