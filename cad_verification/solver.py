@@ -36,12 +36,23 @@ if str(_REPO_ROOT) not in sys.path:
 from cad_verification._base import VerificationResult  # noqa: E402
 
 
-# A solver result is *acceptable* unless it ends up in a blocking
-# state.  "under_constrained" passes — the LLM may still produce a
-# valid STEP from a partially constrained sketch.  "over_constrained"
-# also blocks (it's typically a sign of a duplicate constraint).  We
-# only accept ``fully_constrained`` and ``under_constrained``.
-ACCEPTABLE_STATUSES = {"fully_constrained", "under_constrained"}
+# Per the spec §5.1 NOTE 1 (controlling rule for this experiment):
+# "暂定是global verification，保持简洁和强兼容性。在判定通过时允许
+# under constraint，只不允许约束冲突和过约束的情况。由于缺乏工程知识
+# 语料，也暂时不做特定工程领域约束的校验。"
+#
+# In other words, the *blocking* conditions are ONLY:
+#   1. constraint conflict
+#   2. over-constrained
+# The spec's main body ("No redundant constraint") is overridden by
+# this note for the current experiment.  ``under_constrained`` is
+# explicitly OK; ``redundant`` is implicitly OK (the note says "only"
+# block conflict + over-constrained); engineering-domain checks are
+# skipped.
+ACCEPTABLE_STATUSES = {"fully_constrained", "under_constrained", "redundant"}
+# These statuses block the verification regardless of severity/flags.
+BLOCKING_STATUSES = {"conflicting", "over_constrained", "unsolvable",
+                      "invalid_constraint_reference"}
 
 
 def _import_solver_pipeline():
@@ -64,25 +75,24 @@ def _import_solver_pipeline():
 
 
 def _is_acceptable(solver_feedback: dict) -> bool:
-    """Apply the §5.1 "Solver Acceptable" definition.
+    """Apply the §5.1 NOTE 1 "Solver Acceptable" definition.
 
-    Equivalent to: solve.solve_status ∈ ACCEPTABLE_STATUSES
-    AND no blocking severity.  If the L1 raw solver says "conflicting"
-    or "over_constrained", we treat it as a failure even when the
-    downstream severity says "warning" — the spec calls those out
-    explicitly.
+    Block iff the solve status is in BLOCKING_STATUSES (conflict /
+    over-constrained / unsolvable / invalid) OR the flags report
+    ``has_conflict`` / ``has_over_constrained``.  Redundant
+    constraints are allowed per the spec note.
     """
     solve = (solver_feedback or {}).get("solve") or {}
     status = (solve.get("status") or "").lower()
-    if status and status not in ACCEPTABLE_STATUSES:
+    if status in BLOCKING_STATUSES:
         return False
-    severity = (solve.get("severity") or "").lower()
-    if severity in ("blocking", "error"):
-        return False
-    # Flags are an additional signal: any has_conflict/has_over_constrained
-    # is treated as a hard fail.
     flags = solve.get("flags") or {}
     if flags.get("has_conflict") or flags.get("has_over_constrained"):
+        return False
+    # Severity escalation (FreeCAD may classify over-constrained as
+    # 'warning'; we still block because status already tells us so).
+    severity = (solve.get("severity") or "").lower()
+    if severity in ("blocking", "error"):
         return False
     return True
 

@@ -50,8 +50,9 @@ def _load_verification():
     """Load the cad_verification package."""
     from cad_verification import (  # noqa: WPS433
         PipelineVerification, SolverVerification, KernelVerification,
+        VerificationResult,
     )
-    return PipelineVerification, SolverVerification, KernelVerification
+    return PipelineVerification, SolverVerification, KernelVerification, VerificationResult
 
 
 # ---------------------------------------------------------------------------
@@ -190,7 +191,7 @@ def run(
     out_dir.mkdir(parents=True, exist_ok=True)
 
     agent_v2 = _load_agent_v2()
-    PipelineVerification, SolverVerification, KernelVerification = _load_verification()
+    PipelineVerification, SolverVerification, KernelVerification, VerificationResult = _load_verification()
     pipeline_v = PipelineVerification()
     solver_v   = SolverVerification()
     kernel_v   = KernelVerification()
@@ -270,25 +271,56 @@ def run(
             final_status = "no_script"
             break
 
-        # 3. Run all three verifications.
+        # 3. Run verifications IN SEQUENCE per spec §4:
+        #    pipeline → solver → kernel
+        # If a step fails, the downstream verifications are NOT
+        # executed for this iteration.  We record each as a skipped
+        # VerificationResult so the audit log still has the full
+        # per-trial record; the LLM feedback filter then decides
+        # whether to surface the failure (or absence) to the next
+        # iteration's prompt.
         pipeline_res = pipeline_v.run(new_script, iter_dir)
-        # Solver needs the original Fusion360 history (same across
-        # perturbations of the same sid); only run if the pipeline
-        # produced a STEP, so we don't waste solver cycles on scripts
-        # that obviously failed.
-        if history_p is not None and pipeline_res.passed:
+
+        solver_res: VerificationResult | None = None
+        if pipeline_res.passed is True and history_p is not None:
             solver_res = solver_v.run(history_p)
         else:
-            solver_res = solver_v.run(history_p) if history_p is not None else None
-            # ^ Even if pipeline failed, the solver result is informative
-            # for the audit log.  We always try if the history is present.
+            # Solver skipped: either pipeline failed (no point solving
+            # a sketch we won't use) or the history file is missing.
+            skip_reason = "skipped: pipeline failed" \
+                if pipeline_res.passed is not True else "skipped: history missing"
+            solver_res = VerificationResult(
+                name="solver",
+                passed=None,
+                diagnostic={},
+                full={},
+                extras={"skipped_reason": skip_reason},
+            )
 
-        # Kernel needs the STEP from pipeline; if pipeline failed,
-        # kernel is skipped.
-        if pipeline_res.passed and pipeline_res.full.get("step_path") and kqp_p is not None:
-            kernel_res = kernel_v.run(Path(pipeline_res.full["step_path"]), kqp_p, plan)
+        kernel_res: VerificationResult | None = None
+        step_path_str = pipeline_res.full.get("step_path") if pipeline_res.passed else None
+        if (pipeline_res.passed is True
+                and solver_res is not None
+                and solver_res.passed is True
+                and step_path_str is not None
+                and kqp_p is not None):
+            kernel_res = kernel_v.run(Path(step_path_str), kqp_p, plan)
         else:
-            kernel_res = kernel_v.run(None, kqp_p or Path("/dev/null"), plan)
+            # Kernel skipped: any upstream failure or missing artifact.
+            reasons: list[str] = []
+            if pipeline_res.passed is not True:
+                reasons.append("pipeline failed")
+            if solver_res is None or solver_res.passed is not True:
+                reasons.append("solver did not pass")
+            if kqp_p is None:
+                reasons.append("kqp missing")
+            kernel_res = VerificationResult(
+                name="kernel",
+                passed=None,
+                diagnostic={},
+                full={},
+                extras={"skipped_reason": "skipped: " + " & ".join(reasons) if reasons else "skipped"},
+            )
 
         # 4. Record this iteration.
         iter_records.append({
