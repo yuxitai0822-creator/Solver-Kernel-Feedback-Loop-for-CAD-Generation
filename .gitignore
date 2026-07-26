@@ -1,3 +1,5 @@
 .env
 __pycache__/
 *.pyc
+experiments/phase2b_triplets/
+dataset/__pycache__/
