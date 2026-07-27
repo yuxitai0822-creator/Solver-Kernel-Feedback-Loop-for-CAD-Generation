@@ -167,11 +167,37 @@ def run(
     layer: str,
     out_dir: Path | None = None,
     max_iterations: int | None = None,
+    initial_script: str = "",
+    initial_per_iter: list[str] | None = None,
 ) -> dict:
     """Run the M0-M3 iter loop for one trial.
 
+    Parameters
+    ----------
+    method : str
+        One of ``M0_NoFeedback`` / ``M1_SolverOnly`` /
+        ``M2_KQPOnly`` / ``M3_SolverKQP``.
+    sid, nid, layer : str
+        Sample identifiers.
+    out_dir : Path | None
+        Where to write per-iter artefacts.  Defaults to
+        ``experiments/phase2b_iter/<method>/<sid>/<nid>/``.
+    max_iterations : int | None
+        Cap on the iteration count (default 3).
+    initial_script : str
+        Optional starter script for iteration 0.  When empty
+        (default), iteration 0 starts from scratch — this is the
+        behaviour used by ``p2b_full.py`` / ``p2b_iter_runner.py``.
+        For the perturbation **repair** experiment on the 120
+        frozen triplets, the runner passes ``code_perturbed.py`` as
+        ``initial_script`` so the LLM starts from the broken
+        script instead of having to recreate it from scratch.
+    initial_per_iter : list[str] | None
+        Reserved for future use: per-iteration starter scripts.
+        Not used by the current iter loop.
+
     Returns a JSON-serialisable dict; the shape is the contract for
-    ``p2b_iter_runner.py``.
+    ``p2b_iter_runner.py`` and ``p2b_m0m3_on_frozen.py``.
     """
     if not method_policy.is_valid_method(method):
         raise ValueError(f"Unknown method {method!r}")
@@ -197,7 +223,11 @@ def run(
     kernel_v   = KernelVerification()
 
     iter_records: list[dict] = []
-    current_script = ""
+    # Initial script: the M0-M3 frozen-triplets experiment passes
+    # the broken script (Code_perturbed) here; the original v0
+    # single-shot behaviour passes "" so iteration 0 starts from
+    # scratch.  See ``p2b_m0m3_on_frozen.py``.
+    current_script = initial_script or ""
     current_step_path: Path | None = None
     final_status = "failure"  # overwritten on success
     t0 = time.time()
