@@ -29,11 +29,45 @@ import time
 from typing import Any
 
 import concurrent.futures
+import socket
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from schema import is_valid_output, make_no_change  # noqa: E402
 from prompt_builder import build_prompt  # noqa: E402
+
+
+def _bypass_dead_proxy() -> None:
+    """Drop the shell's HTTP_PROXY / HTTPS_PROXY for this Python
+    process if those proxies refuse connections.  This is the same
+    pattern used by ``p2b_m0m3_on_frozen.py``; we make it module-
+    level here so every caller of ``agent_v2`` benefits (including
+    the in-process iter loop in ``trial_iteration``)."""
+    proxies = [k for k in os.environ
+              if k.lower() in ("http_proxy", "https_proxy", "all_proxy")]
+    if not proxies:
+        return
+    bad = []
+    for k in proxies:
+        url = os.environ.get(k, "")
+        if not url:
+            continue
+        try:
+            host_port = url.split("//", 1)[-1].split("/", 1)[0]
+            host, _, port = host_port.partition(":")
+            with socket.create_connection((host, int(port or 8080)), timeout=1):
+                continue
+        except Exception:  # noqa: BLE001
+            bad.append(k)
+    if not bad:
+        return
+    for k in bad:
+        os.environ.pop(k, None)
+    os.environ["NO_PROXY"] = "*"
+    os.environ["no_proxy"] = "*"
+
+
+_bypass_dead_proxy()
 
 
 DEEPSEEK_BASE_URL = "https://api.deepseek.com"

@@ -61,6 +61,42 @@ _REPO_ROOT = Path(__file__).resolve().parent
 if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
+
+def _bypass_dead_proxy() -> None:
+    """If the shell's HTTP/HTTPS_PROXY points at a proxy that
+    refuses connections, drop it for this Python process so
+    outbound HTTPS goes direct.  Idempotent.  Probes the proxy
+    with a 1-second connect attempt."""
+    proxies = [k for k in os.environ
+              if k.lower() in ("http_proxy", "https_proxy", "all_proxy")]
+    if not proxies:
+        return
+    import socket
+    bad = []
+    for k in proxies:
+        url = os.environ.get(k, "")
+        if not url:
+            continue
+        try:
+            host_port = url.split("//", 1)[-1].split("/", 1)[0]
+            host, _, port = host_port.partition(":")
+            port = int(port or 8080)
+            with socket.create_connection((host, port), timeout=1):
+                continue  # this proxy is reachable — keep it
+        except Exception:  # noqa: BLE001
+            bad.append(k)
+    if not bad:
+        return
+    print(f"[defensive] dropping dead proxies: {bad}", flush=True)
+    for k in bad:
+        os.environ.pop(k, None)
+    os.environ["NO_PROXY"] = "*"
+    os.environ["no_proxy"] = "*"
+
+
+_bypass_dead_proxy()
+
+
 import method_policy  # noqa: E402
 import trial_iteration  # noqa: E402
 
@@ -94,16 +130,26 @@ def _atomic_write(path: Path, payload: list[dict]) -> None:
 
 
 def _load_existing() -> tuple[list[dict], set[tuple[str, str, str]]]:
-    """Resume from ``RESULTS_PATH``: keep ``real`` entries; skip
-    ``runner_crash`` records so transient failures get retried."""
+    """Resume from ``RESULTS_PATH``: keep all entries (for the
+    audit log) but only mark a trial as done if its
+    ``final_status`` is a clean terminal state.
+
+    Clean states: ``success``, ``max_iter_exceeded``, ``no_change``,
+    ``no_script``.  Transient failure states (``llm_error``,
+    ``runner_crash``, anything in ``error``) are retried.
+    """
     results: list[dict] = []
     done: set[tuple[str, str, str]] = set()
     if RESULTS_PATH.exists():
         try:
             for r in json.loads(RESULTS_PATH.read_text(encoding="utf-8")):
                 results.append(r)
-                if "error" not in r:
-                    done.add((r["method"], r["sid"], r["nid"]))
+                if "error" in r:
+                    continue
+                if r.get("final_status") not in ("success", "max_iter_exceeded",
+                                                 "no_change", "no_script"):
+                    continue
+                done.add((r["method"], r["sid"], r["nid"]))
         except Exception:  # noqa: BLE001
             pass
     return results, done
