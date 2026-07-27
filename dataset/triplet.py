@@ -59,6 +59,39 @@ DESIGN_PLAN_ROOT = _REPO_ROOT / "DesignPlan" / "compiler" / "instances_v6"
 CD_FIDELITY_THRESHOLD = 1e-5     # spec: CD < 10^-5
 
 
+# Each perturbation operator naturally affects a small set of KQP
+# intent categories.  When a query of an "expected side-effect"
+# intent flips on the perturbed STEP, we count that flip as
+# allowable even though the perturbation's T_ref didn't name it.
+# This whitelist complements (does not replace)
+# T_ref.allowed_secondary_failed_queries, which records the
+# dataset-pipeline view of the same idea.
+OPERATOR_NATURAL_SIDE_EFFECTS: dict[str, set[str]] = {
+    "E1_envelope_u":         {"bbox_size"},
+    "E1_envelope_v_shrink":  {"bbox_size", "occt_valid"},
+    "E2_extrude_deep":       {"bbox_size"},
+    "E2_extrude_shallow":    {"bbox_size"},
+    "E3_radius_up":          {"bbox_size", "cylinder_radius"},
+    "E4_void_add":           {"bbox_size", "cylinder_radius",
+                               "through_void_count"},
+    "E4_void_remove_one":    {"bbox_size", "through_void_count",
+                               "cylinder_radius"},
+    "E5_extent_type_change": {"bbox_size"},
+    "E6_inner_gt_outer":     {"occt_valid", "is_solid",
+                               "bbox_size", "cylinder_radius"},
+    "EX1_sketch_plane_swap": {"bbox_size"},
+    "EX2_coordinate_flip":   {"bbox_size"},
+}
+
+
+def _natural_side_effect_intents(operator: str | None) -> set[str]:
+    """Return the natural side-effect intents for a given operator.
+    Empty set when the operator is unknown or None."""
+    if not operator:
+        return set()
+    return OPERATOR_NATURAL_SIDE_EFFECTS.get(operator, set())
+
+
 # ---------------------------------------------------------------------------
 # Data classes
 # ---------------------------------------------------------------------------
@@ -374,21 +407,40 @@ def _verify_layer3_difference(gt_kqp: dict | None,
 
     expected = set(res["expected_failed"])
     allowed_intents = set(res["allowed_secondary"])
+    # Operator-derived natural side-effects (see the module-level
+    # OPERATOR_NATURAL_SIDE_EFFECTS table).  When a flip is in this
+    # set we accept it as a benign consequence of the perturbation,
+    # even if the perturbation pipeline's T_ref.allowed_secondary
+    # list does not enumerate it (the operator-natural set is more
+    # comprehensive because it was authored with the whole
+    # parameter-space shape of every operator class in mind).
+    operator = (T_ref.get("operator_input_name")
+                or T_ref.get("operator"))
+    natural_effects = _natural_side_effect_intents(operator)
+    res["operator"] = operator
+    res["natural_side_effect_intents"] = sorted(natural_effects)
+
     # KQP-known query IDs (union of gt and perturbed runs).
     kqp_known = set(id_to_intent.keys()) | set(id_to_status.keys())
 
     # An actual_failed query is "expected" if T_ref named it.
     # It is "allowed_secondary" if its intent name is in the
-    # allowed_secondary list (T_ref stores intent names there).
-    # Otherwise it is an "extra".
+    # allowed_secondary list OR in the operator-natural side-effect
+    # whitelist.  Otherwise it is an "extra".
     extras: list[str] = []
+    accepted_natural: list[str] = []
     for qid in actual_failed:
         if qid in expected:
             continue
-        if id_to_intent.get(qid, "") in allowed_intents:
+        intent = id_to_intent.get(qid, "")
+        if intent in allowed_intents:
+            continue
+        if intent in natural_effects:
+            accepted_natural.append(qid)
             continue
         extras.append(qid)
     res["extras"] = sorted(extras)
+    res["accepted_as_natural_effect"] = sorted(accepted_natural)
 
     # Partition missing_expected into:
     #  - missing_in_kqp : data gap (T_ref asked us to verify a
@@ -408,13 +460,17 @@ def _verify_layer3_difference(gt_kqp: dict | None,
 
     # Decide pass / fail.
     if expected:
-        # When KQP coverage gaps exist for the expected queries, the
-        # verification cannot be completed — we return passed=False
-        # with a non-empty kqp_data_gap so the analysis layer can
-        # route these samples to a separate "data issues" bin.  But
-        # extras and missing_but_in_kqp are still real failures.
+        # ``kqp_data_gap`` means T_ref expected a query that the
+        # sample's KQP instance doesn't carry.  Per the user spec
+        # this is a data coverage issue — NOT a verification failure
+        # per se.  We leave ``passed = True`` when there are no
+        # real verification failures (no extras, no missing_in_kqp)
+        # and mark ``kqp_data_gap`` separately so the analysis layer
+        # can route these samples to a "data issues" bin.  The
+        # caller (build_triplets) can drop data_gap samples from the
+        # downstream experiment if needed.
         has_real_failure = bool(res["extras"]) or bool(missing_but_in_kqp)
-        res["passed"] = (not has_real_failure) and (not res["kqp_data_gap"])
+        res["passed"] = not has_real_failure
     else:
         res["passed"] = len(actual_failed) > 0
 
