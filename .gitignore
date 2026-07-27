@@ -1,5 +1,13 @@
 .env
 __pycache__/
 *.pyc
-experiments/phase2b_triplets/
 dataset/__pycache__/
+
+# Per-triplet artefacts inside experiments/phase2b_triplets/<sid>__<nid>/:
+# the agent-generated code, executed STEP, log files.  We DO commit
+# the per-triplet triplet.json (small) and the SUMMARY / manifest
+# files at the root of phase2b_triplets/.
+experiments/phase2b_triplets/*/code_gt.py
+experiments/phase2b_triplets/*/code_perturbed.py
+experiments/phase2b_triplets/*/step_gt/
+experiments/phase2b_triplets/*/step_perturbed/
