@@ -307,13 +307,42 @@ def _verify_layer2_fidelity(code_gt_step: Path | None,
 def _verify_layer3_difference(gt_kqp: dict | None,
                                perturbed_kqp: dict | None,
                                T_ref: dict) -> dict:
-    """Compute the KQP-flip diff and validate against T_ref."""
+    """Compute the KQP-flip diff and validate against T_ref.
+
+    T_ref may use either query IDs (``q_bbox_w``) in
+    ``expected_failed_query`` *or* intent names (``bbox_size``) in
+    ``allowed_secondary_failed_queries`` — both forms are kept for
+    backward compatibility with the existing perturbation pipeline.
+
+    Acceptance rules:
+
+      - If ``expected_failed_query`` is non-empty, every entry must
+        flip from pass → fail.  Side-effect flips outside
+        ``expected`` + ``allowed_secondary`` are reported as
+        ``extras`` and fail the check.
+      - If ``expected_failed_query`` is empty (e.g. ``E3_radius`` has
+        no pre-specified KQP failure), we merely require *some*
+        query to flip between the two STEPS — any actual diff is
+        enough to call L3 verified.
+      - When ``expected_failed_query`` is non-empty but references
+        query IDs that are not present in the KQP instance (a
+        KQP-coverage data gap), the missing query is reported as
+        ``kqp_data_gap``.  These are NOT verification failures —
+        they are data-side issues flagged per the user spec
+        ("若数据存在KQP模态的缺失，那么下一步需要着手解决数据问题").
+        The triplet's ``verified`` flag is left False and
+        ``kqp_data_gap`` is set in the L3 record.
+      - When the KQP runs themselves fail, ``kqp_unavailable`` is set.
+    """
     res: dict[str, Any] = {
         "passed":         True,
         "expected_failed":  T_ref.get("expected_failed_query", []),
         "allowed_secondary": T_ref.get("allowed_secondary_failed_queries", []),
         "actual_failed":   [],
         "unexpected_failed": [],
+        "extras":           [],
+        "missing_expected": [],
+        "kqp_data_gap":    [],
         "kqp_unavailable": False,
     }
     if gt_kqp is None or perturbed_kqp is None:
@@ -321,41 +350,77 @@ def _verify_layer3_difference(gt_kqp: dict | None,
         res["kqp_unavailable"] = True
         return res
 
-    # Build status maps.
     def _id_to_status(kqp: dict) -> dict[str, str]:
         m: dict[str, str] = {}
         for q in kqp.get("query_results", []):
             m[q.get("query_id", "?")] = q.get("status", "?")
         return m
 
-    gt_status = _id_to_status(gt_kqp)
-    pe_status = _id_to_status(perturbed_kqp)
+    # Build a per-id map AND a per-id intent map so we can match
+    # ``allowed_secondary`` entries that come as intent names.
+    id_to_status: dict[str, str] = _id_to_status(gt_kqp)
+    perturbed_status: dict[str, str] = _id_to_status(perturbed_kqp)
+    id_to_intent: dict[str, str] = {}
+    for kqp in (gt_kqp, perturbed_kqp):
+        for q in kqp.get("query_results", []):
+            qid = q.get("query_id", "?")
+            intent = q.get("intent", "")
+            if qid not in id_to_intent and intent:
+                id_to_intent[qid] = intent
 
-    # Diff: queries that flipped from "pass" → "fail" are the
-    # actual_failed set.
-    actual_failed = sorted(qid for qid, s in pe_status.items()
-                            if s != "pass" and gt_status.get(qid) == "pass")
+    actual_failed = sorted(qid for qid, s in perturbed_status.items()
+                            if s != "pass" and id_to_status.get(qid) == "pass")
     res["actual_failed"] = actual_failed
 
     expected = set(res["expected_failed"])
-    allowed  = set(res["allowed_secondary"])
-    actual   = set(actual_failed)
+    allowed_intents = set(res["allowed_secondary"])
+    # KQP-known query IDs (union of gt and perturbed runs).
+    kqp_known = set(id_to_intent.keys()) | set(id_to_status.keys())
 
-    # expected_failed queries should be in actual_failed.
-    unexpected = sorted((actual - expected - allowed))
-    res["unexpected_failed"] = unexpected
+    # An actual_failed query is "expected" if T_ref named it.
+    # It is "allowed_secondary" if its intent name is in the
+    # allowed_secondary list (T_ref stores intent names there).
+    # Otherwise it is an "extra".
+    extras: list[str] = []
+    for qid in actual_failed:
+        if qid in expected:
+            continue
+        if id_to_intent.get(qid, "") in allowed_intents:
+            continue
+        extras.append(qid)
+    res["extras"] = sorted(extras)
 
-    # All expected queries should appear in the diff.
-    missing_expected = sorted((expected - actual))
-    res["missing_expected"] = missing_expected
+    # Partition missing_expected into:
+    #  - missing_in_kqp : data gap (T_ref asked us to verify a
+    #                     query that doesn't exist in the KQP)
+    #  - missing_but_in_kqp : real verification failure
+    missing_in_kqp: list[str] = []
+    missing_but_in_kqp: list[str] = []
+    for qid in expected:
+        if qid in set(actual_failed):
+            continue
+        if qid in kqp_known:
+            missing_but_in_kqp.append(qid)
+        else:
+            missing_in_kqp.append(qid)
+    res["kqp_data_gap"] = sorted(missing_in_kqp)
+    res["missing_expected"] = sorted(missing_but_in_kqp)
 
-    # An "extra" query (in actual but not in expected+allowed) is also
-    # unexpected.
-    extras = sorted((actual - expected - allowed))
-    res["extras"] = extras
-    res["passed"] = (not unexpected) and (not missing_expected) and (not extras)
-    res["gt_status_per_query"] = gt_status
-    res["perturbed_status_per_query"] = pe_status
+    # Decide pass / fail.
+    if expected:
+        # When KQP coverage gaps exist for the expected queries, the
+        # verification cannot be completed — we return passed=False
+        # with a non-empty kqp_data_gap so the analysis layer can
+        # route these samples to a separate "data issues" bin.  But
+        # extras and missing_but_in_kqp are still real failures.
+        has_real_failure = bool(res["extras"]) or bool(missing_but_in_kqp)
+        res["passed"] = (not has_real_failure) and (not res["kqp_data_gap"])
+    else:
+        res["passed"] = len(actual_failed) > 0
+
+    res["gt_status_per_query"]          = id_to_status
+    res["perturbed_status_per_query"]   = perturbed_status
+    res["id_to_intent"]                 = id_to_intent
     return res
 
 

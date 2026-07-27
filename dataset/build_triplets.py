@@ -96,16 +96,25 @@ def main(max_samples: int | None = None,
         print(f"After --max-samples cap: {len(pairs)}.")
 
     # Resume: skip any (sid, nid) that already has a verified
-    # triplet.json on disk.
+    # triplet.json on disk.  Failed entries are re-run by default
+    # — the L3 logic was patched mid-batch to distinguish KQP
+    # data gaps from real verification failures, so a previous
+    # "failed" may now pass.
     todo: list[tuple[str, str, str, str]] = []
     skipped_resumed = 0
     for (sid, nid, op, layer) in pairs:
         triplet_json = out_root / f"{sid}__{nid}" / "triplet.json"
         if triplet_json.exists():
-            skipped_resumed += 1
-            continue
+            try:
+                existing = json.loads(triplet_json.read_text(encoding="utf-8"))
+                if existing.get("verified"):
+                    skipped_resumed += 1
+                    continue
+            except Exception:
+                pass
         todo.append((sid, nid, op, layer))
-    print(f"Already done (resume): {skipped_resumed}; to run: {len(todo)}.")
+    print(f"Already done (verified, resume): {skipped_resumed}; "
+          f"to run (incl. retry): {len(todo)}.")
 
     # Aggregate stats.
     verified = 0
