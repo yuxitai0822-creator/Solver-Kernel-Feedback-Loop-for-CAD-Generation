@@ -1,0 +1,481 @@
+[defensive] dropping dead proxies: ['ALL_PROXY', 'HTTPS_PROXY', 'HTTP_PROXY']
+Frozen pairs: 120 (after filters)
+Trials to run: 120 × 4 methods = 480
+  [  1/480] M0_NoFeedback      100243_9fb796fe_0006/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=pipeline  (18.07s) [cumul 18.3s] err=-
+  [  2/480] M1_SolverOnly      100243_9fb796fe_0006/neg_02  op=E1_envelope_u         status=success            n_iter=2  ch=pipeline/solver  (26.3s) [cumul 44.6s] err=-
+  [  3/480] M2_KQPOnly         100243_9fb796fe_0006/neg_02  op=E1_envelope_u         status=success            n_iter=2  ch=kernel/pipeline  (23.54s) [cumul 68.1s] err=-
+  [  4/480] M3_SolverKQP       100243_9fb796fe_0006/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=kernel/pipeline/solver  (14.01s) [cumul 82.2s] err=-
+  [  5/480] M0_NoFeedback      100877_ac1e5a17_0001/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=pipeline  (10.33s) [cumul 92.6s] err=-
+  [  6/480] M1_SolverOnly      100877_ac1e5a17_0001/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=pipeline/solver  (10.35s) [cumul 103.0s] err=-
+  [  7/480] M2_KQPOnly         100877_ac1e5a17_0001/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=kernel/pipeline  (10.79s) [cumul 113.8s] err=-
+  [  8/480] M3_SolverKQP       100877_ac1e5a17_0001/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=kernel/pipeline/solver  (11.21s) [cumul 125.0s] err=-
+  [  9/480] M0_NoFeedback      100877_ac1e5a17_0017/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=pipeline  (11.12s) [cumul 136.3s] err=-
+  [ 10/480] M1_SolverOnly      100877_ac1e5a17_0017/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=pipeline/solver  (10.23s) [cumul 146.5s] err=-
+  [ 11/480] M2_KQPOnly         100877_ac1e5a17_0017/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=kernel/pipeline  (10.08s) [cumul 156.6s] err=-
+  [ 12/480] M3_SolverKQP       100877_ac1e5a17_0017/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=kernel/pipeline/solver  (10.5s) [cumul 167.1s] err=-
+  [ 13/480] M0_NoFeedback      101269_f084ba14_0023/neg_02  op=E1_envelope_u         status=max_iter_exceeded  n_iter=3  ch=pipeline  (33.04s) [cumul 200.3s] err=-
+  [ 14/480] M1_SolverOnly      101269_f084ba14_0023/neg_02  op=E1_envelope_u         status=no_change          n_iter=2  ch=pipeline/solver  (14.61s) [cumul 214.9s] err=-
+  [ 15/480] M2_KQPOnly         101269_f084ba14_0023/neg_02  op=E1_envelope_u         status=max_iter_exceeded  n_iter=3  ch=kernel/pipeline  (48.7s) [cumul 263.7s] err=-
+  [ 16/480] M3_SolverKQP       101269_f084ba14_0023/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=kernel/pipeline/solver  (15.31s) [cumul 279.0s] err=-
+  [ 17/480] M0_NoFeedback      101427_a9bcb09c_0002/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=pipeline  (12.83s) [cumul 292.0s] err=-
+  [ 18/480] M1_SolverOnly      101427_a9bcb09c_0002/neg_02  op=E1_envelope_u         status=no_change          n_iter=3  ch=pipeline/solver  (25.25s) [cumul 317.2s] err=-
+  [ 19/480] M2_KQPOnly         101427_a9bcb09c_0002/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=kernel/pipeline  (10.48s) [cumul 327.8s] err=-
+  [ 20/480] M3_SolverKQP       101427_a9bcb09c_0002/neg_02  op=E1_envelope_u         status=success            n_iter=2  ch=kernel/pipeline/solver  (21.54s) [cumul 349.4s] err=-
+  [ 21/480] M0_NoFeedback      101817_b02acd9f_0004/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=pipeline  (11.08s) [cumul 360.6s] err=-
+  [ 22/480] M1_SolverOnly      101817_b02acd9f_0004/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=pipeline/solver  (13.87s) [cumul 374.5s] err=-
+  [ 23/480] M2_KQPOnly         101817_b02acd9f_0004/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=kernel/pipeline  (13.13s) [cumul 387.6s] err=-
+  [ 24/480] M3_SolverKQP       101817_b02acd9f_0004/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=kernel/pipeline/solver  (11.47s) [cumul 399.2s] err=-
+  [ 25/480] M0_NoFeedback      102175_699d5e7c_0003/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=pipeline  (11.23s) [cumul 410.5s] err=-
+  [ 26/480] M1_SolverOnly      102175_699d5e7c_0003/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=pipeline/solver  (10.32s) [cumul 420.9s] err=-
+  [ 27/480] M2_KQPOnly         102175_699d5e7c_0003/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=kernel/pipeline  (10.62s) [cumul 431.5s] err=-
+  [ 28/480] M3_SolverKQP       102175_699d5e7c_0003/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=kernel/pipeline/solver  (11.86s) [cumul 443.4s] err=-
+  [ 29/480] M0_NoFeedback      102525_06a3094b_0000/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=pipeline  (9.53s) [cumul 453.1s] err=-
+  [ 30/480] M1_SolverOnly      102525_06a3094b_0000/neg_02  op=E1_envelope_u         status=no_change          n_iter=2  ch=pipeline/solver  (11.97s) [cumul 465.1s] err=-
+  [ 31/480] M2_KQPOnly         102525_06a3094b_0000/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=kernel/pipeline  (11.67s) [cumul 476.8s] err=-
+  [ 32/480] M3_SolverKQP       102525_06a3094b_0000/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=kernel/pipeline/solver  (10.2s) [cumul 487.1s] err=-
+  [ 33/480] M0_NoFeedback      102525_06a3094b_0004/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=pipeline  (10.95s) [cumul 498.2s] err=-
+  [ 34/480] M1_SolverOnly      102525_06a3094b_0004/neg_02  op=E1_envelope_u         status=max_iter_exceeded  n_iter=3  ch=pipeline/solver  (25.49s) [cumul 523.7s] err=-
+  [ 35/480] M2_KQPOnly         102525_06a3094b_0004/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=kernel/pipeline  (9.73s) [cumul 533.5s] err=-
+  [ 36/480] M3_SolverKQP       102525_06a3094b_0004/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=kernel/pipeline/solver  (10.6s) [cumul 544.1s] err=-
+  [ 37/480] M0_NoFeedback      102525_06a3094b_0006/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=pipeline  (9.61s) [cumul 553.9s] err=-
+  [ 38/480] M1_SolverOnly      102525_06a3094b_0006/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=pipeline/solver  (10.13s) [cumul 564.1s] err=-
+  [ 39/480] M2_KQPOnly         102525_06a3094b_0006/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=kernel/pipeline  (9.5s) [cumul 573.6s] err=-
+  [ 40/480] M3_SolverKQP       102525_06a3094b_0006/neg_02  op=E1_envelope_u         status=success            n_iter=2  ch=kernel/pipeline/solver  (19.24s) [cumul 592.9s] err=-
+  [ 41/480] M0_NoFeedback      103481_b27a1cdf_0010/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=pipeline  (10.4s) [cumul 603.5s] err=-
+  [ 42/480] M1_SolverOnly      103481_b27a1cdf_0010/neg_02  op=E1_envelope_u         status=max_iter_exceeded  n_iter=3  ch=pipeline/solver  (25.87s) [cumul 629.4s] err=-
+  [ 43/480] M2_KQPOnly         103481_b27a1cdf_0010/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=kernel/pipeline  (8.08s) [cumul 637.6s] err=-
+  [ 44/480] M3_SolverKQP       103481_b27a1cdf_0010/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=kernel/pipeline/solver  (9.05s) [cumul 646.7s] err=-
+  [ 45/480] M0_NoFeedback      104283_e5646f96_0001/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=pipeline  (14.96s) [cumul 661.7s] err=-
+  [ 46/480] M1_SolverOnly      104283_e5646f96_0001/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=pipeline/solver  (18.24s) [cumul 680.0s] err=-
+  [ 47/480] M2_KQPOnly         104283_e5646f96_0001/neg_02  op=E1_envelope_u         status=success            n_iter=2  ch=kernel/pipeline  (35.86s) [cumul 716.0s] err=-
+  [ 48/480] M3_SolverKQP       104283_e5646f96_0001/neg_02  op=E1_envelope_u         status=max_iter_exceeded  n_iter=3  ch=kernel/pipeline/solver  (50.9s) [cumul 767.0s] err=-
+  [ 49/480] M0_NoFeedback      105278_909f3813_0000/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=pipeline  (14.52s) [cumul 781.6s] err=-
+  [ 50/480] M1_SolverOnly      105278_909f3813_0000/neg_02  op=E1_envelope_u         status=max_iter_exceeded  n_iter=3  ch=pipeline/solver  (29.02s) [cumul 810.7s] err=-
+  [ 51/480] M2_KQPOnly         105278_909f3813_0000/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=kernel/pipeline  (12.68s) [cumul 823.5s] err=-
+  [ 52/480] M3_SolverKQP       105278_909f3813_0000/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=kernel/pipeline/solver  (9.49s) [cumul 833.0s] err=-
+  [ 53/480] M0_NoFeedback      108244_329b1876_0000/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=pipeline  (15.35s) [cumul 848.6s] err=-
+  [ 54/480] M1_SolverOnly      108244_329b1876_0000/neg_02  op=E1_envelope_u         status=max_iter_exceeded  n_iter=3  ch=pipeline/solver  (37.86s) [cumul 886.5s] err=-
+  [ 55/480] M2_KQPOnly         108244_329b1876_0000/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=kernel/pipeline  (21.32s) [cumul 907.9s] err=-
+  [ 56/480] M3_SolverKQP       108244_329b1876_0000/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=kernel/pipeline/solver  (17.94s) [cumul 925.9s] err=-
+  [ 57/480] M0_NoFeedback      108412_8de2f9c3_0000/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=pipeline  (12.18s) [cumul 938.3s] err=-
+  [ 58/480] M1_SolverOnly      108412_8de2f9c3_0000/neg_02  op=E1_envelope_u         status=success            n_iter=2  ch=pipeline/solver  (21.1s) [cumul 959.5s] err=-
+  [ 59/480] M2_KQPOnly         108412_8de2f9c3_0000/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=kernel/pipeline  (12.15s) [cumul 971.7s] err=-
+  [ 60/480] M3_SolverKQP       108412_8de2f9c3_0000/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=kernel/pipeline/solver  (9.98s) [cumul 981.8s] err=-
+  [ 61/480] M0_NoFeedback      108850_0dcd5ef1_0002/neg_02  op=E1_envelope_u         status=no_change          n_iter=2  ch=pipeline  (12.54s) [cumul 994.5s] err=-
+  [ 62/480] M1_SolverOnly      108850_0dcd5ef1_0002/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=pipeline/solver  (12.07s) [cumul 1006.7s] err=-
+  [ 63/480] M2_KQPOnly         108850_0dcd5ef1_0002/neg_02  op=E1_envelope_u         status=success            n_iter=2  ch=kernel/pipeline  (21.74s) [cumul 1028.5s] err=-
+  [ 64/480] M3_SolverKQP       108850_0dcd5ef1_0002/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=kernel/pipeline/solver  (12.32s) [cumul 1040.9s] err=-
+  [ 65/480] M0_NoFeedback      108851_4d515b10_0007/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=pipeline  (16.56s) [cumul 1057.7s] err=-
+  [ 66/480] M1_SolverOnly      108851_4d515b10_0007/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=pipeline/solver  (12.49s) [cumul 1070.3s] err=-
+  [ 67/480] M2_KQPOnly         108851_4d515b10_0007/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=kernel/pipeline  (12.11s) [cumul 1082.5s] err=-
+  [ 68/480] M3_SolverKQP       108851_4d515b10_0007/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=kernel/pipeline/solver  (14.93s) [cumul 1097.5s] err=-
+  [ 69/480] M0_NoFeedback      108851_4d515b10_0009/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=pipeline  (16.35s) [cumul 1114.0s] err=-
+  [ 70/480] M1_SolverOnly      108851_4d515b10_0009/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=pipeline/solver  (11.32s) [cumul 1125.5s] err=-
+  [ 71/480] M2_KQPOnly         108851_4d515b10_0009/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=kernel/pipeline  (11.83s) [cumul 1137.4s] err=-
+  [ 72/480] M3_SolverKQP       108851_4d515b10_0009/neg_02  op=E1_envelope_u         status=success            n_iter=1  ch=kernel/pipeline/solver  (13.3s) [cumul 1150.8s] err=-
+  [ 73/480] M0_NoFeedback      100243_9fb796fe_0005/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=pipeline  (12.13s) [cumul 1163.0s] err=-
+  [ 74/480] M1_SolverOnly      100243_9fb796fe_0005/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=pipeline/solver  (12.85s) [cumul 1176.0s] err=-
+  [ 75/480] M2_KQPOnly         100243_9fb796fe_0005/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=2  ch=kernel/pipeline  (24.74s) [cumul 1200.8s] err=-
+  [ 76/480] M3_SolverKQP       100243_9fb796fe_0005/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=kernel/pipeline/solver  (15.26s) [cumul 1216.2s] err=-
+  [ 77/480] M0_NoFeedback      100243_9fb796fe_0006/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=pipeline  (14.13s) [cumul 1230.5s] err=-
+  [ 78/480] M1_SolverOnly      100243_9fb796fe_0006/neg_03  op=E1_envelope_v_shrink  status=max_iter_exceeded  n_iter=3  ch=pipeline/solver  (42.55s) [cumul 1273.1s] err=-
+  [ 79/480] M2_KQPOnly         100243_9fb796fe_0006/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=kernel/pipeline  (12.43s) [cumul 1285.6s] err=-
+  [ 80/480] M3_SolverKQP       100243_9fb796fe_0006/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=2  ch=kernel/pipeline/solver  (23.71s) [cumul 1309.4s] err=-
+  [ 81/480] M0_NoFeedback      100877_ac1e5a17_0001/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=pipeline  (9.87s) [cumul 1319.5s] err=-
+  [ 82/480] M1_SolverOnly      100877_ac1e5a17_0001/neg_03  op=E1_envelope_v_shrink  status=max_iter_exceeded  n_iter=3  ch=pipeline/solver  (26.35s) [cumul 1345.9s] err=-
+  [ 83/480] M2_KQPOnly         100877_ac1e5a17_0001/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=kernel/pipeline  (10.52s) [cumul 1356.5s] err=-
+  [ 84/480] M3_SolverKQP       100877_ac1e5a17_0001/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=kernel/pipeline/solver  (10.8s) [cumul 1367.5s] err=-
+  [ 85/480] M0_NoFeedback      100877_ac1e5a17_0017/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=pipeline  (10.51s) [cumul 1378.2s] err=-
+  [ 86/480] M1_SolverOnly      100877_ac1e5a17_0017/neg_03  op=E1_envelope_v_shrink  status=max_iter_exceeded  n_iter=3  ch=pipeline/solver  (27.56s) [cumul 1405.8s] err=-
+  [ 87/480] M2_KQPOnly         100877_ac1e5a17_0017/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=2  ch=kernel/pipeline  (18.96s) [cumul 1424.9s] err=-
+  [ 88/480] M3_SolverKQP       100877_ac1e5a17_0017/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=kernel/pipeline/solver  (9.75s) [cumul 1434.8s] err=-
+  [ 89/480] M0_NoFeedback      101269_f084ba14_0023/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=pipeline  (11.57s) [cumul 1446.5s] err=-
+  [ 90/480] M1_SolverOnly      101269_f084ba14_0023/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=pipeline/solver  (14.23s) [cumul 1460.8s] err=-
+  [ 91/480] M2_KQPOnly         101269_f084ba14_0023/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=2  ch=kernel/pipeline  (24.58s) [cumul 1485.6s] err=-
+  [ 92/480] M3_SolverKQP       101269_f084ba14_0023/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=kernel/pipeline/solver  (13.8s) [cumul 1499.5s] err=-
+  [ 93/480] M0_NoFeedback      101427_a9bcb09c_0002/neg_03  op=E1_envelope_v_shrink  status=max_iter_exceeded  n_iter=3  ch=pipeline  (35.17s) [cumul 1534.8s] err=-
+  [ 94/480] M1_SolverOnly      101427_a9bcb09c_0002/neg_03  op=E1_envelope_v_shrink  status=max_iter_exceeded  n_iter=3  ch=pipeline/solver  (32.91s) [cumul 1567.9s] err=-
+  [ 95/480] M2_KQPOnly         101427_a9bcb09c_0002/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=3  ch=kernel/pipeline  (35.8s) [cumul 1603.8s] err=-
+  [ 96/480] M3_SolverKQP       101427_a9bcb09c_0002/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=2  ch=kernel/pipeline/solver  (22.24s) [cumul 1626.2s] err=-
+  [ 97/480] M0_NoFeedback      101817_b02acd9f_0004/neg_03  op=E1_envelope_v_shrink  status=max_iter_exceeded  n_iter=3  ch=pipeline  (36.0s) [cumul 1662.3s] err=-
+  [ 98/480] M1_SolverOnly      101817_b02acd9f_0004/neg_03  op=E1_envelope_v_shrink  status=max_iter_exceeded  n_iter=3  ch=pipeline/solver  (31.6s) [cumul 1694.1s] err=-
+  [ 99/480] M2_KQPOnly         101817_b02acd9f_0004/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=kernel/pipeline  (13.35s) [cumul 1707.6s] err=-
+  [100/480] M3_SolverKQP       101817_b02acd9f_0004/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=2  ch=kernel/pipeline/solver  (26.63s) [cumul 1734.3s] err=-
+  [101/480] M0_NoFeedback      102175_699d5e7c_0003/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=pipeline  (9.58s) [cumul 1744.1s] err=-
+  [102/480] M1_SolverOnly      102175_699d5e7c_0003/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=pipeline/solver  (12.5s) [cumul 1756.8s] err=-
+  [103/480] M2_KQPOnly         102175_699d5e7c_0003/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=kernel/pipeline  (9.89s) [cumul 1766.9s] err=-
+  [104/480] M3_SolverKQP       102175_699d5e7c_0003/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=kernel/pipeline/solver  (10.6s) [cumul 1777.6s] err=-
+  [105/480] M0_NoFeedback      102295_86f842dd_0000/neg_03  op=E1_envelope_v_shrink  status=max_iter_exceeded  n_iter=3  ch=pipeline  (46.14s) [cumul 1824.0s] err=-
+  [106/480] M1_SolverOnly      102295_86f842dd_0000/neg_03  op=E1_envelope_v_shrink  status=no_change          n_iter=3  ch=pipeline/solver  (30.98s) [cumul 1855.1s] err=-
+  [107/480] M2_KQPOnly         102295_86f842dd_0000/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=2  ch=kernel/pipeline  (30.01s) [cumul 1885.3s] err=-
+  [108/480] M3_SolverKQP       102295_86f842dd_0000/neg_03  op=E1_envelope_v_shrink  status=max_iter_exceeded  n_iter=3  ch=kernel/pipeline/solver  (65.6s) [cumul 1951.0s] err=-
+  [109/480] M0_NoFeedback      102525_06a3094b_0000/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=pipeline  (9.89s) [cumul 1961.1s] err=-
+  [110/480] M1_SolverOnly      102525_06a3094b_0000/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=pipeline/solver  (12.65s) [cumul 1973.9s] err=-
+  [111/480] M2_KQPOnly         102525_06a3094b_0000/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=kernel/pipeline  (13.54s) [cumul 1987.7s] err=-
+  [112/480] M3_SolverKQP       102525_06a3094b_0000/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=kernel/pipeline/solver  (10.75s) [cumul 1998.7s] err=-
+  [113/480] M0_NoFeedback      102525_06a3094b_0004/neg_03  op=E1_envelope_v_shrink  status=no_change          n_iter=2  ch=pipeline  (11.14s) [cumul 2010.0s] err=-
+  [114/480] M1_SolverOnly      102525_06a3094b_0004/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=pipeline/solver  (11.91s) [cumul 2022.1s] err=-
+  [115/480] M2_KQPOnly         102525_06a3094b_0004/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=2  ch=kernel/pipeline  (22.0s) [cumul 2044.2s] err=-
+  [116/480] M3_SolverKQP       102525_06a3094b_0004/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=kernel/pipeline/solver  (12.05s) [cumul 2056.5s] err=-
+  [117/480] M0_NoFeedback      102525_06a3094b_0006/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=pipeline  (11.88s) [cumul 2068.6s] err=-
+  [118/480] M1_SolverOnly      102525_06a3094b_0006/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=pipeline/solver  (9.28s) [cumul 2078.0s] err=-
+  [119/480] M2_KQPOnly         102525_06a3094b_0006/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=kernel/pipeline  (13.11s) [cumul 2091.3s] err=-
+  [120/480] M3_SolverKQP       102525_06a3094b_0006/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=kernel/pipeline/solver  (10.56s) [cumul 2102.1s] err=-
+  [121/480] M0_NoFeedback      103481_b27a1cdf_0010/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=pipeline  (9.89s) [cumul 2112.2s] err=-
+  [122/480] M1_SolverOnly      103481_b27a1cdf_0010/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=pipeline/solver  (9.25s) [cumul 2121.7s] err=-
+  [123/480] M2_KQPOnly         103481_b27a1cdf_0010/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=kernel/pipeline  (9.06s) [cumul 2130.9s] err=-
+  [124/480] M3_SolverKQP       103481_b27a1cdf_0010/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=kernel/pipeline/solver  (13.09s) [cumul 2144.2s] err=-
+  [125/480] M0_NoFeedback      104283_e5646f96_0001/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=pipeline  (23.61s) [cumul 2168.0s] err=-
+  [126/480] M1_SolverOnly      104283_e5646f96_0001/neg_03  op=E1_envelope_v_shrink  status=max_iter_exceeded  n_iter=3  ch=pipeline/solver  (44.76s) [cumul 2212.9s] err=-
+  [127/480] M2_KQPOnly         104283_e5646f96_0001/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=kernel/pipeline  (14.79s) [cumul 2227.9s] err=-
+  [128/480] M3_SolverKQP       104283_e5646f96_0001/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=2  ch=kernel/pipeline/solver  (33.8s) [cumul 2261.9s] err=-
+  [129/480] M0_NoFeedback      104453_aba0f2d1_0002/neg_03  op=E1_envelope_v_shrink  status=max_iter_exceeded  n_iter=3  ch=pipeline  (35.4s) [cumul 2297.6s] err=-
+  [130/480] M1_SolverOnly      104453_aba0f2d1_0002/neg_03  op=E1_envelope_v_shrink  status=max_iter_exceeded  n_iter=3  ch=pipeline/solver  (38.75s) [cumul 2336.5s] err=-
+  [131/480] M2_KQPOnly         104453_aba0f2d1_0002/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=3  ch=kernel/pipeline  (44.19s) [cumul 2380.8s] err=-
+  [132/480] M3_SolverKQP       104453_aba0f2d1_0002/neg_03  op=E1_envelope_v_shrink  status=max_iter_exceeded  n_iter=3  ch=kernel/pipeline/solver  (44.44s) [cumul 2425.5s] err=-
+  [133/480] M0_NoFeedback      105278_909f3813_0000/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=pipeline  (9.26s) [cumul 2435.0s] err=-
+  [134/480] M1_SolverOnly      105278_909f3813_0000/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=pipeline/solver  (9.5s) [cumul 2444.7s] err=-
+  [135/480] M2_KQPOnly         105278_909f3813_0000/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=kernel/pipeline  (11.17s) [cumul 2456.0s] err=-
+  [136/480] M3_SolverKQP       105278_909f3813_0000/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=kernel/pipeline/solver  (9.4s) [cumul 2465.6s] err=-
+  [137/480] M0_NoFeedback      108244_329b1876_0000/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=pipeline  (11.04s) [cumul 2476.9s] err=-
+  [138/480] M1_SolverOnly      108244_329b1876_0000/neg_03  op=E1_envelope_v_shrink  status=no_change          n_iter=3  ch=pipeline/solver  (43.77s) [cumul 2520.9s] err=-
+  [139/480] M2_KQPOnly         108244_329b1876_0000/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=kernel/pipeline  (16.89s) [cumul 2537.9s] err=-
+  [140/480] M3_SolverKQP       108244_329b1876_0000/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=kernel/pipeline/solver  (14.33s) [cumul 2552.5s] err=-
+  [141/480] M0_NoFeedback      108412_8de2f9c3_0000/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=pipeline  (10.43s) [cumul 2563.2s] err=-
+  [142/480] M1_SolverOnly      108412_8de2f9c3_0000/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=pipeline/solver  (10.69s) [cumul 2574.0s] err=-
+  [143/480] M2_KQPOnly         108412_8de2f9c3_0000/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=2  ch=kernel/pipeline  (26.23s) [cumul 2600.5s] err=-
+  [144/480] M3_SolverKQP       108412_8de2f9c3_0000/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=kernel/pipeline/solver  (14.36s) [cumul 2615.0s] err=-
+  [145/480] M0_NoFeedback      108850_0dcd5ef1_0002/neg_03  op=E1_envelope_v_shrink  status=no_change          n_iter=3  ch=pipeline  (25.45s) [cumul 2640.8s] err=-
+  [146/480] M1_SolverOnly      108850_0dcd5ef1_0002/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=pipeline/solver  (11.76s) [cumul 2652.7s] err=-
+  [147/480] M2_KQPOnly         108850_0dcd5ef1_0002/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=kernel/pipeline  (9.8s) [cumul 2662.7s] err=-
+  [148/480] M3_SolverKQP       108850_0dcd5ef1_0002/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=kernel/pipeline/solver  (14.32s) [cumul 2677.2s] err=-
+  [149/480] M0_NoFeedback      108851_4d515b10_0007/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=pipeline  (10.18s) [cumul 2687.6s] err=-
+  [150/480] M1_SolverOnly      108851_4d515b10_0007/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=pipeline/solver  (11.74s) [cumul 2699.6s] err=-
+  [151/480] M2_KQPOnly         108851_4d515b10_0007/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=kernel/pipeline  (15.85s) [cumul 2715.6s] err=-
+  [152/480] M3_SolverKQP       108851_4d515b10_0007/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=kernel/pipeline/solver  (18.83s) [cumul 2734.7s] err=-
+  [153/480] M0_NoFeedback      108851_4d515b10_0009/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=pipeline  (12.49s) [cumul 2747.5s] err=-
+  [154/480] M1_SolverOnly      108851_4d515b10_0009/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=pipeline/solver  (11.76s) [cumul 2759.5s] err=-
+  [155/480] M2_KQPOnly         108851_4d515b10_0009/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=kernel/pipeline  (10.81s) [cumul 2770.5s] err=-
+  [156/480] M3_SolverKQP       108851_4d515b10_0009/neg_03  op=E1_envelope_v_shrink  status=success            n_iter=1  ch=kernel/pipeline/solver  (12.45s) [cumul 2783.1s] err=-
+  [157/480] M0_NoFeedback      100243_9fb796fe_0005/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline  (12.91s) [cumul 2796.3s] err=-
+  [158/480] M1_SolverOnly      100243_9fb796fe_0005/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline/solver  (12.86s) [cumul 2809.5s] err=-
+  [159/480] M2_KQPOnly         100243_9fb796fe_0005/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline  (12.79s) [cumul 2822.5s] err=-
+  [160/480] M3_SolverKQP       100243_9fb796fe_0005/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline/solver  (12.27s) [cumul 2835.0s] err=-
+  [161/480] M0_NoFeedback      100243_9fb796fe_0006/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline  (12.59s) [cumul 2847.8s] err=-
+  [162/480] M1_SolverOnly      100243_9fb796fe_0006/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline/solver  (18.06s) [cumul 2866.2s] err=-
+  [163/480] M2_KQPOnly         100243_9fb796fe_0006/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline  (13.06s) [cumul 2879.5s] err=-
+  [164/480] M3_SolverKQP       100243_9fb796fe_0006/neg_01  op=E2_extrude_deep       status=success            n_iter=2  ch=kernel/pipeline/solver  (20.13s) [cumul 2899.8s] err=-
+  [165/480] M0_NoFeedback      100877_ac1e5a17_0001/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline  (8.99s) [cumul 2909.1s] err=-
+  [166/480] M1_SolverOnly      100877_ac1e5a17_0001/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline/solver  (9.19s) [cumul 2918.5s] err=-
+  [167/480] M2_KQPOnly         100877_ac1e5a17_0001/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline  (9.8s) [cumul 2928.5s] err=-
+  [168/480] M3_SolverKQP       100877_ac1e5a17_0001/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline/solver  (10.21s) [cumul 2938.9s] err=-
+  [169/480] M0_NoFeedback      100877_ac1e5a17_0017/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline  (9.62s) [cumul 2948.8s] err=-
+  [170/480] M1_SolverOnly      100877_ac1e5a17_0017/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline/solver  (8.53s) [cumul 2957.6s] err=-
+  [171/480] M2_KQPOnly         100877_ac1e5a17_0017/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline  (8.83s) [cumul 2966.6s] err=-
+  [172/480] M3_SolverKQP       100877_ac1e5a17_0017/neg_01  op=E2_extrude_deep       status=max_iter_exceeded  n_iter=3  ch=kernel/pipeline/solver  (32.56s) [cumul 2999.5s] err=-
+  [173/480] M0_NoFeedback      101269_f084ba14_0023/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline  (14.71s) [cumul 3014.4s] err=-
+  [174/480] M1_SolverOnly      101269_f084ba14_0023/neg_01  op=E2_extrude_deep       status=max_iter_exceeded  n_iter=3  ch=pipeline/solver  (28.53s) [cumul 3043.2s] err=-
+  [175/480] M2_KQPOnly         101269_f084ba14_0023/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline  (13.74s) [cumul 3057.2s] err=-
+  [176/480] M3_SolverKQP       101269_f084ba14_0023/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline/solver  (10.23s) [cumul 3067.6s] err=-
+  [177/480] M0_NoFeedback      101427_a9bcb09c_0001/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline  (11.67s) [cumul 3079.7s] err=-
+  [178/480] M1_SolverOnly      101427_a9bcb09c_0001/neg_01  op=E2_extrude_deep       status=max_iter_exceeded  n_iter=3  ch=pipeline/solver  (32.45s) [cumul 3112.4s] err=-
+  [179/480] M2_KQPOnly         101427_a9bcb09c_0001/neg_01  op=E2_extrude_deep       status=max_iter_exceeded  n_iter=3  ch=kernel/pipeline  (32.88s) [cumul 3145.6s] err=-
+  [180/480] M3_SolverKQP       101427_a9bcb09c_0001/neg_01  op=E2_extrude_deep       status=max_iter_exceeded  n_iter=3  ch=kernel/pipeline/solver  (36.43s) [cumul 3182.3s] err=-
+  [181/480] M0_NoFeedback      101427_a9bcb09c_0002/neg_01  op=E2_extrude_deep       status=max_iter_exceeded  n_iter=3  ch=pipeline  (31.75s) [cumul 3214.4s] err=-
+  [182/480] M1_SolverOnly      101427_a9bcb09c_0002/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline/solver  (13.58s) [cumul 3228.2s] err=-
+  [183/480] M2_KQPOnly         101427_a9bcb09c_0002/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline  (10.84s) [cumul 3239.4s] err=-
+  [184/480] M3_SolverKQP       101427_a9bcb09c_0002/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline/solver  (15.73s) [cumul 3255.4s] err=-
+  [185/480] M0_NoFeedback      101817_b02acd9f_0000/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline  (10.9s) [cumul 3266.7s] err=-
+  [186/480] M1_SolverOnly      101817_b02acd9f_0000/neg_01  op=E2_extrude_deep       status=max_iter_exceeded  n_iter=3  ch=pipeline/solver  (35.86s) [cumul 3302.8s] err=-
+  [187/480] M2_KQPOnly         101817_b02acd9f_0000/neg_01  op=E2_extrude_deep       status=max_iter_exceeded  n_iter=3  ch=kernel/pipeline  (43.9s) [cumul 3347.0s] err=-
+  [188/480] M3_SolverKQP       101817_b02acd9f_0000/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline/solver  (13.76s) [cumul 3361.1s] err=-
+  [189/480] M0_NoFeedback      101817_b02acd9f_0001/neg_01  op=E2_extrude_deep       status=success            n_iter=3  ch=pipeline  (34.3s) [cumul 3395.8s] err=-
+  [190/480] M1_SolverOnly      101817_b02acd9f_0001/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline/solver  (14.43s) [cumul 3410.5s] err=-
+  [191/480] M2_KQPOnly         101817_b02acd9f_0001/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline  (13.53s) [cumul 3424.3s] err=-
+  [192/480] M3_SolverKQP       101817_b02acd9f_0001/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline/solver  (11.63s) [cumul 3436.2s] err=-
+  [193/480] M0_NoFeedback      101817_b02acd9f_0002/neg_01  op=E2_extrude_deep       status=max_iter_exceeded  n_iter=3  ch=pipeline  (39.96s) [cumul 3476.6s] err=-
+  [194/480] M1_SolverOnly      101817_b02acd9f_0002/neg_01  op=E2_extrude_deep       status=max_iter_exceeded  n_iter=3  ch=pipeline/solver  (38.59s) [cumul 3515.5s] err=-
+  [195/480] M2_KQPOnly         101817_b02acd9f_0002/neg_01  op=E2_extrude_deep       status=success            n_iter=2  ch=kernel/pipeline  (31.02s) [cumul 3546.8s] err=-
+  [196/480] M3_SolverKQP       101817_b02acd9f_0002/neg_01  op=E2_extrude_deep       status=success            n_iter=2  ch=kernel/pipeline/solver  (28.65s) [cumul 3575.8s] err=-
+  [197/480] M0_NoFeedback      101817_b02acd9f_0004/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline  (13.38s) [cumul 3589.5s] err=-
+  [198/480] M1_SolverOnly      101817_b02acd9f_0004/neg_01  op=E2_extrude_deep       status=max_iter_exceeded  n_iter=3  ch=pipeline/solver  (32.03s) [cumul 3621.9s] err=-
+  [199/480] M2_KQPOnly         101817_b02acd9f_0004/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline  (14.56s) [cumul 3636.8s] err=-
+  [200/480] M3_SolverKQP       101817_b02acd9f_0004/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline/solver  (12.58s) [cumul 3649.7s] err=-
+  [201/480] M0_NoFeedback      102175_699d5e7c_0003/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline  (10.53s) [cumul 3660.6s] err=-
+  [202/480] M1_SolverOnly      102175_699d5e7c_0003/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline/solver  (13.4s) [cumul 3674.3s] err=-
+  [203/480] M2_KQPOnly         102175_699d5e7c_0003/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline  (10.17s) [cumul 3684.9s] err=-
+  [204/480] M3_SolverKQP       102175_699d5e7c_0003/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline/solver  (10.68s) [cumul 3695.9s] err=-
+  [205/480] M0_NoFeedback      102295_86f842dd_0000/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline  (16.68s) [cumul 3712.9s] err=-
+  [206/480] M1_SolverOnly      102295_86f842dd_0000/neg_01  op=E2_extrude_deep       status=max_iter_exceeded  n_iter=3  ch=pipeline/solver  (42.18s) [cumul 3755.4s] err=-
+  [207/480] M2_KQPOnly         102295_86f842dd_0000/neg_01  op=E2_extrude_deep       status=max_iter_exceeded  n_iter=3  ch=kernel/pipeline  (50.12s) [cumul 3805.9s] err=-
+  [208/480] M3_SolverKQP       102295_86f842dd_0000/neg_01  op=E2_extrude_deep       status=max_iter_exceeded  n_iter=3  ch=kernel/pipeline/solver  (58.52s) [cumul 3864.7s] err=-
+  [209/480] M0_NoFeedback      102314_91648bfc_0000/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline  (9.64s) [cumul 3874.9s] err=-
+  [210/480] M1_SolverOnly      102314_91648bfc_0000/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline/solver  (10.66s) [cumul 3885.9s] err=-
+  [211/480] M2_KQPOnly         102314_91648bfc_0000/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline  (10.58s) [cumul 3896.8s] err=-
+  [212/480] M3_SolverKQP       102314_91648bfc_0000/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline/solver  (9.59s) [cumul 3906.8s] err=-
+  [213/480] M0_NoFeedback      102410_f9877a7b_0000/neg_01  op=E2_extrude_deep       status=success            n_iter=2  ch=pipeline  (21.98s) [cumul 3929.2s] err=-
+  [214/480] M1_SolverOnly      102410_f9877a7b_0000/neg_01  op=E2_extrude_deep       status=success            n_iter=2  ch=pipeline/solver  (23.04s) [cumul 3952.6s] err=-
+  [215/480] M2_KQPOnly         102410_f9877a7b_0000/neg_01  op=E2_extrude_deep       status=success            n_iter=2  ch=kernel/pipeline  (21.09s) [cumul 3974.0s] err=-
+  [216/480] M3_SolverKQP       102410_f9877a7b_0000/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline/solver  (10.38s) [cumul 3984.8s] err=-
+  [217/480] M0_NoFeedback      102410_f9877a7b_0012/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline  (11.34s) [cumul 3996.5s] err=-
+  [218/480] M1_SolverOnly      102410_f9877a7b_0012/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline/solver  (11.78s) [cumul 4008.6s] err=-
+  [219/480] M2_KQPOnly         102410_f9877a7b_0012/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline  (10.82s) [cumul 4019.8s] err=-
+  [220/480] M3_SolverKQP       102410_f9877a7b_0012/neg_01  op=E2_extrude_deep       status=success            n_iter=2  ch=kernel/pipeline/solver  (21.79s) [cumul 4041.9s] err=-
+  [221/480] M0_NoFeedback      102525_06a3094b_0000/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline  (11.88s) [cumul 4054.1s] err=-
+  [222/480] M1_SolverOnly      102525_06a3094b_0000/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline/solver  (11.29s) [cumul 4065.7s] err=-
+  [223/480] M2_KQPOnly         102525_06a3094b_0000/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline  (11.05s) [cumul 4077.2s] err=-
+  [224/480] M3_SolverKQP       102525_06a3094b_0000/neg_01  op=E2_extrude_deep       status=success            n_iter=2  ch=kernel/pipeline/solver  (20.79s) [cumul 4098.4s] err=-
+  [225/480] M0_NoFeedback      102525_06a3094b_0004/neg_01  op=E2_extrude_deep       status=max_iter_exceeded  n_iter=3  ch=pipeline  (28.45s) [cumul 4127.2s] err=-
+  [226/480] M1_SolverOnly      102525_06a3094b_0004/neg_01  op=E2_extrude_deep       status=no_change          n_iter=2  ch=pipeline/solver  (11.33s) [cumul 4138.9s] err=-
+  [227/480] M2_KQPOnly         102525_06a3094b_0004/neg_01  op=E2_extrude_deep       status=success            n_iter=2  ch=kernel/pipeline  (22.22s) [cumul 4161.5s] err=-
+  [228/480] M3_SolverKQP       102525_06a3094b_0004/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline/solver  (10.79s) [cumul 4172.7s] err=-
+  [229/480] M0_NoFeedback      102525_06a3094b_0006/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline  (13.24s) [cumul 4186.4s] err=-
+  [230/480] M1_SolverOnly      102525_06a3094b_0006/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline/solver  (10.88s) [cumul 4197.6s] err=-
+  [231/480] M2_KQPOnly         102525_06a3094b_0006/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline  (14.79s) [cumul 4212.8s] err=-
+  [232/480] M3_SolverKQP       102525_06a3094b_0006/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline/solver  (10.57s) [cumul 4223.7s] err=-
+  [233/480] M0_NoFeedback      102760_26430589_0037/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline  (12.0s) [cumul 4236.2s] err=-
+  [234/480] M1_SolverOnly      102760_26430589_0037/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline/solver  (10.77s) [cumul 4247.3s] err=-
+  [235/480] M2_KQPOnly         102760_26430589_0037/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline  (10.83s) [cumul 4258.6s] err=-
+  [236/480] M3_SolverKQP       102760_26430589_0037/neg_01  op=E2_extrude_deep       status=success            n_iter=2  ch=kernel/pipeline/solver  (22.09s) [cumul 4281.0s] err=-
+  [237/480] M0_NoFeedback      103284_e25015aa_0003/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline  (13.28s) [cumul 4294.8s] err=-
+  [238/480] M1_SolverOnly      103284_e25015aa_0003/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline/solver  (10.56s) [cumul 4305.8s] err=-
+  [239/480] M2_KQPOnly         103284_e25015aa_0003/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline  (9.72s) [cumul 4315.9s] err=-
+  [240/480] M3_SolverKQP       103284_e25015aa_0003/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline/solver  (10.96s) [cumul 4327.2s] err=-
+  [241/480] M0_NoFeedback      103284_e25015aa_0004/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline  (9.99s) [cumul 4337.6s] err=-
+  [242/480] M1_SolverOnly      103284_e25015aa_0004/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline/solver  (10.2s) [cumul 4348.2s] err=-
+  [243/480] M2_KQPOnly         103284_e25015aa_0004/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline  (13.45s) [cumul 4362.1s] err=-
+  [244/480] M3_SolverKQP       103284_e25015aa_0004/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline/solver  (10.58s) [cumul 4373.0s] err=-
+  [245/480] M0_NoFeedback      103481_b27a1cdf_0010/neg_01  op=E2_extrude_deep       status=no_change          n_iter=3  ch=pipeline  (18.94s) [cumul 4392.4s] err=-
+  [246/480] M1_SolverOnly      103481_b27a1cdf_0010/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline/solver  (8.84s) [cumul 4401.6s] err=-
+  [247/480] M2_KQPOnly         103481_b27a1cdf_0010/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline  (8.44s) [cumul 4410.4s] err=-
+  [248/480] M3_SolverKQP       103481_b27a1cdf_0010/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline/solver  (9.45s) [cumul 4420.1s] err=-
+  [249/480] M0_NoFeedback      104283_e5646f96_0000/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline  (12.64s) [cumul 4433.2s] err=-
+  [250/480] M1_SolverOnly      104283_e5646f96_0000/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline/solver  (11.3s) [cumul 4444.9s] err=-
+  [251/480] M2_KQPOnly         104283_e5646f96_0000/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline  (9.78s) [cumul 4455.0s] err=-
+  [252/480] M3_SolverKQP       104283_e5646f96_0000/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline/solver  (10.19s) [cumul 4465.5s] err=-
+  [253/480] M0_NoFeedback      104283_e5646f96_0001/neg_01  op=E2_extrude_deep       status=max_iter_exceeded  n_iter=3  ch=pipeline  (43.88s) [cumul 4509.8s] err=-
+  [254/480] M1_SolverOnly      104283_e5646f96_0001/neg_01  op=E2_extrude_deep       status=max_iter_exceeded  n_iter=3  ch=pipeline/solver  (63.27s) [cumul 4573.4s] err=-
+  [255/480] M2_KQPOnly         104283_e5646f96_0001/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline  (34.02s) [cumul 4607.7s] err=-
+  [256/480] M3_SolverKQP       104283_e5646f96_0001/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline/solver  (27.36s) [cumul 4635.4s] err=-
+  [257/480] M0_NoFeedback      104453_aba0f2d1_0002/neg_01  op=E2_extrude_deep       status=max_iter_exceeded  n_iter=3  ch=pipeline  (29.55s) [cumul 4665.3s] err=-
+  [258/480] M1_SolverOnly      104453_aba0f2d1_0002/neg_01  op=E2_extrude_deep       status=no_change          n_iter=3  ch=pipeline/solver  (36.95s) [cumul 4702.7s] err=-
+  [259/480] M2_KQPOnly         104453_aba0f2d1_0002/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline  (14.27s) [cumul 4717.3s] err=-
+  [260/480] M3_SolverKQP       104453_aba0f2d1_0002/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline/solver  (28.98s) [cumul 4746.7s] err=-
+  [261/480] M0_NoFeedback      104453_aba0f2d1_0006/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline  (10.16s) [cumul 4757.3s] err=-
+  [262/480] M1_SolverOnly      104453_aba0f2d1_0006/neg_01  op=E2_extrude_deep       status=max_iter_exceeded  n_iter=3  ch=pipeline/solver  (26.05s) [cumul 4783.7s] err=-
+  [263/480] M2_KQPOnly         104453_aba0f2d1_0006/neg_01  op=E2_extrude_deep       status=success            n_iter=2  ch=kernel/pipeline  (17.79s) [cumul 4801.9s] err=-
+  [264/480] M3_SolverKQP       104453_aba0f2d1_0006/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline/solver  (10.33s) [cumul 4812.6s] err=-
+  [265/480] M0_NoFeedback      104524_f829aab2_0001/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline  (10.01s) [cumul 4823.0s] err=-
+  [266/480] M1_SolverOnly      104524_f829aab2_0001/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline/solver  (10.1s) [cumul 4833.4s] err=-
+  [267/480] M2_KQPOnly         104524_f829aab2_0001/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline  (10.2s) [cumul 4844.0s] err=-
+  [268/480] M3_SolverKQP       104524_f829aab2_0001/neg_01  op=E2_extrude_deep       status=success            n_iter=2  ch=kernel/pipeline/solver  (19.22s) [cumul 4863.7s] err=-
+  [269/480] M0_NoFeedback      105278_909f3813_0000/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline  (8.84s) [cumul 4873.0s] err=-
+  [270/480] M1_SolverOnly      105278_909f3813_0000/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline/solver  (10.26s) [cumul 4883.6s] err=-
+  [271/480] M2_KQPOnly         105278_909f3813_0000/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline  (12.23s) [cumul 4896.2s] err=-
+  [272/480] M3_SolverKQP       105278_909f3813_0000/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline/solver  (12.43s) [cumul 4909.0s] err=-
+  [273/480] M0_NoFeedback      106817_bb28b7aa_0002/neg_01  op=E2_extrude_deep       status=max_iter_exceeded  n_iter=3  ch=pipeline  (27.65s) [cumul 4937.1s] err=-
+  [274/480] M1_SolverOnly      106817_bb28b7aa_0002/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline/solver  (12.08s) [cumul 4949.6s] err=-
+  [275/480] M2_KQPOnly         106817_bb28b7aa_0002/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline  (11.56s) [cumul 4961.6s] err=-
+  [276/480] M3_SolverKQP       106817_bb28b7aa_0002/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline/solver  (14.52s) [cumul 4976.5s] err=-
+  [277/480] M0_NoFeedback      106817_bb28b7aa_0003/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline  (13.05s) [cumul 4990.0s] err=-
+  [278/480] M1_SolverOnly      106817_bb28b7aa_0003/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline/solver  (12.0s) [cumul 5002.4s] err=-
+  [279/480] M2_KQPOnly         106817_bb28b7aa_0003/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline  (22.64s) [cumul 5025.4s] err=-
+  [280/480] M3_SolverKQP       106817_bb28b7aa_0003/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline/solver  (12.29s) [cumul 5038.1s] err=-
+  [281/480] M0_NoFeedback      106817_bb28b7aa_0004/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline  (11.5s) [cumul 5050.0s] err=-
+  [282/480] M1_SolverOnly      106817_bb28b7aa_0004/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline/solver  (11.34s) [cumul 5061.7s] err=-
+  [283/480] M2_KQPOnly         106817_bb28b7aa_0004/neg_01  op=E2_extrude_deep       status=max_iter_exceeded  n_iter=3  ch=kernel/pipeline  (8502.79s) [cumul 13565.4s] err=-
+  [284/480] M3_SolverKQP       106817_bb28b7aa_0004/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline/solver  (13.19s) [cumul 13579.1s] err=-
+  [285/480] M0_NoFeedback      107055_0500fdd1_0027/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline  (10.2s) [cumul 13589.7s] err=-
+  [286/480] M1_SolverOnly      107055_0500fdd1_0027/neg_01  op=E2_extrude_deep       status=llm_error          n_iter=2  ch=pipeline/solver  (58.38s) [cumul 13648.5s] err=-
+  [287/480] M2_KQPOnly         107055_0500fdd1_0027/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline  (34.98s) [cumul 13683.9s] err=-
+  [288/480] M3_SolverKQP       107055_0500fdd1_0027/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline/solver  (9.33s) [cumul 13693.6s] err=-
+  [289/480] M0_NoFeedback      107467_a8afc51d_0000/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline  (9.02s) [cumul 13703.1s] err=-
+  [290/480] M1_SolverOnly      107467_a8afc51d_0000/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline/solver  (9.28s) [cumul 13712.7s] err=-
+  [291/480] M2_KQPOnly         107467_a8afc51d_0000/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline  (8.8s) [cumul 13721.9s] err=-
+  [292/480] M3_SolverKQP       107467_a8afc51d_0000/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline/solver  (9.02s) [cumul 13731.3s] err=-
+  [293/480] M0_NoFeedback      107467_a8afc51d_0002/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline  (8.89s) [cumul 13740.7s] err=-
+  [294/480] M1_SolverOnly      107467_a8afc51d_0002/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline/solver  (9.13s) [cumul 13750.4s] err=-
+  [295/480] M2_KQPOnly         107467_a8afc51d_0002/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline  (14.72s) [cumul 13765.5s] err=-
+  [296/480] M3_SolverKQP       107467_a8afc51d_0002/neg_01  op=E2_extrude_deep       status=success            n_iter=2  ch=kernel/pipeline/solver  (1802.48s) [cumul 15568.4s] err=-
+  [297/480] M0_NoFeedback      107668_cf76b132_0001/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline  (10.69s) [cumul 15579.5s] err=-
+  [298/480] M1_SolverOnly      107668_cf76b132_0001/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline/solver  (11.03s) [cumul 15591.0s] err=-
+  [299/480] M2_KQPOnly         107668_cf76b132_0001/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline  (11.44s) [cumul 15602.8s] err=-
+  [300/480] M3_SolverKQP       107668_cf76b132_0001/neg_01  op=E2_extrude_deep       status=max_iter_exceeded  n_iter=3  ch=kernel/pipeline/solver  (29.62s) [cumul 15632.9s] err=-
+  [301/480] M0_NoFeedback      108244_329b1876_0000/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline  (16.59s) [cumul 15650.0s] err=-
+  [302/480] M1_SolverOnly      108244_329b1876_0000/neg_01  op=E2_extrude_deep       status=max_iter_exceeded  n_iter=3  ch=pipeline/solver  (30.72s) [cumul 15681.1s] err=-
+  [303/480] M2_KQPOnly         108244_329b1876_0000/neg_01  op=E2_extrude_deep       status=success            n_iter=2  ch=kernel/pipeline  (22.25s) [cumul 15703.7s] err=-
+  [304/480] M3_SolverKQP       108244_329b1876_0000/neg_01  op=E2_extrude_deep       status=success            n_iter=2  ch=kernel/pipeline/solver  (30.0s) [cumul 15734.1s] err=-
+  [305/480] M0_NoFeedback      108412_8de2f9c3_0000/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline  (10.48s) [cumul 15745.0s] err=-
+  [306/480] M1_SolverOnly      108412_8de2f9c3_0000/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline/solver  (10.24s) [cumul 15755.6s] err=-
+  [307/480] M2_KQPOnly         108412_8de2f9c3_0000/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline  (8.85s) [cumul 15764.9s] err=-
+  [308/480] M3_SolverKQP       108412_8de2f9c3_0000/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline/solver  (10.86s) [cumul 15776.1s] err=-
+  [309/480] M0_NoFeedback      108850_0dcd5ef1_0002/neg_01  op=E2_extrude_deep       status=no_change          n_iter=3  ch=pipeline  (21.42s) [cumul 15798.1s] err=-
+  [310/480] M1_SolverOnly      108850_0dcd5ef1_0002/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline/solver  (13.8s) [cumul 15812.3s] err=-
+  [311/480] M2_KQPOnly         108850_0dcd5ef1_0002/neg_01  op=E2_extrude_deep       status=success            n_iter=2  ch=kernel/pipeline  (18.74s) [cumul 15831.5s] err=-
+  [312/480] M3_SolverKQP       108850_0dcd5ef1_0002/neg_01  op=E2_extrude_deep       status=success            n_iter=2  ch=kernel/pipeline/solver  (7468.61s) [cumul 23300.6s] err=-
+  [313/480] M0_NoFeedback      108851_4d515b10_0007/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline  (11.21s) [cumul 23312.3s] err=-
+  [314/480] M1_SolverOnly      108851_4d515b10_0007/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline/solver  (14.63s) [cumul 23327.4s] err=-
+  [315/480] M2_KQPOnly         108851_4d515b10_0007/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline  (10.06s) [cumul 23337.9s] err=-
+  [316/480] M3_SolverKQP       108851_4d515b10_0007/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline/solver  (12.14s) [cumul 23350.5s] err=-
+  [317/480] M0_NoFeedback      108851_4d515b10_0009/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline  (10.05s) [cumul 23360.9s] err=-
+  [318/480] M1_SolverOnly      108851_4d515b10_0009/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=pipeline/solver  (11.97s) [cumul 23373.3s] err=-
+  [319/480] M2_KQPOnly         108851_4d515b10_0009/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline  (13.79s) [cumul 23387.6s] err=-
+  [320/480] M3_SolverKQP       108851_4d515b10_0009/neg_01  op=E2_extrude_deep       status=success            n_iter=1  ch=kernel/pipeline/solver  (9.56s) [cumul 23397.6s] err=-
+  [321/480] M0_NoFeedback      106323_77f22d29_0004/neg_03  op=E2_extrude_shallow    status=max_iter_exceeded  n_iter=3  ch=pipeline  (23.89s) [cumul 23422.0s] err=-
+  [322/480] M1_SolverOnly      106323_77f22d29_0004/neg_03  op=E2_extrude_shallow    status=success            n_iter=1  ch=pipeline/solver  (8.36s) [cumul 23430.8s] err=-
+  [323/480] M2_KQPOnly         106323_77f22d29_0004/neg_03  op=E2_extrude_shallow    status=success            n_iter=1  ch=kernel/pipeline  (8.3s) [cumul 23439.5s] err=-
+  [324/480] M3_SolverKQP       106323_77f22d29_0004/neg_03  op=E2_extrude_shallow    status=success            n_iter=2  ch=kernel/pipeline/solver  (17.75s) [cumul 23457.7s] err=-
+  [325/480] M0_NoFeedback      102295_86f842dd_0000/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=pipeline  (14837.94s) [cumul 38296.2s] err=-
+  [326/480] M1_SolverOnly      102295_86f842dd_0000/neg_02  op=E3_radius_up          status=max_iter_exceeded  n_iter=3  ch=pipeline/solver  (39.51s) [cumul 38336.1s] err=-
+  [327/480] M2_KQPOnly         102295_86f842dd_0000/neg_02  op=E3_radius_up          status=success            n_iter=3  ch=kernel/pipeline  (42.1s) [cumul 38378.7s] err=-
+  [328/480] M3_SolverKQP       102295_86f842dd_0000/neg_02  op=E3_radius_up          status=max_iter_exceeded  n_iter=3  ch=kernel/pipeline/solver  (62.03s) [cumul 38441.2s] err=-
+  [329/480] M0_NoFeedback      102314_91648bfc_0000/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=pipeline  (11.73s) [cumul 38453.5s] err=-
+  [330/480] M1_SolverOnly      102314_91648bfc_0000/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=pipeline/solver  (11.06s) [cumul 38465.1s] err=-
+  [331/480] M2_KQPOnly         102314_91648bfc_0000/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=kernel/pipeline  (11.14s) [cumul 38476.6s] err=-
+  [332/480] M3_SolverKQP       102314_91648bfc_0000/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=kernel/pipeline/solver  (10.32s) [cumul 38487.4s] err=-
+  [333/480] M0_NoFeedback      102410_f9877a7b_0000/neg_02  op=E3_radius_up          status=success            n_iter=2  ch=pipeline  (21.05s) [cumul 38509.1s] err=-
+  [334/480] M1_SolverOnly      102410_f9877a7b_0000/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=pipeline/solver  (12.29s) [cumul 38521.8s] err=-
+  [335/480] M2_KQPOnly         102410_f9877a7b_0000/neg_02  op=E3_radius_up          status=success            n_iter=2  ch=kernel/pipeline  (20.64s) [cumul 38542.9s] err=-
+  [336/480] M3_SolverKQP       102410_f9877a7b_0000/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=kernel/pipeline/solver  (11.89s) [cumul 38555.3s] err=-
+  [337/480] M0_NoFeedback      102410_f9877a7b_0012/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=pipeline  (11.07s) [cumul 38566.8s] err=-
+  [338/480] M1_SolverOnly      102410_f9877a7b_0012/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=pipeline/solver  (11.67s) [cumul 38578.9s] err=-
+  [339/480] M2_KQPOnly         102410_f9877a7b_0012/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=kernel/pipeline  (10.44s) [cumul 38589.8s] err=-
+  [340/480] M3_SolverKQP       102410_f9877a7b_0012/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=kernel/pipeline/solver  (9.75s) [cumul 38600.0s] err=-
+  [341/480] M0_NoFeedback      102760_26430589_0037/neg_02  op=E3_radius_up          status=no_change          n_iter=3  ch=pipeline  (36.05s) [cumul 38636.5s] err=-
+  [342/480] M1_SolverOnly      102760_26430589_0037/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=pipeline/solver  (11.88s) [cumul 38648.9s] err=-
+  [343/480] M2_KQPOnly         102760_26430589_0037/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=kernel/pipeline  (11.59s) [cumul 38660.9s] err=-
+  [344/480] M3_SolverKQP       102760_26430589_0037/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=kernel/pipeline/solver  (13.54s) [cumul 38674.9s] err=-
+  [345/480] M0_NoFeedback      103284_e25015aa_0003/neg_02  op=E3_radius_up          status=no_change          n_iter=3  ch=pipeline  (24.03s) [cumul 38699.6s] err=-
+  [346/480] M1_SolverOnly      103284_e25015aa_0003/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=pipeline/solver  (9.89s) [cumul 38709.9s] err=-
+  [347/480] M2_KQPOnly         103284_e25015aa_0003/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=kernel/pipeline  (10.85s) [cumul 38721.2s] err=-
+  [348/480] M3_SolverKQP       103284_e25015aa_0003/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=kernel/pipeline/solver  (10.3s) [cumul 38732.0s] err=-
+  [349/480] M0_NoFeedback      103284_e25015aa_0004/neg_02  op=E3_radius_up          status=success            n_iter=2  ch=pipeline  (3356.42s) [cumul 42089.0s] err=-
+  [350/480] M1_SolverOnly      103284_e25015aa_0004/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=pipeline/solver  (10.4s) [cumul 42099.9s] err=-
+  [351/480] M2_KQPOnly         103284_e25015aa_0004/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=kernel/pipeline  (9.35s) [cumul 42109.9s] err=-
+  [352/480] M3_SolverKQP       103284_e25015aa_0004/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=kernel/pipeline/solver  (9.22s) [cumul 42119.6s] err=-
+  [353/480] M0_NoFeedback      104283_e5646f96_0000/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=pipeline  (10.22s) [cumul 42130.5s] err=-
+  [354/480] M1_SolverOnly      104283_e5646f96_0000/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=pipeline/solver  (11.31s) [cumul 42142.3s] err=-
+  [355/480] M2_KQPOnly         104283_e5646f96_0000/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=kernel/pipeline  (12.78s) [cumul 42155.6s] err=-
+  [356/480] M3_SolverKQP       104283_e5646f96_0000/neg_02  op=E3_radius_up          status=success            n_iter=2  ch=kernel/pipeline/solver  (18.39s) [cumul 42174.5s] err=-
+  [357/480] M0_NoFeedback      104453_aba0f2d1_0002/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=pipeline  (14.38s) [cumul 42189.5s] err=-
+  [358/480] M1_SolverOnly      104453_aba0f2d1_0002/neg_02  op=E3_radius_up          status=no_change          n_iter=3  ch=pipeline/solver  (25.48s) [cumul 42215.5s] err=-
+  [359/480] M2_KQPOnly         104453_aba0f2d1_0002/neg_02  op=E3_radius_up          status=success            n_iter=3  ch=kernel/pipeline  (38.35s) [cumul 42254.6s] err=-
+  [360/480] M3_SolverKQP       104453_aba0f2d1_0002/neg_02  op=E3_radius_up          status=max_iter_exceeded  n_iter=3  ch=kernel/pipeline/solver  (11441.59s) [cumul 53696.9s] err=-
+  [361/480] M0_NoFeedback      104524_f829aab2_0001/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=pipeline  (10.46s) [cumul 53708.0s] err=-
+  [362/480] M1_SolverOnly      104524_f829aab2_0001/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=pipeline/solver  (11.68s) [cumul 53720.3s] err=-
+  [363/480] M2_KQPOnly         104524_f829aab2_0001/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=kernel/pipeline  (10.66s) [cumul 53731.6s] err=-
+  [364/480] M3_SolverKQP       104524_f829aab2_0001/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=kernel/pipeline/solver  (11.64s) [cumul 53743.9s] err=-
+  [365/480] M0_NoFeedback      106323_77f22d29_0004/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=pipeline  (22.36s) [cumul 53766.9s] err=-
+  [366/480] M1_SolverOnly      106323_77f22d29_0004/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=pipeline/solver  (10.84s) [cumul 53778.4s] err=-
+  [367/480] M2_KQPOnly         106323_77f22d29_0004/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=kernel/pipeline  (11.5s) [cumul 53790.5s] err=-
+  [368/480] M3_SolverKQP       106323_77f22d29_0004/neg_02  op=E3_radius_up          status=max_iter_exceeded  n_iter=3  ch=kernel/pipeline/solver  (26783.12s) [cumul 80574.5s] err=-
+  [369/480] M0_NoFeedback      106817_bb28b7aa_0002/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=pipeline  (12.58s) [cumul 80587.7s] err=-
+  [370/480] M1_SolverOnly      106817_bb28b7aa_0002/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=pipeline/solver  (12.7s) [cumul 80600.9s] err=-
+  [371/480] M2_KQPOnly         106817_bb28b7aa_0002/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=kernel/pipeline  (11.41s) [cumul 80612.9s] err=-
+  [372/480] M3_SolverKQP       106817_bb28b7aa_0002/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=kernel/pipeline/solver  (12.69s) [cumul 80626.0s] err=-
+  [373/480] M0_NoFeedback      106817_bb28b7aa_0003/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=pipeline  (8.25s) [cumul 80634.8s] err=-
+  [374/480] M1_SolverOnly      106817_bb28b7aa_0003/neg_02  op=E3_radius_up          status=max_iter_exceeded  n_iter=3  ch=pipeline/solver  (27.25s) [cumul 80662.5s] err=-
+  [375/480] M2_KQPOnly         106817_bb28b7aa_0003/neg_02  op=E3_radius_up          status=success            n_iter=3  ch=kernel/pipeline  (25.32s) [cumul 80688.3s] err=-
+  [376/480] M3_SolverKQP       106817_bb28b7aa_0003/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=kernel/pipeline/solver  (8.87s) [cumul 80697.6s] err=-
+  [377/480] M0_NoFeedback      106817_bb28b7aa_0004/neg_02  op=E3_radius_up          status=max_iter_exceeded  n_iter=3  ch=pipeline  (29.42s) [cumul 80727.7s] err=-
+  [378/480] M1_SolverOnly      106817_bb28b7aa_0004/neg_02  op=E3_radius_up          status=max_iter_exceeded  n_iter=3  ch=pipeline/solver  (28.97s) [cumul 80757.0s] err=-
+  [379/480] M2_KQPOnly         106817_bb28b7aa_0004/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=kernel/pipeline  (9.76s) [cumul 80767.2s] err=-
+  [380/480] M3_SolverKQP       106817_bb28b7aa_0004/neg_02  op=E3_radius_up          status=success            n_iter=2  ch=kernel/pipeline/solver  (17.48s) [cumul 80785.2s] err=-
+  [381/480] M0_NoFeedback      107055_0500fdd1_0027/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=pipeline  (8.38s) [cumul 80794.3s] err=-
+  [382/480] M1_SolverOnly      107055_0500fdd1_0027/neg_02  op=E3_radius_up          status=max_iter_exceeded  n_iter=3  ch=pipeline/solver  (25.02s) [cumul 80819.8s] err=-
+  [383/480] M2_KQPOnly         107055_0500fdd1_0027/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=kernel/pipeline  (7.91s) [cumul 80828.3s] err=-
+  [384/480] M3_SolverKQP       107055_0500fdd1_0027/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=kernel/pipeline/solver  (10.33s) [cumul 80839.1s] err=-
+  [385/480] M0_NoFeedback      107467_a8afc51d_0000/neg_02  op=E3_radius_up          status=max_iter_exceeded  n_iter=3  ch=pipeline  (29.36s) [cumul 80869.1s] err=-
+  [386/480] M1_SolverOnly      107467_a8afc51d_0000/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=pipeline/solver  (10.12s) [cumul 80879.8s] err=-
+  [387/480] M2_KQPOnly         107467_a8afc51d_0000/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=kernel/pipeline  (9.36s) [cumul 80889.8s] err=-
+  [388/480] M3_SolverKQP       107467_a8afc51d_0000/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=kernel/pipeline/solver  (8.76s) [cumul 80899.1s] err=-
+  [389/480] M0_NoFeedback      107467_a8afc51d_0002/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=pipeline  (9.15s) [cumul 80908.9s] err=-
+  [390/480] M1_SolverOnly      107467_a8afc51d_0002/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=pipeline/solver  (8.88s) [cumul 80918.3s] err=-
+  [391/480] M2_KQPOnly         107467_a8afc51d_0002/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=kernel/pipeline  (9.51s) [cumul 80928.4s] err=-
+  [392/480] M3_SolverKQP       107467_a8afc51d_0002/neg_02  op=E3_radius_up          status=success            n_iter=2  ch=kernel/pipeline/solver  (14.64s) [cumul 80943.6s] err=-
+  [393/480] M0_NoFeedback      107668_cf76b132_0001/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=pipeline  (11.1s) [cumul 80955.3s] err=-
+  [394/480] M1_SolverOnly      107668_cf76b132_0001/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=pipeline/solver  (10.33s) [cumul 80966.3s] err=-
+  [395/480] M2_KQPOnly         107668_cf76b132_0001/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=kernel/pipeline  (9.38s) [cumul 80976.2s] err=-
+  [396/480] M3_SolverKQP       107668_cf76b132_0001/neg_02  op=E3_radius_up          status=success            n_iter=1  ch=kernel/pipeline/solver  (10.19s) [cumul 80987.0s] err=-
+  [397/480] M0_NoFeedback      102760_26430589_0037/neg_03  op=E4_void_add           status=success            n_iter=1  ch=pipeline  (10.87s) [cumul 80998.5s] err=-
+  [398/480] M1_SolverOnly      102760_26430589_0037/neg_03  op=E4_void_add           status=success            n_iter=1  ch=pipeline/solver  (9.24s) [cumul 81008.3s] err=-
+  [399/480] M2_KQPOnly         102760_26430589_0037/neg_03  op=E4_void_add           status=success            n_iter=1  ch=kernel/pipeline  (12.21s) [cumul 81021.1s] err=-
+  [400/480] M3_SolverKQP       102760_26430589_0037/neg_03  op=E4_void_add           status=success            n_iter=1  ch=kernel/pipeline/solver  (9.98s) [cumul 81031.7s] err=-
+  [401/480] M0_NoFeedback      103284_e25015aa_0003/neg_03  op=E4_void_add           status=success            n_iter=1  ch=pipeline  (9.42s) [cumul 81041.8s] err=-
+  [402/480] M1_SolverOnly      103284_e25015aa_0003/neg_03  op=E4_void_add           status=success            n_iter=1  ch=pipeline/solver  (9.36s) [cumul 81051.7s] err=-
+  [403/480] M2_KQPOnly         103284_e25015aa_0003/neg_03  op=E4_void_add           status=success            n_iter=1  ch=kernel/pipeline  (10.33s) [cumul 81062.6s] err=-
+  [404/480] M3_SolverKQP       103284_e25015aa_0003/neg_03  op=E4_void_add           status=success            n_iter=1  ch=kernel/pipeline/solver  (9.79s) [cumul 81072.9s] err=-
+  [405/480] M0_NoFeedback      103284_e25015aa_0004/neg_03  op=E4_void_add           status=success            n_iter=1  ch=pipeline  (13.62s) [cumul 81087.3s] err=-
+  [406/480] M1_SolverOnly      103284_e25015aa_0004/neg_03  op=E4_void_add           status=success            n_iter=1  ch=pipeline/solver  (9.23s) [cumul 81097.1s] err=-
+  [407/480] M2_KQPOnly         103284_e25015aa_0004/neg_03  op=E4_void_add           status=success            n_iter=1  ch=kernel/pipeline  (9.82s) [cumul 81107.5s] err=-
+  [408/480] M3_SolverKQP       103284_e25015aa_0004/neg_03  op=E4_void_add           status=success            n_iter=2  ch=kernel/pipeline/solver  (18.71s) [cumul 81126.8s] err=-
+  [409/480] M0_NoFeedback      104283_e5646f96_0000/neg_03  op=E4_void_add           status=success            n_iter=1  ch=pipeline  (10.99s) [cumul 81138.5s] err=-
+  [410/480] M1_SolverOnly      104283_e5646f96_0000/neg_03  op=E4_void_add           status=success            n_iter=1  ch=pipeline/solver  (9.05s) [cumul 81148.1s] err=-
+  [411/480] M2_KQPOnly         104283_e5646f96_0000/neg_03  op=E4_void_add           status=success            n_iter=1  ch=kernel/pipeline  (9.67s) [cumul 81158.3s] err=-
+  [412/480] M3_SolverKQP       104283_e5646f96_0000/neg_03  op=E4_void_add           status=success            n_iter=1  ch=kernel/pipeline/solver  (10.0s) [cumul 81168.9s] err=-
+  [413/480] M0_NoFeedback      104524_f829aab2_0001/neg_03  op=E4_void_add           status=success            n_iter=1  ch=pipeline  (9.85s) [cumul 81179.5s] err=-
+  [414/480] M1_SolverOnly      104524_f829aab2_0001/neg_03  op=E4_void_add           status=success            n_iter=1  ch=pipeline/solver  (10.95s) [cumul 81191.0s] err=-
+  [415/480] M2_KQPOnly         104524_f829aab2_0001/neg_03  op=E4_void_add           status=success            n_iter=1  ch=kernel/pipeline  (11.43s) [cumul 81203.0s] err=-
+  [416/480] M3_SolverKQP       104524_f829aab2_0001/neg_03  op=E4_void_add           status=success            n_iter=2  ch=kernel/pipeline/solver  (16.23s) [cumul 81219.8s] err=-
+  [417/480] M0_NoFeedback      106817_bb28b7aa_0002/neg_03  op=E4_void_add           status=success            n_iter=1  ch=pipeline  (10.78s) [cumul 81231.3s] err=-
+  [418/480] M1_SolverOnly      106817_bb28b7aa_0002/neg_03  op=E4_void_add           status=success            n_iter=1  ch=pipeline/solver  (10.87s) [cumul 81242.7s] err=-
+  [419/480] M2_KQPOnly         106817_bb28b7aa_0002/neg_03  op=E4_void_add           status=success            n_iter=2  ch=kernel/pipeline  (22.22s) [cumul 81265.5s] err=-
+  [420/480] M3_SolverKQP       106817_bb28b7aa_0002/neg_03  op=E4_void_add           status=success            n_iter=1  ch=kernel/pipeline/solver  (11.06s) [cumul 81277.2s] err=-
+  [421/480] M0_NoFeedback      106817_bb28b7aa_0003/neg_03  op=E4_void_add           status=no_change          n_iter=3  ch=pipeline  (20.06s) [cumul 81297.9s] err=-
+  [422/480] M1_SolverOnly      106817_bb28b7aa_0003/neg_03  op=E4_void_add           status=success            n_iter=1  ch=pipeline/solver  (10.59s) [cumul 81309.0s] err=-
+  [423/480] M2_KQPOnly         106817_bb28b7aa_0003/neg_03  op=E4_void_add           status=success            n_iter=1  ch=kernel/pipeline  (12.47s) [cumul 81322.1s] err=-
+  [424/480] M3_SolverKQP       106817_bb28b7aa_0003/neg_03  op=E4_void_add           status=success            n_iter=2  ch=kernel/pipeline/solver  (21.35s) [cumul 81344.1s] err=-
+  [425/480] M0_NoFeedback      107467_a8afc51d_0000/neg_03  op=E4_void_add           status=success            n_iter=1  ch=pipeline  (10.91s) [cumul 81355.6s] err=-
+  [426/480] M1_SolverOnly      107467_a8afc51d_0000/neg_03  op=E4_void_add           status=success            n_iter=1  ch=pipeline/solver  (9.69s) [cumul 81365.9s] err=-
+  [427/480] M2_KQPOnly         107467_a8afc51d_0000/neg_03  op=E4_void_add           status=success            n_iter=1  ch=kernel/pipeline  (10.76s) [cumul 81377.2s] err=-
+  [428/480] M3_SolverKQP       107467_a8afc51d_0000/neg_03  op=E4_void_add           status=success            n_iter=1  ch=kernel/pipeline/solver  (9.2s) [cumul 81387.0s] err=-
+  [429/480] M0_NoFeedback      107467_a8afc51d_0002/neg_03  op=E4_void_add           status=success            n_iter=1  ch=pipeline  (8.87s) [cumul 81396.6s] err=-
+  [430/480] M1_SolverOnly      107467_a8afc51d_0002/neg_03  op=E4_void_add           status=success            n_iter=1  ch=pipeline/solver  (9.61s) [cumul 81406.8s] err=-
+  [431/480] M2_KQPOnly         107467_a8afc51d_0002/neg_03  op=E4_void_add           status=success            n_iter=1  ch=kernel/pipeline  (9.78s) [cumul 81417.2s] err=-
+  [432/480] M3_SolverKQP       107467_a8afc51d_0002/neg_03  op=E4_void_add           status=success            n_iter=1  ch=kernel/pipeline/solver  (10.92s) [cumul 81428.7s] err=-
+  [433/480] M0_NoFeedback      101427_a9bcb09c_0001/neg_02  op=E4_void_remove_one    status=no_change          n_iter=3  ch=pipeline  (29.17s) [cumul 81458.6s] err=-
+  [434/480] M1_SolverOnly      101427_a9bcb09c_0001/neg_02  op=E4_void_remove_one    status=max_iter_exceeded  n_iter=3  ch=pipeline/solver  (31.59s) [cumul 81490.8s] err=-
+  [435/480] M2_KQPOnly         101427_a9bcb09c_0001/neg_02  op=E4_void_remove_one    status=max_iter_exceeded  n_iter=3  ch=kernel/pipeline  (42.93s) [cumul 81534.4s] err=-
+  [436/480] M3_SolverKQP       101427_a9bcb09c_0001/neg_02  op=E4_void_remove_one    status=success            n_iter=1  ch=kernel/pipeline/solver  (10.64s) [cumul 81545.7s] err=-
+  [437/480] M0_NoFeedback      101427_a9bcb09c_0001/neg_03  op=E4_void_remove_one    status=no_change          n_iter=3  ch=pipeline  (22.52s) [cumul 81568.9s] err=-
+  [438/480] M1_SolverOnly      101427_a9bcb09c_0001/neg_03  op=E4_void_remove_one    status=max_iter_exceeded  n_iter=3  ch=pipeline/solver  (36.94s) [cumul 81606.4s] err=-
+  [439/480] M2_KQPOnly         101427_a9bcb09c_0001/neg_03  op=E4_void_remove_one    status=success            n_iter=2  ch=kernel/pipeline  (25.33s) [cumul 81632.4s] err=-
+  [440/480] M3_SolverKQP       101427_a9bcb09c_0001/neg_03  op=E4_void_remove_one    status=success            n_iter=3  ch=kernel/pipeline/solver  (32.63s) [cumul 81665.6s] err=-
+  [441/480] M0_NoFeedback      101817_b02acd9f_0000/neg_02  op=E4_void_remove_one    status=success            n_iter=1  ch=pipeline  (13.11s) [cumul 81679.4s] err=-
+  [442/480] M1_SolverOnly      101817_b02acd9f_0000/neg_02  op=E4_void_remove_one    status=max_iter_exceeded  n_iter=3  ch=pipeline/solver  (33.94s) [cumul 81714.0s] err=-
+  [443/480] M2_KQPOnly         101817_b02acd9f_0000/neg_02  op=E4_void_remove_one    status=success            n_iter=1  ch=kernel/pipeline  (11.65s) [cumul 81726.2s] err=-
+  [444/480] M3_SolverKQP       101817_b02acd9f_0000/neg_02  op=E4_void_remove_one    status=success            n_iter=1  ch=kernel/pipeline/solver  (12.98s) [cumul 81739.9s] err=-
+  [445/480] M0_NoFeedback      101817_b02acd9f_0000/neg_03  op=E4_void_remove_one    status=success            n_iter=1  ch=pipeline  (14.75s) [cumul 81755.4s] err=-
+  [446/480] M1_SolverOnly      101817_b02acd9f_0000/neg_03  op=E4_void_remove_one    status=success            n_iter=1  ch=pipeline/solver  (11.5s) [cumul 81767.6s] err=-
+  [447/480] M2_KQPOnly         101817_b02acd9f_0000/neg_03  op=E4_void_remove_one    status=success            n_iter=2  ch=kernel/pipeline  (24.39s) [cumul 81792.6s] err=-
+  [448/480] M3_SolverKQP       101817_b02acd9f_0000/neg_03  op=E4_void_remove_one    status=max_iter_exceeded  n_iter=3  ch=kernel/pipeline/solver  (32.95s) [cumul 81826.2s] err=-
+  [449/480] M0_NoFeedback      101817_b02acd9f_0001/neg_02  op=E4_void_remove_one    status=no_change          n_iter=3  ch=pipeline  (20.74s) [cumul 81847.6s] err=-
+  [450/480] M1_SolverOnly      101817_b02acd9f_0001/neg_02  op=E4_void_remove_one    status=success            n_iter=1  ch=pipeline/solver  (10.41s) [cumul 81858.6s] err=-
+  [451/480] M2_KQPOnly         101817_b02acd9f_0001/neg_02  op=E4_void_remove_one    status=success            n_iter=1  ch=kernel/pipeline  (12.17s) [cumul 81871.4s] err=-
+  [452/480] M3_SolverKQP       101817_b02acd9f_0001/neg_02  op=E4_void_remove_one    status=success            n_iter=2  ch=kernel/pipeline/solver  (19.45s) [cumul 81891.5s] err=-
+  [453/480] M0_NoFeedback      101817_b02acd9f_0001/neg_03  op=E4_void_remove_one    status=no_change          n_iter=3  ch=pipeline  (20.26s) [cumul 81912.4s] err=-
+  [454/480] M1_SolverOnly      101817_b02acd9f_0001/neg_03  op=E4_void_remove_one    status=success            n_iter=1  ch=pipeline/solver  (12.59s) [cumul 81925.6s] err=-
+  [455/480] M2_KQPOnly         101817_b02acd9f_0001/neg_03  op=E4_void_remove_one    status=success            n_iter=3  ch=kernel/pipeline  (28.79s) [cumul 81955.0s] err=-
+  [456/480] M3_SolverKQP       101817_b02acd9f_0001/neg_03  op=E4_void_remove_one    status=success            n_iter=2  ch=kernel/pipeline/solver  (19.99s) [cumul 81975.7s] err=-
+  [457/480] M0_NoFeedback      101817_b02acd9f_0002/neg_02  op=E4_void_remove_one    status=max_iter_exceeded  n_iter=3  ch=pipeline  (42.8s) [cumul 82019.2s] err=-
+  [458/480] M1_SolverOnly      101817_b02acd9f_0002/neg_02  op=E4_void_remove_one    status=max_iter_exceeded  n_iter=3  ch=pipeline/solver  (34.78s) [cumul 82054.5s] err=-
+  [459/480] M2_KQPOnly         101817_b02acd9f_0002/neg_02  op=E4_void_remove_one    status=max_iter_exceeded  n_iter=3  ch=kernel/pipeline  (42.9s) [cumul 82098.0s] err=-
+  [460/480] M3_SolverKQP       101817_b02acd9f_0002/neg_02  op=E4_void_remove_one    status=success            n_iter=1  ch=kernel/pipeline/solver  (17.02s) [cumul 82115.6s] err=-
+  [461/480] M0_NoFeedback      101817_b02acd9f_0002/neg_03  op=E4_void_remove_one    status=max_iter_exceeded  n_iter=3  ch=pipeline  (37.59s) [cumul 82153.9s] err=-
+  [462/480] M1_SolverOnly      101817_b02acd9f_0002/neg_03  op=E4_void_remove_one    status=max_iter_exceeded  n_iter=3  ch=pipeline/solver  (40.55s) [cumul 82195.0s] err=-
+  [463/480] M2_KQPOnly         101817_b02acd9f_0002/neg_03  op=E4_void_remove_one    status=max_iter_exceeded  n_iter=3  ch=kernel/pipeline  (37.05s) [cumul 82232.5s] err=-
+  [464/480] M3_SolverKQP       101817_b02acd9f_0002/neg_03  op=E4_void_remove_one    status=max_iter_exceeded  n_iter=3  ch=kernel/pipeline/solver  (28.92s) [cumul 82261.9s] err=-
+  [465/480] M0_NoFeedback      104453_aba0f2d1_0006/neg_02  op=E4_void_remove_one    status=success            n_iter=1  ch=pipeline  (9.92s) [cumul 82272.3s] err=-
+  [466/480] M1_SolverOnly      104453_aba0f2d1_0006/neg_02  op=E4_void_remove_one    status=success            n_iter=1  ch=pipeline/solver  (8.16s) [cumul 82280.9s] err=-
+  [467/480] M2_KQPOnly         104453_aba0f2d1_0006/neg_02  op=E4_void_remove_one    status=success            n_iter=3  ch=kernel/pipeline  (23.29s) [cumul 82304.6s] err=-
+  [468/480] M3_SolverKQP       104453_aba0f2d1_0006/neg_02  op=E4_void_remove_one    status=max_iter_exceeded  n_iter=3  ch=kernel/pipeline/solver  (31.69s) [cumul 82336.7s] err=-
+  [469/480] M0_NoFeedback      104453_aba0f2d1_0006/neg_03  op=E4_void_remove_one    status=no_change          n_iter=2  ch=pipeline  (9.67s) [cumul 82346.9s] err=-
+  [470/480] M1_SolverOnly      104453_aba0f2d1_0006/neg_03  op=E4_void_remove_one    status=no_change          n_iter=2  ch=pipeline/solver  (9.7s) [cumul 82357.1s] err=-
+  [471/480] M2_KQPOnly         104453_aba0f2d1_0006/neg_03  op=E4_void_remove_one    status=max_iter_exceeded  n_iter=3  ch=kernel/pipeline  (29.5s) [cumul 82387.1s] err=-
+  [472/480] M3_SolverKQP       104453_aba0f2d1_0006/neg_03  op=E4_void_remove_one    status=success            n_iter=1  ch=kernel/pipeline/solver  (11.35s) [cumul 82398.9s] err=-
+  [473/480] M0_NoFeedback      106323_77f22d29_0004/neg_01  op=E5_extent_type_chang  status=success            n_iter=2  ch=pipeline  (17.73s) [cumul 82417.3s] err=-
+  [474/480] M1_SolverOnly      106323_77f22d29_0004/neg_01  op=E5_extent_type_chang  status=success            n_iter=2  ch=pipeline/solver  (15.05s) [cumul 82432.8s] err=-
+  [475/480] M2_KQPOnly         106323_77f22d29_0004/neg_01  op=E5_extent_type_chang  status=success            n_iter=1  ch=kernel/pipeline  (8.59s) [cumul 82441.9s] err=-
+  [476/480] M3_SolverKQP       106323_77f22d29_0004/neg_01  op=E5_extent_type_chang  status=success            n_iter=1  ch=kernel/pipeline/solver  (8.48s) [cumul 82450.9s] err=-
+
+Done. 480 trials total.

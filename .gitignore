@@ -11,3 +11,9 @@ experiments/phase2b_triplets/*/code_gt.py
 experiments/phase2b_triplets/*/code_perturbed.py
 experiments/phase2b_triplets/*/step_gt/
 experiments/phase2b_triplets/*/step_perturbed/
+
+# Per-trial artefacts from experiments/phase2b_m0m3/<method>/<sid>/<nid>/iter_XX/:
+# written by p2b_m0m3_on_frozen.py during repair iterations.  We DO commit
+# the aggregate pilot_results.json + REPORT.md + SIGNIFICANCE.md + log.
+experiments/phase2b_m0m3/*/code_perturbed_input.py
+experiments/phase2b_m0m3/*/iter_*/
