@@ -1,0 +1,74 @@
+import os
+import sys
+import traceback
+import json
+
+# User script is wrapped in a function body so the try/except can
+# capture it without indentation issues.
+def _user_main():
+    import cadquery as cq
+    from cadquery import exporters
+    import math
+
+    OUT_STEP_PATH = r"D:\PythonProgramming\CAD Generation\Constraint-grounded agentic CAD generation\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\experiments\phase2b_m0m3\M2_KQPOnly\101817_b02acd9f_0001\neg_02\iter_00/generated.step"
+
+    # Design Plan: rectangular frame, outer 40x40 mm, inner 37.6x37.6 mm, extrude 520 mm
+    # The outer rectangle spans from (-4,0) to (0,4) in UV space, but dimensions indicate 40x40 mm.
+    # The inner rectangle is offset by 0.12 mm from each edge, giving 37.6x37.6 mm.
+    # We'll construct the profile in the XY plane and extrude along Z.
+
+    # Create the outer rectangle centered at origin for simplicity
+    outer_rect = cq.Workplane("XY").rect(40.0, 40.0, centered=True)
+
+    # Create the inner rectangle (the hole)
+    inner_rect = cq.Workplane("XY").rect(37.6, 37.6, centered=True)
+
+    # Build the profile: outer rectangle with inner rectangle subtracted
+    # We need to create a wire from the outer rect, then cut the inner rect
+    profile = outer_rect.rect(40.0, 40.0, centered=True).extrude(0.1)  # dummy extrude to get a face
+
+    # Better approach: use the workplane to create the profile directly
+    # Start with the outer rectangle as a closed wire
+    result = cq.Workplane("XY").rect(40.0, 40.0, centered=True).extrude(520.0)
+
+    # Now cut the inner hole
+    inner_cut = cq.Workplane("XY").rect(37.6, 37.6, centered=True).extrude(520.0)
+    result = result.cut(inner_cut)
+
+    # Export
+    cq.exporters.export(result, OUT_STEP_PATH)
+
+import cadquery as _cq_auto
+_INSTANTIATED_WORKPLANES = []
+_orig_wp_init = _cq_auto.Workplane.__init__
+def _hooked_wp_init(self, *args, **kwargs):
+    _INSTANTIATED_WORKPLANES.append(self)
+    return _orig_wp_init(self, *args, **kwargs)
+_cq_auto.Workplane.__init__ = _hooked_wp_init
+
+def _export_latest_wp(OUT_STEP_PATH):
+    if not _INSTANTIATED_WORKPLANES:
+        return False, "no_workplane_created"
+    wp = _INSTANTIATED_WORKPLANES[-1]
+    try:
+        solid_or_compound = wp.val() if hasattr(wp, "val") else wp
+        _cq_auto.exporters.export(solid_or_compound, OUT_STEP_PATH)
+        return True, "ok"
+    except Exception as e:
+        return False, f"export_error: {e}"
+
+try:
+    _user_main()
+    out_path = os.environ.get("OUT_STEP_PATH", "")
+    if out_path and os.path.exists(out_path) and os.path.getsize(out_path) > 0:
+        print(json.dumps({"status": "ok", "out_step": out_path}))
+    else:
+        ok, reason = _export_latest_wp(out_path) if out_path else (False, "no_out_path")
+        if ok and out_path and os.path.exists(out_path) and os.path.getsize(out_path) > 0:
+            print(json.dumps({"status": "ok_autoexport", "out_step": out_path}))
+        else:
+            print(json.dumps({"status": "no_step_written", "out_step": out_path, "autoexport_reason": reason}))
+except Exception as e:
+    print(json.dumps({"status": "exception",
+                       "error": str(e),
+                       "traceback": traceback.format_exc()[-500:]}))

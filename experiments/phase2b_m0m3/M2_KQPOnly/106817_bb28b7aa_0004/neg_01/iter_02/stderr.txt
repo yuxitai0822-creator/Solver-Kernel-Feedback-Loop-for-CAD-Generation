@@ -1,0 +1,2 @@
+
+Command '['D:/Anaconda/envs/cad_subproject1/python.exe', 'D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_m0m3\\M2_KQPOnly\\106817_bb28b7aa_0004\\neg_01\\iter_02\\runner_script.py']' timed out after -8357.484999999986 seconds

@@ -1,0 +1,8 @@
+Discovered 138 perturbation pairs.
+Already done (verified, resume): 106; to run (incl. retry): 32.
+  [1/32] 102295_86f842dd_0000/neg_03  op=E1_envelope_v_shrink     layer=TypeA  -> verified=True (5870.17s) L2=['pass', 'pass'] L3actual=['q_bbox_v', 'q_occt_valid'] L3missing=[] L3extras=[]
+  [2/32] 102314_91648bfc_0000/neg_03  op=E6_inner_gt_outer        layer=TypeA  -> verified=False (12.9s) L2=['pass', 'pass'] L3actual=[] L3missing=['q_is_solid', 'q_occt_valid'] L3extras=[]
+  [3/32] 102410_f9877a7b_0000/neg_03  op=E6_inner_gt_outer        layer=TypeA  -> verified=False (12.46s) L2=['pass', 'pass'] L3actual=[] L3missing=['q_is_solid', 'q_occt_valid'] L3extras=[]
+  [4/32] 102410_f9877a7b_0012/neg_03  op=E6_inner_gt_outer        layer=TypeA  -> verified=False (11.45s) L2=['pass', 'pass'] L3actual=[] L3missing=['q_is_solid', 'q_occt_valid'] L3extras=[]
+  [5/32] 102760_26430589_0037/neg_03  op=E4_void_add              layer=TypeA  -> verified=False (10.07s) L2=['pass', 'pass'] L3actual=['q_radius'] L3missing=[] L3extras=[]
+  [6/32] 103284_e25015aa_0003/neg_03  op=E4_void_add              layer=TypeA  -> verified=False (9.75s) L2=['pass', 'pass'] L3actual=['q_radius'] L3missing=[] L3extras=[]

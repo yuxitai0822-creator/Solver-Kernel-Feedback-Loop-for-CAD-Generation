@@ -1,0 +1,4 @@
+  File "D:\PythonProgramming\CAD Generation\Constraint-grounded agentic CAD generation\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\experiments\phase2b_m0m3\M3_SolverKQP\107467_a8afc51d_0002\neg_02\iter_00\runner_script.py", line 19
+    OUT_STEP = os.environ.get("OUT_STEP_PATH", "OUT_STEP = r"D:\PythonProgramming\CAD Generation\Constraint-grounded agentic CAD generation\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\experiments\phase2b_m0m3\M3_SolverKQP\107467_a8afc51d_0002\neg_02\iter_00/generated.step"".split("=")[-1].strip().strip("r").strip("\").strip("\").strip("\"))
+                                               ^^^^^^^^^^^^^^^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?

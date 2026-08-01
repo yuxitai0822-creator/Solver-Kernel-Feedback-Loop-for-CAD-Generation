@@ -1,0 +1,38 @@
+Discovered 138 perturbation pairs.
+Already done (verified, resume): 107; to run (incl. retry): 31.
+  [1/31] 102314_91648bfc_0000/neg_03  op=E6_inner_gt_outer        layer=TypeA  -> verified=False (13.07s) L2=['pass', 'pass'] L3actual=[] L3missing=['q_is_solid', 'q_occt_valid'] L3extras=[]
+  [2/31] 102410_f9877a7b_0000/neg_03  op=E6_inner_gt_outer        layer=TypeA  -> verified=False (11.76s) L2=['pass', 'pass'] L3actual=[] L3missing=['q_is_solid', 'q_occt_valid'] L3extras=[]
+  [3/31] 102410_f9877a7b_0012/neg_03  op=E6_inner_gt_outer        layer=TypeA  -> verified=False (11.64s) L2=['pass', 'pass'] L3actual=[] L3missing=['q_is_solid', 'q_occt_valid'] L3extras=[]
+  [4/31] 102760_26430589_0037/neg_03  op=E4_void_add              layer=TypeA  -> verified=True (10.95s) L2=['pass', 'pass'] L3actual=['q_radius'] L3missing=[] L3extras=[]
+  [5/31] 103284_e25015aa_0003/neg_03  op=E4_void_add              layer=TypeA  -> verified=True (10.77s) L2=['pass', 'pass'] L3actual=['q_radius'] L3missing=[] L3extras=[]
+  [6/31] 103284_e25015aa_0004/neg_03  op=E4_void_add              layer=TypeA  -> verified=True (10.83s) L2=['pass', 'pass'] L3actual=['q_radius'] L3missing=[] L3extras=[]
+  [7/31] 104283_e5646f96_0000/neg_03  op=E4_void_add              layer=TypeA  -> verified=True (10.74s) L2=['pass', 'pass'] L3actual=['q_radius'] L3missing=[] L3extras=[]
+  [8/31] 104283_e5646f96_0001/neg_02  op=E1_envelope_u            layer=TypeA  -> verified=True (13.1s) L2=['pass', 'pass'] L3actual=[] L3missing=[] L3extras=[]
+  [9/31] 104283_e5646f96_0001/neg_03  op=E1_envelope_v_shrink     layer=TypeA  -> verified=True (23.74s) L2=['pass', 'pass'] L3actual=[] L3missing=[] L3extras=[]
+  [10/31] 104453_aba0f2d1_0002/neg_03  op=E1_envelope_v_shrink     layer=TypeA  -> verified=True (221.46s) L2=['pass', 'pass'] L3actual=['q_bbox_v', 'q_occt_valid'] L3missing=[] L3extras=[]
+  [11/31] 104524_f829aab2_0001/neg_03  op=E4_void_add              layer=TypeA  -> verified=True (11.61s) L2=['pass', 'pass'] L3actual=['q_radius'] L3missing=[] L3extras=[]
+  [12/31] 106323_77f22d29_0004/neg_01  op=E5_extent_type_change    layer=TypeA  -> verified=True (12.36s) L2=['pass', 'pass'] L3actual=['q_bbox_w'] L3missing=[] L3extras=[]
+  [13/31] 106817_bb28b7aa_0002/neg_03  op=E4_void_add              layer=TypeA  -> verified=True (11.06s) L2=['pass', 'pass'] L3actual=['q_radius'] L3missing=[] L3extras=[]
+  [14/31] 106817_bb28b7aa_0003/neg_03  op=E4_void_add              layer=TypeA  -> verified=True (11.1s) L2=['pass', 'pass'] L3actual=['q_radius'] L3missing=[] L3extras=[]
+  [15/31] 106817_bb28b7aa_0004/neg_03  op=E6_inner_gt_outer        layer=TypeA  -> verified=False (12.63s) L2=['pass', 'pass'] L3actual=[] L3missing=['q_is_solid', 'q_occt_valid'] L3extras=[]
+  [16/31] 107055_0500fdd1_0027/neg_03  op=E6_inner_gt_outer        layer=TypeA  -> verified=False (11.89s) L2=['pass', 'pass'] L3actual=[] L3missing=['q_is_solid', 'q_occt_valid'] L3extras=[]
+  [17/31] 107467_a8afc51d_0000/neg_03  op=E4_void_add              layer=TypeA  -> verified=True (10.86s) L2=['pass', 'pass'] L3actual=['q_radius'] L3missing=[] L3extras=[]
+  [18/31] 107467_a8afc51d_0002/neg_03  op=E4_void_add              layer=TypeA  -> verified=True (11.06s) L2=['pass', 'pass'] L3actual=['q_radius'] L3missing=[] L3extras=[]
+  [19/31] 107668_cf76b132_0001/neg_03  op=E6_inner_gt_outer        layer=TypeA  -> verified=False (5479.7s) L2=['pass', 'pass'] L3actual=[] L3missing=['q_is_solid', 'q_occt_valid'] L3extras=[]
+  [20/31] 108850_0dcd5ef1_0004/neg_01  op=E2_extrude_deep          layer=TypeA  -> verified=False (17.76s) L2=['pass', 'fail'] L3actual=[] L3missing=['q_bbox_w'] L3extras=[]
+  [21/31] 108850_0dcd5ef1_0004/neg_02  op=E1_envelope_u            layer=TypeA  -> verified=False (15.71s) L2=['pass', 'fail'] L3actual=[] L3missing=['q_bbox_u'] L3extras=[]
+  [22/31] 108850_0dcd5ef1_0004/neg_03  op=E1_envelope_v_shrink     layer=TypeA  -> verified=False (16.01s) L2=['pass', 'fail'] L3actual=['q_bbox_v'] L3missing=[] L3extras=[]
+  [23/31] 108851_4d515b10_0005/neg_01  op=E2_extrude_deep          layer=TypeA  -> verified=False (16.64s) L2=['pass', 'fail'] L3actual=[] L3missing=['q_bbox_w'] L3extras=[]
+  [24/31] 108851_4d515b10_0005/neg_02  op=E1_envelope_u            layer=TypeA  -> verified=False (15.3s) L2=['pass', 'fail'] L3actual=[] L3missing=['q_bbox_u'] L3extras=[]
+  [25/31] 108851_4d515b10_0005/neg_03  op=E1_envelope_v_shrink     layer=TypeA  -> verified=False (16.34s) L2=['pass', 'fail'] L3actual=['q_bbox_v'] L3missing=[] L3extras=[]
+  [26/31] 108851_4d515b10_0006/neg_01  op=E2_extrude_deep          layer=TypeA  -> verified=False (16.21s) L2=['pass', 'fail'] L3actual=[] L3missing=['q_bbox_w'] L3extras=[]
+  [27/31] 108851_4d515b10_0006/neg_02  op=E1_envelope_u            layer=TypeA  -> verified=False (16.2s) L2=['pass', 'fail'] L3actual=[] L3missing=['q_bbox_u'] L3extras=[]
+  [28/31] 108851_4d515b10_0006/neg_03  op=E1_envelope_v_shrink     layer=TypeA  -> verified=False (17.28s) L2=['pass', 'fail'] L3actual=['q_bbox_v'] L3missing=[] L3extras=[]
+  [29/31] 108852_fed54702_0004/neg_01  op=E2_extrude_deep          layer=TypeA  -> verified=False (11.8s) L2=['pass', 'fail'] L3actual=[] L3missing=['q_bbox_w'] L3extras=[]
+  [30/31] 108852_fed54702_0004/neg_02  op=E3_radius_up             layer=TypeA  -> verified=False (11.61s) L2=['pass', 'fail'] L3actual=['q_bbox_u', 'q_radius'] L3missing=[] L3extras=[]
+  [31/31] 108852_fed54702_0004/neg_03  op=E4_void_add              layer=TypeA  -> verified=False (6689.25s) L2=['pass', 'fail'] L3actual=['q_radius'] L3missing=[] L3extras=[]
+
+============================================================
+Done. 31 trials; verified=13; failed=18.
+Pass per layer: {'TypeA': 13}  Fail per layer: {'TypeA': 18}
+Manifest: D:\PythonProgramming\CAD Generation\Constraint-grounded agentic CAD generation\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\experiments\phase2b_triplets\_manifest.json

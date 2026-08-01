@@ -1,0 +1,135 @@
+{
+  "sid": "108852_fed54702_0004",
+  "nid": "neg_01",
+  "layer": "TypeA",
+  "T_ref": {
+    "operator": "E2_extrude_depth",
+    "scale": 1.5,
+    "modified_history_field": "extrude.extent_one.distance.value",
+    "source_design_plan_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+    "original_value": 13.97,
+    "perturbed_value": 20.955000000000002,
+    "target_intent": "bbox_size",
+    "error_category": "E2_extrude_depth",
+    "expected_failed_query": [
+      "q_bbox_w"
+    ],
+    "allowed_secondary_failed_queries": [
+      "cylinder_radius",
+      "through_void_count",
+      "is_solid",
+      "occt_valid",
+      "symmetric_about_plane"
+    ],
+    "perturbation_id": 1,
+    "operator_input_name": "E2_extrude_deep",
+    "profile_type": "circle",
+    "extent_type": "one_side",
+    "expected_query_ids_resolved": [
+      "q_bbox_u",
+      "q_bbox_v",
+      "q_bbox_w"
+    ],
+    "sample_id": "108852_fed54702_0004",
+    "negative_id": "neg_01"
+  },
+  "code_gt_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_triplets\\108852_fed54702_0004__neg_01\\code_gt.py",
+  "code_perturbed_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_triplets\\108852_fed54702_0004__neg_01\\code_perturbed.py",
+  "step_gt_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_triplets\\108852_fed54702_0004__neg_01\\step_gt\\generated.step",
+  "step_perturbed_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_triplets\\108852_fed54702_0004__neg_01\\step_perturbed\\generated.step",
+  "layer1_pipeline_gt": {
+    "compile_status": true,
+    "execution_status": true,
+    "step_export": true,
+    "occt_load": true,
+    "runtime_error": null,
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_triplets\\108852_fed54702_0004__neg_01\\step_gt\\generated.step",
+    "stdout_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_triplets\\108852_fed54702_0004__neg_01\\step_gt\\stdout.txt",
+    "stderr_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_triplets\\108852_fed54702_0004__neg_01\\step_gt\\stderr.txt"
+  },
+  "layer1_pipeline_perturbed": {
+    "compile_status": true,
+    "execution_status": true,
+    "step_export": true,
+    "occt_load": true,
+    "runtime_error": null,
+    "step_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_triplets\\108852_fed54702_0004__neg_01\\step_perturbed\\generated.step",
+    "stdout_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_triplets\\108852_fed54702_0004__neg_01\\step_perturbed\\stdout.txt",
+    "stderr_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\experiments\\phase2b_triplets\\108852_fed54702_0004__neg_01\\step_perturbed\\stderr.txt"
+  },
+  "layer2_fidelity": {
+    "passed": false,
+    "checks": [
+      {
+        "name": "cd",
+        "status": "pass",
+        "chamfer_distance": 1.4643841694805814e-16,
+        "min_distance": 0.0,
+        "threshold": 1e-05
+      },
+      {
+        "name": "kqp",
+        "status": "fail",
+        "passed": 5,
+        "total": 7,
+        "overall_status": "fail"
+      }
+    ]
+  },
+  "layer3_difference": {
+    "passed": false,
+    "expected_failed": [
+      "q_bbox_w"
+    ],
+    "allowed_secondary": [
+      "cylinder_radius",
+      "through_void_count",
+      "is_solid",
+      "occt_valid",
+      "symmetric_about_plane"
+    ],
+    "actual_failed": [],
+    "unexpected_failed": [],
+    "extras": [],
+    "missing_expected": [
+      "q_bbox_w"
+    ],
+    "kqp_data_gap": [],
+    "kqp_unavailable": false,
+    "operator": "E2_extrude_deep",
+    "natural_side_effect_intents": [
+      "bbox_size"
+    ],
+    "accepted_as_natural_effect": [],
+    "gt_status_per_query": {
+      "q_body_count": "pass",
+      "q_bbox_u": "pass",
+      "q_bbox_v": "fail",
+      "q_bbox_w": "fail",
+      "q_radius": "pass",
+      "q_is_solid": "pass",
+      "q_occt_valid": "pass"
+    },
+    "perturbed_status_per_query": {
+      "q_body_count": "pass",
+      "q_bbox_u": "pass",
+      "q_bbox_v": "fail",
+      "q_bbox_w": "fail",
+      "q_radius": "pass",
+      "q_is_solid": "pass",
+      "q_occt_valid": "pass"
+    },
+    "id_to_intent": {
+      "q_body_count": "body_count",
+      "q_bbox_u": "bbox_size",
+      "q_bbox_v": "bbox_size",
+      "q_bbox_w": "bbox_size",
+      "q_radius": "cylinder_radius",
+      "q_is_solid": "is_solid",
+      "q_occt_valid": "occt_valid"
+    }
+  },
+  "verified": false,
+  "wallclock": 11.8,
+  "notes": "see_checks"
+}

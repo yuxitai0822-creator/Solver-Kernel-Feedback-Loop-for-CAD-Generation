@@ -1,0 +1,15 @@
+{
+  "n_pairs": 138,
+  "n_already_resumed": 107,
+  "n_run": 31,
+  "n_verified": 13,
+  "n_failed": 18,
+  "pass_per_layer": {
+    "TypeA": 13
+  },
+  "fail_per_layer": {
+    "TypeA": 18
+  },
+  "wallclock_total": 12770.89,
+  "out_root": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\\u5b50\u8bfe\u98981-Solver-Kernel\u53cc\u53cd\u9988\u95ed\u73af\u9a71\u52a8\u7684CAD\u751f\u6210\u8d28\u91cf\u63d0\u5347\u7814\u7a76\\experiments\\phase2b_triplets"
+}
