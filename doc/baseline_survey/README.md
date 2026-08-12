@@ -11,11 +11,13 @@
 | File | Purpose |
 |---|---|
 | `analysis_model.md` | 10-dimension rubric applied uniformly to every candidate baseline |
-| `final_report.md` | **Start here** — Executive summary + per-category findings + coverage matrix + recommendations |
+| `final_report.md` | **Main survey** — ~95 works, executive summary + per-category findings + coverage matrix + recommendations |
+| `taxonomy_report.md` | **Report 1** — All ~95 works reorganized under the CAD Generation Verification Module (CGVM) framework |
+| `baseline_and_direction.md` | **Report 2** — Baseline selection (action-alignment principle) + future research directions |
 | `survey_c1_oneshot_cad.md` | Category C1 — One-shot text/spec → CAD code generation (M0 analog) |
 | `survey_c2_iterative_codegen.md` | Category C2 — Iterative / self-reflective code generation (M0+reflection) |
 | `survey_c3_neurosymbolic.md` | Category C3 — Constraint-solver / symbolic-reasoning–guided LLM (M1 analog) |
-| `survey_c4_kernel_query.md` | Category C4 — Geometric verification / kernel query / B-rep validity (M2 analog) |
+| `survey_c4_kernel_query.md` | Category C4 — Geometric verification / kernel query / B-rep validity (M2 analog) — 25+ works |
 | `survey_c5_cad_llm_agents.md` | Category C5 — CAD-domain LLM agents (M2/M3) |
 | `survey_c6_cad_repair.md` | Category C6 — CAD repair / B-rep editing / constraint satisfaction (M3) |
 
@@ -44,7 +46,14 @@
 5. **Classical open-source floors** that any LLM-based repair must beat:
    - OpenCASCADE `ShapeFix_*` + `BRepCheck_*`
    - FreeCAD Sketcher (GCS) with DoF diagnostics
-6. **Recommended baseline execution set** (priority order):
+6. **Expanded CGVM taxonomy** (12 types, 5 dimensions) — see `taxonomy_report.md`:
+   - Original 4 types: Visual / Execution / Solver / Geometry Intent
+   - **8 new types** from the literature: LLM-Semantic / CSG-Program /
+     Editability / Knowledge-Driven / Implicit-Field / Multi-Modal
+     Hybrid / Pre-Execution Feature Recognition / Training-Time
+   - **5 orthogonal dimensions**: Reference / Match mechanism / Timing /
+     Action alignment / Granularity
+7. **Recommended baseline execution set** (priority order):
    - Tier 1 (M3 competitors): Embodied CAD, GenCAD-Self-Repairing, CAD-Coder
    - Tier 1b (M2 from C4 retry): FllumaOne, CADReasoner, STEP-LLM, Aligning Constraint
    - Tier 2 (Domain code agents): CAD-Recode, CAD-Editor, CAD-MLLM, Text-to-CadQuery
@@ -52,6 +61,19 @@
    - Tier 4 (Reflection baselines): Reflexion, Self-Debug
    - Tier 5 (Diagnostic only): GenCAD, Text2CAD
    - Tier 6 (RL revise): Cosmo-Agent, PR-CAD, Zero-to-CAD
+8. **Future research directions** (12 directions, see `baseline_and_direction.md`):
+   - A — Action-Alignment Scoring
+   - B — Solver Translation Layer (M1 → M2-equivalent)
+   - C — Multi-Channel Composition Rules (generalizes M3 finding)
+   - D — Knowledge-Driven CGVM (most unexplored niche)
+   - E — CAD-Code Co-verification (Type II + IV additive)
+   - F — Evaluation Beyond Success@K
+   - G — Generative CGVM (CGVM-as-Generator)
+   - H — LLM-Semantic with Action Prompting
+   - I — CSG-Program + Geometry Intent Hybrid
+   - J — Editability CGVM as Project's Niche
+   - K — Feature Recognition as Preprocessor (Type XI + IV)
+   - L — Training-Time vs. Inference-Time Interaction (Type XII)
 
 ---
 
@@ -74,20 +96,31 @@
 ┌────────────────────────────────────────────────────────────────────────────┐
 │                        Baseline Coverage Audit                             │
 ├────────────────────────────────────────────────────────────────────────────┤
-│  All candidate baselines covered?            Y  (~70 works)                │
+│  All candidate baselines covered?            Y  (~95 works across C1-C6)   │
 │  Each M0–M3 analog has ≥1 candidate?         Y                             │
 │    M0 (no feedback)                          Y (Text2CAD, CAD-Recode, …)   │
 │    M0+reflection                             Y (Reflexion, Self-Refine, …) │
 │    M1 (solver feedback)                      Y (LLM+P, LeanDojo, …)        │
-│    M2 (KQP / geometric feedback)             Y (OCCT, FreeCAD, CAD-Coder…) │
+│    M2 (KQP / geometric feedback)             Y (OCCT, FreeCAD, HoLa,       │
+│                                                 FllumaOne, CAD-Coder, …)   │
 │    M3 (dual feedback)                        PARTIAL (no exact prior work) │
 │  Public benchmarks present?                  Y (HumanEval, SWE-bench,     │
-│                                                   DeepCAD, ABC, Fusion360) │
-│  At least one SOTA comparison per category?  Y                             │
+│                                                   DeepCAD, ABC, Fusion360, │
+│                                                   mmABC, Omni-CAD)          │
+│  At least one SOTA comparison per category?  Y (see §9.1 + §6.6 tables)   │
 │  At least 3 pre-LLM classical CAD works?     Y (OCCT, FreeCAD, CSGNet)     │
 │  At least 5 LLM-era CAD/code-agent works?    Y (Embodied, CAD-Coder,       │
 │                                                   CADFusion, ProCAD, …)    │
-│  Closest M3 competitor documented?           Y (Embodied CAD, GenCAD-SR)   │
+│  Closest M3 competitor documented?           Y (Embodied CAD, GenCAD-SR,   │
+│                                                 Cosmo-Agent, PR-CAD)       │
+│  Headline numerical benchmarks gathered?     Y (HoLa 82% B-rep validity,   │
+│                                                 FllumaOne 99.14% STEP,     │
+│                                                 GenCAD-SR 66% infeasible→   │
+│                                                 feasible, Constraint-Align  │
+│                                                 93% fully-constrained,      │
+│                                                 CMT +10.68% Coverage)       │
+│  Works organized under CGVM framework?       Y (~95 in taxonomy_report)    │
+│  Action-alignment analysis for baselines?    Y (in baseline_and_direction) │
 └────────────────────────────────────────────────────────────────────────────┘
 ```
 
