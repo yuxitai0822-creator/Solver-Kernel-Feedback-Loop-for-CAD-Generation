@@ -301,15 +301,7 @@ but it doesn't capture *how much* was edited (CED is a partial proxy).
 - **Over-repair rate**: fraction of successful repairs that introduced
   new defects (a common LLM side-effect).
 
-### 5.7 Direction G — Generative CGVM (CGVM-as-Generator) (Type-agnostic)
-
-**Gap**: All surveyed CGVMs are *verifiers* — they judge existing CAD.
-**Propose**:
-- A *generative* CGVM that produces a CAD candidate directly, conditioned
-  on the Design Plan, similar to a constraint-solver-as-generator.
-- This would close the loop: the CGVM both verifies and proposes.
-
-### 5.8 Direction H — LLM-Semantic CGVM with Action Prompting (Type V)
+### 5.7 Direction H — LLM-Semantic CGVM with Action Prompting (Type V)
 
 **Gap**: Type V (LLM-Semantic) is currently under-characterized. Most
 LLM-as-judge verifiers output "looks wrong" without specifying what
