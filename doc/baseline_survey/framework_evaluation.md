@@ -218,7 +218,7 @@ is thus:
    implemented in the project (MODIFY/ADD/DELETE/REORDER + target_op).
    - A = {(MODIFY, op_id, param, new_value), (ADD, op_type, params), ...}
    - For KQP feedback: A(F) = {(MODIFY, op_id_of_rect, width, 19.0)}
-   - ACRR = 1 − 1/|A_total_actions|.
+   - ACRR = 1 − |A_total_actions|/|A|.
 
 **Recommendation**: Define A as the **project's IR repair operations**:
 ```
