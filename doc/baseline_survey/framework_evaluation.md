@@ -343,7 +343,7 @@ Define per-CGVM verification losses (project already tracks these):
   L_pipeline(t) = number of failed pipeline stages at iter t
   L_solver(t)   = conflict_count + redundant_count + max(0, dof - 1)
   L_kernel(t)   = number of failed KQP queries at iter t
-  L_visual(t)   = TBD (not yet wired)
+  L_visual(t)   = number of failed visual question reasoning at iter t(VQR)
 
 For each iter t with feedback F at iter t:
   delta = L(t+1) - L(t)  # negative = improvement
@@ -441,6 +441,8 @@ the 6 fields, but visual feedback does not.
 **Impact**: Cannot directly compare Visual CGVM to other CGVMs on
 the same metric set.
 
+**status**:solved
+
 ### 4.2 Shortcoming 2 — Detection Recall Ground-Truth Dependency
 
 **Issue**: Detection Recall = # detected / # ground-truth errors. This
@@ -450,6 +452,8 @@ T_ref is available (perturbation records), but for general CAD generation
 
 **Impact**: Limits generalizability of the framework beyond perturbation
 benchmarks.
+
+**status**:TBD
 
 ### 4.3 Shortcoming 3 — ACRR Uniform-Prior Assumption
 
@@ -466,6 +470,8 @@ then ACRR_uniform = 7/8 = 0.875 but ACRR_prior = 1 - 0.7 / 1 = 0.30.
 The prior-weighted ACRR captures the LLM's actual search-space reduction
 better.
 
+**status**:Agreed
+
 ### 4.4 Shortcoming 4 — No Reliability/Consistency Dimension
 
 **Issue**: A CGVM that gives different feedback for the same CAD twice
@@ -473,6 +479,8 @@ is unreliable. The framework doesn't address this.
 
 **Impact**: Cannot distinguish CGVMs with stochastic vs. deterministic
 behavior. For LLM-based CGVMs (Type V), this matters.
+
+**status**:Agreed
 
 ### 4.5 Shortcoming 5 — No Handling of Cascading Errors
 
@@ -484,6 +492,8 @@ The framework treats errors as independent.
 wrong volume). The LLM only needs to fix one root cause. The framework
 would over-count detection and under-count specificity.
 
+**status**:TBD
+
 ### 4.6 Shortcoming 6 — DSS Assumes Static CGVM Output
 
 **Issue**: A solver CGVM might be able to express more specificity if
@@ -491,6 +501,8 @@ extended (e.g., "constraint C is over-constrained because of dimension D"),
 but DSS scores the *current* output, not the *potential* output.
 
 **Impact**: DSS may not reflect the CGVM's theoretical capability ceiling.
+
+**status**:Disagreed
 
 ---
 
