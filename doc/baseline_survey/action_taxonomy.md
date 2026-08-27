@@ -1,15 +1,31 @@
-# Action Taxonomy Specification v0.1
+# Action Taxonomy Specification v0.2
 ## Finite CAD Repair Action Space for ACRR / FELR / ORR Computation
 
-> **Date**: 2026-08-12
-> **Author**: ZCode (research agent)
+> **Date**: 2026-08-21
+> **Author**: ZCode (research agent), refined per project framework updates
 > **Project**: 子课题1 — CGVM Benchmark and Action-Feedback Alignment Framework
-> **Status**: P0-1 deliverable (Action Taxonomy finalization)
+> **Status**: P0-1 deliverable (Action Taxonomy finalization), v0.2
 > **Scope**: Define a **finite** CAD repair action taxonomy A that:
 > (1) covers all perturbation operator targets in the 138-triple benchmark,
 > (2) aligns with the KQP query intent → source_field mappings,
 > (3) bridges IR-level operations and CAD Script-level edits,
 > (4) is computable for ACRR, FELR, ORR.
+
+---
+
+## v0.2 Update Log
+
+This is a refinement of `action_taxonomy.md` v0.1, applying 4 corrections
+from the project's refined CGVM action-feedback alignment Framework:
+
+| # | Correction | Where applied |
+|---|---|---|
+| 1 | **Tier 2 / Tier 3 数量不一致** → clarify the relationship | §2.2 — clarified that Tier 2 is a *coarser taxonomy of action families* (9 subcategories), while Tier 3 enumerates 45 atomic actions organized by subcategory |
+| 2 | **"60+" → "45"** → clarified | §2.4 — current version is **45 atomic actions**, with explicit extensibility note |
+| 3 | **"exactly one action" → "at least one canonical repair action set"** | §2.7, §6, §7 — softened language; each perturbation has at least one canonical repair action set |
+| 4 | **Atomic vs Composite distinction** | §2.6 — explicit section introduced; ACRR operates on atomic level, CED/ORR operate on composite level |
+
+Additionally, this version incorporates the refined framework's **Problem Space** definition (new §0), the **two mapping modes** (positive/negative), and the **3-side alignment** (problem/action/behavior).
 
 ---
 
@@ -21,8 +37,11 @@ uncomputable.
 
 This document specifies **A** as a **3-tier hierarchical taxonomy**:
 - **Tier 1**: 5 Action Categories (MODIFY / ADD / DELETE / REORDER / NO_CHANGE)
-- **Tier 2**: 12 Action Subcategories (per Category × operation-type family)
-- **Tier 3**: 60+ Concrete Actions (parameter-level)
+- **Tier 2**: 9 Action Subcategories (coarser taxonomic classes)
+- **Tier 3**: **45 Atomic Actions** (parameter-level, enumerable)
+
+Beyond the 45 atomic actions, **Composite Repair Actions** are
+ordered sets of atomic actions executed in a single repair attempt.
 
 The taxonomy is **bridged** to three contexts:
 1. **IR-level** (matches `cad_ir_schema_v0.1.json` field structure)
@@ -30,7 +49,10 @@ The taxonomy is **bridged** to three contexts:
 3. **Design Plan level** (matches `design_plan_v0.6` source paths)
 
 For each CGVM type (KQP / Solver / Pipeline / Visual), we provide
-**A(F) determination rules** — how to map feedback to candidate actions.
+**A(F) determination rules** — how to map feedback to candidate actions,
+via two modes:
+- **Positive Action Mapping**: problem → action that can fix it
+- **Negative Action Filtering**: problem → complement of impossible actions
 
 **Worked examples** show ACRR / FELR / ORR computation on real
 benchmark perturbations.
@@ -109,7 +131,19 @@ actions. ✅ Coverage verified.
 | **REORDER** | R | change operation sequence |
 | **NO_CHANGE** | N | no edit |
 
-### 2.2 Tier 2 — Action Subcategories (12)
+### 2.2 Tier 2 — Action Subcategories (Coarser Taxonomic Classes)
+
+**Clarification on count**: Tier 2 is a *coarser* taxonomy of action
+families (each Tier 2 class covers multiple Tier 3 atomic actions).
+The relationship is **1-to-many**:
+
+```
+Tier 1 (5 categories)
+   ↓
+Tier 2 (9 subcategories — varies by category)
+   ↓
+Tier 3 (45 atomic actions)
+```
 
 Within MODIFY / ADD / DELETE, we partition by **operation type**:
 - **SK** — Sketch ops (rectangle, circle, annulus, frame, stadium, polygon)
@@ -119,27 +153,30 @@ Within MODIFY / ADD / DELETE, we partition by **operation type**:
 - **CN** — Constraint ops (FreeCAD sketcher / kiwisolver)
 - **DM** — Dimension ops (sketch dimensions)
 
-The 12 subcategories are:
+The 9 Tier-2 subcategories are:
 
-| Subcategory | Symbol | Scope |
-|---|---|---|
-| MODIFY_SK | M.SK | edit sketch parameters |
-| MODIFY_EX | M.EX | edit extrude parameters |
-| MODIFY_CU | M.CU | edit cut parameters |
-| MODIFY_CN | M.CN | edit constraint parameters |
-| MODIFY_DM | M.DM | edit dimension parameters |
-| ADD_SK | A.SK | insert sketch operation |
-| ADD_EX | A.EX | insert extrude operation |
-| ADD_CU | A.CU | insert cut operation |
-| ADD_CN | A.CN | insert constraint |
-| DELETE_CU | D.CU | remove cut (close void) |
-| REORDER | R | change op order |
-| NO_CHANGE | N | do nothing |
+| Subcategory | Symbol | # Tier-3 actions | Scope |
+|---|---|---|---|
+| `MODIFY_SK` | M.SK | 18 | edit sketch parameters |
+| `MODIFY_EX` | M.EX | 4 | edit extrude parameters |
+| `MODIFY_CU` | M.CU | 4 | edit cut parameters |
+| `MODIFY_CN` | M.CN | 4 | edit constraint parameters |
+| `MODIFY_DM` | M.DM | 3 | edit dimension parameters |
+| `ADD` | A.* | 5 | insert operation (sketch/extrude/cut/constraint/dimension) |
+| `DELETE` | D.* | 5 | remove operation (sketch/extrude/cut/constraint/dimension) |
+| `REORDER` | R | 1 | change op sequence |
+| `NO_CHANGE` | N | 1 | do nothing |
 
-### 2.3 Tier 3 — Concrete Actions (60+)
+So Tier 2 has **9 subcategories** (5 MODIFY + ADD + DELETE + REORDER + NO_CHANGE),
+**not 12** as in v0.1. The v0.1 "12" was a miscount (it incorrectly
+counted MODIFY + ADD + DELETE separately).
 
-The flat action space A is the union of all concrete actions. We
-provide a finite enumeration below:
+### 2.3 Tier 3 — Atomic Actions (45 total, not 60+)
+
+**Important correction from v0.1**: The Tier 3 count is **45 atomic
+actions**, not "60+". The flat action space A is the union of all
+atomic actions. Each atomic action is **indivisible** in the sense
+that it cannot be decomposed into smaller CAD-relevant edits.
 
 #### 2.3.1 MODIFY_SK — Modify Sketch Parameters (18 actions)
 
@@ -233,22 +270,106 @@ For each sketch op_type × each field:
 |---|---|
 | `NO_CHANGE` | agent emits action=no_change |
 
-### 2.4 Total |A| = 18 + 4 + 4 + 4 + 3 + 5 + 5 + 1 + 1 = **45 actions**
+### 2.4 Total |A| = 18 + 4 + 4 + 4 + 3 + 5 + 5 + 1 + 1 = **45 atomic actions**
 
-This is the finite action space for ACRR computation. Any perturbation
-in the 138-triple benchmark can be repaired by exactly one of these
-actions.
+This is the finite action space for ACRR computation. **Each perturbation
+maps to at least one canonical repair action set** (which may contain
+1+ atomic actions, not necessarily exactly one action).
+
+This is the **current version** of the atomic action space. Future
+versions may add or refine actions (e.g., for freeform surfaces,
+boolean composition, fillet/chamfer operations).
+
+> **Note (v0.3)**: ACRR has been **redefined as PCRR** in §12.
+> The action taxonomy in §2 remains valid for F(F)/R(T_ref) computation
+> and FELR/ORR but is no longer the denominator of the alignment
+> metric. See §12 for the new design.
 
 ### 2.5 Why 45 is the Right Granularity
 
 - **Too coarse** (e.g., 5 actions): cannot distinguish MODIFY_SK_CIRC_RADIUS
   from MODIFY_SK_ANN_INNER_R — these are different KQP intents
-  (cylinder_radius maps to both).
+  (`cylinder_radius` maps to both).
 - **Too fine** (e.g., 200+ actions): each individual numeric value
   becomes a separate action; ACRR loses meaning (always ACRR ≈ 1.0).
 - **45 actions**: matches the granularity of Design Plan field edits
-  (length_u / width_v / extrude_distance / radius / etc.) — which is
-  exactly what KQP source_field maps to.
+  (`length_u` / `width_v` / `extrude_distance` / `radius` / etc.) —
+  which is exactly what KQP `source_field` maps to.
+
+### 2.6 Atomic Action vs Composite Repair Action (NEW in v0.2)
+
+The taxonomy distinguishes two levels:
+
+#### 2.6.1 Atomic Action
+
+A **single, indivisible** CAD repair operation from the 45-action
+taxonomy above. Examples:
+- `MODIFY_EX_DISTANCE` (change one numeric value)
+- `ADD_CU` (insert one new cut operation)
+- `NO_CHANGE` (no edit)
+
+Atomic actions are **the unit of ACRR / A(F) computation**. Each
+A(F) is a subset of the 45 atomic actions.
+
+#### 2.6.2 Composite Repair Action
+
+An **ordered sequence of atomic actions** executed by the LLM in
+**a single repair attempt**. Examples:
+- `[MODIFY_EX_DISTANCE(20), MODIFY_SK_RECT_WIDTH(15)]` — fix both
+  bbox_u and bbox_w in one script rewrite
+- `[ADD_CU, DELETE_EX]` — swap out the extrude for a cut (rare)
+- `[NO_CHANGE]` — agent decides nothing needs to change
+
+**Properties**:
+- A composite repair action is an ordered tuple (a₁, a₂, ..., aₖ)
+  where each aᵢ ∈ A (the atomic action space).
+- The space of all possible composite repair actions is **infinite**
+  (because k can be unbounded).
+- For **ACRR computation**, we still operate at the atomic-action
+  level (A(F) ⊆ A); composite actions are only relevant for
+  **CED** and **ORR_edit** (which measure the composite size).
+
+**Why distinguish**:
+- Some perturbations need **multiple atomic actions** to fix (e.g.,
+  E1_envelope_u + E4_void_remove_one on the same sample). This
+  requires a composite repair.
+- ACRR computes at the atomic level (which atomic actions are
+  candidates), but the LLM must produce a composite that includes
+  those atomics.
+- **CED is essentially the cost of the composite repair action** —
+  it measures how much the LLM actually edited.
+
+**Notation**:
+- `A` = set of 45 atomic actions
+- `A*` = set of all finite sequences over A (composite repair actions)
+- `A^k` = set of sequences of length exactly k
+
+For feedback F:
+- `A(F) ⊆ A` = atomic action candidates (used in ACRR)
+- `A*(F)` = set of composite actions that include at least one
+  atomic from A(F) (used in CED and ORR computation)
+
+### 2.7 Coverage Check Against Perturbation Operators (Refined)
+
+From `task5_negative_perturbation/reports/perturbation_distribution.json`,
+the benchmark uses these perturbation operators. **Each perturbation
+maps to at least one canonical repair action set** (not necessarily
+exactly one action):
+
+| Operator | Target sketch type | Canonical repair action set |
+|---|---|---|
+| **E2_extrude_deep/shallow** | any | {MODIFY_EX_DISTANCE} |
+| **E1_envelope_u** | rect / frame / stadium | {MODIFY_SK_RECT_WIDTH, MODIFY_SK_FRAME_OUTER_W, MODIFY_SK_STAD_LENGTH} |
+| **E1_envelope_v_shrink** | rect / frame | {MODIFY_SK_RECT_HEIGHT, MODIFY_SK_FRAME_OUTER_H} |
+| **E4_void_remove_one** | any | {DELETE_CU} |
+| **E4_void_add** | any | {ADD_CU} |
+| **E3_radius_up** | circle | {MODIFY_SK_CIRC_RADIUS} |
+| **E3_radius_up** | annulus | {MODIFY_SK_ANN_OUTER_R, MODIFY_SK_ANN_INNER_R} |
+| **E6_inner_gt_outer** | annulus | {MODIFY_SK_ANN_INNER_R, MODIFY_SK_ANN_OUTER_R} |
+| **E5_extent_type_change** | any | {MODIFY_EX_EXTENT_TYPE} |
+
+**All 9 operators have at least one canonical repair action set. ✅**
+**Coverage verified.**
 
 ---
 
@@ -571,24 +692,25 @@ Given R(T_ref) = target actions for the perturbation (from §5.2):
 
 ## 8. Validation: Action Taxonomy Coverage Test
 
-### 8.1 Test 1 — All perturbation targets in A
+### 8.1 Test 1 — All perturbation targets in canonical repair action sets
 
-For each of the 138 benchmark perturbations, identify the target
-action. Confirm the action ∈ A.
+For each of the 9 benchmark perturbation operators, identify R(T_ref).
+Confirm R(T_ref) ⊆ A and R(T_ref) is non-empty (each perturbation
+has at least one canonical repair action set).
 
-| Operator | Target action | In A? |
+| Operator | R(T_ref) | Non-empty? |
 |---|---|---|
-| E2_extrude_deep | MODIFY_EX_DISTANCE | ✅ |
-| E2_extrude_shallow | MODIFY_EX_DISTANCE | ✅ |
-| E1_envelope_u | MODIFY_SK_*_WIDTH (3 candidates) | ✅ |
-| E1_envelope_v_shrink | MODIFY_SK_*_HEIGHT (3 candidates) | ✅ |
-| E4_void_remove_one | DELETE_CU | ✅ |
-| E4_void_add | ADD_CU | ✅ |
-| E3_radius_up | MODIFY_SK_CIRC_RADIUS or MODIFY_SK_ANN_*_R | ✅ |
-| E6_inner_gt_outer | MODIFY_SK_ANN_INNER_R or OUTER_R | ✅ |
-| E5_extent_type_change | MODIFY_EX_EXTENT_TYPE | ✅ |
+| E2_extrude_deep | {MODIFY_EX_DISTANCE} | ✅ |
+| E2_extrude_shallow | {MODIFY_EX_DISTANCE} | ✅ |
+| E1_envelope_u | {3 actions} | ✅ |
+| E1_envelope_v_shrink | {2 actions} | ✅ |
+| E4_void_remove_one | {DELETE_CU} | ✅ |
+| E4_void_add | {ADD_CU} | ✅ |
+| E3_radius_up | {3 actions} | ✅ |
+| E6_inner_gt_outer | {2 actions} | ✅ |
+| E5_extent_type_change | {MODIFY_EX_EXTENT_TYPE} | ✅ |
 
-**All 9 operators → actions ∈ A.** ✅ Coverage verified.
+**All 9 operators have non-empty canonical repair action sets. ✅**
 
 ### 8.2 Test 2 — All KQP intent → action mapping
 
@@ -605,7 +727,7 @@ For each KQP intent in `ALLOWED_INTENTS`:
 | symmetric_about_plane | MODIFY_EX_EXTENT_TYPE, MODIFY_EX_DISTANCE | ✅ |
 | euler_characteristic | ADD_CU / DELETE_CU | ✅ |
 
-**All 8 KQP intents → actions ∈ A.** ✅ Coverage verified.
+**All 8 KQP intents → actions ∈ A. ✅**
 
 ---
 
@@ -671,4 +793,163 @@ For each KQP intent in `ALLOWED_INTENTS`:
 
 ---
 
-*End of Action Taxonomy Specification v0.1.*
+## 12. PCRR — Problem Candidate Reduction Rate (v0.3 Addendum)
+
+**Note**: This section was added in v0.3 per the user's re-specification
+of the framework. ACRR (§2.4, §3.5) is **replaced** by **PCRR** for
+reasons explained below. The action taxonomy in §2 remains valid
+for the F(F)/R(T_ref) computation but is no longer the metric's
+denominator.
+
+### 12.1 Why redefine ACRR → PCRR
+
+The original ACRR = 1 − |A(F)| / |A| entangles two distinct steps:
+
+1. **Feedback → P(F)**: feedback F constrains the latent problem set.
+   This is the **CGVM's responsibility** (problem identification + diagnosis).
+2. **P(F) → A(F)**: the constrained problem set maps to candidate actions.
+   This requires **engineering knowledge** of CAD repair (which depends
+   on CAD kernel / DSL / domain conventions) and is **outside CGVM's scope**.
+
+The action mapping conflates **CGVM evaluation** with **engineering knowledge**.
+Since problem→action mapping is a separate engineering task, evaluating
+ACRR on the action space implicitly tests this engineering knowledge,
+not just the CGVM.
+
+### 12.2 Redefinition
+
+Replace ACRR with **PCRR (Problem Candidate Reduction Rate)**,
+computed directly on the **problem space P** rather than the action space A.
+
+```
+PCRR(F) = 1 − μ(P(F)) / μ(P)
+```
+
+- `P` = global problem space
+- `P(F) ⊆ P` = feedback-conditioned problem space
+- `μ` = computable measure on P (finite, well-defined)
+
+PCRR measures **how much feedback reduces problem-identification
+uncertainty**, decoupling it from action mapping.
+
+### 12.3 Global Problem Space P
+
+**Scope**: P is defined by the errors induced by the 138 benchmark
+perturbations. Problem types are NOT extended beyond the 9 observed
+operators. Parameters (e.g., dimension, radius) are extended to
+continuous design space [0, +∞) to enable granularity at the
+parameter level.
+
+Formally:
+
+```
+P = E × D(E)
+
+E = {E1_envelope_u, E1_envelope_v_shrink,
+     E2_extrude_deep,  E2_extrude_shallow,
+     E3_radius_up,
+     E4_void_remove_one, E4_void_add,
+     E5_extent_type_change,
+     E6_inner_gt_outer}     # 9 error types (problem types)
+
+D(E) = ⋃_{e ∈ E} D(e)        # parameter subspace per error type
+D(e) ⊆ [0, +∞)^{k(e)}      # k(e) depends on error type
+```
+
+Each `p ∈ P` is a tuple `(error_type, parameter_state)` where
+`error_type ∈ E` and `parameter_state ∈ D(error_type)`.
+
+### 12.4 Feedback-Conditioned Problem Space P(F)
+
+```
+P(F) = { p ∈ P : F is true for p }
+```
+
+Examples:
+- KQP "bbox_u expected=19.0 actual=1.9" →
+  `P(F) = { p : bbox_u(p) ≈ 1.9 ± tolerance }` → small set
+- Solver "under_constrained, dof=4" →
+  `P(F) = { p : solver(p) reports under-constrained with dof=4 }` → broad set (multiple error types qualify)
+- Pipeline "execute error NameError" →
+  `P(F) = { p : pipeline(p) fails at NameError }` → very broad (any syntax error)
+- Visual "view doesn't match" →
+  `P(F) = { p : visual(p) does not match reference }` → very broad
+
+### 12.5 Measure μ
+
+The continuous parameter space makes cardinality undefined. Three
+candidate measures are available:
+
+**Option (a) — Information-theoretic** (recommended):
+```
+μ(P)  = H(P)         # Shannon entropy of problem distribution
+μ(P(F)) = H(P|F)    # conditional entropy after feedback
+PCRR  = 1 − H(P|F)/H(P) = I(P;F)/H(P)   # normalized mutual information
+```
+- Theoretical: PCRR ∈ [0, 1], PCRR = 1 iff F identifies P uniquely
+- Practical: requires assumed prior on P; with uniform discrete prior
+  over 138 perturbations: H(P) = log(138), H(P|F) = log(|P(F)|)
+
+**Option (b) — Discretization (binning)**:
+```
+μ(P)  = Σ_{e ∈ E} N^{k(e)}    # N bins per dimension
+μ(P(F)) = number of bins consistent with F
+PCRR  = 1 − (consistent bins) / (total bins)
+```
+- Simple, no prior needed
+- Choice of N is arbitrary; results depend on bin resolution
+
+**Option (c) — Relative entropy with reference π**:
+```
+μ(P)  = 1                # normalized
+μ(P(F)) = 1 − KL(P‖P(F)|π)   # or similar
+```
+- Most general but most complex
+
+**Practical recommendation**:
+- In benchmark setting (138 perturbations as discrete base): use Option (a) with uniform prior → PCRR = 1 − log(|P(F)|)/log(138)
+- Extending to continuous [0,+∞): use Option (b) with N = 100 (≈2-decimal precision) → PCRR = 1 − (consistent bins) / Σ_e N^{k(e)}
+
+### 12.6 Worked Examples
+
+| Feedback F | P(F) size | PCRR |
+|---|---|---|
+| KQP "bbox_u expected=19.0 actual=1.9" | ~1 (very small) | ≈ 1.0 |
+| KQP "bbox_u expected=19.0 actual∈[15,25]" | ~10 | ≈ 0.78 |
+| Solver "under_constrained, dof=4" | ~50 (broad) | ≈ 0.36 |
+| Solver "conflict, conflict_constraints=['c_007']" | ~5 (specific ID) | ≈ 0.85 |
+| Pipeline "execute error NameError" | ~138 (everything) | ≈ 0.0 |
+| Visual "front view does not match" | ~100 (most errors visible) | ≈ 0.10 |
+
+### 12.7 Advantages
+
+1. **CGVM-decoupled**: PCRR is the CGVM's intrinsic property, not
+   dependent on repair-agent behavior.
+2. **No action-space engineering**: avoids the entanglement with
+   problem→action mapping.
+3. **Theory-grounded**: PCRR = I(P;F)/H(P) is a normalized mutual
+   information, with clear information-theoretic interpretation.
+4. **Bridges with other metrics**: PCRR + Detection Recall + Localization
+   + Specificity = complete CGVM evaluation toolkit.
+5. **PCRR ≈ 1**: feedback precisely identifies the problem
+6. **PCRR ≈ 0**: feedback is vague, problem uncertainty not reduced
+
+### 12.8 Migration from ACRR
+
+| Aspect | v0.2 ACRR | v0.3 PCRR |
+|---|---|---|
+| Metric space | Action space A (45 atomic actions) | Problem space P (9 types × [0,+∞)^k) |
+| Denominator | |A| = 45 | μ(P), finite per chosen measure |
+| Numerator | |A(F)| ⊆ A | μ(P(F)) ⊆ P |
+| Interpretation | feedback reduces action space | feedback reduces problem space |
+| CGVM dependency | action mapping included | action mapping excluded |
+| Practical computation | require A(F) per feedback | require P(F) per feedback |
+
+**Open for review**: This redefinition requires user approval before
+implementation. Specifically, the choice of measure μ (option a/b/c)
+and the operational definition of P(F) for each CGVM type need
+validation against the 138-perturbation benchmark.
+
+---
+
+*End of Action Taxonomy Specification v0.3 (with PCRR addendum).*
