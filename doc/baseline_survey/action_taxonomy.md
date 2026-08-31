@@ -833,7 +833,7 @@ PCRR measures **how much feedback reduces problem-identification
 uncertainty**, decoupling it from action mapping.
 
 ### 12.3 Global Problem Space P
-
+Problem space is constituded by reasons why a specific CAD script is not gonna work。
 **Scope**: P is defined by the errors induced by the 138 benchmark
 perturbations. Problem types are NOT extended beyond the 9 observed
 operators. Parameters (e.g., dimension, radius) are extended to
