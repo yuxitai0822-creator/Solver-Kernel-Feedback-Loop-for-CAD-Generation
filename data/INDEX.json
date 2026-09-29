@@ -1,0 +1,52 @@
+{
+  "schema_version": "0.1",
+  "last_updated": "2026-09-28",
+  "phases": {
+    "phase0_initial": {
+      "n_items": 50,
+      "path": "phase0_initial/manifest.json",
+      "description": "原始 Fusion360 source samples（5 模态：history/step/obj/smt/png）"
+    },
+    "phase1_positive": {
+      "n_items": 51,
+      "path": "phase1_positive/manifest.json",
+      "description": "正样本：reconstruction + DesignPlan + KQP + CAD IR",
+      "subdirectories": {
+        "reconstruction": "phase1_positive/reconstruction/manifest.json",
+        "cad_ir":          "phase1_positive/cad_ir/manifest.json",
+        "design_plan":     "phase1_positive/design_plan/manifest.json",
+        "kqp":             "phase1_positive/kqp/manifest.json"
+      }
+    },
+    "phase2_perturbation": {
+      "n_items": 138,
+      "path": "phase2_perturbation/manifest.json",
+      "description": "扰动负样本：138 cases × 17 operators × 50 source samples"
+    },
+    "phase3_triplets": {
+      "n_items": 120,
+      "path": "phase3_triplets/manifest.json",
+      "frozen_manifest": "phase3_triplets/_frozen_manifest.json",
+      "description": "已 verified (Code_gt, Code_perturbed, T_ref) 三元组；冻结 2026-07-24"
+    }
+  },
+  "lineage_graph": {
+    "phase0_initial.history -> phase1_positive.reconstruction": "reconstruction_engine/orchestrator.py::reconstruct_sample",
+    "phase0_initial.history -> phase1_positive.design_plan":   "DesignPlan/compiler/design_plan_compiler.py::compile_design_plan",
+    "phase1_positive.design_plan -> phase1_positive.kqp":      "kqp/compiler/compile_kqp.py::compile_kqp",
+    "phase0_initial.history -> phase1_positive.cad_ir.clean": "experiments/history2ir/batch/run_history2ir.py",
+    "phase0_initial.history + phase2_perturbation.operators -> phase2_perturbation.artifacts.perturbed_history": "task5_negative_perturbation/perturbation/perturb_history.py",
+    "phase2_perturbation.artifacts -> phase3_triplets":        "dataset/build_triplets.py::main"
+  },
+  "consumers": {
+    "experiments": [
+      "experiments/phase2b_m0m3/ (M0-M3 ablation experiment)"
+    ],
+    "scripts": [
+      "dataset/m0m3_external_metrics.py",
+      "dataset/m0m3_significance.py",
+      "dataset/m0m3_analysis.py",
+      "p2b_m0m3_on_frozen.py"
+    ]
+  }
+}

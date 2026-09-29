@@ -2,7 +2,7 @@
 M0-M3 perturbation experiment.
 
 Reads ``experiments/phase2b_m0m3/pilot_results.json`` and
-``experiments/phase2b_triplets/_frozen_manifest.json`` and produces
+``data/phase3_triplets/_frozen_manifest.json`` and produces
 five external metrics, per the ablation-report external-metric spec:
 
   1. IVR (%) — Invalid Rate, three layers
@@ -13,7 +13,7 @@ five external metrics, per the ablation-report external-metric spec:
      R(τ) = (1/N) Σ_i 1[PipelineValid ∧ SolverValid ∧ NCD ≤ τ]
      AUC-TR = mean of R(τ) over τ ∈ {1e-1, 1e-2, 1e-3, 1e-4, 1e-5}
      where NCD = CD(P,Q) / diag(BBox_gt).
-  3. Mean CD (valid-only)  — mean CD over V = {PipelineValid ∧ SolverValid}.
+  3. Mean NCD (valid-only)  — mean NCD over V = {PipelineValid ∧ SolverValid}.
   4. Median NCD (valid-only) — median NCD over V.
   5. VPR — Verification Pass Rate = #{PipelineValid ∧ SolverValid ∧
      KernelValid} / N.  Equals the existing headline pass-rate.
@@ -26,7 +26,7 @@ Iter-folding rule (per the user):
 
 CD computation:
   Each trial's last-iter STEP is compared against the GT STEP at
-  ``experiments/phase2b_triplets/<sid>__<nid>/step_gt/generated.step``.
+  ``data/phase3_triplets/<sid>__<nid>/step_gt/generated.step``.
   A per-trial cache is persisted at
   ``experiments/phase2b_m0m3/external_metrics/cd_cache.json`` with
   atomic write + resume semantics, so a partial run can be continued
@@ -52,7 +52,7 @@ if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
 OUT_DIR = _REPO_ROOT / "experiments" / "phase2b_m0m3"
-FROZEN_DIR = _REPO_ROOT / "experiments" / "phase2b_triplets"
+FROZEN_DIR = _REPO_ROOT / "data" / "phase3_triplets"
 EM_DIR = OUT_DIR / "external_metrics"
 CACHE_PATH = EM_DIR / "cd_cache.json"
 RESULTS_PATH = EM_DIR / "external_metrics.json"
@@ -410,7 +410,7 @@ def compute_cd_cache(pilot: list[dict],
 
     Pure I/O + OCCT work; no metric arithmetic.  Each entry's
     last-iter STEP is compared against the GT STEP at
-    ``phase2b_triplets/<sid>__<nid>/step_gt/generated.step`` with
+    ``data/phase3_triplets/<sid>__<nid>/step_gt/generated.step`` with
     bbox-min alignment.
 
     Reuses GT shapes across the 4 methods that share a (sid, nid).

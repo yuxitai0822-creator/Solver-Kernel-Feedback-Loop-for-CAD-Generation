@@ -1,0 +1,9 @@
+{
+  "phase": "phase3_triplets",
+  "schema_version": "0.1",
+  "freeze_date": null,
+  "n_items": 120,
+  "items": [],
+  "frozen_manifest": "_frozen_manifest.json",
+  "note": "manifest populated by Phase B1"
+}

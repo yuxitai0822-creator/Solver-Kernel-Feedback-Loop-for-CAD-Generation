@@ -1,7 +1,7 @@
 """dataset/m0m3_analysis.py — Analyse the M0-M3 perturbation experiment.
 
 Reads ``experiments/phase2b_m0m3/pilot_results.json`` and
-experiments/phase2b_triplets/_frozen_manifest.json`` and produces:
+data/phase3_triplets/_frozen_manifest.json`` and produces:
 
   * a per-method success-rate breakdown (with two layers of detail:
     collapsed by ``final_status`` and by KQP pass-rate per attempt);
@@ -26,7 +26,7 @@ if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
 OUT_DIR = _REPO_ROOT / "experiments" / "phase2b_m0m3"
-FROZEN_DIR = _REPO_ROOT / "experiments" / "phase2b_triplets"
+FROZEN_DIR = _REPO_ROOT / "data" / "phase3_triplets"
 
 
 def _final_status_rank(s: str) -> int:

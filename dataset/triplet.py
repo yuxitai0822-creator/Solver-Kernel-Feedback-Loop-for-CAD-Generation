@@ -485,7 +485,7 @@ def _verify_layer3_difference(gt_kqp: dict | None,
 # ---------------------------------------------------------------------------
 def build_triplet(sid: str,
                   nid: str,
-                  out_root: Path = _REPO_ROOT / "experiments" / "phase2b_triplets",
+                  out_root: Path = _REPO_ROOT / "data" / "phase3_triplets",
                   timeout: int = 120) -> Triplet:
     """Compose a single Verified Triplet for ``(sid, nid)``.
 

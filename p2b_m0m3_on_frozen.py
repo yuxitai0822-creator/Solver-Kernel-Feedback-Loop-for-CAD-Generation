@@ -1,7 +1,7 @@
 """p2b_m0m3_on_frozen.py — M0-M3 perturbation repair experiment runner.
 
 Walks every (sid, nid) pair in the **frozen** triple manifest
-(``experiments/phase2b_triplets/_frozen_manifest.json``) and runs
+(``data/phase3_triplets/_frozen_manifest.json``) and runs
 the M0-M3 iter loop with ``initial_script = code_perturbed.py``.
 
 The frozen triple's verification result is the *input* contract:
@@ -100,7 +100,7 @@ _bypass_dead_proxy()
 import method_policy  # noqa: E402
 import trial_iteration  # noqa: E402
 
-FROZEN_DIR        = _REPO_ROOT / "experiments" / "phase2b_triplets"
+FROZEN_DIR        = _REPO_ROOT / "data" / "phase3_triplets"
 FROZEN_MANIFEST   = FROZEN_DIR / "_frozen_manifest.json"
 OUT_ROOT          = _REPO_ROOT / "experiments" / "phase2b_m0m3"
 RESULTS_PATH      = OUT_ROOT / "pilot_results.json"

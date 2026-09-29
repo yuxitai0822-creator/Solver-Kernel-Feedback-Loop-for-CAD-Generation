@@ -1,10 +1,10 @@
 """dataset/build_triplets.py — CLI entry point for the triplet dataset.
 
-Walks every ``task5_negative_perturbation/perturbations/<sid>/<nid>/``
+Walks every ``data/phase2_perturbation/artifacts/<sid>/<nid>/``
 directory that has both a ``perturbed_history.json`` and a
 ``perturbation_meta.json``, calls ``dataset.triplet.build_triplet``
 on each pair, and writes a per-pair ``triplet.json`` under
-``experiments/phase2b_triplets/<sid>__<nid>/``.
+``data/phase3_triplets/<sid>__<nid>/``.
 
 Sample discovery is identical to the one used by ``p2b_full.py`` and
 ``p2b_iter_runner.py``: an ``operator`` field on the
@@ -45,8 +45,8 @@ if str(_REPO_ROOT) not in sys.path:
 import method_policy  # noqa: E402  (m0-m3 policy — may be reused later)
 from dataset.triplet import build_triplet, save_triplet  # noqa: E402
 
-PERTURBATIONS_ROOT = _REPO_ROOT / "task5_negative_perturbation" / "perturbations"
-DEFAULT_OUT_ROOT = _REPO_ROOT / "experiments" / "phase2b_triplets"
+PERTURBATIONS_ROOT = _REPO_ROOT / "data" / "phase2_perturbation" / "artifacts"
+DEFAULT_OUT_ROOT = _REPO_ROOT / "data" / "phase3_triplets"
 MANIFEST_PATH = DEFAULT_OUT_ROOT / "_manifest.json"
 
 
