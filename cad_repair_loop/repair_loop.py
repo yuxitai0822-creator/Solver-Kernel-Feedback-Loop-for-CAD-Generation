@@ -126,7 +126,7 @@ def run_kqp_feedback(step_path: Path, design_plan: dict,
     # Try in-process first
     try:
         sys.path.insert(0, str(ROOT / "kqp" / "runner"))
-        from kqp.runner.run_kqp import run_kqp as kqp_run
+        from plan2kqp.runtime.cli import run_kqp as kqp_run
         if plan_path and plan_path.exists():
             plan_dict = json.loads(plan_path.read_text(encoding="utf-8"))
         else:

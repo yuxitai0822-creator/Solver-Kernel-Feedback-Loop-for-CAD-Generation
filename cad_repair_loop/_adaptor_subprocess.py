@@ -15,7 +15,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from cad_ir.adaptor.adapter import adapt  # noqa: E402
+from text2ir.core.adaptor.adapter import adapt  # noqa: E402
 
 
 def main():

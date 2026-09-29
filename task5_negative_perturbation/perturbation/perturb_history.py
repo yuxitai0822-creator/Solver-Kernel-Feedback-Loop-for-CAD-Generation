@@ -55,9 +55,9 @@ def run_reconstruct_engine(perturbed_history: dict, out_step_path: Path,
 
     We re-use the orchestrator path but with a custom intermediate dir.
     """
-    from reconstruction_engine.compiler import compile_history
-    from reconstruction_engine.executor import execute_generated_code
-    from kqp.runner.step_loader import load_step
+    from history2cq.core.compiler import compile_history
+    from history2cq.runtime.executor import execute_generated_code
+    from plan2kqp.core.dispatch.step_loader import load_step
 
     out_step_path.parent.mkdir(parents=True, exist_ok=True)
 

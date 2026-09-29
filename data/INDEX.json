@@ -31,10 +31,10 @@
     }
   },
   "lineage_graph": {
-    "phase0_initial.history -> phase1_positive.reconstruction": "reconstruction_engine/orchestrator.py::reconstruct_sample",
-    "phase0_initial.history -> phase1_positive.design_plan":   "DesignPlan/compiler/design_plan_compiler.py::compile_design_plan",
-    "phase1_positive.design_plan -> phase1_positive.kqp":      "kqp/compiler/compile_kqp.py::compile_kqp",
-    "phase0_initial.history -> phase1_positive.cad_ir.clean": "experiments/history2ir/batch/run_history2ir.py",
+    "phase0_initial.history -> phase1_positive.reconstruction": "history2cq.runtime.orchestrator::reconstruct_sample",
+    "phase0_initial.history -> phase1_positive.design_plan":   "history2plan.core.compiler::compile_design_plan",
+    "phase1_positive.design_plan -> phase1_positive.kqp":      "plan2kqp.core.compiler.compiler::compile_one",
+    "phase0_initial.history -> phase1_positive.cad_ir.clean": "experiments/history2ir/batch/run_history2ir.py (History2IR Compiler)",
     "phase0_initial.history + phase2_perturbation.operators -> phase2_perturbation.artifacts.perturbed_history": "task5_negative_perturbation/perturbation/perturb_history.py",
     "phase2_perturbation.artifacts -> phase3_triplets":        "dataset/build_triplets.py::main"
   },

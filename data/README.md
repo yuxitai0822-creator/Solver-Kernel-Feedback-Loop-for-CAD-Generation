@@ -75,7 +75,7 @@ data/
 ```
 phase0_initial.history
     │
-    ├─→ reconstruction_engine.orchestrator ─→ phase1_positive.reconstruction
+    ├─→ history2cq.runtime.orchestrator ─→ phase1_positive.reconstruction
     │                                                  │
     │                                                  └─ step_gt/ (CD 验证基准)
     │
@@ -94,7 +94,7 @@ phase2_perturbation.operators                       │
     │  ├ E6_inner_gt_outer / zero_*                       │
     │  └ EX1/EX2 (execution-layer)                          │
     │                                                     │
-    └─→ perturbed history ─┬─→ reconstruction_engine ─→ phase2_perturbation.artifacts (negative STEP)
+    └─→ perturbed history ─┬─→ history2cq.runtime.orchestrator ─→ phase2_perturbation.artifacts (negative STEP)
                             │
                             └─→ History2IR.compiler ─→ phase1_positive.cad_ir (negative)
                                                        │

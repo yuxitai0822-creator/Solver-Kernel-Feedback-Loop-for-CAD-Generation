@@ -1,0 +1,222 @@
+{
+  "schema_version": "kqp_instance_v0.2",
+  "schema_doc": "v0.2 REFINED schema. 22 KQP instances hand-written (samples 1-20, batches 1-3) all pass 4-criteria review with v0.1 + tokenizer improvements. v0.2 formalizes: (1) array-element path syntax for list-typed fields (hole_radii, side_lengths, fillet_radii, arc_radii, line_lengths); (2) (implicit:<note>) form for source_field; (3) feedback_template 'actual' marker can be {actual} OR 'got X' OR 'actual=X' OR 'actual: X'; (4) computed expressions like '<path> (computed: <expr>)'. No new query intents added — v0.1 ALLOWED_INTENTS is complete for the 22 instances.",
+
+  "design_plan_ref": "design_plan_v0.6",
+  "unit": "mm",
+  "_doc_unit": "All numeric values in mm. Source schema (design_plan_v0.6) is mm, no conversion needed.",
+
+  "kqp_instance": {
+    "instance_id": "<required, unique>",
+    "design_plan_id": "<required: matches $.sample_id in design_plan_v6>",
+    "step_file": "<required: path relative to repository root, e.g. 'data/sanity_set_50/100243_9fb796fe_0005.step'>",
+
+    "_doc_required": "All KQP queries MUST trace back to design_plan fields (Traceability) and NOT contain GT-only info (Non-Leakage). feedback_enabled=true means a failure produces actionable LLM feedback.",
+
+    "_doc_path_syntax_v02": "v0.2 NEW. source_field is a JSONPath into design_plan_v0.6. Accepts BOTH indexing styles: 'a.b.0' (dot) AND 'a[0].b' (bracket). For list-typed fields, append [N]: 'profiles.0.dimensions.profiles.0.hole_radii[0].value'. May include computed expressions: '<path> (computed: <expr>)' where compiler resolves. May be '(implicit)' or '(implicit: <note>)' for D_health queries only.",
+    "_doc_feedback_template_v02": "v0.2 NEW. feedback_template MUST contain an actual-value marker so LLM can see what kernel observed. Accepted markers: {actual}, 'got X', 'actual=X', 'actual: X'. {expected} is OPTIONAL — hardcoded 'Expected bbox u-size 19.0mm' is equally readable. Template should be >= 30 chars for actionability.",
+
+    "queries": [
+      {
+        "id": "<unique within instance, e.g. 'q_body_count'>",
+        "category": "<A_topology | B_geometry_dim | C_feature | D_health>",
+        "intent": "<query intent name; see ALLOWED_INTENTS below>",
+        "expected": "<numeric or boolean expected value>",
+        "tolerance": "<optional, numeric absolute in mm>",
+        "source_field": "<required: JSONPath into design_plan instance>",
+        "feedback_enabled": "<true | false>",
+        "feedback_template": "<optional, e.g. 'Expected bbox {axis}-size {expected}, got {actual}.'>",
+        "_doc_intent_required": "Every query MUST declare its intent. Intent must be one of ALLOWED_INTENTS. The enum is the contract between compiler and runner."
+      }
+    ]
+  },
+
+  "ALLOWED_INTENTS": {
+    "_doc": "Each intent maps to a specific OCCT query implementation. New intents must be added here + matched by runner before compiler can emit them.",
+    "A_topology": {
+      "body_count": {
+        "description": "Number of TopoDS_Solid bodies (using TopTools_IndexedMapOfShape with TopAbs_SOLID).",
+        "expected_type": "int >= 0",
+        "typical_feedback": "Expected body_count={expected}, got {actual}."
+      },
+      "solid_count": {
+        "description": "Alias of body_count via TopAbs_SOLID enumeration.",
+        "expected_type": "int >= 0"
+      },
+      "face_count": {
+        "description": "Number of TopoDS_Face via TopTools_IndexedMapOfShape (dedup).",
+        "expected_type": "int >= 0"
+      },
+      "edge_count": {
+        "description": "Number of TopoDS_Edge via TopTools_IndexedMapOfShape (dedup).",
+        "expected_type": "int >= 0"
+      },
+      "vertex_count": {
+        "description": "Number of TopoDS_Vertex via TopTools_IndexedMapOfShape (dedup).",
+        "expected_type": "int >= 0"
+      },
+      "shell_count": {
+        "description": "Number of TopoDS_Shell via TopTools_IndexedMapOfShape (dedup).",
+        "expected_type": "int >= 0"
+      },
+      "wire_count": {
+        "description": "Number of TopoDS_Wire via TopTools_IndexedMapOfShape (dedup).",
+        "expected_type": "int >= 0"
+      }
+    },
+
+    "B_geometry_dim": {
+      "bbox_size": {
+        "description": "Bounding-box size along an axis (computed via vertex_projection onto body frame axis, matches kqp_sample1.py oriented_dimensions logic). Returns span in mm.",
+        "params": {
+          "axis": "<one of: u | v | w>   # along body's frame u_dir / v_dir / w_dir, NOT world X/Y/Z",
+          "expected": "<span mm>",
+          "tolerance": "<mm>",
+          "source_pattern": "$.solid_bodies[0].dimensions.profiles[0].length_u.value (u axis), .width_v.value (v axis), .extrude_distance.value (w axis)"
+        },
+        "typical_feedback": "Expected bbox {axis}-size {expected}, got {actual} (tolerance={tolerance}mm)."
+      },
+      "cylinder_radius": {
+        "description": "Radius of one cylindrical face, computed via BRepGProp.linear_properties or get Cylinder Surface from TopoDS_Face and read its radius attribute.",
+        "params": {
+          "expected": "<radius mm>",
+          "tolerance": "<mm>",
+          "source_pattern": "$.solid_bodies[0].dimensions.profiles[0].radius.value (circle) | .outer_radius.value (annulus) | .inner_radius.value (annulus hole)"
+        },
+        "typical_feedback": "Expected cylinder radius {expected}mm, got {actual}mm."
+      },
+      "center_distance": {
+        "description": "Distance between two geometric centers (sketch circle centers, ring centers, etc.). Computed via BRepExtrema.distance or vertex_to_vertex on center points.",
+        "params": {
+          "from_point_ref": "<source of first center>",
+          "to_point_ref": "<source of second center>",
+          "expected": "<distance mm>",
+          "tolerance": "<mm>"
+        }
+      },
+      "plane_area": {
+        "description": "Sum of areas of all planar faces (or single face area). Uses BRepGProp.surface_properties; surface_type DynamicType.Geom_Plane filter.",
+        "params": {
+          "expected": "<area mm²>",
+          "tolerance": "<mm²>"
+        },
+        "_warning": "Not directly traceable from design_plan v0.6. Listed for future schema extension. Compiler should NOT emit unless design_plan has explicit area field."
+      },
+      "volume": {
+        "description": "Body volume via BRepGProp.volume_properties.",
+        "params": {"expected": "<mm³>", "tolerance": "<mm³>"},
+        "_warning": "design_plan v0.6 does NOT emit volume. Compiler must NOT emit unless design_plan is extended."
+      }
+    },
+
+    "C_feature": {
+      "through_void_count": {
+        "description": "Number of through-voids (holes) in the body. For each inner ring of a profile, count exactly one through-void. Detect via Euler genus (V-E+F=2-2*g) or explicit inner-ring count matching.",
+        "params": {
+          "expected": "<int >= 0>",
+          "tolerance": 0,
+          "source_pattern": "$.solid_bodies[0].profiles[0].rings[*].role=='inner' count"
+        },
+        "typical_feedback": "Expected {expected} through-void(s), got {actual}."
+      },
+      "hole_radius": {
+        "description": "Inner cylindrical surface radius (annulus inner ring or rectangular_frame inner rect). Theoretically queryable but NOT directly emitted in v0.1 design plans; left for future schema extension.",
+        "params": {"expected": "<radius mm>", "tolerance": "<mm>"}
+      }
+    },
+
+    "D_health": {
+      "is_solid": {
+        "description": "True if shape is TopAbs_SOLID (closed manifold solid).",
+        "params": {"expected": "true | false", "tolerance": null}
+      },
+      "occt_valid": {
+        "description": "BRepCheck_Analyzer.IsValid() returns True if shape has no geometric-topological errors.",
+        "params": {"expected": "true | false", "tolerance": null},
+        "typical_feedback": "OCCT validation failed: shape has topological errors."
+      },
+      "all_faces_planar": {
+        "description": "All face surfaces have Geom_Plane DynamicType (i.e. no curved faces in this body).",
+        "params": {"expected": "true | false"}
+      },
+      "euler_characteristic": {
+        "description": "V - E + F for a single solid (closed manifold: 2).",
+        "params": {"expected": 2, "tolerance": 0},
+        "_warning": "Annulus/revolve have non-trivial topology (genus>0); use with caution."
+      },
+      "symmetric_about_plane": {
+        "description": "v0.2 NEW. For extent_type=symmetric extrudes: body centroid must lie on the sketch plane. Use GProp CentreOfMass and verify distance-to-plane < tol.",
+        "params": {"expected": "true", "tolerance": 0.01},
+        "_doc_emission": "Compiler emits this query ONLY when design_plan.extrude.extent_type == 'symmetric'. Traces implicitly to (extent_type=symmetric)."
+      }
+    }
+  },
+
+  "per_category_required_fields": {
+    "_doc": "For each (category, intent), these design_plan fields are the traceable source. Compiler emits queries only if source_field exists and feedback_enabled=true.",
+    "A_topology.body_count":   "$.target.body_count",
+    "A_topology.face_count":   "(derived from face_count via kernel; design plan does NOT emit this — compiler may choose to emit or not based on heuristics)",
+    "B_geometry_dim.bbox_size":       "$.solid_bodies[0].dimensions.profiles[0].length_u.value (u), .width_v.value (v), .extrude_distance.value (w)",
+    "B_geometry_dim.cylinder_radius": "$.solid_bodies[0].dimensions.profiles[0].(radius|outer_radius|inner_radius).value",
+    "C_feature.through_void_count":   "$.solid_bodies[0].profiles[*].rings[*].role=='inner' count",
+    "D_health.is_solid":              "(implicit: valid extrusion implies is_solid when body_count=1)",
+    "D_health.occt_valid":            "(implicit: same)"
+  },
+
+  "validation_intent_emission_policy": {
+    "_doc": "compiler must NOT emit a query if (a) no source_field in design_plan, OR (b) feedback_enabled=false but design_plan does NOT trace. Exception: health queries can be implicit (no source_field) for feedback_enabled=false diagnostics.",
+    "rule_1_traceability": "Every query with feedback_enabled=true MUST have a non-empty source_field pointing to design_plan fields.",
+    "rule_2_non_leakage": "Never emit queries whose expected value derives from GT-only data (e.g. exact volume when design_plan has no volume field).",
+    "rule_3_feedback_usefulness": "Every query with feedback_enabled=true must produce a feedback string that helps LLM fix the underlying gen mistake."
+  },
+
+  "example": {
+    "_doc": "Hand-written KQP instance for sample 1 (100243_9fb796fe_0005):",
+    "instance_id": "kqp_100243_9fb796fe_0005",
+    "design_plan_id": "100243_9fb796fe_0005",
+    "step_file": "data/sanity_set_50/100243_9fb796fe_0005.step",
+    "queries": [
+      {"id": "q_body_count", "category": "A_topology", "intent": "body_count",
+       "expected": 1, "source_field": "$.target.body_count",
+       "feedback_enabled": true,
+       "feedback_template": "Expected body_count=1, got {actual}."},
+      {"id": "q_bbox_u", "category": "B_geometry_dim", "intent": "bbox_size",
+       "axis": "u", "expected": 19.0, "tolerance": 0.01,
+       "source_field": "$.solid_bodies[0].dimensions.profiles[0].length_u.value",
+       "feedback_enabled": true,
+       "feedback_template": "Expected bbox u-size 19.0mm, got {actual}mm (tolerance=0.01mm)."},
+      {"id": "q_bbox_v", "category": "B_geometry_dim", "intent": "bbox_size",
+       "axis": "v", "expected": 19.0, "tolerance": 0.01,
+       "source_field": "$.solid_bodies[0].dimensions.profiles[0].width_v.value",
+       "feedback_enabled": true,
+       "feedback_template": "Expected bbox v-size 19.0mm, got {actual}mm (tolerance=0.01mm)."},
+      {"id": "q_bbox_w", "category": "B_geometry_dim", "intent": "bbox_size",
+       "axis": "w", "expected": 200.0, "tolerance": 0.05,
+       "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+       "feedback_enabled": true,
+       "feedback_template": "Expected bbox w-size 200.0mm, got {actual}mm (tolerance=0.05mm)."},
+      {"id": "q_is_solid", "category": "D_health", "intent": "is_solid",
+       "expected": true,
+       "source_field": "(implicit: solid expected for valid extrude)",
+       "feedback_enabled": true,
+       "feedback_template": "Body is not a closed solid; check extrusion was complete."},
+      {"id": "q_occt_valid", "category": "D_health", "intent": "occt_valid",
+       "expected": true,
+       "source_field": "(implicit)",
+       "feedback_enabled": true,
+       "feedback_template": "OCCT validation failed."}
+    ]
+  },
+
+  "open_extension_points": {
+    "_doc": "Fields in this schema that we COULD emit but currently CANNOT (no design_plan source field yet). Listed for transparency; do NOT emit queries for these unless design_plan v0.7+ adds the source field.",
+    "B_geometry_dim.plane_area":      "needs $.solid_bodies[0].dimensions.*area* field — not in v0.6",
+    "B_geometry_dim.volume":          "needs $.solid_bodies[0].dimensions.*volume* field — not in v0.6",
+    "C_feature.hole_radius":          "needs per-hole radius field — not in v0.6",
+    "A_topology.face_count":          "design_plan has no face_count field (Non-Leakage: face_count is GT-only data)",
+    "A_topology.edge_count":          "same as face_count (GT-only)",
+    "A_topology.vertex_count":        "same (GT-only)",
+    "A_topology.shell_count":         "same (GT-only)",
+    "A_topology.wire_count":          "same (GT-only)"
+  }
+}

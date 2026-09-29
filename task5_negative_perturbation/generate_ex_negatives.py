@@ -79,7 +79,7 @@ def run_reconstruct(perturbed_history: Path, out_step: Path, sample_id: str) -> 
     try:
         sys.path.insert(0, str(ROOT))
         sys.path.insert(0, str(ROOT / "kqp" / "runner"))
-        from reconstruction_engine.orchestrator import reconstruct_sample
+        from history2cq.runtime.orchestrator import reconstruct_sample
         report = reconstruct_sample(perturbed_history, out_dir)
         # The orchestrator places the STEP at out_dir / <history-stem> / generated.step
         history_stem = perturbed_history.stem  # e.g., 100877_ac1e5a17_0001_perturbed
