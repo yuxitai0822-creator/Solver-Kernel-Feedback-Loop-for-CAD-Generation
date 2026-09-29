@@ -832,48 +832,111 @@ PCRR(F) = 1 − μ(P(F)) / μ(P)
 PCRR measures **how much feedback reduces problem-identification
 uncertainty**, decoupling it from action mapping.
 
-### 12.3 Global Problem Space P
-Problem space is constituded by reasons why a specific CAD script is not gonna work。
-**Scope**: P is defined by the errors induced by the 138 benchmark
-perturbations. Problem types are NOT extended beyond the 9 observed
-operators. Parameters (e.g., dimension, radius) are extended to
-continuous design space [0, +∞) to enable granularity at the
-parameter level.
+### 12.3 Global Problem Space P_B (Refined per user v0.3)
 
-Formally:
+**Definition (refined per user audit)**:
+
+> *Given a CAD generation task, a problem is a violation of a reference, rule, or validity criterion by a generated CAD artifact. A problem space P is the set of abstract violation categories that a verification mechanism aims to detect and diagnose.*
+
+**Design principles** (enforced):
+
+1. **Problem ≠ parameter template**: P is not a set of parameter schemas
+   illustrating wrong design space. Problems must be **common and universal**,
+   applicable across models.
+2. **Problem ≠ repair action**: P must not be conflated with A. CGVM's
+   responsibility ends at problem identification; action mapping is the
+   LLM's engineering task.
+3. **Problem ≠ perturbation operator**: P is not tied to data construction
+   procedures. A problem is an abstract violation category that **can be
+   (but is not necessarily) induced** by a perturbation operator.
+
+**Formal definition (Bounded Benchmark Problem Space)**:
 
 ```
-P = E × D(E)
-
-E = {E1_envelope_u, E1_envelope_v_shrink,
-     E2_extrude_deep,  E2_extrude_shallow,
+O = {E1_envelope_u, E1_envelope_v_shrink,
+     E2_extrude_deep, E2_extrude_shallow,
      E3_radius_up,
      E4_void_remove_one, E4_void_add,
      E5_extent_type_change,
-     E6_inner_gt_outer}     # 9 error types (problem types)
+     E6_inner_gt_outer}                 # 9 perturbation operators
 
-D(E) = ⋃_{e ∈ E} D(e)        # parameter subspace per error type
-D(e) ⊆ [0, +∞)^{k(e)}      # k(e) depends on error type
+V = {dimension_mismatch, radius_mismatch,
+     void_count_mismatch,
+     extent_relation_mismatch,
+     solid_validity_violation,
+     topological_invalidity}            # 6 violation types
+
+φ: O → 2^V                              # operator → violation types
+V_B = ⋃_{o ∈ O} φ(o)                  # benchmark violation set
+
+P_B = ⋃_{v ∈ V_B} {v} × D(v)          # bounded problem space
+
+where:
+  - D(v) is the domain of violation_state for violation_type v
+  - D(v) is continuous, discrete, categorical, or Boolean
 ```
 
-Each `p ∈ P` is a tuple `(error_type, parameter_state)` where
-`error_type ∈ E` and `parameter_state ∈ D(error_type)`.
+**φ mapping (operator → violation types)**:
 
-### 12.4 Feedback-Conditioned Problem Space P(F)
+| Operator | Induced violation types φ(o) | Domain |
+|---|---|---|
+| `E1_envelope_u` | `{dimension_mismatch}` | continuous |
+| `E1_envelope_v_shrink` | `{dimension_mismatch}` | continuous |
+| `E2_extrude_deep` | `{dimension_mismatch}` | continuous |
+| `E2_extrude_shallow` | `{dimension_mismatch}` | continuous |
+| `E3_radius_up` | `{radius_mismatch}` | continuous |
+| `E4_void_remove_one` | `{void_count_mismatch, topological_invalidity}` | discrete / structural |
+| `E4_void_add` | `{void_count_mismatch, topological_invalidity}` | discrete / structural |
+| `E5_extent_type_change` | `{extent_relation_mismatch}` | categorical / relational |
+| `E6_inner_gt_outer` | `{solid_validity_violation, topological_invalidity}` | boolean / validity |
+
+**6 violation types** (V_B):
+
+| Violation type | Domain | Induced by |
+|---|---|---|
+| `dimension_mismatch` | continuous | E1, E2 |
+| `radius_mismatch` | continuous | E3 |
+| `void_count_mismatch` | discrete | E4 |
+| `extent_relation_mismatch` | categorical / relational | E5 |
+| `solid_validity_violation` | boolean / validity | E6 |
+| `topological_invalidity` | discrete / structural | E4, E6 |
+
+**Each element of P_B**: a tuple `(violation_type, violation_state)`
+- `violation_type ∈ V_B` (one of the 6)
+- `violation_state ∈ D(violation_type)` (domain-dependent)
+
+Example:
+```
+p = (dimension_mismatch, {
+  target = bbox_w,
+  expected = 130.0,
+  actual = 195.0,
+  deviation = +65.0
+})
+```
+
+**Detailed schemas for each violation_type are specified in §13.**
+
+### 12.4 Feedback-Conditioned Problem Space P_B(F)
 
 ```
-P(F) = { p ∈ P : F is true for p }
+P_B(F) = { p ∈ P_B : F is true for p }
 ```
 
-Examples:
+Where `p = (violation_type, violation_state)` and "F is true for p"
+means the feedback F is consistent with the violation described by p.
+
+Examples (using the 6 violation types in V_B):
 - KQP "bbox_u expected=19.0 actual=1.9" →
-  `P(F) = { p : bbox_u(p) ≈ 1.9 ± tolerance }` → small set
+  `P_B(F) = { (dimension_mismatch, s) : s.target ∈ {bbox_u}, s.actual ≈ 1.9 }` → small set
+- KQP "through_void_count expected=4 actual=3" →
+  `P_B(F) = { (void_count_mismatch, s) : s.target = through_void_count, s.actual = 3 }` → small set
 - Solver "under_constrained, dof=4" →
-  `P(F) = { p : solver(p) reports under-constrained with dof=4 }` → broad set (multiple error types qualify)
+  `P_B(F) = { (dimension_mismatch, s) ∪ (radius_mismatch, s) ∪ ... }` → broad set (multiple types qualify)
 - Pipeline "execute error NameError" →
-  `P(F) = { p : pipeline(p) fails at NameError }` → very broad (any syntax error)
-- Visual "view doesn't match" →
-  `P(F) = { p : visual(p) does not match reference }` → very broad
+  `P_B(F) = { p : pipeline(p) fails at NameError }` → very broad (no constraint on violation_type)
+- Visual "front view does not match" →
+  `P_B(F) = { p : visual(p) does not match reference }` → very broad
 
 ### 12.5 Measure μ
 
@@ -936,14 +999,15 @@ PCRR  = 1 − (consistent bins) / (total bins)
 
 ### 12.8 Migration from ACRR
 
-| Aspect | v0.2 ACRR | v0.3 PCRR |
+| Aspect | v0.2 ACRR | v0.3 PCRR (refined problem space) |
 |---|---|---|
-| Metric space | Action space A (45 atomic actions) | Problem space P (9 types × [0,+∞)^k) |
-| Denominator | |A| = 45 | μ(P), finite per chosen measure |
-| Numerator | |A(F)| ⊆ A | μ(P(F)) ⊆ P |
+| Metric space | Action space A (45 atomic actions) | Problem space P_B (6 violation types × domain D(v)) |
+| Denominator | |A| = 45 | μ(P_B), finite per chosen measure |
+| Numerator | |A(F)| ⊆ A | μ(P_B(F)) ⊆ P_B |
 | Interpretation | feedback reduces action space | feedback reduces problem space |
 | CGVM dependency | action mapping included | action mapping excluded |
-| Practical computation | require A(F) per feedback | require P(F) per feedback |
+| Problem structure | action categories (MOD/ADD/DEL/REORDER) | violation categories (6 types) + state domain |
+| Practical computation | require A(F) per feedback | require P_B(F) per feedback |
 
 **Open for review**: This redefinition requires user approval before
 implementation. Specifically, the choice of measure μ (option a/b/c)
@@ -952,4 +1016,420 @@ validation against the 138-perturbation benchmark.
 
 ---
 
-*End of Action Taxonomy Specification v0.3 (with PCRR addendum).*
+## 13. Violation State Schemas per Violation Type (v0.3 Addendum)
+
+For each of the 6 violation types in `V_B = {dimension_mismatch,
+radius_mismatch, void_count_mismatch, extent_relation_mismatch,
+solid_validity_violation, topological_invalidity}`, this section
+specifies the **violation_state schema** — the structured description
+of an individual problem instance. The schemas are derived from the
+**frozen perturbation set** (`experiments/phase2b_triplets/`, n=138)
+and the project's KQP / IR / Design-Plan schemas.
+
+### 13.0 Schema Conventions
+
+All violation_state instances follow the JSON schema convention:
+
+```json
+{
+  "violation_type": "<type_name>",
+  "violation_state": { /* type-specific fields */ }
+}
+```
+
+Common fields across all schemas (when applicable):
+
+| Field | Type | Meaning |
+|---|---|---|
+| `target_field_path` | string | Design-plan path of the perturbed field (e.g., `$.solid_bodies[0].dimensions.extrude_distance.value`) |
+| `target_intent` | string | KQP intent that should detect this violation (e.g., `bbox_size`, `cylinder_radius`, `through_void_count`) |
+| `expected` | (varies) | The value defined by the Design Plan (ground truth) |
+| `actual` | (varies) | The observed value after perturbation |
+| `deviation` | (varies) | signed delta: `actual - expected` |
+| `deviation_ratio` | float | ratio: `actual / expected` (when `expected ≠ 0`) |
+
+### 13.1 dimension_mismatch
+
+**Induced by**: `E1_envelope_u`, `E1_envelope_v_shrink`, `E2_extrude_deep`,
+`E2_extrude_shallow`
+**Domain**: **continuous** (`D ⊆ ℝ₊`)
+**Frozen perturbation count**: 92 (E1+E2 combined)
+**KQP intent**: `bbox_size`
+
+#### Schema
+
+```json
+{
+  "violation_type": "dimension_mismatch",
+  "violation_state": {
+    "target_axis": "u" | "v" | "w",        // which bbox axis
+    "target_field_path": "<design_plan_path>",  // e.g., "$.global_envelope.bbox.u.value"
+    "expected": <float>,                          // GT dimension value
+    "actual": <float>,                            // observed after perturbation
+    "deviation": <float>,                         // actual - expected
+    "deviation_ratio": <float>,                   // actual / expected
+    "profile_type": "rectangle|circle|annulus|rectangular_frame|stadium|polygon",  // context
+    "extent_type": "one_side|symmetric|two_sides"   // context
+  }
+}
+```
+
+#### Frozen Perturbation Examples (from `phase2b_triplets/`)
+
+| sample_id | nid | operator | target_axis | expected | actual | deviation_ratio |
+|---|---|---|---|---|---|---|
+| `100243_9fb796fe_0005` | neg_02 | E1_envelope_u | u | 1.9 | 2.28 | 1.20 |
+| `100243_9fb796fe_0005` | neg_03 | E1_envelope_v_shrink | v | 1.9 | 1.52 | 0.80 |
+| `100243_9fb796fe_0005` | neg_01 | E2_extrude_deep | w | 20.0 | 30.0 | 1.50 |
+| `100243_9fb796fe_0005` | neg_04 | E2_extrude_shallow | w | 20.0 | 10.0 | 0.50 |
+
+**Domain**: `D(dimension_mismatch) = {u,v,w} × ℝ₊ × ℝ₊ × ℝ₊ × ℝ₊`
+
+### 13.2 radius_mismatch
+
+**Induced by**: `E3_radius_up`
+**Domain**: **continuous** (`D ⊆ ℝ₊`)
+**Frozen perturbation count**: 19 (all continuous)
+**KQP intent**: `cylinder_radius`
+
+#### Schema
+
+```json
+{
+  "violation_type": "radius_mismatch",
+  "violation_state": {
+    "target_kind": "circle" | "annulus_inner" | "annulus_outer" | "stadium_arc",
+    "target_field_path": "<design_plan_path>",  // e.g., "$.solid_bodies[0].profiles[0].radius.value"
+    "expected": <float>,                          // GT radius
+    "actual": <float>,                            // perturbed radius
+    "deviation": <float>,                         // actual - expected
+    "deviation_ratio": <float>,                   // actual / expected
+    "profile_type": "circle|annulus|stadium"      // which sketch profile
+  }
+}
+```
+
+#### Frozen Perturbation Examples
+
+| sample_id | target_kind | profile_type | expected | actual | deviation_ratio |
+|---|---|---|---|---|---|
+| `102295_86f842dd_0000` | stadium_arc | stadium | 1.0 | 1.25 | 1.25 |
+| (annulus samples) | annulus_outer | annulus | 1.27 | 1.5875 | 1.25 |
+| (circle samples) | circle | circle | 0.08 | 0.10 | 1.25 |
+
+**Domain**: `D(radius_mismatch) = {4 kinds} × ℝ₊ × ℝ₊ × ℝ₊ × ℝ₊`
+
+### 13.3 void_count_mismatch
+
+**Induced by**: `E4_void_remove_one`, `E4_void_add`
+**Domain**: **discrete** (`D ⊆ ℤ₊`)
+**Frozen perturbation count**: 20 (10 remove + 10 add)
+**KQP intent**: `through_void_count`
+
+#### Schema
+
+```json
+{
+  "violation_type": "void_count_mismatch",
+  "violation_state": {
+    "target": "through_void_count",                 // fixed target
+    "expected": <int>,                                // GT count
+    "actual": <int>,                                  // observed count
+    "deviation": <int>,                               // actual - expected
+    "perturbation_direction": "remove_one" | "add_one",  // which E4 operator
+    "profile_type": "circle|rectangular_frame|..."      // which profile lost/gained a void
+  }
+}
+```
+
+#### Frozen Perturbation Examples
+
+| operator | sample_id | profile_type | expected | actual | deviation |
+|---|---|---|---|---|---|
+| `E4_void_remove_one` | `101427_a9bcb09c_0001` | rectangular_frame | 1 | 0 | −1 |
+| `E4_void_add` | `102760_26430589_0037` | circle | 0 | 1 | +1 |
+
+**Domain**: `D(void_count_mismatch) = ℤ₊ × ℤ₊ × ℤ₊ × {remove_one, add_one}`
+
+### 13.4 extent_relation_mismatch
+
+**Induced by**: `E5_extent_type_change`
+**Domain**: **categorical / relational** (`D ⊆ Enum × Enum`)
+**Frozen perturbation count**: 1 (only one sample in current benchmark)
+**KQP intent**: `symmetric_about_plane`
+
+#### Schema
+
+```json
+{
+  "violation_type": "extent_relation_mismatch",
+  "violation_state": {
+    "target_field": "extrude.extent_type",          // which field
+    "expected": "SymmetricFeatureExtentType" | "OneSideFeatureExtentType" | "TwoSidesFeatureExtentType",
+    "actual":   "SymmetricFeatureExtentType" | "OneSideFeatureExtentType" | "TwoSidesFeatureExtentType",
+    "relation_change": "symmetric_to_one_side" | "one_side_to_symmetric" | "one_side_to_two_sides" | ...,
+    "profile_type": "rectangle|circle|annulus|...",
+    "downstream_effects": [                          // cascading violations this typically induces
+      "bbox_w mismatch (depth doubled or halved)",
+      "symmetric_about_plane violation"
+    ]
+  }
+}
+```
+
+#### Frozen Perturbation Example
+
+| sample_id | expected | actual | relation_change |
+|---|---|---|---|
+| `106323_77f22d29_0004` | `SymmetricFeatureExtentType` | `OneSideFeatureExtentType` | `symmetric_to_one_side` |
+
+**Domain**: `D(extent_relation_mismatch) = Enum × Enum × Enum × relation_change`
+(3×3 enum pairs = 9 possible transitions, each with cascading effects)
+
+### 13.5 solid_validity_violation（schema和前面有点对不上，稍显混乱）
+
+**Induced by**: `E6_inner_gt_outer`
+**Domain**: **boolean / validity** (`D ⊆ Bool × subtype × fieldset`)
+**Frozen perturbation count**: 6
+**KQP intent**: `is_solid`, `occt_valid`
+
+#### Schema
+
+```json
+{
+  "violation_type": "solid_validity_violation",
+  "violation_state": {
+    "violation_subtype": "inner_radius_exceeds_outer_radius"  // expand for other validity subtypes
+                          | "self_intersection" | "open_shell" | ...,
+    "primary_field_path": "<design_plan_path>",         // e.g., "$.solid_bodies[0].profiles[0].inner_radius.value"
+    "involved_fields": [                                  // fields whose relation is violated
+      "inner_radius", "outer_radius"
+    ],
+    "expected_relation": "inner_radius < outer_radius",    // the violated relation
+    "actual_values": {
+      "inner_radius": <float>,
+      "outer_radius": <float>
+    },
+    "validity_predicates_failed": [                       // which kernels/predicates flagged
+      "is_solid", "occt_valid"
+    ]
+  }
+}
+```
+
+#### Frozen Perturbation Example 
+
+| sample_id | subtype | inner_radius (expected) | outer_radius (expected) | inner_radius (actual) | outer_radius (actual) |
+|---|---|---|---|---|---|
+| `102314_91648bfc_0000` | inner_radius_exceeds_outer_radius | 0.7966 | > 0.7966 | 1.77 | < 1.77 |
+
+**Domain**: `D(solid_validity_violation) = {validity_subtype} × Bool × {fieldset} × {relations}`
+
+### 13.6 topological_invalidity（schema和前面有点对不上，稍显混乱）
+
+**Induced by**: `E4_void_remove_one` (lost loop), `E6_inner_gt_outer` (degenerate annulus)
+**Domain**: **discrete / structural** (`D ⊆ {subtype} × {features}`)
+**Frozen perturbation count**: 16 (10 from E4 + 6 from E6)
+**KQP intent**: `is_solid`, `occt_valid`, `euler_characteristic`
+
+#### Schema
+
+```json
+{
+  "violation_type": "topological_invalidity",
+  "violation_state": {
+    "violation_subtype": "lost_loop" | "degenerate_annulus" | "non_manifold" | "self_intersection" | ...,
+    "affected_features": [                       // which sketch/feature instances
+      "sketch.profiles[*].loops[0]"
+    ],
+    "affected_fields": [                         // which IR fields are removed/modified
+      "inner_loop", "outer_loop"
+    ],
+    "euler_characteristic": {                   // topological invariant
+      "expected": <int>,                        // GT genus → expected χ
+      "actual": <int>                            // after perturbation
+    },
+    "validity_predicates_failed": [             // which kernels/predicates flagged
+      "occt_valid"
+    ]
+  }
+}
+```
+
+#### Frozen Perturbation Examples
+
+| operator | sample_id | subtype | profile_type |
+|---|---|---|---|
+| `E4_void_remove_one` | `101427_a9bcb09c_0001` | lost_loop | rectangular_frame |
+| `E6_inner_gt_outer` | `102314_91648bfc_0000` | degenerate_annulus | annulus |
+
+**Domain**: `D(topological_invalidity) = {subtype} × {features} × {fields} × {χ}`
+
+### 13.7 Mapping Table: T_ref → violation_state
+
+The frozen perturbation set's `T_ref` field is mapped to violation_state
+via the following rule:
+
+```
+for each perturbation:
+  op = T_ref.operator_input_name
+  violation_types = φ(op)
+  for v in violation_types:
+    s = build_violation_state(v, T_ref)
+    record (v, s) as an instance in P_B
+```
+
+Concretely:
+
+| T_ref fields | Mapped to violation_state |
+|---|---|
+| `target_intent` ∈ {bbox_size} | `dimension_mismatch` (axis from T_ref.axis or extrude→w) |
+| `target_intent` ∈ {cylinder_radius} | `radius_mismatch` (kind from `radius_kind` or `profile_type`) |
+| `target_intent` ∈ {through_void_count} | `void_count_mismatch` (direction from operator_input_name) |
+| `target_intent` ∈ {symmetric_about_plane} | `extent_relation_mismatch` |
+| `target_intent` ∈ {is_solid, occt_valid} | `solid_validity_violation` (when `error_category` ∈ validity types) |
+| `error_category` indicates topology | `topological_invalidity` |
+
+#### Example T_ref → violation_state mappings (one per operator)
+
+**E1_envelope_u** → 1 `dimension_mismatch` instance:
+```json
+{
+  "violation_type": "dimension_mismatch",
+  "violation_state": {
+    "target_axis": "u",
+    "target_field_path": "$.global_envelope.bbox.u.value",
+    "expected": 1.9,
+    "actual": 2.28,
+    "deviation": 0.38,
+    "deviation_ratio": 1.2,
+    "profile_type": "rectangle",
+    "extent_type": "one_side"
+  }
+}
+```
+
+**E3_radius_up** (stadium_arc) → 1 `radius_mismatch` instance:
+```json
+{
+  "violation_type": "radius_mismatch",
+  "violation_state": {
+    "target_kind": "stadium_arc",
+    "target_field_path": "$.solid_bodies[0].profiles[0].radius.value",
+    "expected": 1.0,
+    "actual": 1.25,
+    "deviation": 0.25,
+    "deviation_ratio": 1.25,
+    "profile_type": "stadium"
+  }
+}
+```
+
+**E4_void_remove_one** → 2 instances (one per induced violation type):
+```json
+[
+  {
+    "violation_type": "void_count_mismatch",
+    "violation_state": {
+      "target": "through_void_count",
+      "expected": 1,
+      "actual": 0,
+      "deviation": -1,
+      "perturbation_direction": "remove_one",
+      "profile_type": "rectangular_frame"
+    }
+  },
+  {
+    "violation_type": "topological_invalidity",
+    "violation_state": {
+      "violation_subtype": "lost_loop",
+      "affected_features": ["sketch.profiles[*].loops[0]"],
+      "affected_fields": ["inner_loop"],
+      "euler_characteristic": {"expected": 0, "actual": 1},
+      "validity_predicates_failed": ["occt_valid"]
+    }
+  }
+]
+```
+
+**E5_extent_type_change** → 1 `extent_relation_mismatch` instance:
+```json
+{
+  "violation_type": "extent_relation_mismatch",
+  "violation_state": {
+    "target_field": "extrude.extent_type",
+    "expected": "SymmetricFeatureExtentType",
+    "actual": "OneSideFeatureExtentType",
+    "relation_change": "symmetric_to_one_side",
+    "profile_type": "annulus",
+    "downstream_effects": ["bbox_w mismatch", "symmetric_about_plane violation"]
+  }
+}
+```
+
+**E6_inner_gt_outer** → 2 instances (one per induced violation type):
+```json
+[
+  {
+    "violation_type": "solid_validity_violation",
+    "violation_state": {
+      "violation_subtype": "inner_radius_exceeds_outer_radius",
+      "primary_field_path": "$.solid_bodies[0].profiles[0].inner_radius.value",
+      "involved_fields": ["inner_radius", "outer_radius"],
+      "expected_relation": "inner_radius < outer_radius",
+      "actual_values": {"inner_radius": 1.77, "outer_radius": 1.77},
+      "validity_predicates_failed": ["is_solid", "occt_valid"]
+    }
+  },
+  {
+    "violation_type": "topological_invalidity",
+    "violation_state": {
+      "violation_subtype": "degenerate_annulus",
+      "affected_features": ["annulus"],
+      "affected_fields": ["inner_radius", "outer_radius"],
+      "euler_characteristic": {"expected": 0, "actual": 1},
+      "validity_predicates_failed": ["occt_valid"]
+    }
+  }
+]
+```
+
+### 13.8 Summary — Frozen Perturbation → P_B Instantiation
+
+| Operator | T_ref count | Induced violation_types | P_B instances per perturbation | Total P_B instances |
+|---|---|---|---|---|
+| E1_envelope_u | 22 | {dimension_mismatch} | 1 | 22 |
+| E1_envelope_v_shrink | 24 | {dimension_mismatch} | 1 | 24 |
+| E2_extrude_deep | 45 | {dimension_mismatch} | 1 | 45 |
+| E2_extrude_shallow | 1 | {dimension_mismatch} | 1 | 1 |
+| E3_radius_up | 19 | {radius_mismatch} | 1 | 19 |
+| E4_void_remove_one | 10 | {void_count_mismatch, topological_invalidity} | 2 | 20 |
+| E4_void_add | 10 | {void_count_mismatch, topological_invalidity} | 2 | 20 |
+| E5_extent_type_change | 1 | {extent_relation_mismatch} | 1 | 1 |
+| E6_inner_gt_outer | 6 | {solid_validity_violation, topological_invalidity} | 2 | 12 |
+| **Total** | **138** | | | **164 P_B instances** |
+
+Each perturbation produces 1 or 2 P_B instances (1 if only one
+violation_type is induced, 2 if both void_count_mismatch / solid_validity_violation
+and topological_invalidity are induced).
+
+### 13.9 PCRR Computation on Refined P_B
+
+With `|P_B| = 164` discrete instances in the benchmark setting,
+the information-theoretic measure (Option a) gives:
+
+```
+μ(P_B) = H(P_B) = log(164) ≈ 7.40 bits  (uniform prior)
+μ(P_B(F)) = H(P_B|F) = log(|P_B(F)|)
+PCRR(F) = 1 − log(|P_B(F)|) / log(164)
+```
+
+For example:
+- `|P_B(F)| = 1`: PCRR ≈ 1.0 (feedback uniquely identifies problem)
+- `|P_B(F)| = 10`: PCRR ≈ 1 − 3.32/7.40 ≈ 0.55
+- `|P_B(F)| = 50`: PCRR ≈ 1 − 5.64/7.40 ≈ 0.24
+- `|P_B(F)| = 164`: PCRR ≈ 0 (no information)
+
+---
+
+*End of Action Taxonomy Specification v0.3 (with PCRR addendum + violation_state schemas).*
