@@ -12,7 +12,7 @@ from pathlib import Path
 import cadquery as cq
 from cadquery import exporters
 
-HISTORY_JSON = r"D:/PythonProgramming/CAD Generation/Constraint-grounded agentic CAD generation/子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究/data/sanity_set_50/102760_26430589_0037.json"
+HISTORY_JSON = r"D:/PythonProgramming/CAD Generation/Constraint-grounded agentic CAD generation/子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究/data/phase0_initial/history/102760_26430589_0037.json"
 EXTENT_TOTAL_MM = 4.0
 NORMAL = [0.0, 1.0, 0.0]
 LOOPS = [{'role': 'outer', 'curves': [{'type': 'circle', 'center': (0.0, 0.0), 'radius': 0.8000000000000002}]}]

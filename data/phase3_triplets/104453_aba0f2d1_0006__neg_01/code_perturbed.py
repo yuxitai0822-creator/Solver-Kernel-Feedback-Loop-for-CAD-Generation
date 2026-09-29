@@ -12,7 +12,7 @@ from pathlib import Path
 import cadquery as cq
 from cadquery import exporters
 
-HISTORY_JSON = r"D:/PythonProgramming/CAD Generation/Constraint-grounded agentic CAD generation/子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究/task5_negative_perturbation/perturbations/104453_aba0f2d1_0006/neg_01/perturbed_history.json"
+HISTORY_JSON = r"D:/PythonProgramming/CAD Generation/Constraint-grounded agentic CAD generation/子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究/data/phase2_perturbation/artifacts/104453_aba0f2d1_0006/neg_01/perturbed_history.json"
 EXTENT_TOTAL_MM = 750.0
 NORMAL = [0.0, 0.0, 1.0]
 LOOPS = [{'role': 'inner', 'curves': [{'type': 'line', 'start': (50.0, 50.0), 'end': (50.00000000000007, 250.0)}, {'type': 'line', 'start': (50.00000000000007, 250.0), 'end': (450.0, 250.0)}, {'type': 'line', 'start': (450.0, 250.0), 'end': (450.0, 50.0)}, {'type': 'line', 'start': (450.0, 50.0), 'end': (50.0, 50.0)}]}, {'role': 'outer', 'curves': [{'type': 'line', 'start': (0.0, 300.0000000000002), 'end': (0.0, 0.0)}, {'type': 'line', 'start': (0.0, 0.0), 'end': (500.0, 0.0)}, {'type': 'line', 'start': (500.0, 0.0), 'end': (500.0, 300.0)}, {'type': 'line', 'start': (500.0, 300.0), 'end': (0.0, 300.0000000000002)}]}]

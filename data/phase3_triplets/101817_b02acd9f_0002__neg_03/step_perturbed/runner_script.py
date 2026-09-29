@@ -20,7 +20,7 @@ def _user_main():
     import cadquery as cq
     from cadquery import exporters
 
-    HISTORY_JSON = r"D:/PythonProgramming/CAD Generation/Constraint-grounded agentic CAD generation/子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究/task5_negative_perturbation/perturbations/101817_b02acd9f_0002/neg_03/perturbed_history.json"
+    HISTORY_JSON = r"D:/PythonProgramming/CAD Generation/Constraint-grounded agentic CAD generation/子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究/data/phase2_perturbation/artifacts/101817_b02acd9f_0002/neg_03/perturbed_history.json"
     EXTENT_TOTAL_MM = 1120.0
     NORMAL = [1.0, 0.0, 0.0]
     LOOPS = [{'role': 'outer', 'curves': [{'type': 'line', 'start': (-18.799999999999997, 108.80000000000001), 'end': (-18.799999999999997, 151.2)}, {'type': 'line', 'start': (-18.799999999999997, 151.2), 'end': (-61.2, 151.2)}, {'type': 'line', 'start': (-61.2, 151.2), 'end': (-61.2, 108.80000000000001)}, {'type': 'line', 'start': (-61.2, 108.80000000000001), 'end': (-18.799999999999997, 108.80000000000001)}]}]
