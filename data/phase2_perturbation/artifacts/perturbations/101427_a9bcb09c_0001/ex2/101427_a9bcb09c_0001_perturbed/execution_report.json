@@ -1,0 +1,15 @@
+{
+  "sample_id": "101427_a9bcb09c_0001_perturbed",
+  "compile_success": true,
+  "execute_success": false,
+  "export_success": false,
+  "occt_load_success": false,
+  "occt_load_status": "skipped (export failed)",
+  "unsupported_ops": [],
+  "errors": [
+    "subprocess exit code 1"
+  ],
+  "extent_type": "OneSideFeatureExtentType",
+  "sketch_curve_count": 8,
+  "consumed_profile_count": 1
+}

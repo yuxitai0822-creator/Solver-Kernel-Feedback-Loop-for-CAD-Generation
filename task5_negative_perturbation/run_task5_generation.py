@@ -4,13 +4,13 @@ Pipeline per sample:
   1. Load clean sample's history JSON + original KQP + design_plan
   2. Run sampler.sample_perturbations_for() to get 3 specs
   3. For each spec: apply perturbation, reconstruct, save outputs to
-     task5_negative_perturbation/perturbations/<sid>/<neg_id>/
+     data/phase2_perturbation/artifacts/<sid>/<neg_id>/
 
 Output directories
 ------------------
-  task5_negative_perturbation/
+  data/phase2_perturbation/
     inputs/clean_reconstruction_set.json        (copy of frozen clean set)
-    perturbations/<sample_id>/<neg_id>/
+    artifacts/<sample_id>/<neg_id>/
         perturbed_history.json
         perturbed_design_plan.json
         perturbation_meta.json
@@ -36,11 +36,11 @@ from perturbation.perturb_history import apply_perturbation, run_reconstruct_eng
 from perturbation.sampler import sample_perturbations_for, resolve_expected_queries
 
 
-CLEAN_SET_PATH = ROOT / "Reconstruction_results" / "clean_reconstruction_set.json"
-HISTORY_DIR_PRIMARY = ROOT / "data" / "sanity_set_50"
-HISTORY_DIR_FALLBACK = ROOT / "Reconstruction_results"
+CLEAN_SET_PATH = ROOT / "data" / "phase1_positive" / "reconstruction" / "clean_reconstruction_set.json"
+HISTORY_DIR_PRIMARY = ROOT / "data" / "phase0_initial" / "history"
+HISTORY_DIR_FALLBACK = ROOT / "data" / "phase1_positive" / "reconstruction"
 KQP_DIR = ROOT / "kqp" / "outputs" / "compiler_v0.1"
-DESIGN_PLAN_DIR = ROOT / "DesignPlan" / "compiler" / "instances_v6"
+DESIGN_PLAN_DIR = ROOT / "data" / "phase1_positive" / "design_plan" / "instances"
 
 OUT_ROOT = ROOT / "task5_negative_perturbation"
 INPUTS_DIR = OUT_ROOT / "inputs"
@@ -49,8 +49,8 @@ REPORTS_DIR = OUT_ROOT / "reports"
 
 
 def locate_history(sample_id: str) -> Path:
-    """Primary source: data/sanity_set_50/<sid>.json.
-    Fallback: Reconstruction_results/<sid>/input_history.json."""
+    """Primary source: data/phase0_initial/history/<sid>.json.
+    Fallback: data/phase1_positive/reconstruction/<sid>/input_history.json."""
     p1 = HISTORY_DIR_PRIMARY / f"{sample_id}.json"
     if p1.exists():
         return p1

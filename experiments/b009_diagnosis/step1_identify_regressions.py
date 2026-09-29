@@ -25,7 +25,7 @@ from OCP.BRepBndLib import BRepBndLib
 from OCP.Bnd import Bnd_Box
 
 
-CLEAN_DIR = ROOT / "Reconstruction_results"
+CLEAN_DIR = ROOT / "data" / "phase1_positive" / "reconstruction"
 PLAN_DIR = ROOT / "DesignPlan" / "compiler" / "instances_v6"
 KQP_DIR = ROOT / "kqp" / "outputs" / "compiler_v0.2"
 OUT = ROOT / "experiments" / "b009_diagnosis" / "regressed_samples.json"

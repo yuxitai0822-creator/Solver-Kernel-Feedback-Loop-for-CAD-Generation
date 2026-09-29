@@ -3,7 +3,7 @@ all eligible samples, run them through the ReconstructionEngine, and
 save artifacts parallel to the E1-E6 negatives.
 
 Output structure (parallel to ``neg_01``, ``neg_02``, ...):
-    task5_negative_perturbation/perturbations/<sid>/ex1/
+    data/phase2_perturbation/artifacts/<sid>/ex1/
         <sid>_perturbed.json
         perturbation_meta.json
         generated.step
@@ -28,9 +28,9 @@ sys.path.insert(0, str(ROOT / "task5_negative_perturbation" / "perturbation"))
 
 from operators_ex import op_EX1_sketch_plane_swap, op_EX2_coordinate_flip
 
-PERT_ROOT = ROOT / "task5_negative_perturbation" / "perturbations"
-EX_SUMMARY = ROOT / "task5_negative_perturbation" / "reports" / "ex_perturbation_summary.json"
-REPORT_OUT = ROOT / "task5_negative_perturbation" / "reports" / "ex_negatives_generation_report.json"
+PERT_ROOT = ROOT / "data" / "phase2_perturbation" / "artifacts"
+EX_SUMMARY = ROOT / "data" / "phase2_perturbation" / "reports" / "ex_perturbation_summary.json"
+REPORT_OUT = ROOT / "data" / "phase2_perturbation" / "reports" / "ex_negatives_generation_report.json"
 
 CADQUERY_PYTHON = r"D:/Anaconda/envs/cad_subproject1/python.exe"
 
@@ -39,9 +39,9 @@ def perturb_and_save(operator_name: str, op_fn, sid: str,
                        bbox: list[float], out_dir: Path) -> dict:
     """Run operator, save perturbed history + meta + reconstructed STEP."""
     out_dir.mkdir(parents=True, exist_ok=True)
-    clean_hist = json.load(open(ROOT / "Reconstruction_results" / sid
+    clean_hist = json.load(open(ROOT / "data" / "phase1_positive" / "reconstruction" / sid
                                    / "input_history.json", encoding="utf-8"))
-    dp_path = ROOT / "DesignPlan" / "compiler" / "instances_v6" / f"{sid}.design_plan.json"
+    dp_path = ROOT / "data" / "phase1_positive" / "design_plan" / "instances" / f"{sid}.design_plan.json"
     dp = json.load(open(dp_path, encoding="utf-8")) if dp_path.exists() else {}
 
     try:

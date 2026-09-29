@@ -1,6 +1,6 @@
 """dataset/freeze_verified.py — mark the 120 verified triplets as frozen.
 
-Reads ``experiments/phase2b_triplets/<sid>__<nid>/triplet.json``,
+Reads ``data/phase3_triplets/<sid>__<nid>/triplet.json``,
 adds a top-level ``"frozen": true`` field (for at-a-glance status
 when reading the file), and writes an aggregate
 ``_frozen_manifest.json`` listing the (sid, nid) pairs by operator

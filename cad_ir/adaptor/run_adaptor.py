@@ -16,9 +16,9 @@ from adapter import adapt_file  # noqa: E402
 
 def main():
     examples_dir = Path(sys.argv[1]) if len(sys.argv) > 1 else (
-        ROOT.parent / "cad_ir" / "samples" / "manual_ir_examples")
+        ROOT.parent / "data" / "phase1_positive" / "cad_ir" / "instances" / "manual_ir_examples")
     results_dir = Path(sys.argv[2]) if len(sys.argv) > 2 else (
-        ROOT.parent / "cad_ir" / "results")
+        ROOT.parent / "data" / "phase1_positive" / "cad_ir" / "instances" / "history2ir_batches")
     results_dir.mkdir(parents=True, exist_ok=True)
 
     files = sorted(examples_dir.glob("*.cad_ir.json"))

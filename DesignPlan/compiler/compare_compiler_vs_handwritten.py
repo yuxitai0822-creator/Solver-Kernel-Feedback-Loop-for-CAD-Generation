@@ -78,7 +78,7 @@ FIELDS = [
 DIVERGENCE_TYPES = Counter()
 PER_SAMPLE = {}
 
-m = json.load(open(ROOT / "data/sanity_set_50/manifest.json", encoding="utf-8"))
+m = json.load(open(ROOT / "data/phase0_initial/manifest.json", encoding="utf-8"))
 IDS = [e["id"] for e in m["entries"]]
 
 for sid in IDS:

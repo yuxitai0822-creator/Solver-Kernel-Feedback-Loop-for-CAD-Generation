@@ -5,10 +5,10 @@ sys.path.insert(0, r'D:/PythonProgramming/CAD Generation/Constraint-grounded age
 from kqp.runner.run_kqp import run_kqp
 
 ROOT = Path(r'D:/PythonProgramming/CAD Generation/Constraint-grounded agentic CAD generation/子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究')
-KQP_DIR = ROOT/'kqp/samples/v0.2'
-PLAN_DIR = ROOT/'DesignPlan/compiler/instances_v6'
-GEN_DIR = ROOT/'Reconstruction_results'
-OUT = ROOT/'Reconstruction_results/gt_vs_generated_kqp_validation'
+KQP_DIR = ROOT/'data/phase1_positive/kqp/instances/v0.2'
+PLAN_DIR = ROOT/'data/phase1_positive/design_plan/instances'
+GEN_DIR = ROOT/'data/phase1_positive/reconstruction'
+OUT = ROOT/'data/phase1_positive/reconstruction/gt_vs_generated_kqp_validation'
 
 n_pass = n_fail = 0
 query_pass = 0

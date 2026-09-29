@@ -12,7 +12,7 @@ import traceback
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SANITY = ROOT / "data" / "sanity_set_50"
+SANITY = ROOT / "data" / "phase0_initial" / "history"
 OUT = ROOT / "compiler" / "instances_v6"
 
 sys.path.insert(0, str(ROOT / "compiler"))
@@ -24,7 +24,7 @@ IDS = []
 m = json.loads((SANITY / "_manifest_lookup.json").read_text(encoding="utf-8")) if (SANITY / "_manifest_lookup.json").exists() else None
 if m is None:
     import json as _j
-    m = _j.load(open(ROOT / "data/sanity_set_50/manifest.json", encoding="utf-8"))
+    m = _j.load(open(ROOT / "data/phase0_initial/manifest.json", encoding="utf-8"))
 IDS = [e["id"] for e in m["entries"]]
 
 results = {"compiled_ok": 0, "compiled_fail": 0, "failures": []}

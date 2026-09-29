@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "C:\Users\Yu\AppData\Local\Temp\tmp8py9wdep.py", line 145, in <module>
+    main()
+  File "C:\Users\Yu\AppData\Local\Temp\tmp8py9wdep.py", line 132, in main
+    cut_wp = build_loop_wp(idl, False, base_wp.moveTo(0, 0))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Yu\AppData\Local\Temp\tmp8py9wdep.py", line 48, in build_loop_wp
+    wp = wp.lineTo(cd["end"][0], cd["end"][1])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\cad_subproject1\Lib\site-packages\cadquery\cq.py", line 1567, in lineTo
+    p = Edge.makeLine(startPoint, endPoint)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Anaconda\envs\cad_subproject1\Lib\site-packages\cadquery\occ_impl\shapes.py", line 2859, in makeLine
+    BRepBuilderAPI_MakeEdge(Vector(v1).toPnt(), Vector(v2).toPnt()).Edge()
+OCP.StdFail.StdFail_NotDone: BRep_API: command not done

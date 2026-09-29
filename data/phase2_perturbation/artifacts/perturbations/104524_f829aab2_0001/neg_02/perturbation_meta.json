@@ -1,0 +1,28 @@
+{
+  "operator": "E3_radius",
+  "ptype": "circle",
+  "radius_kind": "radius",
+  "scale": 1.25,
+  "modified_history_field": "sketch.curves[c11f0b64-e301-11ea-b9cd-54bf646e7e1f].radius",
+  "source_design_plan_field": "$.solid_bodies[0].profiles[0].radius.value",
+  "original_value": 0.75,
+  "perturbed_value": 0.9375,
+  "target_intent": "cylinder_radius",
+  "error_category": "E3_radius",
+  "expected_failed_query": [],
+  "allowed_secondary_failed_queries": [
+    "bbox_size",
+    "through_void_count",
+    "is_solid",
+    "occt_valid"
+  ],
+  "perturbation_id": 2,
+  "operator_input_name": "E3_radius_up",
+  "profile_type": "circle",
+  "extent_type": "one_side",
+  "expected_query_ids_resolved": [
+    "q_radius"
+  ],
+  "sample_id": "104524_f829aab2_0001",
+  "negative_id": "neg_02"
+}

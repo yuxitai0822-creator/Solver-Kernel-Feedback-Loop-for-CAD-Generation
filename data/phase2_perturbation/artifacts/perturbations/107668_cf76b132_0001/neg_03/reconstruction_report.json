@@ -1,0 +1,11 @@
+{
+  "compile_success": true,
+  "execute_success": true,
+  "export_success": true,
+  "occt_load_success": false,
+  "occt_load_status": "load error: STEP D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\107668_cf76b132_0001\\neg_03\\_step_tmp.step has no transferable roots",
+  "compile_unsupported_ops": [],
+  "execute_error": null,
+  "execute_stderr_tail": "",
+  "temp_history_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\107668_cf76b132_0001\\neg_03\\107668_cf76b132_0001_perturbed.json"
+}

@@ -22,7 +22,7 @@ sys.path.insert(0, str(ROOT / "cad_edit_distance"))
 from code2oper import parse_cadquery_script
 from cad_edit_distance.compute_ced import ced_with_fallback
 
-CLEAN = ROOT / "Reconstruction_results"
+CLEAN = ROOT / "data" / "phase1_positive" / "reconstruction"
 OUT = ROOT / "experiments" / "phase2a_parse_coverage"
 OUT.mkdir(parents=True, exist_ok=True)
 SUMMARY = OUT / "parse_coverage.json"

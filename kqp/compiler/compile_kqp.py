@@ -52,9 +52,9 @@ def main():
     p.add_argument("input", nargs="?", help="path to design_plan_v0.6.json")
     p.add_argument("-o", "--output", help="path to output kqp_instance.json")
     p.add_argument("--batch", action="store_true", help="compile all 50 samples")
-    p.add_argument("--plan-dir", default="compiler/instances_v6",
+    p.add_argument("--plan-dir", default="data/phase1_positive/design_plan/instances",
                    help="design_plan_v0.6 directory for --batch")
-    p.add_argument("--out-dir", default="KQP/outputs/compiler_v0.1",
+    p.add_argument("--out-dir", default="data/phase1_positive/kqp/instances/v0.1",
                    help="output directory for --batch")
     args = p.parse_args()
 

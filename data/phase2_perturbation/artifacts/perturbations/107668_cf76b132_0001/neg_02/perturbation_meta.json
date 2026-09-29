@@ -1,0 +1,29 @@
+{
+  "operator": "E3_radius",
+  "ptype": "annulus",
+  "radius_kind": "outer",
+  "scale": 1.25,
+  "modified_history_field": "sketch.curves[d280cdde-e30e-11ea-8da8-54bf646e7e1f].radius",
+  "source_design_plan_field": "$.solid_bodies[0].profiles[0].outer_radius.value",
+  "original_value": 13.249999999999998,
+  "perturbed_value": 16.562499999999996,
+  "target_intent": "cylinder_radius",
+  "error_category": "E3_radius",
+  "expected_failed_query": [],
+  "allowed_secondary_failed_queries": [
+    "bbox_size",
+    "through_void_count",
+    "is_solid",
+    "occt_valid"
+  ],
+  "perturbation_id": 2,
+  "operator_input_name": "E3_radius_up",
+  "profile_type": "annulus",
+  "extent_type": "one_side",
+  "expected_query_ids_resolved": [
+    "q_outer_radius",
+    "q_inner_radius"
+  ],
+  "sample_id": "107668_cf76b132_0001",
+  "negative_id": "neg_02"
+}

@@ -31,7 +31,7 @@ RESULTS_PATH = OUT_DIR / "pilot_results.json"
 # Get ALL Type A + EX2 samples
 all_type_a = []
 all_ex2 = []
-for sid_dir in (ROOT / "task5_negative_perturbation/perturbations").iterdir():
+for sid_dir in (ROOT / "data/phase2_perturbation/artifacts").iterdir():
     sid = sid_dir.name
     for nid_dir in sid_dir.iterdir():
         nid = nid_dir.name
@@ -53,9 +53,9 @@ methods = ["M0_NoFeedback", "M1_SolverOnly", "M2_KQPOnly", "M3_SolverKQP"]
 
 
 def get_plan(sid):
-    p = ROOT / "DesignPlan" / "compiler" / "instances_v0.2" / f"{sid}.design_plan.json"
+    p = ROOT / "data" / "phase1_positive" / "design_plan" / "_legacy_v0.2" / f"{sid}.design_plan.json"
     if not p.exists():
-        p = ROOT / "DesignPlan" / "compiler" / "instances_v6" / f"{sid}.design_plan.json"
+        p = ROOT / "data" / "phase1_positive" / "design_plan" / "instances" / f"{sid}.design_plan.json"
     return json.load(open(p, encoding="utf-8"))
 
 

@@ -34,9 +34,9 @@ for r in results:
     kqp_inst = ROOT / "kqp" / "outputs" / "compiler_v0.2" / f"{sid}.kqp_instance.json"
     if not kqp_inst.exists():
         continue
-    plan = ROOT / "DesignPlan" / "compiler" / "instances_v0.2" / f"{sid}.design_plan.json"
+    plan = ROOT / "data" / "phase1_positive" / "design_plan" / "_legacy_v0.2" / f"{sid}.design_plan.json"
     if not plan.exists():
-        plan = ROOT / "DesignPlan" / "compiler" / "instances_v6" / f"{sid}.design_plan.json"
+        plan = ROOT / "data" / "phase1_positive" / "design_plan" / "instances" / f"{sid}.design_plan.json"
     try:
         plan_data = json.loads(plan.read_text(encoding="utf-8"))
     except Exception:

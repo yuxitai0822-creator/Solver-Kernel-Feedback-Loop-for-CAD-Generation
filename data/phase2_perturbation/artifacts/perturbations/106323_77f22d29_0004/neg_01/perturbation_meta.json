@@ -1,0 +1,26 @@
+{
+  "operator": "E5_extent_type",
+  "modified_history_field": "extrude.extent_type",
+  "source_design_plan_field": "$.solid_bodies[0].extrude.extent_type",
+  "original_value": "SymmetricFeatureExtentType",
+  "perturbed_value": "OneSideFeatureExtentType",
+  "target_intent": "symmetric_about_plane",
+  "error_category": "E5_extent_type",
+  "expected_failed_query": [
+    "q_bbox_w",
+    "q_symmetric_about_plane"
+  ],
+  "allowed_secondary_failed_queries": [
+    "is_solid",
+    "occt_valid"
+  ],
+  "perturbation_id": 1,
+  "operator_input_name": "E5_extent_type_change",
+  "profile_type": "annulus",
+  "extent_type": "symmetric",
+  "expected_query_ids_resolved": [
+    "q_symmetric"
+  ],
+  "sample_id": "106323_77f22d29_0004",
+  "negative_id": "neg_01"
+}

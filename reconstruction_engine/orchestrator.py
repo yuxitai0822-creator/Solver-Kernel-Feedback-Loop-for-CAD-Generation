@@ -5,7 +5,7 @@ For each sample:
   2. execute_generated_code → step file + exec_report
   3. load_step (via KQP runner's step_loader) → occt_load_report
   4. Write all per-sample outputs (code, step, stdout, stderr, reports) under
-     Reconstruction_results/<sample_id>/
+     data/phase1_positive/reconstruction/<sample_id>/
 
 Phase 1 verification metrics (level 0):
   compile_success: True
@@ -99,7 +99,7 @@ def reconstruct_batch(manifest_path: str | Path, results_dir: str | Path,
     if sample_ids is None:
         sample_ids = all_ids
 
-    history_dir = ROOT / "data" / "sanity_set_50"
+    history_dir = ROOT / "data" / "phase0_initial" / "history"
     per_sample = []
     for sid in sample_ids:
         hp = history_dir / f"{sid}.json"

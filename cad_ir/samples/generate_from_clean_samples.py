@@ -24,9 +24,9 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "cad_ir" / "validator"))
 from validator import validate  # noqa: E402
 
-CLEAN_PATH = ROOT / "Reconstruction_results" / "clean_reconstruction_set.json"
-HIST_DIR = ROOT / "Reconstruction_results"
-DP_DIR = ROOT / "DesignPlan" / "compiler" / "instances_v6"
+CLEAN_PATH = ROOT / "data" / "phase1_positive" / "reconstruction" / "clean_reconstruction_set.json"
+HIST_DIR = ROOT / "data" / "phase1_positive" / "reconstruction"
+DP_DIR = ROOT / "data" / "phase1_positive" / "design_plan" / "instances"
 
 
 def _bbox_of_loop(loop: dict, points: dict) -> tuple[float, float, float, float]:

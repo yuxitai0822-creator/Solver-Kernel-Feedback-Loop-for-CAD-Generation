@@ -59,14 +59,14 @@ def _load_verification():
 # Plan / perturbation / history / KQP path resolvers
 # ---------------------------------------------------------------------------
 def _load_plan(sid: str) -> dict:
-    p = _REPO_ROOT / "DesignPlan" / "compiler" / "instances_v0.2" / f"{sid}.design_plan.json"
+    p = _REPO_ROOT / "data" / "phase1_positive" / "design_plan" / "_legacy_v0.2" / f"{sid}.design_plan.json"
     if not p.exists():
-        p = _REPO_ROOT / "DesignPlan" / "compiler" / "instances_v6" / f"{sid}.design_plan.json"
+        p = _REPO_ROOT / "data" / "phase1_positive" / "design_plan" / "instances" / f"{sid}.design_plan.json"
     return json.loads(p.read_text(encoding="utf-8"))
 
 
 def _load_perturbation(sid: str, nid: str) -> dict:
-    p = (_REPO_ROOT / "task5_negative_perturbation" / "perturbations"
+    p = (_REPO_ROOT / "data" / "phase2_perturbation" / "artifacts"
          / sid / nid / "perturbation_meta.json")
     if not p.exists():
         return {}
@@ -77,7 +77,7 @@ def _load_perturbation(sid: str, nid: str) -> dict:
 
 
 def _find_history(sid: str) -> Path | None:
-    p = _REPO_ROOT / "Reconstruction_results" / sid / "input_history.json"
+    p = _REPO_ROOT / "data" / "phase1_positive" / "reconstruction" / sid / "input_history.json"
     return p if p.exists() else None
 
 

@@ -49,9 +49,9 @@ for i, r in enumerate(runnable, 1):
     kqp_inst = ROOT / "kqp" / "outputs" / "compiler_v0.2" / f"{sid}.kqp_instance.json"
     if not kqp_inst.exists():
         kqp_inst = ROOT / "kqp" / "outputs" / "compiler_v6" / f"{sid}.kqp_instance.json"
-    plan_p = ROOT / "DesignPlan" / "compiler" / "instances_v0.2" / f"{sid}.design_plan.json"
+    plan_p = ROOT / "data" / "phase1_positive" / "design_plan" / "_legacy_v0.2" / f"{sid}.design_plan.json"
     if not plan_p.exists():
-        plan_p = ROOT / "DesignPlan" / "compiler" / "instances_v6" / f"{sid}.design_plan.json"
+        plan_p = ROOT / "data" / "phase1_positive" / "design_plan" / "instances" / f"{sid}.design_plan.json"
     try:
         plan = json.loads(plan_p.read_text(encoding="utf-8"))
     except Exception as e:

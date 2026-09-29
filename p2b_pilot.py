@@ -44,9 +44,9 @@ ex2_samples = selection["ex2_pick"]
 
 
 def get_design_plan(sid: str) -> dict:
-    p = ROOT / "DesignPlan" / "compiler" / "instances_v0.2" / f"{sid}.design_plan.json"
+    p = ROOT / "data" / "phase1_positive" / "design_plan" / "_legacy_v0.2" / f"{sid}.design_plan.json"
     if not p.exists():
-        p = ROOT / "DesignPlan" / "compiler" / "instances_v6" / f"{sid}.design_plan.json"
+        p = ROOT / "data" / "phase1_positive" / "design_plan" / "instances" / f"{sid}.design_plan.json"
     return json.loads(p.read_text(encoding="utf-8"))
 
 

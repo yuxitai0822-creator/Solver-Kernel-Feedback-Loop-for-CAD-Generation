@@ -24,10 +24,10 @@ sys.path.insert(0, str(ROOT / "kqp" / "runner"))
 from perturbation.validate_perturbation import validate_one, collect_failed_query_ids
 
 
-PERT_DIR = ROOT / "task5_negative_perturbation" / "perturbations"
-HISTORY_DIR_FALLBACK = ROOT / "Reconstruction_results"
+PERT_DIR = ROOT / "data" / "phase2_perturbation" / "artifacts"
+HISTORY_DIR_FALLBACK = ROOT / "data" / "phase1_positive" / "reconstruction"
 KQP_DIR = ROOT / "kqp" / "outputs" / "compiler_v0.1"
-REPORTS_DIR = ROOT / "task5_negative_perturbation" / "reports"
+REPORTS_DIR = ROOT / "data" / "phase2_perturbation" / "reports"
 
 
 def _original_step(sid):

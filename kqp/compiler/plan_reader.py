@@ -40,7 +40,7 @@ class PlanReader:
 
     @property
     def step_file(self) -> str:
-        return f"data/sanity_set_50/{self.sample_id}.step"
+        return f"data/phase0_initial/step/{self.sample_id}.step"
 
     # ----- Body & profile metadata -----
     @property

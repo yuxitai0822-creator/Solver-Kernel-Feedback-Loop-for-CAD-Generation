@@ -1,0 +1,16 @@
+{
+  "perturbation_type": "EX2_coordinate_flip",
+  "error_category": "EX2_axis_flip",
+  "swapped_axes": "axis_0<->axis_2",
+  "target_intent": "bbox_size",
+  "expected_failed_queries": [
+    "q_bbox_u",
+    "q_bbox_v"
+  ],
+  "allowed_secondary_failed_queries": [],
+  "source_design_plan_field": "$.global_envelope.bbox",
+  "should_reconstruct": true,
+  "should_fail_kqp": true,
+  "operator": "EX2_coordinate_flip",
+  "n_points_swapped": 6
+}

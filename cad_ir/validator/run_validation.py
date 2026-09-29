@@ -9,8 +9,8 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "cad_ir" / "validator"))
 from validator import validate  # noqa: E402
 
-EXAMPLES_DIR = ROOT / "cad_ir" / "samples" / "manual_ir_examples"
-REPORT_PATH = ROOT / "cad_ir" / "reports" / "schema_validation_report.json"
+EXAMPLES_DIR = ROOT / "data" / "phase1_positive" / "cad_ir" / "instances" / "manual_ir_examples"
+REPORT_PATH = ROOT / "data" / "phase1_positive" / "cad_ir" / "reports" / "schema_validation_report.json"
 
 
 def main():

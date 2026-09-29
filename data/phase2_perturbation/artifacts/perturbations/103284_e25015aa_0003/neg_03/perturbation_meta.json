@@ -1,0 +1,24 @@
+{
+  "operator": "E4_void_add",
+  "modified_history_field": "sketch.profiles[c88b04b1-0454-3e54-8d42-365e66e92370].loops[new_inner]",
+  "source_design_plan_field": "$.solid_bodies[0].profiles[0].inner_loop_count.value",
+  "original_value": 0,
+  "perturbed_value": 1,
+  "target_intent": "through_void_count",
+  "error_category": "E4_void",
+  "expected_failed_query": [
+    "q_void_count"
+  ],
+  "allowed_secondary_failed_queries": [
+    "bbox_size",
+    "occt_valid",
+    "is_solid"
+  ],
+  "perturbation_id": 3,
+  "operator_input_name": "E4_void_add",
+  "profile_type": "circle",
+  "extent_type": "one_side",
+  "expected_query_ids_resolved": [],
+  "sample_id": "103284_e25015aa_0003",
+  "negative_id": "neg_03"
+}

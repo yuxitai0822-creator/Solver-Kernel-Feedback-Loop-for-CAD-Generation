@@ -2,7 +2,7 @@
 
 For each perturbation:
   1. Load perturbed_history + reconstruction_report from
-     task5_negative_perturbation/perturbations/<sid>/<neg_id>/
+     data/phase2_perturbation/artifacts/<sid>/<neg_id>/
   2. Skip negatives where reconstruction failed
   3. Skip negatives where kqp_result.json already present (resumable)
   4. Run kqp.runner.run_kqp.run_kqp() with the FROZEN original KQP instance
@@ -23,10 +23,10 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "kqp" / "runner"))
 
 
-PERT_DIR = ROOT / "task5_negative_perturbation" / "perturbations"
+PERT_DIR = ROOT / "data" / "phase2_perturbation" / "artifacts"
 KQP_DIR = ROOT / "kqp" / "outputs" / "compiler_v0.1"
-DESIGN_PLAN_DIR = ROOT / "DesignPlan" / "compiler" / "instances_v6"
-REPORTS_DIR = ROOT / "task5_negative_perturbation" / "reports"
+DESIGN_PLAN_DIR = ROOT / "data" / "phase1_positive" / "design_plan" / "instances"
+REPORTS_DIR = ROOT / "data" / "phase2_perturbation" / "reports"
 
 
 def run_kqp_subprocess(step_path: Path, kqp_path: Path,

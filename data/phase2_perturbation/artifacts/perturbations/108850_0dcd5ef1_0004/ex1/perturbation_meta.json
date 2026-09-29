@@ -1,0 +1,18 @@
+{
+  "perturbation_type": "EX1_sketch_plane_swap",
+  "error_category": "EX1_plane_swap",
+  "original_plane": "YZ",
+  "perturbed_plane": "XY",
+  "target_intent": "bbox_size",
+  "expected_failed_queries": [
+    "q_bbox_u",
+    "q_bbox_v"
+  ],
+  "allowed_secondary_failed_queries": [
+    "q_bbox_w"
+  ],
+  "source_design_plan_field": "$.global_envelope.bbox",
+  "should_reconstruct": true,
+  "should_fail_kqp": true,
+  "operator": "EX1_sketch_plane_swap"
+}

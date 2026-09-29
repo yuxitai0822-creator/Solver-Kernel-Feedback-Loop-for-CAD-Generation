@@ -1,8 +1,8 @@
 """compute_clean_bbox.py — Compute bbox (X, Y, Z) for all 46 clean samples.
 
 Uses OCP (cad_subproject1 env has OCP).  Reads each sample's
-``Reconstruction_results/<sid>/generated.step`` and writes a
-``reconstruction_bbox.json`` to ``task5_negative_perturbation/reports/``.
+``data/phase1_positive/reconstruction/<sid>/generated.step`` and writes a
+``reconstruction_bbox.json`` to ``data/phase2_perturbation/reports/``.
 
 Per sample, emits: {bbox_mm: [x, y, z], volume: float}.
 """
@@ -22,12 +22,12 @@ from OCP.Bnd import Bnd_Box
 
 # Look for clean_reconstruction_set.json in any of the known locations.
 _candidates = [
-    ROOT / "Reconstruction_results" / "frozen_v0.1" / "clean_reconstruction_set.json",
-    ROOT / "Reconstruction_results" / "clean_reconstruction_set.json",
-    ROOT / "task5_negative_perturbation" / "inputs" / "clean_reconstruction_set.json",
+    ROOT / "data" / "phase1_positive" / "reconstruction" / "frozen_v0.1" / "clean_reconstruction_set.json",
+    ROOT / "data" / "phase1_positive" / "reconstruction" / "clean_reconstruction_set.json",
+    ROOT / "data" / "phase2_perturbation" / "inputs" / "clean_reconstruction_set.json",
 ]
 CLEAN_SET = next((c for c in _candidates if c.exists()), _candidates[0])
-OUT_PATH = ROOT / "task5_negative_perturbation" / "reports" / "reconstruction_bbox.json"
+OUT_PATH = ROOT / "data" / "phase2_perturbation" / "reports" / "reconstruction_bbox.json"
 
 
 def compute_bbox(step_path: Path) -> tuple[list[float], float] | None:
@@ -61,7 +61,7 @@ def main():
     n_ok = 0
     n_fail = 0
     for i, sid in enumerate(samples):
-        step_path = ROOT / "Reconstruction_results" / sid / "generated.step"
+        step_path = ROOT / "data" / "phase1_positive" / "reconstruction" / sid / "generated.step"
         result = compute_bbox(step_path)
         if result is None:
             n_fail += 1

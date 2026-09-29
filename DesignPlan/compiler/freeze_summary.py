@@ -54,7 +54,7 @@ def get_field(schema_version, data, hand_field_path, comp_field_path, h_unit_fac
     return hv, cv
 
 
-m = json.load(open(ROOT / "data/sanity_set_50/manifest.json", encoding="utf-8"))
+m = json.load(open(ROOT / "data/phase0_initial/manifest.json", encoding="utf-8"))
 IDS = [e["id"] for e in m["entries"]]
 
 # Per-sample classification

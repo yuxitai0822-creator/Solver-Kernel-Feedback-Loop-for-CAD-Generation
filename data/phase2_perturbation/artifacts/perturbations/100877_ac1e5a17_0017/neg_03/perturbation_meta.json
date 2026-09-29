@@ -1,0 +1,29 @@
+{
+  "operator": "E1_envelope",
+  "axis": "v",
+  "scale": 0.8,
+  "modified_history_field": "sketch.points[*].x|y",
+  "source_design_plan_field": "$.global_envelope.bbox.v.value",
+  "original_value": 19.05,
+  "perturbed_value": 15.240000000000002,
+  "target_intent": "bbox_size",
+  "error_category": "E1_envelope_dim",
+  "expected_failed_query": [
+    "q_bbox_v"
+  ],
+  "allowed_secondary_failed_queries": [
+    "cylinder_radius",
+    "through_void_count"
+  ],
+  "perturbation_id": 3,
+  "operator_input_name": "E1_envelope_v_shrink",
+  "profile_type": "rectangle",
+  "extent_type": "one_side",
+  "expected_query_ids_resolved": [
+    "q_bbox_u",
+    "q_bbox_v",
+    "q_bbox_w"
+  ],
+  "sample_id": "100877_ac1e5a17_0017",
+  "negative_id": "neg_03"
+}

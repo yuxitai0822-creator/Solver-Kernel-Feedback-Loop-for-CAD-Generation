@@ -14,7 +14,7 @@ import os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-CLEAN_DIR = ROOT / "Reconstruction_results"
+CLEAN_DIR = ROOT / "data" / "phase1_positive" / "reconstruction"
 PLAN_DIR = ROOT / "DesignPlan" / "compiler" / "instances_v6"
 HIST_DIR = CLEAN_DIR
 DATA = json.loads((ROOT / "experiments/b009_diagnosis" / "regression_classification.json").read_text(encoding="utf-8"))

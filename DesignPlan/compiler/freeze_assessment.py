@@ -124,7 +124,7 @@ def classify(hv, cv, tol_pct=0.01, unit_factor=1.0):
 
 
 # Run comparison
-m = json.load(open(ROOT / "data/sanity_set_50/manifest.json", encoding="utf-8"))
+m = json.load(open(ROOT / "data/phase0_initial/manifest.json", encoding="utf-8"))
 IDS = [e["id"] for e in m["entries"]]
 
 print("=" * 80)

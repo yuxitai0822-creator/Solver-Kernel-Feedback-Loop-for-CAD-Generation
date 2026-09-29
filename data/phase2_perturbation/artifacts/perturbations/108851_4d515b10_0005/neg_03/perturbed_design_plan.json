@@ -1,0 +1,260 @@
+{
+  "schema_version": "design_plan_v0.4",
+  "sample_id": "108851_4d515b10_0005",
+  "source_component_name": "SoapCutterBedBack1 v1",
+  "unit": "mm",
+  "coordinate_system": {
+    "frame": "part_local",
+    "origin_convention": "bbox_min_corner",
+    "axes": {
+      "x": [
+        1,
+        0,
+        0
+      ],
+      "y": [
+        0,
+        1,
+        0
+      ],
+      "z": [
+        0,
+        0,
+        1
+      ]
+    },
+    "unit": "mm"
+  },
+  "target": {
+    "object_type": "single_part",
+    "part_category": "flat_plate_or_panel",
+    "body_count": 1,
+    "engineering_description": "(compiler-generated; no NL description)"
+  },
+  "solid_bodies": [
+    {
+      "id": "body_0",
+      "primitive_type": "extruded_rectangle",
+      "frame": {
+        "u_dir": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "v_dir": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "w_dir": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "span_computation": "vertex_projection"
+      },
+      "profiles": [
+        {
+          "type": "rectangle",
+          "rings": [
+            {
+              "role": "outer",
+              "loop_type": "polyline",
+              "curve_count": 4,
+              "curves": [
+                {
+                  "kind": "line",
+                  "ref": null,
+                  "start_uv": [
+                    0.0,
+                    1.905
+                  ],
+                  "end_uv": [
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "kind": "line",
+                  "ref": null,
+                  "start_uv": [
+                    0.0,
+                    0.0
+                  ],
+                  "end_uv": [
+                    30.784799999999997,
+                    0.0
+                  ]
+                },
+                {
+                  "kind": "line",
+                  "ref": null,
+                  "start_uv": [
+                    30.784799999999997,
+                    0.0
+                  ],
+                  "end_uv": [
+                    30.784799999999997,
+                    1.905
+                  ]
+                },
+                {
+                  "kind": "line",
+                  "ref": null,
+                  "start_uv": [
+                    30.784799999999997,
+                    1.905
+                  ],
+                  "end_uv": [
+                    0.0,
+                    1.905
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "extrude": {
+        "extent_type": "one_side",
+        "direction": "+w",
+        "distance_total": {
+          "value": 12.7,
+          "tol": 0.01,
+          "tol_kind": "absolute",
+          "source": "explicit_dimension"
+        },
+        "operation": "new_body",
+        "taper_angle_deg": {
+          "value": 0.0,
+          "tol": 0.01,
+          "tol_kind": "absolute"
+        },
+        "direction_verified": true
+      },
+      "dimensions": {
+        "extrude_distance": {
+          "value": 12.7,
+          "tol": 0.01,
+          "tol_kind": "absolute",
+          "relative_tol": 0.0001,
+          "source": "explicit_dimension"
+        },
+        "profiles": [
+          {
+            "length_u": {
+              "value": 307.848,
+              "tol": 0.01,
+              "tol_kind": "absolute",
+              "source": "explicit_dimension"
+            },
+            "width_v": {
+              "value": 19.05,
+              "tol": 0.01,
+              "tol_kind": "absolute",
+              "source": "explicit_dimension"
+            }
+          }
+        ]
+      },
+      "modifications": []
+    }
+  ],
+  "auxiliary_geometry": {
+    "unused_sketches": 0,
+    "note": "None."
+  },
+  "constraints": [
+    {
+      "type": "coincident_inert",
+      "note": "geometrically_inert",
+      "tol": 1e-06
+    }
+  ],
+  "validation_intents": [
+    {
+      "id": "q_body_count",
+      "intent": "body_count",
+      "expected": 1
+    },
+    {
+      "id": "q_span_u",
+      "intent": "span_along_frame_axis",
+      "frame_axis": "u",
+      "expected": 307.848,
+      "tolerance": 0.01
+    },
+    {
+      "id": "q_span_v",
+      "intent": "span_along_frame_axis",
+      "frame_axis": "v",
+      "expected": 19.05,
+      "tolerance": 0.01
+    },
+    {
+      "id": "q_span_w",
+      "intent": "span_along_frame_axis",
+      "frame_axis": "w",
+      "expected": 12.7,
+      "tolerance": 0.01
+    },
+    {
+      "id": "q_surf_dist",
+      "intent": "surface_type_distribution",
+      "expected": {
+        "PlaneSurfaceType": 6
+      }
+    },
+    {
+      "id": "q_is_solid",
+      "intent": "is_solid",
+      "expected": true
+    },
+    {
+      "id": "q_occt_valid",
+      "intent": "occt_is_valid",
+      "expected": true
+    },
+    {
+      "id": "q_edge_ortho",
+      "intent": "edge_orthogonality",
+      "subject": "body_0",
+      "expected": "3 direction groups",
+      "tolerance": 1e-06
+    }
+  ],
+  "derived": {
+    "part_category": "flat_plate_or_panel",
+    "world_bbox_estimate": {
+      "along_x": 0,
+      "along_y": 0,
+      "along_z": 0
+    }
+  },
+  "non_verifiable": {
+    "world_pose": "Assembly-context world coordinates omitted."
+  },
+  "compiler_notes": {
+    "source_sketch_count": 1,
+    "source_extrude_count": 1,
+    "explicit_dimension_count": 2,
+    "inferred_dimensions": [],
+    "inference_mode": "none",
+    "source_constraints": [
+      {
+        "type": "HorizontalConstraint",
+        "count": 2
+      },
+      {
+        "type": "VerticalConstraint",
+        "count": 2
+      },
+      {
+        "type": "CoincidentConstraint",
+        "count": 1
+      }
+    ],
+    "warnings": [],
+    "unit_conversion_applied": "cm_to_mm (x10)"
+  }
+}

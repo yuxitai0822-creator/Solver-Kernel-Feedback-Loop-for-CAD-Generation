@@ -7,8 +7,8 @@ from collections import defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-PERT_DIR = ROOT / "task5_negative_perturbation" / "perturbations"
-REPORTS = ROOT / "task5_negative_perturbation" / "reports"
+PERT_DIR = ROOT / "data" / "phase2_perturbation" / "artifacts"
+REPORTS = ROOT / "data" / "phase2_perturbation" / "reports"
 
 
 def _load(name: str) -> dict:

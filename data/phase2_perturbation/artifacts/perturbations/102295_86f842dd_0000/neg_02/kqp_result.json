@@ -1,0 +1,89 @@
+{
+  "sample_id": "102295_86f842dd_0000",
+  "kqp_schema_version": "kqp_instance_v0.2",
+  "step_file": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\102295_86f842dd_0000\\neg_02\\generated.step",
+  "overall_status": "fail",
+  "summary": {
+    "total_queries": 6,
+    "passed_queries": 3,
+    "failed_queries": 3,
+    "error_queries": 0
+  },
+  "query_results": [
+    {
+      "query_id": "q_body_count",
+      "intent": "body_count",
+      "status": "pass",
+      "expected": 1,
+      "actual": 1,
+      "tolerance": 0,
+      "error": 0,
+      "source_field": "$.target.body_count",
+      "feedback": null
+    },
+    {
+      "query_id": "q_bbox_u",
+      "intent": "bbox_size",
+      "status": "fail",
+      "expected": 48.0,
+      "actual": 50.496988,
+      "tolerance": 0.01,
+      "error": 2.496988,
+      "source_field": "$.solid_bodies[0].dimensions.profiles[0].straight_length.value + $.solid_bodies[0].dimensions.profiles[0].radius.value (computed: straight + 2*r)",
+      "feedback": {
+        "error_type": "dimension_mismatch",
+        "message": "Expected bbox u-size 48.0mm (=straight+2*r), got 50.49698838696244mm."
+      }
+    },
+    {
+      "query_id": "q_bbox_v",
+      "intent": "bbox_size",
+      "status": "fail",
+      "expected": 20.0,
+      "actual": 22.5,
+      "tolerance": 0.01,
+      "error": 2.5,
+      "source_field": "$.solid_bodies[0].dimensions.profiles[0].radius.value (computed: 2*r)",
+      "feedback": {
+        "error_type": "dimension_mismatch",
+        "message": "Expected bbox v-size 20.0mm (=2*r), got 22.500000200000443mm."
+      }
+    },
+    {
+      "query_id": "q_bbox_w",
+      "intent": "bbox_size",
+      "status": "pass",
+      "expected": 4.0,
+      "actual": 4.0,
+      "tolerance": 0.01,
+      "error": 0.0,
+      "source_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+      "feedback": null
+    },
+    {
+      "query_id": "q_is_solid",
+      "intent": "is_solid",
+      "status": "pass",
+      "expected": true,
+      "actual": true,
+      "tolerance": null,
+      "error": 0,
+      "source_field": "(implicit: valid extrude implies solid)",
+      "feedback": null
+    },
+    {
+      "query_id": "q_occt_valid",
+      "intent": "occt_valid",
+      "status": "fail",
+      "expected": true,
+      "actual": false,
+      "tolerance": null,
+      "error": 1,
+      "source_field": "(implicit)",
+      "feedback": {
+        "error_type": "health_violation",
+        "message": "OCCT validation failed. got False."
+      }
+    }
+  ]
+}

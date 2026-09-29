@@ -21,7 +21,7 @@ end-to-end entry point.
 
 Outputs (per trial):
 
-    experiments/phase2b_triplets/<sid>_<nid>/
+    data/phase3_triplets/<sid>_<nid>/
         code_gt.py             # the GT code, copied through
         code_perturbed.py      # freshly compiled from perturbed history
         step_gt/               # re-executed GT step (sanity)
@@ -50,10 +50,10 @@ if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
 
-GT_RESULTS_ROOT = _REPO_ROOT / "Reconstruction_results"
-PERTURBATIONS_ROOT = _REPO_ROOT / "task5_negative_perturbation" / "perturbations"
-KQP_ROOT = _REPO_ROOT / "kqp" / "outputs" / "compiler_v0.2"
-DESIGN_PLAN_ROOT = _REPO_ROOT / "DesignPlan" / "compiler" / "instances_v6"
+GT_RESULTS_ROOT = _REPO_ROOT / "data" / "phase1_positive" / "reconstruction"
+PERTURBATIONS_ROOT = _REPO_ROOT / "data" / "phase2_perturbation" / "artifacts"
+KQP_ROOT = _REPO_ROOT / "data" / "phase1_positive" / "kqp" / "instances" / "v0.2"
+DESIGN_PLAN_ROOT = _REPO_ROOT / "data" / "phase1_positive" / "design_plan" / "instances"
 
 # Verifier thresholds
 CD_FIDELITY_THRESHOLD = 1e-5     # spec: CD < 10^-5
@@ -518,7 +518,7 @@ def build_triplet(sid: str,
             layer1_pipeline_gt={}, layer1_pipeline_perturbed={},
             layer2_fidelity={"passed": False, "checks": [
                 {"name": "locate", "status": "fail",
-                 "reason": "Reconstruction_results/<sid> missing required files"}]},
+                 "reason": "data/phase1_positive/reconstruction/<sid> missing required files"}]},
             layer3_difference={"passed": False, "reason": "upstream"},
             verified=False,
             wallclock=round(time.time() - t0, 2),

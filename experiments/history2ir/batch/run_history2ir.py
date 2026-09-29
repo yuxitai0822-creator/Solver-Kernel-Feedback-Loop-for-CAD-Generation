@@ -30,7 +30,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve()
 # Walk up until we find the project root (contains Reconstruction_results/)
-while ROOT.parent != ROOT and not (ROOT / "Reconstruction_results").exists():
+while ROOT.parent != ROOT and not (ROOT / "data" / "phase1_positive" / "reconstruction").exists():
     ROOT = ROOT.parent
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "experiments"))
@@ -44,8 +44,8 @@ from history2ir.validation.validators import (
     compare_kqp_equivalence,
 )
 
-CLEAN_HIST_DIR = ROOT / "Reconstruction_results"
-NEG_PERT_ROOT = ROOT / "task5_negative_perturbation" / "perturbations"
+CLEAN_HIST_DIR = ROOT / "data" / "phase1_positive" / "reconstruction"
+NEG_PERT_ROOT = ROOT / "data" / "phase2_perturbation" / "artifacts"
 TASK5_ADAPTOR_SUMMARY = (ROOT / "task5_negative_perturbation"
                               / "reports" / "adaptor_run_summary.json")
 TASK5_KQP_SUMMARY = (ROOT / "task5_negative_perturbation"
@@ -55,8 +55,8 @@ CADQUERY_PYTHON = r"D:/Anaconda/envs/cad_subproject1/python.exe"
 KQP_RUNNER = ROOT / "kqp" / "runner" / "run_kqp.py"
 ADAPTOR_WORKER = ROOT / "cad_repair_loop" / "_adaptor_subprocess.py"
 
-OUT_ROOT = ROOT / "experiments" / "history2ir" / "results"
-REPORTS = ROOT / "experiments" / "history2ir" / "reports"
+OUT_ROOT = ROOT / "data" / "phase1_positive" / "cad_ir" / "instances" / "history2ir_batches"
+REPORTS = ROOT / "data" / "phase1_positive" / "cad_ir" / "instances" / "history2ir_batches" / "reports"
 
 
 # ---------------------------------------------------------------------------
@@ -369,7 +369,7 @@ def compile_negative_set(adaptor_summary: dict | None = None) -> list[dict]:
 
 def main():
     REPORTS.mkdir(parents=True, exist_ok=True)
-    clean_set_path = ROOT / "Reconstruction_results" / "clean_reconstruction_set.json"
+    clean_set_path = ROOT / "data" / "phase1_positive" / "reconstruction" / "clean_reconstruction_set.json"
     clean_set = json.loads(clean_set_path.read_text(encoding="utf-8"))
     clean_samples = clean_set["clean_samples"]
     print(f"Compiling {len(clean_samples)} clean samples...")

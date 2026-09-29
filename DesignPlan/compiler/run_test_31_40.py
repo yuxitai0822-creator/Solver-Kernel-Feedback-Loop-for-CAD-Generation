@@ -9,7 +9,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SANITY = ROOT / "data" / "sanity_set_50"
+SANITY = ROOT / "data" / "phase0_initial" / "history"
 V5_HAND = ROOT / "DesignPlan" / "samples" / "v5"
 COMPILER_OUT = ROOT / "compiler" / "out_v5"
 

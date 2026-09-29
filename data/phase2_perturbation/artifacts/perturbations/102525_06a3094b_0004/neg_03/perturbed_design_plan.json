@@ -1,0 +1,282 @@
+{
+  "schema_version": "design_plan_v0.4",
+  "sample_id": "102525_06a3094b_0004",
+  "source_component_name": "SOP-28 (1)",
+  "unit": "mm",
+  "coordinate_system": {
+    "frame": "part_local",
+    "origin_convention": "bbox_min_corner",
+    "axes": {
+      "x": [
+        1,
+        0,
+        0
+      ],
+      "y": [
+        0,
+        1,
+        0
+      ],
+      "z": [
+        0,
+        0,
+        1
+      ]
+    },
+    "unit": "mm"
+  },
+  "target": {
+    "object_type": "single_part",
+    "part_category": "rectangular_prism_generic",
+    "body_count": 1,
+    "engineering_description": "(compiler-generated; no NL description)"
+  },
+  "solid_bodies": [
+    {
+      "id": "body_0",
+      "primitive_type": "extruded_rectangle",
+      "frame": {
+        "u_dir": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "v_dir": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "w_dir": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "span_computation": "vertex_projection"
+      },
+      "profiles": [
+        {
+          "type": "rectangle",
+          "rings": [
+            {
+              "role": "outer",
+              "loop_type": "polyline",
+              "curve_count": 4,
+              "curves": [
+                {
+                  "kind": "line",
+                  "ref": null,
+                  "start_uv": [
+                    0.42500000000000004,
+                    -0.9000000000000001
+                  ],
+                  "end_uv": [
+                    0.42500000000000004,
+                    0.8999999999999999
+                  ]
+                },
+                {
+                  "kind": "line",
+                  "ref": null,
+                  "start_uv": [
+                    0.42500000000000004,
+                    0.8999999999999999
+                  ],
+                  "end_uv": [
+                    -0.42499999999999993,
+                    0.8999999999999999
+                  ]
+                },
+                {
+                  "kind": "line",
+                  "ref": null,
+                  "start_uv": [
+                    -0.42499999999999993,
+                    0.8999999999999999
+                  ],
+                  "end_uv": [
+                    -0.42500000000000004,
+                    -0.9000000000000001
+                  ]
+                },
+                {
+                  "kind": "line",
+                  "ref": null,
+                  "start_uv": [
+                    -0.42500000000000004,
+                    -0.9000000000000001
+                  ],
+                  "end_uv": [
+                    0.42500000000000004,
+                    -0.9000000000000001
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "extrude": {
+        "extent_type": "one_side",
+        "direction": "+w",
+        "distance_total": {
+          "value": 2.5,
+          "tol": 0.01,
+          "tol_kind": "absolute",
+          "source": "explicit_dimension"
+        },
+        "operation": "new_body",
+        "taper_angle_deg": {
+          "value": 0.0,
+          "tol": 0.01,
+          "tol_kind": "absolute"
+        },
+        "direction_verified": true
+      },
+      "dimensions": {
+        "extrude_distance": {
+          "value": 2.5,
+          "tol": 0.01,
+          "tol_kind": "absolute",
+          "relative_tol": 0.0001,
+          "source": "explicit_dimension"
+        },
+        "profiles": [
+          {
+            "length_u": {
+              "value": 8.5,
+              "tol": 0.01,
+              "tol_kind": "absolute",
+              "source": "explicit_dimension"
+            },
+            "width_v": {
+              "value": 18.0,
+              "tol": 0.01,
+              "tol_kind": "absolute",
+              "source": "explicit_dimension"
+            }
+          }
+        ]
+      },
+      "modifications": []
+    }
+  ],
+  "auxiliary_geometry": {
+    "unused_sketches": 0,
+    "note": "None."
+  },
+  "constraints": [
+    {
+      "type": "perpendicular",
+      "curve_a": "4b52471c-e2fb-11ea-a349-54bf646e7e1f",
+      "curve_b": "4b53a6b0-e2fb-11ea-bf1c-54bf646e7e1f",
+      "tol": 1e-06
+    },
+    {
+      "type": "parallel",
+      "curve_a": "4b52471c-e2fb-11ea-a349-54bf646e7e1f",
+      "curve_b": "4b54df3a-e2fb-11ea-ae18-54bf646e7e1f",
+      "tol": 1e-06
+    },
+    {
+      "type": "parallel",
+      "curve_a": "4b53a6b0-e2fb-11ea-bf1c-54bf646e7e1f",
+      "curve_b": "4b5617ae-e2fb-11ea-a9ee-54bf646e7e1f",
+      "tol": 1e-06
+    },
+    {
+      "type": "coincident_inert",
+      "note": "geometrically_inert",
+      "tol": 1e-06
+    }
+  ],
+  "validation_intents": [
+    {
+      "id": "q_body_count",
+      "intent": "body_count",
+      "expected": 1
+    },
+    {
+      "id": "q_span_u",
+      "intent": "span_along_frame_axis",
+      "frame_axis": "u",
+      "expected": 8.5,
+      "tolerance": 0.01
+    },
+    {
+      "id": "q_span_v",
+      "intent": "span_along_frame_axis",
+      "frame_axis": "v",
+      "expected": 18.0,
+      "tolerance": 0.01
+    },
+    {
+      "id": "q_span_w",
+      "intent": "span_along_frame_axis",
+      "frame_axis": "w",
+      "expected": 2.5,
+      "tolerance": 0.01
+    },
+    {
+      "id": "q_surf_dist",
+      "intent": "surface_type_distribution",
+      "expected": {
+        "PlaneSurfaceType": 6
+      }
+    },
+    {
+      "id": "q_is_solid",
+      "intent": "is_solid",
+      "expected": true
+    },
+    {
+      "id": "q_occt_valid",
+      "intent": "occt_is_valid",
+      "expected": true
+    },
+    {
+      "id": "q_edge_ortho",
+      "intent": "edge_orthogonality",
+      "subject": "body_0",
+      "expected": "3 direction groups",
+      "tolerance": 1e-06
+    }
+  ],
+  "derived": {
+    "part_category": "rectangular_prism_generic",
+    "world_bbox_estimate": {
+      "along_x": 0,
+      "along_y": 0,
+      "along_z": 0
+    }
+  },
+  "non_verifiable": {
+    "world_pose": "Assembly-context world coordinates omitted."
+  },
+  "compiler_notes": {
+    "source_sketch_count": 1,
+    "source_extrude_count": 1,
+    "explicit_dimension_count": 2,
+    "inferred_dimensions": [],
+    "inference_mode": "none",
+    "source_constraints": [
+      {
+        "type": "PerpendicularConstraint",
+        "count": 1
+      },
+      {
+        "type": "ParallelConstraint",
+        "count": 2
+      },
+      {
+        "type": "HorizontalConstraint",
+        "count": 1
+      },
+      {
+        "type": "CoincidentConstraint",
+        "count": 3
+      }
+    ],
+    "warnings": [],
+    "unit_conversion_applied": "cm_to_mm (x10)"
+  }
+}

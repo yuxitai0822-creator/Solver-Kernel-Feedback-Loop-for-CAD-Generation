@@ -1,0 +1,11 @@
+{
+  "compile_success": true,
+  "execute_success": true,
+  "export_success": true,
+  "occt_load_success": true,
+  "occt_load_status": "RetDone",
+  "compile_unsupported_ops": [],
+  "execute_error": null,
+  "execute_stderr_tail": "",
+  "temp_history_path": "D:\\PythonProgramming\\CAD Generation\\Constraint-grounded agentic CAD generation\\子课题1-Solver-Kernel双反馈闭环驱动的CAD生成质量提升研究\\task5_negative_perturbation\\perturbations\\102295_86f842dd_0000\\neg_03\\102295_86f842dd_0000_perturbed.json"
+}

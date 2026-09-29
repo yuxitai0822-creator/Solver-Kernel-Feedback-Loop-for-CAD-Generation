@@ -1,0 +1,26 @@
+{
+  "operator": "E6_inner_gt_outer",
+  "modified_history_field": "sketch.curves[16f33736-e354-11ea-98b3-54bf646e7e1f].radius",
+  "source_design_plan_field": "$.solid_bodies[0].profiles[0].inner_radius.value",
+  "original_value": 0.4250000000000001,
+  "perturbed_value": 1.1,
+  "target_intent": "is_solid",
+  "error_category": "E6_validity",
+  "expected_failed_query": [
+    "q_occt_valid",
+    "q_is_solid"
+  ],
+  "allowed_secondary_failed_queries": [
+    "cylinder_radius",
+    "through_void_count"
+  ],
+  "perturbation_id": 3,
+  "operator_input_name": "E6_inner_gt_outer",
+  "profile_type": "annulus",
+  "extent_type": "one_side",
+  "expected_query_ids_resolved": [
+    "q_is_solid"
+  ],
+  "sample_id": "102410_f9877a7b_0012",
+  "negative_id": "neg_03"
+}

@@ -1,0 +1,31 @@
+{
+  "operator": "E2_extrude_depth",
+  "scale": 0.5,
+  "modified_history_field": "extrude.extent_one.distance.value",
+  "source_design_plan_field": "$.solid_bodies[0].dimensions.extrude_distance.value",
+  "original_value": 0.5,
+  "perturbed_value": 0.25,
+  "target_intent": "bbox_size",
+  "error_category": "E2_extrude_depth",
+  "expected_failed_query": [
+    "q_bbox_w"
+  ],
+  "allowed_secondary_failed_queries": [
+    "cylinder_radius",
+    "through_void_count",
+    "is_solid",
+    "occt_valid",
+    "symmetric_about_plane"
+  ],
+  "perturbation_id": 3,
+  "operator_input_name": "E2_extrude_shallow",
+  "profile_type": "annulus",
+  "extent_type": "symmetric",
+  "expected_query_ids_resolved": [
+    "q_bbox_u",
+    "q_bbox_v",
+    "q_bbox_w"
+  ],
+  "sample_id": "106323_77f22d29_0004",
+  "negative_id": "neg_03"
+}

@@ -64,7 +64,7 @@ def get_clean_bbox_spans_mm(sample_id: str, kqp_dir: str | None = None
 
 def _bbox_from_reconstruction_report(sample_id: str) -> tuple[float, float, float] | None:
     """Read bbox from the task5 reconstruction report if available."""
-    rec_path = ROOT / "task5_negative_perturbation" / "reports" / "reconstruction_bbox.json"
+    rec_path = ROOT / "data" / "phase2_perturbation" / "reports" / "reconstruction_bbox.json"
     if not rec_path.exists():
         return None
     try:
@@ -131,7 +131,7 @@ def _get_dp_2d_dims_mm(sample_id: str) -> tuple[float, float] | None:
          / f"{sample_id}.design_plan.json")
     if not p.exists():
         # Fallback to instances_v6 for legacy samples.
-        p = (ROOT / "DesignPlan" / "compiler" / "instances_v6"
+        p = (ROOT / "data" / "phase1_positive" / "design_plan" / "instances"
              / f"{sample_id}.design_plan.json")
     if not p.exists():
         return None
@@ -185,7 +185,7 @@ def scan_eligibility(clean_samples: list[str] | None = None,
     ex_perturbation_summary.json to task5_negative_perturbation/reports/."""
     if clean_samples is None:
         # Load from clean_reconstruction_set.json
-        clean_set_path = ROOT / "Reconstruction_results" / "clean_reconstruction_set.json"
+        clean_set_path = ROOT / "data" / "phase1_positive" / "reconstruction" / "clean_reconstruction_set.json"
         with open(clean_set_path, encoding="utf-8") as f:
             clean_set = json.load(f)
         clean_samples = [s["sample_id"] for s in clean_set["clean_samples"]]
@@ -221,7 +221,7 @@ def scan_eligibility(clean_samples: list[str] | None = None,
                 results["ineligible"][ex].append({"sample_id": sid, "bbox_mm": list(bbox)})
 
     if write_summary:
-        out_path = ROOT / "task5_negative_perturbation" / "reports" / "ex_perturbation_summary.json"
+        out_path = ROOT / "data" / "phase2_perturbation" / "reports" / "ex_perturbation_summary.json"
         out_path.parent.mkdir(parents=True, exist_ok=True)
         with open(out_path, "w", encoding="utf-8") as f:
             json.dump(results, f, indent=2, ensure_ascii=False)

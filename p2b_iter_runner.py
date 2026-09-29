@@ -60,7 +60,7 @@ def discover_samples():
     """Return (all_type_a, all_ex2) — both are lists of (sid, nid, op)."""
     all_type_a: list[tuple[str, str, str]] = []
     all_ex2:    list[tuple[str, str, str]] = []
-    perturb_root = _REPO_ROOT / "task5_negative_perturbation" / "perturbations"
+    perturb_root = _REPO_ROOT / "data" / "phase2_perturbation" / "artifacts"
     for sid_dir in perturb_root.iterdir():
         sid = sid_dir.name
         for nid_dir in sid_dir.iterdir():
