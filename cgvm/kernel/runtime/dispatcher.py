@@ -16,7 +16,7 @@ import sys
 from pathlib import Path
 from typing import Any
 
-from . import geometry_backend as gb
+import geometry_backend as gb
 
 
 def dispatch_query(shape, query: dict, frame: dict) -> dict:

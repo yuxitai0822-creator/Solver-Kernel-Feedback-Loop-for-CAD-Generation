@@ -1,6 +1,6 @@
 """dataset/m0m3_analysis.py — Analyse the M0-M3 perturbation experiment.
 
-Reads ``experiments/phase2b_m0m3/pilot_results.json`` and
+Reads ``experiments/m0m3_v0.3/pilot_results.json`` and
 data/phase3_triplets/_frozen_manifest.json`` and produces:
 
   * a per-method success-rate breakdown (with two layers of detail:
@@ -9,7 +9,7 @@ data/phase3_triplets/_frozen_manifest.json`` and produces:
   * a per-(method, operator) cross tabulation;
   * a per-(operator) comparison of the four methods' iter-to-success
     trajectory;
-  * a markdown report (``experiments/phase2b_m0m3/REPORT.md``).
+  * a markdown report (``experiments/m0m3_v0.3/REPORT.md``).
 
 The analysis is intentionally tiny and only depends on the two
 JSON files.  Run it after the full experiment completes.
@@ -25,7 +25,7 @@ _REPO_ROOT = Path(__file__).resolve().parent.parent
 if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
-OUT_DIR = _REPO_ROOT / "experiments" / "phase2b_m0m3"
+OUT_DIR = _REPO_ROOT / "experiments" / "m0m3_v0.3"
 FROZEN_DIR = _REPO_ROOT / "data" / "phase3_triplets"
 
 

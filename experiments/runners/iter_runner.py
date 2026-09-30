@@ -7,7 +7,7 @@ Walks the same 167 (sid, nid) pairs as the v0 ``p2b_full.py`` does
 This is the M0-M3 iter loop framework.  It mirrors the v0 runner's
 defensive mechanisms (atomic write, BaseException guard, graceful
 KeyboardInterrupt) and writes to a separate output directory
-(``experiments/phase2b_iter/``) so the v0 pilot_results.json is
+(``experiments/m0m3_v0.3/``) so the v0 pilot_results.json is
 untouched.
 
 Output schema (per trial):
@@ -46,10 +46,10 @@ _REPO_ROOT = Path(__file__).resolve().parent
 if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
-import method_policy  # noqa: E402
-import trial_iteration  # noqa: E402
+from system.policy import policy as method_policy  # noqa: E402
+from system.core import iter_loop as trial_iteration  # noqa: E402
 
-OUT_DIR = _REPO_ROOT / "experiments" / "phase2b_iter"
+OUT_DIR = _REPO_ROOT / "experiments" / "m0m3_v0.3"
 RESULTS_PATH = OUT_DIR / "pilot_results.json"
 
 

@@ -1,10 +1,10 @@
 """Phase 2B KQP re-run for full benchmark.
 
-Reads experiments/phase2b_full/pilot_results.json (v0.2 schema with
+Reads experiments/full_v0.2/pilot_results.json (v0.2 schema with
 ``sid`` / ``nid`` / ``method`` / ``layer``), loads the STEP file each
 trial produced, and runs frame-only KQP bbox queries on it.
 
-Output: experiments/phase2b_full/kqp_rerun.json  + a per-(method,
+Output: experiments/full_v0.2/kqp_rerun.json  + a per-(method,
 layer) summary printed at the end.
 """
 import json
@@ -12,20 +12,20 @@ import sys
 import time
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
-sys.path.insert(0, str(ROOT / "kqp" / "runner"))
+sys.path.insert(0, str(ROOT / "cgvm" / "kernel" / "runtime"))
 import importlib.util as iu
 
 # Use the patched v0.1 dispatcher (frame-only KQP per B-010 fix)
-spec = iu.spec_from_file_location("qd", str(ROOT / "kqp" / "runner" / "query_dispatcher.py"))
+spec = iu.spec_from_file_location("qd", str(ROOT / "cgvm" / "kernel" / "runtime" / "dispatcher.py"))
 qd = iu.module_from_spec(spec); spec.loader.exec_module(qd)
 import geometry_backend as gb
 from OCP.STEPControl import STEPControl_Reader
 from OCP.BRepBndLib import BRepBndLib
 from OCP.Bnd import Bnd_Box
 
-OUT_DIR = ROOT / "experiments" / "phase2b_full"
+OUT_DIR = ROOT / "experiments" / "full_v0.2"
 RESULTS_PATH = OUT_DIR / "pilot_results.json"
 KQP_PATH = OUT_DIR / "kqp_rerun.json"
 

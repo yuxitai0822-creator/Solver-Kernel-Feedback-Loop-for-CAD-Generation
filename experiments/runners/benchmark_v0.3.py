@@ -36,16 +36,17 @@ import time
 from pathlib import Path
 from typing import Any
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
-sys.path.insert(0, str(ROOT / "cad_runtime"))
-sys.path.insert(0, str(ROOT / "cad_agent"))
+sys.path.insert(0, str(ROOT / "cgvm" / "pipeline" / "runtime"))
+sys.path.insert(0, str(ROOT / "system" / "agent"))
 sys.path.insert(0, str(ROOT / "experiments" / "b009_diagnosis"))
 
 CADQUERY_PYTHON = r"D:/Anaconda/envs/cad_subproject1/python.exe"
 
-from cad_agent import call_cad_agent, make_no_change, make_repair
-from cad_runtime import execute_cad_script
+from system.agent.core.caller import call_cad_agent_v2 as call_cad_agent, make_no_change
+from system.agent.schema import make_repair
+from cgvm.pipeline.runtime.executor import execute_cad_script
 
 # Methods: each method controls which feedback channels are visible to
 # the LLM in its prompt.  This matches v0.2's semantics: the four
@@ -157,13 +158,13 @@ def _import(name, path):
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
     return mod
-qd = _import("qd_v0.1", ROOT / "kqp/runner/query_dispatcher.py")
+qd = _import("qd_v0.1", ROOT / "cgvm/kernel/runtime/dispatcher.py")
 
 
 def _run_kqp(step_path: Path, kqp_path: Path, plan_path: Path) -> dict:
     """Reuse the v0.1 query_dispatcher on the just-rendered STEP."""
     import sys
-    sys.path.insert(0, str(ROOT / "kqp" / "runner"))
+    sys.path.insert(0, str(ROOT / "cgvm" / "kernel" / "runtime"))
     from OCP.STEPControl import STEPControl_Reader
     from OCP.BRepBndLib import BRepBndLib
     from OCP.Bnd import Bnd_Box
@@ -300,9 +301,9 @@ def run_one_sample_v0_3(method: dict, sample_id: str,
             continue
 
         # KQP check.
-        kqp_inst_path = (ROOT / "kqp" / "outputs" / "compiler_v0.2"
+        kqp_inst_path = (ROOT / "data" / "phase1_positive" / "kqp" / "instances" / "v0.2"
                           / f"{sample_id}.kqp_instance.json")
-        plan_path = (ROOT / "DesignPlan" / "compiler" / "instances_v6"
+        plan_path = (ROOT / "data" / "phase1_positive" / "design_plan" / "instances"
                         / f"{sample_id}.design_plan.json")
         if kqp_inst_path.exists() and plan_path.exists():
             kqp_res = _run_kqp(iter_dir / f"{sample_id}.step",

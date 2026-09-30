@@ -2,7 +2,7 @@
 across the four methods (paired by (sid, nid) since the same 120
 frozen triples go through all four methods).
 
-Writes the result table to ``experiments/phase2b_m0m3/SIGNIFICANCE.md``.
+Writes the result table to ``experiments/m0m3_v0.3/SIGNIFICANCE.md``.
 """
 from __future__ import annotations
 
@@ -16,7 +16,7 @@ _REPO_ROOT = Path(__file__).resolve().parent.parent
 if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
-OUT_DIR = _REPO_ROOT / "experiments" / "phase2b_m0m3"
+OUT_DIR = _REPO_ROOT / "experiments" / "m0m3_v0.3"
 METHODS = ["M0_NoFeedback", "M1_SolverOnly", "M2_KQPOnly", "M3_SolverKQP"]
 
 

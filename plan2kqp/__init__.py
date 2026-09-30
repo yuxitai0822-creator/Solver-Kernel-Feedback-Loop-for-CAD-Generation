@@ -2,14 +2,18 @@
 
 Re-exports the public API for back-compat with the old ``kqp`` module.
 
+NOTE: After Phase D, the dispatcher/loader/backend live under
+``cgvm.kernel.runtime``. This shim re-exports the canonical names from
+the new location for callers that still import via ``plan2kqp``.
+
 Public API:
-    compile_one, compile_batch     (core.compiler.compiler)
-    dispatch_query                 (core.dispatch.dispatcher)
-    load_step                      (core.dispatch.step_loader)
+    compile_one, compile_batch     (now in cgvm.kernel.core.compiler)
+    dispatch_query                 (now in cgvm.kernel.runtime.dispatcher)
+    load_step                      (now in cgvm.kernel.runtime.step_loader)
 """
 from plan2kqp.core.compiler.compiler import compile_one, compile_batch
-from plan2kqp.core.dispatch.dispatcher import dispatch_query
-from plan2kqp.core.dispatch.step_loader import load_step
+from cgvm.kernel.runtime.dispatcher import dispatch_query
+from cgvm.kernel.runtime.step_loader import load_step
 
 __all__ = [
     "compile_one",

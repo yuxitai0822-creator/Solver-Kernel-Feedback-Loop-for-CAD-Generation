@@ -42,8 +42,8 @@ _REPO_ROOT = Path(__file__).resolve().parent.parent
 if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
-import method_policy  # noqa: E402  (m0-m3 policy — may be reused later)
-from dataset.triplet import build_triplet, save_triplet  # noqa: E402
+from system.policy import policy as method_policy  # noqa: E402  (m0-m3 policy — may be reused later)
+from .triplet import build_triplet, save_triplet  # noqa: E402
 
 PERTURBATIONS_ROOT = _REPO_ROOT / "data" / "phase2_perturbation" / "artifacts"
 DEFAULT_OUT_ROOT = _REPO_ROOT / "data" / "phase3_triplets"

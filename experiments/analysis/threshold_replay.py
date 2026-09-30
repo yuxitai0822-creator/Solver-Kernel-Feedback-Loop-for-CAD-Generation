@@ -49,7 +49,7 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "experiments"))
 
@@ -57,7 +57,7 @@ sys.path.insert(0, str(ROOT / "experiments"))
 # The dotted filename is not a valid Python identifier, so we load the
 # module via importlib.
 import importlib.util as _ilu
-_rb_path = ROOT / "experiments" / "run_benchmark_v0.2.py"
+_rb_path = ROOT / "experiments" / "frozen" / "benchmark_v0.2_FROZEN.py"
 _spec = _ilu.spec_from_file_location("run_benchmark_v0_2", str(_rb_path))
 _rb = _ilu.module_from_spec(_spec)
 _spec.loader.exec_module(_rb)

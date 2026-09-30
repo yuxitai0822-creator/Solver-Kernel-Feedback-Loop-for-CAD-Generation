@@ -27,7 +27,7 @@ sys.path.insert(0, str(ROOT))
 
 from history2cq.core.compiler import compile_history
 from history2cq.runtime.executor import execute_generated_code
-from plan2kqp.core.dispatch.step_loader import load_step
+from cgvm.kernel.runtime.step_loader import load_step
 
 
 def reconstruct_sample(history_path: str | Path, results_dir: str | Path) -> dict:

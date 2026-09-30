@@ -1,8 +1,8 @@
 """Phase 2B Final Analysis — McNemar per layer, per-(method, layer) failure rates.
 
 Reads:
-  - experiments/phase2b_full/pilot_results.json (raw trial results)
-  - experiments/phase2b_full/kqp_rerun.json   (KQP bbox re-eval)
+  - experiments/full_v0.2/pilot_results.json (raw trial results)
+  - experiments/full_v0.2/kqp_rerun.json   (KQP bbox re-eval)
 
 Computes:
   - Per-(method, layer) step-export rate and KQP-failure rate
@@ -10,8 +10,8 @@ Computes:
   - Per-layer per-operator breakdown
 
 Writes:
-  - experiments/phase2b_full/final_summary.json
-  - experiments/phase2b_full/final_report.md
+  - experiments/full_v0.2/final_summary.json
+  - experiments/full_v0.2/final_report.md
 """
 import json
 import math
@@ -20,7 +20,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-OUT_DIR = ROOT / "experiments" / "phase2b_full"
+OUT_DIR = ROOT / "experiments" / "full_v0.2"
 RESULTS_PATH = OUT_DIR / "pilot_results.json"
 KQP_PATH = OUT_DIR / "kqp_rerun.json"
 SUMMARY_PATH = OUT_DIR / "final_summary.json"

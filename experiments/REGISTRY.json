@@ -1,0 +1,28 @@
+{
+  "schema_version": "0.1",
+  "last_updated": "2026-09-30",
+  "cgvms": {
+    "pipeline": {"path": "cgvm/pipeline", "since": "2026-09-30"},
+    "solver":   {"path": "cgvm/solver",   "since": "2026-09-30"},
+    "kernel":   {"path": "cgvm/kernel",   "since": "2026-09-30"}
+  },
+  "methods": {
+    "M0_NoFeedback": {"channels": ["pipeline"],                  "since": "2026-07-24"},
+    "M1_SolverOnly": {"channels": ["pipeline", "solver"],        "since": "2026-07-24"},
+    "M2_KQPOnly":    {"channels": ["pipeline", "kernel"],       "since": "2026-07-24"},
+    "M3_SolverKQP":  {"channels": ["pipeline", "solver", "kernel"], "since": "2026-07-24"}
+  },
+  "analysis_scripts": {
+    "m0m3_breakdown":        {"path": "experiments/analysis/m0m3_breakdown.py",        "since": "2026-09-30"},
+    "m0m3_significance":     {"path": "experiments/analysis/m0m3_significance.py",     "since": "2026-09-30"},
+    "m0m3_external_metrics": {"path": "experiments/analysis/m0m3_external_metrics.py", "since": "2026-09-30"},
+    "benchmark_summary":      {"path": "experiments/analysis/benchmark_summary.py",      "since": "2026-09-30"},
+    "threshold_replay":      {"path": "experiments/analysis/threshold_replay.py",      "since": "2026-09-30"}
+  },
+  "experiment_phases": {
+    "pilot_v0.2":     {"path": "experiments/pilot_v0.2/",     "samples": 30,  "status": "frozen",  "since": "2026-09-30"},
+    "pilot_v0.2_m0":  {"path": "experiments/pilot_v0.2_m0/",  "samples": 70,  "status": "frozen",  "since": "2026-09-30"},
+    "full_v0.2":      {"path": "experiments/full_v0.2/",      "samples": 167, "status": "frozen",  "since": "2026-09-30"},
+    "m0m3_v0.3":      {"path": "experiments/m0m3_v0.3/",      "samples": 120, "status": "current", "since": "2026-09-30"}
+  }
+}

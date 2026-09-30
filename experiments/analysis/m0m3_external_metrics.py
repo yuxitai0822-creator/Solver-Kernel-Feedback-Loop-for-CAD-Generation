@@ -1,7 +1,7 @@
 """dataset/m0m3_external_metrics.py — External metric suite for the
 M0-M3 perturbation experiment.
 
-Reads ``experiments/phase2b_m0m3/pilot_results.json`` and
+Reads ``experiments/m0m3_v0.3/pilot_results.json`` and
 ``data/phase3_triplets/_frozen_manifest.json`` and produces
 five external metrics, per the ablation-report external-metric spec:
 
@@ -28,13 +28,13 @@ CD computation:
   Each trial's last-iter STEP is compared against the GT STEP at
   ``data/phase3_triplets/<sid>__<nid>/step_gt/generated.step``.
   A per-trial cache is persisted at
-  ``experiments/phase2b_m0m3/external_metrics/cd_cache.json`` with
+  ``experiments/m0m3_v0.3/external_metrics/cd_cache.json`` with
   atomic write + resume semantics, so a partial run can be continued
   without re-computing.
 
 Outputs:
-  experiments/phase2b_m0m3/EXTERNAL_METRICS.md   (human-readable)
-  experiments/phase2b_m0m3/external_metrics/external_metrics.json (machine)
+  experiments/m0m3_v0.3/EXTERNAL_METRICS.md   (human-readable)
+  experiments/m0m3_v0.3/external_metrics/external_metrics.json (machine)
 """
 from __future__ import annotations
 
@@ -51,7 +51,7 @@ _REPO_ROOT = Path(__file__).resolve().parent.parent
 if str(_REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(_REPO_ROOT))
 
-OUT_DIR = _REPO_ROOT / "experiments" / "phase2b_m0m3"
+OUT_DIR = _REPO_ROOT / "experiments" / "m0m3_v0.3"
 FROZEN_DIR = _REPO_ROOT / "data" / "phase3_triplets"
 EM_DIR = OUT_DIR / "external_metrics"
 CACHE_PATH = EM_DIR / "cd_cache.json"
@@ -708,7 +708,7 @@ def _render_report(payload: dict) -> str:
         "**Trials**: 480 (= 120 frozen (sid,nid) × 4 methods)  ",
         "**Iter folding**: last-pass — PipelineValid / SolverValid / KernelValid = "
         "last iter's `passed` field (True counts as valid; None/skipped counts as not valid).  ",
-        "**CD cache**: `experiments/phase2b_m0m3/external_metrics/cd_cache.json` "
+        "**CD cache**: `experiments/m0m3_v0.3/external_metrics/cd_cache.json` "
         "(atomic write, resume-safe).  ",
         "",
         "## 1. Headline (all 5 metrics, last-pass)",
