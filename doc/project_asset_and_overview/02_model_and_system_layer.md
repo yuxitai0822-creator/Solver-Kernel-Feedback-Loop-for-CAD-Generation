@@ -258,20 +258,21 @@ history2cq / history2plan / plan2kqp / text2ir
     │   ↑↑（re-export pipeline_feedback, kernel_feedback）
     │  读 STEP / 写 STEP
     ▼
-cad_verification/  ← 3 个 CGVM（pipeline, solver, kernel）
+cgvm/  ← 3 个 CGVM 模块（pipeline, solver, kernel） + _shared 基类
     │   ↑↑  (VerificationResult)
     │  invoked by
     ▼
-trial_iteration.run(method, ...)
-    │   ↑↑ feedback filtered by method_policy.METHOD_FEEDBACK_CHANNELS
+system/  ← 4-system iterative CAD generation 共享 codebase
+system.core.iter_loop.run(method, ...)
+    │   ↑↑ feedback filtered by system.policy.policy.METHOD_FEEDBACK_CHANNELS
     │  invoked by
     ▼
-cad_agent/agent_v2.py  (DeepSeek backend)
-cad_agent/prompt_builder_v2.py  (M0-M3 iterative prompt)
+system.agent.core.caller  (DeepSeek backend)
+system.agent.prompt.builder  (M0-M3 iterative prompt)
     │   ↑↑
     │  driven by
     ▼
-p2b_m0m3_on_frozen.py  (batch runner: 120 × 4 = 480 trials)
+system.batch.runner  (batch runner: 120 × 4 = 480 trials)
     │   ↑↑
     │  reads
     ▼
@@ -279,58 +280,73 @@ data/phase3_triplets/_frozen_manifest.json
 ```
 
 **约束**：
-- CGVM 层（`cad_verification/`）只**读**数据层，不依赖具体 system
-- trial_iteration 层**全部 3 段 verification**都跑，method 只控制 feedback 过滤
-- 4 个 system 共享 100% 代码路径；method_policy 是唯一差异源
-- CGVM 与 trial_iteration 之间通过 `VerificationResult` dataclass（`cad_verification/_base.py`）解耦
+- CGVM 层（`cgvm/`）只**读**数据层，不依赖具体 system
+- iter loop 层（`system.core.iter_loop`）**全部 3 段 verification**都跑，method 只控制 feedback 过滤
+- 4 个 system 共享 100% 代码路径；`system.policy.policy` 是唯一差异源
+- CGVM 与 iter loop 之间通过 `VerificationResult` dataclass（`cgvm._shared.base`）解耦
 
 ---
 
-## 6. 顶层布局（model & system 相关）
+## 6. 顶层布局（model & system 层 — Phase D 重构后）
 
 ```
 子课题1-.../
-├── cad_verification/                # 3 个 CGVM + 基类
-│   ├── _base.py                     # @dataclass VerificationResult
-│   ├── pipeline.py                  # Pipeline CGVM
-│   ├── solver.py                    # Solver CGVM（接口）
-│   └── kernel.py                    # Kernel CGVM
+├── cgvm/                                # 3 个 CGVM 模块（5 子目录统一）
+│   ├── __init__.py                     # re-export 4 个公开类型
+│   ├── _shared/
+│   │   ├── README.md
+│   │   └── base.py                    # 原 cad_verification/_base.py
+│   ├── pipeline/                       # 原 cad_verification/pipeline.py + cad_runtime/executor.py
+│   │   ├── README.md / CHANGELOG.md
+│   │   ├── schema/                    # 4 子状态 contract
+│   │   ├── core/verification.py
+│   │   ├── runtime/executor.py
+│   │   ├── tests/
+│   │   └── legacy/
+│   ├── solver/                         # 原 cad_verification/solver.py + Freecadsolver_feedback + Kiwisolver_feedback
+│   │   ├── README.md / CHANGELOG.md
+│   │   ├── schema/
+│   │   ├── core/verification.py
+│   │   ├── runtime/
+│   │   │   ├── freecad/               # 原 Freecadsolver_feedback/core/ (9 文件)
+│   │   │   └── kiwisolver/            # 原 Kiwisolver_feedback/core/ (9 文件, archived)
+│   │   ├── tests/
+│   │   └── legacy/api_probe/          # 原 Freecadsolver_feedback/api_probe/
+│   └── kernel/                         # 原 cad_verification/kernel.py + plan2kqp/core/dispatch/
+│       ├── README.md / CHANGELOG.md
+│       ├── schema/                    # KQP schema v0.2 symlink
+│       ├── core/verification.py
+│       ├── runtime/{dispatcher,geometry_backend,step_loader,result_builder}.py
+│       ├── tests/
+│       └── legacy/
 │
-├── cad_runtime/                     # Pipeline CGVM 底层
-│   └── executor.py                  # execute_cad_script()
+├── system/                              # 4-system iterative CAD generation 共享 codebase
+│   ├── __init__.py                     # re-export 公开 API
+│   ├── README.md / CHANGELOG.md
+│   ├── core/iter_loop.py              # 原 trial_iteration.py
+│   ├── policy/policy.py                # 原 method_policy.py
+│   ├── batch/runner.py                 # 原 p2b_m0m3_on_frozen.py
+│   ├── agent/
+│   │   ├── README.md
+│   │   ├── schema.py                   # 原 cad_agent/schema.py
+│   │   ├── core/caller.py              # 原 cad_agent/agent_v2.py（DeepSeek backend）
+│   │   ├── prompt/
+│   │   │   ├── builder.py             # 原 cad_agent/prompt_builder_v2.py
+│   │   │   └── legacy_shim.py         # 原 cad_agent/prompt_builder.py（v0 shim）
+│   │   └── legacy/                     # 前世 ZHIPU + frozen snapshots
+│   │       ├── agent_zhipu.py
+│   │       ├── agent_v0.1_FROZEN.py
+│   │       ├── prompt_builder_v0.1_FROZEN.py
+│   │       └── schema_v0.1_FROZEN.py
+│   ├── tests/
+│   └── legacy/cad_repair_loop/         # 前世 IR-based 系统（不进 M0-M3）
+│       └── ...  (8 个文件原封不动)
 │
-├── Freecadsolver_feedback/          # Solver CGVM FreeCAD 后端
-│   └── core/{pipeline,solver_runner,recompute_runner,
-│              registry_builder,diagnostic_normalizer,
-│              diagnostics_builder,fallback_analyzer,
-│              feedback_builder,history_parser}.py
-│
-├── Kiwisolver_feedback/            # Solver CGVM Kiwisolver 后端
-│   └── core/...  (9 个文件，与 FreeCAD 同构)
-│
-├── plan2kqp/                        # Kernel CGVM 底层（Phase C 重构后）
-│   └── core/dispatch/{dispatcher,geometry_backend,
-│                        step_loader,result_builder}.py
-│
-├── cad_agent/                       # LLM agent + prompt
-│   ├── agent_v2.py                  # DeepSeek backend + retry + hard_timeout
-│   ├── prompt_builder_v2.py         # M0-M3 反馈注入
-│   ├── prompt_builder.py            # 后向兼容 shim（feedback=None → v0；≠None → v2）
-│   └── schema.py
-│
-├── trial_iteration.py               # M0-M3 iter loop（共享 100%）
-├── method_policy.py                 # 唯一差异源：METHOD_FEEDBACK_CHANNELS
-│
-├── p2b_m0m3_on_frozen.py            # 480 trial batch runner
-│
-├── cad_repair_loop/                 # LEGACY（不属于 M0-M3）
-│   ├── llm_agent.py                 # ZHIPU backend
-│   ├── llm_agent_v0.1_FROZEN.py
-│   ├── repair_loop.py
-│   ├── run_repair_loop.py
-│   ├── subprocess_bridge.py
-│   ├── _adaptor_subprocess.py
-│   └── test_repair_against_perturbed_ir.py
+├── legacy/                              # 跨系统的 archived 资源
+│   ├── README.md
+│   └── solver_kiwisolver_feedback/    # Kiwisolver_feedback 子目录（archived 文档/探针）
 │
 └── ...
 ```
+
+> **Phase D（2026-09-30）重构总结**：3 个 CGVM 从 `cad_verification/{pipeline,solver,kernel}.py` 迁入 `cgvm/{pipeline,solver,kernel}/`；2 个 Solver backend 从 `Freecadsolver_feedback/` / `Kiwisolver_feedback/` 迁入 `cgvm/solver/runtime/{freecad,kiwisolver}/`；Kernel runtime 从 `plan2kqp/core/dispatch/` 迁入 `cgvm/kernel/runtime/`；4-system 共享 codebase 从 6 个顶层文件 + `cad_agent/` 迁入 `system/{core,policy,batch,agent}/`；cad_repair_loop 整目录作为前世系统移入 `system/legacy/cad_repair_loop/`。每个新模块按统一 5 子目录（`schema/` + `core/` + `runtime/` + `tests/` + `legacy/`）结构组织。
